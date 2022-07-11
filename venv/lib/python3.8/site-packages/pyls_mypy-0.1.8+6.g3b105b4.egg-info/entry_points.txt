@@ -1,0 +1,3 @@
+[pyls]
+pyls_mypy = pyls_mypy.plugin
+

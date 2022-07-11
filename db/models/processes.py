@@ -1,13 +1,19 @@
 from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
-                      FloatProperty, UniqueIdProperty, RelationshipTo)
+                      FloatProperty, UniqueIdProperty, RelationshipTo, DateTimeProperty)
 
-from compositions import (Component, Material, Element)
+from compositions import *
+from abstractclasses import *
+from properties import (Property)
 
-config.DATABASE_URL = 'bolt://neo4j:herrklo1@localhost:11003/fuel-cells'  # default
+
+class FabricationProcess(Process):
+    material = RelationshipTo(Material, "YIELDS_MAT")
+    component = RelationshipTo(Component, "YIELDS_COMP")
+    device = RelationshipTo(Device, "YIELDS_DEV")
+    pass
 
 
-class Process(StructuredNode):
+class Parameter(StructuredNode):
     name = StringProperty(unique_index=True, required=True)
-    element = RelationshipTo(Element, "PROCESSED")
-    material = RelationshipTo(Material, "PROCESSED")
-    component = RelationshipTo(Component, "PROCESSED")
+    value = FloatProperty()
+    error = FloatProperty()

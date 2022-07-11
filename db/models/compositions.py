@@ -1,22 +1,56 @@
 from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
                       FloatProperty, UniqueIdProperty, RelationshipTo)
 
-config.DATABASE_URL = 'bolt://neo4j:herrklo1@localhost:11003/fuel-cells'  # default
+from abstractclasses import *
 
 
-class Element(StructuredNode):
-    name = StringProperty(unique_index=True, required=True)
-    eid = UniqueIdProperty()
+class Element(UniqueNamedNode):
+    pass
 
 
-class Material(StructuredNode):
-    name = StringProperty(unique_index=True, required=True)
-    mid = UniqueIdProperty()
-    component = RelationshipTo(Element, 'CONSISTS_OF')
+class Material(Object):
+    element = RelationshipTo(Element, 'CONSISTS_OF')
 
 
-class Component(StructuredNode):
-    name = StringProperty(unique_index=True, required=True)
-    cid = UniqueIdProperty()
-    type = StringProperty(unique_index=True, required=True)
+class Component(Object):
     component = RelationshipTo(Material, 'CONSISTS_OF')
+
+
+class Device(Object):
+    component = RelationshipTo(Component, 'CONSISTS_OF')
+
+
+class MEA(Component):
+    pass
+
+
+class CatalystLayer(Component):
+    pass
+
+
+class GDL(Component):
+    pass
+
+
+class CoatingSubstrate(Material):
+    pass
+
+
+class Catalyst(Material):
+    pass
+
+
+class CatalystInk(Material):
+    pass
+
+
+class Ionomer(Material):
+    pass
+
+
+class TransferSubstrate(Material):
+    pass
+
+
+class FuelCell(Device):
+    pass

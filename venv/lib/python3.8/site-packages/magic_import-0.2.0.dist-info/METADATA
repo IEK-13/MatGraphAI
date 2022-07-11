@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: magic-import
+Version: 0.2.0
+Summary: Import python object from string and return the reference of the object. The object can be a class, instance, variable and anything else, and can be from class, instance, module, global/local environment.
+Author: zencore
+Author-email: dobetter@zencore.cn
+License: MIT
+Keywords: magic-import
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires: dictop
+License-File: LICENSE
+Requires-Dist: dictop
+
+magic-import
+============
+
+Import python object from string and return the reference of the object. The object can be a class, instance, variable and anything else, and can be from class, instance, module, global/local environment.
+
+
+Install
+-------
+
+::
+
+    pip install magic-import
+
+
+Usage
+-----
+
+::
+
+    from magic_import import import_from_string
+    
+    listdir = import_from_string("os.listdir")
+    files = listdir(".")
+
+
+

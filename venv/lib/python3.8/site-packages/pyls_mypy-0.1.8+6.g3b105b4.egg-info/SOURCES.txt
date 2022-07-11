@@ -1,0 +1,15 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+versioneer.py
+pyls_mypy/__init__.py
+pyls_mypy/_version.py
+pyls_mypy/plugin.py
+pyls_mypy.egg-info/PKG-INFO
+pyls_mypy.egg-info/SOURCES.txt
+pyls_mypy.egg-info/dependency_links.txt
+pyls_mypy.egg-info/entry_points.txt
+pyls_mypy.egg-info/requires.txt
+pyls_mypy.egg-info/top_level.txt
+test/test_plugin.py
