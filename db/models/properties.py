@@ -4,15 +4,23 @@ from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
 from abstractclasses import *
 
 
-class Property(PhysicalDescriptorNode):
+class PhysicalDimension(Physical):
+    pass
+
+
+class Property(PhysicalDimension):
+    derivedproperty = RelationshipTo("Property", "derivedFrom")
+    property = RelationshipFrom("Measurement", "YIELDS_PROP")
+
+
+class Parameter(PhysicalDimension):
+    parameter = RelationshipFrom("Process", "usesParameter")
+
+
+class Property(PhysicalDimension):
     property = RelationshipTo("Property", "DERIVED_FROM")
     property = RelationshipFrom("Measurement", "YIELDS_PROP")
     __abstract_node__ = True
-
-
-class Measurement(Process):
-    year = DateTimeProperty()
-    pass
 
 
 class OpticalProperty(Property):

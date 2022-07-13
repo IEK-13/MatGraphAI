@@ -1,12 +1,7 @@
 from properties import Property
 from processes import Process
-from abstractclasses import PhysicalDescriptorNode
 from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
                       FloatProperty, UniqueIdProperty, RelationshipTo, RelationshipFrom)
-
-
-class Parameter(PhysicalDescriptorNode):
-    __abstract_node__ = True
 
 
 class Instrument(StructuredNode):

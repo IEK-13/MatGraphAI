@@ -1,15 +1,29 @@
 from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
-                      FloatProperty, UniqueIdProperty, RelationshipTo, DateTimeProperty)
+                      FloatProperty, UniqueIdProperty, RelationshipTo, DateTimeProperty,
+                      StructuredRel)
 
-from compositions import *
+from matter import *
 from abstractclasses import *
 from properties import (Property)
 
 
-class FabricationProcess(Process):
-    material = RelationshipTo(Material, "YIELDS_MAT")
-    component = RelationshipTo(Component, "YIELDS_COMP")
-    device = RelationshipTo(Device, "YIELDS_DEV")
+class Process(Physical):
+    uid = UniqueIdProperty()
+    year = DateTimeProperty()
+    participant = RelationshipTo("Parameter", hasParticipant)
+    researcher = RelationshipTo("Researcher", byResearcher)
+    instrument = RelationshipTo("Instrument", byDevice)
+    __abstract_node__ = True
+
+
+class Manufacturing(Process):
+    processed = RelationshipFrom(Engineered, processed)
+    fabricates = RelationshipTo(Engineered, fabricates)
+    pass
+
+
+class Measurement(Process):
+    property = RelationshipTo(Property, yieldsQuant)
     pass
 
 

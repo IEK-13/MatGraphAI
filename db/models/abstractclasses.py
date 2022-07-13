@@ -1,6 +1,55 @@
 from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
                       FloatProperty, UniqueIdProperty, RelationshipTo, ArrayProperty,
-                      DateTimeProperty)
+                      DateTimeProperty, StructuredRel)
+
+
+class hasPart(StructuredRel):
+    name = "hasPart"
+    pass
+
+
+class hasParticipant(hasPart):
+    name = "hasParticipant"
+    pass
+
+
+class processed(hasParticipant):
+    name = "processes"
+    pass
+
+
+class measured(hasParticipant):
+    name = "measured"
+    pass
+
+
+class usesParameter(hasParticipant):
+    name = "usesParameter"
+    pass
+
+
+class byResearcher(hasParticipant):
+    name = "byResearcher"
+    pass
+
+
+class byDevice(hasParticipant):
+    pass
+
+
+class yields(StructuredRel):
+    name = "yields"
+    pass
+
+
+class fabricates(yields):
+    name = "fabricates"
+    pass
+
+
+class yieldsQuant(yields):
+    name = "yieldsQuant"
+    pass
 
 
 class NamedNode(StructuredNode):
@@ -18,30 +67,9 @@ class UniqueNode(StructuredNode):
     __abstract_node__ = True
 
 
-class PhysicalDescriptorNode(StructuredNode):
-    type = StringProperty(required=True)
-    scalarvalue = FloatProperty()
-    valuevector = ArrayProperty()
-    description = StringProperty()
-    scalarerror = FloatProperty()
-    errorvector = ArrayProperty()
-    minVal = FloatProperty()
-    maxVal = FloatProperty()
+class Physical(UniqueNode):
     __abstract_node__ = True
 
 
-class Process(UniqueNamedNode):
-    uid = UniqueIdProperty()
-    year = DateTimeProperty()
-    parameter = RelationshipTo("Parameter", "USED_PARAMETER")
-    researcher = RelationshipTo("Researcher", "BY_RESEARCHER")
-    instrument = RelationshipTo("Instrument", "USED_INSTRUMENT")
-    __abstract_node__ = True
-
-
-class Object(UniqueNode):
-    name = StringProperty()
-    type = StringProperty()
-    process = RelationshipTo("FabricationProcess", "PROCESSED")
-    process = RelationshipTo("Measurement", "MEASURED")
+class Virtual(UniqueNode):
     __abstract_node__ = True
