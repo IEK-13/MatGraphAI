@@ -3,79 +3,140 @@ from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
                       RelationshipFrom, StructuredRel)
 
 from abstractclasses import *
+from dataproperties import *
+
+# Abstract Classes Containing Chemical and manufactured Entities
 
 
-class hasPart(StructuredRel):
-    name = "hasPart"
+class Matter(CausalObject):
+    isManufactured = RelationshipTo("Manufacturing", "isMeasurementInput",
+                                    model=isManufacturingInput)
+    isOutput = RelationshipFrom("Manufacturing", "isManufacturingOutput",
+                                model=hasManufacturingOutput)
+    measured = RelationshipTo("Measurement", "isMeasured",
+                              model=isMeasured)
 
 
-class Matter(Physical):
-    name = StringProperty()
-    measured = RelationshipTo("Measurement", "hasMeasurementParticipant")
-    consist = RelationshipTo("Matter", "hasPart")
-    __abstract_node__ = True
+class ChemicalEntity(Matter):
+    pass
 
 
-class Engineered(Matter):
-    processeduct = RelationshipTo(
-        "Manufacturing", "isManufacturingParticipant")
-    processproduct = RelationshipFrom("Manufacturing", "yieldsProduct")
-    __abstract_node__ = True
-
-
-class EngineeredMaterial(Engineered):
-    __abstract_node__ = True
-
-
-class EngineeredComponent(Engineered):
-    __abstract_node__ = True
-
-
-class EngineeredDevice(Engineered):
-    __abstract_node__ = True
-
-
-class Molecule(Matter):
+class Molecule(ChemicalEntity):
     nAtoms = IntegerProperty()
+    hasAtom = RelationshipTo("Atom", "hasPart", model=hasPart)
     pass
 
 
-class Atom(Matter):
-    hasPart = RelationshipTo(Molecule, hasPart)
+class Atom(ChemicalEntity):
     pass
 
 
-class MEA(EngineeredComponent):
+class Manufactured(Matter):
+    hasAtom = RelationshipTo("Atom", "hasPart", model=hasPart)
     pass
 
 
-class CatalystLayer(EngineeredComponent):
+class ManufacturedMaterial(Manufactured):
+    hasMolecule = RelationshipTo("Molecule", "hasPart", model=hasPart)
     pass
 
 
-class GDL(EngineeredComponent):
+class ManufacturedComponent(Manufactured):
+    hasMaterial = RelationshipTo("Material", "hasPart", model=hasPart)
+    hasComponent = RelationshipTo("Component", "hasPart", model=hasPart)
     pass
 
 
-class CoatingSubstrate(EngineeredMaterial):
+class ManufacturedFuelCellComponent(ManufacturedComponent):
     pass
 
 
-class Catalyst(EngineeredMaterial):
+class ManufacturedDevice(Manufactured):
+    hasMaterial = RelationshipTo("Material", "hasPart", model=hasPart)
+    hasComponent = RelationshipTo("Component", "hasPart", model=hasPart)
     pass
 
 
-class CatalystInk(EngineeredMaterial):
+# Manufactured components
+
+
+class MEA(ManufacturedFuelCellComponent):
     pass
 
 
-class Ionomer(EngineeredMaterial):
+class CatalystLayer(ManufacturedFuelCellComponent):
     pass
 
 
-class TransferSubstrate(EngineeredMaterial):
+class GDL(ManufacturedFuelCellComponent):
     pass
 
 
-class FuelCell(EngineeredDevice):
+class Membrane(ManufacturedFuelCellComponent):
+    pass
+
+
+class BipolarPlate(ManufacturedFuelCellComponent):
+    pass
+
+
+class Seal(ManufacturedFuelCellComponent):
+    pass
+
+
+class CoolingPlate(ManufacturedFuelCellComponent):
+    pass
+
+
+# Materials Classes
+
+
+class Catalyst(ManufacturedMaterial):
+    pass
+
+
+class CatalystInk(ManufacturedMaterial):
+    pass
+
+
+class Metal(ManufacturedMaterial):
+    pass
+
+
+class Composite(ManufacturedMaterial):
+    pass
+
+
+class CarbonBasedMaterial(ManufacturedMaterial):
+    pass
+
+
+class TransferSubstrate(ManufacturedMaterial):
+    pass
+
+
+# ManufacturedDevices
+
+
+class FuelCell(ManufacturedDevice):
+    hasMaterial = RelationshipTo("Material", "hasPart", model=hasPart)
+    hasMEA = RelationshipTo("MEA", "hasPart", model=hasPart)
+    hasSeal = RelationshipTo("Seal", "hasPart", model=hasPart)
+    hasBipolarPlatePlate = RelationshipTo(
+        "BipolarPlate", "hasPart", model=hasPart)
+    pass
+
+
+# Molecules
+
+
+class Polymer(Molecule):
+    pass
+
+
+class Ionomer(Polymer):
+    pass
+
+
+class Solvent(Molecule):
     pass

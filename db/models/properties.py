@@ -2,9 +2,10 @@ from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
                       FloatProperty, UniqueIdProperty, RelationshipTo, RelationshipFrom)
 
 from abstractclasses import *
+from dataproperties import *
 
 
-class PhysicalDimension(Physical):
+class PhysicalDimension(CausalObject):
     pass
 
 
@@ -15,12 +16,6 @@ class Property(PhysicalDimension):
 
 class Parameter(PhysicalDimension):
     parameter = RelationshipFrom("Process", "usesParameter")
-
-
-class Property(PhysicalDimension):
-    property = RelationshipTo("Property", "DERIVED_FROM")
-    property = RelationshipFrom("Measurement", "YIELDS_PROP")
-    __abstract_node__ = True
 
 
 class OpticalProperty(Property):
