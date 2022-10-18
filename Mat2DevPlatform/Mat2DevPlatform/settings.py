@@ -31,20 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django_messages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.messages,'
-    'django.contrib.sessions'
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sessions',
     'django.contrib.staticfiles',
     'Mat2DevAPI',
     'django_neomodel',
-    'django_extensions'
+    'django_extensions',
 ]
 
 
@@ -102,9 +97,12 @@ WSGI_APPLICATION = 'Mat2DevPlatform.wsgi.application'
 
 DATABASES = {
     'default': {
+        'NAME': 'test.db',
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'USER': '',
+        'PASSWORD': '',
+        'PORT': '',
+    },
 }
 
 

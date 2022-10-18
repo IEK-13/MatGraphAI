@@ -1,9 +1,9 @@
 from abc import ABC, ABCMeta
 
 from neomodel import (StructuredNode, StringProperty, UniqueIdProperty, DateTimeProperty)
+from django_neomodel import DjangoNode
 
-
-class NamedNode(StructuredNode):
+class NamedNode(DjangoNode):
     @classmethod
     def category(cls):
         pass
@@ -18,7 +18,7 @@ class UniqueNamedNode(NamedNode):
     __abstract_node__ = True
 
 
-class UniqueNode(StructuredNode):
+class UniqueNode(DjangoNode):
     @classmethod
     def category(cls):
         pass

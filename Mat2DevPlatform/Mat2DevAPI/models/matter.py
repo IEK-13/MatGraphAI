@@ -65,6 +65,8 @@ class ManufacturedDevice(Manufactured):
 
 
 class MEA(ManufacturedFuelCellComponent):
+    class Meta:
+        app_label = 'Mat2DevAPI'
     pass
 
 
