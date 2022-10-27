@@ -1,17 +1,22 @@
-from neomodel import RelationshipFrom
+from django.db.models import ForeignKey, CASCADE
+from neomodel import IntegerProperty, RelationshipFrom
+from neomodel import (RelationshipTo, FloatProperty)
 
-from .processes import *
-
-
-# Abstract Classes Containing Chemical and manufactured Entities
+from Mat2DevAPI.choices.ChoiceFields import COMPONENT_TYPE_CHOICES
+from Mat2DevAPI.models import hasPart, isManufacturingInput, hasManufacturingOutput, \
+    isMeasured
+from Mat2DevAPI.models.abstractclasses import *
 
 
 class Matter(CausalObject):
-    isManufactured = RelationshipTo("Manufacturing", "isMeasurementInput",
-                                    model=isManufacturingInput)
-    isOutput = RelationshipFrom("Manufacturing", "isManufacturingOutput",
+    isManufactured = RelationshipTo(
+        ForeignKey("Manufacturing", on_delete=CASCADE, verbose_name='Manufacturing Details'), "isMeasurementInput",
+        model=isManufacturingInput)
+    isOutput = RelationshipFrom(ForeignKey("Manufacturing", on_delete=CASCADE, verbose_name='Manufacturing Details'),
+                                "isManufacturingOutput",
                                 model=hasManufacturingOutput)
-    measured = RelationshipTo("Measurement", "isMeasured",
+    measured = RelationshipTo(ForeignKey("Measurement", on_delete=CASCADE, verbose_name='Manufacturing Details'),
+                              "isMeasured",
                               model=isMeasured)
 
 
@@ -20,129 +25,50 @@ class ChemicalEntity(Matter):
 
 
 class Molecule(ChemicalEntity):
+    # IDENTIFIERS
+    SMILES = StringProperty()
+    InChIKey = StringProperty()
+    InChI = StringProperty()
+    CompoundCID = IntegerProperty()
+    IUPACName = StringProperty()
+    sumFormula = StringProperty()
+    CAS = StringProperty()
+
+    # GENERAL PROPERTIES
+    AlternativeNames = ArrayProperty()
     nAtoms = IntegerProperty()
-    hasAtom = RelationshipTo("Atom", "hasPart", model=hasPart)
-    pass
+    molWeight = FloatProperty()
+    charge = IntegerProperty()
+
+    # ADDITIONAL INFORMATION
+    date_added = DateTimeProperty()
+    hasAtom = RelationshipTo("Element", "hasPart", model=hasPart)
 
 
-class Atom(ChemicalEntity):
+class Element(ChemicalEntity):
     pass
 
 
 class Manufactured(Matter):
-    hasAtom = RelationshipTo("Atom", "hasPart", model=hasPart)
-    pass
-
-
-class Material(Matter):
-    pass
-
-
-class ManufacturedMaterial(Manufactured, Material):
+    hasElement = RelationshipTo("Element", "hasPart", model=hasPart)
     hasMolecule = RelationshipTo("Molecule", "hasPart", model=hasPart)
     pass
 
 
-class ManufacturedComponent(Manufactured):
+class Material(Manufactured):
+    pass
+
+
+class Component(Manufactured):
+
+    type = StringProperty(choices=COMPONENT_TYPE_CHOICES, required=True)
     hasMaterial = RelationshipTo("Material", "hasPart", model=hasPart)
     hasComponent = RelationshipTo(
-        "ManufacturedComponent", "hasPart", model=hasPart)
-    pass
+        "Component", "hasPart", model=hasPart)
 
 
-class ManufacturedFuelCellComponent(ManufacturedComponent):
-    pass
-
-
-class ManufacturedDevice(Manufactured):
+class Device(Manufactured):
     hasMaterial = RelationshipTo("Material", "hasPart", model=hasPart)
     hasComponent = RelationshipTo(
-        "ManufacturedComponent", "hasPart", model=hasPart)
-    pass
-
-
-# Manufactured components
-
-
-class MEA(ManufacturedFuelCellComponent):
-    class Meta:
-        app_label = 'Mat2DevAPI'
-    pass
-
-
-class CatalystLayer(ManufacturedFuelCellComponent):
-    pass
-
-
-class GDL(ManufacturedFuelCellComponent):
-    pass
-
-
-class Membrane(ManufacturedFuelCellComponent):
-    pass
-
-
-class BipolarPlate(ManufacturedFuelCellComponent):
-    pass
-
-
-class Seal(ManufacturedFuelCellComponent):
-    pass
-
-
-class CoolingPlate(ManufacturedFuelCellComponent):
-    pass
-
-
-# Materials Classes
-
-
-class Catalyst(ManufacturedMaterial):
-    pass
-
-
-class CatalystInk(ManufacturedMaterial):
-    pass
-
-
-class Metal(ManufacturedMaterial):
-    pass
-
-
-class Composite(ManufacturedMaterial):
-    pass
-
-
-class CarbonBasedMaterial(ManufacturedMaterial):
-    pass
-
-
-class TransferSubstrate(ManufacturedMaterial):
-    pass
-
-
-# ManufacturedDevices
-
-
-class FuelCell(ManufacturedDevice):
-    hasMaterial = RelationshipTo("Material", "hasPart", model=hasPart)
-    hasMEA = RelationshipTo("MEA", "hasPart", model=hasPart)
-    hasSeal = RelationshipTo("Seal", "hasPart", model=hasPart)
-    hasBipolarPlatePlate = RelationshipTo(
-        "BipolarPlate", "hasPart", model=hasPart)
-    pass
-
-
-# Molecules
-
-
-class Polymer(Molecule):
-    pass
-
-
-class Ionomer(Polymer):
-    pass
-
-
-class Solvent(Molecule):
+        "Component", "hasPart", model=hasPart)
     pass

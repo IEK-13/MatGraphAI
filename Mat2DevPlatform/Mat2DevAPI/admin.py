@@ -1,9 +1,31 @@
-from django.contrib import admin as dj_admin
-from django_neomodel import admin as neo_admin
+from Mat2DevAPI.admins.matter import *
+from Mat2DevAPI.models.metadata import (Researcher)
+from Mat2DevAPI.models.processes import (Manufacturing,
+                                         Measurement)
+from Mat2DevAPI.models.properties import (Property,
+                                          Parameter)
 
-from Mat2DevAPI.models.matter import MEA
 
-class MEAAdmin(dj_admin.ModelAdmin):
+@dj_admin.register(Property)
+class PropertyAdmin(dj_admin.ModelAdmin):
+    list_display = ("uid",)
+
+
+@dj_admin.register(Parameter)
+class ParameterAdmin(dj_admin.ModelAdmin):
+    list_display = ("uid",)
+
+
+@dj_admin.register(Researcher)
+class ResearcherAdmin(dj_admin.ModelAdmin):
     list_display = ("name",)
 
-neo_admin.register(MEA, MEAAdmin)
+
+@dj_admin.register(Measurement)
+class MeasurementAdmin(dj_admin.ModelAdmin):
+    list_display = ("uid",)
+
+
+@dj_admin.register(Manufacturing)
+class ManufacturingAdmin(dj_admin.ModelAdmin):
+    list_display = ("uid",)

@@ -1,9 +1,11 @@
 from neomodel import (RelationshipTo, RelationshipFrom)
 
-from .abstractclasses import *
+from Mat2DevAPI.models.abstractclasses import *
 
 
 class PhysicalDimension(CausalObject):
+    class Meta:
+        app_label = 'Mat2DevAPI'
     pass
 
 
@@ -14,23 +16,3 @@ class Property(PhysicalDimension):
 
 class Parameter(PhysicalDimension):
     parameter = RelationshipFrom("Process", "usesParameter")
-
-
-class OpticalProperty(Property):
-    pass
-
-
-class ElectricalProperty(Property):
-    pass
-
-
-class ChemicalProperty(Property):
-    pass
-
-
-class VolumetricProperty(Property):
-    pass
-
-
-class MechanicalProperty(Property):
-    pass
