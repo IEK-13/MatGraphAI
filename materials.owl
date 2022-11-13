@@ -1,0 +1,201 @@
+@prefix : <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials> .
+
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ActiveMaterial
+:ActiveMaterial rdf:type owl:Class ;
+                rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AnisotropicMaterial
+:AnisotropicMaterial rdf:type owl:Class ;
+                     rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ceramic
+:Ceramic rdf:type owl:Class ;
+         rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CompositeMaterial
+:CompositeMaterial rdf:type owl:Class ;
+                   rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EnergyMaterial
+:EnergyMaterial rdf:type owl:Class ;
+                rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial
+:FunctionalMaterial rdf:type owl:Class ;
+                    rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeterogenousMaterial
+:HeterogenousMaterial rdf:type owl:Class ;
+                      rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoGenousMaterial
+:HomoGenousMaterial rdf:type owl:Class ;
+                    rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IsotropicMaterial
+:IsotropicMaterial rdf:type owl:Class ;
+                   rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Manufactured
+:Manufactured rdf:type owl:Class ;
+              rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material
+:Material rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Metal
+:Metal rdf:type owl:Class ;
+       rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial
+:NanoMaterial rdf:type owl:Class ;
+              rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NaturalMaterial
+:NaturalMaterial rdf:type owl:Class ;
+                 rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf :NanoMaterial .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf :NanoMaterial .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf :NanoMaterial .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf :NanoMaterial .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer
+<http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf :Material .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ActiveMaterial
+                :AnisotropicMaterial
+                :Ceramic
+                :CompositeMaterial
+                :EnergyMaterial
+                :FunctionalMaterial
+                :HeterogenousMaterial
+                :HomoGenousMaterial
+                :IsotropicMaterial
+                :Manufactured
+                :Metal
+                :NanoMaterial
+                :NaturalMaterial
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ActiveMaterial
+                :AnisotropicMaterial
+                :Ceramic
+                :EnergyMaterial
+                :FunctionalMaterial
+                :HeterogenousMaterial
+                :HomoGenousMaterial
+                :IsotropicMaterial
+                :Manufactured
+                :Metal
+                :NanoMaterial
+                :NaturalMaterial
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ActiveMaterial
+                :AnisotropicMaterial
+                :Ceramic
+                :EnergyMaterial
+                :FunctionalMaterial
+                :IsotropicMaterial
+                :Manufactured
+                :Metal
+                :NanoMaterial
+                :NaturalMaterial
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ActiveMaterial
+                :Ceramic
+                :EnergyMaterial
+                :FunctionalMaterial
+                :Manufactured
+                :Metal
+                :NanoMaterial
+                :NaturalMaterial
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Ceramic
+                :EnergyMaterial
+                :Manufactured
+                :Metal
+                :NanoMaterial
+                :NaturalMaterial
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial>
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial>
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial>
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
