@@ -1,9 +1,13 @@
 from django.urls import path
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import re_path as url
 
 from . import views
+from Mat2DevAPI.views.matterView import ElementAutocompleteView
 
 urlpatterns = [
-    path('', views.index, name='index')
+    url(
+        r'^autocomplete/element/$',
+        ElementAutocompleteView.as_view(),
+        name='element-autocomplete',
+    )
 ]

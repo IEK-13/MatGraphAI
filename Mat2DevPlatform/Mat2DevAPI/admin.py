@@ -1,4 +1,5 @@
-from Mat2DevAPI.admins.matter import *
+from Mat2DevAPI.admins.adminMatter import *
+from Mat2DevAPI.admins.adminProperties import *
 from Mat2DevAPI.models.metadata import (Researcher)
 from Mat2DevAPI.models.processes import (Manufacturing,
                                          Measurement)

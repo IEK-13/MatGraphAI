@@ -4,61 +4,31 @@ from neomodel import (AliasProperty,
                       UniqueIdProperty,
                       DateTimeProperty,
                       ArrayProperty)
-
-
-class UniqueNamedNode(DjangoNode):
-    class Meta:
-        app_label = 'Mat2DevAPI'
-
-    uid = UniqueIdProperty(
-        primary_key=True
-    )
-    name = StringProperty()
-    __abstract_node__ = True
-
-    # django (esp. admin) use .pk in a few places and expect a UUID.
-    # add an AliasProperty to handle this
-    @classproperty
-    def _meta(self):
-        opts = super()._meta
-        self.pk = AliasProperty(to='uid')
-        return opts
-
+from django.apps import apps
 
 class UIDDjangoNode(DjangoNode):
+
     uid = UniqueIdProperty(
         primary_key=True
     )
 
     __abstract_node__ = True
 
-    # django (esp. admin) use .pk in a few places and expect a UUID.
+    # django (esp. admin) uses .pk in a few places and expects a UUID.
     # add an AliasProperty to handle this
     @classproperty
     def _meta(self):
+        self.Meta.app_label = apps.get_containing_app_config(self.__module__).label
         opts = super()._meta
         self.pk = AliasProperty(to='uid')
         return opts
 
     class Meta:
-        app_label = "Mat2DevAPI"  # required for some django function (esp. admin)
-
-
-class testClass(UIDDjangoNode):
-    def __str__(self):
-        return self.uid
-
-    pass
-
-
-class NamedNode(DjangoNode):
-    @classmethod
-    def category(cls):
         pass
 
-    date_added = DateTimeProperty(required=True)
+
+class UINamedNode(UIDDjangoNode):
     name = StringProperty()
-    __abstract_node__ = True
 
 
 class UniqueNode(DjangoNode):
@@ -70,8 +40,8 @@ class UniqueNode(DjangoNode):
     __abstract_node__ = True
 
 
-class CausalObject(UniqueNamedNode):
-    __abstract_node__ = True
+class CausalObject(UIDDjangoNode):
+    date_added = DateTimeProperty(required=True)
 
 
 class AlternativeLabelMixin:

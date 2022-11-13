@@ -1,0 +1,19 @@
+
+/* increase size of select2-autocomplete dropdown */
+.select2 {
+    min-width: 500px !important;
+}
+
+/* increase autocomplete width for skill tables */
+.tabular .select2 {
+    min-width: 600px !important;
+}
+
+/* make save button sticky */
+input[name="_save"] {
+    bottom: 20px;
+    position: sticky;
+}
+p.paginator {
+    display: contents;
+}

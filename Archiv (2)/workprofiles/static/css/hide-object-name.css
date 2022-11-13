@@ -1,0 +1,7 @@
+/* hide object name in TabularInline tables */
+td.original p {
+    visibility: hidden;
+}
+.inline-group .tabular tr.has_original td {
+    padding-top: 5px;
+}

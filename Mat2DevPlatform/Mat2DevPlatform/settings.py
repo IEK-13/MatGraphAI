@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'related_admin',
     'admin_interface',
+    'dal',
+    'dal_select2'
 
 ]
 

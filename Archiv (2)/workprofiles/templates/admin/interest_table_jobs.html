@@ -1,0 +1,80 @@
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+        cursor: pointer;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 400px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -200px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext, .tooltiptext:hover {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+
+<table>
+
+    <tr>
+        <th style="width: 170px">Datum</th>
+        <th style="width: 250px">Job</th>
+        <th style="width: 50px">Unternehmen</th>
+        <th>Fragen</th>
+    </tr>
+
+    {% for job, interest in interests %}
+        <tr>
+            <td>{{ interest.when }}</td>
+            <td>
+                <a href="/admin/skills/jobadvert/{{ job.uid }}">
+                    <u><b>{{ job.title }}</b></u>
+                </a>
+            </td>
+            <td>{{ job.company_name }}</td>
+        </tr>
+        <td>
+            {% if interest.story_answers %}
+            <div class="tooltip">
+                Antworten
+                <span class="tooltiptext">
+                            {% for question in interest.story_answers %}
+                                {{ question.question }} -
+                                <b>
+                                    {% if question.answer %}Ja{% else %}Nein{% endif %}
+                                </b>
+                                <br/>
+                            {% endfor %}
+                        </span>
+            </div>
+            {% endif %}
+        </td>
+    {% endfor %}
+
+</table>

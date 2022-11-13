@@ -1,15 +1,51 @@
-from .dataproperties import *
-from .matter import *
+from neomodel import (RelationshipTo,
+                      StringProperty,
+                      RelationshipFrom,
+                      FloatProperty,
+                      BooleanProperty
+                      )
+from django.db import models
+
+from Mat2DevAPI.models.abstractclasses import CausalObject
+from Mat2DevAPI.models.metadata import Researcher, Instrument
+from Mat2DevAPI.models.relationships import inLocationRel, hasParticipantRel, byResearcherRel, byDeviceRel, \
+    subProcessRel, hasFileOutputRel, isManufacturingInputRel, hasMeasurementOutputRel, hasParameterInputRel
+from Mat2DevAPI.choices.ChoiceFields import GRANULARITY_TYPE_CHOICEFIELD, MEASUREMENT_TYPE_CHOICEFIELD
 
 
 class Process(CausalObject):
-    uid = UniqueIdProperty()
-    date = DateTimeProperty()
+    # Organizational Data
+    run_title = StringProperty(unique=True)
+    run_id = StringProperty(unique=True)
+    sample_id = StringProperty(unique=True)
+    Institution = StringProperty(unique=True)
+    public_access = BooleanProperty()
+
+    # Relationships
     participant = RelationshipTo(
-        "Parameter", hasParticipant, model=hasParticipant)
-    researcher = RelationshipTo("Researcher", byResearcher, model=byResearcher)
-    instrument = RelationshipTo("Instrument", byDevice)
-    subProcess = RelationshipTo("SubProcess", "subProcess", model=subProcess)
+        "Parameter", hasParticipantRel, model=hasParticipantRel)
+    researcher = RelationshipTo(Researcher, byResearcherRel, model=byResearcherRel)
+    instrument = RelationshipTo(Instrument, byDeviceRel)
+    subProcess = RelationshipTo("SubProcess", subProcessRel, model=subProcessRel)
+    isProcessMoleculeInput = RelationshipFrom(models.ForeignKey("Molecule",
+                                                                on_delete=models.deletion.CASCADE),
+                                              isManufacturingInputRel,
+                                              model=isManufacturingInputRel)
+    isProcessComponentInput = RelationshipFrom(models.ForeignKey("Component",
+                                                                 on_delete=models.deletion.CASCADE),
+                                               isManufacturingInputRel,
+                                               model=isManufacturingInputRel)
+    isProcessMaterialInput = RelationshipFrom(models.ForeignKey("Material",
+                                                                on_delete=models.deletion.CASCADE),
+                                              isManufacturingInputRel,
+                                              model=isManufacturingInputRel)
+    inCountry = RelationshipTo(models.ForeignKey("Country", on_delete=models.deletion.CASCADE),
+                               inLocationRel, model=inLocationRel)
+    inCity = RelationshipTo(models.ForeignKey("City", on_delete=models.deletion.CASCADE),
+                            inLocationRel, model=inLocationRel)
+    inInstitution = RelationshipTo(models.ForeignKey("Institution", on_delete=models.deletion.CASCADE),
+                                   inLocationRel, model=inLocationRel)
+
     __abstract_node__ = True
 
     class Meta:
@@ -24,35 +60,25 @@ class SubProcess(Process):
 
 
 class Manufacturing(Process):
-    isManufacturingMoleculeInput = RelationshipFrom("Molecule", "isManufacturingInput",
-                                                    model=isManufacturingInput)
-    isManufacturingComponentInput = RelationshipFrom("Component", "isManufacturingInput",
-                                                     model=isManufacturingInput)
-    isManufacturingMaterialInput = RelationshipFrom("Material", "isManufacturingInput",
-                                                    model=isManufacturingInput)
-    pass
-
-
-class FuelCellManufacturing(Manufacturing):
     pass
 
 
 class Measurement(Process):
-    hasMeasurementOutput = RelationshipTo(ForeignKey("Property", on_delete=CASCADE, verbose_name='Property Details'),
-                                          "hasMeasurementOutput",
-                                          model=hasMeasurementOutput)
-    ComponentInput = RelationshipFrom("Component", "isMeasured",
-                                      model=isMeasured)
-    DeviceInput = RelationshipFrom("Material", "isMeasured",
-                                   model=isMeasured)
-    MaterialInput = RelationshipFrom("Material", "isMeasured",
-                                     model=isMeasured)
-    pass
+    type = StringProperty(choices=MEASUREMENT_TYPE_CHOICEFIELD)
+    granularity_level = StringProperty(choices=GRANULARITY_TYPE_CHOICEFIELD)
+    hasMeasurementOutput = RelationshipTo(models.ForeignKey("Property",
+                                                            on_delete=models.deletion.CASCADE),
+                                          hasMeasurementOutputRel,
+                                          model=hasMeasurementOutputRel)
+    hasFileOutput = RelationshipTo(models.ForeignKey("Property",
+                                                     on_delete=models.deletion.CASCADE),
+                                   hasFileOutputRel,
+                                   model=hasFileOutputRel),
 
 
-class Parameter(DjangoNode):
+class Parameter(CausalObject):
     name = StringProperty(unique_index=True, required=True)
     value = FloatProperty()
     error = FloatProperty()
-    parameter = RelationshipTo(Measurement, "hasParameterInput",
-                               model=hasParameterInput)
+    parameter = RelationshipTo(Measurement, hasParameterInputRel,
+                               model=hasParameterInputRel)

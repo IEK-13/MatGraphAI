@@ -1,11 +1,8 @@
-from django.contrib.admin.views.main import ChangeList
+from dal import autocomplete
 from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.forms import Select
 from django import forms
-from neomodel import db, RelationshipManager, StringProperty
-from neomodel.match import QueryBuilder
-
-from django.contrib.admin import ModelAdmin
+from neomodel import db, RelationshipManager
 
 
 class ChoiceWidgetBase:
@@ -47,7 +44,7 @@ class RelationSingleChoiceWidget(ChoiceWidgetBase, Select):
     @property
     def choices(self):
         if self.include_none_option:
-            return [(None, '---')] + super().choices
+            return [(None, '---')]+super().choices
         else:
             return super().choices
 
@@ -109,8 +106,7 @@ class RelationMultipleChoiceField(RelationChoiceFieldBase, forms.MultipleChoiceF
 
     def __init__(self, node_label, name_plural, primary_key='uid', label_field='label', **kwargs):
         super().__init__(
-            widget=RelationMultipleChoiceWidget(name_plural, False, node_label=node_label, primary_key=primary_key,
-                                                label_field=label_field),
+            widget=RelationMultipleChoiceWidget(name_plural, False, node_label=node_label, primary_key=primary_key, label_field=label_field),
             primary_key=primary_key,
             **kwargs
         )
@@ -120,33 +116,15 @@ class RelationSingleChoiceField(RelationChoiceFieldBase, forms.ChoiceField):
 
     def __init__(self, node_label, primary_key='uid', label_field='label', include_none_option=True, **kwargs):
         super().__init__(
-            widget=RelationSingleChoiceWidget(node_label=node_label, primary_key=primary_key, label_field=label_field,
-                                              include_none_option=include_none_option),
+            widget=RelationSingleChoiceWidget(node_label=node_label, primary_key=primary_key, label_field=label_field, include_none_option=include_none_option),
             primary_key=primary_key,
             **kwargs
         )
 
 
-class QuotaChoiceField(forms.ChoiceField):
-    CHOICES = [
-        (10, '10%'),
-        (20, '20%'),
-        (30, '30%'),
-        (40, '40%'),
-        (50, '50%'),
-        (60, '60%'),
-        (70, '70%'),
-        (80, '80%'),
-        (90, '90%'),
-        (100, '100%'),
-    ]
-
-    def __init__(self, *args, **kwargs):
-        kwargs['choices'] = self.CHOICES
-        super().__init__(*args, **kwargs)
-
 
 class NeoModelForm(forms.ModelForm):
+
     labels = {}
 
     def __init__(self, *args, **kwargs):
@@ -189,53 +167,22 @@ class NeoModelForm(forms.ModelForm):
         return instance
 
 
-class LocaleOrderingQueryBuilder(QueryBuilder):
+class AutocompleteSingleChoiceField(RelationSingleChoiceField):
 
-    def build_order_by(self, ident, source):
+    label_property = 'label'
+    model = None
+    autocomplete_url = None
 
-        # cypher uses reversed ordering
-        source._order_by.reverse()
+    def __init__(self, **kwargs):
+        super().__init__(self.model, **kwargs)
+        self.widget = autocomplete.Select2(url=self.autocomplete_url, attrs={'style': 'width: 270px;'})
 
-        if '?' in source._order_by:
-            super().build_order_by(ident, source)
-        else:
-            self._ast['order_by'] = []
-            for p in source._order_by:
-                field = p.split(' ')[0]
-                if isinstance(getattr(source.model, field), StringProperty):
-                    self._ast['order_by'].append(f'apoc.text.clean({ident}.{field}) {p.replace(field, "")}')
-                else:
-                    self._ast['order_by'].append(f'{ident}.{p}')
+    def prepare_value(self, value):
 
+        # make sure selected value is in choices to have it displayed right away
+        if value and len(value):
+            self.widget.choices = [
+                (value, getattr(self.model.nodes.get(uid=value), self.label_property))
+            ]
 
-# fixes ordering
-class NeoAdminChangelist(ChangeList):
-
-    # only support ordering by one column to keep things simple by now
-    def get_ordering(self, request, queryset):
-        return super().get_ordering(request, queryset)[0:1]
-
-
-class NodeModelAdmin(ModelAdmin):
-    node_primary_key = 'uid'
-    node_changelist_formset = None
-    node_changelist_form = None
-
-    # very important, unordered datasets save data in random places...
-    ordering = ('uid',)
-
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        qs.query_cls = LocaleOrderingQueryBuilder
-        return qs
-
-    def get_changelist(self, request, **kwargs):
-        return NeoAdminChangelist
-
-    def get_changelist_formset(self, request, **kwargs):
-        if self.node_changelist_form and self.node_changelist_formset:
-            return forms.formset_factory(self.node_changelist_form, formset=self.node_changelist_formset)
-        return super().get_changelist_formset(request, **kwargs)
-
-    def save(self, commit):
-        pass
+        return value
