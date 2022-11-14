@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: django-nonrelated-inlines
+Version: 0.1.1
+Summary: Django admin inlines for unrelated models
+Home-page: https://github.com/bhomnick/django-nonrelated-inlines
+Author: Ben Homnick
+Author-email: bhomnick@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 2.0
+Classifier: Framework :: Django :: 2.1
+Classifier: Framework :: Django :: 2.2
+Classifier: Framework :: Django :: 3.0
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Flake8
+Classifier: Framework :: tox
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+Requires-Dist: Django (>=2.0)
+
+# django-nonrelated-inlines
+
+Django admin inlines for unrelated models
+
+![CircleCI](https://img.shields.io/circleci/build/github/bhomnick/django-nonrelated-inlines)
+![PyPI](https://img.shields.io/pypi/v/django-nonrelated-inlines)
+
+## Getting started
+
+This app allows you to create admin inlines for models that don't have an
+explicit foreign key relationship.
+
+To use, subclass your inline from
+`NonrelatedStackedInline` and add `get_form_queryset` and `save_new_instance`
+methods.
+
+* `get_form_queryset(self, obj)` returns all objects that should be shown in
+  the inline formset.
+* `save_new_instance(self, parent, instance)` given a parent object and a new
+  child object instance should associate the child object with the parent.
+
+For example, let's assume we have `Customer` and `Invoice` models. `Invoice`
+objects are associated with a `Customer` if they share the same email address.
+
+```python
+from nonrelated_inlines.admin import NonrelatedStackedInline
+
+
+class CustomerInvoiceStackedInline(NonrelatedStackedInline):
+    model = Invoice
+    fields = [
+        'id',
+        'amount'
+    ]
+
+    def get_form_queryset(self, obj):
+        return self.model.objects.filter(email=obj.email)
+
+    def save_new_instance(self, parent, instance):
+        instance.email = parent.email
+```
+
+When viewing an `Customer` instance, we fetch a queryset of all `Invoice`
+instances sharing the same email address. Similarly, when saving a new `Invoice`
+instance we make sure to set its email attribute to the same value as its parent
+`Customer`.
+
+

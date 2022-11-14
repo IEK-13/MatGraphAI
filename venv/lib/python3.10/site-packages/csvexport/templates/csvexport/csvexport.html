@@ -1,0 +1,34 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n %}
+
+{% block extrahead %}
+    {{ block.super }}
+    {{ fields_form.media }}
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="csvexport" />
+    <input type="hidden" name="csvexport" value="csvexport" />
+    {% if unique_form %}
+        <table>{{ unique_form }}</table>
+    {% endif %}
+    {% if format_form %}
+        <h2>CSV-Format</h2><hr>
+        <table>{{ format_form }}</table>
+    {% endif %}
+    <h2>Model-Fields</h2><hr>
+    <table>{{ fields_form }}</table>
+
+    {% for object in objects %}
+        <input type="hidden" name="_selected_action" value="{{ object.pk }}">
+    {% endfor %}
+
+    <div>
+        <input type="submit" name="csvexport_view" value="{% trans "View" %}" />
+        <input type="submit" name="csvexport_download" value="{% trans "Download" %}" />
+        <a style="padding:10px 15px" href="" class="button cancel-link">{% trans "No, take me back" %}</a>
+    </div>
+</form>
+{% endblock %}

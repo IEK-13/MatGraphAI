@@ -1,4 +1,4 @@
-#!/home/maxdreger/Documents/studies/phd/MaterialDevicePlatform/venv/bin/python3
+#!/home/mdreger/Documents/phd/MatGraphAI/venv/bin/python
 from __future__ import print_function
 from os import environ
 from argparse import ArgumentParser
