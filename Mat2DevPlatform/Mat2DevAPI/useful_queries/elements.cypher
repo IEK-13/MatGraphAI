@@ -31,7 +31,7 @@ MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
      (melt:EMMO_Quantity {EMMO__name: "MeltingPoint"}),
      (electronegativity:EMMO_Quantity {EMMO__name: "ElectronegativityPauling"}),
      (electronaffinity:EMMO_Quantity {EMMO__name: "ElectronAffinity"}),
-     (ionizationenergy:EMMO_Quantity {EMMO__name: "IonizationEnergy"}),
+     (ionizationenergy:EMMO_Quantity {EMMO__name: "IonizationEnergy"})
 
 
 
@@ -54,7 +54,7 @@ CREATE (element)-[:HAS_INTEGER_PROPERTY {value : line.number}]->(atomicnumber)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.atomic_mass)}]->(atomicmass)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.number)}]->(molarheat)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.density)}]->(density)
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.melt)}]->(ionizationenergy)
+CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.melt)}]->(melt)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.electronegativity_pauling)}]->(electronegativity)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.electron_affinity)}]->(electronaffinity)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.ionization_energies)}]->(ionizationenergy)
