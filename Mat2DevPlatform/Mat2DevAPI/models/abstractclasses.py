@@ -20,12 +20,16 @@ class UIDDjangoNode(DjangoNode):
     def _meta(self):
         self.Meta.app_label = apps.get_containing_app_config(self.__module__).label
         opts = super()._meta
+        opts.concrete_model = opts.model
         self.pk = AliasProperty(to='uid')
         return opts
 
     class Meta:
         pass
-
+    def __hash__(self):
+        if self.uid is None:
+            raise TypeError("Model instances without primary key value are unhashable")
+        return hash(self.uid)
 
 class UINamedNode(UIDDjangoNode):
     name = StringProperty()
