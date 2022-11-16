@@ -756,6 +756,16 @@
               rdfs:subClassOf :Mass .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Electronegativity
+:Electronegativity rdf:type owl:Class ;
+                   rdfs:subClassOf :DimensionlessQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronegativityPauling
+:ElectronegativityPauling rdf:type owl:Class ;
+                          rdfs:subClassOf :Electronegativity .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronicConductance
 :ElectronicConductance rdf:type owl:Class ;
                        rdfs:subClassOf :ElectricConductance .
@@ -1356,6 +1366,12 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MechanicalQuantity
 :MechanicalQuantity rdf:type owl:Class ;
                     rdfs:subClassOf :StandardizedPhysicalQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MeltingPoint
+:MeltingPoint rdf:type owl:Class ;
+              rdfs:subClassOf :Temperature ,
+                              :ThermodynamicalQuantity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MembraneVoltage

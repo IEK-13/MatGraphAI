@@ -24,7 +24,16 @@ SET n:EMMO_Quantity;
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/elements.csv' AS line
 
-MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}), (atomicmass:EMMO_Quantity {EMMO__name: "AtomicMass"}), (molarheat:EMMO_Quantity {EMMO__name: "MolarHeat"}), (density:EMMO_Quantity {EMMO__name: "Density"})
+MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
+     (atomicmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),
+     (molarheat:EMMO_Quantity {EMMO__name: "MolarHeat"}),
+     (density:EMMO_Quantity {EMMO__name: "Density"}),
+     (melt:EMMO_Quantity {EMMO__name: "MeltingPoint"}),
+     (electronegativity:EMMO_Quantity {EMMO__name: "ElectronegativityPauling"}),
+     (electronaffinity:EMMO_Quantity {EMMO__name: "ElectronAffinity"}),
+     (ionizationenergy:EMMO_Quantity {EMMO__name: "IonizationEnergy"}),
+
+
 
 // Create Nodes
 CREATE (element:Element {name: line.name, summary: line.summary, abbreviation : line.symbol})
@@ -45,5 +54,7 @@ CREATE (element)-[:HAS_INTEGER_PROPERTY {value : line.number}]->(atomicnumber)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.atomic_mass)}]->(atomicmass)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.number)}]->(molarheat)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.density)}]->(density)
-
-
+CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.melt)}]->(ionizationenergy)
+CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.electronegativity_pauling)}]->(electronegativity)
+CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.electron_affinity)}]->(electronaffinity)
+CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.ionization_energies)}]->(ionizationenergy)
