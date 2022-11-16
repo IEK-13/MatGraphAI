@@ -1428,6 +1428,11 @@
                   rdfs:subClassOf :PhysioChemicalQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarHeat
+:MolarHeat rdf:type owl:Class ;
+           rdfs:subClassOf :Heat .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarHeatCapacity
 :MolarHeatCapacity rdf:type owl:Class ;
                    rdfs:subClassOf :DerivedQuantity ,
