@@ -5,4 +5,4 @@ baseSchemaPrefix:"EMMO",
 subClassOfRel:"IS_A"}
 );
 
-call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/materials.owl","Turtle")
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/quantities.owl","Turtle")
