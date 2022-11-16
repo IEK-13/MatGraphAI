@@ -60,7 +60,7 @@ MEDIA_URL = '/media/'
 
 # you are free to add this configurations
 NEOMODEL_NEO4J_BOLT_URL = os.environ.get(
-    'NEO4J_BOLT_URL', 'bolt://neo4j:herrklo1@localhost:11005/test2')
+    'NEO4J_BOLT_URL', 'bolt://neo4j:phdproject@localhost:11012/test2')
 NEOMODEL_SIGNALS = True
 NEOMODEL_FORCE_TIMEZONE = False
 NEOMODEL_ENCRYPTED_CONNECTION = True
