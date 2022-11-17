@@ -30,7 +30,7 @@ with open('solvents.csv', 'r') as read_obj:
         rows.append(row)
 
         print(row)
-        break
+
             # Atomdict[ding2[0]] = ding2[1]
 with open('solvents1.csv', 'w') as read_obj:
     csv_reader = writer(read_obj)

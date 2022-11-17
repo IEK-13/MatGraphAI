@@ -81,5 +81,5 @@ MATCH(mass:EMMO_Quantity {EMMO__name: "AverageMass"}),
 
 CREATE(solvent:Molecule {name: line.PREFERREDNAME,
 SMILES : line.SMILES,
-InChi_Key : line.INNCHIKEY,
+InChi_Key : line.INCHIKEY,
 IUPACName : line.IUPACNAME})
