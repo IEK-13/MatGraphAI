@@ -62,7 +62,7 @@ CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.ionization_energies)
 
 // Solvents import starts here
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/solvents.csv' AS line
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/solvents1.csv' AS line
 
 MATCH(mass:EMMO_Quantity {EMMO__name: "AverageMass"}),
      (avgmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),

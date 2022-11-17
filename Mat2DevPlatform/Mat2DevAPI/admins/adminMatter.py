@@ -47,7 +47,7 @@ class ElementAdmin(dj_admin.ModelAdmin):
     class Meta:
         pass
 
-    list_display = ("name", "abbreviation", "atomic_number")
+    list_display = ("name", "abbreviation")
 
 
 @dj_admin.register(Molecule)
@@ -74,7 +74,6 @@ class MoleculeAdmin(dj_admin.ModelAdmin):
     def save_related(self, request, form, formsets, change):
         super().save_related(request, form, formsets, change)
         if len(form.cleaned_data['elements']) == 0:
-            print("drin")
             form.instance.preselect_skills()
 
     def check(self, **kwargs):

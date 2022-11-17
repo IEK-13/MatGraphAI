@@ -39,14 +39,7 @@ class ChemicalEntity(Matter):
 class Element(ChemicalEntity):
     name = StringProperty(unique_index= True, required = True)
     abbreviation = StringProperty(required=True, unique_index= True)
-    atomic_number = IntegerProperty(required = True, unique_index= True)
-    atomic_mass = FloatProperty(required = True)
-    period = IntegerProperty(required = True, unique_index = True)
-    source = StringProperty()
-    electron_configuration = StringProperty()
-    semantic_electron_configuration = StringProperty()
-    electron_affinity = FloatProperty()
-    electron_negativity = FloatProperty()
+    summary = StringProperty()
 
 
 
