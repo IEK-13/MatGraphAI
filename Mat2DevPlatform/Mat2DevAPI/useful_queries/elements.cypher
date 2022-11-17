@@ -22,6 +22,8 @@ call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGra
 MATCH (n:Resource{uri:subject})
 SET n:EMMO_Quantity;
 
+// Real Code Starts here
+
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/elements.csv' AS line
 
 MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
