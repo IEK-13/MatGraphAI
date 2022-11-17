@@ -23,7 +23,7 @@ MATCH (n:Resource{uri:subject})
 SET n:EMMO_Quantity;
 
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/elements.csv' AS line
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/elements.csv' AS line
 
 MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
      (atomicmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),
@@ -37,7 +37,7 @@ MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
 
 
 // Create Nodes
-CREATE (element:Element {name: line.name, summary: line.summary, abbreviation : line.symbol})
+CREATE (element:Element {name: line.name, summary: line.summary, symbol : line.symbol})
 
 
 FOREACH(x IN CASE WHEN line.discovered_by IS NOT NULL THEN [1] END |
@@ -62,27 +62,353 @@ CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.ionization_energies)
 
 // Solvents import starts here
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/solvents1.csv' AS line
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents1.csv' AS row
 
-MATCH (avgmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),
-     (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
-     (c:Element {symbol: "C"}),
-     (h:Element {symbol: "h"}),
-     (o:Element {symbol: "O"}),
-     (n:Element {symbol: "N"}),
-     (f:Element {symbol: "F"}),
-     (cl:Element {symbol: "Cl"}),
-     (p:Element {symbol: "P"}),
-     (br:Element {symbol: "Br"}),
-     (i:Element {symbol: "I"}),
-     (s:Element {symbol: "S"}),
-     (v:Element {symbol: "V"})
+MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
+      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+      (c:Element {symbol: "C"}),
+      (h:Element {symbol: "H"}),
+      (o:Element {symbol: "O"}),
+      (n:Element {symbol: "N"}),
+      (f:Element {symbol: "F"}),
+      (cl:Element {symbol: "Cl"}),
+      (p:Element {symbol: "P"}),
+      (br:Element {symbol: "Br"}),
+      (i:Element {symbol: "I"}),
+      (s:Element {symbol: "S"}),
+      (v:Element {symbol: "V"})
 
-CREATE(solvent:Molecule {name: line.PREFERREDNAME,
-SMILES : line.SMILES,
-InChi_Key : line.INCHIKEY,
-IUPAC_name : line.IUPACNAME,
-InChi: line.INCHISTRING,
-chemical_formula: line.MOLECULARFORMULA})
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/solvents1.csv' AS line MATCH(mass:EMMO_Quantity {EMMO__name: "AverageMass"}), (avgmass:EMMO_Quantity {EMMO__name: "AtomicMass"}), (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}), (c:Element {symbol: "C"}), (h:Element {symbol: "h"}), (o:Element {symbol: "O"}), (n:Element {symbol: "N"}), (f:Element {symbol: "F"}), (cl:Element {symbol: "Cl"}), (p:Element {symbol: "P"}), (br:Element {symbol: "Br"}), (i:Element {symbol: "I"}), (s:Element {symbol: "S"}), (v:Element {symbol: "V"}) CREATE(solvent:Molecule {name: line.PREFERREDNAME, SMILES : line.SMILES, InChi_Key : line.INCHIKEY, IUPAC_name : line.IUPACNAME, InChi: line.INCHISTRING, chemical_formula: line.MOLECULARFORMULA})
+CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+SMILES : row.SMILES,
+InChi_Key : row.INCHIKEY,
+IUPAC_name : row.IUPACNAME,
+InChi: row.INCHISTRING,
+chemical_formula: row.MOLECULARFORMULA})
+
+
+FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+
+FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+
+FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+
+FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+
+FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+
+FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+
+FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+
+FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+
+FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+
+FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+
+FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents2.csv' AS row
+
+MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
+      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+      (c:Element {symbol: "C"}),
+      (h:Element {symbol: "H"}),
+      (o:Element {symbol: "O"}),
+      (n:Element {symbol: "N"}),
+      (f:Element {symbol: "F"}),
+      (cl:Element {symbol: "Cl"}),
+      (p:Element {symbol: "P"}),
+      (br:Element {symbol: "Br"}),
+      (i:Element {symbol: "I"}),
+      (s:Element {symbol: "S"}),
+      (v:Element {symbol: "V"})
+
+
+CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+                         SMILES : row.SMILES,
+                         InChi_Key : row.INCHIKEY,
+                         IUPAC_name : row.IUPACNAME,
+                         InChi: row.INCHISTRING,
+                         chemical_formula: row.MOLECULARFORMULA})
+
+
+FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+
+FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+
+FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+
+FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+
+FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+
+FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+
+FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+
+FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+
+FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+
+FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+
+FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents3.csv' AS row
+
+MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
+      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+      (c:Element {symbol: "C"}),
+      (h:Element {symbol: "H"}),
+      (o:Element {symbol: "O"}),
+      (n:Element {symbol: "N"}),
+      (f:Element {symbol: "F"}),
+      (cl:Element {symbol: "Cl"}),
+      (p:Element {symbol: "P"}),
+      (br:Element {symbol: "Br"}),
+      (i:Element {symbol: "I"}),
+      (s:Element {symbol: "S"}),
+      (v:Element {symbol: "V"})
+
+
+CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+                         SMILES : row.SMILES,
+                         InChi_Key : row.INCHIKEY,
+                         IUPAC_name : row.IUPACNAME,
+                         InChi: row.INCHISTRING,
+                         chemical_formula: row.MOLECULARFORMULA})
+
+
+FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+
+FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+
+FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+
+FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+
+FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+
+FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+
+FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+
+FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+
+FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+
+FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+
+FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents4.csv' AS row
+
+MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
+      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+      (c:Element {symbol: "C"}),
+      (h:Element {symbol: "H"}),
+      (o:Element {symbol: "O"}),
+      (n:Element {symbol: "N"}),
+      (f:Element {symbol: "F"}),
+      (cl:Element {symbol: "Cl"}),
+      (p:Element {symbol: "P"}),
+      (br:Element {symbol: "Br"}),
+      (i:Element {symbol: "I"}),
+      (s:Element {symbol: "S"}),
+      (v:Element {symbol: "V"})
+
+
+CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+                         SMILES : row.SMILES,
+                         InChi_Key : row.INCHIKEY,
+                         IUPAC_name : row.IUPACNAME,
+                         InChi: row.INCHISTRING,
+                         chemical_formula: row.MOLECULARFORMULA})
+
+
+FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+
+FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+
+FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+
+FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+
+FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+
+FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+
+FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+
+FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+
+FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+
+FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+
+FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents5.csv' AS row
+
+MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
+      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+      (c:Element {symbol: "C"}),
+      (h:Element {symbol: "H"}),
+      (o:Element {symbol: "O"}),
+      (n:Element {symbol: "N"}),
+      (f:Element {symbol: "F"}),
+      (cl:Element {symbol: "Cl"}),
+      (p:Element {symbol: "P"}),
+      (br:Element {symbol: "Br"}),
+      (i:Element {symbol: "I"}),
+      (s:Element {symbol: "S"}),
+      (v:Element {symbol: "V"})
+
+
+CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+                         SMILES : row.SMILES,
+                         InChi_Key : row.INCHIKEY,
+                         IUPAC_name : row.IUPACNAME,
+                         InChi: row.INCHISTRING,
+                         chemical_formula: row.MOLECULARFORMULA})
+
+
+FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+
+FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+
+FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+
+FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+
+FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+
+FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+
+FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+
+FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+
+FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+
+FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+
+FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents6.csv' AS row
+
+MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
+      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+      (c:Element {symbol: "C"}),
+      (h:Element {symbol: "H"}),
+      (o:Element {symbol: "O"}),
+      (n:Element {symbol: "N"}),
+      (f:Element {symbol: "F"}),
+      (cl:Element {symbol: "Cl"}),
+      (p:Element {symbol: "P"}),
+      (br:Element {symbol: "Br"}),
+      (i:Element {symbol: "I"}),
+      (s:Element {symbol: "S"}),
+      (v:Element {symbol: "V"})
+
+
+CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+                         SMILES : row.SMILES,
+                         InChi_Key : row.INCHIKEY,
+                         IUPAC_name : row.IUPACNAME,
+                         InChi: row.INCHISTRING,
+                         chemical_formula: row.MOLECULARFORMULA})
+
+
+FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+
+FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+
+FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+
+FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+
+FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+
+FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+
+FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+
+FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+
+FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+
+FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+
+FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v))
+
+
+
