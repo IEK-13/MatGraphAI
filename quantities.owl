@@ -12,2338 +12,2348 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AboluteHumidity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AboluteHumidity
 :AboluteHumidity rdf:type owl:Class ;
                  rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AbsoluteActivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AbsoluteActivity
 :AbsoluteActivity rdf:type owl:Class ;
                   rdfs:subClassOf :Activity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AbsorbedDose
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AbsorbedDose
 :AbsorbedDose rdf:type owl:Class ;
               rdfs:subClassOf :AtomicAndNuclearPhysicsQuantity ,
                               :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Acceleration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Acceleration
 :Acceleration rdf:type owl:Class ;
               rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AcceptorDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AcceptorDensity
 :AcceptorDensity rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AccumulatedDuration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AccumulatedDuration
 :AccumulatedDuration rdf:type owl:Class ;
                      rdfs:subClassOf :Duration .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AcousticQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AcousticQuantity
 :AcousticQuantity rdf:type owl:Class ;
                   rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Action
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Action
 :Action rdf:type owl:Class ;
         rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ActivationEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActivationEnergy
 :ActivationEnergy rdf:type owl:Class ;
                   rdfs:subClassOf :Energy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ActiveMaterialLoading
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActiveMaterialLoading
 :ActiveMaterialLoading rdf:type owl:Class ;
                        rdfs:subClassOf :AreaDensity ,
                                        :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ActiveOverpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActiveOverpotential
 :ActiveOverpotential rdf:type owl:Class ;
                      rdfs:subClassOf :Overpotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Activity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Activity
 :Activity rdf:type owl:Class ;
           rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ActivityCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActivityCoefficient
 :ActivityCoefficient rdf:type owl:Class ;
                      rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ActivityFactor
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActivityFactor
 :ActivityFactor rdf:type owl:Class ;
                 rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ActivityOfSolute
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActivityOfSolute
 :ActivityOfSolute rdf:type owl:Class ;
                   rdfs:subClassOf :Activity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ActivityOfSolvent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActivityOfSolvent
 :ActivityOfSolvent rdf:type owl:Class ;
                    rdfs:subClassOf :Activity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AdsorptionCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AdsorptionCurrent
 :AdsorptionCurrent rdf:type owl:Class ;
                    rdfs:subClassOf :ElectricCurrent ,
                                    :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AffinityOfAChemicalReaction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AffinityOfAChemicalReaction
 :AffinityOfAChemicalReaction rdf:type owl:Class ;
                              rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AlterningCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AlterningCurrent
 :AlterningCurrent rdf:type owl:Class ;
                   rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AmountConcentration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AmountConcentration
 :AmountConcentration rdf:type owl:Class ;
                      rdfs:subClassOf :ChemicalCompositionQuantity ,
                                      :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AmountFraction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AmountFraction
 :AmountFraction rdf:type owl:Class ;
                 rdfs:subClassOf :ChemicalCompositionQuantity ,
                                 :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AmountOfSubstance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AmountOfSubstance
 :AmountOfSubstance rdf:type owl:Class ;
                    rdfs:subClassOf :ExtensiveQuantity ,
                                    :ISQBaseQuantity ,
                                    :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Angle
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Angle
 :Angle rdf:type owl:Class ;
        rdfs:subClassOf :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AngularAcceleration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AngularAcceleration
 :AngularAcceleration rdf:type owl:Class ;
                      rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AngularImpulse
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AngularImpulse
 :AngularImpulse rdf:type owl:Class ;
                 rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AngularMomentum
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AngularMomentum
 :AngularMomentum rdf:type owl:Class ;
                  rdfs:subClassOf :DerivedQuantity ,
                                  :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AngularReciprocalLatticeVector
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AngularReciprocalLatticeVector
 :AngularReciprocalLatticeVector rdf:type owl:Class ;
                                 rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AngularVelocity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AngularVelocity
 :AngularVelocity rdf:type owl:Class ;
                  rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AngularWavenumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AngularWavenumber
 :AngularWavenumber rdf:type owl:Class ;
                    rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AnodicOverpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AnodicOverpotential
 :AnodicOverpotential rdf:type owl:Class ;
                      rdfs:subClassOf :Overpotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AppliedPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AppliedPotential
 :AppliedPotential rdf:type owl:Class ;
                   rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Area
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Area
 :Area rdf:type owl:Class ;
       rdfs:subClassOf :DerivedQuantity ,
                       :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AreaDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AreaDensity
 :AreaDensity rdf:type owl:Class ;
              rdfs:subClassOf :DerivedQuantity ,
                              :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AreicCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AreicCapacity
 :AreicCapacity rdf:type owl:Class ;
                rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AtomicAndNuclearPhysicsQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AtomicAndNuclearPhysicsQuantity
 :AtomicAndNuclearPhysicsQuantity rdf:type owl:Class ;
                                  rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AtomicMass
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AtomicMass
 :AtomicMass rdf:type owl:Class ;
             rdfs:subClassOf :Mass .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AtomicNumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AtomicNumber
 :AtomicNumber rdf:type owl:Class ;
               rdfs:subClassOf :PureNumberQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AtomicsScatteringFactor
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AtomicsScatteringFactor
 :AtomicsScatteringFactor rdf:type owl:Class ;
                          rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#BatteryEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BatteryEnergy
 :BatteryEnergy rdf:type owl:Class ;
                rdfs:subClassOf :BatteryQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#BatteryQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BatteryQuantity
 :BatteryQuantity rdf:type owl:Class ;
                  rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#BoltzmannConstant
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BoltzmannConstant
 :BoltzmannConstant rdf:type owl:Class ;
                    rdfs:subClassOf :Entropy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#BraggAngle
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BraggAngle
 :BraggAngle rdf:type owl:Class ;
             rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#BurgersVector
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BurgersVector
 :BurgersVector rdf:type owl:Class ;
                rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CRate
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CRate
 :CRate rdf:type owl:Class ;
        rdfs:subClassOf :BatteryQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CalendarDay
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CalendarDay
 :CalendarDay rdf:type owl:Class ;
              rdfs:subClassOf :TimeInterval .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CanonicalPartitionFunction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CanonicalPartitionFunction
 :CanonicalPartitionFunction rdf:type owl:Class ;
                             rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Capacitance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Capacitance
 :Capacitance rdf:type owl:Class ;
              rdfs:subClassOf :DerivedQuantity ,
                              :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Capacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Capacity
 :Capacity rdf:type owl:Class ;
           rdfs:subClassOf :ElectricCharge ,
                           :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CarrierLifetime
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CarrierLifetime
 :CarrierLifetime rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CatalystLoading
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CatalystLoading
 :CatalystLoading rdf:type owl:Class ;
                  rdfs:subClassOf :ActiveMaterialLoading .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CatalyticActivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CatalyticActivity
 :CatalyticActivity rdf:type owl:Class ;
                    rdfs:subClassOf :DerivedQuantity ,
                                    :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CatalyticCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CatalyticCurrent
 :CatalyticCurrent rdf:type owl:Class ;
                   rdfs:subClassOf :FarradaicCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CategorizedPhysicalQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CategorizedPhysicalQuantity
 :CategorizedPhysicalQuantity rdf:type owl:Class ;
                              rdfs:subClassOf :PhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CathodicOverpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CathodicOverpotential
 :CathodicOverpotential rdf:type owl:Class ;
                        rdfs:subClassOf :Overpotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CellVoltage
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CellVoltage
 :CellVoltage rdf:type owl:Class ;
              rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ChargeCutoffCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ChargeCutoffCurrent
 :ChargeCutoffCurrent rdf:type owl:Class ;
                      rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ChargeCutoffPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ChargeCutoffPotential
 :ChargeCutoffPotential rdf:type owl:Class ;
                        rdfs:subClassOf :ElectricPotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ChargeNumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ChargeNumber
 :ChargeNumber rdf:type owl:Class ;
               rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ChargeTransferCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ChargeTransferCoefficient
 :ChargeTransferCoefficient rdf:type owl:Class ;
                            rdfs:subClassOf :ElectrochemicalKineticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ChemicalCompositionQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ChemicalCompositionQuantity
 :ChemicalCompositionQuantity rdf:type owl:Class ;
                              rdfs:subClassOf :CategorizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ChemicalPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ChemicalPotential
 :ChemicalPotential rdf:type owl:Class ;
                    rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ChemicalQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ChemicalQuantity
 :ChemicalQuantity rdf:type owl:Class ;
                   rdfs:subClassOf :Quantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ClockTime
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ClockTime
 :ClockTime rdf:type owl:Class ;
            rdfs:subClassOf :Time .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CoefficientOfHeatTransfer
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CoefficientOfHeatTransfer
 :CoefficientOfHeatTransfer rdf:type owl:Class ;
                            rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CoherenceLength
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CoherenceLength
 :CoherenceLength rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Compressibility
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Compressibility
 :Compressibility rdf:type owl:Class ;
                  rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ConcentrationOverpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ConcentrationOverpotential
 :ConcentrationOverpotential rdf:type owl:Class ;
                             rdfs:subClassOf :Overpotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CondensedMatterPhysicsQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity
 :CondensedMatterPhysicsQuantity rdf:type owl:Class ;
                                 rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CrystalizationOverpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CrystalizationOverpotential
 :CrystalizationOverpotential rdf:type owl:Class ;
                              rdfs:subClassOf :Overpotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CubicExpansionCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CubicExpansionCoefficient
 :CubicExpansionCoefficient rdf:type owl:Class ;
                            rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CurieTemperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CurieTemperature
 :CurieTemperature rdf:type owl:Class ;
                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CurrentDensityLimit
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CurrentDensityLimit
 :CurrentDensityLimit rdf:type owl:Class ;
                      rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CurrentEfficiency
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CurrentEfficiency
 :CurrentEfficiency rdf:type owl:Class ;
                    rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Curvature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Curvature
 :Curvature rdf:type owl:Class ;
            rdfs:subClassOf :ReciprocalLength ;
            owl:disjointWith :Wavenumber .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CycleLife
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CycleLife
 :CycleLife rdf:type owl:Class ;
            rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CycleNumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CycleNumber
 :CycleNumber rdf:type owl:Class ;
              rdfs:subClassOf :BatteryQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DRate
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DRate
 :DRate rdf:type owl:Class ;
        rdfs:subClassOf :BatteryQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DebyeAngularFrequency
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DebyeAngularFrequency
 :DebyeAngularFrequency rdf:type owl:Class ;
                        rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DebyeTemperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DebyeTemperature
 :DebyeTemperature rdf:type owl:Class ;
                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DebyeWallerFactor
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DebyeWallerFactor
 :DebyeWallerFactor rdf:type owl:Class ;
                    rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Degenerency
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Degenerency
 :Degenerency rdf:type owl:Class ;
              rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DegreeOfDissociation
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DegreeOfDissociation
 :DegreeOfDissociation rdf:type owl:Class ;
                       rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Density
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Density
 :Density rdf:type owl:Class ;
          rdfs:subClassOf :DerivedQuantity ,
                          :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DensityOfHeatFlowRate
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DensityOfHeatFlowRate
 :DensityOfHeatFlowRate rdf:type owl:Class ;
                        rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DensityOfVibrationalStates
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DensityOfVibrationalStates
 :DensityOfVibrationalStates rdf:type owl:Class ;
                             rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Depth
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Depth
 :Depth rdf:type owl:Class ;
        rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DerivedQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity
 :DerivedQuantity rdf:type owl:Class ;
                  rdfs:subClassOf :PhysicalQuantity ;
                  owl:disjointWith :ISQBaseQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DewPointTemperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DewPointTemperature
 :DewPointTemperature rdf:type owl:Class ;
                      rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Diameter
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Diameter
 :Diameter rdf:type owl:Class ;
           rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DiffuseLayerPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DiffuseLayerPotential
 :DiffuseLayerPotential rdf:type owl:Class ;
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DiffusionCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DiffusionCoefficient
 :DiffusionCoefficient rdf:type owl:Class ;
                       rdfs:subClassOf :DerivedQuantity ,
                                       :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DiffusionCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DiffusionCurrent
 :DiffusionCurrent rdf:type owl:Class ;
                   rdfs:subClassOf :FarradaicCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DiffusionLength
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DiffusionLength
 :DiffusionLength rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DiffusionLimitedCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DiffusionLimitedCurrent
 :DiffusionLimitedCurrent rdf:type owl:Class ;
                          rdfs:subClassOf :DiffusionCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DimensionlessQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DimensionlessQuantity
 :DimensionlessQuantity rdf:type owl:Class ;
                        rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DirectCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DirectCurrent
 :DirectCurrent rdf:type owl:Class ;
                rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DischargeCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DischargeCurrent
 :DischargeCurrent rdf:type owl:Class ;
                   rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Displacement
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Displacement
 :Displacement rdf:type owl:Class ;
               rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DisplacementCurrentDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DisplacementCurrentDensity
 :DisplacementCurrentDensity rdf:type owl:Class ;
                             rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DisplacementFactor
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DisplacementFactor
 :DisplacementFactor rdf:type owl:Class ;
                     rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DissociationConstant
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DissociationConstant
 :DissociationConstant rdf:type owl:Class ;
                       rdfs:subClassOf :EquilibriumConstant ;
                       owl:disjointWith :SolubilityProduct .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DonorDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DonorDensity
 :DonorDensity rdf:type owl:Class ;
               rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DoseEquivalent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DoseEquivalent
 :DoseEquivalent rdf:type owl:Class ;
                 rdfs:subClassOf :DerivedQuantity ,
                                 :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DoubleLayerCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DoubleLayerCurrent
 :DoubleLayerCurrent rdf:type owl:Class ;
                     rdfs:subClassOf :ElectricCurrent ,
                                     :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DragCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DragCoefficient
 :DragCoefficient rdf:type owl:Class ;
                  rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DragForce
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DragForce
 :DragForce rdf:type owl:Class ;
            rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Duration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Duration
 :Duration rdf:type owl:Class ;
           rdfs:subClassOf :Time .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DynamicViscosity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DynamicViscosity
 :DynamicViscosity rdf:type owl:Class ;
                   rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EffectiveMass
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EffectiveMass
 :EffectiveMass rdf:type owl:Class ;
                rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricCharge
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricCharge
 :ElectricCharge rdf:type owl:Class ;
                 rdfs:subClassOf :DerivedQuantity ,
                                 :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricConductance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricConductance
 :ElectricConductance rdf:type owl:Class ;
                      rdfs:subClassOf :DerivedQuantity ,
                                      :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricConductivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricConductivity
 :ElectricConductivity rdf:type owl:Class ;
                       rdfs:subClassOf :DerivedQuantity ,
                                       :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricCurrent
 :ElectricCurrent rdf:type owl:Class ;
                  rdfs:subClassOf :ElectromagneticQuantity ,
                                  :ExtensiveQuantity ,
                                  :ISQBaseQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricCurrentDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricCurrentDensity
 :ElectricCurrentDensity rdf:type owl:Class ;
                         rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricDipoleMoment
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricDipoleMoment
 :ElectricDipoleMoment rdf:type owl:Class ;
                       rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricFieldStrength
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricFieldStrength
 :ElectricFieldStrength rdf:type owl:Class ;
                        rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricFlux
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricFlux
 :ElectricFlux rdf:type owl:Class ;
               rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricFluxDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricFluxDensity
 :ElectricFluxDensity rdf:type owl:Class ;
                      rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricInductance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricInductance
 :ElectricInductance rdf:type owl:Class ;
                     rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricPolarization
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricPolarization
 :ElectricPolarization rdf:type owl:Class ;
                       rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricPotential
 :ElectricPotential rdf:type owl:Class ;
                    rdfs:subClassOf :DerivedQuantity ,
                                    :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricResistance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricResistance
 :ElectricResistance rdf:type owl:Class ;
                     rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricResistivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricResistivity
 :ElectricResistivity rdf:type owl:Class ;
                      rdfs:subClassOf :DerivedQuantity ,
                                      :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectricSusceptibility
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricSusceptibility
 :ElectricSusceptibility rdf:type owl:Class ;
                         rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrochemicalActiveSurfaceArea
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalActiveSurfaceArea
 :ElectrochemicalActiveSurfaceArea rdf:type owl:Class ;
                                   rdfs:subClassOf :ElectrodeSurfaceArea .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrochemicalKineticQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalKineticQuantity
 :ElectrochemicalKineticQuantity rdf:type owl:Class ;
                                 rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrochemicalPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalPotential
 :ElectrochemicalPotential rdf:type owl:Class ;
                           rdfs:subClassOf :ElectrochemicalThermodynamicQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrochemicalQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity
 :ElectrochemicalQuantity rdf:type owl:Class ;
                          rdfs:subClassOf :CategorizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrochemicalStabilityLimit
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalStabilityLimit
 :ElectrochemicalStabilityLimit rdf:type owl:Class ;
                                rdfs:subClassOf :ElectricPotential ,
                                                :ElectrochemicalThermodynamicQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrochemicalThermodynamicQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalThermodynamicQuantity
 :ElectrochemicalThermodynamicQuantity rdf:type owl:Class ;
                                       rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrochemicalTransportQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalTransportQuantity
 :ElectrochemicalTransportQuantity rdf:type owl:Class ;
                                   rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrochemicalWindow
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalWindow
 :ElectrochemicalWindow rdf:type owl:Class ;
                        rdfs:subClassOf :ElectrochemicalThermodynamicQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrodeGeometricSurfaceArea
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrodeGeometricSurfaceArea
 :ElectrodeGeometricSurfaceArea rdf:type owl:Class ;
                                rdfs:subClassOf :ElectrodeSurfaceArea .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrodePotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrodePotential
 :ElectrodePotential rdf:type owl:Class ;
                     rdfs:subClassOf :ElectricPotential ,
                                     :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrodeRealSurfaceArea
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrodeRealSurfaceArea
 :ElectrodeRealSurfaceArea rdf:type owl:Class ;
                           rdfs:subClassOf :ElectrodeSurfaceArea .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrodeSurfaceArea
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrodeSurfaceArea
 :ElectrodeSurfaceArea rdf:type owl:Class ;
                       rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrolyteVolume
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrolyteVolume
 :ElectrolyteVolume rdf:type owl:Class ;
                    rdfs:subClassOf :Volume .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectrolyticConductivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrolyticConductivity
 :ElectrolyticConductivity rdf:type owl:Class ;
                           rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectromagneticQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectromagneticQuantity
 :ElectromagneticQuantity rdf:type owl:Class ;
                          rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronAffinity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronAffinity
 :ElectronAffinity rdf:type owl:Class ;
                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronCharge
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronCharge
 :ElectronCharge rdf:type owl:Class ;
                 rdfs:subClassOf :ElectricCharge .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronDensity
 :ElectronDensity rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronMass
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronMass
 :ElectronMass rdf:type owl:Class ;
               rdfs:subClassOf :Mass .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Electronegativity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Electronegativity
 :Electronegativity rdf:type owl:Class ;
                    rdfs:subClassOf :DimensionlessQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronegativityPauling
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronegativityPauling
 :ElectronegativityPauling rdf:type owl:Class ;
                           rdfs:subClassOf :Electronegativity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronicConductance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronicConductance
 :ElectronicConductance rdf:type owl:Class ;
                        rdfs:subClassOf :ElectricConductance .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronicConductivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronicConductivity
 :ElectronicConductivity rdf:type owl:Class ;
                         rdfs:subClassOf :ElectricConductivity ;
                         owl:disjointWith :IonicConductivity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronicCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronicCurrent
 :ElectronicCurrent rdf:type owl:Class ;
                    rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElectronicResistivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectronicResistivity
 :ElectronicResistivity rdf:type owl:Class ;
                        rdfs:subClassOf :ElectricResistivity ;
                        owl:disjointWith :IonicResistivity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ElementaryCharge
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElementaryCharge
 :ElementaryCharge rdf:type owl:Class ;
                   rdfs:subClassOf :ElectricCharge .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EndOfDischargeVoltage
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EndOfDischargeVoltage
 :EndOfDischargeVoltage rdf:type owl:Class ;
                        rdfs:subClassOf :ElectricPotential ,
                                        :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Energy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Energy
 :Energy rdf:type owl:Class ;
         rdfs:subClassOf :DerivedQuantity ,
                         :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EnergyDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EnergyDensity
 :EnergyDensity rdf:type owl:Class ;
                rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EnergyDensityOfStates
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EnergyDensityOfStates
 :EnergyDensityOfStates rdf:type owl:Class ;
                        rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Enthalpy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Enthalpy
 :Enthalpy rdf:type owl:Class ;
           rdfs:subClassOf :Energy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Entropy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Entropy
 :Entropy rdf:type owl:Class ;
          rdfs:subClassOf :DerivedQuantity ,
                          :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EquilibriumConstant
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EquilibriumConstant
 :EquilibriumConstant rdf:type owl:Class ;
                      rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EquilibriumElectrodePotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EquilibriumElectrodePotential
 :EquilibriumElectrodePotential rdf:type owl:Class ;
                                rdfs:subClassOf :OpenCircuitVoltage .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EquilibriumPositionVector
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EquilibriumPositionVector
 :EquilibriumPositionVector rdf:type owl:Class ;
                            rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EquilibriumPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EquilibriumPotential
 :EquilibriumPotential rdf:type owl:Class ;
                       rdfs:subClassOf :OpenCircuitVoltage .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ExchangeCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExchangeCurrent
 :ExchangeCurrent rdf:type owl:Class ;
                  rdfs:subClassOf :ElectricCurrent ,
                                  :ElectrochemicalKineticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ExchangeCurrentDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExchangeCurrentDensity
 :ExchangeCurrentDensity rdf:type owl:Class ;
                         rdfs:subClassOf :ElectrochemicalKineticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ExchangeIntegral
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExchangeIntegral
 :ExchangeIntegral rdf:type owl:Class ;
                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ExperimentalCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExperimentalCapacity
 :ExperimentalCapacity rdf:type owl:Class ;
                       rdfs:subClassOf :Capacity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ExtensiveQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtensiveQuantity
 :ExtensiveQuantity rdf:type owl:Class ;
                    rdfs:subClassOf :CategorizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ExtentOfReaction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtentOfReaction
 :ExtentOfReaction rdf:type owl:Class ;
                   rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#FarradaicCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#FarradaicCurrent
 :FarradaicCurrent rdf:type owl:Class ;
                   rdfs:subClassOf :ElectricCurrent ,
                                   :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#FermiAngularWavenumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#FermiAngularWavenumber
 :FermiAngularWavenumber rdf:type owl:Class ;
                         rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#FermiEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#FermiEnergy
 :FermiEnergy rdf:type owl:Class ;
              rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#FermiTemperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#FermiTemperature
 :FermiTemperature rdf:type owl:Class ;
                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Force
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Force
 :Force rdf:type owl:Class ;
        rdfs:subClassOf :DerivedQuantity ,
                        :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Frequency
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Frequency
 :Frequency rdf:type owl:Class ;
            rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Fugacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Fugacity
 :Fugacity rdf:type owl:Class ;
           rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#FundamentalLatticeVecotrs
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#FundamentalLatticeVecotrs
 :FundamentalLatticeVecotrs rdf:type owl:Class ;
                            rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#FundamentalReciprocalLatticeVecotrs
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#FundamentalReciprocalLatticeVecotrs
 :FundamentalReciprocalLatticeVecotrs rdf:type owl:Class ;
                                      rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#GapEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#GapEnergy
 :GapEnergy rdf:type owl:Class ;
            rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#GaugePressure
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#GaugePressure
 :GaugePressure rdf:type owl:Class ;
                rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#GibbsEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#GibbsEnergy
 :GibbsEnergy rdf:type owl:Class ;
              rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#GibbsEnergyOfReaction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#GibbsEnergyOfReaction
 :GibbsEnergyOfReaction rdf:type owl:Class ;
                        rdfs:subClassOf :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#GrandCanonicalPartitionFunction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#GrandCanonicalPartitionFunction
 :GrandCanonicalPartitionFunction rdf:type owl:Class ;
                                  rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#GrueneisenParameter
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#GrueneisenParameter
 :GrueneisenParameter rdf:type owl:Class ;
                      rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#HallCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#HallCoefficient
 :HallCoefficient rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Heat
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Heat
 :Heat rdf:type owl:Class ;
       rdfs:subClassOf :Energy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#HeatCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#HeatCapacity
 :HeatCapacity rdf:type owl:Class ;
               rdfs:subClassOf :DerivedQuantity ,
                               :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#HeatFlowRate
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#HeatFlowRate
 :HeatFlowRate rdf:type owl:Class ;
               rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Height
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Height
 :Height rdf:type owl:Class ;
         rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#HelmholtzEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#HelmholtzEnergy
 :HelmholtzEnergy rdf:type owl:Class ;
                  rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#HoleDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#HoleDensity
 :HoleDensity rdf:type owl:Class ;
              rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ISQBaseQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity
 :ISQBaseQuantity rdf:type owl:Class ;
                  rdfs:subClassOf :PhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Illuminance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Illuminance
 :Illuminance rdf:type owl:Class ;
              rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Impulse
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Impulse
 :Impulse rdf:type owl:Class ;
          rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#InstantaneousCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#InstantaneousCurrent
 :InstantaneousCurrent rdf:type owl:Class ;
                       rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IntensiveQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IntensiveQuantity
 :IntensiveQuantity rdf:type owl:Class ;
                    rdfs:subClassOf :CategorizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#InternalConductance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#InternalConductance
 :InternalConductance rdf:type owl:Class ;
                      rdfs:subClassOf :ElectricConductance ,
                                      :ElectrochemicalTransportQuantity ;
                      owl:disjointWith :LimitingMolarConductivity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#InternalEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#InternalEnergy
 :InternalEnergy rdf:type owl:Class ;
                 rdfs:subClassOf :Energy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IntrinsicCarrierDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IntrinsicCarrierDensity
 :IntrinsicCarrierDensity rdf:type owl:Class ;
                          rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IonActivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IonActivity
 :IonActivity rdf:type owl:Class ;
              rdfs:subClassOf :ActivityOfSolute .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IonConcentration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IonConcentration
 :IonConcentration rdf:type owl:Class ;
                   rdfs:subClassOf :AmountConcentration ;
                   owl:disjointWith :StandardAmountConcentration .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IonicConductance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IonicConductance
 :IonicConductance rdf:type owl:Class ;
                   rdfs:subClassOf :ElectricConductance .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IonicConductivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IonicConductivity
 :IonicConductivity rdf:type owl:Class ;
                    rdfs:subClassOf :ElectricConductivity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IonicCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IonicCurrent
 :IonicCurrent rdf:type owl:Class ;
               rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IonicResistivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IonicResistivity
 :IonicResistivity rdf:type owl:Class ;
                   rdfs:subClassOf :ElectricResistivity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IonicStrength
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IonicStrength
 :IonicStrength rdf:type owl:Class ;
                rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IonizationEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IonizationEnergy
 :IonizationEnergy rdf:type owl:Class ;
                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IsentropicCompressibility
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IsentropicCompressibility
 :IsentropicCompressibility rdf:type owl:Class ;
                            rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IsentropicExponent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IsentropicExponent
 :IsentropicExponent rdf:type owl:Class ;
                     rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IsobaricHeastCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IsobaricHeastCapacity
 :IsobaricHeastCapacity rdf:type owl:Class ;
                        rdfs:subClassOf :SpecificHeatCapacity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IsochoricHeatCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IsochoricHeatCapacity
 :IsochoricHeatCapacity rdf:type owl:Class ;
                        rdfs:subClassOf :SpecificHeatCapacity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#IsothermalCompressibility
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IsothermalCompressibility
 :IsothermalCompressibility rdf:type owl:Class ;
                            rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#JouleThomsonCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#JouleThomsonCoefficient
 :JouleThomsonCoefficient rdf:type owl:Class ;
                          rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#KinematicViscosity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#KinematicViscosity
 :KinematicViscosity rdf:type owl:Class ;
                     rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#KineticCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#KineticCurrent
 :KineticCurrent rdf:type owl:Class ;
                 rdfs:subClassOf :FarradaicCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#KineticEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#KineticEnergy
 :KineticEnergy rdf:type owl:Class ;
                rdfs:subClassOf :Energy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#KineticFrictionFactor
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#KineticFrictionFactor
 :KineticFrictionFactor rdf:type owl:Class ;
                        rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#KineticFrictionForce
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#KineticFrictionForce
 :KineticFrictionForce rdf:type owl:Class ;
                       rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LatentHeat
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LatentHeat
 :LatentHeat rdf:type owl:Class ;
             rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LatentHeatOfPhaseTransition
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LatentHeatOfPhaseTransition
 :LatentHeatOfPhaseTransition rdf:type owl:Class ;
                              rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LatticePlaneSpacing
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LatticePlaneSpacing
 :LatticePlaneSpacing rdf:type owl:Class ;
                      rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LatticeVector
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LatticeVector
 :LatticeVector rdf:type owl:Class ;
                rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Length
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Length
 :Length rdf:type owl:Class ;
         rdfs:subClassOf :ExtensiveQuantity ,
                         :ISQBaseQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LightAndRadiationQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LightAndRadiationQuantity
 :LightAndRadiationQuantity rdf:type owl:Class ;
                            rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LimitingCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LimitingCurrent
 :LimitingCurrent rdf:type owl:Class ;
                  rdfs:subClassOf :FarradaicCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LimitingMolarConductivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LimitingMolarConductivity
 :LimitingMolarConductivity rdf:type owl:Class ;
                            rdfs:subClassOf :ElectrochemicalTransportQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LinearDensityOfElectricCharge
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LinearDensityOfElectricCharge
 :LinearDensityOfElectricCharge rdf:type owl:Class ;
                                rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LinearElectricCurrentDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LinearElectricCurrentDensity
 :LinearElectricCurrentDensity rdf:type owl:Class ;
                               rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LinearExpansionCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LinearExpansionCoefficient
 :LinearExpansionCoefficient rdf:type owl:Class ;
                             rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LinearMassDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LinearMassDensity
 :LinearMassDensity rdf:type owl:Class ;
                    rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LondonPenetrationDepth
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LondonPenetrationDepth
 :LondonPenetrationDepth rdf:type owl:Class ;
                         rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LongRangeOrderParameter
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LongRangeOrderParameter
 :LongRangeOrderParameter rdf:type owl:Class ;
                          rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LorentzCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LorentzCoefficient
 :LorentzCoefficient rdf:type owl:Class ;
                     rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LowerCriticalMagneticFluxDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LowerCriticalMagneticFluxDensity
 :LowerCriticalMagneticFluxDensity rdf:type owl:Class ;
                                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Luminance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Luminance
 :Luminance rdf:type owl:Class ;
            rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LuminousFlux
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LuminousFlux
 :LuminousFlux rdf:type owl:Class ;
               rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#LuminousIntensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#LuminousIntensity
 :LuminousIntensity rdf:type owl:Class ;
                    rdfs:subClassOf :ISQBaseQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MagneticDipoleMoment
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MagneticDipoleMoment
 :MagneticDipoleMoment rdf:type owl:Class ;
                       rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MagneticFieldStrength
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MagneticFieldStrength
 :MagneticFieldStrength rdf:type owl:Class ;
                        rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MagneticFlux
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MagneticFlux
 :MagneticFlux rdf:type owl:Class ;
               rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MagneticFluxDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MagneticFluxDensity
 :MagneticFluxDensity rdf:type owl:Class ;
                      rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Mass
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Mass
 :Mass rdf:type owl:Class ;
       rdfs:subClassOf :ExtensiveQuantity ,
                       :ISQBaseQuantity ,
                       :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassChangeRate
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassChangeRate
 :MassChangeRate rdf:type owl:Class ;
                 rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassConcentration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassConcentration
 :MassConcentration rdf:type owl:Class ;
                    rdfs:subClassOf :ChemicalCompositionQuantity ,
                                    :Density ,
                                    :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassConcentrationOfWater
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassConcentrationOfWater
 :MassConcentrationOfWater rdf:type owl:Class ;
                           rdfs:subClassOf :MassConcentration ;
                           owl:disjointWith :MassConcentrationOfWaterVapour .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassConcentrationOfWaterVapour
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassConcentrationOfWaterVapour
 :MassConcentrationOfWaterVapour rdf:type owl:Class ;
                                 rdfs:subClassOf :MassConcentration .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassFlow
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassFlow
 :MassFlow rdf:type owl:Class ;
           rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassFlowRate
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassFlowRate
 :MassFlowRate rdf:type owl:Class ;
               rdfs:subClassOf :DerivedQuantity ,
                               :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassFlux
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassFlux
 :MassFlux rdf:type owl:Class ;
           rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassFraction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassFraction
 :MassFraction rdf:type owl:Class ;
               rdfs:subClassOf :ChemicalCompositionQuantity ,
                               :RatioQuantity ,
                               :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassFractionOfWater
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassFractionOfWater
 :MassFractionOfWater rdf:type owl:Class ;
                      rdfs:subClassOf :MassFraction ;
                      owl:disjointWith :MasssFractionOfDryMatter .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassNumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassNumber
 :MassNumber rdf:type owl:Class ;
             rdfs:subClassOf :PureNumberQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassRatioOfWaterToDryMatter
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassRatioOfWaterToDryMatter
 :MassRatioOfWaterToDryMatter rdf:type owl:Class ;
                              rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassieuFunction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassieuFunction
 :MassieuFunction rdf:type owl:Class ;
                  rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MasssFractionOfDryMatter
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MasssFractionOfDryMatter
 :MasssFractionOfDryMatter rdf:type owl:Class ;
                           rdfs:subClassOf :MassFraction .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MaxContinousDischargeCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MaxContinousDischargeCurrent
 :MaxContinousDischargeCurrent rdf:type owl:Class ;
                               rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MaxPulseDischargeCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MaxPulseDischargeCurrent
 :MaxPulseDischargeCurrent rdf:type owl:Class ;
                           rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MaxPulseDischargeTime
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MaxPulseDischargeTime
 :MaxPulseDischargeTime rdf:type owl:Class ;
                        rdfs:subClassOf :Time .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MaximumEfficiency
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MaximumEfficiency
 :MaximumEfficiency rdf:type owl:Class ;
                    rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MeanFreePath
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MeanFreePath
 :MeanFreePath rdf:type owl:Class ;
               rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MeanFreePathOfElectrons
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MeanFreePathOfElectrons
 :MeanFreePathOfElectrons rdf:type owl:Class ;
                          rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MeanFreePathOfPhonons
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MeanFreePathOfPhonons
 :MeanFreePathOfPhonons rdf:type owl:Class ;
                        rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MechanicalEfficiency
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalEfficiency
 :MechanicalEfficiency rdf:type owl:Class ;
                       rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MechanicalQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity
 :MechanicalQuantity rdf:type owl:Class ;
                     rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MeltingPoint
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MeltingPoint
 :MeltingPoint rdf:type owl:Class ;
               rdfs:subClassOf :Temperature ,
                               :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MembraneVoltage
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MembraneVoltage
 :MembraneVoltage rdf:type owl:Class ;
                  rdfs:subClassOf :ElectricPotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MicroCanonicalPartitionFunction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MicroCanonicalPartitionFunction
 :MicroCanonicalPartitionFunction rdf:type owl:Class ;
                                  rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MigrationCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MigrationCurrent
 :MigrationCurrent rdf:type owl:Class ;
                   rdfs:subClassOf :ElectricCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MixingRatio
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MixingRatio
 :MixingRatio rdf:type owl:Class ;
              rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MobilityRatio
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MobilityRatio
 :MobilityRatio rdf:type owl:Class ;
                rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ModulusOfCompression
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ModulusOfCompression
 :ModulusOfCompression rdf:type owl:Class ;
                       rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ModulusOfElasticity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ModulusOfElasticity
 :ModulusOfElasticity rdf:type owl:Class ;
                      rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ModulusOfRigidity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ModulusOfRigidity
 :ModulusOfRigidity rdf:type owl:Class ;
                    rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Molality
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Molality
 :Molality rdf:type owl:Class ;
           rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarConductivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarConductivity
 :MolarConductivity rdf:type owl:Class ;
                    rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarElectrochemicalPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarElectrochemicalPotential
 :MolarElectrochemicalPotential rdf:type owl:Class ;
                                rdfs:subClassOf :ElectrochemicalPotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarEnthalpy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarEnthalpy
 :MolarEnthalpy rdf:type owl:Class ;
                rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarEntropy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarEntropy
 :MolarEntropy rdf:type owl:Class ;
               rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarGibbsEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarGibbsEnergy
 :MolarGibbsEnergy rdf:type owl:Class ;
                   rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarHeat
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarHeat
 :MolarHeat rdf:type owl:Class ;
            rdfs:subClassOf :Heat .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarHeatCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarHeatCapacity
 :MolarHeatCapacity rdf:type owl:Class ;
                    rdfs:subClassOf :DerivedQuantity ,
                                    :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarHelmholtzEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarHelmholtzEnergy
 :MolarHelmholtzEnergy rdf:type owl:Class ;
                       rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarInternalEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarInternalEnergy
 :MolarInternalEnergy rdf:type owl:Class ;
                      rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarMass
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarMass
 :MolarMass rdf:type owl:Class ;
            rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolarVolume
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolarVolume
 :MolarVolume rdf:type owl:Class ;
              rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolecularConcentration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolecularConcentration
 :MolecularConcentration rdf:type owl:Class ;
                         rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolecularPartitionFunction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolecularPartitionFunction
 :MolecularPartitionFunction rdf:type owl:Class ;
                             rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MomentOfForce
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MomentOfForce
 :MomentOfForce rdf:type owl:Class ;
                rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MomentOfInertia
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MomentOfInertia
 :MomentOfInertia rdf:type owl:Class ;
                  rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Momentum
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Momentum
 :Momentum rdf:type owl:Class ;
           rdfs:subClassOf :DerivedQuantity ,
                           :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#NeelTemperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#NeelTemperature
 :NeelTemperature rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#NegativeCharge
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#NegativeCharge
 :NegativeCharge rdf:type owl:Class ;
                 rdfs:subClassOf :ElectricCharge .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#NetFarradaicCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#NetFarradaicCurrent
 :NetFarradaicCurrent rdf:type owl:Class ;
                      rdfs:subClassOf :FarradaicCurrent .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#NormalStress
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#NormalStress
 :NormalStress rdf:type owl:Class ;
               rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#NumberOfElements
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#NumberOfElements
 :NumberOfElements rdf:type owl:Class ;
                   rdfs:subClassOf :PureNumberQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#NumberOfEntities
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#NumberOfEntities
 :NumberOfEntities rdf:type owl:Class ;
                   rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OhmicOverpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OhmicOverpotential
 :OhmicOverpotential rdf:type owl:Class ;
                     rdfs:subClassOf :Overpotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OpenCircuitVoltage
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OpenCircuitVoltage
 :OpenCircuitVoltage rdf:type owl:Class ;
                     rdfs:subClassOf :ElectricPotential ,
                                     :ElectrochemicalThermodynamicQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OperatingTemperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OperatingTemperature
 :OperatingTemperature rdf:type owl:Class ;
                       rdfs:subClassOf :Temperature .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OsmoticCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OsmoticCoefficient
 :OsmoticCoefficient rdf:type owl:Class ;
                     rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OsmoticCoefficientOfSolvent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OsmoticCoefficientOfSolvent
 :OsmoticCoefficientOfSolvent rdf:type owl:Class ;
                              rdfs:subClassOf :OsmoticCoefficient .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OsmoticPressure
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OsmoticPressure
 :OsmoticPressure rdf:type owl:Class ;
                  rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Overpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Overpotential
 :Overpotential rdf:type owl:Class ;
                rdfs:subClassOf :ElectricPotential ,
                                :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OxidationNumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OxidationNumber
 :OxidationNumber rdf:type owl:Class ;
                  rdfs:subClassOf :ChargeNumber .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PH
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PH
 :PH rdf:type owl:Class ;
     rdfs:subClassOf :IonActivity ;
     owl:disjointWith :POH .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#POH
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#POH
 :POH rdf:type owl:Class ;
      rdfs:subClassOf :IonActivity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PartialPressure
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PartialPressure
 :PartialPressure rdf:type owl:Class ;
                  rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ParticleConcentration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ParticleConcentration
 :ParticleConcentration rdf:type owl:Class ;
                        rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ParticlePositionVector
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ParticlePositionVector
 :ParticlePositionVector rdf:type owl:Class ;
                         rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PeakCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PeakCurrent
 :PeakCurrent rdf:type owl:Class ;
              rdfs:subClassOf :ElectricCurrent ,
                              :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PeltierCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PeltierCoefficient
 :PeltierCoefficient rdf:type owl:Class ;
                     rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Permeability
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Permeability
 :Permeability rdf:type owl:Class ;
               rdfs:subClassOf :DerivedQuantity ,
                               :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Permittivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Permittivity
 :Permittivity rdf:type owl:Class ;
               rdfs:subClassOf :DerivedQuantity ,
                               :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PhysicalQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity
 :PhysicalQuantity rdf:type owl:Class ;
                   rdfs:subClassOf :Quantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PhysioChemicalQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity
 :PhysioChemicalQuantity rdf:type owl:Class ;
                         rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PlanckFunction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PlanckFunction
 :PlanckFunction rdf:type owl:Class ;
                 rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PoissonNumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PoissonNumber
 :PoissonNumber rdf:type owl:Class ;
                rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Porosity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Porosity
 :Porosity rdf:type owl:Class ;
           rdfs:subClassOf :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PositiveCharge
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PositiveCharge
 :PositiveCharge rdf:type owl:Class ;
                 rdfs:subClassOf :ElectricCharge .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PotentialEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PotentialEnergy
 :PotentialEnergy rdf:type owl:Class ;
                  rdfs:subClassOf :Energy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Power
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Power
 :Power rdf:type owl:Class ;
        rdfs:subClassOf :DerivedQuantity ,
                        :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Pressure
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Pressure
 :Pressure rdf:type owl:Class ;
           rdfs:subClassOf :DerivedQuantity ,
                           :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PressureCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PressureCoefficient
 :PressureCoefficient rdf:type owl:Class ;
                      rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ProcessQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ProcessQuantity
 :ProcessQuantity rdf:type owl:Class ;
                  rdfs:subClassOf :Quantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Propability
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Propability
 :Propability rdf:type owl:Class ;
              rdfs:subClassOf :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ProtonMass
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ProtonMass
 :ProtonMass rdf:type owl:Class ;
             rdfs:subClassOf :Mass .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PureNumberQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PureNumberQuantity
 :PureNumberQuantity rdf:type owl:Class ;
                     rdfs:subClassOf :DimensionlessQuantity ;
                     owl:disjointWith :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Quantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Quantity
 :Quantity rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RadialDistance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RadialDistance
 :RadialDistance rdf:type owl:Class ;
                 rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RadiantFlux
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RadiantFlux
 :RadiantFlux rdf:type owl:Class ;
              rdfs:subClassOf :Power .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Radioactivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Radioactivity
 :Radioactivity rdf:type owl:Class ;
                rdfs:subClassOf :DerivedQuantity ,
                                :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Radius
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Radius
 :Radius rdf:type owl:Class ;
         rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RatedCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RatedCapacity
 :RatedCapacity rdf:type owl:Class ;
                rdfs:subClassOf :BatteryQuantity ,
                                :Capacity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RatioOfSpecificHeatCapacities
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RatioOfSpecificHeatCapacities
 :RatioOfSpecificHeatCapacities rdf:type owl:Class ;
                                rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RatioQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RatioQuantity
 :RatioQuantity rdf:type owl:Class ;
                rdfs:subClassOf :DimensionlessQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ReactionActivationEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ReactionActivationEnergy
 :ReactionActivationEnergy rdf:type owl:Class ;
                           rdfs:subClassOf :ActivationEnergy ;
                           owl:disjointWith :SingleComponentActivationEnergyOfDiffusion .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ReactionOrder
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ReactionOrder
 :ReactionOrder rdf:type owl:Class ;
                rdfs:subClassOf :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ReactionOverpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ReactionOverpotential
 :ReactionOverpotential rdf:type owl:Class ;
                        rdfs:subClassOf :Overpotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ReactionQuotient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ReactionQuotient
 :ReactionQuotient rdf:type owl:Class ;
                   rdfs:subClassOf :ChemicalCompositionQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ReactionRate
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ReactionRate
 :ReactionRate rdf:type owl:Class ;
               rdfs:subClassOf :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ReationRateConstant
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ReationRateConstant
 :ReationRateConstant rdf:type owl:Class ;
                      rdfs:subClassOf :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ReciprocalLength
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ReciprocalLength
 :ReciprocalLength rdf:type owl:Class ;
                   rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RefractiveIndex
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RefractiveIndex
 :RefractiveIndex rdf:type owl:Class ;
                  rdfs:subClassOf :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RelativeHumidity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativeHumidity
 :RelativeHumidity rdf:type owl:Class ;
                   rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RelativeLinearStrain
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativeLinearStrain
 :RelativeLinearStrain rdf:type owl:Class ;
                       rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RelativeMassConcentrationOfVapour
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativeMassConcentrationOfVapour
 :RelativeMassConcentrationOfVapour rdf:type owl:Class ;
                                    rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RelativeMassFractionOfVapour
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativeMassFractionOfVapour
 :RelativeMassFractionOfVapour rdf:type owl:Class ;
                               rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RelativePermeability
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativePermeability
 :RelativePermeability rdf:type owl:Class ;
                       rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RelativePermittivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativePermittivity
 :RelativePermittivity rdf:type owl:Class ;
                       rdfs:subClassOf :ElectromagneticQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RelativePressureCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativePressureCoefficient
 :RelativePressureCoefficient rdf:type owl:Class ;
                              rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RelaxationTime
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelaxationTime
 :RelaxationTime rdf:type owl:Class ;
                 rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ResidualActiveMass
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ResidualActiveMass
 :ResidualActiveMass rdf:type owl:Class ;
                     rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ResidualCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ResidualCapacity
 :ResidualCapacity rdf:type owl:Class ;
                   rdfs:subClassOf :Capacity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ResidualCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ResidualCurrent
 :ResidualCurrent rdf:type owl:Class ;
                  rdfs:subClassOf :ElectricCurrent ,
                                  :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ResidualResistivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ResidualResistivity
 :ResidualResistivity rdf:type owl:Class ;
                      rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RestingTime
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RestingTime
 :RestingTime rdf:type owl:Class ;
              rdfs:subClassOf :ElectrochemicalQuantity ,
                              :Time .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RichardsonConstant
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RichardsonConstant
 :RichardsonConstant rdf:type owl:Class ;
                     rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RollingResistance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RollingResistance
 :RollingResistance rdf:type owl:Class ;
                    rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RollingResistanceFactor
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RollingResistanceFactor
 :RollingResistanceFactor rdf:type owl:Class ;
                          rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#RotationalFrequency
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RotationalFrequency
 :RotationalFrequency rdf:type owl:Class ;
                      rdfs:subClassOf :Frequency .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SecondAxialMomentumOfArea
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SecondAxialMomentumOfArea
 :SecondAxialMomentumOfArea rdf:type owl:Class ;
                            rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SecondPolarMomentumOfArea
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SecondPolarMomentumOfArea
 :SecondPolarMomentumOfArea rdf:type owl:Class ;
                            rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SectionModulus
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SectionModulus
 :SectionModulus rdf:type owl:Class ;
                 rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SeebeckCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SeebeckCoefficient
 :SeebeckCoefficient rdf:type owl:Class ;
                     rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ServiceLife
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ServiceLife
 :ServiceLife rdf:type owl:Class ;
              rdfs:subClassOf :BatteryQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ServiceMass
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ServiceMass
 :ServiceMass rdf:type owl:Class ;
              rdfs:subClassOf :BatteryQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ShearStrain
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShearStrain
 :ShearStrain rdf:type owl:Class ;
              rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ShearStress
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShearStress
 :ShearStress rdf:type owl:Class ;
              rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ShelfLife
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShelfLife
 :ShelfLife rdf:type owl:Class ;
            rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ShortRangeOrderParameter
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShortRangeOrderParameter
 :ShortRangeOrderParameter rdf:type owl:Class ;
                           rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SingleComponentActivationEnergyOfDiffusion
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SingleComponentActivationEnergyOfDiffusion
 :SingleComponentActivationEnergyOfDiffusion rdf:type owl:Class ;
                                             rdfs:subClassOf :ActivationEnergy ,
                                                             :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SingleComponentMaximalDiffusity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SingleComponentMaximalDiffusity
 :SingleComponentMaximalDiffusity rdf:type owl:Class ;
                                  rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SingleComponentMaximalDiffusivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SingleComponentMaximalDiffusivity
 :SingleComponentMaximalDiffusivity rdf:type owl:Class ;
                                    rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SolidAngle
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SolidAngle
 :SolidAngle rdf:type owl:Class ;
             rdfs:subClassOf :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Solubility
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Solubility
 :Solubility rdf:type owl:Class ;
             rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SolubilityProduct
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SolubilityProduct
 :SolubilityProduct rdf:type owl:Class ;
                    rdfs:subClassOf :EquilibriumConstant .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpaceAndTimeQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpaceAndTimeQuantity
 :SpaceAndTimeQuantity rdf:type owl:Class ;
                       rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpcificEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpcificEnergy
 :SpcificEnergy rdf:type owl:Class ;
                rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificCapacity
 :SpecificCapacity rdf:type owl:Class ;
                   rdfs:subClassOf :DerivedQuantity ,
                                   :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEnergy
 :SpecificEnergy rdf:type owl:Class ;
                 rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificEnthalpy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEnthalpy
 :SpecificEnthalpy rdf:type owl:Class ;
                   rdfs:subClassOf :SpecificEnergy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificEntropy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEntropy
 :SpecificEntropy rdf:type owl:Class ;
                  rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificGasConstant
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificGasConstant
 :SpecificGasConstant rdf:type owl:Class ;
                      rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificGibbsEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificGibbsEnergy
 :SpecificGibbsEnergy rdf:type owl:Class ;
                      rdfs:subClassOf :SpecificEnergy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificHeatCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificHeatCapacity
 :SpecificHeatCapacity rdf:type owl:Class ;
                       rdfs:subClassOf :DerivedQuantity ,
                                       :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificHeatCapacityAtSaturatedVaporPressure
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificHeatCapacityAtSaturatedVaporPressure
 :SpecificHeatCapacityAtSaturatedVaporPressure rdf:type owl:Class ;
                                               rdfs:subClassOf :SpecificHeatCapacity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificHelmholtzEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificHelmholtzEnergy
 :SpecificHelmholtzEnergy rdf:type owl:Class ;
                          rdfs:subClassOf :SpecificEnergy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificInternalEnergy
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificInternalEnergy
 :SpecificInternalEnergy rdf:type owl:Class ;
                         rdfs:subClassOf :SpecificEnergy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolume
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume
 :SpecificVolume rdf:type owl:Class ;
                 rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Speed
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Speed
 :Speed rdf:type owl:Class ;
        rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SquareWaveCurrent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SquareWaveCurrent
 :SquareWaveCurrent rdf:type owl:Class ;
                    rdfs:subClassOf :ElectricCurrent ,
                                    :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StandardAbsoluteActivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardAbsoluteActivity
 :StandardAbsoluteActivity rdf:type owl:Class ;
                           rdfs:subClassOf :Activity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StandardAbsoluteActivityOfSolvent
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardAbsoluteActivityOfSolvent
 :StandardAbsoluteActivityOfSolvent rdf:type owl:Class ;
                                    rdfs:subClassOf :StandardAbsoluteActivity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StandardAmountConcentration
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardAmountConcentration
 :StandardAmountConcentration rdf:type owl:Class ;
                              rdfs:subClassOf :AmountConcentration ,
                                              :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StandardChemicalPotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardChemicalPotential
 :StandardChemicalPotential rdf:type owl:Class ;
                            rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StandardElectrodePotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardElectrodePotential
 :StandardElectrodePotential rdf:type owl:Class ;
                             rdfs:subClassOf :OpenCircuitVoltage .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StandardEquilibriumConstant
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardEquilibriumConstant
 :StandardEquilibriumConstant rdf:type owl:Class ;
                              rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StandardizedPhysicalQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity
 :StandardizedPhysicalQuantity rdf:type owl:Class ;
                               rdfs:subClassOf :PhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StaticFrictionCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StaticFrictionCoefficient
 :StaticFrictionCoefficient rdf:type owl:Class ;
                            rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StaticFrictionForce
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StaticFrictionForce
 :StaticFrictionForce rdf:type owl:Class ;
                      rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StatisticalWeightOfSubsystem
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StatisticalWeightOfSubsystem
 :StatisticalWeightOfSubsystem rdf:type owl:Class ;
                               rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StoichiometricNumberOfSubstance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StoichiometricNumberOfSubstance
 :StoichiometricNumberOfSubstance rdf:type owl:Class ;
                                  rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StorageLife
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StorageLife
 :StorageLife rdf:type owl:Class ;
              rdfs:subClassOf :BatteryQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Strain
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Strain
 :Strain rdf:type owl:Class ;
         rdfs:subClassOf :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Stress
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Stress
 :Stress rdf:type owl:Class ;
         rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#StructureFactor
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StructureFactor
 :StructureFactor rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SuperConductionTransitionTemperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SuperConductionTransitionTemperature
 :SuperConductionTransitionTemperature rdf:type owl:Class ;
                                       rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SuperConductorEnergyGap
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SuperConductorEnergyGap
 :SuperConductorEnergyGap rdf:type owl:Class ;
                          rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SurfaceCoefficientOfHeatTransfer
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SurfaceCoefficientOfHeatTransfer
 :SurfaceCoefficientOfHeatTransfer rdf:type owl:Class ;
                                   rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SurfaceMassDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SurfaceMassDensity
 :SurfaceMassDensity rdf:type owl:Class ;
                     rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SurfaceOverpotential
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SurfaceOverpotential
 :SurfaceOverpotential rdf:type owl:Class ;
                       rdfs:subClassOf :Overpotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SurfaceTension
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SurfaceTension
 :SurfaceTension rdf:type owl:Class ;
                 rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#TeamperatureCoefficientOfTheCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TeamperatureCoefficientOfTheCapacity
 :TeamperatureCoefficientOfTheCapacity rdf:type owl:Class ;
                                       rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Temperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Temperature
 :Temperature rdf:type owl:Class ;
              rdfs:subClassOf :DerivedQuantity ,
                              :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#TemperatureCoefficientOfTheOpenCircuitVolatage
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TemperatureCoefficientOfTheOpenCircuitVolatage
 :TemperatureCoefficientOfTheOpenCircuitVolatage rdf:type owl:Class ;
                                                 rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#TheoreticalCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TheoreticalCapacity
 :TheoreticalCapacity rdf:type owl:Class ;
                      rdfs:subClassOf :Capacity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#TheoreticalSpecificCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TheoreticalSpecificCapacity
 :TheoreticalSpecificCapacity rdf:type owl:Class ;
                              rdfs:subClassOf :SpecificCapacity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermalConductance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalConductance
 :ThermalConductance rdf:type owl:Class ;
                     rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermalConductivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalConductivity
 :ThermalConductivity rdf:type owl:Class ;
                      rdfs:subClassOf :DerivedQuantity ,
                                      :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermalDiffusionFactor
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalDiffusionFactor
 :ThermalDiffusionFactor rdf:type owl:Class ;
                         rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermalDiffusionRatio
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalDiffusionRatio
 :ThermalDiffusionRatio rdf:type owl:Class ;
                        rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermalDifusity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalDifusity
 :ThermalDifusity rdf:type owl:Class ;
                  rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermalInsulance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalInsulance
 :ThermalInsulance rdf:type owl:Class ;
                   rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermalResistance
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalResistance
 :ThermalResistance rdf:type owl:Class ;
                    rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermoElectricVoltage
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermoElectricVoltage
 :ThermoElectricVoltage rdf:type owl:Class ;
                        rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermodynamicCriticalMagneticFluxDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicCriticalMagneticFluxDensity
 :ThermodynamicCriticalMagneticFluxDensity rdf:type owl:Class ;
                                           rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermodynamicEffiency
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicEffiency
 :ThermodynamicEffiency rdf:type owl:Class ;
                        rdfs:subClassOf :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermodynamicGruenEisenParameter
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicGruenEisenParameter
 :ThermodynamicGruenEisenParameter rdf:type owl:Class ;
                                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermodynamicTemperature
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicTemperature
 :ThermodynamicTemperature rdf:type owl:Class ;
                           rdfs:subClassOf :ISQBaseQuantity ,
                                           :IntensiveQuantity ,
                                           :ThermodynamicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThermodynamicalQuantity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity
 :ThermodynamicalQuantity rdf:type owl:Class ;
                          rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Thickness
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Thickness
 :Thickness rdf:type owl:Class ;
            rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ThomsonCoefficient
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThomsonCoefficient
 :ThomsonCoefficient rdf:type owl:Class ;
                     rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Time
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Time
 :Time rdf:type owl:Class ;
       rdfs:subClassOf :ISQBaseQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#TimeInterval
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TimeInterval
 :TimeInterval rdf:type owl:Class ;
               rdfs:subClassOf :Time .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Torque
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Torque
 :Torque rdf:type owl:Class ;
         rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Tortuosity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Tortuosity
 :Tortuosity rdf:type owl:Class ;
             rdfs:subClassOf :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#TransportNumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TransportNumber
 :TransportNumber rdf:type owl:Class ;
                  rdfs:subClassOf :PhysioChemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#UpperCriticalMagneticFluxDensity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#UpperCriticalMagneticFluxDensity
 :UpperCriticalMagneticFluxDensity rdf:type owl:Class ;
                                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VacuumElectricPermitivity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VacuumElectricPermitivity
 :VacuumElectricPermitivity rdf:type owl:Class ;
                            rdfs:subClassOf :Permittivity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VacuumMagneticPermeability
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VacuumMagneticPermeability
 :VacuumMagneticPermeability rdf:type owl:Class ;
                             rdfs:subClassOf :Permeability .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Velocity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Velocity
 :Velocity rdf:type owl:Class ;
           rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Vergence
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Vergence
 :Vergence rdf:type owl:Class ;
           rdfs:subClassOf :DerivedQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Voltage
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Voltage
 :Voltage rdf:type owl:Class ;
          rdfs:subClassOf :ElectricPotential .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Volume
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Volume
 :Volume rdf:type owl:Class ;
         rdfs:subClassOf :DerivedQuantity ,
                         :ExtensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VolumeFlowRate
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VolumeFlowRate
 :VolumeFlowRate rdf:type owl:Class ;
                 rdfs:subClassOf :DerivedQuantity ,
                                 :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VolumeFraction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VolumeFraction
 :VolumeFraction rdf:type owl:Class ;
                 rdfs:subClassOf :ChemicalCompositionQuantity ,
                                 :RatioQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VolumetricCapacity
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VolumetricCapacity
 :VolumetricCapacity rdf:type owl:Class ;
                     rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Wavelength
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Wavelength
 :Wavelength rdf:type owl:Class ;
             rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Wavenumber
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Wavenumber
 :Wavenumber rdf:type owl:Class ;
             rdfs:subClassOf :ReciprocalLength .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Weight
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Weight
 :Weight rdf:type owl:Class ;
         rdfs:subClassOf :Force .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Width
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Width
 :Width rdf:type owl:Class ;
        rdfs:subClassOf :Length .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Work
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Work
 :Work rdf:type owl:Class ;
       rdfs:subClassOf :Energy .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#WorkFunction
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#WorkFunction
 :WorkFunction rdf:type owl:Class ;
               rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#WorkingPotentialRange
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#WorkingPotentialRange
 :WorkingPotentialRange rdf:type owl:Class ;
                        rdfs:subClassOf :ElectrochemicalQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AverageMass
+:AverageMass rdf:type owl:Class ;
+             rdfs:subClassOf :Mass .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MonoIsotopicMass
+:MonoIsotopicMass rdf:type owl:Class ;
+                  rdfs:subClassOf :Mass .
 
 
 #################################################################
@@ -2834,6 +2844,25 @@
   owl:members ( :AtomicMass
                 :ElectronMass
                 :ProtonMass
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AtomicMass
+                :ElectronMass
+                :ProtonMass
+                :AverageMass
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AtomicMass
+                :ElectronMass
+                :ProtonMass
+                :AverageMass
+                :MonoIsotopicMass
               )
 ] .
 

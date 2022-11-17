@@ -58,14 +58,13 @@ CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.density)}]->(density
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.melt)}]->(melt)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.electronegativity_pauling)}]->(electronegativity)
 CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.electron_affinity)}]->(electronaffinity)
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.ionization_energies)}]->(ionizationenergy)
+CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.ionization_energies)}]->(ionizationenergy);
 
 // Solvents import starts here
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/solvents1.csv' AS line
 
-MATCH(mass:EMMO_Quantity {EMMO__name: "AverageMass"}),
-     (avgmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),
+MATCH (avgmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),
      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
      (c:Element {symbol: "C"}),
      (h:Element {symbol: "h"}),
@@ -82,4 +81,8 @@ MATCH(mass:EMMO_Quantity {EMMO__name: "AverageMass"}),
 CREATE(solvent:Molecule {name: line.PREFERREDNAME,
 SMILES : line.SMILES,
 InChi_Key : line.INCHIKEY,
-IUPACName : line.IUPACNAME})
+IUPAC_name : line.IUPACNAME,
+InChi: line.INCHISTRING,
+chemical_formula: line.MOLECULARFORMULA})
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/useful_queries/solvents1.csv' AS line MATCH(mass:EMMO_Quantity {EMMO__name: "AverageMass"}), (avgmass:EMMO_Quantity {EMMO__name: "AtomicMass"}), (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}), (c:Element {symbol: "C"}), (h:Element {symbol: "h"}), (o:Element {symbol: "O"}), (n:Element {symbol: "N"}), (f:Element {symbol: "F"}), (cl:Element {symbol: "Cl"}), (p:Element {symbol: "P"}), (br:Element {symbol: "Br"}), (i:Element {symbol: "I"}), (s:Element {symbol: "S"}), (v:Element {symbol: "V"}) CREATE(solvent:Molecule {name: line.PREFERREDNAME, SMILES : line.SMILES, InChi_Key : line.INCHIKEY, IUPAC_name : line.IUPACNAME, InChi: line.INCHISTRING, chemical_formula: line.MOLECULARFORMULA})

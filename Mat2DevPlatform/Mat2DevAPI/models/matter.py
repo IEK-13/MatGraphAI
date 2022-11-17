@@ -51,17 +51,17 @@ class Molecule(ChemicalEntity):
 
     # IDENTIFIERS
     SMILES = StringProperty()
-    InChIKey = StringProperty()
+    InChI_key = StringProperty()
     InChI = StringProperty()
     CompoundCID = IntegerProperty()
-    IUPACName = StringProperty()
-    sumFormula = StringProperty()
+    IUPAC_name = StringProperty()
+    chemical_formula = StringProperty()
     CAS = StringProperty()
 
     # GENERAL PROPERTIES
     AlternativeNames = ArrayProperty()
-    nAtoms = IntegerProperty()
-    molWeight = FloatProperty()
+    n_atoms = IntegerProperty()
+    molar_weight = FloatProperty()
     charge = IntegerProperty()
 
     # ADDITIONAL INFORMATION
