@@ -1,1266 +1,859 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#"
-     xml:base="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured"/>
-    
+@prefix : <http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured> .
 
+<http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured> rdf:type owl:Ontology .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+#################################################################
+#    Classes
+#################################################################
 
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AcidicElectrochemicalCell
+:AcidicElectrochemicalCell rdf:type owl:Class ;
+                           rdfs:subClassOf :AqueousElectrochemicalCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AcidicElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineElectrochemicalCell
+:AlkalineElectrochemicalCell rdf:type owl:Class ;
+                             rdfs:subClassOf :AqueousElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AcidicElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AqueousElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineZincAirElectrochemicalCell
+:AlkalineZincAirElectrochemicalCell rdf:type owl:Class ;
+                                    rdfs:subClassOf :ElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AqueousElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineZincManganeseDioxideElectrochemicalCell
+:AlkalineZincManganeseDioxideElectrochemicalCell rdf:type owl:Class ;
+                                                 rdfs:subClassOf :ElectrochemicalCell ,
+                                                                 :PrimaryElectrochemicalCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineZincAirElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCarbonBasedCoatedBipolarPlate
+:AluminiumBasedCarbonBasedCoatedBipolarPlate rdf:type owl:Class ;
+                                             rdfs:subClassOf :AluminiumBasedCoatedMetallicBipolarPlate ;
+                                             owl:disjointWith :AluminiumBasedMetalBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineZincAirElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoatedMetallicBipolarPlate
+:AluminiumBasedCoatedMetallicBipolarPlate rdf:type owl:Class ;
+                                          rdfs:subClassOf :CoatedMetallicBipolarPlate ;
+                                          owl:disjointWith :NickelBasedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineZincManganeseDioxideElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineZincManganeseDioxideElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrimaryElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoductivePolymerCoatedBipolarPlate
+:AluminiumBasedCoductivePolymerCoatedBipolarPlate rdf:type owl:Class ;
+                                                  rdfs:subClassOf :AluminiumBasedCarbonBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCarbonBasedCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate
+:AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate rdf:type owl:Class ;
+                                                   rdfs:subClassOf :AluminiumBasedCarbonBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCarbonBasedCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoatedMetallicBipolarPlate"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedGraphiteCoatedBipolarPlate
+:AluminiumBasedGraphiteCoatedBipolarPlate rdf:type owl:Class ;
+                                          rdfs:subClassOf :AluminiumBasedCarbonBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoatedMetallicBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoatedMetallicBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoatedMetallicBipolarPlate"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalBasedCoatedBipolarPlate
+:AluminiumBasedMetalBasedCoatedBipolarPlate rdf:type owl:Class ;
+                                            rdfs:subClassOf :AluminiumBasedCoatedMetallicBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoductivePolymerCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalCarbideCoatedBipolarPlate
+:AluminiumBasedMetalCarbideCoatedBipolarPlate rdf:type owl:Class ;
+                                              rdfs:subClassOf :AluminiumBasedMetalBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoductivePolymerCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalNitrideCoatedBipolarPlate
+:AluminiumBasedMetalNitrideCoatedBipolarPlate rdf:type owl:Class ;
+                                              rdfs:subClassOf :AluminiumBasedMetalBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedNobelMetalCoatedBipolarPlate
+:AluminiumBasedNobelMetalCoatedBipolarPlate rdf:type owl:Class ;
+                                            rdfs:subClassOf :AluminiumBasedMetalBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedGraphiteCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate
+:AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate rdf:type owl:Class ;
+                                                                rdfs:subClassOf :AluminiumBasedCarbonBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedGraphiteCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AqueousElectrochemicalCell
+:AqueousElectrochemicalCell rdf:type owl:Class ;
+                            rdfs:subClassOf :ElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalBasedCoatedBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalBasedCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoatedMetallicBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery
+:Battery rdf:type owl:Class ;
+         rdfs:subClassOf :ElectrochemicalDevice .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalCarbideCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell
+:BatteryCell rdf:type owl:Class ;
+             rdfs:subClassOf :Battery .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalCarbideCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer
+:BatteryCellContainer rdf:type owl:Class ;
+                      rdfs:subClassOf :StructuralSubcomponent ;
+                      owl:disjointWith :Binder .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalNitrideCoatedBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalNitrideCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryModule
+:BatteryModule rdf:type owl:Class ;
+               rdfs:subClassOf :Battery .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedNobelMetalCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Binder
+:Binder rdf:type owl:Class ;
+        rdfs:subClassOf :StructuralSubcomponent .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedNobelMetalCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BipolarPlate
+:BipolarPlate rdf:type owl:Class ;
+              rdfs:subClassOf :FuelCellSubcomponent .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BufferBattery
+:BufferBattery rdf:type owl:Class ;
+               rdfs:subClassOf :Battery .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AqueousElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CarbonBasedCompositeBipolarPlate
+:CarbonBasedCompositeBipolarPlate rdf:type owl:Class ;
+                                  rdfs:subClassOf :CompositeBipolarPlate ;
+                                  owl:disjointWith :MetalBasedCompositeBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AqueousElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystCoatedMembrane
+:CatalystCoatedMembrane rdf:type owl:Class ;
+                        rdfs:subClassOf :Component .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystLayer
+:CatalystLayer rdf:type owl:Class ;
+               rdfs:subClassOf :Component .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoatedMetallicBipolarPlate
+:CoatedMetallicBipolarPlate rdf:type owl:Class ;
+                            rdfs:subClassOf :BipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoinCell
+:CoinCell rdf:type owl:Class ;
+          rdfs:subClassOf :BatteryCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StructuralSubcomponent"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Binder"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoinCellHousing
+:CoinCellHousing rdf:type owl:Class ;
+                 rdfs:subClassOf :BatteryCellContainer .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryModule -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component
+:Component rdf:type owl:Class ;
+           rdfs:subClassOf :Manufactured ;
+           owl:disjointWith :Device .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryModule">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CompositeBipolarPlate
+:CompositeBipolarPlate rdf:type owl:Class ;
+                       rdfs:subClassOf :BipolarPlate ;
+                       owl:disjointWith :NonPorousGraphiteBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Binder -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Binder">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StructuralSubcomponent"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConcentrationElectrochemicalCell
+:ConcentrationElectrochemicalCell rdf:type owl:Class ;
+                                  rdfs:subClassOf :ElectrochemicalCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConversionElectrochemicalCell
+:ConversionElectrochemicalCell rdf:type owl:Class ;
+                               rdfs:subClassOf :ElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoolingPlate
+:CoolingPlate rdf:type owl:Class ;
+              rdfs:subClassOf :FuelCellSubcomponent .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BufferBattery -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BufferBattery">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CurrentCollector
+:CurrentCollector rdf:type owl:Class ;
+                  rdfs:subClassOf :ElectronicSubcomponent .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CarbonBasedCompositeBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CylindricalCell
+:CylindricalCell rdf:type owl:Class ;
+                 rdfs:subClassOf :BatteryCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CarbonBasedCompositeBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CompositeBipolarPlate"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalBasedCompositeBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CylindricalCellHousing
+:CylindricalCellHousing rdf:type owl:Class ;
+                        rdfs:subClassOf :BatteryCellContainer .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystCoatedMembrane -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystCoatedMembrane">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Device
+:Device rdf:type owl:Class ;
+        rdfs:subClassOf :Manufactured .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystLayer -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#DryBatteryCell
+:DryBatteryCell rdf:type owl:Class ;
+                rdfs:subClassOf :BatteryCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystLayer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectricCurrentCollector
+:ElectricCurrentCollector rdf:type owl:Class ;
+                          rdfs:subClassOf :ElectrochemicalSubcomponent ,
+                                          :FuelCellSubcomponent .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoatedMetallicBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoatedMetallicBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCapacitor
+:ElectrochemicalCapacitor rdf:type owl:Class ;
+                          rdfs:subClassOf :ElectrochemicalDevice .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoinCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell
+:ElectrochemicalCell rdf:type owl:Class ;
+                     rdfs:subClassOf :ElectrochemicalDevice .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoinCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalComponent
+:ElectrochemicalComponent rdf:type owl:Class ;
+                          rdfs:subClassOf :Component .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoinCellHousing -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoinCellHousing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice
+:ElectrochemicalDevice rdf:type owl:Class ;
+                       rdfs:subClassOf :Device .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalHalfcell
+:ElectrochemicalHalfcell rdf:type owl:Class ;
+                         rdfs:subClassOf :ElectrochemicalDevice .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Manufactured"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Device"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent
+:ElectrochemicalSubcomponent rdf:type owl:Class ;
+                             rdfs:subClassOf :Subcomponent .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CompositeBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CompositeBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BipolarPlate"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonPorousGraphiteBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrolyticElectrochemicalCell
+:ElectrolyticElectrochemicalCell rdf:type owl:Class ;
+                                 rdfs:subClassOf :ElectrochemicalCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConcentrationElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectronicSubcomponent
+:ElectronicSubcomponent rdf:type owl:Class ;
+                        rdfs:subClassOf :ElectrochemicalSubcomponent .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConcentrationElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#EmergencyBattery
+:EmergencyBattery rdf:type owl:Class ;
+                  rdfs:subClassOf :Battery .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConversionElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConversionElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCell
+:FuelCell rdf:type owl:Class ;
+          rdfs:subClassOf :ElectrochemicalDevice ,
+                          :GalvanicElectrochemicalCell ;
+          owl:disjointWith :PrimaryElectrochemicalCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoolingPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellComponent
+:FuelCellComponent rdf:type owl:Class ;
+                   rdfs:subClassOf :ElectrochemicalComponent .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoolingPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellStack
+:FuelCellStack rdf:type owl:Class ;
+               rdfs:subClassOf :FuelCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CurrentCollector -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CurrentCollector">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectronicSubcomponent"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellStation
+:FuelCellStation rdf:type owl:Class ;
+                 rdfs:subClassOf :BatteryCellContainer .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CylindricalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent
+:FuelCellSubcomponent rdf:type owl:Class ;
+                      rdfs:subClassOf :ElectrochemicalSubcomponent .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CylindricalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GalvanicElectrochemicalCell
+:GalvanicElectrochemicalCell rdf:type owl:Class ;
+                             rdfs:subClassOf :ElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CylindricalCellHousing -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CylindricalCellHousing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GasDiffusionLayer
+:GasDiffusionLayer rdf:type owl:Class ;
+                   rdfs:subClassOf :FuelCellSubcomponent .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Device -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#HybridElectrochemicalCell
+:HybridElectrochemicalCell rdf:type owl:Class ;
+                           rdfs:subClassOf :ElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Device">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Manufactured"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IntercalationElectrochemicalCell
+:IntercalationElectrochemicalCell rdf:type owl:Class ;
+                                  rdfs:subClassOf :ElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#DryBatteryCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#DryBatteryCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IonicSubcomponent
+:IonicSubcomponent rdf:type owl:Class ;
+                   rdfs:subClassOf :ElectrochemicalSubcomponent .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectricCurrentCollector -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LeclancheElectrochemicalCell
+:LeclancheElectrochemicalCell rdf:type owl:Class ;
+                              rdfs:subClassOf :ElectrochemicalCell ,
+                                              :PrimaryElectrochemicalCell ;
+                              owl:disjointWith :LithiumCarbonMonofluorideElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectricCurrentCollector">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LihtiumElectrochemicalCell
+:LihtiumElectrochemicalCell rdf:type owl:Class ;
+                            rdfs:subClassOf :NonAqueousElectrochemicalCell ;
+                            owl:disjointWith :MoltenSaltElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCapacitor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCapacitor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LithiumCarbonMonofluorideElectrochemicalCell
+:LithiumCarbonMonofluorideElectrochemicalCell rdf:type owl:Class ;
+                                              rdfs:subClassOf :PrimaryElectrochemicalCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LithiumElectrochemicalCell
+:LithiumElectrochemicalCell rdf:type owl:Class ;
+                            rdfs:subClassOf :IntercalationElectrochemicalCell ,
+                                            :SecondaryElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Manufactured
+:Manufactured rdf:type owl:Class .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalComponent -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalComponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Membrane
+:Membrane rdf:type owl:Class ;
+          rdfs:subClassOf :Component .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MembraneElectrodeAssembly
+:MembraneElectrodeAssembly rdf:type owl:Class ;
+                           rdfs:subClassOf :Component .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Device"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalAirElectrodeElectrochemicalCell
+:MetalAirElectrodeElectrochemicalCell rdf:type owl:Class ;
+                                      rdfs:subClassOf :ElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalHalfcell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalHalfcell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalBasedCompositeBipolarPlate
+:MetalBasedCompositeBipolarPlate rdf:type owl:Class ;
+                                 rdfs:subClassOf :CompositeBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MoltenSaltElectrochemicalCell
+:MoltenSaltElectrochemicalCell rdf:type owl:Class ;
+                               rdfs:subClassOf :NonAqueousElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Subcomponent"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NearneutralElectrochemicalCell
+:NearneutralElectrochemicalCell rdf:type owl:Class ;
+                                rdfs:subClassOf :AqueousElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrolyticElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrolyticElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedBipolarPlate
+:NickelBasedBipolarPlate rdf:type owl:Class ;
+                         rdfs:subClassOf :CoatedMetallicBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectronicSubcomponent -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedCarbonBasedCoatedBipolarPlate
+:NickelBasedCarbonBasedCoatedBipolarPlate rdf:type owl:Class ;
+                                          rdfs:subClassOf :NickelBasedBipolarPlate ;
+                                          owl:disjointWith :NickelBasedMetalBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectronicSubcomponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedConductivePolymerCoatedBipolarPlate
+:NickelBasedConductivePolymerCoatedBipolarPlate rdf:type owl:Class ;
+                                                rdfs:subClassOf :NickelBasedCarbonBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#EmergencyBattery -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#EmergencyBattery">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedDiamondLikeCarbonCoatedBipolarPlate
+:NickelBasedDiamondLikeCarbonCoatedBipolarPlate rdf:type owl:Class ;
+                                                rdfs:subClassOf :NickelBasedCarbonBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedGraphiteCoatedBipolarPlate
+:NickelBasedGraphiteCoatedBipolarPlate rdf:type owl:Class ;
+                                       rdfs:subClassOf :NickelBasedCarbonBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GalvanicElectrochemicalCell"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrimaryElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalBasedCoatedBipolarPlate
+:NickelBasedMetalBasedCoatedBipolarPlate rdf:type owl:Class ;
+                                         rdfs:subClassOf :NickelBasedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellComponent -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellComponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalComponent"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalCarbideCoatedBipolarPlate
+:NickelBasedMetalCarbideCoatedBipolarPlate rdf:type owl:Class ;
+                                           rdfs:subClassOf :NickelBasedMetalBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellStack -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalNitrideCoatedBipolarPlate
+:NickelBasedMetalNitrideCoatedBipolarPlate rdf:type owl:Class ;
+                                           rdfs:subClassOf :NickelBasedMetalBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellStack">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedNobleMetalCoatedBipolarPlate
+:NickelBasedNobleMetalCoatedBipolarPlate rdf:type owl:Class ;
+                                         rdfs:subClassOf :NickelBasedMetalBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellStation -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellStation">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate
+:NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate rdf:type owl:Class ;
+                                                             rdfs:subClassOf :NickelBasedCarbonBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonAqueousElectrochemicalCell
+:NonAqueousElectrochemicalCell rdf:type owl:Class ;
+                               rdfs:subClassOf :ElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonFluorinatedCompositeMembrane
+:NonFluorinatedCompositeMembrane rdf:type owl:Class ;
+                                 rdfs:subClassOf :Membrane .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GalvanicElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GalvanicElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonFluorinatedMembrane
+:NonFluorinatedMembrane rdf:type owl:Class ;
+                        rdfs:subClassOf :Membrane .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GasDiffusionLayer -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonPorousGraphiteBipolarPlate
+:NonPorousGraphiteBipolarPlate rdf:type owl:Class ;
+                               rdfs:subClassOf :BipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GasDiffusionLayer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#OEMBattery
+:OEMBattery rdf:type owl:Class ;
+            rdfs:subClassOf :Battery .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#HybridElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#HybridElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PaperLinedCell
+:PaperLinedCell rdf:type owl:Class ;
+                rdfs:subClassOf :BatteryCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IntercalationElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PartiallyFluorinatedMembrane
+:PartiallyFluorinatedMembrane rdf:type owl:Class ;
+                              rdfs:subClassOf :Membrane .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IntercalationElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PasteLinedCell
+:PasteLinedCell rdf:type owl:Class ;
+                rdfs:subClassOf :BatteryCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IonicSubcomponent -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IonicSubcomponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PerfluorinatedMembrane
+:PerfluorinatedMembrane rdf:type owl:Class ;
+                        rdfs:subClassOf :Membrane .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LeclancheElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PhotoelectrolyticElectrochemicalCell
+:PhotoelectrolyticElectrochemicalCell rdf:type owl:Class ;
+                                      rdfs:subClassOf :ElectrolyticElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LeclancheElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrimaryElectrochemicalCell"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LithiumCarbonMonofluorideElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PilotBatteryCell
+:PilotBatteryCell rdf:type owl:Class ;
+                  rdfs:subClassOf :BatteryCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LihtiumElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LihtiumElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonAqueousElectrochemicalCell"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MoltenSaltElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCell
+:PouchCell rdf:type owl:Class ;
+           rdfs:subClassOf :BatteryCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LithiumCarbonMonofluorideElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCellHousing
+:PouchCellHousing rdf:type owl:Class ;
+                  rdfs:subClassOf :BatteryCellContainer .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LithiumCarbonMonofluorideElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrimaryElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrimaryElectrochemicalCell
+:PrimaryElectrochemicalCell rdf:type owl:Class ;
+                            rdfs:subClassOf :GalvanicElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LithiumElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LithiumElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IntercalationElectrochemicalCell"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SecondaryElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrismaticCellHousing
+:PrismaticCellHousing rdf:type owl:Class ;
+                      rdfs:subClassOf :BatteryCellContainer .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Manufactured -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReactiveSubcomponent
+:ReactiveSubcomponent rdf:type owl:Class ;
+                      rdfs:subClassOf :ElectrochemicalSubcomponent .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Manufactured"/>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReplacementBattery
+:ReplacementBattery rdf:type owl:Class ;
+                    rdfs:subClassOf :Battery .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Membrane -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Membrane">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReserveBatteryCell
+:ReserveBatteryCell rdf:type owl:Class ;
+                    rdfs:subClassOf :BatteryCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MembraneElectrodeAssembly -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Seal
+:Seal rdf:type owl:Class ;
+      rdfs:subClassOf :FuelCellSubcomponent .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MembraneElectrodeAssembly">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SecondaryElectrochemicalCell
+:SecondaryElectrochemicalCell rdf:type owl:Class ;
+                              rdfs:subClassOf :ElectrochemicalCell .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalAirElectrodeElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalAirElectrodeElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SingleFuelCell
+:SingleFuelCell rdf:type owl:Class ;
+                rdfs:subClassOf :FuelCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalBasedCompositeBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SolidElectrolyteElectrochemicalCell
+:SolidElectrolyteElectrochemicalCell rdf:type owl:Class ;
+                                     rdfs:subClassOf :ElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalBasedCompositeBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CompositeBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedBiploarPlate
+:StainlessSteelBasedBiploarPlate rdf:type owl:Class ;
+                                 rdfs:subClassOf :CoatedMetallicBipolarPlate ;
+                                 owl:disjointWith :TitaniumBasedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MoltenSaltElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MoltenSaltElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonAqueousElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedCarbonBasedCoatedBipolarPlate
+:StainlessSteelBasedCarbonBasedCoatedBipolarPlate rdf:type owl:Class ;
+                                                  rdfs:subClassOf :StainlessSteelBasedBiploarPlate ;
+                                                  owl:disjointWith :StainlessSteelBasedMetalBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NearneutralElectrochemicalCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedConductivePolymerCoatedBipolarPlate
+:StainlessSteelBasedConductivePolymerCoatedBipolarPlate rdf:type owl:Class ;
+                                                        rdfs:subClassOf :StainlessSteelBasedCarbonBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NearneutralElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AqueousElectrochemicalCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate
+:StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate rdf:type owl:Class ;
+                                                        rdfs:subClassOf :StainlessSteelBasedCarbonBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoatedMetallicBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedGraphiteCoatedBipolarPlate
+:StainlessSteelBasedGraphiteCoatedBipolarPlate rdf:type owl:Class ;
+                                               rdfs:subClassOf :StainlessSteelBasedCarbonBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedCarbonBasedCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalBasedCoatedBipolarPlate
+:StainlessSteelBasedMetalBasedCoatedBipolarPlate rdf:type owl:Class ;
+                                                 rdfs:subClassOf :StainlessSteelBasedBiploarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedCarbonBasedCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedBipolarPlate"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalCarbidCoatedBipolarPlate
+:StainlessSteelBasedMetalCarbidCoatedBipolarPlate rdf:type owl:Class ;
+                                                  rdfs:subClassOf :StainlessSteelBasedMetalBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedConductivePolymerCoatedBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedConductivePolymerCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalNitrideCoatedBiploarPlate
+:StainlessSteelBasedMetalNitrideCoatedBiploarPlate rdf:type owl:Class ;
+                                                   rdfs:subClassOf :StainlessSteelBasedMetalBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedDiamondLikeCarbonCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedNobleMetalCoatedBipolarPlate
+:StainlessSteelBasedNobleMetalCoatedBipolarPlate rdf:type owl:Class ;
+                                                 rdfs:subClassOf :StainlessSteelBasedMetalBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedDiamondLikeCarbonCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate
+:StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate rdf:type owl:Class ;
+                                                                     rdfs:subClassOf :StainlessSteelBasedCarbonBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedGraphiteCoatedBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedGraphiteCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StandardVoltageCell
+:StandardVoltageCell rdf:type owl:Class ;
+                     rdfs:subClassOf :BatteryCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalBasedCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Station
+:Station rdf:type owl:Class ;
+         rdfs:subClassOf :FuelCellSubcomponent .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalBasedCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StructuralSubcomponent
+:StructuralSubcomponent rdf:type owl:Class ;
+                        rdfs:subClassOf :ElectrochemicalSubcomponent .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalCarbideCoatedBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalCarbideCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Subcomponent
+:Subcomponent rdf:type owl:Class ;
+              rdfs:subClassOf :Manufactured .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalNitrideCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SwagelokCell
+:SwagelokCell rdf:type owl:Class ;
+              rdfs:subClassOf :BatteryCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalNitrideCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SwagelokCellHousing
+:SwagelokCellHousing rdf:type owl:Class ;
+                     rdfs:subClassOf :BatteryCellContainer .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedNobleMetalCoatedBipolarPlate -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedNobleMetalCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ThermoElectrochemicalCell
+:ThermoElectrochemicalCell rdf:type owl:Class ;
+                           rdfs:subClassOf :ElectrochemicalCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ThreeElectrodeElectrochemicalCell
+:ThreeElectrodeElectrochemicalCell rdf:type owl:Class ;
+                                   rdfs:subClassOf :ElectrochemicalCell .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedBipolarPlate
+:TitaniumBasedBipolarPlate rdf:type owl:Class ;
+                           rdfs:subClassOf :CoatedMetallicBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonAqueousElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonAqueousElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedCarbonBasedCoatedBipolarPlate
+:TitaniumBasedCarbonBasedCoatedBipolarPlate rdf:type owl:Class ;
+                                            rdfs:subClassOf :TitaniumBasedBipolarPlate ;
+                                            owl:disjointWith :TitaniumBasedMetalBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonFluorinatedCompositeMembrane -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedConductivePolymerCoatedBipolarPlate
+:TitaniumBasedConductivePolymerCoatedBipolarPlate rdf:type owl:Class ;
+                                                  rdfs:subClassOf :TitaniumBasedCarbonBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonFluorinatedCompositeMembrane">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Membrane"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate
+:TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate rdf:type owl:Class ;
+                                                  rdfs:subClassOf :TitaniumBasedCarbonBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonFluorinatedMembrane -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonFluorinatedMembrane">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Membrane"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedGraohiteCoatedBipolarPlate
+:TitaniumBasedGraohiteCoatedBipolarPlate rdf:type owl:Class ;
+                                         rdfs:subClassOf :TitaniumBasedCarbonBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonPorousGraphiteBipolarPlate -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalBasedCoatedBipolarPlate
+:TitaniumBasedMetalBasedCoatedBipolarPlate rdf:type owl:Class ;
+                                           rdfs:subClassOf :TitaniumBasedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonPorousGraphiteBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BipolarPlate"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalCarbideCoatedBipolarPlate
+:TitaniumBasedMetalCarbideCoatedBipolarPlate rdf:type owl:Class ;
+                                             rdfs:subClassOf :TitaniumBasedMetalBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#OEMBattery -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#OEMBattery">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMtealNitrideCoatedBipolarPlate
+:TitaniumBasedMtealNitrideCoatedBipolarPlate rdf:type owl:Class ;
+                                             rdfs:subClassOf :TitaniumBasedMetalBasedCoatedBipolarPlate .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PaperLinedCell -->
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedNobleMetalCoatedBipolarPlate
+:TitaniumBasedNobleMetalCoatedBipolarPlate rdf:type owl:Class ;
+                                           rdfs:subClassOf :TitaniumBasedMetalBasedCoatedBipolarPlate .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PaperLinedCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate
+:TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate rdf:type owl:Class ;
+                                                               rdfs:subClassOf :TitaniumBasedCarbonBasedCoatedBipolarPlate .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PartiallyFluorinatedMembrane -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PartiallyFluorinatedMembrane">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Membrane"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#WestonStandardVoltageCell
+:WestonStandardVoltageCell rdf:type owl:Class ;
+                           rdfs:subClassOf :StandardVoltageCell .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PasteLinedCell -->
+#################################################################
+#    General axioms
+#################################################################
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PasteLinedCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AcidicElectrochemicalCell
+                :AlkalineElectrochemicalCell
+                :NearneutralElectrochemicalCell
+              )
+] .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PerfluorinatedMembrane -->
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AlkalineZincAirElectrochemicalCell
+                :AqueousElectrochemicalCell
+                :ConcentrationElectrochemicalCell
+                :ConversionElectrochemicalCell
+                :ElectrolyticElectrochemicalCell
+                :HybridElectrochemicalCell
+                :IntercalationElectrochemicalCell
+                :LeclancheElectrochemicalCell
+                :MetalAirElectrodeElectrochemicalCell
+                :NonAqueousElectrochemicalCell
+                :SolidElectrolyteElectrochemicalCell
+                :ThermoElectrochemicalCell
+                :ThreeElectrodeElectrochemicalCell
+              )
+] .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PerfluorinatedMembrane">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Membrane"/>
-    </owl:Class>
-    
 
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AluminiumBasedCoductivePolymerCoatedBipolarPlate
+                :AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate
+                :AluminiumBasedGraphiteCoatedBipolarPlate
+                :AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate
+              )
+] .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PhotoelectrolyticElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PhotoelectrolyticElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrolyticElectrochemicalCell"/>
-    </owl:Class>
-    
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AluminiumBasedMetalCarbideCoatedBipolarPlate
+                :AluminiumBasedMetalNitrideCoatedBipolarPlate
+                :AluminiumBasedNobelMetalCoatedBipolarPlate
+              )
+] .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PilotBatteryCell -->
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Battery
+                :ElectrochemicalCapacitor
+                :ElectrochemicalHalfcell
+                :FuelCell
+              )
+] .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PilotBatteryCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
 
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BatteryCell
+                :BatteryModule
+                :BufferBattery
+                :EmergencyBattery
+                :OEMBattery
+                :ReplacementBattery
+              )
+] .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CatalystCoatedMembrane
+                :CatalystLayer
+                :CoolingPlate
+                :FuelCellComponent
+                :GasDiffusionLayer
+                :Membrane
+                :MembraneElectrodeAssembly
+                :Seal
+              )
+] .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCellHousing -->
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CoinCell
+                :CylindricalCell
+                :DryBatteryCell
+                :PaperLinedCell
+                :PasteLinedCell
+                :PilotBatteryCell
+                :PouchCell
+                :ReserveBatteryCell
+                :StandardVoltageCell
+                :SwagelokCell
+              )
+] .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCellHousing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer"/>
-    </owl:Class>
-    
 
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CoinCellHousing
+                :CylindricalCellHousing
+                :FuelCellStation
+                :PouchCellHousing
+                :PrismaticCellHousing
+                :SwagelokCellHousing
+              )
+] .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrimaryElectrochemicalCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrimaryElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GalvanicElectrochemicalCell"/>
-    </owl:Class>
-    
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ElectricCurrentCollector
+                :ElectronicSubcomponent
+                :FuelCellSubcomponent
+                :IonicSubcomponent
+                :ReactiveSubcomponent
+                :StructuralSubcomponent
+              )
+] .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrismaticCellHousing -->
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :NickelBasedConductivePolymerCoatedBipolarPlate
+                :NickelBasedDiamondLikeCarbonCoatedBipolarPlate
+                :NickelBasedGraphiteCoatedBipolarPlate
+                :NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate
+              )
+] .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrismaticCellHousing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer"/>
-    </owl:Class>
-    
 
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :NickelBasedMetalCarbideCoatedBipolarPlate
+                :NickelBasedMetalNitrideCoatedBipolarPlate
+                :NickelBasedNobleMetalCoatedBipolarPlate
+              )
+] .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReactiveSubcomponent -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReactiveSubcomponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
-    </owl:Class>
-    
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :NonFluorinatedCompositeMembrane
+                :NonFluorinatedMembrane
+                :PartiallyFluorinatedMembrane
+                :PerfluorinatedMembrane
+              )
+] .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReplacementBattery -->
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :StainlessSteelBasedConductivePolymerCoatedBipolarPlate
+                :StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate
+                :StainlessSteelBasedGraphiteCoatedBipolarPlate
+                :StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate
+              )
+] .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReplacementBattery">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery"/>
-    </owl:Class>
-    
 
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :StainlessSteelBasedMetalCarbidCoatedBipolarPlate
+                :StainlessSteelBasedMetalNitrideCoatedBiploarPlate
+                :StainlessSteelBasedNobleMetalCoatedBipolarPlate
+              )
+] .
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReserveBatteryCell -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReserveBatteryCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :TitaniumBasedConductivePolymerCoatedBipolarPlate
+                :TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate
+                :TitaniumBasedGraohiteCoatedBipolarPlate
+                :TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate
+              )
+] .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Seal -->
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :TitaniumBasedMetalCarbideCoatedBipolarPlate
+                :TitaniumBasedMtealNitrideCoatedBipolarPlate
+                :TitaniumBasedNobleMetalCoatedBipolarPlate
+              )
+] .
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Seal">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent"/>
-    </owl:Class>
-    
 
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SecondaryElectrochemicalCell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SecondaryElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SingleFuelCell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SingleFuelCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCell"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SolidElectrolyteElectrochemicalCell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SolidElectrolyteElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedBiploarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedBiploarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoatedMetallicBipolarPlate"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedCarbonBasedCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedCarbonBasedCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedBiploarPlate"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedConductivePolymerCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedConductivePolymerCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedGraphiteCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedGraphiteCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalBasedCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalBasedCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedBiploarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalCarbidCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalCarbidCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalNitrideCoatedBiploarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalNitrideCoatedBiploarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedNobleMetalCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedNobleMetalCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StandardVoltageCell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StandardVoltageCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Station -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Station">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StructuralSubcomponent -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StructuralSubcomponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Subcomponent -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Subcomponent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Manufactured"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SwagelokCell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SwagelokCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SwagelokCellHousing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SwagelokCellHousing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCellContainer"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ThermoElectrochemicalCell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ThermoElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ThreeElectrodeElectrochemicalCell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ThreeElectrodeElectrochemicalCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoatedMetallicBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedCarbonBasedCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedCarbonBasedCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedBipolarPlate"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedConductivePolymerCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedConductivePolymerCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedGraohiteCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedGraohiteCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalBasedCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalBasedCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalCarbideCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalCarbideCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMtealNitrideCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMtealNitrideCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedNobleMetalCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedNobleMetalCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedCarbonBasedCoatedBipolarPlate"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#WestonStandardVoltageCell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#WestonStandardVoltageCell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StandardVoltageCell"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AcidicElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NearneutralElectrochemicalCell"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AlkalineZincAirElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AqueousElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConcentrationElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConversionElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrolyticElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#HybridElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IntercalationElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LeclancheElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalAirElectrodeElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonAqueousElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SolidElectrolyteElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ThermoElectrochemicalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ThreeElectrodeElectrochemicalCell"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedCoductivePolymerCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedGraphiteCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalCarbideCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedMetalNitrideCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AluminiumBasedNobelMetalCoatedBipolarPlate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCapacitor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalHalfcell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCell"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BatteryModule"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BufferBattery"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#EmergencyBattery"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#OEMBattery"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReplacementBattery"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystCoatedMembrane"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystLayer"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoolingPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellComponent"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GasDiffusionLayer"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Membrane"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MembraneElectrodeAssembly"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Seal"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoinCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CylindricalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#DryBatteryCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PaperLinedCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PasteLinedCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PilotBatteryCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReserveBatteryCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StandardVoltageCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SwagelokCell"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoinCellHousing"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CylindricalCellHousing"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellStation"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCellHousing"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PrismaticCellHousing"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SwagelokCellHousing"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectricCurrentCollector"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectronicSubcomponent"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCellSubcomponent"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IonicSubcomponent"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReactiveSubcomponent"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StructuralSubcomponent"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedConductivePolymerCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedDiamondLikeCarbonCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedGraphiteCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalCarbideCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedMetalNitrideCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedNobleMetalCoatedBipolarPlate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonFluorinatedCompositeMembrane"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonFluorinatedMembrane"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PartiallyFluorinatedMembrane"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PerfluorinatedMembrane"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedConductivePolymerCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedGraphiteCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalCarbidCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedMetalNitrideCoatedBiploarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedNobleMetalCoatedBipolarPlate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedConductivePolymerCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedGraohiteCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMetalCarbideCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedMtealNitrideCoatedBipolarPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#TitaniumBasedNobleMetalCoatedBipolarPlate"/>
-        </owl:members>
-    </rdf:Description>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,8 +1,10 @@
 //Import of ontologies, first neosemantic gets initialized, subsequently the ontologies can be imported, each domain gets
 //an additional label to "EMMO_DOMAIN" to make the different domains separately accessible
 
+Match (n)-[m]-(r) delete n,m,r;
+Match (n) delete n;
 
-CREATE CONSTRAINT n10s_unique_uri ON (r:Resource) ASSERT r.uri IS UNIQUE;
+// CREATE CONSTRAINT n10s_unique_uri ON (r:Resource) ASSERT r.uri IS UNIQUE;
 
 call n10s.graphconfig.init({
 baseSchemaPrefix:"EMMO",
