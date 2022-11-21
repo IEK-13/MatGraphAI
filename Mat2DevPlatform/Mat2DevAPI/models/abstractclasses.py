@@ -2,7 +2,7 @@ from django_neomodel import DjangoNode, classproperty
 from neomodel import (AliasProperty,
                       StringProperty,
                       UniqueIdProperty,
-                      DateTimeProperty,
+                      DateProperty,
                       ArrayProperty)
 from django.apps import apps
 
@@ -31,9 +31,6 @@ class UIDDjangoNode(DjangoNode):
             raise TypeError("Model instances without primary key value are unhashable")
         return hash(self.uid)
 
-class UINamedNode(UIDDjangoNode):
-    name = StringProperty()
-
 
 class UniqueNode(DjangoNode):
     @classmethod
@@ -45,7 +42,16 @@ class UniqueNode(DjangoNode):
 
 
 class CausalObject(UIDDjangoNode):
-    date_added = DateTimeProperty(required=True)
+    __abstract_node__ = True
+
+    date_added = DateProperty(required=True)
+
+class OntologyNode(UIDDjangoNode):
+    EMMO__name = StringProperty(required= True, unique_index= True)
+    __abstract_node__ = True
+
+    date_added = DateProperty(required=True)
+
 
 
 class AlternativeLabelMixin:

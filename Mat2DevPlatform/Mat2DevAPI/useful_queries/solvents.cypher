@@ -37,7 +37,7 @@ MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
 
 
 // Create Nodes
-CREATE (element:Element {name: line.name, summary: line.summary, symbol : line.symbol})
+CREATE (element:Element {name: line.name, summary: line.name, symbol : line.symbol})
 
 
 FOREACH(x IN CASE WHEN line.discovered_by IS NOT NULL THEN [1] END |
@@ -48,18 +48,29 @@ FOREACH(x IN CASE WHEN line.discovered_by IS NOT NULL THEN [1] END |
   MERGE (element)<-[:YIELDED]-(exp)-[:BY]->(researcher))
 // IntegerProperties
 
-CREATE (element)-[:HAS_INTEGER_PROPERTY {value : line.number}]->(atomicnumber)
+CREATE (element)-[:HAS_INTEGER_PROPERTY {value : toInteger(line.number)}]->(atomicnumber)
 
 //FloatProperties
+FOREACH(x IN CASE WHEN NOT NULL in apoc.convert.toIntList(line.ionization_energies) THEN [1] END |
+  MERGE (solvent)-[:HAS_ARRAY_PROPERTY {value: apoc.convert.toIntList(line.ionization_energies)}]->(ionizationenergy))
 
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.atomic_mass)}]->(atomicmass)
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.number)}]->(molarheat)
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.density)}]->(density)
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.melt)}]->(melt)
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.electronegativity_pauling)}]->(electronegativity)
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.electron_affinity)}]->(electronaffinity)
-CREATE (element)-[:HAS_FLOAT_PROPERTY {value : toFloat(line.ionization_energies)}]->(ionizationenergy);
+FOREACH(x IN CASE WHEN line.electron_affinity IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electron_affinity)}]->(electronaffinity))
 
+FOREACH(x IN CASE WHEN line.electronegativity_pauling IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electronegativity_pauling)}]->(electronegativity))
+
+FOREACH(x IN CASE WHEN line.melt IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.melt)}]->(melt))
+
+FOREACH(x IN CASE WHEN line.density IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.density)}]->(density))
+
+FOREACH(x IN CASE WHEN line.molarheat IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.number)}]->(molarheat))
+
+FOREACH(x IN CASE WHEN toFloat(line.atomic_mass) IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.atomic_mass)}]->(atomicmass));
 // Solvents import starts here
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents1.csv' AS row
@@ -88,37 +99,44 @@ chemical_formula: row.MOLECULARFORMULA})
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.C)}]->(c))
 
 FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.H)}]->(h))
 
 FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.O)}]->(o))
 
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
 
 FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
 
 FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Cl)}]->(cl))
 
 FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.P)}]->(p))
 
 FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Br)}]->(br))
 
 FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.I)}]->(i))
 
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
 
 FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.V)}]->(v))
+
+FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(avgmass))
+
+FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(monoisomass));
+
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents2.csv' AS row
 
@@ -146,37 +164,43 @@ CREATE(solvent:Molecule {name: row.PREFERREDNAME,
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.C)}]->(c))
 
 FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.H)}]->(h))
 
 FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.O)}]->(o))
 
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
 
 FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
 
 FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Cl)}]->(cl))
 
 FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.P)}]->(p))
 
 FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Br)}]->(br))
 
 FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.I)}]->(i))
 
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
 
 FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.V)}]->(v))
+
+FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(avgmass))
+
+FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(monoisomass));
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents3.csv' AS row
 
@@ -204,37 +228,43 @@ CREATE(solvent:Molecule {name: row.PREFERREDNAME,
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.C)}]->(c))
 
 FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.H)}]->(h))
 
 FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.O)}]->(o))
 
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
 
 FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
 
 FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Cl)}]->(cl))
 
 FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.P)}]->(p))
 
 FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Br)}]->(br))
 
 FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.I)}]->(i))
 
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
 
 FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.V)}]->(v))
+
+FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(avgmass))
+
+FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(monoisomass));
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents4.csv' AS row
 
@@ -262,37 +292,43 @@ CREATE(solvent:Molecule {name: row.PREFERREDNAME,
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.C)}]->(c))
 
 FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.H)}]->(h))
 
 FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.O)}]->(o))
 
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
 
 FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
 
 FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Cl)}]->(cl))
 
 FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.P)}]->(p))
 
 FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Br)}]->(br))
 
 FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.I)}]->(i))
 
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
 
 FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.V)}]->(v))
+
+FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(avgmass))
+
+FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(monoisomass));
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents5.csv' AS row
 
@@ -320,37 +356,43 @@ CREATE(solvent:Molecule {name: row.PREFERREDNAME,
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.C)}]->(c))
 
 FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.H)}]->(h))
 
 FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.O)}]->(o))
 
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
 
 FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
 
 FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Cl)}]->(cl))
 
 FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.P)}]->(p))
 
 FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Br)}]->(br))
 
 FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.I)}]->(i))
 
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
 
 FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v));
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.V)}]->(v))
+
+FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(avgmass))
+
+FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(monoisomass));
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents6.csv' AS row
 
@@ -378,37 +420,44 @@ CREATE(solvent:Molecule {name: row.PREFERREDNAME,
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.C}]->(c))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.C)}]->(c))
 
 FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.H}]->(h))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.H)}]->(h))
 
 FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.O}]->(o))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.O)}]->(o))
 
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.N}]->(n))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
 
 FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.F}]->(f))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
 
 FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Cl}]->(cl))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Cl)}]->(cl))
 
 FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.P}]->(p))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.P)}]->(p))
 
 FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.Br}]->(br))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Br)}]->(br))
 
 FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.I}]->(i))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.I)}]->(i))
 
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.S}]->(s))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
 
 FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: row.V}]->(v))
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.V)}]->(v))
+
+
+FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(avgmass))
+
+FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(monoisomass));
 
 
 

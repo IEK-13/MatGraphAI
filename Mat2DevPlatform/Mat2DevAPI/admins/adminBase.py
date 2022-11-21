@@ -127,9 +127,6 @@ class RelationSingleChoiceField(RelationChoiceFieldBase, forms.ChoiceField):
         )
 
 
-
-
-
 class NeoModelForm(forms.ModelForm):
     labels = {}
 

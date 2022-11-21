@@ -1,4 +1,8 @@
-CREATE CONSTRAINT n10s_unique_uri ON (r:Resource) ASSERT r.uri IS UNIQUE ;
+//Import of ontologies, first neosemantic gets initialized, subsequently the ontologies can be imported, each domain gets
+//an additional label to "EMMO_DOMAIN" to make the different domains separately accessible
+
+
+CREATE CONSTRAINT n10s_unique_uri ON (r:Resource) ASSERT r.uri IS UNIQUE;
 
 call n10s.graphconfig.init({
 baseSchemaPrefix:"EMMO",
@@ -12,11 +16,11 @@ call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGr
 // we want named instances to link to the classes imported from the onto, so we change the handleRDFTypes mode.
 call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
 
-// second pass to load the owl:Material 
+// second pass to load the owl:Material
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/materials.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
 SET n:EMMO_Material;
 
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/quantities.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
-SET n:EMMO_Quantity
+SET n:EMMO_Quantity;

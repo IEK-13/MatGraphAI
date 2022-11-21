@@ -30,16 +30,21 @@ class Matter(CausalObject):
                                                 on_delete=models.deletion.CASCADE),
                               isMeasuredRel,
                               model=isMeasuredRel)
+    __abstract_node__ = True
+
 
 
 class ChemicalEntity(Matter):
+    __abstract_node__ = True
+
     pass
 
 
 class Element(ChemicalEntity):
     name = StringProperty(unique_index= True, required = True)
-    abbreviation = StringProperty(required=True, unique_index= True)
     summary = StringProperty()
+    symbol = StringProperty(required=True, unique_index= True)
+
 
 
 
@@ -53,16 +58,15 @@ class Molecule(ChemicalEntity):
     SMILES = StringProperty()
     InChI_key = StringProperty()
     InChI = StringProperty()
-    CompoundCID = IntegerProperty()
+    compound_cid = IntegerProperty()
     IUPAC_name = StringProperty()
     chemical_formula = StringProperty()
     CAS = StringProperty()
 
-    # GENERAL PROPERTIES
-    AlternativeNames = ArrayProperty()
-    n_atoms = IntegerProperty()
-    molar_weight = FloatProperty()
-    charge = IntegerProperty()
+    alternative_names = ArrayProperty()
+
+
+# GENERAL PROPERTIES
 
     # ADDITIONAL INFORMATION
 

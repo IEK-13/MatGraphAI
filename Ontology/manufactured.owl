@@ -1,0 +1,1266 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#"
+     xml:base="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AcidicElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AcidicElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AqueousElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AlkalineElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AlkalineElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AqueousElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AlkalineZincAirElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AlkalineZincAirElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AlkalineZincManganeseDioxideElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AlkalineZincManganeseDioxideElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrimaryElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCarbonBasedCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCarbonBasedCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCoatedMetallicBipolarPlate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCoatedMetallicBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCoatedMetallicBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoatedMetallicBipolarPlate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCoductivePolymerCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCoductivePolymerCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedGraphiteCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedGraphiteCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalBasedCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalBasedCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCoatedMetallicBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalCarbideCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalCarbideCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalNitrideCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalNitrideCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedNobelMetalCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedNobelMetalCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AqueousElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AqueousElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCellContainer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCellContainer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StructuralSubcomponent"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Binder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryModule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryModule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Binder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Binder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StructuralSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BufferBattery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BufferBattery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CarbonBasedCompositeBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CarbonBasedCompositeBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CompositeBipolarPlate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MetalBasedCompositeBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CatalystCoatedMembrane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CatalystCoatedMembrane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CatalystLayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CatalystLayer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoatedMetallicBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoatedMetallicBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoinCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoinCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoinCellHousing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoinCellHousing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCellContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Component -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Component">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Manufactured"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CompositeBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CompositeBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BipolarPlate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonPorousGraphiteBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ConcentrationElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ConcentrationElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ConversionElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ConversionElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoolingPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoolingPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CurrentCollector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CurrentCollector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectronicSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CylindricalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CylindricalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CylindricalCellHousing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CylindricalCellHousing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCellContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Device -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Device">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Manufactured"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#DryBatteryCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#DryBatteryCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectricCurrentCollector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectricCurrentCollector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalSubcomponent"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCapacitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCapacitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalHalfcell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalHalfcell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalSubcomponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalSubcomponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Subcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrolyticElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrolyticElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectronicSubcomponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectronicSubcomponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#EmergencyBattery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#EmergencyBattery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalDevice"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#GalvanicElectrochemicalCell"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrimaryElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellStack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellStack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCellContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#GalvanicElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#GalvanicElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#GasDiffusionLayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#GasDiffusionLayer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#HybridElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#HybridElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#IntercalationElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#IntercalationElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#IonicSubcomponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#IonicSubcomponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LeclancheElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LeclancheElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrimaryElectrochemicalCell"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LithiumCarbonMonofluorideElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LihtiumElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LihtiumElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonAqueousElectrochemicalCell"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MoltenSaltElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LithiumCarbonMonofluorideElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LithiumCarbonMonofluorideElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrimaryElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LithiumElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LithiumElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#IntercalationElectrochemicalCell"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SecondaryElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Manufactured -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Manufactured"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Membrane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Membrane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MembraneElectrodeAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MembraneElectrodeAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MetalAirElectrodeElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MetalAirElectrodeElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MetalBasedCompositeBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MetalBasedCompositeBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CompositeBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MoltenSaltElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MoltenSaltElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonAqueousElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NearneutralElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NearneutralElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AqueousElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoatedMetallicBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedCarbonBasedCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedCarbonBasedCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedBipolarPlate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedConductivePolymerCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedConductivePolymerCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedDiamondLikeCarbonCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedDiamondLikeCarbonCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedGraphiteCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedGraphiteCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalBasedCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalBasedCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalCarbideCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalCarbideCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalNitrideCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalNitrideCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedNobleMetalCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedNobleMetalCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonAqueousElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonAqueousElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonFluorinatedCompositeMembrane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonFluorinatedCompositeMembrane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Membrane"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonFluorinatedMembrane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonFluorinatedMembrane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Membrane"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonPorousGraphiteBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonPorousGraphiteBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#OEMBattery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#OEMBattery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PaperLinedCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PaperLinedCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PartiallyFluorinatedMembrane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PartiallyFluorinatedMembrane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Membrane"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PasteLinedCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PasteLinedCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PerfluorinatedMembrane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PerfluorinatedMembrane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Membrane"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PhotoelectrolyticElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PhotoelectrolyticElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrolyticElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PilotBatteryCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PilotBatteryCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PouchCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PouchCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PouchCellHousing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PouchCellHousing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCellContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrimaryElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrimaryElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#GalvanicElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrismaticCellHousing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrismaticCellHousing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCellContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReactiveSubcomponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReactiveSubcomponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReplacementBattery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReplacementBattery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReserveBatteryCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReserveBatteryCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Seal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Seal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SecondaryElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SecondaryElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SingleFuelCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SingleFuelCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SolidElectrolyteElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SolidElectrolyteElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedBiploarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedBiploarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoatedMetallicBipolarPlate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedCarbonBasedCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedCarbonBasedCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedBiploarPlate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedConductivePolymerCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedConductivePolymerCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedGraphiteCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedGraphiteCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalBasedCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalBasedCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedBiploarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalCarbidCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalCarbidCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalNitrideCoatedBiploarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalNitrideCoatedBiploarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedNobleMetalCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedNobleMetalCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StandardVoltageCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StandardVoltageCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Station -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Station">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StructuralSubcomponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StructuralSubcomponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalSubcomponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Subcomponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Subcomponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Manufactured"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SwagelokCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SwagelokCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SwagelokCellHousing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SwagelokCellHousing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCellContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ThermoElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ThermoElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ThreeElectrodeElectrochemicalCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ThreeElectrodeElectrochemicalCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoatedMetallicBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedCarbonBasedCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedCarbonBasedCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedBipolarPlate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedConductivePolymerCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedConductivePolymerCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedGraohiteCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedGraohiteCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalBasedCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalBasedCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalCarbideCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalCarbideCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMtealNitrideCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMtealNitrideCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedNobleMetalCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedNobleMetalCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedCarbonBasedCoatedBipolarPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#WestonStandardVoltageCell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#WestonStandardVoltageCell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StandardVoltageCell"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AcidicElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AlkalineElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NearneutralElectrochemicalCell"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AlkalineZincAirElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AqueousElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ConcentrationElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ConversionElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrolyticElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#HybridElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#IntercalationElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#LeclancheElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MetalAirElectrodeElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonAqueousElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SolidElectrolyteElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ThermoElectrochemicalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ThreeElectrodeElectrochemicalCell"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedCoductivePolymerCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedDiamondLikeCarbonCoatedBipolatPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedGraphiteCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedOrganicSelfAssemblyMonoPolymerCoatedBipolarPlate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalCarbideCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedMetalNitrideCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#AluminiumBasedNobelMetalCoatedBipolarPlate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Battery"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalCapacitor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectrochemicalHalfcell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCell"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BatteryModule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#BufferBattery"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#EmergencyBattery"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#OEMBattery"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReplacementBattery"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CatalystCoatedMembrane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CatalystLayer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoolingPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#GasDiffusionLayer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Membrane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#MembraneElectrodeAssembly"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#Seal"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoinCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CylindricalCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#DryBatteryCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PaperLinedCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PasteLinedCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PilotBatteryCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PouchCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReserveBatteryCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StandardVoltageCell"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SwagelokCell"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CoinCellHousing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#CylindricalCellHousing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellStation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PouchCellHousing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PrismaticCellHousing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#SwagelokCellHousing"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectricCurrentCollector"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ElectronicSubcomponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#FuelCellSubcomponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#IonicSubcomponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#ReactiveSubcomponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StructuralSubcomponent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedConductivePolymerCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedDiamondLikeCarbonCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedGraphiteCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalCarbideCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedMetalNitrideCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NickelBasedNobleMetalCoatedBipolarPlate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonFluorinatedCompositeMembrane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#NonFluorinatedMembrane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PartiallyFluorinatedMembrane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#PerfluorinatedMembrane"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedConductivePolymerCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedDiamondLikeCarbonCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedGraphiteCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalCarbidCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedMetalNitrideCoatedBiploarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#StainlessSteelBasedNobleMetalCoatedBipolarPlate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedConductivePolymerCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedDiamondLikeCarbonCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedGraohiteCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMetalCarbideCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedMtealNitrideCoatedBipolarPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/untitled-ontology-26#TitaniumBasedNobleMetalCoatedBipolarPlate"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
