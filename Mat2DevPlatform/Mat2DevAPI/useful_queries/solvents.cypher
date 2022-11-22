@@ -52,25 +52,25 @@ CREATE (element)-[:HAS_INTEGER_PROPERTY {value : toInteger(line.number)}]->(atom
 
 //FloatProperties
 FOREACH(x IN CASE WHEN NOT NULL in apoc.convert.toIntList(line.ionization_energies) THEN [1] END |
-  MERGE (solvent)-[:HAS_ARRAY_PROPERTY {value: apoc.convert.toIntList(line.ionization_energies)}]->(ionizationenergy))
+  MERGE (element)-[:HAS_ARRAY_PROPERTY {value: apoc.convert.toIntList(line.ionization_energies)}]->(ionizationenergy))
 
 FOREACH(x IN CASE WHEN line.electron_affinity IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electron_affinity)}]->(electronaffinity))
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electron_affinity)}]->(electronaffinity))
 
 FOREACH(x IN CASE WHEN line.electronegativity_pauling IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electronegativity_pauling)}]->(electronegativity))
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electronegativity_pauling)}]->(electronegativity))
 
 FOREACH(x IN CASE WHEN line.melt IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.melt)}]->(melt))
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.melt)}]->(melt))
 
 FOREACH(x IN CASE WHEN line.density IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.density)}]->(density))
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.density)}]->(density))
 
 FOREACH(x IN CASE WHEN line.molarheat IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.number)}]->(molarheat))
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.number)}]->(molarheat))
 
 FOREACH(x IN CASE WHEN toFloat(line.atomic_mass) IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.atomic_mass)}]->(atomicmass));
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.atomic_mass)}]->(atomicmass));
 // Solvents import starts here
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents1.csv' AS row
