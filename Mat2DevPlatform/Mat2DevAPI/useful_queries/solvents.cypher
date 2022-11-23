@@ -387,4 +387,5 @@ FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(monoisomass));
 
 
-
+MATCH (n:Molecule) , (m:EMMO_Material {EMMO__name: "Solvent"})
+CREATE (n)-[:IS_A]->(m)
