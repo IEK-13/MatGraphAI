@@ -1,6 +1,6 @@
 // Molecule import starts here
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents1.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/PubChemMolecules.csv' AS row
 
 MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
@@ -17,12 +17,12 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (v:Element {symbol: "V"})
 
 
-CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+CREATE(solvent:Molecule {name: row.cmpdname,
                          SMILES : row.SMILES,
-                         InChi_Key : row.INCHIKEY,
-                         IUPAC_name : row.IUPACNAME,
-                         InChi: row.INCHISTRING,
-                         chemical_formula: row.MOLECULARFORMULA})
+                         InChi_Key : row.inchikey,
+                         IUPAC_name : row.iupacname,
+                         InChi: row.inchi,
+                         chemical_formula: row.mf})
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
