@@ -212,6 +212,11 @@
                          rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AverageMass
+:AverageMass rdf:type owl:Class ;
+             rdfs:subClassOf :Mass .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BatteryEnergy
 :BatteryEnergy rdf:type owl:Class ;
                rdfs:subClassOf :BatteryQuantity .
@@ -1501,6 +1506,11 @@
                           :ExtensiveQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MonoIsotopicMass
+:MonoIsotopicMass rdf:type owl:Class ;
+                  rdfs:subClassOf :Mass .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#NeelTemperature
 :NeelTemperature rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
@@ -2346,14 +2356,9 @@
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AverageMass
-:AverageMass rdf:type owl:Class ;
-             rdfs:subClassOf :Mass .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MonoIsotopicMass
-:MonoIsotopicMass rdf:type owl:Class ;
-                  rdfs:subClassOf :Mass .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolecularWeight
+:MolecularWeight rdf:type owl:Class ;
+                 rdfs:subClassOf :Mass .
 
 
 #################################################################
@@ -2842,27 +2847,27 @@
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AtomicMass
-                :ElectronMass
-                :ProtonMass
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AtomicMass
-                :ElectronMass
-                :ProtonMass
                 :AverageMass
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AtomicMass
                 :ElectronMass
-                :ProtonMass
-                :AverageMass
                 :MonoIsotopicMass
+                :ProtonMass
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AtomicMass
+                :AverageMass
+                :ElectronMass
+                :ProtonMass
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AtomicMass
+                :ElectronMass
+                :ProtonMass
               )
 ] .
 

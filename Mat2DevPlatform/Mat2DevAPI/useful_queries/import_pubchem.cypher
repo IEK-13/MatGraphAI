@@ -1,20 +1,13 @@
 // Molecule import starts here
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/PubChemMolecules.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/PubChemMolecules_sum.csv' AS row
 
-MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
-      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+MATCH (mw:EMMO_Quantity {EMMO__name: "MolecularWeight"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
-      (n:Element {symbol: "N"}),
-      (f:Element {symbol: "F"}),
-      (cl:Element {symbol: "Cl"}),
-      (p:Element {symbol: "P"}),
-      (br:Element {symbol: "Br"}),
-      (i:Element {symbol: "I"}),
-      (s:Element {symbol: "S"}),
-      (v:Element {symbol: "V"})
+      (n:Element {symbol: "N"})
+
 
 
 CREATE(solvent:Molecule {name: row.cmpdname,
@@ -37,30 +30,7 @@ FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
   MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
 
-FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
+FOREACH(x IN CASE WHEN toFloat(row.mw) IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.mw)}]->(mw));
 
-FOREACH(x IN CASE WHEN row.Cl IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Cl)}]->(cl))
-
-FOREACH(x IN CASE WHEN row.P IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.P)}]->(p))
-
-FOREACH(x IN CASE WHEN row.Br IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.Br)}]->(br))
-
-FOREACH(x IN CASE WHEN row.I IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.I)}]->(i))
-
-FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
-
-FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.V)}]->(v))
-
-FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(avgmass))
-
-FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(monoisomass));
 
