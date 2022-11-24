@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#"
+     xml:base="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Application -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Application">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#PhysicalBasedSimulationSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DataBasedSiulationSoftware -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DataBasedSiulationSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#SimulationApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DataProcessingApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DataProcessingApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Application"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#SimulationApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#EmpiricalSimulationSoftware -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#EmpiricalSimulationSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#SimulationApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Gaussian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Gaussian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#MolPro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#MolPro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Orca -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Orca">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#PhysicalBasedSimulationSoftware -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#PhysicalBasedSimulationSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#SimulationApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Program -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Program"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#PySCF -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#PySCF">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#QuantumESPRESSO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#QuantumESPRESSO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#SimulationApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#SimulationApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Turbomole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Turbomole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#VASP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#VASP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DFTSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#DataBasedSiulationSoftware"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#EmpiricalSimulationSoftware"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#PhysicalBasedSimulationSoftware"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Gaussian"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#MolPro"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Orca"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#PySCF"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#QuantumESPRESSO"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#Turbomole"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/Software#VASP"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
