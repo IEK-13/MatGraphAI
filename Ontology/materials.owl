@@ -12,6 +12,11 @@
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcetyleneBlack
+:AcetyleneBlack rdf:type owl:Class ;
+                rdfs:subClassOf :CarbonBlack .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Acid
 :Acid rdf:type owl:Class ;
       rdfs:subClassOf :ChemicalSubstance .
@@ -96,6 +101,11 @@
                 rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack
+:CarbonBlack rdf:type owl:Class ;
+             rdfs:subClassOf :Material .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catalyst
 :Catalyst rdf:type owl:Class ;
           rdfs:subClassOf :FunctionalMaterial .
@@ -120,6 +130,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ceramic
 :Ceramic rdf:type owl:Class ;
          rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChannelBlack
+:ChannelBlack rdf:type owl:Class ;
+              rdfs:subClassOf :CarbonBlack .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalCompound
@@ -267,6 +282,11 @@
                     rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FurnaceBlack
+:FurnaceBlack rdf:type owl:Class ;
+              rdfs:subClassOf :CarbonBlack .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gas
 :Gas rdf:type owl:Class ;
      rdfs:subClassOf :Fluid .
@@ -368,6 +388,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IsotropicMaterial
 :IsotropicMaterial rdf:type owl:Class ;
                    rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LampBlack
+:LampBlack rdf:type owl:Class ;
+           rdfs:subClassOf :CarbonBlack .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LeclancheElectrolyte
@@ -729,6 +754,11 @@
                  rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ThermalBlack
+:ThermalBlack rdf:type owl:Class ;
+              rdfs:subClassOf :CarbonBlack .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vapor
 :Vapor rdf:type owl:Class ;
        rdfs:subClassOf :LiquidAerosol .
@@ -774,6 +804,16 @@
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AcetyleneBlack
+                :ChannelBlack
+                :FurnaceBlack
+                :LampBlack
+                :ThermalBlack
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Acid
                 :Base
                 :ChemicalCompound
@@ -813,6 +853,30 @@
   owl:members ( :Anion
                 :Cation
                 :ElectrochemicalChargeCarrierIon
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AnisotropicMaterial
+                :BinaryMaterial
+                :CarbonBlack
+                :Ceramic
+                :CompositeMaterial
+                :EnergyMaterial
+                :FunctionalMaterial
+                :GraphiteMaterial
+                :HeterogenousMaterial
+                :HomoGenousMaterial
+                :IntercalationMaterial
+                :IsotropicMaterial
+                :ManufacturedMaterial
+                :Metal
+                :NanoMaterial
+                :NaturalMaterial
+                :ReactiveMaterial
+                :TernaryMaterial
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
               )
 ] .
 

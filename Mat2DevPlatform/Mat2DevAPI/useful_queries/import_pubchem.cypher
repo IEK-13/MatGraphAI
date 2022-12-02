@@ -11,7 +11,7 @@ MATCH (mw:EMMO_Quantity {EMMO__name: "MolecularWeight"}),
 
 
 CREATE(solvent:Molecule {name: row.cmpdname,
-                         SMILES : row.SMILES,
+                         SMILES : row.isosmiles,
                          InChi_Key : row.inchikey,
                          IUPAC_name : row.iupacname,
                          InChi: row.inchi,

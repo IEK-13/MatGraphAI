@@ -9,8 +9,8 @@ smiles = data['smiles'].tolist()
 mol = data['name']
 
 for i in range(len(smiles)):
-    if i % 2 ==0:
-        print(smiles[i]+","+mol[i])
-    # for compound in get_compounds(smiles[i], 'smiles'):
-    #     if compound.cid != None:
-    #         print(mol[i], compound.cid)
+    # if i % 2 ==0:
+    #     print(smiles[i]+","+mol[i])
+    for compound in get_compounds(smiles[i], 'smiles'):
+        if compound.cid != None:
+            print(mol[i], smiles[i])
