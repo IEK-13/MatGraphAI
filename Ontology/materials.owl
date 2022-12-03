@@ -86,6 +86,31 @@
                  rdfs:subClassOf :LiquidSolution .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion
+:Aquivion rdf:type owl:Class ;
+          rdfs:subClassOf :Ionomer .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD72-25BS
+:AquivionD72-25BS rdf:type owl:Class ;
+                  rdfs:subClassOf :Aquivion .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD79-25BS
+:AquivionD79-25BS rdf:type owl:Class ;
+                  rdfs:subClassOf :Aquivion .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD98-25BS
+:AquivionD98-25BS rdf:type owl:Class ;
+                  rdfs:subClassOf :Aquivion .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionSO3H-Form
+:AquivionSO3H-Form rdf:type owl:Class ;
+                   rdfs:subClassOf :Aquivion .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base
 :Base rdf:type owl:Class ;
       rdfs:subClassOf :ChemicalSubstance .
@@ -325,6 +350,11 @@
 :Gel rdf:type owl:Class ;
      rdfs:subClassOf :Dispersion ,
                      :SolidMixture .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gore
+:Gore rdf:type owl:Class ;
+      rdfs:subClassOf :Ionomer .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphiteMaterial
@@ -794,6 +824,16 @@
                                                                                    rdfs:subClassOf :NanoMaterial .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf :Ionomer .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#800EWIonomer
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#800EWIonomer> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M> .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer
 <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> rdf:type owl:Class ;
                                                                            rdfs:subClassOf :Material .
@@ -907,6 +947,24 @@
                 :CatalystInk
                 :ElectrolyteSolution
                 :Ink
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Aquivion
+                :Gore
+                :Nafion
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AquivionD72-25BS
+                :AquivionD79-25BS
+                :AquivionD98-25BS
+                :AquivionSO3H-Form
               )
 ] .
 
