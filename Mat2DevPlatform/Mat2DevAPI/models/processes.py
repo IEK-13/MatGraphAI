@@ -26,7 +26,7 @@ class Process(CausalObject):
         "Parameter", hasParticipantRel, model=hasParticipantRel)
     researcher = RelationshipTo(Researcher, byResearcherRel, model=byResearcherRel)
     instrument = RelationshipTo(Instrument, byDeviceRel)
-    subProcess = RelationshipTo("SubProcess", subProcessRel, model=subProcessRel)
+    subProcess = RelationshipTo("HAS_PART", subProcessRel, model=subProcessRel)
     isProcessMoleculeInput = RelationshipFrom(models.ForeignKey("Molecule",
                                                                 on_delete=models.deletion.CASCADE),
                                               isManufacturingInputRel,
