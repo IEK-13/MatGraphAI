@@ -43,9 +43,36 @@
      rdfs:subClassOf :SolidSolution .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHeterocylclicOrganicMolecules
+:AlicyclicHeterocylclicOrganicMolecules rdf:type owl:Class ;
+                                        rdfs:subClassOf :HeteroCyclicOrganicMolecules ;
+                                        owl:disjointWith :AromaticAlicyHeteroclicOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHomocylclicOrganicMolecules
+:AlicyclicHomocylclicOrganicMolecules rdf:type owl:Class ;
+                                      rdfs:subClassOf :HomocyclicOrganicMolecules ;
+                                      owl:disjointWith :AromaticAlicyclicOrganicMolecules .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlkalineElectrolyte
 :AlkalineElectrolyte rdf:type owl:Class ;
                      rdfs:subClassOf :AqueousElectrloyte .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkanes
+:Alkanes rdf:type owl:Class ;
+         rdfs:subClassOf :OpenChainOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkenes
+:Alkenes rdf:type owl:Class ;
+         rdfs:subClassOf :OpenChainOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkynes
+:Alkynes rdf:type owl:Class ;
+         rdfs:subClassOf :OpenChainOrganicMolecules .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anion
@@ -111,9 +138,29 @@
                    rdfs:subClassOf :Aquivion .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyHeteroclicOrganicAminesMolecules
+:AromaticAlicyHeteroclicOrganicAminesMolecules rdf:type owl:Class ;
+                                               rdfs:subClassOf :AromaticAlicyHeteroclicOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyHeteroclicOrganicMolecules
+:AromaticAlicyHeteroclicOrganicMolecules rdf:type owl:Class ;
+                                         rdfs:subClassOf :HeteroCyclicOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyclicOrganicMolecules
+:AromaticAlicyclicOrganicMolecules rdf:type owl:Class ;
+                                   rdfs:subClassOf :HomocyclicOrganicMolecules .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base
 :Base rdf:type owl:Class ;
       rdfs:subClassOf :ChemicalSubstance .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCarbonSupportedPlatinumCatalyst
+:BinaryCarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
+                                       rdfs:subClassOf :PlatinumCatalyst .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCatalyst
@@ -129,6 +176,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack
 :CarbonBlack rdf:type owl:Class ;
              rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonSupportedPlatinumCatalyst
+:CarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
+                                 rdfs:subClassOf :PlatinumCatalyst .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catalyst
@@ -189,6 +241,11 @@
                    owl:disjointWith :MolecularEntity .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CoatingSubstrate
+:CoatingSubstrate rdf:type owl:Class ;
+                  rdfs:subClassOf :FunctionalMaterial .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Colloid
 :Colloid rdf:type owl:Class ;
          rdfs:subClassOf :Dispersion ,
@@ -201,15 +258,43 @@
                    rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ConductingPolymerSupportedPlatinumCatalyst
+:ConductingPolymerSupportedPlatinumCatalyst rdf:type owl:Class ;
+                                            rdfs:subClassOf :PlatinumCatalyst .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Continuum
 :Continuum rdf:type owl:Class ;
            rdfs:subClassOf :Matter .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copolymer
+:Copolymer rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> ;
+           owl:disjointWith :Ionomer .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Crystal
 :Crystal rdf:type owl:Class ;
          rdfs:subClassOf :Solid ;
          owl:disjointWith :SolidMixture .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CyclicOrganicMolecules
+:CyclicOrganicMolecules rdf:type owl:Class ;
+                        rdfs:subClassOf :OrganicMolceule ;
+                        owl:disjointWith :OpenChainOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DecalSusbtrate
+:DecalSusbtrate rdf:type owl:Class ;
+                rdfs:subClassOf :CoatingSubstrate ;
+                owl:disjointWith :PTFESubstrate .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Diazole
+:Diazole rdf:type owl:Class ;
+         rdfs:subClassOf :AromaticAlicyHeteroclicOrganicAminesMolecules .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion
@@ -225,6 +310,22 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dust
 :Dust rdf:type owl:Class ;
       rdfs:subClassOf :GasSolidSuspension .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E
+:EA30E rdf:type owl:Class ;
+       rdfs:subClassOf :GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E-HT
+:EA30E-HT rdf:type owl:Class ;
+          rdfs:subClassOf :EA30E .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ETFE
+:ETFE rdf:type owl:Class ;
+      rdfs:subClassOf :Copolymer ;
+      owl:disjointWith :PTFE .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution
@@ -289,6 +390,33 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EnergyMaterial
 :EnergyMaterial rdf:type owl:Class ;
                 rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E
+:F30E rdf:type owl:Class ;
+      rdfs:subClassOf :FCarbonSupportedPlatinumCatalyst ;
+      owl:disjointWith :F50E .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E-HT
+:F30E-HT rdf:type owl:Class ;
+         rdfs:subClassOf :F30E .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E
+:F50E rdf:type owl:Class ;
+      rdfs:subClassOf :FCarbonSupportedPlatinumCatalyst .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E-HT
+:F50E-HT rdf:type owl:Class ;
+         rdfs:subClassOf :F50E .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FCarbonSupportedPlatinumCatalyst
+:FCarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
+                                  rdfs:subClassOf :CarbonSupportedPlatinumCatalyst ;
+                                  owl:disjointWith :GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid
@@ -362,6 +490,17 @@
                   rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst
+:GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
+                                                        rdfs:subClassOf :CarbonSupportedPlatinumCatalyst .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroCyclicOrganicMolecules
+:HeteroCyclicOrganicMolecules rdf:type owl:Class ;
+                              rdfs:subClassOf :CyclicOrganicMolecules ;
+                              owl:disjointWith :HomocyclicOrganicMolecules .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroNuclearMolecule
 :HeteroNuclearMolecule rdf:type owl:Class ;
                        rdfs:subClassOf :Molecule .
@@ -380,6 +519,16 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoNuclearMolecule
 :HomoNuclearMolecule rdf:type owl:Class ;
                      rdfs:subClassOf :Molecule .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomocyclicOrganicMolecules
+:HomocyclicOrganicMolecules rdf:type owl:Class ;
+                            rdfs:subClassOf :CyclicOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Imidazole
+:Imidazole rdf:type owl:Class ;
+           rdfs:subClassOf :Diazole .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ink
@@ -570,14 +719,35 @@
                  owl:disjointWith :PolarSolvent .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules
+:OpenChainOrganicMolecules rdf:type owl:Class ;
+                           rdfs:subClassOf :OrganicMolceule .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicCompound
 :OrganicCompound rdf:type owl:Class ;
                  rdfs:subClassOf :ChemicalCompound .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicMolceule
+:OrganicMolceule rdf:type owl:Class ;
+                 rdfs:subClassOf :MolecularEntity ,
+                                 :OrganicCompound .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxidant
 :Oxidant rdf:type owl:Class ;
          rdfs:subClassOf :MolecularEntity .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFE
+:PTFE rdf:type owl:Class ;
+      rdfs:subClassOf :Copolymer .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFESubstrate
+:PTFESubstrate rdf:type owl:Class ;
+               rdfs:subClassOf :CoatingSubstrate .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHeterogeneousMixture
@@ -598,6 +768,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plasma
 :Plasma rdf:type owl:Class ;
         rdfs:subClassOf :Fluid .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PlatinumCatalyst
+:PlatinumCatalyst rdf:type owl:Class ;
+                  rdfs:subClassOf :SingleMetalCatalyst .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolarSolvent
@@ -633,6 +808,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SecundaryCatalyst
 :SecundaryCatalyst rdf:type owl:Class ;
                    rdfs:subClassOf :ElectroCatalyst .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SingleMetalCatalyst
+:SingleMetalCatalyst rdf:type owl:Class ;
+                     rdfs:subClassOf :ElectroCatalyst .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Smoke
@@ -890,6 +1070,14 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Alkanes
+                :Alkenes
+                :Alkynes
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Anion
                 :Cation
                 :ElectrochemicalChargeCarrierIon
@@ -970,9 +1158,25 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BinaryCarbonSupportedPlatinumCatalyst
+                :CarbonSupportedPlatinumCatalyst
+                :ConductingPolymerSupportedPlatinumCatalyst
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :BinaryCatalyst
                 :SecundaryCatalyst
                 :TernaryCatalyst
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Catalyst
+                :CoatingSubstrate
+                :ElectrochemicalMaterial
               )
 ] .
 
