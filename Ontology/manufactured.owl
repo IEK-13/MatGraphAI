@@ -136,6 +136,12 @@
                rdfs:subClassOf :Battery .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CCM
+:CCM rdf:type owl:Class ;
+     rdfs:subClassOf :MembraneElectrodeAssembly ;
+     owl:disjointWith <http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#5LayerMEA> .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CarbonBasedCompositeBipolarPlate
 :CarbonBasedCompositeBipolarPlate rdf:type owl:Class ;
                                   rdfs:subClassOf :CompositeBipolarPlate ;
@@ -733,6 +739,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#WestonStandardVoltageCell
 :WestonStandardVoltageCell rdf:type owl:Class ;
                            rdfs:subClassOf :StandardVoltageCell .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#5LayerMEA
+<http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#5LayerMEA> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf :MembraneElectrodeAssembly .
 
 
 #################################################################
