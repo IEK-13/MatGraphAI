@@ -1,116 +1,72 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#"
-     xml:base="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing"/>
-    
+@prefix : <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing> .
+
+<http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CCMManufacturing
+:CCMManufacturing rdf:type owl:Class ;
+                  rdfs:subClassOf :MEAManufacturing ;
+                  owl:disjointWith <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing> .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystInkManufacturing
+:CatalystInkManufacturing rdf:type owl:Class ;
+                          rdfs:subClassOf :MaterialsManufacturing .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CCMManufacturing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CCMManufacturing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing
+:ComponentManufacturing rdf:type owl:Class ;
+                        rdfs:subClassOf :Manufacturing .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystInkManufacturing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystInkManufacturing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MaterialsManufacturing"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DeviceManufacturing
+:DeviceManufacturing rdf:type owl:Class ;
+                     rdfs:subClassOf :Manufacturing .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Manufacturing"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellAssembly
+:FuelCellAssembly rdf:type owl:Class ;
+                  rdfs:subClassOf :DeviceManufacturing .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DeviceManufacturing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DeviceManufacturing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Manufacturing"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing
+:MEAManufacturing rdf:type owl:Class ;
+                  rdfs:subClassOf :ComponentManufacturing .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellAssembly -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellAssembly">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DeviceManufacturing"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Manufacturing
+:Manufacturing rdf:type owl:Class .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MaterialsManufacturing
+:MaterialsManufacturing rdf:type owl:Class ;
+                        rdfs:subClassOf :Manufacturing .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Manufacturing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Manufacturing"/>
-    
-
-
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MaterialsManufacturing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MaterialsManufacturing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Manufacturing"/>
-    </owl:Class>
-    
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing
+<http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf :MEAManufacturing .
 
 
-    <!-- http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing -->
+#################################################################
+#    General axioms
+#################################################################
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DeviceManufacturing"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MaterialsManufacturing"/>
-        </owl:members>
-    </rdf:Description>
-</rdf:RDF>
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ComponentManufacturing
+                :DeviceManufacturing
+                :MaterialsManufacturing
+              )
+] .
 
 
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
