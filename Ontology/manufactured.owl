@@ -12,6 +12,11 @@
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf :PerfluorinatedMembrane .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AcidicElectrochemicalCell
 :AcidicElectrochemicalCell rdf:type owl:Class ;
                            rdfs:subClassOf :AqueousElectrochemicalCell .
@@ -90,6 +95,11 @@
                             rdfs:subClassOf :ElectrochemicalCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Asiplex
+:Asiplex rdf:type owl:Class ;
+         rdfs:subClassOf :PerfluorinatedMembrane .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Battery
 :Battery rdf:type owl:Class ;
          rdfs:subClassOf :ElectrochemicalDevice .
@@ -140,6 +150,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystLayer
 :CatalystLayer rdf:type owl:Class ;
                rdfs:subClassOf :Component .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ClothGDL
+:ClothGDL rdf:type owl:Class ;
+          rdfs:subClassOf :GasDiffusionLayer .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoatedMetallicBipolarPlate
@@ -260,6 +275,16 @@
                   rdfs:subClassOf :Battery .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FeltGDL
+:FeltGDL rdf:type owl:Class ;
+         rdfs:subClassOf :GasDiffusionLayer .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Flemion
+:Flemion rdf:type owl:Class ;
+         rdfs:subClassOf :PerfluorinatedMembrane .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#FuelCell
 :FuelCell rdf:type owl:Class ;
           rdfs:subClassOf :ElectrochemicalDevice ,
@@ -295,6 +320,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GasDiffusionLayer
 :GasDiffusionLayer rdf:type owl:Class ;
                    rdfs:subClassOf :FuelCellSubcomponent .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Gore-Select
+:Gore-Select rdf:type owl:Class ;
+             rdfs:subClassOf :PerfluorinatedMembrane .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#HybridElectrochemicalCell
@@ -365,9 +395,30 @@
                                rdfs:subClassOf :NonAqueousElectrochemicalCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NRE211
+:NRE211 rdf:type owl:Class ;
+        rdfs:subClassOf :NafionMembrane .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NRE212
+:NRE212 rdf:type owl:Class ;
+        rdfs:subClassOf :NafionMembrane ;
+        owl:disjointWith :NafionMembrane .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NafionMembrane
+:NafionMembrane rdf:type owl:Class ;
+                rdfs:subClassOf :PerfluorinatedMembrane .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NearneutralElectrochemicalCell
 :NearneutralElectrochemicalCell rdf:type owl:Class ;
                                 rdfs:subClassOf :AqueousElectrochemicalCell .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Neosepta-F
+:Neosepta-F rdf:type owl:Class ;
+            rdfs:subClassOf :PerfluorinatedMembrane .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedBipolarPlate
@@ -444,6 +495,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#OEMBattery
 :OEMBattery rdf:type owl:Class ;
             rdfs:subClassOf :Battery .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PaperGDL
+:PaperGDL rdf:type owl:Class ;
+          rdfs:subClassOf :GasDiffusionLayer .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PaperLinedCell
@@ -684,6 +740,17 @@
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion>
+                :Asiplex
+                :Flemion
+                :Gore-Select
+                :NafionMembrane
+                :Neosepta-F
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AcidicElectrochemicalCell
                 :AlkalineElectrochemicalCell
                 :NearneutralElectrochemicalCell
@@ -755,6 +822,14 @@
                 :Membrane
                 :MembraneElectrodeAssembly
                 :Seal
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ClothGDL
+                :FeltGDL
+                :PaperGDL
               )
 ] .
 
