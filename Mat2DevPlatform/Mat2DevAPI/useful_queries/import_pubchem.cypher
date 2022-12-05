@@ -6,11 +6,14 @@ MATCH (mw:EMMO_Quantity {EMMO__name: "MolecularWeight"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
-      (n:Element {symbol: "N"})
+      (n:Element {symbol: "N"}),
+      (f:Element {symbol: "F"}),
+      (s:Element {symbol: "S"})
 
 
 
-CREATE(solvent:Molecule {name: row.cmpdname,
+
+MERGE(solvent:Molecule {name: row.cmpdname,
                          SMILES : row.isosmiles,
                          InChi_Key : row.inchikey,
                          IUPAC_name : row.iupacname,
@@ -29,6 +32,18 @@ FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
 
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
   MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
+
+FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
+
+FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
+
+FOREACH(x IN CASE WHEN row.ontologylabel2 IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:IS_A ]->(EMMO_Material {EMMO__name: row.ontologylabel2}))
+
+FOREACH(x IN CASE WHEN row.ontologylabel1 IS NOT NULL THEN [1] END |
+  MERGE (solvent)-[:IS_A ]->(EMMO_Material {EMMO__name: row.ontologylabel1}))
 
 FOREACH(x IN CASE WHEN toFloat(row.mw) IS NOT NULL THEN [1] END |
   MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.mw)}]->(mw));
