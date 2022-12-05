@@ -8,7 +8,9 @@ MATCH (mw:EMMO_Quantity {EMMO__name: "MolecularWeight"}),
       (o:Element {symbol: "O"}),
       (n:Element {symbol: "N"}),
       (f:Element {symbol: "F"}),
-      (s:Element {symbol: "S"})
+      (s:Element {symbol: "S"}),
+      (label1:EMMO_Material {EMMO__name: row.ontologylabel1}),
+      (label2:EMMO_Material {EMMO__name: row.ontologylabel1})
 
 
 
@@ -39,11 +41,11 @@ FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
   MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
 
-FOREACH(x IN CASE WHEN row.ontologylabel2 IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:IS_A ]->(:EMMO_Material {EMMO__name: row.ontologylabel2}))
+FOREACH(x IN CASE WHEN row.ontologylabel1 = label1.EMMO__name THEN [1] END |
+  MERGE (solvent)-[:IS_A ]->(label1))
 
-FOREACH(x IN CASE WHEN row.ontologylabel1 IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:IS_A ]->(:EMMO_Material {EMMO__name: row.ontologylabel1}))
+//FOREACH(x IN CASE WHEN row.ontologylabel1 IS NOT NULL THEN [1] END |
+//  MERGE (solvent)-[:IS_A ]->(:Resource:EMMO_Material:EMMO__Class {EMMO__name: row.ontologylabel1}))
 
 FOREACH(x IN CASE WHEN toFloat(row.mw) IS NOT NULL THEN [1] END |
   MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.mw)}]->(mw));

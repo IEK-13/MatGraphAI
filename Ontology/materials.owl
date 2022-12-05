@@ -46,7 +46,7 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHeterocylclicOrganicMolecules
 :AlicyclicHeterocylclicOrganicMolecules rdf:type owl:Class ;
                                         rdfs:subClassOf :HeteroCyclicOrganicMolecules ;
-                                        owl:disjointWith :AromaticAlicyHeteroclicOrganicMolecules .
+                                        owl:disjointWith :AromaticHeteroclicOrganicMolecules .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHomocylclicOrganicMolecules
@@ -138,19 +138,19 @@
                    rdfs:subClassOf :Aquivion .
 
 
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyHeteroclicOrganicAminesMolecules
-:AromaticAlicyHeteroclicOrganicAminesMolecules rdf:type owl:Class ;
-                                               rdfs:subClassOf :AromaticAlicyHeteroclicOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyHeteroclicOrganicMolecules
-:AromaticAlicyHeteroclicOrganicMolecules rdf:type owl:Class ;
-                                         rdfs:subClassOf :HeteroCyclicOrganicMolecules .
-
-
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyclicOrganicMolecules
 :AromaticAlicyclicOrganicMolecules rdf:type owl:Class ;
                                    rdfs:subClassOf :HomocyclicOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeteroclicOrganicAminesMolecules
+:AromaticHeteroclicOrganicAminesMolecules rdf:type owl:Class ;
+                                          rdfs:subClassOf :AromaticHeteroclicOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeteroclicOrganicMolecules
+:AromaticHeteroclicOrganicMolecules rdf:type owl:Class ;
+                                    rdfs:subClassOf :HeteroCyclicOrganicMolecules .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base
@@ -294,7 +294,7 @@
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Diazole
 :Diazole rdf:type owl:Class ;
-         rdfs:subClassOf :AromaticAlicyHeteroclicOrganicAminesMolecules .
+         rdfs:subClassOf :AromaticHeteroclicOrganicAminesMolecules .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion
