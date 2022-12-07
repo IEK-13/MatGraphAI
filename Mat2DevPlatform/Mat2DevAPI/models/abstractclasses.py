@@ -50,7 +50,7 @@ class OntologyNode(UIDDjangoNode):
     EMMO__name = StringProperty(required= True, unique_index= True)
     __abstract_node__ = True
 
-    date_added = DateProperty(required=True)
+
 
 
 
