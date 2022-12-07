@@ -90,6 +90,11 @@
                                                                 rdfs:subClassOf :AluminiumBasedCarbonBasedCoatedBipolarPlate .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Anode
+:Anode rdf:type owl:Class ;
+       rdfs:subClassOf :Electrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#AqueousElectrochemicalCell
 :AqueousElectrochemicalCell rdf:type owl:Class ;
                             rdfs:subClassOf :ElectrochemicalCell .
@@ -121,6 +126,11 @@
                rdfs:subClassOf :Battery .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#BimetallicElectrode
+:BimetallicElectrode rdf:type owl:Class ;
+                     rdfs:subClassOf :MetalElectrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Binder
 :Binder rdf:type owl:Class ;
         rdfs:subClassOf :StructuralSubcomponent .
@@ -148,6 +158,11 @@
                                   owl:disjointWith :MetalBasedCompositeBipolarPlate .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CarbonPasterElectrode
+:CarbonPasterElectrode rdf:type owl:Class ;
+                       rdfs:subClassOf :CompositeElectrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystCoatedMembrane
 :CatalystCoatedMembrane rdf:type owl:Class ;
                         rdfs:subClassOf :Component .
@@ -156,6 +171,12 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CatalystLayer
 :CatalystLayer rdf:type owl:Class ;
                rdfs:subClassOf :Component .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Cathode
+:Cathode rdf:type owl:Class ;
+         rdfs:subClassOf :Electrode ;
+         owl:disjointWith :CompositeElectrode .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ClothGDL
@@ -190,6 +211,11 @@
                        owl:disjointWith :NonPorousGraphiteBipolarPlate .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CompositeElectrode
+:CompositeElectrode rdf:type owl:Class ;
+                    rdfs:subClassOf :Electrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConcentrationElectrochemicalCell
 :ConcentrationElectrochemicalCell rdf:type owl:Class ;
                                   rdfs:subClassOf :ElectrochemicalCell .
@@ -200,9 +226,19 @@
                                rdfs:subClassOf :ElectrochemicalCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ConversionElectrode
+:ConversionElectrode rdf:type owl:Class ;
+                     rdfs:subClassOf :Electrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CoolingPlate
 :CoolingPlate rdf:type owl:Class ;
               rdfs:subClassOf :FuelCellSubcomponent .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CounterElectrode
+:CounterElectrode rdf:type owl:Class ;
+                  rdfs:subClassOf :Electrode .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#CurrentCollector
@@ -266,6 +302,12 @@
                              rdfs:subClassOf :Subcomponent .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Electrode
+:Electrode rdf:type owl:Class ;
+           rdfs:subClassOf :ElectrochemicalComponent ;
+           owl:disjointWith :FuelCellComponent .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrolyticElectrochemicalCell
 :ElectrolyticElectrochemicalCell rdf:type owl:Class ;
                                  rdfs:subClassOf :ElectrochemicalCell .
@@ -323,9 +365,19 @@
                              rdfs:subClassOf :ElectrochemicalCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GasDiffusionElectrode
+:GasDiffusionElectrode rdf:type owl:Class ;
+                       rdfs:subClassOf :PorousElectrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GasDiffusionLayer
 :GasDiffusionLayer rdf:type owl:Class ;
                    rdfs:subClassOf :FuelCellSubcomponent .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GoldElectrode
+:GoldElectrode rdf:type owl:Class ;
+               rdfs:subClassOf :MetalElectrode .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Gore-Select
@@ -338,9 +390,29 @@
                            rdfs:subClassOf :ElectrochemicalCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#HydrogenElectrode
+:HydrogenElectrode rdf:type owl:Class ;
+                   rdfs:subClassOf :Electrode .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IndicatorElectrode
+:IndicatorElectrode rdf:type owl:Class ;
+                    rdfs:subClassOf :Electrode .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#InertElectrode
+:InertElectrode rdf:type owl:Class ;
+                rdfs:subClassOf :Electrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IntercalationElectrochemicalCell
 :IntercalationElectrochemicalCell rdf:type owl:Class ;
                                   rdfs:subClassOf :ElectrochemicalCell .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IntercalationElectrode
+:IntercalationElectrode rdf:type owl:Class ;
+                        rdfs:subClassOf :Electrode .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#IonicSubcomponent
@@ -372,6 +444,11 @@
                                             :SecondaryElectrochemicalCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#LithiumIntercalationElectrode
+:LithiumIntercalationElectrode rdf:type owl:Class ;
+                               rdfs:subClassOf :IntercalationElectrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Manufactured
 :Manufactured rdf:type owl:Class .
 
@@ -394,6 +471,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalBasedCompositeBipolarPlate
 :MetalBasedCompositeBipolarPlate rdf:type owl:Class ;
                                  rdfs:subClassOf :CompositeBipolarPlate .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MetalElectrode
+:MetalElectrode rdf:type owl:Class ;
+                rdfs:subClassOf :ConversionElectrode .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MoltenSaltElectrochemicalCell
@@ -420,6 +502,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NearneutralElectrochemicalCell
 :NearneutralElectrochemicalCell rdf:type owl:Class ;
                                 rdfs:subClassOf :AqueousElectrochemicalCell .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NegativeElectrode
+:NegativeElectrode rdf:type owl:Class ;
+                   rdfs:subClassOf :Electrode .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Neosepta-F
@@ -493,9 +580,19 @@
                         rdfs:subClassOf :Membrane .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonPolarizableElectrode
+:NonPolarizableElectrode rdf:type owl:Class ;
+                         rdfs:subClassOf :Electrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonPorousGraphiteBipolarPlate
 :NonPorousGraphiteBipolarPlate rdf:type owl:Class ;
                                rdfs:subClassOf :BipolarPlate .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NormalHydrogenElectrode
+:NormalHydrogenElectrode rdf:type owl:Class ;
+                         rdfs:subClassOf :ReferenceElectrode .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#OEMBattery
@@ -538,6 +635,26 @@
                   rdfs:subClassOf :BatteryCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PlatinumElectrode
+:PlatinumElectrode rdf:type owl:Class ;
+                   rdfs:subClassOf :MetalElectrode .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PolarizableElectrode
+:PolarizableElectrode rdf:type owl:Class ;
+                      rdfs:subClassOf :Electrode .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PorousElectrode
+:PorousElectrode rdf:type owl:Class ;
+                 rdfs:subClassOf :Electrode .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PositiveElectrode
+:PositiveElectrode rdf:type owl:Class ;
+                   rdfs:subClassOf :Electrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#PouchCell
 :PouchCell rdf:type owl:Class ;
            rdfs:subClassOf :BatteryCell .
@@ -563,6 +680,11 @@
                       rdfs:subClassOf :ElectrochemicalSubcomponent .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReferenceElectrode
+:ReferenceElectrode rdf:type owl:Class ;
+                    rdfs:subClassOf :NonPolarizableElectrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ReplacementBattery
 :ReplacementBattery rdf:type owl:Class ;
                     rdfs:subClassOf :Battery .
@@ -573,6 +695,11 @@
                     rdfs:subClassOf :BatteryCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#RotationDiskElectrode
+:RotationDiskElectrode rdf:type owl:Class ;
+                       rdfs:subClassOf :Electrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Seal
 :Seal rdf:type owl:Class ;
       rdfs:subClassOf :FuelCellSubcomponent .
@@ -581,6 +708,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SecondaryElectrochemicalCell
 :SecondaryElectrochemicalCell rdf:type owl:Class ;
                               rdfs:subClassOf :ElectrochemicalCell .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SimpleElectrode
+:SimpleElectrode rdf:type owl:Class ;
+                 rdfs:subClassOf :Electrode .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#SingleFuelCell
@@ -741,6 +873,11 @@
                            rdfs:subClassOf :StandardVoltageCell .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#WorkingElectrode
+:WorkingElectrode rdf:type owl:Class ;
+                  rdfs:subClassOf :Electrode .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#5LayerMEA
 <http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#5LayerMEA> rdf:type owl:Class ;
                                                                                rdfs:subClassOf :MembraneElectrodeAssembly .
@@ -805,6 +942,28 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Anode
+                :Cathode
+                :CompositeElectrode
+                :ConversionElectrode
+                :CounterElectrode
+                :HydrogenElectrode
+                :IndicatorElectrode
+                :InertElectrode
+                :IntercalationElectrode
+                :NegativeElectrode
+                :NonPolarizableElectrode
+                :PolarizableElectrode
+                :PorousElectrode
+                :PositiveElectrode
+                :RotationDiskElectrode
+                :SimpleElectrode
+                :WorkingElectrode
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Battery
                 :ElectrochemicalCapacitor
                 :ElectrochemicalHalfcell
@@ -820,6 +979,14 @@
                 :EmergencyBattery
                 :OEMBattery
                 :ReplacementBattery
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BimetallicElectrode
+                :GoldElectrode
+                :PlatinumElectrode
               )
 ] .
 

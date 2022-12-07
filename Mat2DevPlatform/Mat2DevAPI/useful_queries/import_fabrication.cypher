@@ -6,6 +6,9 @@ MATCH (EMMO_fcas:EMMO_Manufacturing {EMMO__name: "FuelCellAssembly"}),
       (EMMO_mea:EMMO_Manufactured{EMMO__name: "CCM"}),
       (EMMO_fc:EMMO_Manufactured{EMMO__name: "FuelCell"}),
       (EMMO_bp:EMMO_Manufactured{EMMO__name: "BipolarPlate"}),
+      (EMMO_ionomer:EMMO_Manufactured{EMMO__name: "AquivionD79-25BS"}),
+      (EMMO_Anode:EMMO_Manufactured{EMMO__name: "BipolarPlate"}),
+      (EMMO_bp:EMMO_Manufactured{EMMO__name: "BipolarPlate"}),
       (EMMO_gdl:EMMO_Manufactured{EMMO__name: "GasDiffusionLayer"})
 
 
@@ -36,9 +39,14 @@ MERGE(gdl:Component {uid: randomUUID(),
                      DOI: row.DOI,
                      date_added: "1111-11-11"})
 MERGE(anode:Component {uid: randomUUID(),
-                     name: row.GDL,
+                     name: row.Anode,
                      DOI: row.DOI,
                      date_added: "1111-11-11"})
+
+MERGE(ionomer:Component {uid: randomUUID(),
+                       name: row.Ionomer,
+                       DOI: row.DOI,
+                       date_added: "1111-11-11"})
 
 // FC-Manufacturing and MEA-Manufacturing
 MERGE(fcfab:Manufacturing {uid: randomUUID(),
