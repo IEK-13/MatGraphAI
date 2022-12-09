@@ -16,7 +16,7 @@ MATCH (EMMO_fcas:EMMO_Manufacturing {EMMO__name: "FuelCellAssembly"}),
       (EMMO_station:EMMO_Manufactured{EMMO__name: "Station"}),
       (EMMO_inkfab:EMMO_Manufacturing{EMMO__name: "CatalystInkManufacturing"}),
       (EMMO_loading:EMMO_Quantity{EMMO__name: "CatalystLoading"}),
-      (EMMO_ew:EMMO_Quantity{EMMO__name: "CatalystLoading"}),
+      (EMMO_ew:EMMO_Quantity{EMMO__name: "EquivalentWeight"}),
       (EMMO_ic:EMMO_Quantity{EMMO__name: "CatalystIonomerRatio"})
 
 
@@ -113,7 +113,7 @@ MERGE(anode)-[:IS_A]->(EMMO_anode)
 MERGE(membrane)-[:IS_A]->(EMMO_membrane)
 MERGE(station)-[:IS_A]->(EMMO_station)
 MERGE(coatingsubstrate)-[:IS_A]->(EMMO_PTFE)
-MERGE(ink)-[:IS_A]->(EMMO_ink)
+MERGE(catink)-[:IS_A]->(EMMO_ink)
 
 
 //Processing
@@ -147,10 +147,18 @@ MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:YIELDS_FLOAT_PROPERTY{
 
 MERGE(ic:Measurement{uid: randomUUID(),
                      DOI: row.DOI})
-MERGE(ink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_FLOAT_PROPERTY{
-  value: TOFLOAT(row.`I\C`)}]->(EMMO_ic)
+MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_FLOAT_PROPERTY{
+  value: TOFLOAT(row.`I/C`)}]->(EMMO_ic)
 
 MERGE(ew:Measurement{uid: randomUUID(),
                      DOI: row.DOI})
 MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_FLOAT_PROPERTY{
   value: TOFLOAT(row.`EW`)}]->(EMMO_ew)
+
+// Paraneters
+
+MERGE(meafab)-[:HAS_PARAMETER]->(drytemp)-[:YIELDS_FLOAT_PROPERTY{
+  value: TOFLOAT(row.`Drymill time (hrs)`)}]->(EMMO_mill)
+
+MERGE(meafab)-[:HAS_PARAMETER]->(drytemp)-[:YIELDS_FLOAT_PROPERTY{
+  value: TOFLOAT(row.`Drying temp (deg C)`)}]->(EMMO_dt)

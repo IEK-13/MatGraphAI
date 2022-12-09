@@ -2366,9 +2366,24 @@
                       rdfs:subClassOf :MassFraction .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DryMillingTime
+:DryMillingTime rdf:type owl:Class ;
+                rdfs:subClassOf :OperatingTime .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DryingTemperature
+:DryingTemperature rdf:type owl:Class ;
+                   rdfs:subClassOf :OperatingTemperature .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EquivalentWeight
 :EquivalentWeight rdf:type owl:Class ;
                   rdfs:subClassOf :ChemicalCompositionQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OperatingTime
+:OperatingTime rdf:type owl:Class ;
+               rdfs:subClassOf :Duration .
 
 
 #################################################################
