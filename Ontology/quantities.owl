@@ -1490,6 +1490,11 @@
                             rdfs:subClassOf :PhysioChemicalQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MolecularWeight
+:MolecularWeight rdf:type owl:Class ;
+                 rdfs:subClassOf :Mass .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MomentOfForce
 :MomentOfForce rdf:type owl:Class ;
                rdfs:subClassOf :MechanicalQuantity .
@@ -2356,9 +2361,9 @@
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MolecularWeight
-:MolecularWeight rdf:type owl:Class ;
-                 rdfs:subClassOf :Mass .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CatalystIonomerRatio
+:CatalystIonomerRatio rdf:type owl:Class ;
+                      rdfs:subClassOf :MassFraction .
 
 
 #################################################################

@@ -11,10 +11,13 @@ MATCH (EMMO_fcas:EMMO_Manufacturing {EMMO__name: "FuelCellAssembly"}),
       (EMMO_catalyst:EMMO_Material{EMMO__name: "F50E-HT"}),
       (EMMO_bp:EMMO_Manufactured{EMMO__name: "BipolarPlate"}),
       (EMMO_PTFE:EMMO_Material{EMMO__name: "PTFE"}),
-      (EMMO_ETFE:EMMO_Material{EMMO__name: "ETFE"}),
       (EMMO_ink:EMMO_Material{EMMO__name: "CatalystInk"}),
       (EMMO_gdl:EMMO_Manufactured{EMMO__name: "GasDiffusionLayer"}),
-      (EMMO_station:EMMO_Manufactured{EMMO__name: "Station"})
+      (EMMO_station:EMMO_Manufactured{EMMO__name: "Station"}),
+      (EMMO_inkfab:EMMO_Manufacturing{EMMO__name: "CatalystInkManufacturing"}),
+      (EMMO_loading:EMMO_Quantity{EMMO__name: "CatalystLoading"})
+
+
 
 
 
@@ -41,7 +44,7 @@ MERGE(membrane:Component {uid: randomUUID(),
                           name: row.Membrane,
                           DOI: row.DOI,
                           date_added: "1111-11-11"})
-MERGE(plates:Component {uid: randomUUID(),
+MERGE(bp:Component {uid: randomUUID(),
                         name: row.plates,
                         DOI: row.DOI,
                         date_added: "1111-11-11"})
@@ -95,6 +98,7 @@ MERGE(inkfab:Manufacturing {uid: randomUUID(),
 // Labelling
 MERGE(EMMO_meaas)<-[:IS_A]-(meafab)
 MERGE(fcfab)-[:IS_A]->(EMMO_fcas)
+MERGE(inkfab)-[:IS_A]->(EMMO_inkfab)
 
 MERGE(mea)-[:IS_A]->(EMMO_mea)
 MERGE(fc)-[:IS_A]->(EMMO_fc)
@@ -105,7 +109,7 @@ MERGE(catalyst)-[:IS_A]->(EMMO_catalyst)
 MERGE(anode)-[:IS_A]->(EMMO_anode)
 MERGE(membrane)-[:IS_A]->(EMMO_membrane)
 MERGE(station)-[:IS_A]->(EMMO_station)
-MERGE(ETFE)-[:IS_A]->(EMMO_PTFE)
+MERGE(coatingsubstrate)-[:IS_A]->(EMMO_PTFE)
 MERGE(ink)-[:IS_A]->(EMMO_ink)
 
 
@@ -113,22 +117,32 @@ MERGE(ink)-[:IS_A]->(EMMO_ink)
 MERGE(meafab)<-[:HAS_PART]-(fcfab)
 MERGE(inkfab)<-[:HAS_PART]-(meafab)
 
-MERGE(catalyst)-[:IS_PROCESS_INPUT]->(inkfab)
-MERGE(ionomer)-[:IS_PROCESS_INPUT]->(inkfab)
-MERGE(inkfab)-[:IS_PROCESS_OUTPUT]->(catink)
+MERGE(catalyst)-[:IS_MANUFACTURING_INPUT]->(inkfab)
+MERGE(ionomer)-[:IS_MANUFACTURING_INPUT]->(inkfab)
+MERGE(inkfab)-[:IS_MANUFACTURING_OUTPUT]->(catink)
 
-MERGE(meafab)-[:IS_PROCESS_OUTPUT]->(mea)
-MERGE(membrane)-[:IS_PROCESS_INPUT]->(meafab)
-MERGE(anode)-[:IS_PROCESS_INPUT]->(meafab)
-MERGE(catink)-[:IS_PROCESS_INPUT]->(meafab)
-MERGE(coatingsubstrate)-[:IS_PROCESS_INPUT]->(meafab)
-
-
-MERGE(plates)-[:IS_PROCESS_INPUT]->(fcfab)
-MERGE(mea)-[:IS_PROCESS_INPUT]->(fcfab)
-MERGE(gdl)-[:IS_PROCESS_INPUT]->(fcfab)
-MERGE(station)-[:IS_PROCESS_INPUT]->(fcfab)
-MERGE(fcfab)-[:IS_PROCESS_OUTPUT]->(fc)
+MERGE(meafab)-[:IS_MANUFACTURING_OUTPUT]->(mea)
+MERGE(membrane)-[:IS_MANUFACTURING_INPUT]->(meafab)
+MERGE(anode)-[:IS_MANUFACTURING_INPUT]->(meafab)
+MERGE(catink)-[:IS_MANUFACTURING_INPUT]->(meafab)
+MERGE(coatingsubstrate)-[:IS_MANUFACTURING_INPUT]->(meafab)
 
 
+MERGE(bp)-[:IS_MANUFACTURING_INPUT]->(fcfab)
+MERGE(mea)-[:IS_MANUFACTURING_INPUT]->(fcfab)
+MERGE(gdl)-[:IS_MANUFACTURING_INPUT]->(fcfab)
+MERGE(station)-[:IS_MANUFACTURING_INPUT]->(fcfab)
+MERGE(fcfab)-[:IS_MANUFACTURING_OUTPUT]->(fc)
 
+
+// Properties
+
+MERGE(loading:Measurement{uid: randoUUID(),
+                          DOI: row.DOI})
+MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:YIELDS_FLOAT_PROPERTY{
+value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(EMMO_loading)
+
+MERGE(loading:Measurement{uid: randoUUID(),
+                          DOI: row.DOI})
+MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:YIELDS_FLOAT_PROPERTY{
+  value: TOFLOAT(row.`I\C`)}]->(EMMO_loading)
