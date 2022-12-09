@@ -1,6 +1,7 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/FuelCellFabrication.csv' AS row
 
 MATCH (EMMO_fcas:EMMO_Manufacturing {EMMO__name: "FuelCellAssembly"}),
+      (EMMO_fcfab:EMMO_Manufacturing {EMMO__name: "FuelCellManufacturing"}),
       (EMMO_meaas:EMMO_Manufacturing {EMMO__name: "CCMManufacturing"}),
       (EMMO_membrane:EMMO_Manufactured{EMMO__name: "Membrane"}),
       (EMMO_mea:EMMO_Manufactured{EMMO__name: "CCM"}),
@@ -110,6 +111,8 @@ MERGE(inkfab:Manufacturing {uid: randomUUID(),
 MERGE(EMMO_meaas)<-[:IS_A]-(meafab)
 MERGE(fcass)-[:IS_A]->(EMMO_fcas)
 MERGE(inkfab)-[:IS_A]->(EMMO_inkfab)
+MERGE(fcfab)-[:IS_A]->(EMMO_fcfab)
+
 
 MERGE(mea)-[:IS_A]->(EMMO_mea)
 MERGE(fc)-[:IS_A]->(EMMO_fc)

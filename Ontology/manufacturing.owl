@@ -35,12 +35,7 @@
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellAssembly
 :FuelCellAssembly rdf:type owl:Class ;
-                  rdfs:subClassOf :ComponentManufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellManufacturing
-:FuelCellManufacturing rdf:type owl:Class ;
-                       rdfs:subClassOf :DeviceManufacturing .
+                  rdfs:subClassOf :DeviceManufacturing .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing
