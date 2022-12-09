@@ -86,6 +86,12 @@ MERGE(fcfab:Manufacturing {uid: randomUUID(),
                            date_added : "1111-11-11"
 })
 
+MERGE(fcass:Manufacturing {uid: randomUUID(),
+                           run_title: row.`MEA ID`,
+                           DOI: row.DOI,
+                           date_added : "1111-11-11"
+})
+
 
 MERGE(meafab:Manufacturing {uid: randomUUID(),
                             run_title: row.`MEA ID`,
@@ -102,7 +108,7 @@ MERGE(inkfab:Manufacturing {uid: randomUUID(),
 
 // Labelling
 MERGE(EMMO_meaas)<-[:IS_A]-(meafab)
-MERGE(fcfab)-[:IS_A]->(EMMO_fcas)
+MERGE(fcass)-[:IS_A]->(EMMO_fcas)
 MERGE(inkfab)-[:IS_A]->(EMMO_inkfab)
 
 MERGE(mea)-[:IS_A]->(EMMO_mea)
@@ -119,8 +125,12 @@ MERGE(catink)-[:IS_A]->(EMMO_ink)
 
 
 //Processing
-MERGE(meafab)<-[:HAS_PART]-(fcfab)
-MERGE(inkfab)<-[:HAS_PART]-(meafab)
+MERGE(fcfab)-[:HAS_PART]->(fcass)
+MERGE(fcfab)-[:HAS_PART]->(meafab)
+MERGE(fcfab)-[:HAS_PART]->(inkfab)
+
+MERGE(meafab)-[:FOLLOWED_BY]->(fcass)
+MERGE(inkfab)-[:FOLLOWED_BY]->(meafab)
 
 MERGE(catalyst)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 MERGE(ionomer)-[:IS_MANUFACTURING_INPUT]->(inkfab)
@@ -133,11 +143,11 @@ MERGE(catink)-[:IS_MANUFACTURING_INPUT]->(meafab)
 MERGE(coatingsubstrate)-[:IS_MANUFACTURING_INPUT]->(meafab)
 
 
-MERGE(bp)-[:IS_MANUFACTURING_INPUT]->(fcfab)
-MERGE(mea)-[:IS_MANUFACTURING_INPUT]->(fcfab)
-MERGE(gdl)-[:IS_MANUFACTURING_INPUT]->(fcfab)
-MERGE(station)-[:IS_MANUFACTURING_INPUT]->(fcfab)
-MERGE(fcfab)-[:IS_MANUFACTURING_OUTPUT]->(fc)
+MERGE(bp)-[:IS_MANUFACTURING_INPUT]->(fcass)
+MERGE(mea)-[:IS_MANUFACTURING_INPUT]->(fcass)
+MERGE(gdl)-[:IS_MANUFACTURING_INPUT]->(fcass)
+MERGE(station)-[:IS_MANUFACTURING_INPUT]->(fcass)
+MERGE(fcass)-[:IS_MANUFACTURING_OUTPUT]->(fc)
 
 
 // Properties
@@ -165,8 +175,6 @@ MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_FLOAT_PROPERTY{
 
 // Paraneters
 
-MERGE(meafab)-[:HAS_PARAMETER]->(drytemp)-[:YIELDS_FLOAT_PROPERTY{
-  value: TOFLOAT(row.`Drymill time (hrs)`)}]->(EMMO_mill)
+MERGE(inkfab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drymill time (hrs)`)}]->(EMMO_mill)
 
-MERGE(meafab)-[:HAS_PARAMETER]->(drytemp)-[:YIELDS_FLOAT_PROPERTY{
-  value: TOFLOAT(row.`Drying temp (deg C)`)}]->(EMMO_dt)
+MERGE(meafab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drying temp (deg C)`)}]->(EMMO_dt)
