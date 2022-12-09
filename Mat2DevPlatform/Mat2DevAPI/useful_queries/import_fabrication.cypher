@@ -17,7 +17,9 @@ MATCH (EMMO_fcas:EMMO_Manufacturing {EMMO__name: "FuelCellAssembly"}),
       (EMMO_inkfab:EMMO_Manufacturing{EMMO__name: "CatalystInkManufacturing"}),
       (EMMO_loading:EMMO_Quantity{EMMO__name: "CatalystLoading"}),
       (EMMO_ew:EMMO_Quantity{EMMO__name: "EquivalentWeight"}),
-      (EMMO_ic:EMMO_Quantity{EMMO__name: "CatalystIonomerRatio"})
+      (EMMO_ic:EMMO_Quantity{EMMO__name: "CatalystIonomerRatio"}),
+      (EMMO_mill:EMMO_Quantity{EMMO__name: "DryMillingTime"}),
+      (EMMO_dt:EMMO_Quantity{EMMO__name: "DryingTemperature"})
 
 
 
@@ -141,17 +143,23 @@ MERGE(fcfab)-[:IS_MANUFACTURING_OUTPUT]->(fc)
 // Properties
 
 MERGE(loading:Measurement{uid: randomUUID(),
-                          DOI: row.DOI})
+                          DOI: row.DOI,
+                          date_added : "1111-11-11"
+})
 MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:YIELDS_FLOAT_PROPERTY{
   value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(EMMO_loading)
 
 MERGE(ic:Measurement{uid: randomUUID(),
-                     DOI: row.DOI})
+                     DOI: row.DOI,
+                     date_added : "1111-11-11"
+})
 MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_FLOAT_PROPERTY{
   value: TOFLOAT(row.`I/C`)}]->(EMMO_ic)
 
 MERGE(ew:Measurement{uid: randomUUID(),
-                     DOI: row.DOI})
+                     DOI: row.DOI,
+                     date_added : "1111-11-11"
+})
 MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_FLOAT_PROPERTY{
   value: TOFLOAT(row.`EW`)}]->(EMMO_ew)
 
