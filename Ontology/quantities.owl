@@ -2366,6 +2366,11 @@
                       rdfs:subClassOf :MassFraction .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EquivalentWeight
+:EquivalentWeight rdf:type owl:Class ;
+                  rdfs:subClassOf :ChemicalCompositionQuantity .
+
+
 #################################################################
 #    General axioms
 #################################################################

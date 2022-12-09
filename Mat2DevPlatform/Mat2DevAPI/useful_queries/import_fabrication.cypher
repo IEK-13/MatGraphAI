@@ -16,6 +16,7 @@ MATCH (EMMO_fcas:EMMO_Manufacturing {EMMO__name: "FuelCellAssembly"}),
       (EMMO_station:EMMO_Manufactured{EMMO__name: "Station"}),
       (EMMO_inkfab:EMMO_Manufacturing{EMMO__name: "CatalystInkManufacturing"}),
       (EMMO_loading:EMMO_Quantity{EMMO__name: "CatalystLoading"}),
+      (EMMO_ew:EMMO_Quantity{EMMO__name: "CatalystLoading"}),
       (EMMO_ic:EMMO_Quantity{EMMO__name: "CatalystIonomerRatio"})
 
 
@@ -148,3 +149,8 @@ MERGE(ic:Measurement{uid: randomUUID(),
                      DOI: row.DOI})
 MERGE(ink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_FLOAT_PROPERTY{
   value: TOFLOAT(row.`I\C`)}]->(EMMO_ic)
+
+MERGE(ew:Measurement{uid: randomUUID(),
+                     DOI: row.DOI})
+MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_FLOAT_PROPERTY{
+  value: TOFLOAT(row.`EW`)}]->(EMMO_ew)
