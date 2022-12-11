@@ -178,7 +178,7 @@ MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_FLOAT_PROPERTY{
   value: TOFLOAT(row.`I/C`)}]->(EMMO_ic)
 
 MERGE(ew:Measurement{uid: row.EW,
-                     date_added : "1"
+                     date_added : "1111-11-11"
 })
 
 SET ew.uid = randomUUID()
@@ -191,3 +191,7 @@ MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_FLOAT_PROPERTY{
 MERGE(inkfab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drymill time (hrs)`)}]->(EMMO_mill)
 
 MERGE(meafab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drying temp (deg C)`)}]->(EMMO_dt)
+
+
+
+
