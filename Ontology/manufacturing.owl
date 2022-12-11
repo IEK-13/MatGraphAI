@@ -12,6 +12,11 @@
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CCLManufacturing
+:CCLManufacturing rdf:type owl:Class ;
+                  rdfs:subClassOf :ComponentManufacturing .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CCMManufacturing
 :CCMManufacturing rdf:type owl:Class ;
                   rdfs:subClassOf :MEAManufacturing ;
