@@ -2387,6 +2387,11 @@
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CrackDensity
+:CrackDensity rdf:type owl:Class ;
+              rdfs:subClassOf :Density .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeCSupport
 :SpecificVolumeCSupport rdf:type owl:Class ;
                         rdfs:subClassOf :SpecificVolume .
