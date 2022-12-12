@@ -1,13 +1,18 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/CatInkFabrication.csv' AS row
 
-MATCH (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Material {EMMO__name: "CatalystInk"}),
-      (EMMO_cathode:EMMO_Manufactured{EMMO__name: "Cathode"}),
+MATCH (ink:Matter {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: "CatalystInk"}),
+      (EMMO_cathode:EMMO_Matter{EMMO__name: "Cathode"}),
       (EMMO_thickness:EMMO_Quantity{EMMO__name: "Thickness"}),
       (EMMO_porosity:EMMO_Quantity{EMMO__name: "Porosity"}),
       (EMMO_crackdensity:EMMO_Quantity{EMMO__name: "CrackDensity"}),
       (EMMO_voidvol:EMMO_Quantity{EMMO__name: "SpecificVolumeVoid"}),
       (EMMO_solidvol:EMMO_Quantity{EMMO__name: "SpecificVolumeSolid"}),
-      (EMMO_cclfab:EMMO_Manufacturing {EMMO__name: "CCLManufacturing"})
+      (EMMO_cclfab:EMMO_Process {EMMO__name: "CCLManufacturing"}),
+      (EMMO_dvs:EMMO_Process {EMMO__name: "DynamicVaporSorption"}),
+      (EMMO_sem:EMMO_Process {EMMO__name: "SEMImaging"}),
+      (EMMO_msp:EMMO_Process {EMMO__name: "MethodOfStandardPorosimetry"})
+
+
 
 // Process Nodes
 MERGE(cclfab:Manufacturing {run_title: row.`Run #`,
@@ -90,6 +95,7 @@ FOREACH(x IN CASE WHEN row.`Densometer Porosity (%)` IS NOT NULL THEN [1] END |
 //Labeling
 MERGE(ccl)-[:IS_A]->(EMMO_cathode)
 MERGE(cclfab)-[:IS_A]->(EMMO_cclfab)
+MERGE(sem)-[:IS_A]->(EMMO_sem)
 
 // Processing
 MERGE(ink)-[:IS_MANUFACTURING_INPUT]->(cclfab)
