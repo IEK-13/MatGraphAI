@@ -38,6 +38,11 @@
                      rdfs:subClassOf :Manufacturing .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption
+:DynamicVaporSorption rdf:type owl:Class ;
+                      rdfs:subClassOf :Gravimetry .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellAssembly
 :FuelCellAssembly rdf:type owl:Class ;
                   rdfs:subClassOf :ComponentManufacturing .
@@ -46,6 +51,17 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellManufacturing
 :FuelCellManufacturing rdf:type owl:Class ;
                        rdfs:subClassOf :DeviceManufacturing .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Gravimetry
+:Gravimetry rdf:type owl:Class ;
+            rdfs:subClassOf :Measurement ;
+            owl:disjointWith :Imaging .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Imaging
+:Imaging rdf:type owl:Class ;
+         rdfs:subClassOf :Measurement .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing
@@ -60,6 +76,26 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MaterialsManufacturing
 :MaterialsManufacturing rdf:type owl:Class ;
                         rdfs:subClassOf :Manufacturing .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Measurement
+:Measurement rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MethodOfStandardPorosimetry
+:MethodOfStandardPorosimetry rdf:type owl:Class ;
+                             rdfs:subClassOf :Measurement .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SEMImaging
+:SEMImaging rdf:type owl:Class ;
+            rdfs:subClassOf :Imaging ;
+            owl:disjointWith :TEMImaging .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#TEMImaging
+:TEMImaging rdf:type owl:Class ;
+            rdfs:subClassOf :Imaging .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing

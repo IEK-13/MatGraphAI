@@ -2392,6 +2392,11 @@
               rdfs:subClassOf :Density .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassChange
+:MassChange rdf:type owl:Class ;
+            rdfs:subClassOf :Mass .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SolidVolume
 :SolidVolume rdf:type owl:Class ;
              rdfs:subClassOf :Volume .

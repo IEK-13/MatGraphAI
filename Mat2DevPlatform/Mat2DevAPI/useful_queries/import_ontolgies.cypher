@@ -23,16 +23,16 @@ call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
 // second pass to load the owl:Material
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufactured.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
-SET n:EMMO_Manufactured;
+SET n:EMMO_Matter;
 
 // second pass to load the owl:Material
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufacturing.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
-SET n:EMMO_Manufacturing;
+SET n:EMMO_Process;
 
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/materials.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
-SET n:EMMO_Material;
+SET n:EMMO_Matter;
 
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
