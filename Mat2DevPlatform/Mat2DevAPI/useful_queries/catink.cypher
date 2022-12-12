@@ -28,11 +28,15 @@ MERGE(sem:Measurement{uid: randomUUID(),
 MERGE(thickness:Property{uid: randomUUID(),
                       date_added : "1111-11-11"
 })
+MERGE(thickness:Property{uid: randomUUID(),
+                         date_added : "1111-11-11"
+})
 MERGE(ccl)-[:IS_MEASUREMENT_INPUT]->(sem)-[:YIELDS_FLOAT_PROPERTY{
   value: TOFLOAT(row.`SEM thickness STD (µm)`)}]->(thickness)-[:IS_A]->(EMMO_thickness)
 MERGE(ccl)-[:IS_MEASUREMENT_INPUT]->(sem)-[:YIELDS_FLOAT_PROPERTY{
   value: TOFLOAT(row.`SEM thickness STD (µm)`)}]->(porosity)-[:IS_A]->(EMMO_thickness)
 MERGE(porosity)-[:DERIVED_FROM]->(thickness)
+
 //Labeling
 MERGE(ccl)-[:IS_A]->(EMMO_cathode)
 MERGE(cclfab)-[:IS_A]->(EMMO_cclfab)

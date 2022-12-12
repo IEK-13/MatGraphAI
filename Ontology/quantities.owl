@@ -274,6 +274,11 @@
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CatalystIonomerRatio
+:CatalystIonomerRatio rdf:type owl:Class ;
+                      rdfs:subClassOf :MassFraction .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CatalystLoading
 :CatalystLoading rdf:type owl:Class ;
                  rdfs:subClassOf :ActiveMaterialLoading .
@@ -567,6 +572,16 @@
            rdfs:subClassOf :MechanicalQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DryMillingTime
+:DryMillingTime rdf:type owl:Class ;
+                rdfs:subClassOf :OperatingTime .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DryingTemperature
+:DryingTemperature rdf:type owl:Class ;
+                   rdfs:subClassOf :OperatingTemperature .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Duration
 :Duration rdf:type owl:Class ;
           rdfs:subClassOf :Time .
@@ -728,7 +743,8 @@
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrolyteVolume
 :ElectrolyteVolume rdf:type owl:Class ;
-                   rdfs:subClassOf :Volume .
+                   rdfs:subClassOf :Volume ;
+                   owl:disjointWith :VoidVolume .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrolyticConductivity
@@ -849,6 +865,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EquilibriumPotential
 :EquilibriumPotential rdf:type owl:Class ;
                       rdfs:subClassOf :OpenCircuitVoltage .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EquivalentWeight
+:EquivalentWeight rdf:type owl:Class ;
+                  rdfs:subClassOf :ChemicalCompositionQuantity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExchangeCurrent
@@ -1560,6 +1581,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OperatingTemperature
 :OperatingTemperature rdf:type owl:Class ;
                       rdfs:subClassOf :Temperature .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OperatingTime
+:OperatingTime rdf:type owl:Class ;
+               rdfs:subClassOf :Duration .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OsmoticCoefficient
@@ -2361,29 +2387,44 @@
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CatalystIonomerRatio
-:CatalystIonomerRatio rdf:type owl:Class ;
-                      rdfs:subClassOf :MassFraction .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeCSupport
+:SpecificVolumeCSupport rdf:type owl:Class ;
+                        rdfs:subClassOf :SpecificVolume .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DryMillingTime
-:DryMillingTime rdf:type owl:Class ;
-                rdfs:subClassOf :OperatingTime .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeCatalayst
+:SpecificVolumeCatalayst rdf:type owl:Class ;
+                         rdfs:subClassOf :SpecificVolume .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DryingTemperature
-:DryingTemperature rdf:type owl:Class ;
-                   rdfs:subClassOf :OperatingTemperature .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeCatalystLayer
+:SpecificVolumeCatalystLayer rdf:type owl:Class ;
+                             rdfs:subClassOf :SpecificVolume .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EquivalentWeight
-:EquivalentWeight rdf:type owl:Class ;
-                  rdfs:subClassOf :ChemicalCompositionQuantity .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeIonomer
+:SpecificVolumeIonomer rdf:type owl:Class ;
+                       rdfs:subClassOf :SpecificVolume .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#OperatingTime
-:OperatingTime rdf:type owl:Class ;
-               rdfs:subClassOf :Duration .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumePt
+:SpecificVolumePt rdf:type owl:Class ;
+                  rdfs:subClassOf :SpecificVolumeCatalayst .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeVoid
+:SpecificVolumeVoid rdf:type owl:Class ;
+                    rdfs:subClassOf :SpecificVolume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VoidVolume
+:VoidVolume rdf:type owl:Class ;
+            rdfs:subClassOf :Volume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VoidVolumeFraction
+:VoidVolumeFraction rdf:type owl:Class ;
+                    rdfs:subClassOf :VolumeFraction .
 
 
 #################################################################
@@ -3071,6 +3112,16 @@
                 :SpecificGibbsEnergy
                 :SpecificHelmholtzEnergy
                 :SpecificInternalEnergy
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :SpecificVolumeCSupport
+                :SpecificVolumeCatalayst
+                :SpecificVolumeCatalystLayer
+                :SpecificVolumeIonomer
+                :SpecificVolumeVoid
               )
 ] .
 
