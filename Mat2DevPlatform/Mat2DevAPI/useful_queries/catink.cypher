@@ -1,6 +1,6 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/CatInkFabrication.csv' AS row
 
-MATCH (ink:Matter {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: "CatalystInk"}),
+MATCH (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: "CatalystInk"}),
       (EMMO_cathode:EMMO_Matter{EMMO__name: "Cathode"}),
       (EMMO_thickness:EMMO_Quantity{EMMO__name: "Thickness"}),
       (EMMO_porosity:EMMO_Quantity{EMMO__name: "Porosity"}),
@@ -8,9 +8,15 @@ MATCH (ink:Matter {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: "Catal
       (EMMO_voidvol:EMMO_Quantity{EMMO__name: "SpecificVolumeVoid"}),
       (EMMO_solidvol:EMMO_Quantity{EMMO__name: "SpecificVolumeSolid"}),
       (EMMO_cclfab:EMMO_Process {EMMO__name: "CCLManufacturing"}),
-      (EMMO_dvs:EMMO_Process {EMMO__name: "DynamicVaporSorption"}),
+      (EMMO_dvs:EMMO_Process {EMMO__name: "PowderDynamicVaporSorption"}),
+      (EMMO_dvs:EMMO_Process {EMMO__name: "CatalystLayerDynamicVaporSorption"}),
       (EMMO_sem:EMMO_Process {EMMO__name: "SEMImaging"}),
-      (EMMO_msp:EMMO_Process {EMMO__name: "MethodOfStandardPorosimetry"})
+      (EMMO_msp:EMMO_Process {EMMO__name: "MethodOfStandardPorosimetry"}),
+      (EMMO_rh:EMMO_Process {EMMO__name: "RelativeHumidity"}),
+      (EMMO_dvs:EMMO_Process {EMMO__name: "DynamicVaporDesorption"}),
+      (EMMO_dvds:EMMO_Process {EMMO__name: "DynamicVaporSorption"})
+
+
 
 
 
@@ -31,11 +37,9 @@ MERGE(ccl:Material {name: row.`Run #`,
 
 // Measurement nodes
 MERGE(sem:Measurement{uid: randomUUID(),
-                     DOI: row.DOI,
                      date_added : "1111-11-11"
 })
 MERGE(keyence:Measurement{uid: randomUUID(),
-                      DOI: row.DOI,
                       date_added : "1111-11-11"
 })
 MERGE(thickness:Property{uid: randomUUID(),
@@ -91,6 +95,37 @@ FOREACH(x IN CASE WHEN row.`Densometer Porosity (%)` IS NOT NULL THEN [1] END |
   MERGE(densometer)-[:YIELDS_FLOAT_PROPERTY{value: TOFLOAT(row.`Densometer PV (cm3/cm2geo)`)}]
   ->(dvoidvolume)-[:IS_A]->(EMMO_voidvol)
 )
+
+MERGE(dvs50:Measurement{uid: randomUUID(),
+                      date_added : "1111-11-11"
+})
+MERGE(pdvs50:Property{uid: randomUUID(),
+                         date_added : "1111-11-11"
+})
+MERGE(ink)-[:IS_MEASUREMENT_INPUT]->(dvs50)
+MERGE(dvs50)-[:YIELDS_FLOAT_PROPERTY{value: TOFLOAT(row.`Powder DVS soprtion at 50%RH (% mass change/cm2geo)`)}]
+->(pdvs50)-[:IS_A]->(EMMO_dvs)
+CREATE(dvs50)-[:HAS_FLOAT_PARAMETER{value: 50}]->(:Parameter)-[:IS_A]->(EMMO_rh)
+
+MERGE(dvds50:Measurement{uid: randomUUID(),
+                        date_added : "1111-11-11"
+})
+MERGE(pdvds50:Property{uid: randomUUID(),
+                      date_added : "1111-11-11"
+})
+MERGE(dvds50)-[:YIELDS_FLOAT_PROPERTY{value: TOFLOAT(row.`Powder DVS desoprtion at 50%RH (% mass change/cm2geo)`)}]
+->(pdvds50)-[:IS_A]->(EMMO_dvds)
+CREATE(dvs50)-[:HAS_FLOAT_PARAMETER{value: 50}]->(:Parameter)-[:IS_A]->(EMMO_rh)
+
+MERGE(dvds95:Measurement{uid: randomUUID(),
+                         date_added : "1111-11-11"
+})
+MERGE(pdvs95:Property{uid: randomUUID(),
+                       date_added : "1111-11-11"
+})
+MERGE(dvs95)-[:YIELDS_FLOAT_PROPERTY{value: TOFLOAT(row.`Powder DVS soprtion at 95%RH (% mass change/cm2geo)`)}]
+->(pdvs95)-[:IS_A]->(EMMO_dvs)
+CREATE(dvs50)-[:HAS_FLOAT_PARAMETER{value: 95}]->(:Parameter)-[:IS_A]->(EMMO_rh)
 
 //Labeling
 MERGE(ccl)-[:IS_A]->(EMMO_cathode)
