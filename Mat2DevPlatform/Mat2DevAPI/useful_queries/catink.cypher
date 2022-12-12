@@ -8,13 +8,13 @@ MATCH (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: "Cat
       (EMMO_voidvol:EMMO_Quantity{EMMO__name: "SpecificVolumeVoid"}),
       (EMMO_solidvol:EMMO_Quantity{EMMO__name: "SpecificVolumeSolid"}),
       (EMMO_cclfab:EMMO_Process {EMMO__name: "CCLManufacturing"}),
-      (EMMO_dvs:EMMO_Process {EMMO__name: "PowderDynamicVaporSorption"}),
-      (EMMO_dvs:EMMO_Process {EMMO__name: "CatalystLayerDynamicVaporSorption"}),
+      (EMMO_powderdvs:EMMO_Process {EMMO__name: "PowderDynamicVaporSorption"}),
+      (EMMO_cldvs:EMMO_Process {EMMO__name: "CatalystLayerDynamicVaporSorption"}),
       (EMMO_sem:EMMO_Process {EMMO__name: "SEMImaging"}),
       (EMMO_msp:EMMO_Process {EMMO__name: "MethodOfStandardPorosimetry"}),
       (EMMO_rh:EMMO_Process {EMMO__name: "RelativeHumidity"}),
-      (EMMO_dvs:EMMO_Process {EMMO__name: "DynamicVaporDesorption"}),
-      (EMMO_dvds:EMMO_Process {EMMO__name: "DynamicVaporSorption"})
+      (EMMO_dvs:EMMO_Quantity {EMMO__name: "DynamicVaporDesorption"}),
+      (EMMO_dvds:EMMO_Quantity {EMMO__name: "DynamicVaporSorption"})
 
 
 
@@ -103,6 +103,7 @@ MERGE(pdvs50:Property{uid: randomUUID(),
                          date_added : "1111-11-11"
 })
 MERGE(ink)-[:IS_MEASUREMENT_INPUT]->(dvs50)
+MERGE(dvs50)-[:IS_A]->(EMMO_powderdvs)
 MERGE(dvs50)-[:YIELDS_FLOAT_PROPERTY{value: TOFLOAT(row.`Powder DVS soprtion at 50%RH (% mass change/cm2geo)`)}]
 ->(pdvs50)-[:IS_A]->(EMMO_dvs)
 CREATE(dvs50)-[:HAS_FLOAT_PARAMETER{value: 50}]->(:Parameter)-[:IS_A]->(EMMO_rh)
@@ -110,6 +111,7 @@ CREATE(dvs50)-[:HAS_FLOAT_PARAMETER{value: 50}]->(:Parameter)-[:IS_A]->(EMMO_rh)
 MERGE(dvds50:Measurement{uid: randomUUID(),
                         date_added : "1111-11-11"
 })
+MERGE(dvds50)-[:IS_A]->(EMMO_powderdvs)
 MERGE(pdvds50:Property{uid: randomUUID(),
                       date_added : "1111-11-11"
 })
@@ -120,6 +122,7 @@ CREATE(dvs50)-[:HAS_FLOAT_PARAMETER{value: 50}]->(:Parameter)-[:IS_A]->(EMMO_rh)
 MERGE(dvds95:Measurement{uid: randomUUID(),
                          date_added : "1111-11-11"
 })
+MERGE(dvds95)-[:IS_A]->(EMMO_powderdvs)
 MERGE(pdvs95:Property{uid: randomUUID(),
                        date_added : "1111-11-11"
 })

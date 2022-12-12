@@ -28,6 +28,12 @@
                           rdfs:subClassOf :MaterialsManufacturing .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystLayerDynamicVaporSorption
+:CatalystLayerDynamicVaporSorption rdf:type owl:Class ;
+                                   rdfs:subClassOf :DynamicVaporSorption ;
+                                   owl:disjointWith :PowderDynamicVaporSorption .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing
 :ComponentManufacturing rdf:type owl:Class ;
                         rdfs:subClassOf :Manufacturing .
@@ -85,6 +91,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MethodOfStandardPorosimetry
 :MethodOfStandardPorosimetry rdf:type owl:Class ;
                              rdfs:subClassOf :Measurement .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#PowderDynamicVaporSorption
+:PowderDynamicVaporSorption rdf:type owl:Class ;
+                            rdfs:subClassOf :DynamicVaporSorption .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SEMImaging

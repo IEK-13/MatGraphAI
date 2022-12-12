@@ -2392,6 +2392,12 @@
               rdfs:subClassOf :Density .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DynamicVaporDesorption
+:DynamicVaporDesorption rdf:type owl:Class ;
+                        rdfs:subClassOf :MassChange ;
+                        owl:disjointWith <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption> .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassChange
 :MassChange rdf:type owl:Class ;
             rdfs:subClassOf :Mass .
@@ -2445,6 +2451,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VoidVolumeFraction
 :VoidVolumeFraction rdf:type owl:Class ;
                     rdfs:subClassOf :VolumeFraction .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption
+<http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf :MassChange .
 
 
 #################################################################
