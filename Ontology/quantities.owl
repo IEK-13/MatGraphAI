@@ -2392,6 +2392,11 @@
               rdfs:subClassOf :Density .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SolidVolume
+:SolidVolume rdf:type owl:Class ;
+             rdfs:subClassOf :Volume .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeCSupport
 :SpecificVolumeCSupport rdf:type owl:Class ;
                         rdfs:subClassOf :SpecificVolume .
@@ -2415,6 +2420,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumePt
 :SpecificVolumePt rdf:type owl:Class ;
                   rdfs:subClassOf :SpecificVolumeCatalayst .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeSolid
+:SpecificVolumeSolid rdf:type owl:Class ;
+                     rdfs:subClassOf :SpecificVolume .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeVoid
