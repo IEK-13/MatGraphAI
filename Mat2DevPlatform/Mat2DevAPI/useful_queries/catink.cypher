@@ -5,7 +5,7 @@ MATCH (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Material {EMMO__name: "C
       (EMMO_thickness:EMMO_Quantity{EMMO__name: "Thickness"}),
       (EMMO_porosity:EMMO_Quantity{EMMO__name: "Porosity"}),
       (EMMO_crackdensity:EMMO_Quantity{EMMO__name: "CrackDensity"}),
-      (EMMO_voidvol:EMMO_Quantity{EMMO__name: "SpecificVoidVolume"}),
+      (EMMO_voidvol:EMMO_Quantity{EMMO__name: "SpecificVolumeVoid"}),
       (EMMO_cclfab:EMMO_Manufacturing {EMMO__name: "CCLManufacturing"})
 
 // Process Nodes

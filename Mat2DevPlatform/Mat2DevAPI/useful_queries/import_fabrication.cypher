@@ -22,13 +22,6 @@ MATCH (EMMO_fcas:EMMO_Manufacturing {EMMO__name: "FuelCellAssembly"}),
       (EMMO_mill:EMMO_Quantity{EMMO__name: "DryMillingTime"}),
       (EMMO_dt:EMMO_Quantity{EMMO__name: "DryingTemperature"})
 
-
-
-
-
-
-
-
 // MEA and FC
 MERGE(fc:Device {name: row.`Run #`,
                  date_added : "1111-11-11"
