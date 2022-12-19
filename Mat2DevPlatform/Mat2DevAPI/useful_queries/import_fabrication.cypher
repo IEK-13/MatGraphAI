@@ -160,24 +160,40 @@ MERGE(loading:Measurement{uid: randomUUID(),
                           DOI: row.DOI,
                           date_added : "1111-11-11"
 })
-MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:YIELDS_FLOAT_PROPERTY{
-  value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(EMMO_loading)
+MERGE(ploading:Property{uid: randomUUID(),
+                          DOI: row.DOI,
+                          date_added : "1111-11-11"
+})
+MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:YIELDS_PROPERTY]->(ploading)-[:IS_A]->(EMMO_loading)
+MERGE(mea)-[:HAS_FLOAT_PROPERTY{
+  value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(ploading)
 
 MERGE(ic:Measurement{uid: randomUUID(),
                      DOI: row.DOI,
                      date_added : "1111-11-11"
 })
-MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_FLOAT_PROPERTY{
-  value: TOFLOAT(row.`I/C`)}]->(EMMO_ic)
+MERGE(pic:Property{uid: randomUUID(),
+                        DOI: row.DOI,
+                        date_added : "1111-11-11"
+})
+MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_PROPERTY]->(pic)-[:IS_A]->(EMMO_ic)
+MERGE(catink)-[:HAS_FLOAT_PROPERTY{
+  value: TOFLOAT(row.`I/C`)}]->(pic)
+
 
 MERGE(ew:Measurement{uid: row.EW,
                      date_added : "1111-11-11"
 })
 
 SET ew.uid = randomUUID()
+MERGE(pew:Property{uid: row.EW,
+                     date_added : "1111-11-11"
+})
 
-MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_FLOAT_PROPERTY{
-  value: TOFLOAT(row.`EW`)}]->(EMMO_ew)
+SET pew.uid = randomUUID()
+MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_PROPERTY]->(pew)-[:IS_A]->(EMMO_ew)
+MERGE(ionomer)-[:HAS_FLOAT_PROPERTY{
+  value: TOFLOAT(row.`EW`)}]->(pew)
 
 // Paraneters
 

@@ -20,29 +20,51 @@ FOREACH(x IN CASE WHEN line.discovered_by IS NOT NULL THEN [1] END |
     ON CREATE SET
     researcher.uid = randomUUID()
   CREATE (exp:Manufacturing {uid: randomUUID()})
-  MERGE (element)<-[:YIELDED]-(exp)-[:BY]->(researcher))
+  MERGE (element)<-[:IS_MANUFACTURING_OUTPUT]-(exp)-[:BY]->(researcher))
 // IntegerProperties
 
 CREATE (element)-[:HAS_INTEGER_PROPERTY {value : toInteger(line.number)}]->(atomicnumber)
 
 //FloatProperties
 FOREACH(x IN CASE WHEN NOT NULL in apoc.convert.toIntList(line.ionization_energies) THEN [1] END |
-  MERGE (element)-[:HAS_ARRAY_PROPERTY {value: apoc.convert.toIntList(line.ionization_energies)}]->(ionizationenergy))
+  MERGE(pionizationenergy:Property{uid: randomUUID(),
+                          date_added : "1111-11-11"
+  })
+  MERGE (element)-[:HAS_ARRAY_PROPERTY {value: apoc.convert.toIntList(line.ionization_energies)}]
+  ->(pionizationenergy)-[:IS_A]->(ionizationenergy))
 
 FOREACH(x IN CASE WHEN line.electron_affinity IS NOT NULL THEN [1] END |
-  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electron_affinity)}]->(electronaffinity))
+  MERGE(pelaff:Property{uid: randomUUID(),
+                                   date_added : "1111-11-11"
+  })
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electron_affinity)}]->(pelaff)-[:IS_A]->(electronaffinity))
 
 FOREACH(x IN CASE WHEN line.electronegativity_pauling IS NOT NULL THEN [1] END |
-  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electronegativity_pauling)}]->(electronegativity))
+  MERGE(pelneg:Property{uid: randomUUID(),
+                                   date_added : "1111-11-11"
+  })
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.electronegativity_pauling)}]->(pelneg)-[:IS_A]->(electronegativity))
 
 FOREACH(x IN CASE WHEN line.melt IS NOT NULL THEN [1] END |
-  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.melt)}]->(melt))
+  MERGE(pmelt:Property{uid: randomUUID(),
+                                   date_added : "1111-11-11"
+  })
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.melt)}]->(pmelt)-[:IS_A]->(melt))
 
 FOREACH(x IN CASE WHEN line.density IS NOT NULL THEN [1] END |
-  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.density)}]->(density))
+  MERGE(pdensity:Property{uid: randomUUID(),
+                                   date_added : "1111-11-11"
+  })
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.density)}]->(pdensity)-[:IS_A]->(density))
 
 FOREACH(x IN CASE WHEN line.molarheat IS NOT NULL THEN [1] END |
-  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.number)}]->(molarheat))
+  MERGE(pmolarheat:Property{uid: randomUUID(),
+                                   date_added : "1111-11-11"
+  })
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.number)}]->(pmolarheat)-[:IS_A]->(molarheat))
 
 FOREACH(x IN CASE WHEN toFloat(line.atomic_mass) IS NOT NULL THEN [1] END |
-  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.atomic_mass)}]->(atomicmass));
+  MERGE(patomicmass:Property{uid: randomUUID(),
+                                   date_added : "1111-11-11"
+  })
+  MERGE (element)-[:HAS_FLOAT_PROPERTY {value: toFloat(line.atomic_mass)}]->(patomicmass)-[:IS_A]-(atomicmass));
