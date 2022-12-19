@@ -33,10 +33,10 @@
                           rdfs:subClassOf :MaterialsManufacturing .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystLayerDynamicVaporSorption
-:CatalystLayerDynamicVaporSorption rdf:type owl:Class ;
-                                   rdfs:subClassOf :DynamicVaporSorption ;
-                                   owl:disjointWith :PowderDynamicVaporSorption .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystLayerDynamicVaporSorptionMeasurement
+:CatalystLayerDynamicVaporSorptionMeasurement rdf:type owl:Class ;
+                                              rdfs:subClassOf :DynamicVaporSorptionMeasurement ;
+                                              owl:disjointWith :PowderDynamicVaporSorptionMeasurement .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing
@@ -49,9 +49,9 @@
                      rdfs:subClassOf :Manufacturing .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption
-:DynamicVaporSorption rdf:type owl:Class ;
-                      rdfs:subClassOf :Gravimetry .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorptionMeasurement
+:DynamicVaporSorptionMeasurement rdf:type owl:Class ;
+                                 rdfs:subClassOf :Gravimetry .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellAssembly
@@ -98,9 +98,9 @@
                              rdfs:subClassOf :Measurement .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#PowderDynamicVaporSorption
-:PowderDynamicVaporSorption rdf:type owl:Class ;
-                            rdfs:subClassOf :DynamicVaporSorption .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#PowderDynamicVaporSorptionMeasurement
+:PowderDynamicVaporSorptionMeasurement rdf:type owl:Class ;
+                                       rdfs:subClassOf :DynamicVaporSorptionMeasurement .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SEMImaging
