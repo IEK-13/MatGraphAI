@@ -12,6 +12,11 @@
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#AdditiveManufacturing
+:AdditiveManufacturing rdf:type owl:Class ;
+                       rdfs:subClassOf :Manufacturing .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#BETMethod
 :BETMethod rdf:type owl:Class ;
            rdfs:subClassOf :Measurement .
