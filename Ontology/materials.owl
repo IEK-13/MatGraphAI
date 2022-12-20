@@ -785,9 +785,9 @@
                   rdfs:subClassOf :MolecularEntity .
 
 
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polyepoxides
-:Polyepoxides rdf:type owl:Class ;
-              rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> .
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polyepoxide
+:Polyepoxide rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ReactiveMaterial
