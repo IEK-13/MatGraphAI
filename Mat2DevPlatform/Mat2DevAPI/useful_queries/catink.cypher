@@ -1,7 +1,7 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/CatInkFabrication.csv' AS row
 
 MATCH (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
-      (EMMO_epoxy:EMMO_Quantity{EMMO__name: 'Epoxy'}),
+      (EMMO_epoxy:EMMO_Quantity{EMMO__name: 'Polyepoxide'}),
       (EMMO_cathode:EMMO_Matter{EMMO__name: 'Cathode'}),
       (EMMO_thickness:EMMO_Quantity{EMMO__name: 'Thickness'}),
       (EMMO_porosity:EMMO_Quantity{EMMO__name: 'Porosity'}),
