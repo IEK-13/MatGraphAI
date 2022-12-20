@@ -1,6 +1,7 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/CatInkFabrication.csv' AS row
 
 MATCH (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
+      (EMMO_epoxy:EMMO_Quantity{EMMO__name: 'Epoxy'}),
       (EMMO_cathode:EMMO_Matter{EMMO__name: 'Cathode'}),
       (EMMO_thickness:EMMO_Quantity{EMMO__name: 'Thickness'}),
       (EMMO_porosity:EMMO_Quantity{EMMO__name: 'Porosity'}),
@@ -212,7 +213,7 @@ FOREACH(x IN CASE WHEN row.`I/C TEM measured ` IS NOT NULL THEN [1] END |
   })
   MERGE(temepoxy:Measurement{uid: randomUUID(),
                         date_added : '1111-11-11'})
-  MERGE(preparation:Measurement{uid: randomUUID(),
+  MERGE(preparation:Manufacturing{uid: randomUUID(),
                              date_added : '1111-11-11'})
   MERGE(temepoxyfilledporosity:Property{uid: randomUUID(),
                              date_added : '1111-11-11'
