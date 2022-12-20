@@ -8,9 +8,10 @@ MATCH (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'Cat
       (EMMO_voidvol:EMMO_Quantity{EMMO__name: 'SpecificVolumeVoid'}),
       (EMMO_solidvol:EMMO_Quantity{EMMO__name: 'SpecificVolumeSolid'}),
       (EMMO_cclfab:EMMO_Process {EMMO__name: 'CCLManufacturing'}),
-      (EMMO_powderdvs:EMMO_Process {EMMO__name: 'PowderDynamicVaporSorption'}),
-      (EMMO_cldvs:EMMO_Process {EMMO__name: 'CatalystLayerDynamicVaporSorption'}),
+      (EMMO_powderdvs:EMMO_Process {EMMO__name: 'PowderDynamicVaporSorptionMeasurement'}),
+      (EMMO_cldvs:EMMO_Process {EMMO__name: 'CatalystLayerDynamicVaporSorptionMeasurement'}),
       (EMMO_sem:EMMO_Process {EMMO__name: 'SEMImaging'}),
+      (EMMO_tem:EMMO_Process {EMMO__name: 'TEMImaging'}),
       (EMMO_msp:EMMO_Process {EMMO__name: 'MethodOfStandardPorosimetry'}),
       (EMMO_rh:EMMO_Quantity {EMMO__name: 'RelativeHumidity'}),
       (EMMO_dvs:EMMO_Quantity {EMMO__name: 'DynamicVaporDesorption'}),
@@ -179,10 +180,10 @@ CREATE(cldvs50)- [:HAS_FLOAT_PARAMETER{value:50}]- >(:Parameter)- [:IS_A] - >(EM
 //CL DVS 95 RH
 FOREACH(x IN CASE WHEN row.`CL DVS soprtion at 95%RH (% mass change/cm2geo)` IS NOT NULL THEN [1]
   END |
-  MERGE(cldvs95:Measurement{uid:randomUUID(),
+  MERGE(tem:Measurement{uid:randomUUID(),
                            date_added:"1111-11-11"
   })
-  MERGE(cldvs95)-[:IS_A]->(EMMO_cldvs)
+  MERGE(tem)-[:IS_A]->(EMMO_tem)
   MERGE(ink)- [:IS_MEASUREMENT_INPUT] - >(dvs95)
   MERGE(clpdvs95:Property{uid:randomUUID(),
                           date_added:"1111-11-11"
@@ -194,6 +195,56 @@ FOREACH(x IN CASE WHEN row.`CL DVS soprtion at 95%RH (% mass change/cm2geo)` IS 
 
 )
 
+FOREACH(x IN CASE WHEN row.`I/C TEM measured ` IS NOT NULL THEN [1] END |
+  MERGE(tem:Measurement{uid: randomUUID(),
+                               date_added : '1111-11-11'})
+  MERGE(temic:Property{uid: randomUUID(),
+                           date_added : '1111-11-11'
+  })
+  MERGE(temionomervol:Property{uid: randomUUID(),
+                       date_added : '1111-11-11'
+  })
+  MERGE(temporosity:Property{uid: randomUUID(),
+                       date_added : '1111-11-11'
+  })
+  MERGE(temtotalporosity:Property{uid: randomUUID(),
+                             date_added : '1111-11-11'
+  })
+  MERGE(temepoxy:Measurement{uid: randomUUID(),
+                        date_added : '1111-11-11'})
+  MERGE(preparation:Measurement{uid: randomUUID(),
+                             date_added : '1111-11-11'})
+  MERGE(temepoxyfilledporosity:Property{uid: randomUUID(),
+                             date_added : '1111-11-11'
+  })
+  MERGE(teminaccessiblepores:Property{uid: randomUUID(),
+                                        date_added : '1111-11-11'
+  })
+  MERGE(teminaccessiblecarbon:Property{uid: randomUUID(),
+                                      date_added : '1111-11-11'
+  })
+  MERGE(temepoxyfilledvolume:Property{uid: randomUUID(),
+                                       date_added : '1111-11-11'
+  })
+  MERGE(temionomerthickness:Property{uid: randomUUID(),
+                                      date_added : '1111-11-11'
+  })
+  MERGE(ccl)- [:IS_MEASUREMENT_INPUT] - >(tem)-[:IS_A]->(EMMO_tem)
+  MERGE(ccl)- [:IS_MEASUREMENT_INPUT] - >(temepoxy)-[:IS_A]->(EMMO_tem)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`I/C TEM measured `, std: row.`St. dev`}] - >(temic)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`Ionomer volume, cm3/cm2`}] - >(temionomervol)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`Theoretical porosity, based on TEM local thickness and target I/C`}] - >(temporosity)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Total porosity (%)`}] - >(temtotalporosity)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Epoxy-filled porosity (%)`}] - >(temepoxyfilledporosity)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Inaccessible pores (%)`}] - >(teminaccessiblepores)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX % of Inaccessible Carbon (%)`}] - >(teminaccessiblecarbon)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Epoxy-filled Volume (cm3/cm2 geo)2`}] - >(temepoxyfilledvolume)
+  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX effective ionomer thickness deff wrt BET SA (nm)`, std: row.`TEM EDX effective ionomer thickness deff std dev (nm)`}] - >(temionomerthickness)
+
+
+
+
+)
 
 
 //Labeling

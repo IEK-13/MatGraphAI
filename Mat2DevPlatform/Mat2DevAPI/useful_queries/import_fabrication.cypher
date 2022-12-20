@@ -149,9 +149,25 @@ MERGE(coatingsubstrate)-[:IS_MANUFACTURING_INPUT]->(meafab)
 
 MERGE(bp)-[:IS_MANUFACTURING_INPUT]->(fcass)
 MERGE(mea)-[:IS_MANUFACTURING_INPUT]->(fcass)
-MERGE(gdl)-[:IS_MANUFACTURING_INPUT]->(fcass)
+MERGE(gdl)-[:IS_MANUFACTURING_INPUT]->(meafab)
 MERGE(station)-[:IS_MANUFACTURING_INPUT]->(fcass)
 MERGE(fcass)-[:IS_MANUFACTURING_OUTPUT]->(fc)
+
+// Composition
+
+MERGE(mea)-[:HAS_PART]->(gdl)
+MERGE(mea)-[:HAS_PART]->(ink)
+MERGE(mea)-[:HAS_PART]->(membrane)
+MERGE(mea)-[:HAS_PART]->(anode)
+
+MERGE(fc)-[:HAS_PART]->(mea)
+MERGE(fc)-[:HAS_PART]->(station)
+MERGE(fc)-[:HAS_PART]->(bp)
+
+MERGE(ink)-[:HAS_PART]->(ionomer)
+MERGE(ink)-[:HAS_PART]->(catalyst)
+
+
 
 
 // Properties
@@ -197,9 +213,9 @@ MERGE(ionomer)-[:HAS_FLOAT_PROPERTY{
 
 // Paraneters
 
-MERGE(inkfab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drymill time (hrs)`)}]->(EMMO_mill)
+MERGE(inkfab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drymill time (hrs)`)}]->(:Parameter)-[:IS_A]->(EMMO_mill)
 
-MERGE(meafab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drying temp (deg C)`)}]->(EMMO_dt)
+MERGE(meafab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drying temp (deg C)`)}]->(:Parameter)-[:IS_A]->(EMMO_dt)
 
 
 

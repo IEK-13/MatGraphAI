@@ -9,8 +9,8 @@ MATCH (mw:EMMO_Quantity {EMMO__name: "MolecularWeight"}),
       (n:Element {symbol: "N"}),
       (f:Element {symbol: "F"}),
       (s:Element {symbol: "S"}),
-      (label1:EMMO_Material {EMMO__name: row.ontologylabel1}),
-      (label2:EMMO_Material {EMMO__name: row.ontologylabel1})
+      (label1:EMMO_Matter {EMMO__name: row.ontologylabel1}),
+      (label2:EMMO_Matter {EMMO__name: row.ontologylabel1})
 
 
 
@@ -45,9 +45,12 @@ FOREACH(x IN CASE WHEN row.ontologylabel1 = label1.EMMO__name THEN [1] END |
   MERGE (solvent)-[:IS_A ]->(label1))
 
 //FOREACH(x IN CASE WHEN row.ontologylabel1 IS NOT NULL THEN [1] END |
-//  MERGE (solvent)-[:IS_A ]->(:Resource:EMMO_Material:EMMO__Class {EMMO__name: row.ontologylabel1}))
+//  MERGE (solvent)-[:IS_A ]->(:Resource:EMMO_Matter:EMMO__Class {EMMO__name: row.ontologylabel1}))
 
 FOREACH(x IN CASE WHEN toFloat(row.mw) IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.mw)}]->(mw));
+  MERGE(pmw:Property{uid: randomUUID(),
+                          date_added : '1111-11-11'
+  })
+  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.mw)}]->(pmw)-[:IS_A]->(mw));
 
 
