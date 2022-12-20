@@ -7,6 +7,7 @@ MATCH (EMMO_fcas:EMMO_Process {EMMO__name: "FuelCellAssembly"}),
       (EMMO_mea:EMMO_Matter{EMMO__name: "CCM"}),
       (EMMO_fc:EMMO_Matter{EMMO__name: "FuelCell"}),
       (EMMO_bp:EMMO_Matter{EMMO__name: "BipolarPlate"}),
+      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"}),
       (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"}),
       (EMMO_anode:EMMO_Matter{EMMO__name: "Anode"}),
       (EMMO_catalyst:EMMO_Matter{EMMO__name: "F50E-HT"}),
@@ -75,10 +76,20 @@ MERGE(catalyst:Material {name: row.Catalyst,
   ON CREATE
   SET catalyst.uid = randomUUID()
 
+MERGE(carbonsupport:Material {name: row.`Catalyst`,
+                               date_added: "1111-11-11"})
+  ON CREATE
+  SET carbonsupport.uid = randomUUID()
+
+MERGE(carbonsupport)<-[:HAS_PART]-(catalyst)
+MERGE(carbonsupport)-[:IS_A]->(EMMO_carbonsupport)
+
+
 MERGE(coatingsubstrate:Material {name: row.`Coating substrate`,
                                  date_added: "1111-11-11"})
   ON CREATE
   SET coatingsubstrate.uid = randomUUID()
+
 
 
 // FC-Manufacturing and MEA-Manufacturing

@@ -1,22 +1,29 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/CatInkFabrication.csv' AS row
 
-MATCH (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
+MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionomer:Material)<-[:HAS_PART]-(ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
+      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"})<-[:IS_A]-(carbon:Material)<-[:HAS_PART]-(catalyst)-[:HAS_PART]-(ink),
       (EMMO_epoxy:EMMO_Quantity{EMMO__name: 'Polyepoxide'}),
       (EMMO_cathode:EMMO_Matter{EMMO__name: 'Cathode'}),
       (EMMO_thickness:EMMO_Quantity{EMMO__name: 'Thickness'}),
       (EMMO_porosity:EMMO_Quantity{EMMO__name: 'Porosity'}),
       (EMMO_crackdensity:EMMO_Quantity{EMMO__name: 'CrackDensity'}),
       (EMMO_voidvol:EMMO_Quantity{EMMO__name: 'SpecificVolumeVoid'}),
+      (EMMO_epoxyfilledvol:EMMO_Quantity{EMMO__name: 'SpecificVolumeSolid'}),
+      (EMMO_ionomervol:EMMO_Quantity{EMMO__name: 'SpecificVolumeSolid'}),
       (EMMO_solidvol:EMMO_Quantity{EMMO__name: 'SpecificVolumeSolid'}),
+      (EMMO_inaccessiblecarbonfraction:EMMO_Quantity{EMMO__name: 'InaccessibleFraction'}),
+      (EMMO_inaccessibleporefraction:EMMO_Quantity{EMMO__name: 'InaccessibleFraction'}),
       (EMMO_cclfab:EMMO_Process {EMMO__name: 'CCLManufacturing'}),
       (EMMO_powderdvs:EMMO_Process {EMMO__name: 'PowderDynamicVaporSorptionMeasurement'}),
       (EMMO_cldvs:EMMO_Process {EMMO__name: 'CatalystLayerDynamicVaporSorptionMeasurement'}),
       (EMMO_sem:EMMO_Process {EMMO__name: 'SEMImaging'}),
       (EMMO_tem:EMMO_Process {EMMO__name: 'TEMImaging'}),
-      (EMMO_msp:EMMO_Process {EMMO__name: 'MethodOfStandardPorosimetry'}),
+      (EMMO_msp:EMMO_Process {EMMO__name: 'MethodOfStandardPorosimetry'}),      (EMMO_msp:EMMO_Process {EMMO__name: 'MethodOfStandardPorosimetry'}),
+      (EMMO_preparation:EMMO_Process {EMMO__name: 'SamplePreparation'}),
       (EMMO_rh:EMMO_Quantity {EMMO__name: 'RelativeHumidity'}),
       (EMMO_dvs:EMMO_Quantity {EMMO__name: 'DynamicVaporDesorption'}),
-      (EMMO_dvds:EMMO_Quantity {EMMO__name: 'DynamicVaporSorption'})
+      (EMMO_dvds:EMMO_Quantity {EMMO__name: 'DynamicVaporSorption'}),
+      (EMMO_ic:EMMO_Quantity{EMMO__name: "CatalystIonomerRatio"})
 
 // Process Nodes
 MERGE(cclfab:Manufacturing {run_title: row.`Run #`,
@@ -25,7 +32,7 @@ MERGE(cclfab:Manufacturing {run_title: row.`Run #`,
                            date_added : '5'
 })
 
-
+MERGE(epoxy)-[:IS_A]->(EMMO_epoxy)
 //Material Nodes
 MERGE(ccl:Material {name: row.`Run #`,
                     uid : randomUUID() ,
@@ -197,6 +204,8 @@ FOREACH(x IN CASE WHEN row.`CL DVS soprtion at 95%RH (% mass change/cm2geo)` IS 
 )
 
 FOREACH(x IN CASE WHEN row.`I/C TEM measured ` IS NOT NULL THEN [1] END |
+  MERGE(epoxy:Material {uid : randomUUID() ,
+                        date_added: '1111-11-11'})
   MERGE(tem:Measurement{uid: randomUUID(),
                                date_added : '1111-11-11'})
   MERGE(temic:Property{uid: randomUUID(),
@@ -215,6 +224,15 @@ FOREACH(x IN CASE WHEN row.`I/C TEM measured ` IS NOT NULL THEN [1] END |
                         date_added : '1111-11-11'})
   MERGE(preparation:Manufacturing{uid: randomUUID(),
                              date_added : '1111-11-11'})
+  MERGE(preparation)-[:IS_A]->(EMMO_preparation)
+  MERGE(temepoxy)-[:HAS_PART]->(preparation)
+  MERGE(epoxy)-[:IS_MANUFACTURING_INPUT]->(preparation)
+  MERGE(ccl)-[:IS_MANUFACTURING_INPUT]->(preparation)
+  MERGE(preparation)-[:IS_MANUFACTURING_OUTPUT]->(epoxyccl)
+  MERGE(epoxyccl:Material {uid : randomUUID() ,
+                      date_added: '1111-11-11'})
+
+
   MERGE(temepoxyfilledporosity:Property{uid: randomUUID(),
                              date_added : '1111-11-11'
   })
@@ -233,14 +251,24 @@ FOREACH(x IN CASE WHEN row.`I/C TEM measured ` IS NOT NULL THEN [1] END |
   MERGE(ccl)- [:IS_MEASUREMENT_INPUT] - >(tem)-[:IS_A]->(EMMO_tem)
   MERGE(ccl)- [:IS_MEASUREMENT_INPUT] - >(temepoxy)-[:IS_A]->(EMMO_tem)
   MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`I/C TEM measured `, std: row.`St. dev`}] - >(temic)
-  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`Ionomer volume, cm3/cm2`}] - >(temionomervol)
+  MERGE(temionomervol)-[:IS_A]->(EMMO_ic)
+  MERGE(ionomer)- [:HAS_FLOAT_PROPERTY{value: row.`Ionomer volume, cm3/cm2`}] - >(temionomervol)
+  MERGE(temionomervol)-[:IS_A]->(EMMO_ionomervol)
   MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`Theoretical porosity, based on TEM local thickness and target I/C`}] - >(temporosity)
+  MERGE(temporosity)-[:IS_A]->(EMMO_porosity)
   MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Total porosity (%)`}] - >(temtotalporosity)
+  MERGE(temtotalporosity)-[:IS_A]->(EMMO_porosity)
   MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Epoxy-filled porosity (%)`}] - >(temepoxyfilledporosity)
+  MERGE(temepoxyfilledporosity)-[:IS_A]->(EMMO_porosity)
   MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Inaccessible pores (%)`}] - >(teminaccessiblepores)
-  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX % of Inaccessible Carbon (%)`}] - >(teminaccessiblecarbon)
-  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Epoxy-filled Volume (cm3/cm2 geo)2`}] - >(temepoxyfilledvolume)
-  MERGE(ccl)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX effective ionomer thickness deff wrt BET SA (nm)`, std: row.`TEM EDX effective ionomer thickness deff std dev (nm)`}] - >(temionomerthickness)
+  MERGE(teminaccessiblepores)-[:IS_A]->(EMMO_inaccessibleporefraction)
+  MERGE(carbon)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX % of Inaccessible Carbon (%)`}] - >(teminaccessiblecarbon)
+  MERGE(teminaccessiblecarbon)-[:IS_A]->(EMMO_inaccessiblecarbonfraction)
+  MERGE(epoxy)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX Epoxy-filled Volume (cm3/cm2 geo)2`}] - >(temepoxyfilledvolume)
+  MERGE(temepoxyfilledvolume)-[:IS_A]->(EMMO_epoxyfilledvol)
+  MERGE(ionomer)- [:HAS_FLOAT_PROPERTY{value: row.`TEM EDX effective ionomer thickness deff wrt BET SA (nm)`, std: row.`TEM EDX effective ionomer thickness deff std dev (nm)`}] - >(temionomerthickness)
+  MERGE(temionomerthickness)-[:IS_A]->(EMMO_thickness)
+
 
 
 

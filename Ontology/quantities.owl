@@ -375,6 +375,11 @@
                                 rdfs:subClassOf :StandardizedPhysicalQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CrackDensity
+:CrackDensity rdf:type owl:Class ;
+              rdfs:subClassOf :Density .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CrystalizationOverpotential
 :CrystalizationOverpotential rdf:type owl:Class ;
                              rdfs:subClassOf :Overpotential .
@@ -585,6 +590,12 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Duration
 :Duration rdf:type owl:Class ;
           rdfs:subClassOf :Time .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DynamicVaporDesorption
+:DynamicVaporDesorption rdf:type owl:Class ;
+                        rdfs:subClassOf :MassChange ;
+                        owl:disjointWith <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption> .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DynamicViscosity
@@ -1275,6 +1286,11 @@
       rdfs:subClassOf :ExtensiveQuantity ,
                       :ISQBaseQuantity ,
                       :MechanicalQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassChange
+:MassChange rdf:type owl:Class ;
+            rdfs:subClassOf :Mass .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MassChangeRate
@@ -1976,6 +1992,11 @@
             rdfs:subClassOf :RatioQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SolidVolume
+:SolidVolume rdf:type owl:Class ;
+             rdfs:subClassOf :Volume .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Solubility
 :Solubility rdf:type owl:Class ;
             rdfs:subClassOf :ThermodynamicalQuantity .
@@ -2051,6 +2072,41 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume
 :SpecificVolume rdf:type owl:Class ;
                 rdfs:subClassOf :MechanicalQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeCSupport
+:SpecificVolumeCSupport rdf:type owl:Class ;
+                        rdfs:subClassOf :SpecificVolume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeCatalayst
+:SpecificVolumeCatalayst rdf:type owl:Class ;
+                         rdfs:subClassOf :SpecificVolume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeCatalystLayer
+:SpecificVolumeCatalystLayer rdf:type owl:Class ;
+                             rdfs:subClassOf :SpecificVolume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeIonomer
+:SpecificVolumeIonomer rdf:type owl:Class ;
+                       rdfs:subClassOf :SpecificVolume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumePt
+:SpecificVolumePt rdf:type owl:Class ;
+                  rdfs:subClassOf :SpecificVolumeCatalayst .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeSolid
+:SpecificVolumeSolid rdf:type owl:Class ;
+                     rdfs:subClassOf :SpecificVolume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeVoid
+:SpecificVolumeVoid rdf:type owl:Class ;
+                    rdfs:subClassOf :SpecificVolume .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Speed
@@ -2324,6 +2380,16 @@
           rdfs:subClassOf :DerivedQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VoidVolume
+:VoidVolume rdf:type owl:Class ;
+            rdfs:subClassOf :Volume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VoidVolumeFraction
+:VoidVolumeFraction rdf:type owl:Class ;
+                    rdfs:subClassOf :VolumeFraction .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Voltage
 :Voltage rdf:type owl:Class ;
          rdfs:subClassOf :ElectricPotential .
@@ -2387,70 +2453,34 @@
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CrackDensity
-:CrackDensity rdf:type owl:Class ;
-              rdfs:subClassOf :Density .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EpoxyFilledVolume
+:EpoxyFilledVolume rdf:type owl:Class ;
+                   rdfs:subClassOf :FilledVolume .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#DynamicVaporDesorption
-:DynamicVaporDesorption rdf:type owl:Class ;
-                        rdfs:subClassOf :MassChange ;
-                        owl:disjointWith <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption> .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#FilledVolume
+:FilledVolume rdf:type owl:Class ;
+              rdfs:subClassOf :SolidVolume .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MassChange
-:MassChange rdf:type owl:Class ;
-            rdfs:subClassOf :Mass .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#InaccassibleCarbonFraction
+:InaccassibleCarbonFraction rdf:type owl:Class ;
+                            rdfs:subClassOf :VolumeFraction .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SolidVolume
-:SolidVolume rdf:type owl:Class ;
-             rdfs:subClassOf :Volume .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#InaccessiblePoreFraction
+:InaccessiblePoreFraction rdf:type owl:Class ;
+                          rdfs:subClassOf :VolumeFraction .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeCSupport
-:SpecificVolumeCSupport rdf:type owl:Class ;
-                        rdfs:subClassOf :SpecificVolume .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificEpoxyFilledVolume
+:SpecificEpoxyFilledVolume rdf:type owl:Class ;
+                           rdfs:subClassOf :SpecificFilledVolume .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeCatalayst
-:SpecificVolumeCatalayst rdf:type owl:Class ;
-                         rdfs:subClassOf :SpecificVolume .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeCatalystLayer
-:SpecificVolumeCatalystLayer rdf:type owl:Class ;
-                             rdfs:subClassOf :SpecificVolume .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeIonomer
-:SpecificVolumeIonomer rdf:type owl:Class ;
-                       rdfs:subClassOf :SpecificVolume .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumePt
-:SpecificVolumePt rdf:type owl:Class ;
-                  rdfs:subClassOf :SpecificVolumeCatalayst .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeSolid
-:SpecificVolumeSolid rdf:type owl:Class ;
-                     rdfs:subClassOf :SpecificVolume .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificVolumeVoid
-:SpecificVolumeVoid rdf:type owl:Class ;
-                    rdfs:subClassOf :SpecificVolume .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VoidVolume
-:VoidVolume rdf:type owl:Class ;
-            rdfs:subClassOf :Volume .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#VoidVolumeFraction
-:VoidVolumeFraction rdf:type owl:Class ;
-                    rdfs:subClassOf :VolumeFraction .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificFilledVolume
+:SpecificFilledVolume rdf:type owl:Class ;
+                      rdfs:subClassOf :SpecificVolume .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption
@@ -3143,6 +3173,18 @@
                 :SpecificGibbsEnergy
                 :SpecificHelmholtzEnergy
                 :SpecificInternalEnergy
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :SpecificVolumeCSupport
+                :SpecificVolumeCatalayst
+                :SpecificVolumeCatalystLayer
+                :SpecificVolumeIonomer
+                :SpecificVolumeSolid
+                :SpecificVolumeVoid
+                :SpecificFilledVolume
               )
 ] .
 
