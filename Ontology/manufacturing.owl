@@ -124,6 +124,11 @@
             owl:disjointWith :TEMImaging .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SamplePreparation
+:SamplePreparation rdf:type owl:Class ;
+                   rdfs:subClassOf :Manufacturing .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#TEMImaging
 :TEMImaging rdf:type owl:Class ;
             rdfs:subClassOf :ElectronMicroscopy .
