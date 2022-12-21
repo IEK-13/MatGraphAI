@@ -76,7 +76,7 @@ MERGE(catalyst:Material {name: row.Catalyst,
   ON CREATE
   SET catalyst.uid = randomUUID()
 
-MERGE(carbonsupport:Material {name: row.`Catalyst`,
+MERGE(carbonsupport:Material {name: row.`Catalyst`+"support",
                                date_added: "1111-11-11"})
   ON CREATE
   SET carbonsupport.uid = randomUUID()
@@ -94,29 +94,29 @@ MERGE(coatingsubstrate:Material {name: row.`Coating substrate`,
 
 // FC-Manufacturing and MEA-Manufacturing
 MERGE(fcfab:Manufacturing {uid: randomUUID(),
-                           run_title: row.`Run #`,
+                           run_title: row.`Run #` + "_FuellCellManufacturing",
                            DOI: row.DOI,
                            date_added : "1111-11-11"
 })
 
 MERGE(fcass:Manufacturing {uid: randomUUID(),
-                           run_title: row.`Run #`,
+                           run_title: row.`Run #`+"_FuelCellAssembly",
                            DOI: row.DOI,
                            date_added : "1111-11-11"
 })
 
 
 MERGE(meafab:Manufacturing {uid: randomUUID(),
-                            run_title: row.`Run #`,
+                            run_title: row.`Run #`+"_MEAManufacturing",
                             DOI: row.DOI,
                             date_added : "1111-11-11"
 })
 
-MERGE(inkfab:Manufacturing {uid: randomUUID(),
-                            run_title: row.`Run #`,
-                            DOI: row.DOI,
+MERGE(inkfab:Manufacturing {run_title: row.`Run #`+ "_InkFabrication",
                             date_added : "1111-11-11"
 })
+  ON CREATE
+  SET catink.uid = randomUUID()
 
 
 // Labelling
@@ -165,6 +165,8 @@ MERGE(station)-[:IS_MANUFACTURING_INPUT]->(fcass)
 MERGE(fcass)-[:IS_MANUFACTURING_OUTPUT]->(fc)
 
 // Composition
+MERGE(ink)-[:HAS_PART]->(catalyst)
+MERGE(ink)-[:HAS_PART]->(ionomer)
 
 MERGE(mea)-[:HAS_PART]->(gdl)
 MERGE(mea)-[:HAS_PART]->(ink)
@@ -175,8 +177,10 @@ MERGE(fc)-[:HAS_PART]->(mea)
 MERGE(fc)-[:HAS_PART]->(station)
 MERGE(fc)-[:HAS_PART]->(bp)
 
-MERGE(ink)-[:HAS_PART]->(ionomer)
-MERGE(ink)-[:HAS_PART]->(catalyst)
+MERGE(catink)-[:HAS_PART]->(ionomer)
+MERGE(catink)-[:HAS_PART]->(catalyst)
+
+MERGE(catalyst)-[:HAS_PART]->(carbonsupport)
 
 
 

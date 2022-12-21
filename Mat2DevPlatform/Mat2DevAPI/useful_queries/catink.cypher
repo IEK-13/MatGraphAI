@@ -1,7 +1,10 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/CatInkFabrication.csv' AS row
 
-MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionomer:Material)<-[:HAS_PART]-(ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
-      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"})<-[:IS_A]-(carbon:Material)<-[:HAS_PART]-(catalyst)-[:HAS_PART]-(ink),
+MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionomer:Material),
+      (ink:Material {name: row.`Run #`})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
+      (ionomer)<-[:HAS_PART]-(ink),
+      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"})<-[:IS_A]-(carbon:Material),
+      (carbon)<-[:HAS_PART]-(catalyst)-[:HAS_PART]-(ink),
       (EMMO_epoxy:EMMO_Quantity{EMMO__name: 'Polyepoxide'}),
       (EMMO_cathode:EMMO_Matter{EMMO__name: 'Cathode'}),
       (EMMO_thickness:EMMO_Quantity{EMMO__name: 'Thickness'}),
@@ -18,7 +21,7 @@ MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionom
       (EMMO_cldvs:EMMO_Process {EMMO__name: 'CatalystLayerDynamicVaporSorptionMeasurement'}),
       (EMMO_sem:EMMO_Process {EMMO__name: 'SEMImaging'}),
       (EMMO_tem:EMMO_Process {EMMO__name: 'TEMImaging'}),
-      (EMMO_msp:EMMO_Process {EMMO__name: 'MethodOfStandardPorosimetry'}),      (EMMO_msp:EMMO_Process {EMMO__name: 'MethodOfStandardPorosimetry'}),
+      (EMMO_msp:EMMO_Process {EMMO__name: 'MethodOfStandardPorosimetry'}),
       (EMMO_preparation:EMMO_Process {EMMO__name: 'SamplePreparation'}),
       (EMMO_rh:EMMO_Quantity {EMMO__name: 'RelativeHumidity'}),
       (EMMO_dvs:EMMO_Quantity {EMMO__name: 'DynamicVaporDesorption'}),
@@ -228,9 +231,10 @@ FOREACH(x IN CASE WHEN row.`I/C TEM measured ` IS NOT NULL THEN [1] END |
   MERGE(temepoxy)-[:HAS_PART]->(preparation)
   MERGE(epoxy)-[:IS_MANUFACTURING_INPUT]->(preparation)
   MERGE(ccl)-[:IS_MANUFACTURING_INPUT]->(preparation)
-  MERGE(preparation)-[:IS_MANUFACTURING_OUTPUT]->(epoxyccl)
   MERGE(epoxyccl:Material {uid : randomUUID() ,
-                      date_added: '1111-11-11'})
+                           date_added: '1111-11-11'})
+
+  MERGE(preparation)-[:IS_MANUFACTURING_OUTPUT]->(epoxyccl)
 
 
   MERGE(temepoxyfilledporosity:Property{uid: randomUUID(),
