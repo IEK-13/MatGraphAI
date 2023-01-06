@@ -24,59 +24,59 @@ MATCH (EMMO_fcas:EMMO_Process {EMMO__name: "FuelCellAssembly"}),
       (EMMO_dt:EMMO_Quantity{EMMO__name: "DryingTemperature"})
 
 // MEA and FC
-MERGE(fc:Device {name: row.`Run #`,
+MERGE(fc:Manufactured {name: row.`Run #`+"FuelCell",
                  date_added : "1111-11-11"
 })
   ON CREATE
   SET fc.uid = randomUUID()
 
-MERGE(catink:Material {name: row.`Run #`,
+MERGE(catink:Manufactured {name: row.`Run #`+"_ink",
                        date_added : "1111-11-11"
 })
   ON CREATE
   SET catink.uid = randomUUID()
 
-MERGE(mea:Component {uid: randomUUID(),
+MERGE(mea:Manufactured {uid: randomUUID(),
                      name: row.`Run #`,
                      date_added : "1111-11-11"
 })
 // Other Components
-MERGE(membrane:Component {name: row.Membrane,
+MERGE(membrane:Manufactured {name: row.Membrane,
                           date_added: "1111-11-11"})
   ON CREATE
   SET membrane.uid = randomUUID()
 
-MERGE(bp:Component {name: row.plates,
+MERGE(bp:Manufactured {name: row.plates,
                     date_added: "1111-11-11"})
   ON CREATE
   SET bp.uid = randomUUID()
 
-MERGE(gdl:Component {name: row.GDL,
+MERGE(gdl:Manufactured {name: row.GDL,
                      date_added: "1111-11-11"})
   ON CREATE
   SET gdl.uid = randomUUID()
 
-MERGE(station:Component {name: row.Station,
+MERGE(station:Manufactured {name: row.Station,
                          date_added: "1111-11-11"})
   ON CREATE
   SET station.uid = randomUUID()
 
-MERGE(anode:Component {name: row.Anode,
+MERGE(anode:Manufactured {name: row.Anode,
                        date_added: "1111-11-11"})
   ON CREATE
   SET anode.uid = randomUUID()
 
-MERGE(ionomer:Material {name: row.Ionomer,
+MERGE(ionomer:Manufactured {name: row.Ionomer,
                         date_added: "1111-11-11"})
   ON CREATE
   SET ionomer.uid = randomUUID()
 
-MERGE(catalyst:Material {name: row.Catalyst,
+MERGE(catalyst:Manufactured {name: row.Catalyst,
                          date_added: "1111-11-11"})
   ON CREATE
   SET catalyst.uid = randomUUID()
 
-MERGE(carbonsupport:Material {name: row.`Catalyst`+"support",
+MERGE(carbonsupport:Manufactured {name: row.`Catalyst`+"support",
                                date_added: "1111-11-11"})
   ON CREATE
   SET carbonsupport.uid = randomUUID()
@@ -85,7 +85,7 @@ MERGE(carbonsupport)<-[:HAS_PART]-(catalyst)
 MERGE(carbonsupport)-[:IS_A]->(EMMO_carbonsupport)
 
 
-MERGE(coatingsubstrate:Material {name: row.`Coating substrate`,
+MERGE(coatingsubstrate:Manufactured {name: row.`Coating substrate`,
                                  date_added: "1111-11-11"})
   ON CREATE
   SET coatingsubstrate.uid = randomUUID()
@@ -116,7 +116,7 @@ MERGE(inkfab:Manufacturing {run_title: row.`Run #`+ "_InkFabrication",
                             date_added : "1111-11-11"
 })
   ON CREATE
-  SET catink.uid = randomUUID()
+  SET inkfab.uid = randomUUID()
 
 
 // Labelling
@@ -196,19 +196,24 @@ MERGE(ploading:Property{uid: randomUUID(),
                           date_added : "1111-11-11"
 })
 MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:YIELDS_PROPERTY]->(ploading)-[:IS_A]->(EMMO_loading)
-MERGE(mea)-[:HAS_FLOAT_PROPERTY{
+MERGE(mea)-[:HAS_PROPERTY{
   value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(ploading)
 
-MERGE(ic:Measurement{uid: randomUUID(),
-                     DOI: row.DOI,
+MERGE(ic:Measurement{uid: row.`Run #`,
+                     DOI: row.`Run #`,
                      date_added : "1111-11-11"
 })
-MERGE(pic:Property{uid: randomUUID(),
-                        DOI: row.DOI,
+SET ic.uid = randomUUID()
+SET ic.DOI = row.DOI
+MERGE(pic:Property{uid: row.`Run #`,
+                        DOI: row.`Run #`,
                         date_added : "1111-11-11"
 })
+SET pic.uid = randomUUID()
+SET pic.DOI = row.DOI
+
 MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_PROPERTY]->(pic)-[:IS_A]->(EMMO_ic)
-MERGE(catink)-[:HAS_FLOAT_PROPERTY{
+MERGE(catink)-[:HAS_PROPERTY{
   value: TOFLOAT(row.`I/C`)}]->(pic)
 
 
@@ -223,14 +228,14 @@ MERGE(pew:Property{uid: row.EW,
 
 SET pew.uid = randomUUID()
 MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_PROPERTY]->(pew)-[:IS_A]->(EMMO_ew)
-MERGE(ionomer)-[:HAS_FLOAT_PROPERTY{
+MERGE(ionomer)-[:HAS_PROPERTY{
   value: TOFLOAT(row.`EW`)}]->(pew)
 
 // Paraneters
 
-MERGE(inkfab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drymill time (hrs)`)}]->(:Parameter)-[:IS_A]->(EMMO_mill)
+MERGE(inkfab)-[:HAS_PARAMETER{value: TOFLOAT(row.`Drymill time (hrs)`)}]->(:Parameter)-[:IS_A]->(EMMO_mill)
 
-MERGE(meafab)-[:HAS_FLOAT_PARAMETER{value: TOFLOAT(row.`Drying temp (deg C)`)}]->(:Parameter)-[:IS_A]->(EMMO_dt)
+MERGE(meafab)-[:HAS_PARAMETER{value: TOFLOAT(row.`Drying temp (deg C)`)}]->(:Parameter)-[:IS_A]->(EMMO_dt)
 
 
 

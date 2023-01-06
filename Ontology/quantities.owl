@@ -858,6 +858,11 @@
                          :ExtensiveQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EpoxyFilledVolume
+:EpoxyFilledVolume rdf:type owl:Class ;
+                   rdfs:subClassOf :FilledVolume .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EquilibriumConstant
 :EquilibriumConstant rdf:type owl:Class ;
                      rdfs:subClassOf :PhysioChemicalQuantity .
@@ -933,6 +938,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#FermiTemperature
 :FermiTemperature rdf:type owl:Class ;
                   rdfs:subClassOf :CondensedMatterPhysicsQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#FilledVolume
+:FilledVolume rdf:type owl:Class ;
+              rdfs:subClassOf :SolidVolume .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Force
@@ -1040,6 +1050,16 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Impulse
 :Impulse rdf:type owl:Class ;
          rdfs:subClassOf :MechanicalQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#InaccassibleCarbonFraction
+:InaccassibleCarbonFraction rdf:type owl:Class ;
+                            rdfs:subClassOf :VolumeFraction .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#InaccessiblePoreFraction
+:InaccessiblePoreFraction rdf:type owl:Class ;
+                          rdfs:subClassOf :VolumeFraction .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#InstantaneousCurrent
@@ -2038,6 +2058,16 @@
                  rdfs:subClassOf :ThermodynamicalQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEpoxyFilledVolume
+:SpecificEpoxyFilledVolume rdf:type owl:Class ;
+                           rdfs:subClassOf :SpecificFilledVolume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificFilledVolume
+:SpecificFilledVolume rdf:type owl:Class ;
+                      rdfs:subClassOf :SpecificVolume .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificGasConstant
 :SpecificGasConstant rdf:type owl:Class ;
                      rdfs:subClassOf :ThermodynamicalQuantity .
@@ -2453,34 +2483,29 @@
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#EpoxyFilledVolume
-:EpoxyFilledVolume rdf:type owl:Class ;
-                   rdfs:subClassOf :FilledVolume .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Black
+:Black rdf:type owl:Class ;
+       rdfs:subClassOf :Color .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#FilledVolume
-:FilledVolume rdf:type owl:Class ;
-              rdfs:subClassOf :SolidVolume .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CatalystCarbonRatio
+:CatalystCarbonRatio rdf:type owl:Class ;
+                     rdfs:subClassOf :MassFraction .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#InaccassibleCarbonFraction
-:InaccassibleCarbonFraction rdf:type owl:Class ;
-                            rdfs:subClassOf :VolumeFraction .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Color
+:Color rdf:type owl:Class ;
+       rdfs:subClassOf :IntensiveQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#InaccessiblePoreFraction
-:InaccessiblePoreFraction rdf:type owl:Class ;
-                          rdfs:subClassOf :VolumeFraction .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MetalPurity
+:MetalPurity rdf:type owl:Class ;
+             rdfs:subClassOf :Purity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificEpoxyFilledVolume
-:SpecificEpoxyFilledVolume rdf:type owl:Class ;
-                           rdfs:subClassOf :SpecificFilledVolume .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#SpecificFilledVolume
-:SpecificFilledVolume rdf:type owl:Class ;
-                      rdfs:subClassOf :SpecificVolume .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Purity
+:Purity rdf:type owl:Class ;
+        rdfs:subClassOf :ThermodynamicalQuantity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption
@@ -2491,6 +2516,54 @@
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AboluteHumidity
+                :CoefficientOfHeatTransfer
+                :CubicExpansionCoefficient
+                :DensityOfHeatFlowRate
+                :DewPointTemperature
+                :GibbsEnergy
+                :HeatCapacity
+                :HeatFlowRate
+                :HelmholtzEnergy
+                :IsentropicCompressibility
+                :IsentropicExponent
+                :IsothermalCompressibility
+                :JouleThomsonCoefficient
+                :LatentHeat
+                :LinearExpansionCoefficient
+                :MassConcentration
+                :MassFraction
+                :MassRatioOfWaterToDryMatter
+                :MassieuFunction
+                :MaximumEfficiency
+                :MeltingPoint
+                :MixingRatio
+                :PlanckFunction
+                :PressureCoefficient
+                :RatioOfSpecificHeatCapacities
+                :RelativeHumidity
+                :RelativeMassConcentrationOfVapour
+                :RelativeMassFractionOfVapour
+                :RelativePressureCoefficient
+                :Solubility
+                :SpcificEnergy
+                :SpecificEntropy
+                :SpecificGasConstant
+                :SpecificHeatCapacity
+                :SurfaceCoefficientOfHeatTransfer
+                :ThermalConductance
+                :ThermalConductivity
+                :ThermalDifusity
+                :ThermalInsulance
+                :ThermalResistance
+                :ThermodynamicEffiency
+                :ThermodynamicTemperature
+                :Purity
+              )
+] .
+
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AboluteHumidity
@@ -2973,6 +3046,27 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AreaDensity
+                :CatalyticActivity
+                :Density
+                :DoseEquivalent
+                :ElectricConductance
+                :ElectricConductivity
+                :GibbsEnergyOfReaction
+                :Permeability
+                :Permittivity
+                :Pressure
+                :ReactionOrder
+                :ReactionRate
+                :ReationRateConstant
+                :Temperature
+                :ThermodynamicTemperature
+                :Color
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AtomicMass
                 :AverageMass
                 :ElectronMass
@@ -3178,13 +3272,13 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :SpecificVolumeCSupport
+  owl:members ( :SpecificFilledVolume
+                :SpecificVolumeCSupport
                 :SpecificVolumeCatalayst
                 :SpecificVolumeCatalystLayer
                 :SpecificVolumeIonomer
                 :SpecificVolumeSolid
                 :SpecificVolumeVoid
-                :SpecificFilledVolume
               )
 ] .
 

@@ -51,6 +51,6 @@ FOREACH(x IN CASE WHEN toFloat(row.mw) IS NOT NULL THEN [1] END |
   MERGE(pmw:Property{uid: randomUUID(),
                           date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.mw)}]->(pmw)-[:IS_A]->(mw));
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.mw)}]->(pmw)-[:IS_A]->(mw));
 
 

@@ -64,13 +64,13 @@ FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
                           date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
                           date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents2.csv' AS row
@@ -137,13 +137,13 @@ FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
                           date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
                               date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents3.csv' AS row
 
@@ -209,13 +209,13 @@ FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
                           date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
                               date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents4.csv' AS row
 
@@ -281,13 +281,13 @@ FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
                           date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
                               date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents5.csv' AS row
 
@@ -353,13 +353,13 @@ FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
                           date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
                               date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/solvents6.csv' AS row
 
@@ -425,12 +425,12 @@ FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
                           date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
                               date_added : '1111-11-11'
   })
-  MERGE (solvent)-[:HAS_FLOAT_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
+  MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
 
