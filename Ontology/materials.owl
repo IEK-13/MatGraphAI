@@ -564,6 +564,11 @@
          rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IridiumOxideCatalyst
+:IridiumOxideCatalyst rdf:type owl:Class ;
+                      rdfs:subClassOf :SingleMetalCatalyst .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IsotropicMaterial
 :IsotropicMaterial rdf:type owl:Class ;
                    rdfs:subClassOf :Material .
