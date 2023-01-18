@@ -6,7 +6,7 @@ MERGE (cb:Material {
 })
 WITH cb, vb
 MATCH(emmo_cb:EMMO_Matter {EMMO__name: "CarbonBlack"})
-MERGE(vb)-[:IS_A]->(emmo_cb);
+MERGE(vb)-[:IS_A]->(emmo_cb)
 MERGE(cb)-[:IS_A]->(emmo_cb);
 
 
@@ -26,3 +26,6 @@ WITH cat, row
 MATCH (part3:Element {symbol:row.HasPart3})
 MERGE(cat)-[:HAS_PART]->(part3)
 
+WITH cat, row
+MATCH (ontology:EMMO_Matter {EMMO__name:row.Ontology})
+MERGE(cat)-[:IS_A]->(ontology)

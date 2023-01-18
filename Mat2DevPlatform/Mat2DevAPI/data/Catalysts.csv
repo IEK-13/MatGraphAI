@@ -2,4 +2,4 @@ Name,Ontology,Ontology1,HasPart1,HasPart2,HasPart3,ChemicalFormula,Purity,CAS,Pt
 Elyst Pt50 0550,CarbonSupportedPlatinumCatalyst,Powder,Pt,Carbon Black,,PtC,99.95,7440-06-04,50
 Elyst Pt50 0690,BinaryCarbonSupportedPlatinumCatalyst,Powder,Pt,Carbon Black,Co,PtCCo,99.95,7440-06-04,50
 TEC10V50E,CarbonSupportedPlatinumCatalyst,Powder,Pt,Carbon Black,,PtC,,,50
-,IridiumOxideCatalyst,Powder,Ir,VULCAN XC72,O,IrO2C,,,36
+IO2V36E,IridiumOxideCatalyst,Powder,Ir,VULCAN XC72,O,IrO2C,,,36
