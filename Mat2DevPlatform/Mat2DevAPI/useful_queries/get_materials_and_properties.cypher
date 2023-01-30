@@ -2,10 +2,10 @@
 
 
 
-MATCH (emmo_cs:EMMO_Matter{EMMO__name:"AcetyleneBlack"})<-[:IS_A]-(m:Manufactured)<-[:HAS_PART]-(material:Manufactured),
-      (device:Manufactured)-[:IS_A]->(emmo_fc:EMMO_Matter{EMMO__name:"FuelCell"}),
+MATCH (emmo_cs:EMMO_Matter{EMMO__name:"AcetyleneBlack"})<-[:IS_A]-(m:Matter)<-[:HAS_PART]-(material:Matter),
+      (device:Matter)-[:IS_A]->(emmo_fc:EMMO_Matter{EMMO__name:"FuelCell"}),
       p = (material)-[:IS_MANUFACTURING_INPUT| IS_MANUFACTURING_OUTPUT*]->(device)
-WITH [node in nodes(p) WHERE (node:Manufactured)] as manufactured_list
+WITH [node in nodes(p) WHERE (node:Matter)] as manufactured_list
 UNWIND manufactured_list as manufactured
 WITH DISTINCT manufactured ORDER BY manufactured.name
 CALL{

@@ -24,59 +24,59 @@ MATCH (EMMO_fcas:EMMO_Process {EMMO__name: "FuelCellAssembly"}),
       (EMMO_dt:EMMO_Quantity{EMMO__name: "DryingTemperature"})
 
 // MEA and FC
-MERGE(fc:Manufactured {name: row.`Run #`+"FuelCell",
+MERGE(fc:Matter:Manufactured {name: row.`Run #`+"FuelCell",
                  date_added : "1111-11-11"
 })
   ON CREATE
   SET fc.uid = randomUUID()
 
-MERGE(catink:Manufactured {name: row.`Run #`+"_ink",
+MERGE(catink:Matter:Material {name: row.`Run #`+"_ink",
                        date_added : "1111-11-11"
 })
   ON CREATE
   SET catink.uid = randomUUID()
 
-MERGE(mea:Manufactured {uid: randomUUID(),
+MERGE(mea:Matter:Manufactured {uid: randomUUID(),
                      name: row.`Run #`,
                      date_added : "1111-11-11"
 })
 // Other Components
-MERGE(membrane:Manufactured {name: row.Membrane,
+MERGE(membrane:Matter:Manufactured:Material {name: row.Membrane,
                           date_added: "1111-11-11"})
   ON CREATE
   SET membrane.uid = randomUUID()
 
-MERGE(bp:Manufactured {name: row.plates,
+MERGE(bp:Matter:Manufactured {name: row.plates,
                     date_added: "1111-11-11"})
   ON CREATE
   SET bp.uid = randomUUID()
 
-MERGE(gdl:Manufactured {name: row.GDL,
+MERGE(gdl:Matter:Manufactured {name: row.GDL,
                      date_added: "1111-11-11"})
   ON CREATE
   SET gdl.uid = randomUUID()
 
-MERGE(station:Manufactured {name: row.Station,
+MERGE(station:Matter:Manufactured {name: row.Station,
                          date_added: "1111-11-11"})
   ON CREATE
   SET station.uid = randomUUID()
 
-MERGE(anode:Manufactured {name: row.Anode,
+MERGE(anode:Matter:Manufactured:Material {name: row.Anode,
                        date_added: "1111-11-11"})
   ON CREATE
   SET anode.uid = randomUUID()
 
-MERGE(ionomer:Manufactured {name: row.Ionomer,
+MERGE(ionomer:Matter:Material {name: row.Ionomer,
                         date_added: "1111-11-11"})
   ON CREATE
   SET ionomer.uid = randomUUID()
 
-MERGE(catalyst:Manufactured {name: row.Catalyst,
+MERGE(catalyst:Matter:Material {name: row.Catalyst,
                          date_added: "1111-11-11"})
   ON CREATE
   SET catalyst.uid = randomUUID()
 
-MERGE(carbonsupport:Manufactured {name: row.`Catalyst`+"support",
+MERGE(carbonsupport:Matter:Material {name: row.`Catalyst`+"support",
                                date_added: "1111-11-11"})
   ON CREATE
   SET carbonsupport.uid = randomUUID()
@@ -85,7 +85,7 @@ MERGE(carbonsupport)<-[:HAS_PART]-(catalyst)
 MERGE(carbonsupport)-[:IS_A]->(EMMO_carbonsupport)
 
 
-MERGE(coatingsubstrate:Manufactured {name: row.`Coating substrate`,
+MERGE(coatingsubstrate:Matter:Material {name: row.`Coating substrate`,
                                  date_added: "1111-11-11"})
   ON CREATE
   SET coatingsubstrate.uid = randomUUID()

@@ -1,14 +1,14 @@
-call apoc.meta.subGraph({ labels: ['EMMO_Matter', 'EMMO_Quantity', 'EMMO_Process', 'Manufactured', 'Property', 'Parameter', 'Measurement', 'Manufacturing'] })
+call apoc.meta.subGraph({ labels: ['EMMO_Matter', 'EMMO_Quantity', 'EMMO_Process', 'Matter', 'Property', 'Parameter', 'Measurement', 'Manufacturing'] })
 
 //Get_Tables
 Profile
-MATCH (emmo_cs:EMMO_Matter{EMMO__name:"AcetyleneBlack"})<-[:IS_A]-(m:Manufactured)<-[:HAS_PART]-(material:Manufactured),
-      (device:Manufactured)-[:IS_A]->(emmo_fc:EMMO_Matter{EMMO__name:"FuelCell"}),
+MATCH (emmo_cs:EMMO_Matter{EMMO__name:"AcetyleneBlack"})<-[:IS_A]-(m:Matter)<-[:HAS_PART]-(material:Matter),
+      (device:Matter)-[:IS_A]->(emmo_fc:EMMO_Matter{EMMO__name:"FuelCell"}),
       p = (material)-[:IS_MANUFACTURING_INPUT| IS_MANUFACTURING_OUTPUT*]->(device)
 
 
 UNWIND (nodes(p)) as nodes
-WITH (nodes:Manufactured) as ink, (nodes:Manufacturing) as manufacturing
+WITH (nodes:Matter) as ink, (nodes:Manufacturing) as manufacturing
 
 RETURN manufacturing
 
@@ -27,11 +27,11 @@ RETURN collect(apoc.map.setKey(ink_map, "Properties", property_list)), ink_map
 
 
 Profile
-MATCH (emmo_cs:EMMO_Matter{EMMO__name:"AcetyleneBlack"})<-[:IS_A]-(m:Manufactured)<-[:HAS_PART]-(material:Manufactured),
-      (device:Manufactured)-[:IS_A]->(emmo_fc:EMMO_Matter{EMMO__name:"FuelCell"}),
+MATCH (emmo_cs:EMMO_Matter{EMMO__name:"AcetyleneBlack"})<-[:IS_A]-(m:Matter)<-[:HAS_PART]-(material:Matter),
+      (device:Matter)-[:IS_A]->(emmo_fc:EMMO_Matter{EMMO__name:"FuelCell"}),
       p = (material)-[:IS_MANUFACTURING_INPUT| IS_MANUFACTURING_OUTPUT*]->(device)
 
-WITH [node in nodes(p) WHERE (node:Manufactured)] as manufactured_list,
+WITH [node in nodes(p) WHERE (node:Matter)] as manufactured_list,
      [node in nodes(p) WHERE (node:Manufacturing)] as manufacturing_list
 
 
@@ -85,11 +85,11 @@ RETURN collect(apoc.map.setKey(manufactured_map, "Properties", property_list)), 
 
 
 Profile
-MATCH (emmo_cs:EMMO_Matter{EMMO__name:"AcetyleneBlack"})<-[:IS_A]-(m:Manufactured)<-[:HAS_PART]-(material:Manufactured),
-      (device:Manufactured)-[:IS_A]->(emmo_fc:EMMO_Matter{EMMO__name:"FuelCell"}),
+MATCH (emmo_cs:EMMO_Matter{EMMO__name:"AcetyleneBlack"})<-[:IS_A]-(m:Matter)<-[:HAS_PART]-(material:Matter),
+      (device:Matter)-[:IS_A]->(emmo_fc:EMMO_Matter{EMMO__name:"FuelCell"}),
       p = (material)-[:IS_MANUFACTURING_INPUT| IS_MANUFACTURING_OUTPUT*]->(device)
 
-WITH [node in nodes(p) WHERE (node:Manufactured)] as manufactured_list
+WITH [node in nodes(p) WHERE (node:Matter)] as manufactured_list
 
 
 UNWIND manufactured_list as manufactured

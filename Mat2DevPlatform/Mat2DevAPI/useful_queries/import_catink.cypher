@@ -1,9 +1,9 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/CatInkFabrication.csv' AS row
 
-MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionomer:Manufactured),
-      (ink:Manufactured {name: row.`Run #`+"_ink"})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
+MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionomer:Matter),
+      (ink:Matter {name: row.`Run #`+"_ink"})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
       (ionomer)<-[:HAS_PART]-(ink),
-      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"})<-[:IS_A]-(carbon:Manufactured),
+      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"})<-[:IS_A]-(carbon:Matter),
       (carbon)<-[:HAS_PART]-(catalyst)-[:HAS_PART]-(ink),
       (EMMO_epoxy:EMMO_Matter{EMMO__name: 'Polyepoxide'}),
       (EMMO_cathode:EMMO_Matter{EMMO__name: 'Cathode'}),
@@ -36,8 +36,8 @@ MERGE(cclfab:Manufacturing {run_title: row.`Run #`,
 })
 
 MERGE(epoxy)-[:IS_A]->(EMMO_epoxy)
-//Manufactured Nodes
-MERGE(ccl:Manufactured {name: row.`Run #`,
+//Matter Nodes
+MERGE(ccl:Matter {name: row.`Run #`,
                     uid : randomUUID() ,
                     date_added: '1111-11-11'})
 
@@ -207,7 +207,7 @@ FOREACH(x IN CASE WHEN row.`CL DVS soprtion at 95%RH (% mass change/cm2geo)` IS 
 )
 
 FOREACH(x IN CASE WHEN row.`TEM EDX Inaccessible pores (%)` IS NOT NULL THEN [1] END |
-  MERGE(epoxy:Manufactured {uid : randomUUID() ,
+  MERGE(epoxy:Matter {uid : randomUUID() ,
                         date_added: '1111-11-11'})
   MERGE(tem:Measurement{uid: randomUUID(),
                                date_added : '1111-11-11'})
@@ -231,7 +231,7 @@ FOREACH(x IN CASE WHEN row.`TEM EDX Inaccessible pores (%)` IS NOT NULL THEN [1]
   MERGE(temepoxy)-[:HAS_PART]->(preparation)
   MERGE(epoxy)-[:IS_MANUFACTURING_INPUT]->(preparation)
   MERGE(ccl)-[:IS_MANUFACTURING_INPUT]->(preparation)
-  MERGE(epoxyccl:Manufactured {uid : randomUUID() ,
+  MERGE(epoxyccl:Matter {uid : randomUUID() ,
                            date_added: '1111-11-11'})
 
   MERGE(preparation)-[:IS_MANUFACTURING_OUTPUT]->(epoxyccl)

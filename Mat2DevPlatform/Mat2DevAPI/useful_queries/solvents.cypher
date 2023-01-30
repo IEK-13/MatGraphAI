@@ -18,7 +18,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
                          SMILES : row.SMILES,
                          InChi_Key : row.INCHIKEY,
                          IUPAC_name : row.IUPACNAME,
@@ -91,7 +91,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
                          SMILES : row.SMILES,
                          InChi_Key : row.INCHIKEY,
                          IUPAC_name : row.IUPACNAME,
@@ -163,7 +163,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
                          SMILES : row.SMILES,
                          InChi_Key : row.INCHIKEY,
                          IUPAC_name : row.IUPACNAME,
@@ -235,7 +235,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
                          SMILES : row.SMILES,
                          InChi_Key : row.INCHIKEY,
                          IUPAC_name : row.IUPACNAME,
@@ -307,7 +307,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
                          SMILES : row.SMILES,
                          InChi_Key : row.INCHIKEY,
                          IUPAC_name : row.IUPACNAME,
@@ -379,7 +379,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Molecule {name: row.PREFERREDNAME,
+CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
                          SMILES : row.SMILES,
                          InChi_Key : row.INCHIKEY,
                          IUPAC_name : row.IUPACNAME,
