@@ -64,7 +64,8 @@ MERGE(cat)-[:HAS_PROPERTY {value: row.Purity}]->(purity)
 )
 
 WITH row, cat
-MATCH (ontology:EMMO_Quantity {EMMO__name:row.Ontology})
-
-
+MATCH (emmo_ratio:EMMO_Quantity {EMMO__name:row.CatalystIonnomerRatio})
+MERGE (ratio:Property {name:row.Name+ "_ratio"})
+MERGE(ratio)-[:IS_A]->(emmo_ratio)
+MERGE(cat)-[:HAS_PROPERTY {value: row.CatalystIonnomerRatio}]->(ratio)
 C
