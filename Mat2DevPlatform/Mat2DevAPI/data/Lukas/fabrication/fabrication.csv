@@ -1,0 +1,7 @@
+name,IC,ionnomer,solvent1,solvent2,solvent1_ratio,catalyst1,catalyst2,catalyst3
+IrO2-15wt-ic013-1Prop086,0.13,Nafion D2021,1-Propanol,Water,0.86,CarbonBlack,Ir,O
+IrO2-36wt-ic013-1prop04,0.13,Nafion D2021,1-Propanol,Water,0.4,CarbonBlack,Ir,O
+IrO2-36wt-ic020-1Prop086,0.2,Nafion D2021,1-Propanol,Water,0.86,CarbonBlack,Ir,O
+IrO2-Ink-35wt-1Prop086,0.2,Nafion D2021,1-Propanol,Water,0.86,CarbonBlack,Ir,O
+Tanaka-PtC04-ic065-1Prop088,0.65,,1-Propanol,Water,0.88,CarbonBlack,Pt,C
+Umicore-PtC05-ic065-1Prop088,0.65,,1-Propanol,Water,0.88,CarbonBlack,Pt,C

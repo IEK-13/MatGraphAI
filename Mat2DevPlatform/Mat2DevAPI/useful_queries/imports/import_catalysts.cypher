@@ -60,12 +60,11 @@ MERGE (purity:Property {name:row.Name+ "_purity"})
 MERGE(purity)-[:IS_A]->(emmo_purity)
 ON CREATE
 SET purity.uid = randomUUID()
-MERGE(cat)-[:HAS_PROPERTY {value: row.Purity}]->(purity)
+MERGE(cat)-[:HAS_PROPERTY {value: toFloat(row.Purity)}]->(purity)
 )
 
 WITH row, cat
-MATCH (emmo_ratio:EMMO_Quantity {EMMO__name:row.CatalystIonnomerRatio})
+MATCH (emmo_ratio:EMMO_Quantity {EMMO__name: "CatalystIonomerRatio"})
 MERGE (ratio:Property {name:row.Name+ "_ratio"})
 MERGE(ratio)-[:IS_A]->(emmo_ratio)
-MERGE(cat)-[:HAS_PROPERTY {value: row.CatalystIonnomerRatio}]->(ratio)
-C
+MERGE(cat)-[:HAS_PROPERTY {value: toFloat(row.CatalystIonomerRatio)}]->(ratio)
