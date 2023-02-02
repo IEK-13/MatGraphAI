@@ -37,198 +37,6 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://purl.obolibrary.org/obo/PATO_0000008
-<http://purl.obolibrary.org/obo/PATO_0000008> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000033
-<http://purl.obolibrary.org/obo/PATO_0000033> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000044
-<http://purl.obolibrary.org/obo/PATO_0000044> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000125
-<http://purl.obolibrary.org/obo/PATO_0000125> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000128
-<http://purl.obolibrary.org/obo/PATO_0000128> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000133
-<http://purl.obolibrary.org/obo/PATO_0000133> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000146
-<http://purl.obolibrary.org/obo/PATO_0000146> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000165
-<http://purl.obolibrary.org/obo/PATO_0000165> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000992
-<http://purl.obolibrary.org/obo/PATO_0000992> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001019
-<http://purl.obolibrary.org/obo/PATO_0001019> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001021
-<http://purl.obolibrary.org/obo/PATO_0001021> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001022
-<http://purl.obolibrary.org/obo/PATO_0001022> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001023
-<http://purl.obolibrary.org/obo/PATO_0001023> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001024
-<http://purl.obolibrary.org/obo/PATO_0001024> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001025
-<http://purl.obolibrary.org/obo/PATO_0001025> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001026
-<http://purl.obolibrary.org/obo/PATO_0001026> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001028
-<http://purl.obolibrary.org/obo/PATO_0001028> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001035
-<http://purl.obolibrary.org/obo/PATO_0001035> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001296
-<http://purl.obolibrary.org/obo/PATO_0001296> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001299
-<http://purl.obolibrary.org/obo/PATO_0001299> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001309
-<http://purl.obolibrary.org/obo/PATO_0001309> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001350
-<http://purl.obolibrary.org/obo/PATO_0001350> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001351
-<http://purl.obolibrary.org/obo/PATO_0001351> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001352
-<http://purl.obolibrary.org/obo/PATO_0001352> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001353
-<http://purl.obolibrary.org/obo/PATO_0001353> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001413
-<http://purl.obolibrary.org/obo/PATO_0001413> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001414
-<http://purl.obolibrary.org/obo/PATO_0001414> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001428
-<http://purl.obolibrary.org/obo/PATO_0001428> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001461
-<http://purl.obolibrary.org/obo/PATO_0001461> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001464
-<http://purl.obolibrary.org/obo/PATO_0001464> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001521
-<http://purl.obolibrary.org/obo/PATO_0001521> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001574
-<http://purl.obolibrary.org/obo/PATO_0001574> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001674
-<http://purl.obolibrary.org/obo/PATO_0001674> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001680
-<http://purl.obolibrary.org/obo/PATO_0001680> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001681
-<http://purl.obolibrary.org/obo/PATO_0001681> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001682
-<http://purl.obolibrary.org/obo/PATO_0001682> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001708
-<http://purl.obolibrary.org/obo/PATO_0001708> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001709
-<http://purl.obolibrary.org/obo/PATO_0001709> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001710
-<http://purl.obolibrary.org/obo/PATO_0001710> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001717
-<http://purl.obolibrary.org/obo/PATO_0001717> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001718
-<http://purl.obolibrary.org/obo/PATO_0001718> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001740
-<http://purl.obolibrary.org/obo/PATO_0001740> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001744
-<http://purl.obolibrary.org/obo/PATO_0001744> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001745
-<http://purl.obolibrary.org/obo/PATO_0001745> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001746
-<http://purl.obolibrary.org/obo/PATO_0001746> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001747
-<http://purl.obolibrary.org/obo/PATO_0001747> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001756
-<http://purl.obolibrary.org/obo/PATO_0001756> rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001757
-<http://purl.obolibrary.org/obo/PATO_0001757> rdf:type owl:Class .
-
-
 ###  http://purl.obolibrary.org/obo/UO_0000000
 <http://purl.obolibrary.org/obo/UO_0000000> rdf:type owl:Class ;
                                             rdfs:comment "\"A unit of measurement is a standardized quantity of a physical quality.\" [Wikipedia:Wikipedia]"^^xsd:string ;
@@ -237,44 +45,21 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000001
 <http://purl.obolibrary.org/obo/UO_0000001> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001708>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the distance between two points.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "length unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000002
 <http://purl.obolibrary.org/obo/UO_0000002> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0000125>
-                                                                                                <http://purl.obolibrary.org/obo/PATO_0000128>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the amount of matter/energy of a physical object.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "mass unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000003
 <http://purl.obolibrary.org/obo/UO_0000003> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0000165>
-                                                                                                <http://purl.obolibrary.org/obo/PATO_0001309>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the dimension in which events occur in sequence.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "time unit"^^xsd:string ;
                                             oboInOwl:hasExactSynonym "time derived unit"^^xsd:string .
@@ -289,14 +74,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000005
 <http://purl.obolibrary.org/obo/UO_0000005> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0000146>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the average kinetic energy of the particles in a sample of matter.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "temperature unit"^^xsd:string ;
                                             oboInOwl:hasExactSynonym "temperature derived unit"^^xsd:string .
@@ -861,84 +639,42 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000047
 <http://purl.obolibrary.org/obo/UO_0000047> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001709>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the amount of a 2-dimensional flat surface.\" [UOC:GVG]"^^xsd:string ;
                                             rdfs:label "area unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000048
 <http://purl.obolibrary.org/obo/UO_0000048> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001028>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the rate of change of velocity in either speed or direction.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "acceleration unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000049
 <http://purl.obolibrary.org/obo/UO_0000049> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001413>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the rate of angular movement about an axis; the angle rotated in a given time.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "angular velocity unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000050
 <http://purl.obolibrary.org/obo/UO_0000050> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001350>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the rate of change of angular velocity.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "angular acceleration unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000051
 <http://purl.obolibrary.org/obo/UO_0000051> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0000033>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which represents a standard measurement of how much of a given substance there is mixed with another substance.\" [UOC:GVG]"^^xsd:string ;
                                             rdfs:label "concentration unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000052
 <http://purl.obolibrary.org/obo/UO_0000052> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000182> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001353>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000182> ;
                                             rdfs:comment "\"A density unit which is a standard measure of the mass of a substance in a given volume.\" [UOC:GVG]"^^xsd:string ;
                                             rdfs:label "mass density unit"^^xsd:string ;
                                             oboInOwl:hasExactSynonym "mass per unit volume"^^xsd:string .
@@ -946,28 +682,14 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000053
 <http://purl.obolibrary.org/obo/UO_0000053> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000157> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001718>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000157> ;
                                             rdfs:comment "\"A unit which is a standard measure of the luminous intensity impinging on a given area.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "luminance unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000054
 <http://purl.obolibrary.org/obo/UO_0000054> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000182> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001351>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000182> ;
                                             rdfs:comment "\"A density unit which is a standard measure of the mass exerting an influence on a given area.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "area density unit"^^xsd:string ;
                                             oboInOwl:hasExactSynonym "mass per unit area unit"^^xsd:string .
@@ -975,43 +697,21 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000055
 <http://purl.obolibrary.org/obo/UO_0000055> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000002> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001681>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000002> ;
                                             rdfs:comment "\"A unit which is a standard measure of the mass of a homogeneous substance containing 6.02 x 1023 atoms or molecules.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "molar mass unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000056
 <http://purl.obolibrary.org/obo/UO_0000056> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000095> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001680>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000095> ;
                                             rdfs:comment "\"A unit which is a standard measure of the volume of a homogeneous substance containing 6.02 x 1023 atoms or molecules.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "molar volume unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000057
 <http://purl.obolibrary.org/obo/UO_0000057> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001022>
-                                                                                                <http://purl.obolibrary.org/obo/PATO_0001023>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the quantity of motion measured by the product of mass and velocity.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "momentum unit"^^xsd:string .
 
@@ -1032,14 +732,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000060
 <http://purl.obolibrary.org/obo/UO_0000060> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0000008>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the rate of movement. Speed is measured in the same physical units of measurement as velocity, but does not contain the element of direction that velocity has. Speed is thus the magnitude component of velocity.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "speed/velocity unit"^^xsd:string .
 
@@ -1453,14 +1146,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000095
 <http://purl.obolibrary.org/obo/UO_0000095> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001710>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the amount of space occupied by any substance, whether solid, liquid, or gas.\" [NIST:NIST]"^^xsd:string ;
                                             rdfs:label "volume unit"^^xsd:string .
 
@@ -1592,14 +1278,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000105
 <http://purl.obolibrary.org/obo/UO_0000105> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0000044>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the number of repetitive actions in a particular time.\" [NIST:NIST]"^^xsd:string ;
                                             rdfs:label "frequency unit"^^xsd:string .
 
@@ -1616,14 +1295,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000107
 <http://purl.obolibrary.org/obo/UO_0000107> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001035>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the force is applied when a mass is accelerated.\" [NIST:NIST]"^^xsd:string ;
                                             rdfs:label "force unit"^^xsd:string .
 
@@ -1640,14 +1312,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000109
 <http://purl.obolibrary.org/obo/UO_0000109> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001025>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the force applied to a given area.\" [NIST:NIST]"^^xsd:string ;
                                             rdfs:label "pressure unit"^^xsd:string .
 
@@ -1664,15 +1329,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000111
 <http://purl.obolibrary.org/obo/UO_0000111> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001021>
-                                                                                                <http://purl.obolibrary.org/obo/PATO_0001026>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the work done by a certain force (gravitational, electric, magnetic, force of inertia, etc).\" [NIST:NIST]"^^xsd:string ;
                                             rdfs:label "energy unit"^^xsd:string .
 
@@ -1689,14 +1346,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000113
 <http://purl.obolibrary.org/obo/UO_0000113> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001024>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure power or the rate of doing work.\" [NIST:NIST]"^^xsd:string ;
                                             rdfs:label "power unit"^^xsd:string .
 
@@ -1730,14 +1380,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000117
 <http://purl.obolibrary.org/obo/UO_0000117> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000157> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001296>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000157> ;
                                             rdfs:comment "\"A unit which is a standard measure of the flow of radiant energy.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "luminous flux unit"^^xsd:string .
 
@@ -1754,14 +1397,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000119
 <http://purl.obolibrary.org/obo/UO_0000119> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001414>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the amount of the action of a catalyst.\" [NIST:NIST]"^^xsd:string ;
                                             rdfs:label "catalytic activity unit"^^xsd:string .
 
@@ -1778,14 +1414,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000121
 <http://purl.obolibrary.org/obo/UO_0000121> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0000133>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the figure or space formed by the junction of two lines or planes.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "angle unit"^^xsd:string .
 
@@ -1833,56 +1462,28 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000128
 <http://purl.obolibrary.org/obo/UO_0000128> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001740>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ;
                                             rdfs:comment "\"A unit which is a standard measure of the transformation (disintegration) rate of a radioactive substance.\" [DEFRA:DEFRA]"^^xsd:string ;
                                             rdfs:label "activity (of a radionuclide) unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000129
 <http://purl.obolibrary.org/obo/UO_0000129> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001745>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ;
                                             rdfs:comment "\"A unit which is a standard measure of the energy imparted by ionizing radiation to unit mass of matter such as tissue.\" [DEFRA:DEFRA]"^^xsd:string ;
                                             rdfs:label "absorbed dose unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000130
 <http://purl.obolibrary.org/obo/UO_0000130> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001746>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ;
                                             rdfs:comment "\"A unit which is a standard measure of the expression of dose in terms of its biological effect.\" [ORCBS:ORCBS]"^^xsd:string ;
                                             rdfs:label "dose equivalent unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000131
 <http://purl.obolibrary.org/obo/UO_0000131> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001744>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ;
                                             rdfs:comment "\"A unit which is a standard measure of the quantity that expresses the ability of radiation to ionize air and thereby create electric charges which can be collected and measured.\" [ORCBS:ORCBS]"^^xsd:string ;
                                             rdfs:label "exposure unit"^^xsd:string .
 
@@ -2206,14 +1807,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000159
 <http://purl.obolibrary.org/obo/UO_0000159> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000157> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001717>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000157> ;
                                             rdfs:comment "\"A unit which is a standard measure of the intensity of electromagnetic radiation.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "radiant intensity unit"^^xsd:string .
 
@@ -2237,14 +1831,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000161
 <http://purl.obolibrary.org/obo/UO_0000161> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000157> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001299>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000157> ;
                                             rdfs:comment "\"A unit which is a standard measure of the power of electromagnetic radiation through space or through a material medium in the form of electromagnetic waves.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "radiance unit"^^xsd:string .
 
@@ -2462,28 +2049,14 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000182
 <http://purl.obolibrary.org/obo/UO_0000182> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001019>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the influence exerted by some mass.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "density unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000183
 <http://purl.obolibrary.org/obo/UO_0000183> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000182> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001352>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000182> ;
                                             rdfs:comment "\"A density unit which is a standard measure of the mass exerting an influence on a one-dimensional object.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "linear density unit"^^xsd:string .
 
@@ -2602,14 +2175,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
                                                                 ] ;
                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ,
                                                             <http://purl.obolibrary.org/obo/UO_0000186> ,
-                                                            <http://purl.obolibrary.org/obo/UO_1000196> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001428>
-                                                                                              )
-                                                                                ]
-                                                            ] .
+                                                            <http://purl.obolibrary.org/obo/UO_1000196> .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000197
@@ -2675,14 +2241,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000202
 <http://purl.obolibrary.org/obo/UO_0000202> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001674>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ;
                                             rdfs:comment "\"A concentration unit which is a standard measure of the amount of the action of a catalyst in a given volume.\" [UOC:GVG]"^^xsd:string ;
                                             rdfs:label "catalytic (activity) concentration unit"^^xsd:string .
 
@@ -2825,14 +2384,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000217
 <http://purl.obolibrary.org/obo/UO_0000217> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001464>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the work done per unit charge as a charge is moved between two points in an electric field.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "electric potential difference unit"^^xsd:string .
 
@@ -2920,14 +2472,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000225
 <http://purl.obolibrary.org/obo/UO_0000225> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001682>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of quantity of magnetism, taking account of the strength and the extent of a magnetic field.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "magnetic flux unit"^^xsd:string .
 
@@ -3255,14 +2800,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000253
 <http://purl.obolibrary.org/obo/UO_0000253> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001461>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the ability of a liguid to attraction of molecules at its surface as a result of unbalanced molecular cohesive forces.\" [NIST:NIST]"^^xsd:string ;
                                             rdfs:label "surface tension unit"^^xsd:string .
 
@@ -3289,14 +2827,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000256
 <http://purl.obolibrary.org/obo/UO_0000256> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0000992>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
                                             rdfs:comment "\"A unit which is a standard measure of the internal resistance of fluids to flow.\" [UOC:GVG]"^^xsd:string ;
                                             rdfs:label "viscosity unit"^^xsd:string .
 
@@ -3327,14 +2858,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
                                                                   owl:oneOf ( <http://purl.obolibrary.org/obo/UO_0000259>
                                                                             )
                                                                 ] ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000190> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001521>
-                                                                                              )
-                                                                                ]
-                                                            ] .
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000190> .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000260
@@ -3344,14 +2868,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
                                                                             )
                                                                 ] ;
                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000127> ,
-                                                            <http://purl.obolibrary.org/obo/UO_1000260> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001747>
-                                                                                              )
-                                                                                ]
-                                                            ] .
+                                                            <http://purl.obolibrary.org/obo/UO_1000260> .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000261
@@ -3363,28 +2880,14 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
 
 ###  http://purl.obolibrary.org/obo/UO_0000262
 <http://purl.obolibrary.org/obo/UO_0000262> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000261> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001757>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000261> ;
                                             rdfs:comment "\"A unit which represents a standard measurement of the movement of electrically charged particles through a transmission medium (electrical conductor).\" [UOC:GVG]"^^xsd:string ;
                                             rdfs:label "electrical conduction unit"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000263
 <http://purl.obolibrary.org/obo/UO_0000263> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000261> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001756>
-                                                                                              )
-                                                                                ]
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000261> ;
                                             rdfs:comment "\"A unit which represents a standard measurement of the spontaneous transfer of thermal energy through matter, from a region of higher temperature to a region of lower temperature.\" [Wikipedia:Wikipedia]"^^xsd:string ;
                                             rdfs:label "heat conduction unit"^^xsd:string .
 
@@ -3460,14 +2963,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
                                                                   owl:oneOf ( <http://purl.obolibrary.org/obo/UO_0000271>
                                                                             )
                                                                 ] ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000270> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/is_unit_of> ;
-                                                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( <http://purl.obolibrary.org/obo/PATO_0001574>
-                                                                                              )
-                                                                                ]
-                                                            ] .
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000270> .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000272
@@ -3976,7 +3472,7 @@ oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
                                                                   owl:oneOf ( <http://purl.obolibrary.org/obo/UO_0000325>
                                                                             )
                                                                 ] ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000105> .
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000021> .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000326

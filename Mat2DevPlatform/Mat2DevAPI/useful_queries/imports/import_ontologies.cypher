@@ -42,4 +42,7 @@ SET n:EMMO_Quantity;
 
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/units.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
+WITH n.label as label, n.name as name
+SET n.label = name
+SET n.name = label
 SET n:EMMO_Unit;
