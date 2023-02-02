@@ -12,7 +12,7 @@ ON CREATE
 SET cb.uid = randomUUID()
 
 WITH cb, vb
-MATCH(c:Matter:Material {symbol: "C"})
+MATCH(c:Matter:Element {symbol: "C"})
 MATCH(emmo_cb:EMMO_Matter {EMMO__name: "CarbonBlack"})
 MERGE(vb)-[:IS_A]->(emmo_cb)
 MERGE(cb)-[:IS_A]->(emmo_cb)

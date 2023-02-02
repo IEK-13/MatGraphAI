@@ -16,6 +16,8 @@ call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGr
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false }) ;
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufactured.owl","Turtle", { verifyUriSyntax: false }) ;
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufacturing.owl","Turtle", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/units.owl","Turtle", { verifyUriSyntax: false }) ;
+
 
 // we want named instances to link to the classes imported from the onto, so we change the handleRDFTypes mode.
 call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
@@ -37,3 +39,7 @@ SET n:EMMO_Matter;
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
 SET n:EMMO_Quantity;
+
+call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/units.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+MATCH (n:Resource{uri:subject})
+SET n:EMMO_Unit;
