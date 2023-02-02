@@ -16,7 +16,7 @@ call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGr
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false }) ;
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufactured.owl","Turtle", { verifyUriSyntax: false }) ;
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufacturing.owl","Turtle", { verifyUriSyntax: false }) ;
-call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/units.owl","Turtle", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/units.owl","Turtle", { verifyUriSyntax: false}) ;
 
 
 // we want named instances to link to the classes imported from the onto, so we change the handleRDFTypes mode.
