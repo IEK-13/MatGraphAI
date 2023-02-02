@@ -692,6 +692,26 @@
         rdfs:subClassOf :Ionomer .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2020CS
+:Nafion_D2020CS rdf:type owl:Class ;
+                rdfs:subClassOf :Nafion .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2021CS
+:Nafion_D2021CS rdf:type owl:Class ;
+                rdfs:subClassOf :Nafion .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D520CS
+:Nafion_D520CS rdf:type owl:Class ;
+               rdfs:subClassOf :Nafion .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D521CS
+:Nafion_D521CS rdf:type owl:Class ;
+               rdfs:subClassOf :Nafion .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial
 :NanoMaterial rdf:type owl:Class ;
               rdfs:subClassOf :Material .
@@ -1349,6 +1369,15 @@
                 :PhaseOfMatter
                 :StateOfAggregation
                 :StateOfMatter
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Nafion_D2020CS
+                :Nafion_D2021CS
+                :Nafion_D520CS
+                :Nafion_D521CS
               )
 ] .
 
