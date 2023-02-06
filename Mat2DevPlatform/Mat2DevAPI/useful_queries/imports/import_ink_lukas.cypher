@@ -5,6 +5,8 @@ MATCH(emmo_ink:EMMO_Matter {EMMO__name: "CatalystInk"})
 MATCH(emmo_ic:EMMO_Quantity {EMMO__name: "CatalystIonomerRatio"})
 MATCH(emmo_ic:EMMO_Quantity {EMMO__name: "CatalystIonomerRatio"})
 MATCH(emmo_cc:EMMO_Quantity {EMMO__name: "CatalystCarbonRatio"})
+MATCH(emmo_h20:EMMO_Matter {EMMO__name: "Water"})
+MATCH(emmo_propanol:EMMO_Matter {EMMO__name: "1-Propanol"})
 MERGE(ink:Material:Matter {name: row.name, date_added: "heute"})
 ON CREATE
 SET ink.uid = randomUUID()
@@ -23,13 +25,25 @@ MERGE(sol2:Matter:Material {EMMO__name: row.solvent2, date_added: "heute"})
 MERGE(sol:Matter:Material {EMMO__name: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio, date_added: "heute"})
 MERGE(sol1)<-[:HAS_PART {value: TOFLOAT(row.solvent1_ratio)}]-(sol)
 MERGE(sol2)<-[:HAS_PART {value: TOFLOAT(1-TOFLOAT(row.solvent1_ratio))}]-(sol)
+MERGE(sol1)-[:IS_A]->(emmo_propanol)
+MERGE(sol2)-[:IS_A]->(emmo_h20)
 
 MERGE(ink)-[:HAS_PART]->(sol)
 
 
-MERGE(cat:Matter:Material {name:row.catalyst2 + "_" + row.wt, date_added: "heute"})
-MATCH(cs:Matter:Material {name:row.catalyst1, date_added: "heute"})
-MERGE(met:Matter:Material {name:row.catalyst2, date_added: "heute"})
+
+
+MERGE(cs:Matter:Material {name:row.catalyst1, date_added: "heute"})
+MATCH(cat:Matter:Element {name:row.catalyst2 + "_" + row.wt, date_added: "heute"})
+MATCH(ox:Matter:Element {name:row.catalyst3, date_added: "heute"})
+MATCH(emmo_ox:EMMO_Matter {EMMO__name: row.catalyst3})
+MATCH(emmo_cs:EMMO_Matter {EMMO__name: row.catalyst1})
+MATCH(emmo_cat:EMMO_Matter {EMMO__name: row.catalyst2})
+MERGE(ox)-[:IS_A]->(EMMO_ox)
+MERGE(cat)-[:IS_A]->(EMMO_cat)
+MERGE(cs)-[:IS_A]->(EMMO_cs)
+
+
 FOREACH(ignoreMe IN CASE WHEN row.catalyst3 is not null THEN [1] ELSE [] END|
 
   MERGE(ox:Matter:Material {name:row.catalyst3, date_added: "heute"})

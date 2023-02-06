@@ -27,6 +27,11 @@
                    rdfs:subClassOf :AqueousElectrloyte .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Actinium
+:Actinium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ActiveMaterial
 :ActiveMaterial rdf:type owl:Class ;
                 rdfs:subClassOf :ElectrochemicalMaterial .
@@ -80,6 +85,16 @@
          rdfs:subClassOf :OpenChainOrganicMolecules .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aluminium
+:Aluminium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Americium
+:Americium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AmphiphilSolvent
 :AmphiphilSolvent rdf:type owl:Class ;
                   rdfs:subClassOf :Solvent .
@@ -99,6 +114,11 @@
 :Anolyte rdf:type owl:Class ;
          rdfs:subClassOf :ElectrlyteSolution ,
                          :ElectrolyteSolution .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Antimony
+:Antimony rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrloyte
@@ -148,6 +168,11 @@
                    rdfs:subClassOf :Aquivion .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Argon
+:Argon rdf:type owl:Class ;
+       rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyclicOrganicMolecules
 :AromaticAlicyclicOrganicMolecules rdf:type owl:Class ;
                                    rdfs:subClassOf :HomocyclicOrganicMolecules .
@@ -163,9 +188,39 @@
                                       rdfs:subClassOf :HeteroCyclicOrganicMolecules .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Arsenic
+:Arsenic rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Astatine
+:Astatine rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom
+:Atom rdf:type owl:Class ;
+      rdfs:subClassOf :MolecularEntity .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Barium
+:Barium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base
 :Base rdf:type owl:Class ;
       rdfs:subClassOf :ChemicalSubstance .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Berkelium
+:Berkelium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Beryllium
+:Beryllium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCarbonSupportedPlatinumCatalyst
@@ -181,6 +236,46 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryMaterial
 :BinaryMaterial rdf:type owl:Class ;
                 rdfs:subClassOf :Material .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bismuth
+:Bismuth rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bohrium
+:Bohrium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Boron
+:Boron rdf:type owl:Class ;
+       rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bromine
+:Bromine rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cadmium
+:Cadmium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Calcium
+:Calcium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Californium
+:Californium rdf:type owl:Class ;
+             rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Carbon
+:Carbon rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack
@@ -219,6 +314,16 @@
          rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cerium
+:Cerium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cesium
+:Cesium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChannelBlack
 :ChannelBlack rdf:type owl:Class ;
               rdfs:subClassOf :CarbonBlack .
@@ -251,9 +356,24 @@
                    owl:disjointWith :MolecularEntity .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chlorine
+:Chlorine rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chromium
+:Chromium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CoatingSubstrate
 :CoatingSubstrate rdf:type owl:Class ;
                   rdfs:subClassOf :FunctionalMaterial .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cobalt
+:Cobalt rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Colloid
@@ -278,10 +398,20 @@
            rdfs:subClassOf :Matter .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copernicium
+:Copernicium rdf:type owl:Class ;
+             rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copolymer
 :Copolymer rdf:type owl:Class ;
            rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> ;
            owl:disjointWith :Ionomer .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copper
+:Copper rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Crystal
@@ -290,10 +420,20 @@
          owl:disjointWith :SolidMixture .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Curium
+:Curium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CyclicOrganicMolecules
 :CyclicOrganicMolecules rdf:type owl:Class ;
                         rdfs:subClassOf :OrganicMolceule ;
                         owl:disjointWith :OpenChainOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Darmstadtium
+:Darmstadtium rdf:type owl:Class ;
+              rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DecalSusbtrate
@@ -317,9 +457,19 @@
                    rdfs:subClassOf :MolecularEntityInStateOfAggregation .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dubnium
+:Dubnium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dust
 :Dust rdf:type owl:Class ;
       rdfs:subClassOf :GasSolidSuspension .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dysprosium
+:Dysprosium rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E
@@ -336,6 +486,11 @@
 :ETFE rdf:type owl:Class ;
       rdfs:subClassOf :Copolymer ;
       owl:disjointWith :PTFE .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Einsteinium
+:Einsteinium rdf:type owl:Class ;
+             rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution
@@ -402,9 +557,19 @@
                 rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Erbium
+:Erbium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ethanol
 :Ethanol rdf:type owl:Class ;
          rdfs:subClassOf :PrimaryAlcohol .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Europium
+:Europium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E
@@ -434,15 +599,35 @@
                                   owl:disjointWith :GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fermium
+:Fermium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Flerovium
+:Flerovium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid
 :Fluid rdf:type owl:Class ;
        rdfs:subClassOf :StateOfAggregation ,
                        :StateOfMatter .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluorine
+:Fluorine rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Foam
 :Foam rdf:type owl:Class ;
       rdfs:subClassOf :Dispersion .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Francium
+:Francium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial
@@ -453,6 +638,16 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FurnaceBlack
 :FurnaceBlack rdf:type owl:Class ;
               rdfs:subClassOf :CarbonBlack .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gadolinium
+:Gadolinium rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gallium
+:Gallium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gas
@@ -495,6 +690,16 @@
                      :SolidMixture .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Germanium
+:Germanium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gold
+:Gold rdf:type owl:Class ;
+      rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gore
 :Gore rdf:type owl:Class ;
       rdfs:subClassOf :Ionomer .
@@ -508,6 +713,21 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst
 :GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
                                                         rdfs:subClassOf :CarbonSupportedPlatinumCatalyst .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hafnium
+:Hafnium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hassium
+:Hassium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Helium
+:Helium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroCyclicOrganicMolecules
@@ -526,6 +746,11 @@
                       rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Holmium
+:Holmium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoGenousMaterial
 :HomoGenousMaterial rdf:type owl:Class ;
                     rdfs:subClassOf :Material .
@@ -541,9 +766,19 @@
                             rdfs:subClassOf :CyclicOrganicMolecules .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hydrogen
+:Hydrogen rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Imidazole
 :Imidazole rdf:type owl:Class ;
            rdfs:subClassOf :Diazole .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Indium
+:Indium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ink
@@ -564,6 +799,11 @@
                        rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iodine
+:Iodine rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion
 :Ion rdf:type owl:Class ;
      rdfs:subClassOf :MolecularEntity .
@@ -579,9 +819,19 @@
          rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iridium
+:Iridium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IridiumOxideCatalyst
 :IridiumOxideCatalyst rdf:type owl:Class ;
                       rdfs:subClassOf :SingleMetalCatalyst .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iron
+:Iron rdf:type owl:Class ;
+      rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IsotropicMaterial
@@ -589,9 +839,29 @@
                    rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Krypton
+:Krypton rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LampBlack
 :LampBlack rdf:type owl:Class ;
            rdfs:subClassOf :CarbonBlack .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lanthanum
+:Lanthanum rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lawrencium
+:Lawrencium rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lead
+:Lead rdf:type owl:Class ;
+      rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LeclancheElectrolyte
@@ -658,9 +928,34 @@
                                 :Solution .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lithium
+:Lithium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Livermorium
+:Livermorium rdf:type owl:Class ;
+             rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lutetium
+:Lutetium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MacroMolecule
 :MacroMolecule rdf:type owl:Class ;
                rdfs:subClassOf :PolyAtomicEntity .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Magnesium
+:Magnesium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Manganese
+:Manganese rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ManufacturedMaterial
@@ -675,6 +970,21 @@
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Matter
 :Matter rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Meitnerium
+:Meitnerium rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mendelevium
+:Mendelevium rdf:type owl:Class ;
+             rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mercury
+:Mercury rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Metal
@@ -705,6 +1015,16 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule
 :Molecule rdf:type owl:Class ;
           rdfs:subClassOf :MolecularEntity .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molybdenum
+:Molybdenum rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Moscovium
+:Moscovium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion
@@ -747,6 +1067,46 @@
                         rdfs:subClassOf :AqueousElectrloyte .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neodymium
+:Neodymium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neon
+:Neon rdf:type owl:Class ;
+      rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neptunium
+:Neptunium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nickel
+:Nickel rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nihonium
+:Nihonium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Niobium
+:Niobium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nitrogen
+:Nitrogen rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nobelium
+:Nobelium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqeousMolecule
 :NonAqeousMolecule rdf:type owl:Class ;
                    rdfs:subClassOf :DissolvedMolecule .
@@ -762,6 +1122,11 @@
 :NonPolarSolvent rdf:type owl:Class ;
                  rdfs:subClassOf :Solvent ;
                  owl:disjointWith :PolarSolvent .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oganesson
+:Oganesson rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules
@@ -780,9 +1145,19 @@
                                  :OrganicCompound .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Osmium
+:Osmium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxidant
 :Oxidant rdf:type owl:Class ;
          rdfs:subClassOf :MolecularEntity .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxygen
+:Oxygen rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFE
@@ -793,6 +1168,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFESubstrate
 :PTFESubstrate rdf:type owl:Class ;
                rdfs:subClassOf :CoatingSubstrate .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Palladium
+:Palladium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHeterogeneousMixture
@@ -810,9 +1190,19 @@
                rdfs:subClassOf :Continuum .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Phosphorus
+:Phosphorus rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plasma
 :Plasma rdf:type owl:Class ;
         rdfs:subClassOf :Fluid .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Platinum
+:Platinum rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PlatinumCatalyst
@@ -820,9 +1210,19 @@
                   rdfs:subClassOf :SingleMetalCatalyst .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plutonium
+:Plutonium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolarSolvent
 :PolarSolvent rdf:type owl:Class ;
               rdfs:subClassOf :Solvent .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polonium
+:Polonium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolyAtomicEntity
@@ -835,9 +1235,39 @@
              rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Potassium
+:Potassium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Praseodymium
+:Praseodymium rdf:type owl:Class ;
+              rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol
 :PrimaryAlcohol rdf:type owl:Class ;
                 rdfs:subClassOf :Alcohol .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Promethium
+:Promethium rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Protactinium
+:Protactinium rdf:type owl:Class ;
+              rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radium
+:Radium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radon
+:Radon rdf:type owl:Class ;
+       rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ReactiveMaterial
@@ -850,9 +1280,44 @@
            rdfs:subClassOf :MolecularEntity .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhenium
+:Rhenium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhodium
+:Rhodium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Roentgenium
+:Roentgenium rdf:type owl:Class ;
+             rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rubidium
+:Rubidium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ruthenium
+:Ruthenium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rutherfordium
+:Rutherfordium rdf:type owl:Class ;
+               rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaltMolecule
 :SaltMolecule rdf:type owl:Class ;
               rdfs:subClassOf :Molecule .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Samarium
+:Samarium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaturatedSolution
@@ -860,9 +1325,34 @@
                    rdfs:subClassOf :Solution .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Scandium
+:Scandium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Seaborgium
+:Seaborgium rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SecundaryCatalyst
 :SecundaryCatalyst rdf:type owl:Class ;
                    rdfs:subClassOf :ElectroCatalyst .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Selenium
+:Selenium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silicon
+:Silicon rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silver
+:Silver rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SingleMetalCatalyst
@@ -873,6 +1363,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Smoke
 :Smoke rdf:type owl:Class ;
        rdfs:subClassOf :SolidAerosol .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sodium
+:Sodium rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sol
@@ -996,6 +1491,16 @@
             owl:disjointWith :WeakBase .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Strontium
+:Strontium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sulfur
+:Sulfur rdf:type owl:Class ;
+        rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SupportingElectrolyte
 :SupportingElectrolyte rdf:type owl:Class ;
                        rdfs:subClassOf :ElectrlyteSolution ,
@@ -1009,6 +1514,31 @@
                             :StateOfMatter .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tantalum
+:Tantalum rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Technetium
+:Technetium rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tellurium
+:Tellurium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tennessine
+:Tennessine rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Terbium
+:Terbium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryCatalyst
 :TernaryCatalyst rdf:type owl:Class ;
                  rdfs:subClassOf :ElectroCatalyst .
@@ -1019,9 +1549,54 @@
                  rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thallium
+:Thallium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ThermalBlack
 :ThermalBlack rdf:type owl:Class ;
               rdfs:subClassOf :CarbonBlack .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thorium
+:Thorium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thulium
+:Thulium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tin
+:Tin rdf:type owl:Class ;
+     rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Titanium
+:Titanium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tungsten
+:Tungsten rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ununennium
+:Ununennium rdf:type owl:Class ;
+            rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Uranium
+:Uranium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vanadium
+:Vanadium rdf:type owl:Class ;
+          rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vapor
@@ -1042,6 +1617,31 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakBase
 :WeakBase rdf:type owl:Class ;
           rdfs:subClassOf :Base .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Xenon
+:Xenon rdf:type owl:Class ;
+       rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ytterbium
+:Ytterbium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Yttrium
+:Yttrium rdf:type owl:Class ;
+         rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zinc
+:Zinc rdf:type owl:Class ;
+      rdfs:subClassOf :Atom .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zirconium
+:Zirconium rdf:type owl:Class ;
+           rdfs:subClassOf :Atom .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial
@@ -1118,6 +1718,130 @@
   owl:members ( :AcidicElectrolyte
                 :AlkalineElectrolyte
                 :NearNeutralElectrolyte
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Actinium
+                :Aluminium
+                :Americium
+                :Antimony
+                :Argon
+                :Arsenic
+                :Astatine
+                :Barium
+                :Berkelium
+                :Beryllium
+                :Bismuth
+                :Bohrium
+                :Boron
+                :Bromine
+                :Cadmium
+                :Calcium
+                :Californium
+                :Carbon
+                :Cerium
+                :Cesium
+                :Chlorine
+                :Chromium
+                :Cobalt
+                :Copernicium
+                :Copper
+                :Curium
+                :Darmstadtium
+                :Dubnium
+                :Dysprosium
+                :Einsteinium
+                :Erbium
+                :Europium
+                :Fermium
+                :Flerovium
+                :Fluorine
+                :Francium
+                :Gadolinium
+                :Gallium
+                :Germanium
+                :Gold
+                :Hafnium
+                :Hassium
+                :Helium
+                :Holmium
+                :Hydrogen
+                :Indium
+                :Iodine
+                :Iridium
+                :Iron
+                :Krypton
+                :Lanthanum
+                :Lawrencium
+                :Lead
+                :Lithium
+                :Livermorium
+                :Lutetium
+                :Magnesium
+                :Manganese
+                :Meitnerium
+                :Mendelevium
+                :Mercury
+                :Molybdenum
+                :Moscovium
+                :Neodymium
+                :Neon
+                :Neptunium
+                :Nickel
+                :Nihonium
+                :Niobium
+                :Nitrogen
+                :Nobelium
+                :Oganesson
+                :Osmium
+                :Oxygen
+                :Palladium
+                :Phosphorus
+                :Platinum
+                :Plutonium
+                :Polonium
+                :Potassium
+                :Praseodymium
+                :Promethium
+                :Protactinium
+                :Radium
+                :Radon
+                :Rhenium
+                :Rhodium
+                :Roentgenium
+                :Rubidium
+                :Ruthenium
+                :Rutherfordium
+                :Samarium
+                :Scandium
+                :Seaborgium
+                :Selenium
+                :Silicon
+                :Silver
+                :Sodium
+                :Strontium
+                :Sulfur
+                :Tantalum
+                :Technetium
+                :Tellurium
+                :Tennessine
+                :Terbium
+                :Thallium
+                :Thorium
+                :Thulium
+                :Tin
+                :Titanium
+                :Tungsten
+                :Ununennium
+                :Uranium
+                :Vanadium
+                :Xenon
+                :Ytterbium
+                :Yttrium
+                :Zinc
+                :Zirconium
               )
 ] .
 
@@ -1223,6 +1947,21 @@
                 :AquivionD79-25BS
                 :AquivionD98-25BS
                 :AquivionSO3H-Form
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Atom
+                :Ion
+                :MolecularEntityInStateOfAggregation
+                :Molecule
+                :OrganicMolceule
+                :Oxidant
+                :PolyAtomicEntity
+                :Reductant
+                :SoluteMolecule
+                :SolventMolecule
               )
 ] .
 
