@@ -43,6 +43,11 @@
      rdfs:subClassOf :SolidSolution .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alcohol
+:Alcohol rdf:type owl:Class ;
+         rdfs:subClassOf :AmphiphilSolvent .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHeterocylclicOrganicMolecules
 :AlicyclicHeterocylclicOrganicMolecules rdf:type owl:Class ;
                                         rdfs:subClassOf :HeteroCyclicOrganicMolecules ;
@@ -73,6 +78,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkynes
 :Alkynes rdf:type owl:Class ;
          rdfs:subClassOf :OpenChainOrganicMolecules .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AmphiphilSolvent
+:AmphiphilSolvent rdf:type owl:Class ;
+                  rdfs:subClassOf :Solvent .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anion
@@ -392,6 +402,11 @@
                 rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ethanol
+:Ethanol rdf:type owl:Class ;
+         rdfs:subClassOf :PrimaryAlcohol .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E
 :F30E rdf:type owl:Class ;
       rdfs:subClassOf :FCarbonSupportedPlatinumCatalyst ;
@@ -667,6 +682,11 @@
        rdfs:subClassOf :Material .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Methanol
+:Methanol rdf:type owl:Class ;
+          rdfs:subClassOf :PrimaryAlcohol .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture
 :Mixture rdf:type owl:Class ;
          rdfs:subClassOf :Continuum .
@@ -813,6 +833,11 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polyepoxide
 :Polyepoxide rdf:type owl:Class ;
              rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol
+:PrimaryAlcohol rdf:type owl:Class ;
+                rdfs:subClassOf :Alcohol .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ReactiveMaterial
@@ -1004,6 +1029,11 @@
        rdfs:subClassOf :LiquidAerosol .
 
 
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Water
+:Water rdf:type owl:Class ;
+       rdfs:subClassOf :PolarSolvent .
+
+
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakAcid
 :WeakAcid rdf:type owl:Class ;
           rdfs:subClassOf :Acid .
@@ -1022,6 +1052,16 @@
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial
 <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial> rdf:type owl:Class ;
                                                                                    rdfs:subClassOf :NanoMaterial .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf :PrimaryAlcohol .
+
+
+###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf :PrimaryAlcohol .
 
 
 ###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial
@@ -1281,6 +1321,15 @@
                 :LiquidSol
                 :LiquidSolidSuspension
                 :LiquidSolution
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Ethanol
+                :Methanol
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol>
+                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol>
               )
 ] .
 

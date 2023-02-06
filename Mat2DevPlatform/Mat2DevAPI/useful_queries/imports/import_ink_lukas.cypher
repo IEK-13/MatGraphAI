@@ -28,7 +28,7 @@ MERGE(ink)-[:HAS_PART]->(sol)
 
 
 MERGE(cat:Matter:Material {name:row.catalyst2 + "_" + row.wt, date_added: "heute"})
-MERGE(cs:Matter:Material {name:row.catalyst1, date_added: "heute"})
+MATCH(cs:Matter:Material {name:row.catalyst1, date_added: "heute"})
 MERGE(met:Matter:Material {name:row.catalyst2, date_added: "heute"})
 FOREACH(ignoreMe IN CASE WHEN row.catalyst3 is not null THEN [1] ELSE [] END|
 
