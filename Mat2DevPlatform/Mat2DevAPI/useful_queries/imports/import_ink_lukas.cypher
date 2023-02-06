@@ -13,16 +13,16 @@ MERGE(ink)-[:IS_A]->(emmo_ink)
 MERGE(ic:Property {name: row.name+"_ic"})
 MERGE(ink)-[:HAS_PROPERTY{value: row.IC}]->(ic)
 MERGE(ic)-[:IS_A]->(emmo_ic)
-FOREACH(ignoreMe IN CASE WHEN row.ionnomer is not null THEN [1] ELSE [] END|
+FOREACH(ignoreMe IN CASE WHEN row.ionomer is not null THEN [1] ELSE [] END|
 
-  MERGE(ionnomer:Matter:Material {EMMO__name: row.ionomer, date_added: "heute"})
+  MERGE(ionomer:Matter:Material {EMMO__name: row.ionomer, date_added: "heute"})
 
 )
 MERGE(sol1:Matter:Material {EMMO__name: row.solvent1, date_added: "heute"})
 MERGE(sol2:Matter:Material {EMMO__name: row.solvent2, date_added: "heute"})
-MERGE(sol:Matter:Material {EMMO__name: row.solvent1+"_"+row.solvent2, date_added: "heute"})
+MERGE(sol:Matter:Material {EMMO__name: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio, date_added: "heute"})
 MERGE(sol1)<-[:HAS_PART {value: TOFLOAT(row.solvent1_ratio)}]-(sol)
-MERGE(sol2)<-[:HAS_PART {value: TOFLOAT(1-row.solvent1_ratio)}]-(sol)
+MERGE(sol2)<-[:HAS_PART {value: TOFLOAT(1-TOFLOAT(row.solvent1_ratio))}]-(sol)
 
 MERGE(ink)-[:HAS_PART]->(sol)
 
