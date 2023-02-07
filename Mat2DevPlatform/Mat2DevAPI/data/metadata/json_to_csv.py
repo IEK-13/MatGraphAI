@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 from flatten_json import flatten
-f = open("./institutions.json")
+f = open("./ror.json")
 
 def flatten_data(y):
     out = {}
@@ -24,5 +24,5 @@ def flatten_data(y):
 data = json.loads(f.read())
 data = flatten_data(data)
 df = pd.json_normalize(data)
-df.to_csv('test.csv')
+df.to_csv('institutions.csv')
 
