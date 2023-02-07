@@ -9,7 +9,7 @@ MATCH(emmo_h20:EMMO_Matter {EMMO__name: "Water"})
 MATCH(emmo_propanol:EMMO_Matter {EMMO__name: "1-Propanol"})
 MATCH(emmo_cs:EMMO_Matter {EMMO__name: row.catalyst1})
 MATCH(emmo_met:EMMO_Matter {EMMO__name: row.catalyst2})
-MATCH(emmo_cat:EMMO_Matter {EMMO__name: row.emmo_cat})
+MATCH(emmo_cat:EMMO_Matter {EMMO__name: row.cat_emmo})
 MERGE(ink:Material:Matter {name: row.name, date_added: "heute"})
 ON CREATE
 SET ink.uid = randomUUID()
