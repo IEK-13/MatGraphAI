@@ -10,11 +10,6 @@ def flatten_data(y):
         if type(x) is dict:
             for a in x:
                 flatten(x[a], name + a + '_')
-        elif type(x) is list:
-            i = 0
-            for a in x:
-                flatten(a, name + str(i) + '_')
-                i += 1
         else:
             out[name[:-1]] = x
 
@@ -24,5 +19,5 @@ def flatten_data(y):
 data = json.loads(f.read())
 data = flatten_data(data)
 df = pd.json_normalize(data)
-df.to_csv('test.csv')
+df.to_csv('institutions.csv')
 
