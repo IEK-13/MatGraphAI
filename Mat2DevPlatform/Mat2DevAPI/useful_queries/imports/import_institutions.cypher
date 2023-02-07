@@ -1,0 +1,1 @@
+ CALL apoc.load.json('https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/FuelCellFabrication.csv')

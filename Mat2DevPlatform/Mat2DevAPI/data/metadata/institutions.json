@@ -1,0 +1,55 @@
+{
+  "id": "https://ror.org/02nv7yv05",
+  "name": "Forschungszentrum Jülich",
+  "types": [
+    "Facility"
+  ],
+  "links": [
+    "http://www.fz-juelich.de/portal/EN/Home/home_node.html"
+  ],
+  "aliases": [],
+  "acronyms": [
+    "FZJ"
+  ],
+  "wikipedia_url": "http://en.wikipedia.org/wiki/Forschungszentrum_J%C3%BClich",
+  "labels": [
+    {
+      "label": "Jülich Research Centre",
+      "iso639": "en"
+    }
+  ],
+  "country": {
+    "country_code": "DE",
+    "country_name": "Germany"
+  },
+  "external_ids": {
+    "ISNI": {
+      "preferred": null,
+      "all": [
+        "0000 0001 2297 375X"
+      ]
+    },
+    "FundRef": {
+      "preferred": null,
+      "all": [
+        "501100003163"
+      ]
+    },
+    "OrgRef": {
+      "preferred": null,
+      "all": [
+        "1091669"
+      ]
+    },
+    "Wikidata": {
+      "preferred": null,
+      "all": [
+        "Q697111"
+      ]
+    },
+    "GRID": {
+      "preferred": "grid.8385.6",
+      "all": "grid.8385.6"
+    }
+  }
+}
