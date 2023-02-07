@@ -3,6 +3,7 @@ import json
 from flatten_json import flatten
 f = open("./ror.json")
 
+listi = []
 def flatten_data(y):
     out = {}
 
@@ -22,7 +23,11 @@ def flatten_data(y):
     return out
 
 data = json.loads(f.read())
-data = flatten_data(data)
-df = pd.json_normalize(data)
+for el in data:
+    add = flatten(el)
+    listi.append(add)
+
+
+df = pd.json_normalize(listi)
 df.to_csv('institutions.csv')
 
