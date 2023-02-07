@@ -4,7 +4,7 @@ formula = "C12HO"
 Atoms = (['C', 'H', 'O', 'N', 'F', 'Cl', 'P', 'Br', 'I', 'S', 'V'])
 Atomlist = {}
 rows = []
-with open('../data/PubChemMolecules.csv', 'r') as read_obj:
+with open('../data/materials/PubChemMolecules.csv', 'r') as read_obj:
     csv_reader = reader(read_obj)
     next(csv_reader)
     for row in csv_reader:
@@ -35,7 +35,7 @@ with open('../data/PubChemMolecules.csv', 'r') as read_obj:
         print(row)
 print(Atomlist)
             # Atomdict[ding2[0]] = ding2[1]
-with open('../data/PubChemMolecules_sum.csv', 'w') as read_obj:
+with open('../data/materials/PubChemMolecules_sum.csv', 'w') as read_obj:
     csv_reader = writer(read_obj)
     csv_reader.writerows(rows)
 

@@ -1,0 +1,97 @@
+Column1,Column2,Column3,Column4,Column5,Column6,Column7,Column8,Column9,Column10,Column11
+DVNX 2.1.6-9,VISCOSITY DATA REPORT,,,,,,,,,
+,,,,,,,,,,
+SAMPLE RUN INFORMATION,,,,,,,,,,
+Test Start,09/30/22 11:38,Test End,09/30/22 11:46,Tester,Administrator, ,,,,
+Instrument,RV (1.000000),S/N,86024291,Model,DVNXRVCJG,FWV,2.1.6-9,,,
+Spindle,CP-40 (40),S/N,0,SMC, 0.327,SRC, 7.500,YMC, 0.000,
+Global Limits,None,Temperature Offset,None,Temperature Control,No,Accessory,None,,,
+File,,Test Data Saved, ,Test Data Saved by,,,,,,
+Notes,,,,,,,,,,
+,,,,,,,,,,
+Test Method,,,,,,,,,,
+Test Method File Name,Unsaved Test,Test Method Saved On,,Test Method Created By,,,,,,
+Instructions,,,,,,,,,,
+,,,,,,,,,,
+Step,Speed,Temperature,Data Collection,Data Interval,Avg Duration,Collect point,End Condition,Density,QC Limits,
+(#),(RPM),(°C),Type,(hh:mm:ss),(hh:mm:ss),at step end,Type Oper. Val. Tol Unit,(g/cm³),Type Low High Unit,
+1, 1.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0.0000,None,
+2, 2.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0.0000,None,
+3, 4.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0.0000,None,
+4, 8.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+5,10.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+6,12.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+7,16.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+8,20.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+9,28.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+10,36.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+11,48.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+12,60.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+13,75.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+14,90.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+15,105.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+16,120.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+17,140.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+18,160.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+19,185.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+20,200.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+21,225.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+22,250.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
+Results,,,,,,,,,,
+,,,,,,,,,,
+Test Averaging,Steps:,Viscosity,Torque,Speed,Shear Stress,Shear Rate,Temperature,Density,Accuracy,
+,(),(cP),(%),(RPM),(dyne/cm²),(¹/s),(°C),(g/cm³),(+/-cP),
+,,0.00,   0.0,0.00,0.00,0.000,---,0.0000,0.00,
+,,,,,,,,,,
+Step Averaging,Step,Viscosity,Torque,Speed,Shear Stress,Shear Rate,Temperature,Density,Accuracy,
+,(#),(cP),(%),(RPM),(dyne/cm²),(¹/s),(°C),(g/cm³),(+/-cP),
+,1,55.59,   1.7, 1.0,4.17,7.500,---,0.0000,32.70,
+,2,45.78,   2.8, 2.0,6.87,15.00,---,0.0000,16.35,
+,3,38.42,   4.7, 4.0,11.53,30.00,---,0.0000,8.18,
+,4,32.70,   8.0, 8.0,19.62,60.00,---,0.0000,4.09,
+,5,31.07,   9.5,10.0,23.30,75.00,---,0.0000,3.27,
+,6,29.97,  11.0,12.0,26.98,90.00,---,0.0000,2.73,
+,7,28.20,  13.8,16.0,33.84,120.0,---,0.0000,2.04,
+,8,27.47,  16.8,20.0,41.20,150.0,---,0.0000,1.64,
+,9,26.28,  22.5,28.0,55.18,210.0,---,0.0000,1.17,
+,10,25.34,  27.9,36.0,68.42,270.0,---,0.0000,0.91,
+,11,24.39,  35.8,48.0,87.80,360.0,---,0.0000,0.68,
+,12,23.71,  43.5,60.0,106.7,450.0,---,0.0000,0.55,
+,13,23.02,  52.8,75.0,129.5,562.5,---,0.0000,0.44,
+,14,22.42,  61.7,90.0,151.3,675.0,---,0.0000,0.36,
+,15,21.99,  70.6,105.0,173.1,787.5,---,0.0000,0.31,
+,16,21.66,  79.5,120.0,195.0,900.0,---,0.0000,0.27,
+,17,21.26,  91.0,140.0,223.2,1050,---,0.0000,0.23,
+,18,0.00,   0.0,160.0,250.6,1200,---,0.0000,0.20,
+,19,0.00,   0.0,185.0,284.7,1388,---,0.0000,0.18,
+,20,0.00,   0.0,200.0,304.6,1500,---,0.0000,0.16,
+,21,0.00,   0.0,225.0,338.0,1688,---,0.0000,0.15,
+,22,0.00,   0.0,250.0,348.7,1875,---,0.0000,0.13,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+DATA,,,,,,,,,,
+Step,Point,Time,Viscosity,Torque,Speed,Shear Stress,Shear Rate,Temperature,Density,Accuracy
+(#),(#),(s),(cP),(%),(RPM),(dyne/cm²),(¹/s),(°C),(g/cm³),(+/-cP)
+1,1,30,55.59,   1.7, 1.0,4.17,7.500,---,0.0000,32.70
+2,2,60,45.78,   2.8, 2.0,6.87,15.00,---,0.0000,16.35
+3,3,90,38.42,   4.7, 4.0,11.53,30.00,---,0.0000,8.18
+4,4,110,32.70,   8.0, 8.0,19.62,60.00,---,0.0000,4.09
+5,5,130,31.07,   9.5,10.0,23.30,75.00,---,0.0000,3.27
+6,6,150,29.97,  11.0,12.0,26.98,90.00,---,0.0000,2.73
+7,7,170,28.20,  13.8,16.0,33.84,120.0,---,0.0000,2.04
+8,8,190,27.47,  16.8,20.0,41.20,150.0,---,0.0000,1.64
+9,9,210,26.28,  22.5,28.0,55.18,210.0,---,0.0000,1.17
+10,10,230,25.34,  27.9,36.0,68.42,270.0,---,0.0000,0.91
+11,11,250,24.39,  35.8,48.0,87.80,360.0,---,0.0000,0.68
+12,12,270,23.71,  43.5,60.0,106.7,450.0,---,0.0000,0.55
+13,13,290,23.02,  52.8,75.0,129.5,562.5,---,0.0000,0.44
+14,14,310,22.42,  61.7,90.0,151.3,675.0,---,0.0000,0.36
+15,15,330,21.99,  70.6,105.0,173.1,787.5,---,0.0000,0.31
+16,16,350,21.66,  79.5,120.0,195.0,900.0,---,0.0000,0.27
+17,17,370,21.26,  91.0,140.0,223.2,1050,---,0.0000,0.23
+18,18,390,EEEE,EEEE,160.0,EEEE,1200,---,0.0000,0.20
+19,19,410,EEEE,EEEE,185.0,EEEE,1388,---,0.0000,0.18
+20,20,430,EEEE,EEEE,200.0,EEEE,1500,---,0.0000,0.16
+21,21,450,EEEE,EEEE,225.0,EEEE,1688,---,0.0000,0.15
+22,22,470,EEEE,EEEE,250.0,EEEE,1875,---,0.0000,0.13

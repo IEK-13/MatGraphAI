@@ -2,7 +2,7 @@
 from pandas import *
 from pubchempy import *
 # reading CSV file
-data = read_csv("FORMAX_SMILES.csv")
+data = read_csv("fabian/FORMAX_SMILES.csv")
 
 # converting column data to list
 smiles = data['smiles'].tolist()
