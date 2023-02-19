@@ -20,7 +20,7 @@ MERGE(vb)-[:HAS_PART]->(c)
 MERGE(cb)-[:HAS_PART]->(c);
 
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/Catalysts.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/Catalysts.csv' AS row
 MATCH (ontology:EMMO_Matter {EMMO__name:row.Ontology})
 MERGE(cat:Matter:Material{name: row.Name,
                    chemical_formula: row.ChemicalFormula,
@@ -52,7 +52,7 @@ WITH row, cat
 MATCH (part3:Matter {symbol:row.HasPart3})
 MERGE(test)-[:HAS_PART]->(part3);
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/Catalysts.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/Catalysts.csv' AS row
 MATCH(cat:Material{name: row.Name, chemical_formula: row.ChemicalFormula})
 MATCH(emmo_purity:EMMO_Quantity{EMMO__name: "MetalPurity"})
 FOREACH(x IN CASE WHEN row.Purity IS NOT NULL THEN [1] END |

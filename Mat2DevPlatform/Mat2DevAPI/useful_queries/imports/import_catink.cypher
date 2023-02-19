@@ -62,21 +62,21 @@ MERGE(voidvol:Property{uid: randomUUID(),
 MERGE(crackdensity:Property{uid: randomUUID(),
                        date_added : '1111-11-11'
 })
-MERGE(ccl)-[:IS_MEASUREMENT_INPUT]->(sem)-[:YIELDS_PROPERTY]
+MERGE(ccl)-[:IS_MEASUREMENT_INPUT]->(sem)-[:HAS_MEASUREMENT_OUTPUT]
   ->(thickness)-[:IS_A]->(EMMO_thickness)
 MERGE(ccl)-[:HAS_PROPERTY{value: tofloat(row.`SEM thickness STD (µm)`), std: tofloat(row.`SEM thickness STD (µm)`)}]->(thickness)
 
-MERGE(sem)-[:YIELDS_PROPERTY]
+MERGE(sem)-[:HAS_MEASUREMENT_OUTPUT]
   ->(porosity)-[:IS_A]->(EMMO_porosity)
 MERGE(porosity)-[:DERIVED_FROM]->(thickness)
 MERGE(ccl)-[:HAS_PROPERTY{value: tofloat(row.`Calculated porosity based on SEM thickness (%)`)}]->(porosity)
 
-MERGE(sem)-[:YIELDS_PROPERTY]
+MERGE(sem)-[:HAS_MEASUREMENT_OUTPUT]
 ->(voidvol)-[:IS_A]->(EMMO_voidvol)
 MERGE(voidvol)-[:DERIVED_FROM]->(thickness)
 MERGE(ccl)-[:HAS_PROPERTY{value: tofloat(row.`Calculated PV based on SEM thickness (cm3/cm2geo)`)}]->(voidvol)
 
-MERGE(ccl)-[:IS_MEASUREMENT_INPUT]->(keyence)-[:YIELDS_PROPERTY]
+MERGE(ccl)-[:IS_MEASUREMENT_INPUT]->(keyence)-[:HAS_MEASUREMENT_OUTPUT]
 ->(crackdensity)-[:IS_A]->(EMMO_crackdensity)
 MERGE(ccl)-[:HAS_PROPERTY{value: tofloat(row.`Keyence Crack density 400x mag (%)`)}]->(crackdensity)
 
@@ -95,13 +95,13 @@ FOREACH(x IN CASE WHEN row.`Densometer Porosity (%)` IS NOT NULL THEN [1] END |
   MERGE(dvoidvolume:Property{uid: randomUUID(),
                               date_added : '1111-11-11'
   })
-  MERGE(ccl)-[:IS_MEASUREMENT_INPUT]->(densometer)-[:YIELDS_PROPERTY]
+  MERGE(ccl)-[:IS_MEASUREMENT_INPUT]->(densometer)-[:HAS_MEASUREMENT_OUTPUT]
   ->(dporosity)-[:IS_A]->(EMMO_porosity)
-  MERGE(densometer)-[:YIELDS_PROPERTY]
+  MERGE(densometer)-[:HAS_MEASUREMENT_OUTPUT]
   ->(dthickness)-[:IS_A]->(EMMO_thickness)
-  MERGE(densometer)-[:YIELDS_PROPERTY]
+  MERGE(densometer)-[:HAS_MEASUREMENT_OUTPUT]
   ->(dsolidvolume)-[:IS_A]->(EMMO_solidvol)
-  MERGE(densometer)-[:YIELDS_PROPERTY]
+  MERGE(densometer)-[:HAS_MEASUREMENT_OUTPUT]
   ->(dvoidvolume)-[:IS_A]->(EMMO_voidvol)
   MERGE(ccl)-[:HAS_PROPERTY{value: tofloat(row.`Densometer PV (cm3/cm2geo)`)}]->(dvoidvolume)
   MERGE(ccl)-[:HAS_PROPERTY{value: tofloat(row.`Densometer solid volume (cm3/cm2 geo)`)}]->(dsolidvolume)
@@ -118,7 +118,7 @@ MERGE(pdvs50:Property{uid: randomUUID(),
 })
 MERGE(ink)-[:IS_MEASUREMENT_INPUT]->(dvs50)
 MERGE(dvs50)-[:IS_A]->(EMMO_powderdvs)
-MERGE(dvs50)-[:YIELDS_PROPERTY]
+MERGE(dvs50)-[:HAS_MEASUREMENT_OUTPUT]
 ->(pdvs50)-[:IS_A]->(EMMO_dvs)
 CREATE(dvs50)-[:HAS_PARAMETER{value: 50}]->(:Parameter)-[:IS_A]->(EMMO_rh)
 MERGE(ink)-[:HAS_PROPERTY{value: tofloat(row.`Powder DVS soprtion at 50%RH (% mass change/cm2geo)`)}]->(pdvs50)
@@ -132,7 +132,7 @@ MERGE(ink)-[:IS_MEASUREMENT_INPUT]->(dvds50)
 MERGE(pdvds50:Property{uid: randomUUID(),
                       date_added : '1111-11-11'
 })
-MERGE(dvds50)-[:YIELDS_PROPERTY]
+MERGE(dvds50)-[:HAS_MEASUREMENT_OUTPUT]
 ->(pdvds50)-[:IS_A]->(EMMO_dvds)
 CREATE(dvds50)-[:HAS_PARAMETER{value: 50}]->(:Parameter)-[:IS_A]->(EMMO_rh)
 MERGE(ink)-[:HAS_PROPERTY{value: tofloat(row.`Powder DVS desoprtion at 50%RH (% mass change/cm2geo)`)}]->(pdvds50)
@@ -147,7 +147,7 @@ MERGE(ink)-[:IS_MEASUREMENT_INPUT]->(dvs95)
 MERGE(pdvs95:Property{uid: randomUUID(),
                        date_added : '1111-11-11'
 })
-MERGE(dvs95)-[:YIELDS_PROPERTY]
+MERGE(dvs95)-[:HAS_MEASUREMENT_OUTPUT]
 ->(pdvs95)-[:IS_A]->(EMMO_dvs)
 CREATE(dvs95)-[:HAS_PARAMETER{value: 95}]->(:Parameter)-[:IS_A]->(EMMO_rh)
 MERGE(ink)-[:HAS_PROPERTY{value: tofloat(row.`Powder DVS soprtion at 95%RH (% mass change/cm2geo)`)}]->(pdvs95)
@@ -164,7 +164,7 @@ FOREACH(x IN CASE WHEN row.`CL DVS desoprtion at 50%RH (% mass change/cm2geo)` I
   MERGE(clpdvds50:Property{uid:randomUUID(),
                           date_added:"1111-11-11"
   })
-  MERGE(cldvds50)- [:YIELDS_PROPERTY]
+  MERGE(cldvds50)- [:HAS_MEASUREMENT_OUTPUT]
   - >(clpdvds50)- [:IS_A] - >(EMMO_dvds)
   CREATE(cldvds50)- [:HAS_PARAMETER{value:50}]- >(:Parameter)- [:IS_A] - >(EMMO_rh)
   MERGE(ink)-[:HAS_PROPERTY{value:TOFLOAT(row.`CL DVS desoprtion at 50%RH (% mass change/cm2geo)`)}]->(clpdvds50)
@@ -182,7 +182,7 @@ MERGE(ink)- [:IS_MEASUREMENT_INPUT] - >(dvs50)
 MERGE(clpdvs50:Property{uid:randomUUID(),
 date_added:"1111-11-11"
 })
-MERGE(cldvs50)- [:YIELDS_PROPERTY]
+MERGE(cldvs50)- [:HAS_MEASUREMENT_OUTPUT]
 - >(clpdvs50)- [:IS_A] - >(EMMO_dvs)
 CREATE(cldvs50)- [:HAS_PARAMETER{value:50}]- >(:Parameter)- [:IS_A] - >(EMMO_rh)
   MERGE(ink)-[:HAS_PROPERTY{value:TOFLOAT(row.`CL DVS soprtion at 50%RH (% mass change/cm2geo)`)}]->(clpdvs50)
@@ -199,7 +199,7 @@ FOREACH(x IN CASE WHEN row.`CL DVS soprtion at 95%RH (% mass change/cm2geo)` IS 
   MERGE(clpdvs95:Property{uid:randomUUID(),
                           date_added:"1111-11-11"
   })
-  MERGE(cldvs95)- [:YIELDS_PROPERTY]
+  MERGE(cldvs95)- [:HAS_MEASUREMENT_OUTPUT]
   - >(clpdvs95)- [:IS_A] - >(EMMO_dvs)
   CREATE(cldvs95)- [:HAS_PARAMETER{value:95}]- >(:Parameter)- [:IS_A] - >(EMMO_rh)
   MERGE(ink)-[:HAS_PROPERTY{value:TOFLOAT(row.`CL DVS soprtion at 95%RH (% mass change/cm2geo)`)}]->(clpdvs95)

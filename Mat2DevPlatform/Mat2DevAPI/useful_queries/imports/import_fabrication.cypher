@@ -195,7 +195,7 @@ MERGE(ploading:Property{uid: randomUUID(),
                           DOI: row.DOI,
                           date_added : "1111-11-11"
 })
-MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:YIELDS_PROPERTY]->(ploading)-[:IS_A]->(EMMO_loading)
+MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:HAS_MEASUREMENT_OUTPUT]->(ploading)-[:IS_A]->(EMMO_loading)
 MERGE(mea)-[:HAS_PROPERTY{
   value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(ploading)
 
@@ -212,7 +212,7 @@ MERGE(pic:Property{uid: row.`Run #`,
 SET pic.uid = randomUUID()
 SET pic.DOI = row.DOI
 
-MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:YIELDS_PROPERTY]->(pic)-[:IS_A]->(EMMO_ic)
+MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:HAS_MEASUREMENT_OUTPUT]->(pic)-[:IS_A]->(EMMO_ic)
 MERGE(catink)-[:HAS_PROPERTY{
   value: TOFLOAT(row.`I/C`)}]->(pic)
 
@@ -227,7 +227,7 @@ MERGE(pew:Property{uid: row.EW,
 })
 
 SET pew.uid = randomUUID()
-MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:YIELDS_PROPERTY]->(pew)-[:IS_A]->(EMMO_ew)
+MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:HAS_MEASUREMENT_OUTPUT]->(pew)-[:IS_A]->(EMMO_ew)
 MERGE(ionomer)-[:HAS_PROPERTY{
   value: TOFLOAT(row.`EW`)}]->(pew)
 

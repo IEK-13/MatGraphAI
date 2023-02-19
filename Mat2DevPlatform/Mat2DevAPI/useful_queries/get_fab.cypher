@@ -62,7 +62,7 @@ WITH DISTINCT manufactured,
      manufacturing,
      manufacturing_label
 
-MATCH (property_node)<-[:YIELDS_PROPERTY]-(:Measurement)-[parameter:HAS_PARAMETER]->(:Parameter)-[:IS_A]-(parameter_label:EMMO_Quantity)
+MATCH (property_node)<-[:HAS_MEASUREMENT_OUTPUT]-(:Measurement)-[parameter:HAS_PARAMETER]->(:Parameter)-[:IS_A]-(parameter_label:EMMO_Quantity)
 WITH  collect(apoc.map.merge(apoc.map.fromValues(["name", parameter_label.EMMO__name]), parameter{.*})) as parameter_map,
 manufactured,
 property,
@@ -104,7 +104,7 @@ CALL{
   WITH property_node, property_label, property
   CALL{
   WITH property_node
-  MATCH (property_node)<-[:YIELDS_PROPERTY]-(:Measurement)-[parameter:HAS_PARAMETER]->(:Parameter)-[:IS_A]-(parameter_label:EMMO_Quantity)
+  MATCH (property_node)<-[:HAS_MEASUREMENT_OUTPUT]-(:Measurement)-[parameter:HAS_PARAMETER]->(:Parameter)-[:IS_A]-(parameter_label:EMMO_Quantity)
   RETURN  apoc.coll.toSet(collect(apoc.map.merge(apoc.map.fromValues(["name", parameter_label.EMMO__name]), parameter{.*}))) as parameter_map
   }
   RETURN apoc.coll.toSet(collect(apoc.map.merge(apoc.map.merge(apoc.map.fromValues(["name", property_label.EMMO__name]), property{.*}), apoc.map.fromValues(["parameters", parameter_map])))) as property_list

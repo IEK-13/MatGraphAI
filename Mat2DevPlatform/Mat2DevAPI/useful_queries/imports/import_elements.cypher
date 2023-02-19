@@ -1,4 +1,4 @@
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/elements.csv' AS line
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/elements.csv' AS line
 
 MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
      (atomicmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),
