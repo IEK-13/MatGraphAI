@@ -227,6 +227,11 @@
                  rdfs:subClassOf :ElectrochemicalQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Black
+:Black rdf:type owl:Class ;
+       rdfs:subClassOf :Color .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BoltzmannConstant
 :BoltzmannConstant rdf:type owl:Class ;
                    rdfs:subClassOf :Entropy .
@@ -272,6 +277,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CarrierLifetime
 :CarrierLifetime rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CatalystCarbonRatio
+:CatalystCarbonRatio rdf:type owl:Class ;
+                     rdfs:subClassOf :MassFraction .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CatalystIonomerRatio
@@ -358,6 +368,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CoherenceLength
 :CoherenceLength rdf:type owl:Class ;
                  rdfs:subClassOf :CondensedMatterPhysicsQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Color
+:Color rdf:type owl:Class ;
+       rdfs:subClassOf :IntensiveQuantity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Compressibility
@@ -600,7 +615,7 @@
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DynamicViscosity
 :DynamicViscosity rdf:type owl:Class ;
-                  rdfs:subClassOf :MechanicalQuantity .
+                  rdfs:subClassOf :Viscosity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EffectiveMass
@@ -1162,7 +1177,7 @@
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#KinematicViscosity
 :KinematicViscosity rdf:type owl:Class ;
-                    rdfs:subClassOf :MechanicalQuantity .
+                    rdfs:subClassOf :Viscosity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#KineticCurrent
@@ -1439,6 +1454,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MembraneVoltage
 :MembraneVoltage rdf:type owl:Class ;
                  rdfs:subClassOf :ElectricPotential .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MetalPurity
+:MetalPurity rdf:type owl:Class ;
+             rdfs:subClassOf :Purity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MicroCanonicalPartitionFunction
@@ -1770,6 +1790,11 @@
 :PureNumberQuantity rdf:type owl:Class ;
                     rdfs:subClassOf :DimensionlessQuantity ;
                     owl:disjointWith :RatioQuantity .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Purity
+:Purity rdf:type owl:Class ;
+        rdfs:subClassOf :ThermodynamicalQuantity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Quantity
@@ -2483,29 +2508,14 @@
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Black
-:Black rdf:type owl:Class ;
-       rdfs:subClassOf :Color .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ShearRate
+:ShearRate rdf:type owl:Class ;
+           rdfs:subClassOf :MechanicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#CatalystCarbonRatio
-:CatalystCarbonRatio rdf:type owl:Class ;
-                     rdfs:subClassOf :MassFraction .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Color
-:Color rdf:type owl:Class ;
-       rdfs:subClassOf :IntensiveQuantity .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#MetalPurity
-:MetalPurity rdf:type owl:Class ;
-             rdfs:subClassOf :Purity .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Purity
-:Purity rdf:type owl:Class ;
-        rdfs:subClassOf :ThermodynamicalQuantity .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Viscosity
+:Viscosity rdf:type owl:Class ;
+           rdfs:subClassOf :MechanicalQuantity .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption
@@ -2542,6 +2552,7 @@
                 :MixingRatio
                 :PlanckFunction
                 :PressureCoefficient
+                :Purity
                 :RatioOfSpecificHeatCapacities
                 :RelativeHumidity
                 :RelativeMassConcentrationOfVapour
@@ -2560,7 +2571,6 @@
                 :ThermalResistance
                 :ThermodynamicEffiency
                 :ThermodynamicTemperature
-                :Purity
               )
 ] .
 
@@ -3028,6 +3038,7 @@
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AreaDensity
                 :CatalyticActivity
+                :Color
                 :Density
                 :DoseEquivalent
                 :ElectricConductance
@@ -3061,7 +3072,6 @@
                 :ReationRateConstant
                 :Temperature
                 :ThermodynamicTemperature
-                :Color
               )
 ] .
 

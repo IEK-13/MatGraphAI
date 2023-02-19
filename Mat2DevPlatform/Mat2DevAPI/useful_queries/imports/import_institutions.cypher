@@ -6,11 +6,14 @@ CREATE (institution:Institution{
   type: row.`types_0`,
   wikipedia_url: row.`wikipedia_url`,
   link: row.`links_0`,
-  acronym: row.`acronyms_0`
+  acronym: row.`acronyms_0`,
+  uid: randomUUID()
 })
 
 MERGE(country:Country {name: row.`country_country_name`,
                        abbreviation: row.`country_country_code`})
+ON CREATE
+SET country.uid = randomUUID()
 
 MERGE(institution)-[:IN]->(country)
  
