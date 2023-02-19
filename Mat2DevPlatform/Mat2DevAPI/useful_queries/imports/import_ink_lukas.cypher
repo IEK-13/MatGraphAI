@@ -1,5 +1,5 @@
 PROFILE
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/Lukas/fabrication/fabrication.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/fabrication/fabrication.csv' AS row
 
 MATCH(emmo_ink:EMMO_Matter {EMMO__name: "CatalystInk"})
 MATCH(emmo_ionomer:EMMO_Matter {EMMO__name: "Nafion_D2021CS"})
@@ -10,6 +10,7 @@ MATCH(emmo_propanol:EMMO_Matter {EMMO__name: "1-Propanol"})
 MATCH(emmo_cs:EMMO_Matter {EMMO__name: row.catalyst1})
 MATCH(emmo_met:EMMO_Matter {EMMO__name: row.catalyst2})
 MATCH(emmo_cat:EMMO_Matter {EMMO__name: row.cat_emmo})
+MATCH(researcher:Researcher {first_name: "Lukas"})
 
 MERGE(ink:Material:Matter {name: row.name, date_added: "heute"})
 ON CREATE
@@ -69,7 +70,7 @@ MERGE(cat)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 MERGE(cat)-[:IS_A]->(emmo_cat)
 MERGE(catfab)-[:IS_MANUFACTURING_OUTPUT]->(cat)
 
-WITH row, cat,cs ,ink, met, emmo_met, emmo_cs, inkfab, solfab
+WITH row, cat,cs ,ink, met, emmo_met, emmo_cs, inkfab, solfab, researcher
 OPTIONAL MATCH(emmo_ox:EMMO_Matter {EMMO__name: row.catalyst3})
 FOREACH(ignoreMe IN CASE WHEN row.catalyst3 is not null THEN [1] ELSE [] END|
   MERGE(ox:Matter:Element {name:row.catalyst3, date_added: "heute"})
@@ -77,7 +78,7 @@ FOREACH(ignoreMe IN CASE WHEN row.catalyst3 is not null THEN [1] ELSE [] END|
   MERGE(ox)<-[:HAS_PART]-(cat)
   MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(catfab)
 )
-WITH row, cat,cs ,ink, met, emmo_met, emmo_cs,inkfab,solfab
+WITH row, cat,cs ,ink, met, emmo_met, emmo_cs,inkfab,solfab, researcher
 
 MERGE(met)-[:IS_A]->(emmo_met)
 MERGE(cs)-[:IS_A]->(emmo_cs)
@@ -98,3 +99,8 @@ MERGE(inkmain:Manufacturing {run_title: row.name+ "_fabrication",
 MERGE(inkmain)-[:HAS_PART]->(inkfab)
 MERGE(inkmain)-[:HAS_PART]->(solfab)
 MERGE(inkmain)-[:HAS_PART]->(catfab)
+
+MERGE(inkfab)-[:BY]->(researcher)
+MERGE(inkmain)-[:BY]->(researcher)
+MERGE(catfab)-[:BY]->(researcher)
+MERGE(solfab)-[:BY]->(researcher)
