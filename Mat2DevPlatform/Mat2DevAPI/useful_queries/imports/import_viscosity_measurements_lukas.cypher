@@ -1,13 +1,13 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/viscosity/IrO2-15wt-ic013-1Prop086_1.csv' AS row
 CALL{
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/viscosity/IrO2-15wt-ic013-1Prop086_1.csv' AS row1
-RETURN collect(row1.Speed) as speedlist,
-       collect(row1.Time) as timelist,
-       collect(row1.Torque) as torquelist,
-       collect(row1.Viscosity) as viscositylist,
-       collect(row1.`Shear Stress`) as shearstresslist,
-       collect(row1.`Shear Rate`) as shearratelist,
-       collect(row1.`Accuracy`) as accuracylist
+RETURN collect(TOFLOAT(row1.Speed)) as speedlist,
+       collect(TOFLOAT(row1.Time)) as timelist,
+       collect(TOFLOAT(row1.Torque)) as torquelist,
+       collect(TOFLOAT(row1.Viscosity)) as viscositylist,
+       collect(TOFLOAT(row1.`Shear Stress`)) as shearstresslist,
+       collect(TOFLOAT(row1.`Shear Rate`)) as shearratelist,
+       collect(TOFLOAT(row1.`Accuracy`)) as accuracylist
 }
 
 
@@ -33,28 +33,28 @@ instrument: row.Instrument})
 MERGE(material)-[:IS_MEASUREMENT_INPUT]->(measurement)
 MERGE(measurement)-[:BY]->(researcher)
 
-MERGE(speed:Parameter {name: "Speed",
+MERGE(speed:Parameter {name: "Speed_"+row.PIDA,
 date_added: "heute"})
   ON CREATE
   SET speed.uid = randomUUID()
 MERGE(measurement)-[:HAS_PARAMETER {value: speedlist}]->(speed)
 MERGE(speed)-[:IS_A]->(emmo_speed)
 
-MERGE(torque:Parameter {name: "Torque",
+MERGE(torque:Parameter {name: "Torque_"+row.PIDA,
                        date_added: "heute"})
   ON CREATE
   SET torque.uid = randomUUID()
 MERGE(measurement)-[:HAS_PARAMETER {value: torquelist}]->(torque)
 MERGE(torque)-[:IS_A]->(emmo_torque)
 
-MERGE(time:Parameter {name: "Time",
+MERGE(time:Parameter {name: "Time_"+row.PIDA,
                        date_added: "heute"})
   ON CREATE
   SET time.uid = randomUUID()
 MERGE(measurement)-[:HAS_PARAMETER {value: timelist}]->(time)
 MERGE(time)-[:IS_A]->(emmo_time)
 
-MERGE(viscosity:Property {name: "Viscosity",
+MERGE(viscosity:Property {name: "Viscosity_"+row.PIDA,
                       date_added: "heute"})
   ON CREATE
   SET viscosity.uid = randomUUID()
@@ -62,14 +62,14 @@ MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: viscositylist, accuracy: acc
 MERGE(viscosity)-[:IS_A]->(emmo_viscosity)
 
 
-MERGE(shearrate:Property {name: "ShearRate",
+MERGE(shearrate:Property {name: "ShearRate_"+row.PIDA,
                           date_added: "heute"})
   ON CREATE
   SET shearrate.uid = randomUUID()
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: shearratelist}]->(shearrate)
 MERGE(shearrate)-[:IS_A]->(emmo_shearrate)
 
-MERGE(shearstress:Property {name: "ShearStress",
+MERGE(shearstress:Property {name: "ShearStress_"+row.PIDA,
                           date_added: "heute"})
   ON CREATE
   SET shearrate.uid = randomUUID()

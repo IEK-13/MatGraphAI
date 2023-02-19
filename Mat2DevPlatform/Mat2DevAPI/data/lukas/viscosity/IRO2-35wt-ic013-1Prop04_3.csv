@@ -1,99 +1,23 @@
-Column1,Column2,Column3,Column4,Column5,Column6,Column7,Column8,Column9,Column10,Column11
-DVNX 2.1.6-9,VISCOSITY DATA REPORT,,,,,,,,,
-,,,,,,,,,,
-SAMPLE RUN INFORMATION,,,,,,,,,,
-Test Start,10/04/22 15:09,Test End,10/04/22 15:16,Tester,Administrator, ,,,,
-Instrument,RV (1.000000),S/N,86024291,Model,DVNXRVCJG,FWV,2.1.6-9,,,
-Spindle,CP-40 (40),S/N,0,SMC, 0.327,SRC, 7.500,YMC, 0.000,
-Global Limits,None,Temperature Offset,None,Temperature Control,No,Accessory,None,,,
-File,,Test Data Saved, ,Test Data Saved by,,,,,,
-Notes,,,,,,,,,,
-,,,,,,,,,,
-Test Method,,,,,,,,,,
-Test Method File Name,Unsaved Test,Test Method Saved On,,Test Method Created By,,,,,,
-Instructions,,,,,,,,,,
-,,,,,,,,,,
-Step,Speed,Temperature,Data Collection,Data Interval,Avg Duration,Collect point,End Condition,Density,QC Limits,
-(#),(RPM),(°C),Type,(hh:mm:ss),(hh:mm:ss),at step end,Type Oper. Val. Tol Unit,(g/cm³),Type Low High Unit,
-1, 1.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0.0000,None,
-2, 2.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0.0000,None,
-3, 4.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0.0000,None,
-4, 8.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-5,10.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-6,12.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-7,16.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-8,20.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-9,28.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-10,36.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-11,48.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-12,60.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-13,75.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-14,90.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-15,105.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-16,120.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-17,140.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-18,160.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-19,185.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-20,200.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-21,225.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-22,250.0,20.0,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0.0000,None,
-Results,,,,,,,,,,
-,,,,,,,,,,
-Test Averaging,Steps:,Viscosity,Torque,Speed,Shear Stress,Shear Rate,Temperature,Density,Accuracy,
-,(),(cP),(%),(RPM),(dyne/cm²),(¹/s),(°C),(g/cm³),(+/-cP),
-,,0.00,   0.0,0.00,0.00,0.000,---,0.0000,0.00,
-,,,,,,,,,,
-Step Averaging,Step,Viscosity,Torque,Speed,Shear Stress,Shear Rate,Temperature,Density,Accuracy,
-,(#),(cP),(%),(RPM),(dyne/cm²),(¹/s),(°C),(g/cm³),(+/-cP),
-,1,19.62,   0.6, 1.0,1.47,7.500,---,0.0000,32.70,
-,2,16.35,   1.0, 2.0,2.45,15.00,---,0.0000,16.35,
-,3,14.72,   1.8, 4.0,4.41,30.00,---,0.0000,8.18,
-,4,12.26,   3.0, 8.0,7.36,60.00,---,0.0000,4.09,
-,5,11.77,   3.6,10.0,8.83,75.00,---,0.0000,3.27,
-,6,11.17,   4.1,12.0,10.06,90.00,---,0.0000,2.73,
-,7,10.63,   5.2,16.0,12.75,120.0,---,0.0000,2.04,
-,8,10.14,   6.2,20.0,15.21,150.0,---,0.0000,1.64,
-,9,9.69,   8.3,28.0,20.36,210.0,---,0.0000,1.17,
-,10,9.26,  10.2,36.0,25.02,270.0,---,0.0000,0.91,
-,11,8.86,  13.0,48.0,31.88,360.0,---,0.0000,0.68,
-,12,8.56,  15.7,60.0,38.50,450.0,---,0.0000,0.55,
-,13,8.28,  19.0,75.0,46.60,562.5,---,0.0000,0.44,
-,14,8.10,  22.3,90.0,54.69,675.0,---,0.0000,0.36,
-,15,7.94,  25.5,105.0,62.54,787.5,---,0.0000,0.31,
-,16,7.79,  28.6,120.0,70.14,900.0,---,0.0000,0.27,
-,17,7.61,  32.6,140.0,79.95,1050,---,0.0000,0.23,
-,18,7.48,  36.6,160.0,89.76,1200,---,0.0000,0.20,
-,19,7.34,  41.5,185.0,101.8,1388,---,0.0000,0.18,
-,20,7.24,  44.3,200.0,108.6,1500,---,0.0000,0.16,
-,21,7.14,  49.1,225.0,120.4,1688,---,0.0000,0.15,
-,22,7.02,  53.7,250.0,131.7,1875,---,0.0000,0.13,
-,,,,,,,,,,
-Gel Time,Total Time,Peak Temp,Peak Temp Time,,,,,,,
-(mm:ss),(mm:ss),(°C),(mm:ss),,,,,,,
----,00:07:50.0,--- ,°C,---,,,,,,
-,,,,,,,,,,
-DATA,,,,,,,,,,
-Step,Point,Time,Viscosity,Torque,Speed,Shear Stress,Shear Rate,Temperature,Density,Accuracy
-(#),(#),(s),(cP),(%),(RPM),(dyne/cm²),(¹/s),(°C),(g/cm³),(+/-cP)
-1,1,30,19.62,   0.6, 1.0,1.47,7.500,---,0.0000,32.70
-2,2,60,16.35,   1.0, 2.0,2.45,15.00,---,0.0000,16.35
-3,3,90,14.72,   1.8, 4.0,4.41,30.00,---,0.0000,8.18
-4,4,110,12.26,   3.0, 8.0,7.36,60.00,---,0.0000,4.09
-5,5,130,11.77,   3.6,10.0,8.83,75.00,---,0.0000,3.27
-6,6,150,11.17,   4.1,12.0,10.06,90.00,---,0.0000,2.73
-7,7,170,10.63,   5.2,16.0,12.75,120.0,---,0.0000,2.04
-8,8,190,10.14,   6.2,20.0,15.21,150.0,---,0.0000,1.64
-9,9,210,9.69,   8.3,28.0,20.36,210.0,---,0.0000,1.17
-10,10,230,9.26,  10.2,36.0,25.02,270.0,---,0.0000,0.91
-11,11,250,8.86,  13.0,48.0,31.88,360.0,---,0.0000,0.68
-12,12,270,8.56,  15.7,60.0,38.50,450.0,---,0.0000,0.55
-13,13,290,8.28,  19.0,75.0,46.60,562.5,---,0.0000,0.44
-14,14,310,8.10,  22.3,90.0,54.69,675.0,---,0.0000,0.36
-15,15,330,7.94,  25.5,105.0,62.54,787.5,---,0.0000,0.31
-16,16,350,7.79,  28.6,120.0,70.14,900.0,---,0.0000,0.27
-17,17,370,7.61,  32.6,140.0,79.95,1050,---,0.0000,0.23
-18,18,390,7.48,  36.6,160.0,89.76,1200,---,0.0000,0.20
-19,19,410,7.34,  41.5,185.0,101.8,1388,---,0.0000,0.18
-20,20,430,7.24,  44.3,200.0,108.6,1500,---,0.0000,0.16
-21,21,450,7.14,  49.1,225.0,120.4,1688,---,0.0000,0.15
-22,22,470,7.02,  53.7,250.0,131.7,1875,---,0.0000,0.13
+PIDA,TestStart,TestEnd,Instrument,Researcher,Material,Ontology,Step,Speed,Temperature,Data Collection,Data Interval,Avg Duration,Collect point,End Condition,Density,QC Limits,Step,Point,Time,Viscosity,Torque,Speed,Shear Stress,Shear Rate,Temperature,Density,Accuracy
+10,10/04/22,10/04/22,Brookfield Ametek DVnext Kegel/Platten Viskosimeter,Löttert,IRO2-35wt-ic013-1Prop04,ViscosityMeasurement,1,1,20,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0,None,1,1,30,19.62,0.6,1,1.47,7.5,---,0,32.7
+,,,,,,,2,2,20,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0,None,2,2,60,16.35,1,2,2.45,15,---,0,16.35
+,,,,,,,3,4,20,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0,None,3,3,90,14.72,1.8,4,4.41,30,---,0,8.18
+,,,,,,,4,8,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,4,4,110,12.26,3,8,7.36,60,---,0,4.09
+,,,,,,,5,10,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,5,5,130,11.77,3.6,10,8.83,75,---,0,3.27
+,,,,,,,6,12,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,6,6,150,11.17,4.1,12,10.06,90,---,0,2.73
+,,,,,,,7,16,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,7,7,170,10.63,5.2,16,12.75,120,---,0,2.04
+,,,,,,,8,20,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,8,8,190,10.14,6.2,20,15.21,150,---,0,1.64
+,,,,,,,9,28,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,9,9,210,9.69,8.3,28,20.36,210,---,0,1.17
+,,,,,,,10,36,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,10,10,230,9.26,10.2,36,25.02,270,---,0,0.91
+,,,,,,,11,48,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,11,11,250,8.86,13,48,31.88,360,---,0,0.68
+,,,,,,,12,60,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,12,12,270,8.56,15.7,60,38.5,450,---,0,0.55
+,,,,,,,13,75,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,13,13,290,8.28,19,75,46.6,562.5,---,0,0.44
+,,,,,,,14,90,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,14,14,310,8.1,22.3,90,54.69,675,---,0,0.36
+,,,,,,,15,105,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,15,15,330,7.94,25.5,105,62.54,787.5,---,0,0.31
+,,,,,,,16,120,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,16,16,350,7.79,28.6,120,70.14,900,---,0,0.27
+,,,,,,,17,140,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,17,17,370,7.61,32.6,140,79.95,1050,---,0,0.23
+,,,,,,,18,160,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,18,18,390,7.48,36.6,160,89.76,1200,---,0,0.2
+,,,,,,,19,185,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,19,19,410,7.34,41.5,185,101.8,1388,---,0,0.18
+,,,,,,,20,200,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,20,20,430,7.24,44.3,200,108.6,1500,---,0,0.16
+,,,,,,,21,225,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,21,21,450,7.14,49.1,225,120.4,1688,---,0,0.15
+,,,,,,,22,250,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,22,22,470,7.02,53.7,250,131.7,1875,---,0,0.13

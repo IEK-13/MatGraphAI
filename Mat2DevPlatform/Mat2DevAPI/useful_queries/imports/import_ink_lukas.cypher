@@ -65,7 +65,7 @@ MERGE(catfab:Manufacturing {run_title: row.catalyst2 + "_" + row.wt+ "_fabricati
 MERGE(cs:Matter:Material {name:row.catalyst1, date_added: "heute"})
 MERGE(cat:Matter:Material {name:row.catalyst2 + "_" + row.wt, date_added: "heute"})
 MERGE(met:Matter:Element {name:row.catalyst2 , date_added: "heute"})
-MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(catfab)
+MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 MERGE(cat)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 MERGE(cat)-[:IS_A]->(emmo_cat)
 MERGE(catfab)-[:IS_MANUFACTURING_OUTPUT]->(cat)
