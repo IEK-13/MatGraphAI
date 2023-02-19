@@ -134,6 +134,11 @@
             rdfs:subClassOf :ElectronMicroscopy .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ViscosityMeasurement
+:ViscosityMeasurement rdf:type owl:Class ;
+                      rdfs:subClassOf :Measurement .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing
 <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing> rdf:type owl:Class ;
                                                                                              rdfs:subClassOf :MEAManufacturing .
