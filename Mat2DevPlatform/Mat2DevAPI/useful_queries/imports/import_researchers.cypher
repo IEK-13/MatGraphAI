@@ -1,6 +1,6 @@
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/metadata/researchers.csv' AS row
-CREATE (researcher:Researcher{
+MERGE (researcher:Researcher{
   ORCID: row.`id`,
   last_name: row.`last_name`,
   first_name: row.first_name,
