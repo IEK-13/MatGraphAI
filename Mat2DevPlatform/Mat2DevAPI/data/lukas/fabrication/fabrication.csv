@@ -1,7 +1,7 @@
 name,IC,ionomer,cat_emmo,solvent1,solvent2,solvent1_ratio,catalyst1,catalyst2,catalyst3,wt,researcher
 IrO2-15wt-ic013-1Prop086,0.13,Nafion D2021,IridiumOxideCatalyst,1-Propanol,Water,0.86,CarbonBlack,Iridium,Oxygen,15,Lukas Löttert
 IrO2-36wt-ic013-1prop04,0.13,Nafion D2021,IridiumOxideCatalyst,1-Propanol,Water,0.4,CarbonBlack,Iridium,Oxygen,36,Lukas Löttert
-IRO2-36wt-ic020-1Prop086,0.2,Nafion D2021,IridiumOxideCatalyst,1-Propanol,Water,0.86,CarbonBlack,Iridium,Oxygen,36,Lukas Löttert
-IrO2-35wt-1Prop086,0.2,Nafion D2021,IridiumOxideCatalyst,1-Propanol,Water,0.86,CarbonBlack,Iridium,Oxygen,35,Lukas Löttert
-TanakaPtC-IC065-1Prop088,0.65,,CarbonSupportedPlatinumCatalyst,1-Propanol,Water,0.88,CarbonBlack,Platinum,,40,Lukas Löttert
-UmicorePtC-IC065-1Prop088,0.65,,CarbonSupportedPlatinumCatalyst,1-Propanol,Water,0.88,CarbonBlack,Platinum,,50,Lukas Löttert
+IrO2-35wt-ic02-1Prop86,0.2,Nafion D2021,IridiumOxideCatalyst,1-Propanol,Water,0.86,CarbonBlack,Iridium,Oxygen,36,Lukas Löttert
+IrO2-35wt-ic013-1Prop086,0.13,Nafion D2021,IridiumOxideCatalyst,1-Propanol,Water,0.86,CarbonBlack,Iridium,Oxygen,35,Lukas Löttert
+TanakaPtC-IC065-1Prop088,0.65,Nafion D2021,CarbonSupportedPlatinumCatalyst,1-Propanol,Water,0.88,CarbonBlack,Platinum,,40,Lukas Löttert
+UmicorePtC-IC065-1Prop088,0.65,Nafion D2021,CarbonSupportedPlatinumCatalyst,1-Propanol,Water,0.88,CarbonBlack,Platinum,,50,Lukas Löttert

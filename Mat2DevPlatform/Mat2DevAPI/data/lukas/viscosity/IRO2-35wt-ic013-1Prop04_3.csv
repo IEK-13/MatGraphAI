@@ -1,5 +1,5 @@
 PIDA,TestStart,TestEnd,Instrument,Researcher,Material,Ontology,Step,Speed,Temperature,Data Collection,Data Interval,Avg Duration,Collect point,End Condition,Density,QC Limits,Step,Point,Time,Viscosity,Torque,Speed,Shear Stress,Shear Rate,Temperature,Density,Accuracy
-10,10/04/22,10/04/22,Brookfield Ametek DVnext Kegel/Platten Viskosimeter,Löttert,IRO2-35wt-ic013-1Prop04,ViscosityMeasurement,1,1,20,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0,None,1,1,30,19.62,0.6,1,1.47,7.5,---,0,32.7
+10,10/04/22,10/04/22,Brookfield Ametek DVnext Kegel/Platten Viskosimeter,Löttert,IrO2-35wt-ic013-1Prop04,ViscosityMeasurement,1,1,20,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0,None,1,1,30,19.62,0.6,1,1.47,7.5,---,0,32.7
 ,,,,,,,2,2,20,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0,None,2,2,60,16.35,1,2,2.45,15,---,0,16.35
 ,,,,,,,3,4,20,Single Point,OFF,OFF,OFF, Time = 00:00:30 OFF s,0,None,3,3,90,14.72,1.8,4,4.41,30,---,0,8.18
 ,,,,,,,4,8,20,Single Point,OFF,OFF,OFF, Time = 00:00:20 OFF s,0,None,4,4,110,12.26,3,8,7.36,60,---,0,4.09
