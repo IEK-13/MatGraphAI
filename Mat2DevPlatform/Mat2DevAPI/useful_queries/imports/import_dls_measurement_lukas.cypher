@@ -55,3 +55,11 @@ MERGE(intensity:Property {name: "intensity"+row.PIDA,
   SET intensity.uid = randomUUID()
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.intensities))}]->(intensity)
 MERGE(intensity)-[:IS_A]->(emmo_intensity)
+
+MERGE(dillution:Parameter {name: "intensity"+row.PIDA,
+                          flag: "findich",
+                          date_added: "02/21/23"})
+  ON CREATE
+  SET intensity.uid = randomUUID()
+MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.intensities))}]->(intensity)
+MERGE(intensity)-[:IS_A]->(emmo_intensity)
