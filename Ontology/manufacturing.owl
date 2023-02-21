@@ -54,6 +54,11 @@
                      rdfs:subClassOf :Manufacturing .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicLightScattering
+:DynamicLightScattering rdf:type owl:Class ;
+                        rdfs:subClassOf :Scattering .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorptionMeasurement
 :DynamicVaporSorptionMeasurement rdf:type owl:Class ;
                                  rdfs:subClassOf :Gravimetry .
@@ -127,6 +132,11 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SamplePreparation
 :SamplePreparation rdf:type owl:Class ;
                    rdfs:subClassOf :Manufacturing .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Scattering
+:Scattering rdf:type owl:Class ;
+            rdfs:subClassOf :Imaging .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#TEMImaging
