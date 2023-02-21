@@ -2533,6 +2533,11 @@
                     rdfs:subClassOf :Volume .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Intensity
+:Intensity rdf:type owl:Class ;
+           rdfs:subClassOf :LightAndRadiationQuantity .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PolydispersityIndex
 :PolydispersityIndex rdf:type owl:Class ;
                      rdfs:subClassOf :HydrodynamicVolume .
