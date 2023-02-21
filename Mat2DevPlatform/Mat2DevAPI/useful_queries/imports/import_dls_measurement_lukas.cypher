@@ -32,7 +32,7 @@ MERGE(hydrodynamicdiameter:Property {name: "hydrodynamicdiameter"+row.PIDA,
 })
   ON CREATE
   SET hydrodynamicdiameter.uid = randomUUID()
-MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(row.sizes)}]->(hydrodynamicdiameter)
+MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.fromJsonList(row.sizes)}]->(hydrodynamicdiameter)
 MERGE(hydrodynamicdiameter)-[:IS_A]->(emmo_hydrodynamicdiameter)
 
 MERGE(averagehydrodynamicdiameter:Property {name: "averagehydrodynamicdiameter"+row.PIDA,
@@ -50,7 +50,7 @@ MERGE(hydrodynamicvolume:Property {name: "hydrodynamicvolume"+row.PIDA,
 })
   ON CREATE
   SET hydrodynamicvolume.uid = randomUUID()
-MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(row.volumes)}]->(hydrodynamicvolume)
+MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.fromJsonList(row.volumes)}]->(hydrodynamicvolume)
 MERGE(hydrodynamicvolume)-[:IS_A]->(emmo_hydrodynamicvolume)
 
 MERGE(intensity:Property {name: "intensity"+row.PIDA,
@@ -59,7 +59,7 @@ MERGE(intensity:Property {name: "intensity"+row.PIDA,
 })
   ON CREATE
   SET intensity.uid = randomUUID()
-MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(row.intensities)}]->(intensity)
+MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.fromJsonList(row.intensities)}]->(intensity)
 MERGE(intensity)-[:IS_A]->(emmo_intensity)
 
 
