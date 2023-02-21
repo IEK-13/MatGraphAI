@@ -14,7 +14,7 @@ MATCH(emmo_pdi:EMMO_Quantity {EMMO__name: "PolydispersityIndex"})
 
 MERGE(measurement:Measurement {PIDA: row.PIDA,
                                flag: "findich",
-                               date_added: "heute",
+                               date_added: "02/21/23",
                                experiment_start: row.`Measurement Data and Time`,
                                experiment_end: row.`Measurement Data and Time`,
                                instrument: row.Instrument})
@@ -55,6 +55,3 @@ MERGE(intensity:Property {name: "intensity"+row.PIDA,
   SET intensity.uid = randomUUID()
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.intensities))}]->(intensity)
 MERGE(intensity)-[:IS_A]->(emmo_intensity)
-
-
-
