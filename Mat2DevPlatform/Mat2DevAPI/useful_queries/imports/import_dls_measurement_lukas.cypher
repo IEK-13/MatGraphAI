@@ -2,11 +2,13 @@ LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGra
 
 MATCH(researcher:Researcher {first_name: row.Researcher})
 MATCH(material:Material {name:row.Material})
+MATCH(solvent:Material {name:row.Solvent})
 MATCH(emmo_measurement:EMMO_Process {EMMO__name: row.Ontology})
 
 MATCH(emmo_hydrodynamicdiameter:EMMO_Quantity {EMMO__name: "HydrodynamicDiameter"})
 MATCH(emmo_averagehydrodynamicdiameter:EMMO_Quantity {EMMO__name: "AverageHydrodynamicDiameter"})
 MATCH(emmo_hydrodynamicvolume:EMMO_Quantity {EMMO__name: "HydrodynamicVolume"})
+MATCH(emmo_volume:EMMO_Quantity {EMMO__name: "Volume"})
 MATCH(emmo_intensity:EMMO_Quantity {EMMO__name: "Intensity"})
 MATCH(emmo_pdi:EMMO_Quantity {EMMO__name: "PolydispersityIndex"})
 
@@ -21,7 +23,10 @@ MERGE(measurement:Measurement {PIDA: row.PIDA,
   ON CREATE
   SET measurement.uid = randomUUID()
 
-MERGE(material)-[:IS_MEASUREMENT_INPUT]->(measurement)
+MERGE(material)-[:IS_MEASUREMENT_INPUT {value: toFloat(row.Dillution)}]->(measurement)
+MERGE(material)-[:IS_MEASUREMENT_INPUT {value: toFloat(row.SampleVol)}]->(measurement)
+
+
 MERGE(measurement)-[:BY]->(researcher)
 
 MERGE(hydrodynamicdiameter:Property {name: "hydrodynamicdiameter"+row.PIDA, 
@@ -56,10 +61,9 @@ MERGE(intensity:Property {name: "intensity"+row.PIDA,
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.intensities))}]->(intensity)
 MERGE(intensity)-[:IS_A]->(emmo_intensity)
 
-MERGE(dillution:Parameter {name: "intensity"+row.PIDA,
-                          flag: "findich",
-                          date_added: "02/21/23"})
-  ON CREATE
-  SET intensity.uid = randomUUID()
-MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.intensities))}]->(intensity)
-MERGE(intensity)-[:IS_A]->(emmo_intensity)
+
+
+
+
+
+
