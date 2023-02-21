@@ -1,4 +1,4 @@
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/viscosity/IrO2-15wt-ic013-1Prop086_1.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/DLS/IrO2-15wt-ic013-1Prop086-066ml_DLS.csv' AS row
 
 MATCH(researcher:Researcher {first_name: row.Researcher})
 MATCH(material:Material {name:row.Material})
@@ -8,11 +8,12 @@ MATCH(emmo_hydrodynamicdiameter:EMMO_Quantity {EMMO__name: "HydrodynamicDiameter
 MATCH(emmo_averagehydrodynamicdiameter:EMMO_Quantity {EMMO__name: "AverageHydrodynamicDiameter"})
 MATCH(emmo_hydrodynamicvolume:EMMO_Quantity {EMMO__name: "HydrodynamicVolume"})
 MATCH(emmo_intensity:EMMO_Quantity {EMMO__name: "Intensity"})
-MATCH(emmo_pdi:EMMO_Quantity {EMMO__name: "PolyDispersityIndex"})
+MATCH(emmo_pdi:EMMO_Quantity {EMMO__name: "PolydispersityIndex"})
 
 
 
 MERGE(measurement:Measurement {PIDA: row.PIDA,
+                               flag: "findich",
                                date_added: "heute",
                                experiment_start: row.`Measurement Data and Time`,
                                experiment_end: row.`Measurement Data and Time`,
@@ -23,32 +24,36 @@ MERGE(measurement:Measurement {PIDA: row.PIDA,
 MERGE(material)-[:IS_MEASUREMENT_INPUT]->(measurement)
 MERGE(measurement)-[:BY]->(researcher)
 
-MERGE(hydrodynamicdiameter:Property {name: "hydrodynamicdiameter"+row.PIDA,
-                       date_added: "02/21/23"})
+MERGE(hydrodynamicdiameter:Property {name: "hydrodynamicdiameter"+row.PIDA, 
+                                     flag: "findich",
+                                     date_added: "02/21/23"})
   ON CREATE
-  SET speed.uid = randomUUID()
-MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toFloatList(row.sizes)}]->(hydrodynamicdiameter)
+  SET hydrodynamicdiameter.uid = randomUUID()
+MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.sizes))}]->(hydrodynamicdiameter)
 MERGE(hydrodynamicdiameter)-[:IS_A]->(emmo_hydrodynamicdiameter)
 
 MERGE(averagehydrodynamicdiameter:Property {name: "averagehydrodynamicdiameter"+row.PIDA,
-                                     date_added: "02/21/23"})
+                                            flag: "findich",
+                                            date_added: "02/21/23"})
   ON CREATE
-  SET speed.uid = randomUUID()
+  SET averagehydrodynamicdiameter.uid = randomUUID()
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: toFloat(row.`Z-Average (d.nm)`)}]->(averagehydrodynamicdiameter)
 MERGE(averagehydrodynamicdiameter)-[:IS_A]->(emmo_averagehydrodynamicdiameter)
 
 MERGE(hydrodynamicvolume:Property {name: "hydrodynamicvolume"+row.PIDA,
-                                            date_added: "02/21/23"})
+                                   flag: "findich",
+                                   date_added: "02/21/23"})
   ON CREATE
-  SET speed.uid = randomUUID()
-MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toFloatList(row.volumes)}]->(hydrodynamicvolume)
+  SET hydrodynamicvolume.uid = randomUUID()
+MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.volumes))}]->(hydrodynamicvolume)
 MERGE(hydrodynamicvolume)-[:IS_A]->(emmo_hydrodynamicvolume)
 
 MERGE(intensity:Property {name: "intensity"+row.PIDA,
-                                   date_added: "02/21/23"})
+                          flag: "findich",
+                          date_added: "02/21/23"})
   ON CREATE
-  SET speed.uid = randomUUID()
-MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toFloatList(row.intensities)}]->(intensity)
+  SET intensity.uid = randomUUID()
+MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.intensities))}]->(intensity)
 MERGE(intensity)-[:IS_A]->(emmo_intensity)
 
 
