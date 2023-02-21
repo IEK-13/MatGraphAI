@@ -12,12 +12,16 @@ MATCH(emmo_met:EMMO_Matter {EMMO__name: row.catalyst2})
 MATCH(emmo_cat:EMMO_Matter {EMMO__name: row.cat_emmo})
 MATCH(researcher:Researcher {first_name: "Lukas"})
 
-MERGE(ink:Material:Matter {name: row.name, date_added: "heute"})
+MERGE(ink:Material:Matter {name: row.name,
+                           date_added: date(),
+                           flag: "findich"
+})
 ON CREATE
 SET ink.uid = randomUUID()
 
 MERGE(inkfab:Manufacturing {run_title: row.name+ "_mixing",
-                            date_added : "heute"
+                            date_added : date(),
+                            flag: "findich"
 })
   ON CREATE
   SET inkfab.uid = randomUUID()
@@ -29,19 +33,20 @@ MERGE(ink)-[:HAS_PROPERTY{value: row.IC}]->(ic)
 MERGE(ic)-[:IS_A]->(emmo_ic)
 FOREACH(ignoreMe IN CASE WHEN row.ionomer is not null THEN [1] ELSE [] END|
 
-  MERGE(ionomer:Matter:Material {EMMO__name: row.ionomer, date_added: "heute"})
+  MERGE(ionomer:Matter:Material {name: row.ionomer, date_added: date()})
   MERGE(ink)-[:HAS_PART]->(ionomer)
   MERGE(ionomer)-[:IS_A]->(emmo_ionomer)
   MERGE(ionomer)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 )
-MERGE(sol1:Matter:Material {EMMO__name: row.solvent1, date_added: "heute"})
-MERGE(sol2:Matter:Material {EMMO__name: row.solvent2, date_added: "heute"})
+MERGE(sol1:Matter:Material {name: row.solvent1, date_added: date()})
+MERGE(sol2:Matter:Material {name: row.solvent2, date_added: date()})
 MERGE(solfab:Manufacturing {run_title: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio+ "_fabrication",
-                            date_added : "heute"
+                            date_added : date(),
+                            flag: "findich"
 })
   ON CREATE
   SET solfab.uid = randomUUID()
-MERGE(sol:Matter:Material {EMMO__name: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio, date_added: "heute"})
+MERGE(sol:Matter:Material {EMMO_name: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio, date_added: date()})
 MERGE(solfab)-[:IS_MANUFACTURING_OUTPUT]->(sol)
 MERGE(sol1)-[:IS_MANUFACTURING_INPUT]->(solfab)
 MERGE(sol2)-[:IS_MANUFACTURING_INPUT]->(solfab)
@@ -57,14 +62,15 @@ MERGE(ink)-[:HAS_PART]->(sol)
 
 
 MERGE(catfab:Manufacturing {run_title: row.catalyst2 + "_" + row.wt+ "_fabrication",
-                            date_added : "heute"
+                            date_added : date(),
+                            flag: "findich"
 })
   ON CREATE
   SET solfab.uid = randomUUID()
 
-MERGE(cs:Matter:Material {name:row.catalyst1, date_added: "heute"})
-MERGE(cat:Matter:Material {name:row.catalyst2 + "_" + row.wt, date_added: "heute"})
-MERGE(met:Matter:Element {name:row.catalyst2 , date_added: "heute"})
+MERGE(cs:Matter:Material {name:row.catalyst1, date_added: date()})
+MERGE(cat:Matter:Material {name:row.catalyst2 + "_" + row.wt, date_added: date()})
+MERGE(met:Matter:Element {name:row.catalyst2 , date_added: date()})
 MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 MERGE(cat)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 MERGE(cat)-[:IS_A]->(emmo_cat)
@@ -73,7 +79,10 @@ MERGE(catfab)-[:IS_MANUFACTURING_OUTPUT]->(cat)
 WITH row, cat,cs ,ink, met, emmo_met, emmo_cs, inkfab, solfab, researcher
 OPTIONAL MATCH(emmo_ox:EMMO_Matter {EMMO__name: row.catalyst3})
 FOREACH(ignoreMe IN CASE WHEN row.catalyst3 is not null THEN [1] ELSE [] END|
-  MERGE(ox:Matter:Element {name:row.catalyst3, date_added: "heute"})
+  MERGE(ox:Matter:Element {name:row.catalyst3,
+                           date_added: date(),
+                           flag: "findich"
+  })
   MERGE(ox)-[:IS_A]->(emmo_ox)
   MERGE(ox)<-[:HAS_PART]-(cat)
   MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(catfab)
@@ -91,7 +100,8 @@ MERGE(met)<-[:HAS_PART]-(cat)
 MERGE(cat)-[:HAS_PART]->(ink)
 
 MERGE(inkmain:Manufacturing {run_title: row.name+ "_fabrication",
-                            date_added : "heute"
+                            date_added : date(),
+                            flag: "findich"
 })
   ON CREATE
   SET inkmain.uid = randomUUID()

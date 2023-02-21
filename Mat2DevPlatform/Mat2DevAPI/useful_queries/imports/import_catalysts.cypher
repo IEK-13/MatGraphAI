@@ -1,12 +1,12 @@
 MERGE (vb:Matter:Material {
 name: "VULCAN XC72",
-date_added: "1111-11-11"
+date_added: date()
 })
 ON CREATE
 SET vb.uid = randomUUID()
 MERGE (cb:Matter:Material {
   name: "Carbon Black",
-  date_added: "1111-11-11"
+  date_added: date()
 })
 ON CREATE
 SET cb.uid = randomUUID()
@@ -24,7 +24,7 @@ LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGra
 MATCH (ontology:EMMO_Matter {EMMO__name:row.Ontology})
 MERGE(cat:Matter:Material{name: row.Name,
                    chemical_formula: row.ChemicalFormula,
-                   date_added: "1111-11-11"
+                   date_added: date()
 })
   ON CREATE
   SET cat.uid = randomUUID()

@@ -15,8 +15,8 @@ MATCH(emmo_pdi:EMMO_Quantity {EMMO__name: "PolydispersityIndex"})
 
 
 MERGE(measurement:Measurement {PIDA: row.PIDA,
-                               flag: "findich",
-                               date_added: "02/21/23",
+                               flag: "findich_dls",
+                               date_added: date(),
                                experiment_start: row.`Measurement Data and Time`,
                                experiment_end: row.`Measurement Data and Time`,
                                instrument: row.Instrument})
@@ -30,32 +30,36 @@ MERGE(material)-[:IS_MEASUREMENT_INPUT {value: toFloat(row.SampleVol)}]->(measur
 MERGE(measurement)-[:BY]->(researcher)
 
 MERGE(hydrodynamicdiameter:Property {name: "hydrodynamicdiameter"+row.PIDA, 
-                                     flag: "findich",
-                                     date_added: "02/21/23"})
+                                     flag: "findich_dls",
+                                     date_added: date()
+})
   ON CREATE
   SET hydrodynamicdiameter.uid = randomUUID()
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.sizes))}]->(hydrodynamicdiameter)
 MERGE(hydrodynamicdiameter)-[:IS_A]->(emmo_hydrodynamicdiameter)
 
 MERGE(averagehydrodynamicdiameter:Property {name: "averagehydrodynamicdiameter"+row.PIDA,
-                                            flag: "findich",
-                                            date_added: "02/21/23"})
+                                            flag: "findich_dls",
+                                            date_added: date()
+})
   ON CREATE
   SET averagehydrodynamicdiameter.uid = randomUUID()
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: toFloat(row.`Z-Average (d.nm)`)}]->(averagehydrodynamicdiameter)
 MERGE(averagehydrodynamicdiameter)-[:IS_A]->(emmo_averagehydrodynamicdiameter)
 
 MERGE(hydrodynamicvolume:Property {name: "hydrodynamicvolume"+row.PIDA,
-                                   flag: "findich",
-                                   date_added: "02/21/23"})
+                                   flag: "findich_dls",
+                                   date_added: date()
+})
   ON CREATE
   SET hydrodynamicvolume.uid = randomUUID()
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.volumes))}]->(hydrodynamicvolume)
 MERGE(hydrodynamicvolume)-[:IS_A]->(emmo_hydrodynamicvolume)
 
 MERGE(intensity:Property {name: "intensity"+row.PIDA,
-                          flag: "findich",
-                          date_added: "02/21/23"})
+                          flag: "findich_dls",
+                          date_added: date()
+})
   ON CREATE
   SET intensity.uid = randomUUID()
 MERGE(measurement)-[:HAS_MEASUREMENT_OUTPUT {value: apoc.convert.toList(toFloat(row.intensities))}]->(intensity)
