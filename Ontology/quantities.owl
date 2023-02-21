@@ -1996,6 +1996,11 @@
              rdfs:subClassOf :BatteryQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShearRate
+:ShearRate rdf:type owl:Class ;
+           rdfs:subClassOf :MechanicalQuantity .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShearStrain
 :ShearStrain rdf:type owl:Class ;
              rdfs:subClassOf :MechanicalQuantity .
@@ -2435,6 +2440,11 @@
           rdfs:subClassOf :DerivedQuantity .
 
 
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Viscosity
+:Viscosity rdf:type owl:Class ;
+           rdfs:subClassOf :MechanicalQuantity .
+
+
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VoidVolume
 :VoidVolume rdf:type owl:Class ;
             rdfs:subClassOf :Volume .
@@ -2508,14 +2518,24 @@
                        rdfs:subClassOf :ElectrochemicalQuantity .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#ShearRate
-:ShearRate rdf:type owl:Class ;
-           rdfs:subClassOf :MechanicalQuantity .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#AverageHydrodynamicDiameter
+:AverageHydrodynamicDiameter rdf:type owl:Class ;
+                             rdfs:subClassOf :HydrodynamicDiameter .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#Viscosity
-:Viscosity rdf:type owl:Class ;
-           rdfs:subClassOf :MechanicalQuantity .
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#HydrodynamicDiameter
+:HydrodynamicDiameter rdf:type owl:Class ;
+                      rdfs:subClassOf :Diameter .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#HydrodynamicVolume
+:HydrodynamicVolume rdf:type owl:Class ;
+                    rdfs:subClassOf :Volume .
+
+
+###  http://www.semanticweb.org/mdreger/ontologies/2022/10/quantities#PolydispersityIndex
+:PolydispersityIndex rdf:type owl:Class ;
+                     rdfs:subClassOf :HydrodynamicVolume .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorption
