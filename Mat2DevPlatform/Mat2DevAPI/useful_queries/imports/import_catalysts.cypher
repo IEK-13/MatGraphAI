@@ -1,10 +1,10 @@
-MERGE (vb:Matter:Material {
+MERGE (vb:Material {
 name: "VULCAN XC72",
 date_added: date()
 })
 ON CREATE
 SET vb.uid = randomUUID()
-MERGE (cb:Matter:Material {
+MERGE (cb:Material {
   name: "Carbon Black",
   date_added: date()
 })
@@ -12,7 +12,7 @@ ON CREATE
 SET cb.uid = randomUUID()
 
 WITH cb, vb
-MATCH(c:Matter:Element {symbol: "C"})
+MATCH(c:Element {symbol: "C"})
 MATCH(emmo_cb:EMMO_Matter {EMMO__name: "CarbonBlack"})
 MERGE(vb)-[:IS_A]->(emmo_cb)
 MERGE(cb)-[:IS_A]->(emmo_cb)
@@ -22,7 +22,7 @@ MERGE(cb)-[:HAS_PART]->(c);
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/Catalysts.csv' AS row
 MATCH (ontology:EMMO_Matter {EMMO__name:row.Ontology})
-MERGE(cat:Matter:Material{name: row.Name,
+MERGE(cat:Material{name: row.Name,
                    chemical_formula: row.ChemicalFormula,
                    date_added: date()
 })
@@ -33,23 +33,23 @@ SET cat.name = row.Name,  cat.CAS = row.CAS
 
 
 WITH row, cat
-MATCH(cat:Matter:Material{name: row.Name, chemical_formula: row.ChemicalFormula})
-MATCH (part1:Matter {symbol:row.HasPart1})
+MATCH(cat:Material{name: row.Name, chemical_formula: row.ChemicalFormula})
+MATCH (part1:Material {symbol:row.HasPart1})
 MERGE(cat)-[:HAS_PART]->(part1)
 
 WITH row, cat
-MATCH(cat:Matter:Material{name: row.Name, chemical_formula: row.ChemicalFormula})
-MATCH (part2:Matter {name:row.HasPart2})
+MATCH(cat:Material{name: row.Name, chemical_formula: row.ChemicalFormula})
+MATCH (part2:Material {name:row.HasPart2})
 MERGE(cat)-[:HAS_PART]->(part2)
 
 
 WITH row, cat
-MATCH(cat:Matter:Material{name: row.Name, chemical_formula: row.ChemicalFormula})
-MATCH (part3:Matter {symbol:row.HasPart3})
+MATCH(cat:Material{name: row.Name, chemical_formula: row.ChemicalFormula})
+MATCH (part3:Material {symbol:row.HasPart3})
 MERGE(cat)-[:HAS_PART]->(part3)
 
 WITH row, cat
-MATCH (part3:Matter {symbol:row.HasPart3})
+MATCH (part3:Material {symbol:row.HasPart3})
 MERGE(test)-[:HAS_PART]->(part3);
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/Catalysts.csv' AS row

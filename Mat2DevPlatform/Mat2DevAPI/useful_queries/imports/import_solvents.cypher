@@ -18,12 +18,15 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
-                         SMILES : row.SMILES,
-                         InChi_Key : row.INCHIKEY,
-                         IUPAC_name : row.IUPACNAME,
-                         InChi: row.INCHISTRING,
-                         chemical_formula: row.MOLECULARFORMULA})
+CREATE(solvent:Molecule{name: row.PREFERREDNAME,
+                        SMILES: row.SMILES,
+                        InChi_Key: row.INCHIKEY,
+                        IUPAC_name: row.IUPACNAME,
+                        InChi: row.INCHISTRING,
+                        chemical_formula: row.MOLECULARFORMULA,
+                        date_added: date(),
+                        uid: randomUUID()})
+
 MERGE (solvent)-[:IS_A]->(m)
 
 
@@ -62,13 +65,13 @@ FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
 
 FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
-                          date_added : '1111-11-11'
+                          date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
-                          date_added : '1111-11-11'
+                          date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
@@ -91,12 +94,15 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
-                         SMILES : row.SMILES,
-                         InChi_Key : row.INCHIKEY,
-                         IUPAC_name : row.IUPACNAME,
-                         InChi: row.INCHISTRING,
-                         chemical_formula: row.MOLECULARFORMULA})
+CREATE(solvent:Molecule{name: row.PREFERREDNAME,
+                        SMILES: row.SMILES,
+                        InChi_Key: row.INCHIKEY,
+                        IUPAC_name: row.IUPACNAME,
+                        InChi: row.INCHISTRING,
+                        chemical_formula: row.MOLECULARFORMULA,
+                        date_added: date(),
+                        uid: randomUUID()})
+
 MERGE (solvent)-[:IS_A]->(m)
 
 
@@ -135,13 +141,13 @@ FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
 
 FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
-                          date_added : '1111-11-11'
+                          date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
-                              date_added : '1111-11-11'
+                              date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
@@ -163,12 +169,15 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
-                         SMILES : row.SMILES,
-                         InChi_Key : row.INCHIKEY,
-                         IUPAC_name : row.IUPACNAME,
-                         InChi: row.INCHISTRING,
-                         chemical_formula: row.MOLECULARFORMULA})
+CREATE(solvent:Molecule{name: row.PREFERREDNAME,
+                        SMILES: row.SMILES,
+                        InChi_Key: row.INCHIKEY,
+                        IUPAC_name: row.IUPACNAME,
+                        InChi: row.INCHISTRING,
+                        chemical_formula: row.MOLECULARFORMULA,
+                        date_added: date(),
+                        uid: randomUUID()})
+
 MERGE (solvent)-[:IS_A]->(m)
 
 
@@ -207,13 +216,13 @@ FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
 
 FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
-                          date_added : '1111-11-11'
+                          date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
-                              date_added : '1111-11-11'
+                              date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
@@ -235,12 +244,14 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
-                         SMILES : row.SMILES,
-                         InChi_Key : row.INCHIKEY,
-                         IUPAC_name : row.IUPACNAME,
-                         InChi: row.INCHISTRING,
-                         chemical_formula: row.MOLECULARFORMULA})
+CREATE(solvent:Molecule{name: row.PREFERREDNAME,
+                        SMILES: row.SMILES,
+                        InChi_Key: row.INCHIKEY,
+                        IUPAC_name: row.IUPACNAME,
+                        InChi: row.INCHISTRING,
+                        chemical_formula: row.MOLECULARFORMULA,
+                        date_added: date(),
+                        uid: randomUUID()})
 MERGE (solvent)-[:IS_A]->(m)
 
 
@@ -279,13 +290,13 @@ FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
 
 FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
-                          date_added : '1111-11-11'
+                          date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
-                              date_added : '1111-11-11'
+                              date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
@@ -307,12 +318,14 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
-                         SMILES : row.SMILES,
-                         InChi_Key : row.INCHIKEY,
-                         IUPAC_name : row.IUPACNAME,
-                         InChi: row.INCHISTRING,
-                         chemical_formula: row.MOLECULARFORMULA})
+CREATE(solvent:Molecule{name: row.PREFERREDNAME,
+                        SMILES: row.SMILES,
+                        InChi_Key: row.INCHIKEY,
+                        IUPAC_name: row.IUPACNAME,
+                        InChi: row.INCHISTRING,
+                        chemical_formula: row.MOLECULARFORMULA,
+                        date_added: date(),
+                        uid: randomUUID()})
 MERGE (solvent)-[:IS_A]->(m)
 
 
@@ -351,13 +364,13 @@ FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
 
 FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
-                          date_added : '1111-11-11'
+                          date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
-                              date_added : '1111-11-11'
+                              date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 
@@ -379,12 +392,15 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (m:EMMO_Matter {EMMO__name: "Solvent"})
 
 
-CREATE(solvent:Matter:Molecule{name: row.PREFERREDNAME,
-                         SMILES : row.SMILES,
-                         InChi_Key : row.INCHIKEY,
-                         IUPAC_name : row.IUPACNAME,
-                         InChi: row.INCHISTRING,
-                         chemical_formula: row.MOLECULARFORMULA})
+CREATE(solvent:Molecule{name: row.PREFERREDNAME,
+    SMILES: row.SMILES,
+    InChi_Key: row.INCHIKEY,
+    IUPAC_name: row.IUPACNAME,
+    InChi: row.INCHISTRING,
+    chemical_formula: row.MOLECULARFORMULA,
+    date_added: date(),
+    uid: randomUUID()})
+
 MERGE (solvent)-[:IS_A]->(m)
 
 
@@ -423,13 +439,13 @@ FOREACH(x IN CASE WHEN row.V IS NOT NULL THEN [1] END |
 
 FOREACH(x IN CASE WHEN row.AVERAGEMASS IS NOT NULL THEN [1] END |
   MERGE(pavgmass:Property{uid: randomUUID(),
-                          date_added : '1111-11-11'
+                          date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.AVERAGEMASS)}]->(pavgmass)-[:IS_A]->(avgmass))
 
 FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
   MERGE(pmonoisomass:Property{uid: randomUUID(),
-                              date_added : '1111-11-11'
+                              date_added : date()
   })
   MERGE (solvent)-[:HAS_PROPERTY {value: toFloat(row.MONOISOTOPICMASS)}]->(pmonoisomass)-[:IS_A]-(monoisomass));
 

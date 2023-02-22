@@ -1,4 +1,4 @@
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/FuelCellFabrication.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/jasna/FuelCellFabrication.csv' AS row
 
 MATCH (EMMO_fcas:EMMO_Process {EMMO__name: "FuelCellAssembly"}),
       (EMMO_fcfab:EMMO_Process {EMMO__name: "FuelCellManufacturing"}),
@@ -24,60 +24,78 @@ MATCH (EMMO_fcas:EMMO_Process {EMMO__name: "FuelCellAssembly"}),
       (EMMO_dt:EMMO_Quantity{EMMO__name: "DryingTemperature"})
 
 // MEA and FC
-MERGE(fc:Matter:Manufactured {name: row.`Run #`+"FuelCell",
-                 date_added : "1111-11-11"
+MERGE(fc:Device {name: row.`Run #`+"FuelCell",
+                 date_added : date()
 })
   ON CREATE
   SET fc.uid = randomUUID()
 
-MERGE(catink:Matter:Material {name: row.`Run #`+"_ink",
-                       date_added : "1111-11-11"
+MERGE(catink:Material {name: row.`Run #`+"_ink",
+     date_added : date(),
+     flag: "jasna"
 })
   ON CREATE
   SET catink.uid = randomUUID()
 
-MERGE(mea:Matter:Manufactured {uid: randomUUID(),
+MERGE(mea:Component {uid: randomUUID(),
                      name: row.`Run #`,
-                     date_added : "1111-11-11"
+      date_added : date(),
+      flag: "jasna"
 })
 // Other Components
-MERGE(membrane:Matter:Manufactured:Material {name: row.Membrane,
-                          date_added: "1111-11-11"})
+MERGE(membrane:Material {name: row.Membrane,
+      date_added : date(),
+      flag: "jasna"
+})
   ON CREATE
   SET membrane.uid = randomUUID()
 
-MERGE(bp:Matter:Manufactured {name: row.plates,
-                    date_added: "1111-11-11"})
+MERGE(bp:Component {name: row.plates,
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET bp.uid = randomUUID()
 
-MERGE(gdl:Matter:Manufactured {name: row.GDL,
-                     date_added: "1111-11-11"})
+MERGE(gdl:Component {name: row.GDL,
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET gdl.uid = randomUUID()
 
-MERGE(station:Matter:Manufactured {name: row.Station,
-                         date_added: "1111-11-11"})
+MERGE(station:Component {name: row.Station,
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET station.uid = randomUUID()
 
-MERGE(anode:Matter:Manufactured:Material {name: row.Anode,
-                       date_added: "1111-11-11"})
+MERGE(anode:Material {name: row.Anode,
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET anode.uid = randomUUID()
 
-MERGE(ionomer:Matter:Material {name: row.Ionomer,
-                        date_added: "1111-11-11"})
+MERGE(ionomer:Material {name: row.Ionomer,
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET ionomer.uid = randomUUID()
 
-MERGE(catalyst:Matter:Material {name: row.Catalyst,
-                         date_added: "1111-11-11"})
+MERGE(catalyst:Material {name: row.Catalyst,
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET catalyst.uid = randomUUID()
 
-MERGE(carbonsupport:Matter:Material {name: row.`Catalyst`+"support",
-                               date_added: "1111-11-11"})
+MERGE(carbonsupport:Material {name: row.`Catalyst`+"support",
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET carbonsupport.uid = randomUUID()
 
@@ -85,8 +103,10 @@ MERGE(carbonsupport)<-[:HAS_PART]-(catalyst)
 MERGE(carbonsupport)-[:IS_A]->(EMMO_carbonsupport)
 
 
-MERGE(coatingsubstrate:Matter:Material {name: row.`Coating substrate`,
-                                 date_added: "1111-11-11"})
+MERGE(coatingsubstrate:Material {name: row.`Coating substrate`,
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET coatingsubstrate.uid = randomUUID()
 
@@ -94,27 +114,31 @@ MERGE(coatingsubstrate:Matter:Material {name: row.`Coating substrate`,
 
 // FC-Manufacturing and MEA-Manufacturing
 MERGE(fcfab:Manufacturing {uid: randomUUID(),
-                           run_title: row.`Run #` + "_FuellCellManufacturing",
-                           DOI: row.DOI,
-                           date_added : "1111-11-11"
-})
+      run_title: row.`Run #` + "_FuellCellManufacturing",
+      DOI: row.DOI,
+      date_added : date(),
+      flag: "jasna"
+      })
 
 MERGE(fcass:Manufacturing {uid: randomUUID(),
-                           run_title: row.`Run #`+"_FuelCellAssembly",
-                           DOI: row.DOI,
-                           date_added : "1111-11-11"
-})
+      run_title: row.`Run #`+"_FuelCellAssembly",
+      DOI: row.DOI,
+      date_added : date(),
+      flag: "jasna"
+      })
 
 
 MERGE(meafab:Manufacturing {uid: randomUUID(),
-                            run_title: row.`Run #`+"_MEAManufacturing",
-                            DOI: row.DOI,
-                            date_added : "1111-11-11"
-})
+      run_title: row.`Run #`+"_MEAManufacturing",
+      DOI: row.DOI,
+      date_added : date(),
+      flag: "jasna"
+      })
 
 MERGE(inkfab:Manufacturing {run_title: row.`Run #`+ "_InkFabrication",
-                            date_added : "1111-11-11"
-})
+      date_added : date(),
+      flag: "jasna"
+      })
   ON CREATE
   SET inkfab.uid = randomUUID()
 
@@ -189,11 +213,11 @@ MERGE(catalyst)-[:HAS_PART]->(carbonsupport)
 
 MERGE(loading:Measurement{uid: randomUUID(),
                           DOI: row.DOI,
-                          date_added : "1111-11-11"
+                          date_added : date()
 })
 MERGE(ploading:Property{uid: randomUUID(),
                           DOI: row.DOI,
-                          date_added : "1111-11-11"
+                          date_added : date()
 })
 MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:HAS_MEASUREMENT_OUTPUT]->(ploading)-[:IS_A]->(EMMO_loading)
 MERGE(mea)-[:HAS_PROPERTY{
@@ -201,13 +225,13 @@ MERGE(mea)-[:HAS_PROPERTY{
 
 MERGE(ic:Measurement{uid: row.`Run #`,
                      DOI: row.`Run #`,
-                     date_added : "1111-11-11"
+                     date_added : date()
 })
 SET ic.uid = randomUUID()
 SET ic.DOI = row.DOI
 MERGE(pic:Property{uid: row.`Run #`,
                         DOI: row.`Run #`,
-                        date_added : "1111-11-11"
+                        date_added : date()
 })
 SET pic.uid = randomUUID()
 SET pic.DOI = row.DOI
@@ -218,12 +242,12 @@ MERGE(catink)-[:HAS_PROPERTY{
 
 
 MERGE(ew:Measurement{uid: row.EW,
-                     date_added : "1111-11-11"
+                     date_added : date()
 })
 
 SET ew.uid = randomUUID()
 MERGE(pew:Property{uid: row.EW,
-                     date_added : "1111-11-11"
+                     date_added : date()
 })
 
 SET pew.uid = randomUUID()

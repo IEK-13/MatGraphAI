@@ -9,7 +9,7 @@ from django.db import models
 from Mat2DevAPI.models.abstractclasses import CausalObject
 from Mat2DevAPI.models.metadata import Researcher, Instrument
 from Mat2DevAPI.models.relationships import inLocationRel, hasParticipantRel, byResearcherRel, byDeviceRel, \
-    subProcessRel, hasFileOutputRel, isManufacturingInputRel, hasMeasurementOutputRel, hasParameterInputRel
+    subProcessRel, hasFileOutputRel, isManufacturingInputRel, hasMeasurementOutputRel, hasParameterInputRel, hasPartRel
 from Mat2DevAPI.choices.ChoiceFields import GRANULARITY_TYPE_CHOICEFIELD, MEASUREMENT_TYPE_CHOICEFIELD
 
 
@@ -26,11 +26,14 @@ class Process(CausalObject):
         "Parameter", hasParticipantRel, model=hasParticipantRel)
     researcher = RelationshipTo(Researcher, byResearcherRel, model=byResearcherRel)
     instrument = RelationshipTo(Instrument, byDeviceRel)
-    subProcess = RelationshipTo("HAS_PART", subProcessRel, model=subProcessRel)
+    hasSubprocess          = RelationshipFrom(models.ForeignKey("Process",
+                            on_delete=models.deletion.CASCADE),
+                            hasPartRel,
+                            model=hasPartRel)
     isProcessMoleculeInput = RelationshipFrom(models.ForeignKey("Molecule",
-                                                                on_delete=models.deletion.CASCADE),
-                                              isManufacturingInputRel,
-                                              model=isManufacturingInputRel)
+                            on_delete=models.deletion.CASCADE),
+                            isManufacturingInputRel,
+                            model=isManufacturingInputRel)
     isProcessComponentInput = RelationshipFrom(models.ForeignKey("Component",
                                                                  on_delete=models.deletion.CASCADE),
                                                isManufacturingInputRel,
@@ -76,9 +79,3 @@ class Measurement(Process):
                                    model=hasFileOutputRel),
 
 
-class Parameter(CausalObject):
-    name = StringProperty(unique_index=True, required=True)
-    value = FloatProperty()
-    error = FloatProperty()
-    parameter = RelationshipTo(Measurement, hasParameterInputRel,
-                               model=hasParameterInputRel)

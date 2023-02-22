@@ -7,7 +7,7 @@ from neomodel import (AliasProperty,
 from django.apps import apps
 
 class UIDDjangoNode(DjangoNode):
-
+    name = StringProperty()
     uid = UniqueIdProperty(
         primary_key=True
     )

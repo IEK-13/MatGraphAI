@@ -1,6 +1,6 @@
 PROFILE
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/fabrication/fabrication.csv' AS row
-
+MATCH(met:Element {name:row.catalyst2})
 MATCH(emmo_ink:EMMO_Matter {EMMO__name: "CatalystInk"})
 MATCH(emmo_ionomer:EMMO_Matter {EMMO__name: "Nafion_D2021CS"})
 MATCH(emmo_ic:EMMO_Quantity {EMMO__name: "CatalystIonomerRatio"})
@@ -11,7 +11,8 @@ MATCH(emmo_cs:EMMO_Matter {EMMO__name: row.catalyst1})
 MATCH(emmo_met:EMMO_Matter {EMMO__name: row.catalyst2})
 MATCH(emmo_cat:EMMO_Matter {EMMO__name: row.cat_emmo})
 MATCH(researcher:Researcher {first_name: "Lukas"})
-
+MATCH(ox:Element {name:row.catalyst3
+})
 MERGE(ink:Material:Matter {name: row.name,
                            date_added: date(),
                            flag: "findich"
@@ -33,20 +34,20 @@ MERGE(ink)-[:HAS_PROPERTY{value: row.IC}]->(ic)
 MERGE(ic)-[:IS_A]->(emmo_ic)
 FOREACH(ignoreMe IN CASE WHEN row.ionomer is not null THEN [1] ELSE [] END|
 
-  MERGE(ionomer:Matter:Material {name: row.ionomer, date_added: date()})
+  MERGE(ionomer:Material {name: row.ionomer, date_added: date()})
   MERGE(ink)-[:HAS_PART]->(ionomer)
   MERGE(ionomer)-[:IS_A]->(emmo_ionomer)
   MERGE(ionomer)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 )
-MERGE(sol1:Matter:Material {name: row.solvent1, date_added: date()})
-MERGE(sol2:Matter:Material {name: row.solvent2, date_added: date()})
+MERGE(sol1:Material {name: row.solvent1, date_added: date()})
+MERGE(sol2:Material {name: row.solvent2, date_added: date()})
 MERGE(solfab:Manufacturing {run_title: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio+ "_fabrication",
                             date_added : date(),
                             flag: "findich"
 })
   ON CREATE
   SET solfab.uid = randomUUID()
-MERGE(sol:Matter:Material {EMMO_name: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio, date_added: date()})
+MERGE(sol:Molecule {EMMO_name: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio, date_added: date()})
 MERGE(solfab)-[:IS_MANUFACTURING_OUTPUT]->(sol)
 MERGE(sol1)-[:IS_MANUFACTURING_INPUT]->(solfab)
 MERGE(sol2)-[:IS_MANUFACTURING_INPUT]->(solfab)
@@ -68,9 +69,8 @@ MERGE(catfab:Manufacturing {run_title: row.catalyst2 + "_" + row.wt+ "_fabricati
   ON CREATE
   SET solfab.uid = randomUUID()
 
-MERGE(cs:Matter:Material {name:row.catalyst1, date_added: date()})
-MERGE(cat:Matter:Material {name:row.catalyst2 + "_" + row.wt, date_added: date()})
-MERGE(met:Matter:Element {name:row.catalyst2 , date_added: date()})
+MERGE(cs:Material {name:row.catalyst1, date_added: date()})
+MERGE(cat:Material {name:row.catalyst2 + "_" + row.wt, date_added: date()})
 MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 MERGE(cat)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 MERGE(cat)-[:IS_A]->(emmo_cat)
@@ -79,10 +79,6 @@ MERGE(catfab)-[:IS_MANUFACTURING_OUTPUT]->(cat)
 WITH row, cat,cs ,ink, met, emmo_met, emmo_cs, inkfab, solfab, researcher
 OPTIONAL MATCH(emmo_ox:EMMO_Matter {EMMO__name: row.catalyst3})
 FOREACH(ignoreMe IN CASE WHEN row.catalyst3 is not null THEN [1] ELSE [] END|
-  MERGE(ox:Matter:Element {name:row.catalyst3,
-                           date_added: date(),
-                           flag: "findich"
-  })
   MERGE(ox)-[:IS_A]->(emmo_ox)
   MERGE(ox)<-[:HAS_PART]-(cat)
   MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(catfab)

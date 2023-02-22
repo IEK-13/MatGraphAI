@@ -21,6 +21,8 @@ MERGE(solvent:Molecule {name: row.cmpdname,
                          IUPAC_name : row.iupacname,
                          InChi: row.inchi,
                          chemical_formula: row.mf})
+ON CREATE
+SET solvent.uid = randomUUID()
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |

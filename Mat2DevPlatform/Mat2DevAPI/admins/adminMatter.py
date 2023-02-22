@@ -7,7 +7,7 @@ from django.contrib.admin import SimpleListFilter
 
 from Mat2DevAPI.admins.adminBase import (NodeModelAdmin)
 from Mat2DevAPI.choices.ChoiceFields import COMPONENT_TYPE_CHOICES
-from Mat2DevAPI.forms.adminForms import ComponentAdminForm, MoleculeAdminForm, MaterialAdminForm
+# from Mat2DevAPI.forms.adminForms import ComponentAdminForm, MoleculeAdminForm, MaterialAdminForm
 from Mat2DevAPI.models.matter import (Element,
                                       Molecule,
                                       Component,
@@ -34,7 +34,7 @@ class TypeFilter(SimpleListFilter):
 @dj_admin.register(Component)
 class ComponentAdmin(NodeModelAdmin):
     # ComponentAdmin form is necessary for the dropdown menu to choose the Component type
-    form = ComponentAdminForm
+    # form = ComponentAdminForm
     # list_display determines which properties are displayed
     list_display = ["uid"]
 
@@ -55,7 +55,8 @@ class ElementAdmin(NodeModelAdmin):
     class Meta:
         pass
     # displays the "name" and "abbreviation" on the admin site
-    list_display = ("name", "symbol")
+    list_display = ("name",
+                    "symbol")
 
 
 @dj_admin.register(Molecule)
@@ -69,7 +70,7 @@ class MoleculeAdmin(NodeModelAdmin):
                     "IUPAC_name",
                     "chemical_formula",
                     )
-    form = MoleculeAdminForm
+    # form = MoleculeAdminForm
 
     def response_add(self, request, obj, post_url_continue=None):
         obj.pk = obj.uid  # make sure redirect after add works
@@ -87,7 +88,7 @@ class MoleculeAdmin(NodeModelAdmin):
 
 
 @dj_admin.register(Material)
-class MoleculeAdmin(dj_admin.ModelAdmin):
+class MaterialAdmin(dj_admin.ModelAdmin):
     # list_display = ("uid",
     #                 "SMILES",
     #                 "InChIKey",
@@ -101,10 +102,11 @@ class MoleculeAdmin(dj_admin.ModelAdmin):
     #                 "molWeight",
     #                 "charge",
     #                 )
-    form = MaterialAdminForm
+    # form = MaterialAdminForm
     pass
 
 
 @dj_admin.register(Device)
 class DeviceAdmin(dj_admin.ModelAdmin):
-    list_display = ("uid",)
+    list_display = ("uid",
+                    "name")

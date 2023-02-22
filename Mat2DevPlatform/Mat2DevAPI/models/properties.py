@@ -18,7 +18,6 @@ class Property(PhysicalDimension):
     class Meta:
         verbose_name_plural = 'properties'
         app_label = 'Mat2DevAPI'
-    type = StringProperty(required=True, unique_index=True)
     derived_property = RelationshipTo(models.ForeignKey(
         "Property",
         on_delete=models.deletion.CASCADE), "derivedFrom")
