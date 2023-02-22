@@ -11,9 +11,7 @@ MATCH(emmo_cs:EMMO_Matter {EMMO__name: row.catalyst1})
 MATCH(emmo_met:EMMO_Matter {EMMO__name: row.catalyst2})
 MATCH(emmo_cat:EMMO_Matter {EMMO__name: row.cat_emmo})
 MATCH(researcher:Researcher {first_name: "Lukas"})
-MATCH(ox:Element {name:row.catalyst3
-})
-MERGE(ink:Material:Matter {name: row.name,
+MERGE(ink:Material {name: row.name,
                            date_added: date(),
                            flag: "findich"
 })
@@ -79,6 +77,7 @@ MERGE(catfab)-[:IS_MANUFACTURING_OUTPUT]->(cat)
 WITH row, cat,cs ,ink, met, emmo_met, emmo_cs, inkfab, solfab, researcher
 OPTIONAL MATCH(emmo_ox:EMMO_Matter {EMMO__name: row.catalyst3})
 FOREACH(ignoreMe IN CASE WHEN row.catalyst3 is not null THEN [1] ELSE [] END|
+  MERGE(ox:Element {name:row.catalyst3})
   MERGE(ox)-[:IS_A]->(emmo_ox)
   MERGE(ox)<-[:HAS_PART]-(cat)
   MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(catfab)

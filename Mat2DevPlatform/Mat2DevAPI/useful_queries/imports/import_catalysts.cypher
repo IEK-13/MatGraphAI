@@ -23,8 +23,7 @@ MERGE(cb)-[:HAS_PART]->(c);
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/Catalysts.csv' AS row
 MATCH (ontology:EMMO_Matter {EMMO__name:row.Ontology})
 MERGE(cat:Material{name: row.Name,
-                   chemical_formula: row.ChemicalFormula,
-                   date_added: date()
+                   chemical_formula: row.ChemicalFormula
 })
   ON CREATE
   SET cat.uid = randomUUID()

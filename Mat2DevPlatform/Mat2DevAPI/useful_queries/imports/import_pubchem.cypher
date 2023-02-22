@@ -1,6 +1,6 @@
 // Molecule import starts here
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/PubChemMolecules_sum.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/PubChemMolecules_sum.csv' AS row
 
 MATCH (mw:EMMO_Quantity {EMMO__name: "MolecularWeight"}),
       (c:Element {symbol: "C"}),

@@ -1,26 +1,9 @@
-WITH ['IrO2-15wt-ic013-1Prop086_1.csv',
-      'IrO2-15wt-ic013-1Prop086_2.csv',
-      'IrO2-15wt-ic013-1Prop086_3.csv',
-      'IrO2-35wt-ic02-1Prop86_1.csv',
-      'IrO2-35wt-ic02-1Prop86_2.csv',
-      'IrO2-35wt-ic02-1Prop86_3.csv',
-      'IrO2-35wt-ic013-1Prop04_1.csv',
-      'IrO2-35wt-ic013-1Prop04_2.csv',
-      'IrO2-35wt-ic013-1Prop04_3.csv',
-      'IrO2-35wt-ic013-1Prop086_1.csv',
-      'TanakaPtC-IC065-1Prop088_1.csv',
-      'TanakaPtC-IC065-1Prop088_2.csv',
-      'TanakaPtC-IC065-1Prop088_3.csv',
-      'UmicorePtC-IC065-1Prop088_1.csv',
-      'UmicorePtC-IC065-1Prop088_2.csv'
-      ] as filelist
-
 LOAD CSV WITH HEADERS FROM
-'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/viscosity/UmicorePtC-IC065-1Prop088_2.csv'
+'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/viscosity/UmicorePtC-IC065-1Prop088_1.csv'
 AS row
 CALL{
 LOAD CSV WITH HEADERS FROM
-'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/viscosity/UmicorePtC-IC065-1Prop088_2.csv'
+'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/viscosity/UmicorePtC-IC065-1Prop088_1.csv'
 AS row1
 RETURN collect(TOFLOAT(row1.Speed)) AS speedlist,
 collect(TOFLOAT(row1.Time)) AS timelist,

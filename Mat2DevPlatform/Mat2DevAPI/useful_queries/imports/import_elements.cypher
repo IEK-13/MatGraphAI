@@ -3,7 +3,7 @@ LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGra
 MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
      (atomicmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),
      (molarheat:EMMO_Quantity {EMMO__name: "MolarHeat"}),
-     (elementalsubstance:EMMO_el {EMMO__name: "ElementalSubstance"}),
+     (elementalsubstance:EMMO_Matter {EMMO__name: "ElementalSubstance"}),
      (density:EMMO_Quantity {EMMO__name: "Density"}),
      (melt:EMMO_Quantity {EMMO__name: "MeltingPoint"}),
      (electronegativity:EMMO_Quantity {EMMO__name: "ElectronegativityPauling"}),
