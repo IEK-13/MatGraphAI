@@ -2,7 +2,7 @@ LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGra
 
 MATCH(researcher:Researcher {first_name: row.Researcher})
 MATCH(material:Material {name:row.Material})
-MATCH(solvent:Material {name:row.Solvent})
+MATCH(solvent:Molecule {name:row.Solvent})
 MATCH(emmo_measurement:EMMO_Process {EMMO__name: row.Ontology})
 MATCH(emmo_hydrodynamicdiameter:EMMO_Quantity {EMMO__name: "HydrodynamicDiameter"})
 MATCH(emmo_averagehydrodynamicdiameter:EMMO_Quantity {EMMO__name: "AverageHydrodynamicDiameter"})

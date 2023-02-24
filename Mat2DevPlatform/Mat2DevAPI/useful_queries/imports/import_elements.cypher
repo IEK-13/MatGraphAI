@@ -13,7 +13,7 @@ MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
 
 
 // Create Nodes
-CREATE (el:Element {name: line.name, summary: line.name, symbol : line.symbol})
+CREATE (el:Element {name: line.name, summary: line.name, symbol : line.symbol, uid: randomUUID()})
 MERGE (el)-[:IS_A]->(elementalsubstance)
 
 FOREACH(x IN CASE WHEN line.discovered_by IS NOT NULL THEN [1] END |

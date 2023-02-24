@@ -1,9 +1,9 @@
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/jasna/CatInkFabrication.csv' AS row
 
-MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionomer:Matter),
-      (ink:Matter {name: row.`Run #`+"_ink"})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
+MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionomer:Material),
+      (ink:Material {name: row.`Run #`+"_ink"})-[:IS_A]-(:EMMO_Matter {EMMO__name: 'CatalystInk'}),
       (ionomer)<-[:HAS_PART]-(ink),
-      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"})<-[:IS_A]-(carbon:Matter),
+      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"})<-[:IS_A]-(carbon:Material),
       (carbon)<-[:HAS_PART]-(catalyst)-[:HAS_PART]-(ink),
       (EMMO_epoxy:EMMO_Matter{EMMO__name: 'Polyepoxide'}),
       (EMMO_cathode:EMMO_Matter{EMMO__name: 'Cathode'}),
@@ -31,21 +31,22 @@ MATCH (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"})<-[:IS_A]-(ionom
 // Process Nodes
 MERGE(cclfab:Manufacturing {run_title: row.`Run #`,
                             uid: randomUUID(),
-                           DOI: row.DOI,
-                           date_added : date(),
+                           DOI: row.DOI
 })
+ON CREATE
+SET cclfab.date_added = date()
 
 MERGE(epoxy)-[:IS_A]->(EMMO_epoxy)
 //Matter Nodes
 MERGE(ccl:Material {name: row.`Run #`,
-                    uid : randomUUID() ,
-                    date_added: date(),})
-
+                    uid : randomUUID() })
+ON CREATE
+SET cclfab.date_added = date()
 
 
 // Measurement nodes
 MERGE(sem:Measurement{uid: randomUUID(),
-                     date_added : date(),
+                     date_added : date()
 })
 MERGE(keyence:Measurement{uid: randomUUID(),
                       date_added : date()
@@ -82,7 +83,7 @@ MERGE(ccl)-[:HAS_PROPERTY{value: tofloat(row.`Keyence Crack density 400x mag (%)
 
 FOREACH(x IN CASE WHEN row.`Densometer Porosity (%)` IS NOT NULL THEN [1] END |
   MERGE(densometer:Measurement{uid: randomUUID(),
-                        date_added : date(),)
+                        date_added : date()})
   MERGE(dporosity:Property{uid: randomUUID(),
                               date_added : date()
   })
@@ -120,7 +121,7 @@ MERGE(ink)-[:IS_MEASUREMENT_INPUT]->(dvs50)
 MERGE(dvs50)-[:IS_A]->(EMMO_powderdvs)
 MERGE(dvs50)-[:HAS_MEASUREMENT_OUTPUT]
 ->(pdvs50)-[:IS_A]->(EMMO_dvs)
-CREATE(dvs50)-[:HAS_PARAMETER{value: 50}]->(:Parameter)-[:IS_A]->(EMMO_rh)
+CREATE(dvs50)-[:HAS_PARAMETER{value: 50}]->(:Parameter{uid : randomUUID()})-[:IS_A]->(EMMO_rh)
 MERGE(ink)-[:HAS_PROPERTY{value: tofloat(row.`Powder DVS soprtion at 50%RH (% mass change/cm2geo)`)}]->(pdvs50)
 
 // DVDS 50 RH
@@ -157,12 +158,12 @@ MERGE(ink)-[:HAS_PROPERTY{value: tofloat(row.`Powder DVS soprtion at 95%RH (% ma
 FOREACH(x IN CASE WHEN row.`CL DVS desoprtion at 50%RH (% mass change/cm2geo)` IS NOT NULL THEN [1]
   END |
   MERGE(cldvds50:Measurement{uid:randomUUID(),
-                           date_added:date(),
+                           date_added:date()
   })
   MERGE(cldvds50)-[:IS_A]->(EMMO_cldvs)
   MERGE(ink)- [:IS_MEASUREMENT_INPUT] - >(dvds50)
   MERGE(clpdvds50:Property{uid:randomUUID(),
-                          date_added:date(),
+                          date_added:date()
   })
   MERGE(cldvds50)- [:HAS_MEASUREMENT_OUTPUT]
   - >(clpdvds50)- [:IS_A] - >(EMMO_dvds)
@@ -175,12 +176,12 @@ FOREACH(x IN CASE WHEN row.`CL DVS desoprtion at 50%RH (% mass change/cm2geo)` I
 FOREACH(x IN CASE WHEN row.`CL DVS soprtion at 50%RH (% mass change/cm2geo)` IS NOT NULL THEN [1]
 END |
 MERGE(cldvs50:Measurement{uid:randomUUID(),
-date_added:date(),
+date_added:date()
 })
 MERGE(cldvs50)-[:IS_A]->(EMMO_cldvs)
 MERGE(ink)- [:IS_MEASUREMENT_INPUT] - >(dvs50)
 MERGE(clpdvs50:Property{uid:randomUUID(),
-date_added:date(),
+date_added:date()
 })
 MERGE(cldvs50)- [:HAS_MEASUREMENT_OUTPUT]
 - >(clpdvs50)- [:IS_A] - >(EMMO_dvs)

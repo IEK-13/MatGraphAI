@@ -1,3 +1,6 @@
+from graphutils.forms import RelationMultipleChoiceField
+from dal import autocomplete
+
 COMPONENT_TYPE_CHOICES = {'membrane': 'Membrane',
                           'ccm': 'CCM',
                           'mea': 'MEA',
@@ -43,3 +46,4 @@ MATERIAL_LABEL_CHOICEFIELD = {'nanocrystal': 'Nano Crystaline',
                               'catalystlayer' : 'Catalyst Layer',
                               'natural': 'Natural',
                               'manufactured': 'Manufactured'}
+

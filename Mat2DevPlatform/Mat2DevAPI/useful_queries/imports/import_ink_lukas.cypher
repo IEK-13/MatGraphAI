@@ -45,7 +45,7 @@ MERGE(solfab:Manufacturing {run_title: row.solvent1+"_"+row.solvent2+"_"+row.sol
 })
   ON CREATE
   SET solfab.uid = randomUUID()
-MERGE(sol:Molecule {EMMO_name: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio, date_added: date()})
+MERGE(sol:Molecule {name: row.solvent1+"_"+row.solvent2+"_"+row.solvent1_ratio, date_added: date()})
 MERGE(solfab)-[:IS_MANUFACTURING_OUTPUT]->(sol)
 MERGE(sol1)-[:IS_MANUFACTURING_INPUT]->(solfab)
 MERGE(sol2)-[:IS_MANUFACTURING_INPUT]->(solfab)

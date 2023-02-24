@@ -7,7 +7,6 @@ from neomodel import (AliasProperty,
 from django.apps import apps
 
 class UIDDjangoNode(DjangoNode):
-    name = StringProperty()
     uid = UniqueIdProperty(
         primary_key=True
     )
@@ -32,6 +31,7 @@ class UIDDjangoNode(DjangoNode):
         return hash(self.uid)
 
 
+
 class UniqueNode(DjangoNode):
     @classmethod
     def category(cls):
@@ -42,14 +42,19 @@ class UniqueNode(DjangoNode):
 
 
 class CausalObject(UIDDjangoNode):
+    name = StringProperty()
     __abstract_node__ = True
 
     date_added = DateProperty(required=True)
+    def  __str__(self):
+        return  self.name
 
 class OntologyNode(UIDDjangoNode):
     EMMO__name = StringProperty(required= True, unique_index= True)
+    EMMO__uri =  StringProperty(required= True, unique_index= True)
+    def  __str__(self):
+        return  self.EMMO__name
     __abstract_node__ = True
-
 
 
 

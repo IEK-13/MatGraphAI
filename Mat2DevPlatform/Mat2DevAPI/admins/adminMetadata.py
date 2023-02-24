@@ -8,4 +8,4 @@ class ResearcherAdmin(NodeModelAdmin):
     class Meta:
         pass
     # displays the "name" and "abbreviation" on the admin site
-    list_display = ("name", "ORCID", "email")
+    list_display = ("name", "ORCID", "email", "uid")

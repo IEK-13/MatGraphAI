@@ -7,8 +7,9 @@ from django.contrib.admin import SimpleListFilter
 
 from Mat2DevAPI.admins.adminBase import (NodeModelAdmin)
 from Mat2DevAPI.choices.ChoiceFields import COMPONENT_TYPE_CHOICES
-from Mat2DevAPI.forms.adminForms import ComponentAdminForm, MoleculeAdminForm, MaterialAdminForm
-from Mat2DevAPI.models.processes import Measurement
+from Mat2DevAPI.forms.adminForms import ManufacturingAdminForm
+from Mat2DevAPI.models.processes import Measurement, Manufacturing
+
 
 @dj_admin.register(Measurement)
 class MeasurementAdmin(NodeModelAdmin):
@@ -22,3 +23,18 @@ class MeasurementAdmin(NodeModelAdmin):
         return instance
 
     actions = ['delete_model']
+
+
+@dj_admin.register(Manufacturing)
+class ManufacturingAdmin(NodeModelAdmin):
+    list_display = ("uid",)
+
+    def save(self, commit=True):
+        instance = super().save(commit)
+        instance.user_skill = True
+        instance.save()
+
+        return instance
+    form = ManufacturingAdminForm
+    actions = ['delete_model']
+

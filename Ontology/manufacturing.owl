@@ -17,11 +17,6 @@
                        rdfs:subClassOf :Manufacturing .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#BETMethod
-:BETMethod rdf:type owl:Class ;
-           rdfs:subClassOf :Measurement .
-
-
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CCLManufacturing
 :CCLManufacturing rdf:type owl:Class ;
                   rdfs:subClassOf :ComponentManufacturing .
@@ -38,12 +33,6 @@
                           rdfs:subClassOf :MaterialsManufacturing .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystLayerDynamicVaporSorptionMeasurement
-:CatalystLayerDynamicVaporSorptionMeasurement rdf:type owl:Class ;
-                                              rdfs:subClassOf :DynamicVaporSorptionMeasurement ;
-                                              owl:disjointWith :PowderDynamicVaporSorptionMeasurement .
-
-
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing
 :ComponentManufacturing rdf:type owl:Class ;
                         rdfs:subClassOf :Manufacturing .
@@ -54,21 +43,6 @@
                      rdfs:subClassOf :Manufacturing .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicLightScattering
-:DynamicLightScattering rdf:type owl:Class ;
-                        rdfs:subClassOf :Scattering .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorptionMeasurement
-:DynamicVaporSorptionMeasurement rdf:type owl:Class ;
-                                 rdfs:subClassOf :Gravimetry .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ElectronMicroscopy
-:ElectronMicroscopy rdf:type owl:Class ;
-                    rdfs:subClassOf :Microscopy .
-
-
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellAssembly
 :FuelCellAssembly rdf:type owl:Class ;
                   rdfs:subClassOf :ComponentManufacturing .
@@ -77,17 +51,6 @@
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellManufacturing
 :FuelCellManufacturing rdf:type owl:Class ;
                        rdfs:subClassOf :DeviceManufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Gravimetry
-:Gravimetry rdf:type owl:Class ;
-            rdfs:subClassOf :Measurement ;
-            owl:disjointWith :Imaging .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Imaging
-:Imaging rdf:type owl:Class ;
-         rdfs:subClassOf :Measurement .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing
@@ -104,49 +67,9 @@
                         rdfs:subClassOf :Manufacturing .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Measurement
-:Measurement rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MethodOfStandardPorosimetry
-:MethodOfStandardPorosimetry rdf:type owl:Class ;
-                             rdfs:subClassOf :Measurement .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Microscopy
-:Microscopy rdf:type owl:Class ;
-            rdfs:subClassOf :Imaging .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#PowderDynamicVaporSorptionMeasurement
-:PowderDynamicVaporSorptionMeasurement rdf:type owl:Class ;
-                                       rdfs:subClassOf :DynamicVaporSorptionMeasurement .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SEMImaging
-:SEMImaging rdf:type owl:Class ;
-            rdfs:subClassOf :ElectronMicroscopy ;
-            owl:disjointWith :TEMImaging .
-
-
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SamplePreparation
 :SamplePreparation rdf:type owl:Class ;
                    rdfs:subClassOf :Manufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Scattering
-:Scattering rdf:type owl:Class ;
-            rdfs:subClassOf :Imaging .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#TEMImaging
-:TEMImaging rdf:type owl:Class ;
-            rdfs:subClassOf :ElectronMicroscopy .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ViscosityMeasurement
-:ViscosityMeasurement rdf:type owl:Class ;
-                      rdfs:subClassOf :Measurement .
 
 
 ###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing

@@ -30,3 +30,52 @@ class ElementsMultipleChoiceField(RelationMultipleChoiceField):
             )
 
         return value
+
+class MaterialMultipleChoiceField(RelationMultipleChoiceField):
+
+    def __init__(self, autocomplete_url='material-input-autocomplete', **kwargs):
+        super().__init__('Material', 'Materials', primary_key='uid', label_field='name', **kwargs)
+        self.widget = autocomplete.Select2Multiple(url=autocomplete_url, attrs={'style': 'width: 100%;'})
+
+    def prepare_value(self, value):
+        # make sure selected value is in choices to have it displayed right away
+        if value and len(value):
+            self.widget.choices, meta = db.cypher_query(
+                'MATCH (material:Material) WHERE material.uid IN $uids RETURN material.uid, material.name',
+                {'uids': value}
+            )
+        return value
+
+# class EMMOMatterMultipleChoiceField(RelationMultipleChoiceField):
+#
+#     def __init__(self, autocomplete_url='material-input-autocomplete', **kwargs):
+#         super().__init__('EMMO_Matter', 'EMMO_Matters', primary_key='uri', label_field='EMMO__name', **kwargs)
+#         self.widget = autocomplete.Select2Multiple(url=autocomplete_url, attrs={'style': 'width: 100%;'})
+#
+#     def prepare_value(self, value):
+#         # make sure selected value is in choices to have it displayed right away
+#         if value and len(value):
+#             self.widget.choices, meta = db.cypher_query(
+#                 'MATCH (material:EMMO_Material) WHERE material.uri IN $uids RETURN material.uri, material.name',
+#                 {'uris': value}
+#             )
+#         return value
+#
+# class EMMOProcessMultipleChoiceField(RelationMultipleChoiceField):
+#
+#     def __init__(self, autocomplete_url='emmo-process-autocomplete', **kwargs):
+#         super().__init__('EMMO_Process', 'EMMO_Processes', primary_key='uri', label_field='EMMO__name', **kwargs)
+#         self.widget = autocomplete.Select2Multiple(url=autocomplete_url, attrs={'style': 'width: 100%;'})
+#
+#     def prepare_value(self, value):
+#         # make sure selected value is in choices to have it displayed right away
+#         if value and len(value):
+#             self.widget.choices, meta = db.cypher_query(
+#                 'MATCH (material:EMMO_Material) WHERE material.uri IN $uids RETURN material.uri, material.name',
+#                 {'uris': value}
+#             )
+#         return value
+
+
+
+

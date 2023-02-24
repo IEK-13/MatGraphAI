@@ -103,6 +103,8 @@ class isProcessInputRel(isParticipantRel):
 class isManufacturingInputRel(isProcessInputRel):
     pass
 
+class isManufacturingOutputRel(isProcessInputRel):
+    pass
 
 class isMeasurementInputRel(isProcessInputRel):
     pass
@@ -145,4 +147,10 @@ class byResearcherRel(hasParticipantRel):
 
 
 class byDeviceRel(hasParticipantRel):
+    pass
+
+class emmoIsA(StructuredRel):
+    pass
+
+class isARel(StructuredRel):
     pass

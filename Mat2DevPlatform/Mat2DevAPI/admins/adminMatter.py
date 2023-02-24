@@ -7,6 +7,7 @@ from django.contrib.admin import SimpleListFilter
 
 from Mat2DevAPI.admins.adminBase import (NodeModelAdmin)
 from Mat2DevAPI.choices.ChoiceFields import COMPONENT_TYPE_CHOICES
+from Mat2DevAPI.forms.adminForms import MoleculeAdminForm
 # from Mat2DevAPI.forms.adminForms import ComponentAdminForm, MoleculeAdminForm, MaterialAdminForm
 from Mat2DevAPI.models.matter import (Element,
                                       Molecule,
@@ -70,7 +71,7 @@ class MoleculeAdmin(NodeModelAdmin):
                     "IUPAC_name",
                     "chemical_formula",
                     )
-    # form = MoleculeAdminForm
+    form = MoleculeAdminForm
 
     def response_add(self, request, obj, post_url_continue=None):
         obj.pk = obj.uid  # make sure redirect after add works
@@ -88,25 +89,12 @@ class MoleculeAdmin(NodeModelAdmin):
 
 
 @dj_admin.register(Material)
-class MaterialAdmin(dj_admin.ModelAdmin):
-    # list_display = ("uid",
-    #                 "SMILES",
-    #                 "InChIKey",
-    #                 "CAS",
-    #                 "InChI",
-    #                 "CompoundCID",
-    #                 "IUPACName",
-    #                 "sumFormula",
-    #                 "AlternativeNames",
-    #                 "nAtoms",
-    #                 "molWeight",
-    #                 "charge",
-    #                 )
-    # form = MaterialAdminForm
+class MaterialAdmin(NodeModelAdmin):
+    list_display = ("name", "uid")
     pass
 
 
 @dj_admin.register(Device)
-class DeviceAdmin(dj_admin.ModelAdmin):
+class DeviceAdmin(NodeModelAdmin):
     list_display = ("uid",
                     "name")

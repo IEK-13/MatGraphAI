@@ -7,9 +7,12 @@ from neomodel import (RelationshipTo,
 from django.db import models
 
 from Mat2DevAPI.models.abstractclasses import CausalObject
+from Mat2DevAPI.models.matter import Material
 from Mat2DevAPI.models.metadata import Researcher, Instrument
+from Mat2DevAPI.models.ontology import EMMO_Process
 from Mat2DevAPI.models.relationships import inLocationRel, hasParticipantRel, byResearcherRel, byDeviceRel, \
-    subProcessRel, hasFileOutputRel, isManufacturingInputRel, hasMeasurementOutputRel, hasParameterInputRel, hasPartRel
+    subProcessRel, hasFileOutputRel, isManufacturingInputRel, hasMeasurementOutputRel, hasParameterInputRel, hasPartRel, \
+    isManufacturingOutputRel, isARel
 from Mat2DevAPI.choices.ChoiceFields import GRANULARITY_TYPE_CHOICEFIELD, MEASUREMENT_TYPE_CHOICEFIELD
 
 
@@ -38,10 +41,10 @@ class Process(CausalObject):
                                                                  on_delete=models.deletion.CASCADE),
                                                isManufacturingInputRel,
                                                model=isManufacturingInputRel)
-    isProcessMaterialInput = RelationshipFrom(models.ForeignKey("Material",
-                                                                on_delete=models.deletion.CASCADE),
-                                              isManufacturingInputRel,
+    material_input = RelationshipFrom(Material,
+                                      'IS_MANUFACTURING_INPUT',
                                               model=isManufacturingInputRel)
+
     inCountry = RelationshipTo(models.ForeignKey("Country", on_delete=models.deletion.CASCADE),
                                inLocationRel, model=inLocationRel)
     inCity = RelationshipTo(models.ForeignKey("City", on_delete=models.deletion.CASCADE),
@@ -63,12 +66,20 @@ class SubProcess(Process):
 
 
 class Manufacturing(Process):
+
+    is_a = RelationshipTo(EMMO_Manufacturing, "IS_A", model=isARel)
+    def  __str__(self):
+        print(self.is_a)
+        return  "test"
+    material_output = RelationshipTo(Material,
+                                       'IS_MANUFACTURING_OUTPUT',
+                                       model=isManufacturingOutputRel)
     pass
 
 
 class Measurement(Process):
+    is_a = RelationshipTo(EMMO_Measurement, "IS_A", model=isARel)
     type = StringProperty(choices=MEASUREMENT_TYPE_CHOICEFIELD)
-    granularity_level = StringProperty(choices=GRANULARITY_TYPE_CHOICEFIELD)
     hasMeasurementOutput = RelationshipTo(models.ForeignKey("Property",
                                                             on_delete=models.deletion.CASCADE),
                                           hasMeasurementOutputRel,

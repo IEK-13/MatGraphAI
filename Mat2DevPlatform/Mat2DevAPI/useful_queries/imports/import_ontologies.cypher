@@ -49,3 +49,10 @@ SET n:EMMO_Unit;
 
 MATCH(n:EMMO__Relationship)
 DELETE n;
+
+MATCH (n:EMMO__Class)
+REMOVE n:EMMO__Class:Resource;
+MATCH (n)
+WHERE (n:EMMO_Matter OR n:EMMO_Process OR n:EMMO_Quantity OR n:EMMO_Unit) AND NOT EXISTS(n.uid)
+
+SET n.uid = randomUUID()
