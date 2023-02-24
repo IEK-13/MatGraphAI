@@ -17,7 +17,7 @@ collect(TOFLOAT(row1.`Accuracy`)) AS accuracylist
 
 MATCH(researcher:Researcher {last_name:row.Researcher})
 MATCH(material:Material {name:row.Material})
-MATCH(emmo_measurement:EMMO_Process {EMMO__name:row.Ontology})
+MATCH(emmo_measurement:EMMO_Measurement {EMMO__name:row.Ontology})
 MATCH(emmo_viscosity:EMMO_Quantity {EMMO__name:"Viscosity"})
 MATCH(emmo_torque:EMMO_Quantity {EMMO__name:"Torque"})
 MATCH(emmo_speed:EMMO_Quantity {EMMO__name:"Speed"})

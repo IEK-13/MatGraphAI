@@ -47,3 +47,13 @@ MATERIAL_LABEL_CHOICEFIELD = {'nanocrystal': 'Nano Crystaline',
                               'natural': 'Natural',
                               'manufactured': 'Manufactured'}
 
+INSTITUTION_TYPE_CHOICEFIELD = {'Government' : 'Government',
+                                'Education' : 'Education',
+                                'Nonprofit' : 'Nonprofit',
+                                'Other' : 'Other',
+                                'Facility' : 'Facility',
+                                'Company' : 'Company',
+                                'Archive' : 'Archive',
+                                'Healthcare': 'Healthcare'}
+
+

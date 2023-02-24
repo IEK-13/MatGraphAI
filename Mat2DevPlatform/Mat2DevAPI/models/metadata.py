@@ -3,13 +3,23 @@ from neomodel import (DateTimeProperty,
                       StringProperty,
                       RelationshipFrom,
                       RelationshipTo,
-                      IntegerProperty)
+                      IntegerProperty,
+                      ArrayProperty)
 
+from Mat2DevAPI.choices.ChoiceFields import INSTITUTION_TYPE_CHOICEFIELD
 from Mat2DevAPI.models.abstractclasses import CausalObject, UniqueNode
-from Mat2DevAPI.models.relationships import byResearcherRel
+from Mat2DevAPI.models.relationships import byResearcherRel, affiliatedToRel, inRel
 
+
+class Country(CausalObject):
+    abbreviation = StringProperty()
 
 class Institution(CausalObject):
+    ROI = StringProperty(unique_index= True, required = True)
+    link =  StringProperty()
+    acronym = StringProperty()
+    wikipedia_url =  StringProperty()
+    type = StringProperty(choices=INSTITUTION_TYPE_CHOICEFIELD)
     pass
 
 
@@ -21,6 +31,8 @@ class Instrument(CausalObject):
 
 
 class Researcher(CausalObject):
+    country = RelationshipTo(Country, "IN", model=inRel)
+    institution = RelationshipTo(Country, "AFFILIATED_TO", model= affiliatedToRel)
     # Organizational Data
     ORCID = StringProperty(unique=True)
     email = StringProperty()
@@ -29,24 +41,18 @@ class Researcher(CausalObject):
         app_label = 'Mat2DevAPI'
 
     name = StringProperty(unique_index=True, required=True)
-    institution = RelationshipTo(models.ForeignKey("Institution",
-        on_delete=models.deletion.CASCADE),
-        "AFFILIATED_TO")
-    measurements = RelationshipTo(models.ForeignKey("Measurement",
-        on_delete=models.deletion.CASCADE),
-        "PUBLISHED_IN")
-    first_author = RelationshipTo(models.ForeignKey("Publication",
-        on_delete=models.deletion.CASCADE),
-        byResearcherRel)
-    author = RelationshipTo(models.ForeignKey("Publication",
-        on_delete=models.deletion.CASCADE),
-        byResearcherRel)
-    planned = RelationshipTo(models.ForeignKey("Process",
-        on_delete=models.deletion.CASCADE),
-        byResearcherRel)
-    conducted = RelationshipTo(models.ForeignKey("Process",
-        on_delete=models.deletion.CASCADE),
-        byResearcherRel)
+    first_author = RelationshipTo(models.ForeignKey("Publication", on_delete=models.deletion.CASCADE),
+                                  "FIRST_AUTHOR",
+                                  model = byResearcherRel)
+    author = RelationshipTo(models.ForeignKey("Publication", on_delete=models.deletion.CASCADE),
+                            "AUTHOR",
+                            model = byResearcherRel)
+    planned = RelationshipTo(models.ForeignKey("Process",on_delete=models.deletion.CASCADE),
+                             "PLANNED",
+                             model = byResearcherRel)
+    conducted = RelationshipTo(models.ForeignKey("Process", on_delete=models.deletion.CASCADE),
+                               "CONDUCTED",
+                               model = byResearcherRel)
 
 
 class Publication(UniqueNode):

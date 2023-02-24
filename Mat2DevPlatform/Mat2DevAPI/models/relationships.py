@@ -154,3 +154,9 @@ class emmoIsA(StructuredRel):
 
 class isARel(StructuredRel):
     pass
+
+class affiliatedToRel(StructuredRel):
+    pass
+
+class inRel(StructuredRel):
+    pass

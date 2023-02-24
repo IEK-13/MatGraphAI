@@ -54,13 +54,6 @@ class Molecule(Manufactured):
     alternative_names = ArrayProperty()
 
 
-# GENERAL PROPERTIES
-
-# ADDITIONAL INFORMATION
-
-# def __str__(self):
-#     return self.name
-
 
 class Material(Manufactured):
     sumFormula = StringProperty()
@@ -71,13 +64,12 @@ class Material(Manufactured):
     macrostructure = ArrayProperty(StringProperty(choices=MATERIAL_MACROSTRUCTURE_CHOICEFIELD))
 
 
+
 class Component(Manufactured):
-    hasMaterial = RelationshipTo(Material, hasPartRel, model=hasPartRel)
-    hasComponent = RelationshipTo("Component", hasPartRel, model=hasPartRel)
+    hasComponent = RelationshipTo("Component", "HAS_PART", model=hasPartRel)
     pass
 
 
 class Device(Manufactured):
-    hasMaterial = RelationshipTo(Material, hasPartRel, model=hasPartRel)
-    hasComponent = RelationshipTo(Component, hasPartRel, model=hasPartRel)
+    hasComponent = RelationshipTo(Component, "HAS_PART", model=hasPartRel)
     pass

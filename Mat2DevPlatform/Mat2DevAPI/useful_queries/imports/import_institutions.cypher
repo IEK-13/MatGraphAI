@@ -7,11 +7,13 @@ CREATE (institution:Institution{
   wikipedia_url: row.`wikipedia_url`,
   link: row.`links_0`,
   acronym: row.`acronyms_0`,
-  uid: randomUUID()
+  uid: randomUUID(),
+  date_added: date()
 })
 
 MERGE(country:Country {name: row.`country_country_name`,
-                       abbreviation: row.`country_country_code`})
+                       abbreviation: row.`country_country_code`,
+                      date_added: date()})
 ON CREATE
 SET country.uid = randomUUID()
 

@@ -19,7 +19,8 @@ MERGE (el)-[:IS_A]->(elementalsubstance)
 FOREACH(x IN CASE WHEN line.discovered_by IS NOT NULL THEN [1] END |
   MERGE (researcher:Researcher {name: line.discovered_by})
     ON CREATE SET
-    researcher.uid = randomUUID()
+    researcher.uid = randomUUID(),
+    researcher.date_added = date()
   CREATE (exp:Manufacturing {uid: randomUUID()})
   MERGE (el)<-[:IS_MANUFACTURING_OUTPUT]-(exp)-[:BY]->(researcher))
 // IntegerProperties

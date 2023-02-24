@@ -6,6 +6,7 @@ from neomodel import (AliasProperty,
                       ArrayProperty)
 from django.apps import apps
 
+
 class UIDDjangoNode(DjangoNode):
     uid = UniqueIdProperty(
         primary_key=True
@@ -25,11 +26,11 @@ class UIDDjangoNode(DjangoNode):
 
     class Meta:
         pass
+
     def __hash__(self):
         if self.uid is None:
             raise TypeError("Model instances without primary key value are unhashable")
         return hash(self.uid)
-
 
 
 class UniqueNode(DjangoNode):
@@ -46,17 +47,19 @@ class CausalObject(UIDDjangoNode):
     __abstract_node__ = True
 
     date_added = DateProperty(required=True)
-    def  __str__(self):
-        return  self.name
+
+    def __str__(self):
+        return self.name
+
 
 class OntologyNode(UIDDjangoNode):
-    EMMO__name = StringProperty(required= True, unique_index= True)
-    EMMO__uri =  StringProperty(required= True, unique_index= True)
-    def  __str__(self):
-        return  self.EMMO__name
+    EMMO__name = StringProperty(required=True, unique_index=True)
+    EMMO__uri = StringProperty(required=True, unique_index=True)
+
+    def __str__(self):
+        return self.EMMO__name
+
     __abstract_node__ = True
-
-
 
 
 class AlternativeLabelMixin:

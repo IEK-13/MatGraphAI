@@ -2,7 +2,9 @@ from django import forms
 
 from Mat2DevAPI.admins.adminBase import NeoModelForm
 
-import Mat2DevAPI.fields.adminFields
+from Mat2DevAPI.fields.adminFields import RegularTypeChoiceField, RelationMultipleChoiceField, ElementsMultipleChoiceField
+
+from Mat2DevAPI.choices.ChoiceFields import INSTITUTION_TYPE_CHOICEFIELD
 
 
 # class ComponentAdminForm(forms.ModelForm):
@@ -33,11 +35,11 @@ import Mat2DevAPI.fields.adminFields
 #     #           'name': 'Name'}
 #
 class MoleculeAdminForm(NeoModelForm):
-    elements = Mat2DevAPI.fields.adminFields.ElementsMultipleChoiceField()
+    elements = ElementsMultipleChoiceField()
     def clean(self):
         cleaned_data = super().clean()
         return cleaned_data
-    elements = Mat2DevAPI.fields.adminFields.RelationMultipleChoiceField('Element', 'Elements', primary_key='name')
+    elements = RelationMultipleChoiceField('Element', 'Elements', primary_key='name')
 
 
 class DateInput(forms.DateInput):
@@ -45,11 +47,32 @@ class DateInput(forms.DateInput):
 
 class ManufacturingAdminForm(NeoModelForm):
 
-    # material_input = Mat2DevAPI.fields.adminFields.MaterialMultipleChoiceField()
-    # material_output = Mat2DevAPI.fields.adminFields.MaterialMultipleChoiceField()
-    material_input = Mat2DevAPI.fields.adminFields.RelationMultipleChoiceField("Material", "Materials", primary_key = "uid", label_field='name')
-    material_output = Mat2DevAPI.fields.adminFields.RelationMultipleChoiceField("Material", "Materials", primary_key = "uid", label_field='name')
-    is_a = Mat2DevAPI.fields.adminFields.RelationMultipleChoiceField("EMMO_Process", "EMMO_Processes", primary_key = 'uid',label_field='EMMO__name')
+    material_input = RelationMultipleChoiceField("Material", "Materials", primary_key = "uid", label_field='name')
+    material_output = RelationMultipleChoiceField("Material", "Materials", primary_key = "uid", label_field='name')
+    is_a = RelationMultipleChoiceField("EMMOProcess", "EMMO Processes", primary_key = 'uid',label_field='EMMO__name')
+    date_added =DateInput()
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+    def clean(self):
+        cleaned_data = super().clean()
+        return cleaned_data
+
+class ResearcherAdminForm(NeoModelForm):
+
+    country = RelationMultipleChoiceField("Country", "Countries", primary_key = "uid", label_field='name')
+    institution = RelationMultipleChoiceField("Institution", "Institutions", primary_key = "uid", label_field='name')
+    date_added =DateInput()
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+    def clean(self):
+        cleaned_data = super().clean()
+        return cleaned_data
+
+class InstitutionAdminForm(NeoModelForm):
+    type = RegularTypeChoiceField(INSTITUTION_TYPE_CHOICEFIELD)
+
+    country = RelationMultipleChoiceField("Country", "Countries", primary_key = "uid", label_field='name')
+    date_added = DateInput()
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
     def clean(self):

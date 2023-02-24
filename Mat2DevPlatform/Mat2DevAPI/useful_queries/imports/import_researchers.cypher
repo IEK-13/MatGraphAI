@@ -8,7 +8,8 @@ MERGE (researcher:Researcher{
   date_added: row.date_added,
   field: row.field,
   academic_title: row.title,
-  uid: randomUUID()
+  uid: randomUUID(),
+  name: row. first_name + " " + row.last_name
 })
 WITH researcher, row
 MATCH(country:Country {name: row.`country`})
