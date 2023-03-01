@@ -1,9 +1,26 @@
+"""
+The graphutils library contains classes that are needed to extend the django functionality on neo4j.
+
+graphutils form classes:
+ - AutocompleteSingleChoiceField
+ - ChoiceWidgetBase
+ - NeoModelForm
+ - RelationChoiceFieldBase
+ - RelationMultipleChoiceField
+ - RelationMultipleChoiceWidget
+ - RelationSingleChoiceField
+ - RelationSingleChoiceWidget
+"""
+
 from dal import autocomplete
 from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.forms import Select
 from django import forms
 from neomodel import db, RelationshipManager
 
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 class ChoiceWidgetBase:
 
@@ -104,7 +121,7 @@ class RelationChoiceFieldBase:
 
 class RelationMultipleChoiceField(RelationChoiceFieldBase, forms.MultipleChoiceField):
 
-    def __init__(self, node_label, name_plural, primary_key='uid', label_field='label', **kwargs):
+    def __init__(self, node_label, name_plural, primary_key='uid', label_field='name', **kwargs):
         super().__init__(
             widget=RelationMultipleChoiceWidget(name_plural, False, node_label=node_label, primary_key=primary_key, label_field=label_field),
             primary_key=primary_key,

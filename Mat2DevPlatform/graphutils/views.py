@@ -1,3 +1,10 @@
+"""
+The graphutils library contains classes that are needed to extend the django functionality on neo4j.
+
+graphutils views classes:
+ - AutocompleteView
+"""
+
 from dal import autocomplete
 
 

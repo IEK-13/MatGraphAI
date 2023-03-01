@@ -1,3 +1,6 @@
+
+from graphutils.forms import RelationMultipleChoiceField, RelationSingleChoiceField
+
 from django.contrib.admin.views.main import ChangeList
 from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.forms import Select
@@ -105,26 +108,7 @@ class RelationChoiceFieldBase:
                     )
 
 
-class RelationMultipleChoiceField(RelationChoiceFieldBase, forms.MultipleChoiceField):
 
-    def __init__(self, node_label, name_plural, primary_key='uid', label_field='label', **kwargs):
-        super().__init__(
-            widget=RelationMultipleChoiceWidget(name_plural, False, node_label=node_label, primary_key=primary_key,
-                                                label_field=label_field),
-            primary_key=primary_key,
-            **kwargs
-        )
-
-
-class RelationSingleChoiceField(RelationChoiceFieldBase, forms.ChoiceField):
-
-    def __init__(self, node_label, primary_key='uid', label_field='label', include_none_option=True, **kwargs):
-        super().__init__(
-            widget=RelationSingleChoiceWidget(node_label=node_label, primary_key=primary_key, label_field=label_field,
-                                              include_none_option=include_none_option),
-            primary_key=primary_key,
-            **kwargs
-        )
 
 
 class NeoModelForm(forms.ModelForm):

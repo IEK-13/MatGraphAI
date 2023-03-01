@@ -47,7 +47,7 @@ class ElementsMultipleChoiceField(RelationMultipleChoiceField):
 #             )
 #         return value
 
-# class EMMOMatterMultipleChoiceField(RelationMultipleChoiceField):
+# class EMMO_MatterMultipleChoiceField(RelationMultipleChoiceField):
 #
 #     def __init__(self, autocomplete_url='material-input-autocomplete', **kwargs):
 #         super().__init__('EMMO_Matter', 'EMMO_Matters', primary_key='uri', label_field='EMMO__name', **kwargs)

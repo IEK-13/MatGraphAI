@@ -1,34 +1,23 @@
-from django.db import models
-from neomodel import (IntegerProperty,
-                      StringProperty,
-                      ArrayProperty)
+from neomodel import (IntegerProperty, StringProperty, ZeroOrMore)
 from neomodel import (RelationshipTo,
                       RelationshipFrom)
 
-from Mat2DevAPI.choices.ChoiceFields import MATERIAL_STRUCTURE_CHOICEFIELD, \
-    MATERIAL_MACROSTRUCTURE_CHOICEFIELD, MATERIAL_MICROSTRUCTURE_CHOICEFIELD, MATERIAL_NANOSTRUCTURE_CHOICEFIELD
 from Mat2DevAPI.models.abstractclasses import CausalObject, UIDDjangoNode
-from Mat2DevAPI.models.relationships import isManufacturingInputRel, hasManufacturingOutputRel, isMeasuredRel, \
-    hasPartRel
+from Mat2DevAPI.models.relationships import isManufacturingInputRel, hasPartRel, isARel, isManufacturingOutputRel, \
+    hasMeasurementOutputRel
 
 
 class Matter(CausalObject):
-    isManufactured = RelationshipTo(models.ForeignKey("Manufacturing", on_delete=models.deletion.CASCADE),
-        isManufacturingInputRel,
-        model=isManufacturingInputRel)
-    isOutput = RelationshipTo(models.ForeignKey("Manufacturing", on_delete=models.deletion.CASCADE),
-        isManufacturingInputRel,
-        model=hasManufacturingOutputRel)
-    measured = RelationshipTo(models.ForeignKey("Measurement",
-        on_delete=models.deletion.CASCADE),
-        isMeasuredRel,
-        model=isMeasuredRel)
+    is_a = RelationshipTo('Mat2DevAPI.models.ontology.EMMO_Matter', 'IS_A', cardinality = ZeroOrMore, model=isARel)
+    manufacturing_input = RelationshipTo('Mat2DevAPI.models.processes.Manufacturing', 'IS_MANUFACTURING_INPUT', model=isManufacturingInputRel)
+    manufacturing_output = RelationshipFrom('Mat2DevAPI.models.processes.Manufacturing', 'IS_MANUFACTURING_OUTPUT', model=isManufacturingOutputRel)
+    measurement_input = RelationshipTo('Mat2DevAPI.models.processes.Measurement', 'IS_MEASUREMENT_INPUT', model=hasMeasurementOutputRel)
     __abstract_node__ = True
 
 
 class Manufactured(Matter):
-    hasElement = RelationshipTo("Element", hasPartRel, model=hasPartRel)
-    hasMolecule = RelationshipTo("Molecule", hasPartRel, model=hasPartRel)
+    elements = RelationshipTo('Mat2DevAPI.models.matter.Element', "HAS_PART", model=hasPartRel)
+    molecules = RelationshipTo('Mat2DevAPI.models.matter.Molecule', "HAS_PART", model=hasPartRel)
     __abstract_node__ = True
     pass
 
@@ -42,7 +31,6 @@ class Element(Matter):
 class Molecule(Manufactured):
     class Meta(UIDDjangoNode.Meta):
         pass
-    elements = RelationshipFrom('Mat2DevAPI.models.matter.Element', 'HAS_PART', model=hasPartRel)
     # IDENTIFIERS
     SMILES = StringProperty()
     InChI_key = StringProperty()
@@ -51,25 +39,25 @@ class Molecule(Manufactured):
     IUPAC_name = StringProperty()
     chemical_formula = StringProperty()
     CAS = StringProperty()
-    alternative_names = ArrayProperty()
 
 
 
 class Material(Manufactured):
+
     sumFormula = StringProperty()
-    hasElement = RelationshipTo(Element, hasPartRel, model=hasPartRel)
-    structure = ArrayProperty(StringProperty(choices=MATERIAL_STRUCTURE_CHOICEFIELD))
-    nanostructure = ArrayProperty(StringProperty(choices=MATERIAL_NANOSTRUCTURE_CHOICEFIELD))
-    microstructure = ArrayProperty(StringProperty(choices=MATERIAL_MICROSTRUCTURE_CHOICEFIELD))
-    macrostructure = ArrayProperty(StringProperty(choices=MATERIAL_MACROSTRUCTURE_CHOICEFIELD))
+    materials = RelationshipTo('Mat2DevAPI.models.matter.Material', "HAS_PART", model=hasPartRel)
+
 
 
 
 class Component(Manufactured):
-    hasComponent = RelationshipTo("Component", "HAS_PART", model=hasPartRel)
+    materials = RelationshipTo('Mat2DevAPI.models.matter.Material', "HAS_PART", model=hasPartRel)
+    components = RelationshipTo('Mat2DevAPI.models.matter.Component', 'HAS_PART', model=hasPartRel)
     pass
 
 
 class Device(Manufactured):
-    hasComponent = RelationshipTo(Component, "HAS_PART", model=hasPartRel)
+    materials = RelationshipTo('Mat2DevAPI.models.matter.Material', "HAS_PART", model=hasPartRel)
+    components = RelationshipTo('Mat2DevAPI.models.matter.Component', 'HAS_PART', model=hasPartRel)
+    devices = RelationshipTo('Mat2DevAPI.models.matter.Device', 'HAS_PART', model=hasPartRel)
     pass

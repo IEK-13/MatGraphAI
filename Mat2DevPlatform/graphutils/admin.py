@@ -1,7 +1,17 @@
+"""
+The graphutils library contains classes that are needed to extend the django functionality on neo4j.
+
+graphutils admin classes:
+ - ChangeListFormSet
+ - NeoAdminChangelist
+ - NeoModelAdmin
+"""
+
 from django.contrib.admin import ModelAdmin
 from django.contrib.admin.views.main import ChangeList
 from django.forms import BaseFormSet, formset_factory
 
+from Mat2DevAPI.models.matter import Material
 from graphutils.helpers import LocaleOrderingQueryBuilder
 
 
@@ -14,13 +24,12 @@ class NeoAdminChangelist(ChangeList):
 
 
 class NodeModelAdmin(ModelAdmin):
-
     node_primary_key = 'uid'
     node_changelist_formset = None
     node_changelist_form = None
 
     # very important, unordered datasets save data in random places...
-    ordering = ('uid', )
+    ordering = ('uid',)
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -32,7 +41,7 @@ class NodeModelAdmin(ModelAdmin):
 
     def _get_list_editable_queryset(self, request, prefix):
         object_pks = self._get_edited_object_pks(request, prefix)
-        return [Skill.nodes.get(uid=uid) for uid in object_pks]
+        return [Material.nodes.get(uid=uid) for uid in object_pks]
 
     def get_changelist_formset(self, request, **kwargs):
         if self.node_changelist_form and self.node_changelist_formset:

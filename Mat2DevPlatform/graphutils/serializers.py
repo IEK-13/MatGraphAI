@@ -1,3 +1,12 @@
+"""
+The graphutils library contains classes that are needed to extend the django functionality on neo4j.
+
+graphutils serializer classes:
+ - LabeledDjangoNodeSerializer
+ - QuotaSerializer
+ - UploadedDocuments
+"""
+
 from rest_framework import serializers
 
 

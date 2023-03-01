@@ -1,16 +1,27 @@
+"""
+The graphutils library contains classes that are needed to extend the django functionality on neo4j.
+
+graphutils model classes:
+ - AlternativeLabelMixin
+ - FileUploadProperty
+ - LabeledDjangoNode
+ - UIDDjangoNode
+ - UploadFile
+ - UploadFileProperty
+ - UploadFileList
+"""
+
 import json
 import uuid
-import sys
 
 from django.apps import apps
 
 from django_neomodel import DjangoNode, classproperty
-from neomodel import UniqueIdProperty, StringProperty, \
-    ArrayProperty, AliasProperty, JSONProperty
+from neomodel import UniqueIdProperty, StringProperty, ArrayProperty, AliasProperty, JSONProperty
 from neomodel.properties import validator
 
-class UIDDjangoNode(DjangoNode):
 
+class UIDDjangoNode(DjangoNode):
     uid = UniqueIdProperty(
         primary_key=True
     )
@@ -31,7 +42,6 @@ class UIDDjangoNode(DjangoNode):
 
 
 class LabeledDjangoNode(UIDDjangoNode):
-
     label = StringProperty(
         required=True
     )
@@ -89,7 +99,6 @@ class UploadedFilesList(list):
 
     @classmethod
     def from_future_attachments(cls, attachments):
-
         from attachments.models import FutureAttachment
 
         ufl = cls()
@@ -97,7 +106,7 @@ class UploadedFilesList(list):
         for att in attachments:
             att = FutureAttachment.objects.get(id=att['id'])
             ufl.append(UploadedFile(att.file.name, att.name))
-            att.keep_file = True # make sure file is not deleted when FutureAttachment is deleted
+            att.keep_file = True  # make sure file is not deleted when FutureAttachment is deleted
             att.save()
 
         return ufl
@@ -117,7 +126,6 @@ class UploadedFileProperty(JSONProperty):
 class FileUploadProperty(ArrayProperty):
 
     def __init__(self, *args, **kwargs):
-
         kwargs['base_property'] = UploadedFileProperty()
         kwargs['default'] = UploadedFilesList()
         super().__init__(*args, **kwargs)
@@ -125,4 +133,3 @@ class FileUploadProperty(ArrayProperty):
     @validator
     def inflate(self, value):
         return UploadedFilesList(super().inflate(value))
-

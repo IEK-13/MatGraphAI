@@ -1,3 +1,10 @@
+"""
+The graphutils library contains classes that are needed to extend the django functionality on neo4j.
+
+graphutils serializer classes:
+ - GenericNeoViewSet
+"""
+
 from django.http import Http404
 from rest_framework import viewsets
 

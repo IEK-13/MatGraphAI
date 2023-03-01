@@ -1,3 +1,18 @@
+"""
+The graphutils library contains classes that are needed to extend the django functionality on neo4j.
+
+graphutils helper classes:
+ - LocalOrderingQueryBuilder
+ - NeoPaginator
+
+graphutils helper functions:
+ - connect
+ - connect_all
+ - relation_to_internal_value
+ - replace
+ - validate_param
+"""
+
 from django.forms import ValidationError
 
 from uuid import UUID

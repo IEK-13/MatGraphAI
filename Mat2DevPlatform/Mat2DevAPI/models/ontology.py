@@ -9,7 +9,7 @@ class EMMOQuantity(OntologyNode):
     pass
 
 
-class EMMOMatter(OntologyNode):
+class EMMO_Matter(OntologyNode):
     class Meta:
         verbose_name_plural = 'EMMO Matter'
 
@@ -19,7 +19,7 @@ class EMMOMatter(OntologyNode):
     pass
 
 
-class EMMOProcess(OntologyNode):
+class EMMO_Process(OntologyNode):
     class Meta:
         verbose_name_plural = 'EMMO Processes'
     app_label = 'Mat2DevAPI'
