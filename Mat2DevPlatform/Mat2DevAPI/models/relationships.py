@@ -1,4 +1,4 @@
-from neomodel import StructuredRel, IntegerProperty, BooleanProperty, StringProperty
+from neomodel import StructuredRel, IntegerProperty, FloatProperty, StringProperty
 
 
 class byResearcherRel(StructuredRel):
@@ -127,7 +127,10 @@ class hasParameterInputRel(hasParticipantRel):
 
 # hasProcessOutput properties
 
-
+class hasProcessOutputRel(hasParticipantRel):
+    value = FloatProperty
+    accuracy = FloatProperty
+    pass
 class hasProcessOutputRel(hasParticipantRel):
     pass
 

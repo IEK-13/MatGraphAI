@@ -4,10 +4,11 @@ from neomodel import (RelationshipTo,
 
 from Mat2DevAPI.models.abstractclasses import CausalObject, UIDDjangoNode
 from Mat2DevAPI.models.relationships import isManufacturingInputRel, hasPartRel, isARel, isManufacturingOutputRel, \
-    hasMeasurementOutputRel
+    hasMeasurementOutputRel, hasProcessOutputRel
 
 
 class Matter(CausalObject):
+    properties = RelationshipTo('Mat2DevAPI.models.properties.Property', 'HAS_PROPERTY', model=hasProcessOutputRel)
     is_a = RelationshipTo('Mat2DevAPI.models.ontology.EMMO_Matter', 'IS_A', cardinality = ZeroOrMore, model=isARel)
     manufacturing_input = RelationshipTo('Mat2DevAPI.models.processes.Manufacturing', 'IS_MANUFACTURING_INPUT', model=isManufacturingInputRel)
     manufacturing_output = RelationshipFrom('Mat2DevAPI.models.processes.Manufacturing', 'IS_MANUFACTURING_OUTPUT', model=isManufacturingOutputRel)
