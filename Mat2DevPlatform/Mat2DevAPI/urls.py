@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path, include
 from django.urls import re_path as url
 
-from . import views
 from Mat2DevAPI.views.matterView import ElementAutocompleteView, MaterialInputAutocompleteView, MaterialChoiceField
+from Mat2DevAPI.views.uploadCsvViews import upload_csv, results
 
 urlpatterns = [
     url(
@@ -18,11 +18,8 @@ urlpatterns = [
     url(
         r'^autocomplete/ontology/$',
         MaterialChoiceField,
-        name='material-autocomplete'
-    ),
-    url(
-        r'^autocomplete/ontology/$',
-        MaterialChoiceField,
         name='emmomatter-autocomplete'
-    )
-]
+    ),
+    path('upload/', upload_csv, name='upload_csv'),
+    path('results/<str:url>/', results, name='results'),
+    ]

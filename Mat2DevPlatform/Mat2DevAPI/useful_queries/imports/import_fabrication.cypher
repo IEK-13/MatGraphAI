@@ -1,4 +1,4 @@
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/jasna/FuelCellFabrication.csv' AS row
+LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/jasna/FuelCellFabrication.csv' AS row
 
 MATCH (EMMO_fcas:EMMO_Process {EMMO__name: "FuelCellAssembly"}),
       (EMMO_fcfab:EMMO_Process {EMMO__name: "FuelCellManufacturing"}),
@@ -31,17 +31,20 @@ MERGE(fc:Device {name: row.`Run #`+"FuelCell",
   SET fc.uid = randomUUID()
 
 MERGE(catink:Material {name: row.`Run #`+"_ink",
-     date_added : date(),
-     flag: "jasna"
+                      date_added : date(),
+                      flag: "jasna"
 })
   ON CREATE
   SET catink.uid = randomUUID()
 
-MERGE(mea:Component {uid: randomUUID(),
-                     name: row.`Run #`,
-      date_added : date(),
-      flag: "jasna"
+
+MERGE(mea:Component {name: row.`Run #`,
+                    date_added : date(),
+                    flag: "jasna"
 })
+  ON CREATE
+  SET mea.uid = randomUUID()
+
 // Other Components
 MERGE(membrane:Material {name: row.Membrane,
       date_added : date(),
@@ -221,7 +224,7 @@ MERGE(ploading:Property{uid: randomUUID(),
 })
 MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:HAS_MEASUREMENT_OUTPUT]->(ploading)-[:IS_A]->(EMMO_loading)
 MERGE(mea)-[:HAS_PROPERTY{
-  value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(ploading)
+  float_value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(ploading)
 
 MERGE(ic:Measurement{uid: row.`Run #`,
                      DOI: row.`Run #`,
@@ -238,7 +241,7 @@ SET pic.DOI = row.DOI
 
 MERGE(catink)-[:IS_MEASUREMENT_INPUT]->(ic)-[:HAS_MEASUREMENT_OUTPUT]->(pic)-[:IS_A]->(EMMO_ic)
 MERGE(catink)-[:HAS_PROPERTY{
-  value: TOFLOAT(row.`I/C`)}]->(pic)
+  float_value: TOFLOAT(row.`I/C`)}]->(pic)
 
 
 MERGE(ew:Measurement{uid: row.EW,
@@ -253,13 +256,13 @@ MERGE(pew:Property{uid: row.EW,
 SET pew.uid = randomUUID()
 MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:HAS_MEASUREMENT_OUTPUT]->(pew)-[:IS_A]->(EMMO_ew)
 MERGE(ionomer)-[:HAS_PROPERTY{
-  value: TOFLOAT(row.`EW`)}]->(pew)
+  float_value: TOFLOAT(row.`EW`)}]->(pew)
 
 // Paraneters
 
-MERGE(inkfab)-[:HAS_PARAMETER{value: TOFLOAT(row.`Drymill time (hrs)`)}]->(:Parameter)-[:IS_A]->(EMMO_mill)
+MERGE(inkfab)-[:HAS_PARAMETER{float_value: TOFLOAT(row.`Drymill time (hrs)`)}]->(:Parameter)-[:IS_A]->(EMMO_mill)
 
-MERGE(meafab)-[:HAS_PARAMETER{value: TOFLOAT(row.`Drying temp (deg C)`)}]->(:Parameter)-[:IS_A]->(EMMO_dt)
+MERGE(meafab)-[:HAS_PARAMETER{float_value: TOFLOAT(row.`Drying temp (deg C)`)}]->(:Parameter)-[:IS_A]->(EMMO_dt)
 
 
 

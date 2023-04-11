@@ -104,7 +104,7 @@ class PropertyFormsetCls(BasePropertyFormset):
             RETURN
                 ID(rel) as rel,
                 measurement.uid as measurement,
-                rel.value as value, rel.accuracy as accuracy,
+                rel.float_value as value, rel.float_accuracy as accuracy,
                 measurement_label.EMMO__name as label, rel.unit as unit, property.uid as property, property_label.EMMO__name as property_label
         ''')
 

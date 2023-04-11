@@ -28,7 +28,7 @@ MERGE(inkfab)-[:IS_MANUFACTURING_OUTPUT]->(ink)
 
 MERGE(ink)-[:IS_A]->(emmo_ink)
 MERGE(ic:Property {name: row.name+"_ic"})
-MERGE(ink)-[:HAS_PROPERTY{value: row.IC}]->(ic)
+MERGE(ink)-[:HAS_PROPERTY{float_value: ToFloat(row.IC)}]->(ic)
 MERGE(ic)-[:IS_A]->(emmo_ic)
 FOREACH(ignoreMe IN CASE WHEN row.ionomer is not null THEN [1] ELSE [] END|
 
@@ -51,8 +51,8 @@ MERGE(sol1)-[:IS_MANUFACTURING_INPUT]->(solfab)
 MERGE(sol2)-[:IS_MANUFACTURING_INPUT]->(solfab)
 MERGE(sol)-[:IS_MANUFACTURING_INPUT]->(inkfab)
 
-MERGE(sol1)<-[:HAS_PART {value: TOFLOAT(row.solvent1_ratio)}]-(sol)
-MERGE(sol2)<-[:HAS_PART {value: TOFLOAT(1-TOFLOAT(row.solvent1_ratio))}]-(sol)
+MERGE(sol1)<-[:HAS_PART {float_value: TOFLOAT(row.solvent1_ratio)}]-(sol)
+MERGE(sol2)<-[:HAS_PART {float_value: TOFLOAT(1-TOFLOAT(row.solvent1_ratio))}]-(sol)
 MERGE(sol1)-[:IS_A]->(emmo_propanol)
 MERGE(sol2)-[:IS_A]->(emmo_h20)
 

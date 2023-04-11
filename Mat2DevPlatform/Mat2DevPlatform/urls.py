@@ -23,4 +23,3 @@ urlpatterns = [
     path('Mat2DevAPI/', include('Mat2DevAPI.urls')),
     path('admin/', admin.site.urls),
 ]
-print(include('Mat2DevAPI.urls'))

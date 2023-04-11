@@ -1,6 +1,6 @@
 // Molecule import starts here
 
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/PubChemMolecules_sum.csv' AS row
+LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/PubChemMolecules_sum.csv' AS row
 
 MATCH (mw:EMMO_Quantity {EMMO__name: "MolecularWeight"}),
       (c:Element {symbol: "C"}),
@@ -26,22 +26,22 @@ SET solvent.uid = randomUUID()
 
 
 FOREACH(x IN CASE WHEN row.C IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.C)}]->(c))
+  MERGE (solvent)-[:HAS_PART {integer_value: toInteger(row.C)}]->(c))
 
 FOREACH(x IN CASE WHEN row.H IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.H)}]->(h))
+  MERGE (solvent)-[:HAS_PART {integer_value: toInteger(row.H)}]->(h))
 
 FOREACH(x IN CASE WHEN row.O IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.O)}]->(o))
+  MERGE (solvent)-[:HAS_PART {integer_value: toInteger(row.O)}]->(o))
 
 FOREACH(x IN CASE WHEN row.N IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.N)}]->(n))
+  MERGE (solvent)-[:HAS_PART {integer_value: toInteger(row.N)}]->(n))
 
 FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.F)}]->(f))
+  MERGE (solvent)-[:HAS_PART {integer_value: toInteger(row.F)}]->(f))
 
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
-  MERGE (solvent)-[:HAS_PART {value: toInteger(row.S)}]->(s))
+  MERGE (solvent)-[:HAS_PART {integer_value: toInteger(row.S)}]->(s))
 
 FOREACH(x IN CASE WHEN row.ontologylabel1 = label1.EMMO__name THEN [1] END |
   MERGE (solvent)-[:IS_A ]->(label1))
