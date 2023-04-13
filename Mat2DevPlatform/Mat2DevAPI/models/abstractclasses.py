@@ -1,4 +1,4 @@
-from django_neomodel import DjangoNode
+from django_neomodel import DjangoNode, classproperty
 from neomodel import AliasProperty, StringProperty, UniqueIdProperty, ArrayProperty
 from django.apps import apps
 
@@ -12,7 +12,7 @@ class UIDDjangoNode(DjangoNode):
 
     # Django (esp. admin) uses .pk in a few places and expects a UUID.
     # Add an AliasProperty to handle this
-    @classmethod
+    @classproperty
     def _meta(cls):
         cls.Meta.app_label = apps.get_containing_app_config(cls.__module__).label
         opts = super()._meta
