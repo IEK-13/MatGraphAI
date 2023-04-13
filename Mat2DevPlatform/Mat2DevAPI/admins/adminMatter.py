@@ -1,6 +1,7 @@
 from django.contrib import admin as dj_admin
 from neomodel import Q
 
+from Mat2DevAPI import apps
 from Mat2DevAPI.admins.adminBase import (NodeModelAdmin)
 from Mat2DevAPI.forms.formsMatter import MoleculeAdminForm, MaterialAdminForm, DeviceAdminForm, ComponentAdminForm
 from Mat2DevAPI.inlines.inlinesProperties import TabularPropertyInline
@@ -23,13 +24,13 @@ Contains the classes
 
 
 
-@dj_admin.register(Element)
-class ElementAdmin(NodeModelAdmin):
-    """
-    ElementAdmin represents the element class in the admin site.
-    """
-    list_display = ("name",
-                    "symbol")
+# @dj_admin.register(Element)
+# class ElementAdmin(NodeModelAdmin):
+#     """
+#     ElementAdmin represents the element class in the admin site.
+#     """
+#     list_display = ("name",
+#                     "symbol")
 
 
 @dj_admin.register(Molecule)
@@ -37,6 +38,7 @@ class MoleculeAdmin(NodeModelAdmin):
     """
     Admin class of the Molecule model, to register Molecule at the admin page
     """
+
     list_display = ("uid",
                     "SMILES",
                     "InChI_key",

@@ -1,34 +1,35 @@
-from neomodel import (RelationshipTo, RelationshipFrom, StringProperty)
-from django.db.models import ForeignKey, CASCADE
+from neomodel import RelationshipTo, RelationshipFrom
 from Mat2DevAPI.models.abstractclasses import CausalObject
-from django.db import models
-from Mat2DevAPI.models.abstractclasses import UIDDjangoNode, OntologyNode
-
 
 
 class PhysicalDimension(CausalObject):
+    """
+    Class representing a physical dimension in the knowledge graph.
+    """
     class Meta:
         app_label = 'Mat2DevAPI'
+
     __abstract_node__ = True
 
 
-
-
 class Property(PhysicalDimension):
+    """
+    Class representing a property in the knowledge graph.
+    """
     class Meta:
         verbose_name_plural = 'properties'
         app_label = 'Mat2DevAPI'
-    derived_property = RelationshipTo(models.ForeignKey(
-        "Property",
-        on_delete=models.deletion.CASCADE), "derivedFrom")
-    property = RelationshipFrom(models.ForeignKey(
-        "Measurement",
-        on_delete=models.deletion.CASCADE),
-                                "YIELDS_PROP")
+
+    derived_property = RelationshipTo('Property', "derivedFrom")
+    property = RelationshipFrom('Mat2DevAPI.models.processes.Measurement', "YIELDS_PROPERTY")
+
+    pass
 
 
 class Parameter(PhysicalDimension):
-    parameter = RelationshipFrom(models.ForeignKey(
-        "Process",
-        on_delete=models.deletion.CASCADE),
-        "usesParameter")
+    """
+    Class representing a parameter in the knowledge graph.
+    """
+    parameter = RelationshipFrom('Mat2DevAPI.models.processes.Process', "HAS_PARAMETER")
+
+    pass

@@ -1,26 +1,39 @@
-from neomodel import RelationshipTo
+from neomodel import RelationshipTo, RelationshipFrom
 
 from Mat2DevAPI.models.abstractclasses import OntologyNode
-from Mat2DevAPI.models.relationships import emmoIsA
+from Mat2DevAPI.models.relationships import IsARel
 
 
 class EMMOQuantity(OntologyNode):
-    emmo_is_a = RelationshipTo("EMMO_Quantity", "EMMO__IS_A", emmoIsA)
+    """
+    Class representing EMMO quantity in the knowledge graph.
+    """
+    emmo_is_a = RelationshipTo("EMMO_Quantity", "EMMO__IS_A", model=IsARel)
     pass
 
 
 class EMMO_Matter(OntologyNode):
+    """
+    Class representing EMMO matter in the knowledge graph.
+    """
     class Meta:
         verbose_name_plural = 'EMMO Matter'
 
     app_label = 'Mat2DevAPI'
-    # emmo_is_a = RelationshipTo(models.ForeignKey("EMMO_Process", on_delete=models.deletion.CASCADE), "EMMO__IS_A",
-    # emmoIsA)
+
+    is_a = RelationshipFrom('Mat2DevAPI.models.matter.Matter', "IS_A", model=IsARel)
+
     pass
 
 
 class EMMO_Process(OntologyNode):
+    """
+    Class representing EMMO process in the knowledge graph.
+    """
     class Meta:
         verbose_name_plural = 'EMMO Processes'
     app_label = 'Mat2DevAPI'
+
+    is_a = RelationshipFrom('Mat2DevAPI.models.processes.Process', "IS_A", model=IsARel)
+
     pass

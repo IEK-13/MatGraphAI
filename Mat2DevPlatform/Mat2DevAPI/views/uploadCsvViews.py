@@ -1,63 +1,96 @@
-import csv
 import json
 import os
+
+import pandas as pd
 from neomodel import db
-
+from fuzzywuzzy import process
+from Mat2DevAPI.models.metadata import *  # Import your models here
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
-from Mat2DevAPI.importer.import_pubchem_json import IMPORT_PUBCHEM, IMPORT_RESEARCHER
+from Mat2DevAPI.importer.import_pubchem_json import IMPORT_PUBCHEM
+from pprint import pprint
+
+def map_measurement_data(csv_data):
+    # Implement your mapping logic for measurement data here
+    return csv_data
+
+def map_materials_data(csv_data):
+    # Implement your mapping logic for materials data here
+    return csv_data
+
+def map_simulation_data(csv_data):
+    # Implement your mapping logic for simulation data here
+    return csv_data
+
+def map_fabrication_data(csv_data):
+    # Implement your mapping logic for fabrication data here
+    return csv_data
+
+def map_metadata(csv_data):
+    # Implement your mapping logic for fabrication data here
+    return csv_data
 
 
-def results(request, url, json_data):
-    """Render the results template with the extracted data.
+
+def find_best_match(name, choices):
+    best_match, score = process.extractOne(name, choices)
+    if score > 80:  # Adjust the threshold based on your requirements
+        return best_match
+    else:
+        raise ValueError(f"No match found for '{name}'")
+
+# Import your models here
+
+
+
+
+
+
+
+
+
+DATA_TYPE_MAPPING = {
+    'measurement': map_measurement_data,
+    'materials': map_materials_data,
+    'simulation': map_simulation_data,
+    'fabrication': map_fabrication_data,
+    'metadata': map_metadata
+}
+
+def map_csv_data_to_graph(csv_data, data_type, header):
+    """Analyze and map the CSV data to the graph database schema.
 
     Args:
-        request: The HTTP request object.
-        url: The URL of the uploaded CSV file.
-        json_data: A list of dictionaries representing the data from the CSV file.
+        csv_data: A list of dictionaries representing the data from the CSV file.
+        data_type: A string representing the selected data type.
 
     Returns:
-        A rendered HTML template containing the CSV file upload results.
+        A list of dictionaries with the mapped data.
     """
-    return render(request, 'results.html', {'data': json_data})
+    if data_type in DATA_TYPE_MAPPING:
+        mapping_function = DATA_TYPE_MAPPING[data_type]
+        mapped_data = mapping_function(csv_data, header)
+        return str(mapped_data)
+    else:
+        raise ValueError(f"Unsupported data type: {data_type}")
+
 
 
 def upload_csv(request):
-    """Handle file uploads and convert CSV to JSON.
 
-    If the request method is POST, extract the data from the uploaded CSV file,
-    convert it to a JSON object, save the CSV file locally, and use the Cypher query
-    to insert the data into Neo4j. If the request method is GET, render the upload form.
-
-    Args:
-        request: The HTTP request object.
-
-    Returns:
-        If the request method is POST, a call to the results view function. If the
-        request method is GET, a rendered HTML template containing an upload form.
-    """
     if request.method == 'POST':
-        # Get the uploaded CSV file
+        # Get the uploaded CSV file and the selected data type
         csv_file = request.FILES['file']
+        data_type = request.POST['data_type']
 
-        # Parse the CSV data into a list of dictionaries
-        csv_data = csv.reader(csv_file.read().decode('utf-8').splitlines())
-        json_data = []
-        header = None
-        for row in csv_data:
-            if not header:
-                # If this is the first row, set the header list
-                header = row
-            else:
-                # Otherwise, create a dictionary mapping headers to data
-                data = {}
-                for i in range(len(header)):
-                    data[header[i]] = row[i]
-                json_data.append(data)
-                # Insert the data into Neo4j using the given Cypher query
-        input_data = json.dumps(json_data).replace("'", "")
-        cypher_query = IMPORT_PUBCHEM.replace('$data', input_data)
-        print(cypher_query)
+        # Parse the CSV data into a Pandas DataFrame
+        data = pd.read_csv(csv_file)
+
+        # Analyze and map the CSV data to the graph database schema
+        mapped_data = map_csv_data_to_graph(data, data_type, data.columns)
+
+        # Insert the mapped data into Neo4j using the appropriate Cypher query
+        cypher_query = IMPORT_PUBCHEM.replace('$data', mapped_data)
+        # print(cypher_query)
         db.cypher_query(cypher_query)
 
         # Save the uploaded CSV file to the server's media directory
@@ -67,12 +100,11 @@ def upload_csv(request):
             for chunk in csv_file.chunks():
                 destination.write(chunk)
 
-
-
-
         # Pass the results to the results view function
         return render(request, 'results.html', {'data': json_data})
     else:
         # Render the upload form
         return render(request, 'upload.html')
+
+
 
