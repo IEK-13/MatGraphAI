@@ -1,14 +1,12 @@
 from django.contrib import admin as dj_admin
 from neomodel import Q
 
-from Mat2DevAPI import apps
 from Mat2DevAPI.admins.adminBase import (NodeModelAdmin)
 from Mat2DevAPI.forms.formsMatter import MoleculeAdminForm, MaterialAdminForm, DeviceAdminForm, ComponentAdminForm
 from Mat2DevAPI.inlines.inlinesProperties import TabularPropertyInline
-from Mat2DevAPI.models.matter import (Element,
-                                      Molecule,
+from Mat2DevAPI.models.matter import (Molecule,
                                       Component,
-                                      Device, Material)
+                                      Device, Material, Element)
 
 """
 All admin classes that are required for Matter models. Contains Typefilters, to allow filtering of Matter
@@ -23,20 +21,25 @@ Contains the classes
 """
 
 
+@dj_admin.register(Element)
+class ElementAdmin(NodeModelAdmin):
+    """
+    ElementAdmin represents the element class in the admin site.
 
-# @dj_admin.register(Element)
-# class ElementAdmin(NodeModelAdmin):
-#     """
-#     ElementAdmin represents the element class in the admin site.
-#     """
-#     list_display = ("name",
-#                     "symbol")
+    list_display: A tuple of fields to be displayed in the admin list view.
+    """
+    list_display = ("name",
+                    "symbol")
 
 
 @dj_admin.register(Molecule)
 class MoleculeAdmin(NodeModelAdmin):
     """
-    Admin class of the Molecule model, to register Molecule at the admin page
+    Admin class of the Molecule model, to register Molecule at the admin page.
+
+    list_display: A tuple of fields to be displayed in the admin list view.
+    form: The admin form associated with this model.
+    actions: A list of actions available for this model in the admin page.
     """
 
     list_display = ("uid",
@@ -71,7 +74,12 @@ class MoleculeAdmin(NodeModelAdmin):
 @dj_admin.register(Material)
 class MaterialAdmin(NodeModelAdmin):
     """
-    MaterialAdmin registers the Material model to the Django Admin page
+    MaterialAdmin registers the Material model to the Django Admin page.
+
+    form: The admin form associated with this model.
+    list_display: A tuple of fields to be displayed in the admin list view.
+    inlines: A list of inline model classes associated with this model.
+    search_fields: A tuple of fields that can be searched in the admin page.
     """
 
     # form is necessary to create relations
@@ -82,6 +90,7 @@ class MaterialAdmin(NodeModelAdmin):
     # Allows hacked inlines
     def check(self, **kwargs):
         return []
+
     inlines = [TabularPropertyInline]
 
     # needs to be introduced to enable search, actual search is done by get_search_results
@@ -102,7 +111,10 @@ class MaterialAdmin(NodeModelAdmin):
 @dj_admin.register(Component)
 class ComponentAdmin(NodeModelAdmin):
     """
-    ComponentAdmin registers the Component model to the Django Admin page
+    ComponentAdmin registers the Component model to the Django Admin page.
+
+    form: The admin form associated with this model.
+    list_display: A tuple of fields to be displayed in the admin list view.
     """
     # form is necessary for the creation of relations
     form = ComponentAdminForm
@@ -120,7 +132,10 @@ class ComponentAdmin(NodeModelAdmin):
 @dj_admin.register(Device)
 class DeviceAdmin(NodeModelAdmin):
     """
-    DeviceAdmin registers the Device model to the Django Admin page
+    DeviceAdmin registers the Device model to the Django Admin page.
+
+    form: The admin form associated with this model.
+    list_display: A tuple of fields to be displayed in the admin list view.
     """
 
     # form is necessary for the creation of relations

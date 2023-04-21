@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neomodel.core &#8212; Mat2DevPlatform 2023 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for neomodel.core</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">from</span> <span class="nn">neomodel</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="kn">from</span> <span class="nn">neomodel.exceptions</span> <span class="kn">import</span> <span class="n">DoesNotExist</span><span class="p">,</span> <span class="n">NodeClassAlreadyDefined</span>
+<span class="kn">from</span> <span class="nn">neomodel.hooks</span> <span class="kn">import</span> <span class="n">hooks</span>
+<span class="kn">from</span> <span class="nn">neomodel.properties</span> <span class="kn">import</span> <span class="n">Property</span><span class="p">,</span> <span class="n">PropertyManager</span>
+<span class="kn">from</span> <span class="nn">neomodel.util</span> <span class="kn">import</span> <span class="n">Database</span><span class="p">,</span> <span class="n">classproperty</span><span class="p">,</span> <span class="n">_UnsavedNode</span><span class="p">,</span> <span class="n">_get_node_properties</span>
+<span class="kn">from</span> <span class="nn">neo4j.exceptions</span> <span class="kn">import</span> <span class="n">ClientError</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">drop_constraints</span><span class="p">(</span><span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Discover and drop all constraints.</span>
+
+<span class="sd">    :type: bool</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">stdout</span> <span class="ow">or</span> <span class="n">stdout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+    <span class="n">results</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="s2">&quot;CALL db.constraints()&quot;</span><span class="p">)</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;:(.*) \).*\.(\w*)&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">constraint</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="c1"># Versions prior to 4.0 have a very different return format</span>
+        <span class="k">if</span> <span class="n">constraint</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;CONSTRAINT &#39;</span><span class="p">):</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="s1">&#39;DROP </span><span class="si">{!s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">constraint</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">constraint</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="s1">&#39;DROP CONSTRAINT </span><span class="si">{!s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">constraint</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">constraint</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;&#39; - Dropping unique constraint and index on label </span><span class="si">{0}</span><span class="s1"> with property </span><span class="si">{1}</span><span class="s1">.</span><span class="se">\n</span><span class="s1">&#39;&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">drop_indexes</span><span class="p">(</span><span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Discover and drop all indexes.</span>
+
+<span class="sd">    :type: bool</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">stdout</span> <span class="ow">or</span> <span class="n">stdout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+    <span class="n">results</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="s2">&quot;CALL db.indexes()&quot;</span><span class="p">)</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;:(.*)\((.*)\)&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="c1"># Versions prior to 4.0 have a very different return format</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;INDEX &#39;</span><span class="p">):</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="s1">&#39;DROP &#39;</span> <span class="o">+</span> <span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; - Dropping index on label </span><span class="si">{0}</span><span class="s1"> with property </span><span class="si">{1}</span><span class="s1">.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="s1">&#39;DROP INDEX &#39;</span> <span class="o">+</span> <span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; - Dropping index on label </span><span class="si">{0}</span><span class="s1"> with property </span><span class="si">{1}</span><span class="s1">.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">index</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">remove_all_labels</span><span class="p">(</span><span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calls functions for dropping constraints and indexes.</span>
+
+<span class="sd">    :param stdout: output stream</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">stdout</span><span class="p">:</span>
+        <span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+    <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Dropping constraints...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">drop_constraints</span><span class="p">(</span><span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">)</span>
+
+    <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Dropping indexes...</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">drop_indexes</span><span class="p">(</span><span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">install_labels</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Setup labels with indexes and constraints for a given class</span>
+
+<span class="sd">    :param cls: StructuredNode class</span>
+<span class="sd">    :type: class</span>
+<span class="sd">    :param quiet: (default true) enable standard output</span>
+<span class="sd">    :param stdout: stdout stream</span>
+<span class="sd">    :type: bool</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">stdout</span> <span class="ow">or</span> <span class="n">stdout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;__label__&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+            <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; ! Skipping class </span><span class="si">{0}</span><span class="s1">.</span><span class="si">{1}</span><span class="s1"> is abstract</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="nb">property</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">defined_properties</span><span class="p">(</span><span class="n">aliases</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">db_property</span> <span class="o">=</span> <span class="nb">property</span><span class="o">.</span><span class="n">db_property</span> <span class="ow">or</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="nb">property</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+                <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; + Creating index </span><span class="si">{0}</span><span class="s1"> on label </span><span class="si">{1}</span><span class="s1"> for class </span><span class="si">{2}</span><span class="s1">.</span><span class="si">{3}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">name</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__label__</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="s2">&quot;CREATE INDEX on :</span><span class="si">{0}</span><span class="s2">(</span><span class="si">{1}</span><span class="s2">); &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">cls</span><span class="o">.</span><span class="n">__label__</span><span class="p">,</span> <span class="n">db_property</span><span class="p">))</span>
+            <span class="k">except</span> <span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">code</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Neo.ClientError.Schema.EquivalentSchemaRuleAlreadyExists&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;Neo.ClientError.Schema.IndexAlreadyExists&#39;</span><span class="p">):</span>
+                    <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span>
+
+        <span class="k">elif</span> <span class="nb">property</span><span class="o">.</span><span class="n">unique_index</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+                <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; + Creating unique constraint for </span><span class="si">{0}</span><span class="s1"> on label </span><span class="si">{1}</span><span class="s1"> for class </span><span class="si">{2}</span><span class="s1">.</span><span class="si">{3}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">name</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__label__</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="s2">&quot;CREATE CONSTRAINT &quot;</span>
+                                <span class="s2">&quot;on (n:</span><span class="si">{0}</span><span class="s2">) ASSERT n.</span><span class="si">{1}</span><span class="s2"> IS UNIQUE&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">cls</span><span class="o">.</span><span class="n">__label__</span><span class="p">,</span> <span class="n">db_property</span><span class="p">))</span>
+            <span class="k">except</span> <span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">code</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Neo.ClientError.Schema.EquivalentSchemaRuleAlreadyExists&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;Neo.ClientError.Schema.ConstraintAlreadyExists&#39;</span><span class="p">):</span>
+                    <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span>
+
+
+<span class="k">def</span> <span class="nf">install_all_labels</span><span class="p">(</span><span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Discover all subclasses of StructuredNode in your application and execute install_labels on each.</span>
+<span class="sd">    Note: code most be loaded (imported) in order for a class to be discovered.</span>
+
+<span class="sd">    :param stdout: output stream</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">stdout</span> <span class="ow">or</span> <span class="n">stdout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+    <span class="k">def</span> <span class="nf">subsub</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>  <span class="c1"># recursively return all subclasses</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span> <span class="o">+</span> <span class="p">[</span><span class="n">g</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">subsub</span><span class="p">(</span><span class="n">s</span><span class="p">)]</span>
+
+    <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Setting up indexes and constraints...</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">subsub</span><span class="p">(</span><span class="n">StructuredNode</span><span class="p">):</span>
+        <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Found </span><span class="si">{0}</span><span class="s1">.</span><span class="si">{1}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="n">install_labels</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">i</span><span class="p">:</span>
+        <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Finished </span><span class="si">{0}</span><span class="s1"> classes.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+
+<span class="k">class</span> <span class="nc">NodeMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">namespace</span><span class="p">):</span>
+        <span class="n">namespace</span><span class="p">[</span><span class="s1">&#39;DoesNotExist&#39;</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="nb">type</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;DoesNotExist&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">DoesNotExist</span><span class="p">,),</span> <span class="p">{})</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">NodeMeta</span><span class="p">,</span> <span class="n">mcs</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">namespace</span><span class="p">)</span>
+        <span class="c1"># needed by Python &lt; 3.5 for unpickling DoesNotExist objects:</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="o">.</span><span class="n">_model_class</span> <span class="o">=</span> <span class="bp">cls</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;__abstract_node__&#39;</span><span class="p">):</span>
+            <span class="nb">delattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;__abstract_node__&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;deleted&#39;</span> <span class="ow">in</span> <span class="n">namespace</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Class property called &#39;deleted&#39; conflicts &quot;</span>
+                                 <span class="s2">&quot;with neomodel internals.&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">namespace</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                               <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Property</span><span class="p">)):</span>
+                <span class="n">value</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">key</span><span class="p">,</span> <span class="bp">cls</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;setup&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">setup</span><span class="p">):</span>
+                    <span class="n">value</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+
+            <span class="c1"># cache various groups of properies</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">__required_properties__</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="nb">property</span>
+                <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">defined_properties</span><span class="p">(</span><span class="n">aliases</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">property</span><span class="o">.</span><span class="n">required</span> <span class="ow">or</span> <span class="nb">property</span><span class="o">.</span><span class="n">unique_index</span>
+            <span class="p">)</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">__all_properties__</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">defined_properties</span><span class="p">(</span><span class="n">aliases</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">__all_aliases__</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">defined_properties</span><span class="p">(</span><span class="n">properties</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">__all_relationships__</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">defined_properties</span><span class="p">(</span><span class="n">aliases</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">)</span>
+
+            <span class="bp">cls</span><span class="o">.</span><span class="n">__label__</span> <span class="o">=</span> <span class="n">namespace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;__label__&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">AUTO_INSTALL_LABELS</span><span class="p">:</span>
+                <span class="n">install_labels</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+            <span class="n">label_set</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">inherited_labels</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">label_set</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">_NODE_CLASS_REGISTRY</span><span class="p">:</span>
+                <span class="n">db</span><span class="o">.</span><span class="n">_NODE_CLASS_REGISTRY</span><span class="p">[</span><span class="n">label_set</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NodeClassAlreadyDefined</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">_NODE_CLASS_REGISTRY</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">cls</span>
+
+
+<span class="n">NodeBase</span> <span class="o">=</span> <span class="n">NodeMeta</span><span class="p">(</span><span class="s1">&#39;NodeBase&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">PropertyManager</span><span class="p">,),</span> <span class="p">{</span><span class="s1">&#39;__abstract_node__&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+
+<span class="k">class</span> <span class="nc">StructuredNode</span><span class="p">(</span><span class="n">NodeBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class for all node definitions to inherit from.</span>
+
+<span class="sd">    If you want to create your own abstract classes set:</span>
+<span class="sd">        __abstract_node__ = True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># static properties</span>
+
+    <span class="n">__abstract_node__</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># magic methods</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;deleted&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;deleted property is reserved for neomodel&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__all_relationships__</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">build_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">StructuredNode</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">StructuredNode</span><span class="p">,)):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">{0}</span><span class="s1">: </span><span class="si">{1}</span><span class="s1">&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__properties__</span><span class="p">)</span>
+
+    <span class="c1"># dynamic properties</span>
+
+    <span class="nd">@classproperty</span>
+    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a NodeSet object representing all nodes of the classes label</span>
+<span class="sd">        :return: NodeSet</span>
+<span class="sd">        :rtype: NodeSet</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.match</span> <span class="kn">import</span> <span class="n">NodeSet</span>
+        <span class="k">return</span> <span class="n">NodeSet</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;the _id property is deprecated please use .id&#39;</span><span class="p">,</span>
+                      <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">val</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="c1"># methods</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_build_merge_query</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">merge_params</span><span class="p">,</span> <span class="n">update_existing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">relationship</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a tuple of a CYPHER query and a params dict for the specified MERGE query.</span>
+
+<span class="sd">        :param merge_params: The target node match parameters, each node must have a &quot;create&quot; key and optional &quot;update&quot;.</span>
+<span class="sd">        :type merge_params: list of dict</span>
+<span class="sd">        :param update_existing: True to update properties of existing nodes, default False to keep existing values.</span>
+<span class="sd">        :type update_existing: bool</span>
+<span class="sd">        :rtype: tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query_params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">merge_params</span><span class="o">=</span><span class="n">merge_params</span><span class="p">)</span>
+        <span class="n">n_merge</span> <span class="o">=</span> <span class="s2">&quot;n:</span><span class="si">{0}</span><span class="s2"> {{</span><span class="si">{1}</span><span class="s2">}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="s2">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">inherited_labels</span><span class="p">()),</span>
+            <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">: params.create.</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">db_property</span> <span class="ow">or</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__required_properties__</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">relationship</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># create &quot;simple&quot; unwind query</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;UNWIND $merge_params as params</span><span class="se">\n</span><span class="s2"> MERGE (</span><span class="si">{0}</span><span class="s2">)</span><span class="se">\n</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_merge</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># validate relationship</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">relationship</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">StructuredNode</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;relationship source [</span><span class="si">{0}</span><span class="s2">] is not a StructuredNode&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">relationship</span><span class="o">.</span><span class="n">source</span><span class="p">)))</span>
+            <span class="n">relation_type</span> <span class="o">=</span> <span class="n">relationship</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;relation_type&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">relation_type</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No relation_type is specified on provided relationship&#39;</span><span class="p">)</span>
+
+            <span class="kn">from</span> <span class="nn">.match</span> <span class="kn">import</span> <span class="n">_rel_helper</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;source_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">relationship</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">id</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;MATCH (source:</span><span class="si">{0}</span><span class="s2">) WHERE ID(source) = $source_id</span><span class="se">\n</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">relationship</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">__label__</span><span class="p">)</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;WITH source</span><span class="se">\n</span><span class="s2"> UNWIND $merge_params as params </span><span class="se">\n</span><span class="s2"> &quot;</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;MERGE &quot;</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="n">_rel_helper</span><span class="p">(</span><span class="n">lhs</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">rhs</span><span class="o">=</span><span class="n">n_merge</span><span class="p">,</span> <span class="n">ident</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                 <span class="n">relation_type</span><span class="o">=</span><span class="n">relation_type</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">relationship</span><span class="o">.</span><span class="n">definition</span><span class="p">[</span><span class="s1">&#39;direction&#39;</span><span class="p">])</span>
+
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;ON CREATE SET n = params.create</span><span class="se">\n</span><span class="s2"> &quot;</span>
+        <span class="c1"># if update_existing, write properties on match as well</span>
+        <span class="k">if</span> <span class="n">update_existing</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;ON MATCH SET n += params.update</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="c1"># close query</span>
+        <span class="k">if</span> <span class="n">lazy</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;RETURN id(n)&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;RETURN n&quot;</span>
+
+        <span class="k">return</span> <span class="n">query</span><span class="p">,</span> <span class="n">query_params</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">category</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Category was deprecated and has now been removed, &quot;</span>
+            <span class="s2">&quot;the functionality is now achieved using the </span><span class="si">{0}</span><span class="s2">.nodes attribute&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">props</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Call to CREATE with parameters map. A new instance will be created and saved.</span>
+
+<span class="sd">        :param props: dict of properties to create the nodes.</span>
+<span class="sd">        :type props: tuple</span>
+<span class="sd">        :param lazy: False by default, specify True to get nodes with id only without the parameters.</span>
+<span class="sd">        :type: bool</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="s1">&#39;streaming&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;streaming is not supported by bolt, please remove the kwarg&#39;</span><span class="p">,</span>
+                          <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">lazy</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lazy&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="c1"># create mapped query</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;CREATE (n:</span><span class="si">{0}</span><span class="s2"> $create_params)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">inherited_labels</span><span class="p">()))</span>
+
+        <span class="c1"># close query</span>
+        <span class="k">if</span> <span class="n">lazy</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot; RETURN id(n)&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot; RETURN n&quot;</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="n">deflate</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">_UnsavedNode</span><span class="p">(),</span> <span class="n">skip_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">props</span><span class="p">]:</span>
+            <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;create_params&#39;</span><span class="p">:</span> <span class="n">item</span><span class="p">})</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">lazy</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;post_create&#39;</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">post_create</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">nodes</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_or_update</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">props</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Call to MERGE with parameters map. A new instance will be created and saved if does not already exists,</span>
+<span class="sd">        this is an atomic operation. If an instance already exists all optional properties specified will be updated.</span>
+
+<span class="sd">        Note that the post_create hook isn&#39;t called after create_or_update</span>
+
+<span class="sd">        :param props: List of dict arguments to get or create the entities with.</span>
+<span class="sd">        :type props: tuple</span>
+<span class="sd">        :param relationship: Optional, relationship to get/create on when new entity is created.</span>
+<span class="sd">        :param lazy: False by default, specify True to get nodes with id only without the parameters.</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lazy</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lazy&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">relationship</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;relationship&#39;</span><span class="p">)</span>
+
+        <span class="c1"># build merge query, make sure to update only explicitly specified properties</span>
+        <span class="n">create_or_update_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">specified</span><span class="p">,</span> <span class="n">deflated</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">p</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">deflate</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">skip_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">props</span><span class="p">]:</span>
+            <span class="n">create_or_update_params</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;create&quot;</span><span class="p">:</span> <span class="n">deflated</span><span class="p">,</span>
+                                            <span class="s2">&quot;update&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">deflated</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">specified</span><span class="p">)})</span>
+        <span class="n">query</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_build_merge_query</span><span class="p">(</span><span class="n">create_or_update_params</span><span class="p">,</span> <span class="n">update_existing</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">relationship</span><span class="o">=</span><span class="n">relationship</span><span class="p">,</span>
+                                               <span class="n">lazy</span><span class="o">=</span><span class="n">lazy</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s1">&#39;streaming&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;streaming is not supported by bolt, please remove the kwarg&#39;</span><span class="p">,</span>
+                          <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># fetch and build instance for each result</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+    <span class="k">def</span> <span class="nf">cypher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Execute a cypher query with the param &#39;self&#39; pre-populated with the nodes neo4j id.</span>
+
+<span class="sd">        :param query: cypher query string</span>
+<span class="sd">        :type: string</span>
+<span class="sd">        :param params: query parameters</span>
+<span class="sd">        :type: dict</span>
+<span class="sd">        :return: list containing query results</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pre_action_check</span><span class="p">(</span><span class="s1">&#39;cypher&#39;</span><span class="p">)</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">params</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;self&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+    <span class="nd">@hooks</span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete a node and it&#39;s relationships</span>
+
+<span class="sd">        :return: True</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pre_action_check</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cypher</span><span class="p">(</span><span class="s2">&quot;MATCH (self) WHERE id(self)=$self &quot;</span>
+                    <span class="s2">&quot;OPTIONAL MATCH (self)-[r]-()&quot;</span>
+                    <span class="s2">&quot; DELETE r, self&quot;</span><span class="p">)</span>
+        <span class="nb">delattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deleted</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_or_create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">props</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Call to MERGE with parameters map. A new instance will be created and saved if does not already exist,</span>
+<span class="sd">        this is an atomic operation.</span>
+<span class="sd">        Parameters must contain all required properties, any non required properties with defaults will be generated.</span>
+
+<span class="sd">        Note that the post_create hook isn&#39;t called after get_or_create</span>
+
+<span class="sd">        :param props: Arguments to get_or_create as tuple of dict with property names and values to get or create</span>
+<span class="sd">                      the entities with.</span>
+<span class="sd">        :type props: tuple</span>
+<span class="sd">        :param relationship: Optional, relationship to get/create on when new entity is created.</span>
+<span class="sd">        :param lazy: False by default, specify True to get nodes with id only without the parameters.</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lazy</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lazy&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">relationship</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;relationship&#39;</span><span class="p">)</span>
+
+        <span class="c1"># build merge query</span>
+        <span class="n">get_or_create_params</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;create&quot;</span><span class="p">:</span> <span class="bp">cls</span><span class="o">.</span><span class="n">deflate</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">skip_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">)}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">props</span><span class="p">]</span>
+        <span class="n">query</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_build_merge_query</span><span class="p">(</span><span class="n">get_or_create_params</span><span class="p">,</span> <span class="n">relationship</span><span class="o">=</span><span class="n">relationship</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="n">lazy</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s1">&#39;streaming&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;streaming is not supported by bolt, please remove the kwarg&#39;</span><span class="p">,</span>
+                          <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># fetch and build instance for each result</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cypher_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">inflate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inflate a raw neo4j_driver node to a neomodel node</span>
+<span class="sd">        :param node:</span>
+<span class="sd">        :return: node object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># support lazy loading</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">snode</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+            <span class="n">snode</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">node_properties</span> <span class="o">=</span> <span class="n">_get_node_properties</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">props</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">prop</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__all_properties__</span><span class="p">:</span>
+                <span class="c1"># map property name from database to object property</span>
+                <span class="n">db_property</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">db_property</span> <span class="ow">or</span> <span class="n">key</span>
+
+                <span class="k">if</span> <span class="n">db_property</span> <span class="ow">in</span> <span class="n">node_properties</span><span class="p">:</span>
+                    <span class="n">props</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">node_properties</span><span class="p">[</span><span class="n">db_property</span><span class="p">],</span> <span class="n">node</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">prop</span><span class="o">.</span><span class="n">has_default</span><span class="p">:</span>
+                    <span class="n">props</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">default_value</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">props</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="n">snode</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">props</span><span class="p">)</span>
+            <span class="n">snode</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">id</span>
+
+        <span class="k">return</span> <span class="n">snode</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">inherited_labels</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return list of labels from nodes class hierarchy.</span>
+
+<span class="sd">        :return: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">scls</span><span class="o">.</span><span class="n">__label__</span> <span class="k">for</span> <span class="n">scls</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">scls</span><span class="p">,</span> <span class="s1">&#39;__label__&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span>
+                <span class="n">scls</span><span class="p">,</span> <span class="s1">&#39;__abstract_node__&#39;</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">labels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns list of labels tied to the node from neo4j.</span>
+
+<span class="sd">        :return: list of labels</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pre_action_check</span><span class="p">(</span><span class="s1">&#39;labels&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cypher</span><span class="p">(</span><span class="s2">&quot;MATCH (n) WHERE id(n)=$self &quot;</span>
+                           <span class="s2">&quot;RETURN labels(n)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_pre_action_check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;deleted&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">deleted</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">.</span><span class="si">{1}</span><span class="s2">() attempted on deleted node&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">action</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">.</span><span class="si">{1}</span><span class="s2">() attempted on unsaved node&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">action</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reload the node from neo4j</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pre_action_check</span><span class="p">(</span><span class="s1">&#39;refresh&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">):</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cypher</span><span class="p">(</span><span class="s2">&quot;MATCH (n) WHERE id(n)=$self&quot;</span>
+                                            <span class="s2">&quot; RETURN n&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">request</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">(</span><span class="s2">&quot;Can&#39;t refresh non existent node&quot;</span><span class="p">)</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">request</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">__properties__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t refresh unsaved node&quot;</span><span class="p">)</span>
+
+    <span class="nd">@hooks</span>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the node to neo4j or raise an exception</span>
+
+<span class="sd">        :return: the node instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># create or update instance node</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">):</span>
+            <span class="c1"># update</span>
+            <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deflate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__properties__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;MATCH (n) WHERE id(n)=$self </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;SET n.</span><span class="si">{0}</span><span class="s2"> = $</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">keys</span><span class="p">()])</span>
+            <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inherited_labels</span><span class="p">():</span>
+                <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;SET n:`</span><span class="si">{0}</span><span class="s2">`</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cypher</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;deleted&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">deleted</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">.save() attempted on deleted node&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># create</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__properties__</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Mat2DevPlatform</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/models.html">Mat2DevAPI.models package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Max Dreger.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

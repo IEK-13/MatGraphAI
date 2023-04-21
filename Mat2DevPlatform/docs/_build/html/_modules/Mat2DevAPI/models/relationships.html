@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mat2DevAPI.models.relationships &#8212; Mat2DevPlatform 2023 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for Mat2DevAPI.models.relationships</h1><div class="highlight"><pre>
+<span></span><span class="c1"># knowledge_graph_relationships.py</span>
+
+<span class="kn">from</span> <span class="nn">neomodel</span> <span class="kn">import</span> <span class="n">StructuredRel</span><span class="p">,</span> <span class="n">StringProperty</span><span class="p">,</span> <span class="n">FloatProperty</span><span class="p">,</span> <span class="n">IntegerProperty</span><span class="p">,</span> <span class="n">ArrayProperty</span>
+
+
+<span class="c1"># Researcher-related properties</span>
+
+<div class="viewcode-block" id="ByResearcherRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.ByResearcherRel">[docs]</a><span class="k">class</span> <span class="nc">ByResearcherRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a research contribution and the researcher who made it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">CONTRIBUTION_LABEL_CHOICES</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;first_author&#39;</span><span class="p">:</span> <span class="s1">&#39;First Author&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;Author&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;conducted_experiment&#39;</span><span class="p">:</span> <span class="s1">&#39;Conducted Experiment&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;instrument_scientist&#39;</span><span class="p">:</span> <span class="s1">&#39;Instrument Scientist&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;contributor&#39;</span><span class="p">:</span> <span class="s1">&#39;Contributor&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;planned_experiment&#39;</span><span class="p">:</span> <span class="s1">&#39;Planned Experiment&#39;</span>
+    <span class="p">}</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">CONTRIBUTION_LABEL_CHOICES</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;contributor&#39;</span><span class="p">)</span></div>
+
+
+<span class="c1"># Location-related properties</span>
+
+<div class="viewcode-block" id="InLocationRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.InLocationRel">[docs]</a><span class="k">class</span> <span class="nc">InLocationRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between an entity and its location.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">()</span></div>
+
+
+<span class="c1"># Part-related properties</span>
+
+<div class="viewcode-block" id="HasPartRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.HasPartRel">[docs]</a><span class="k">class</span> <span class="nc">HasPartRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a whole and its part.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="c1"># DirectPart properties</span>
+
+<div class="viewcode-block" id="DerivedFromRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.DerivedFromRel">[docs]</a><span class="k">class</span> <span class="nc">DerivedFromRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a derived entity and its source entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="IsProcessInputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.IsProcessInputRel">[docs]</a><span class="k">class</span> <span class="nc">IsProcessInputRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a process and its input entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="IsManufacturingInputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.IsManufacturingInputRel">[docs]</a><span class="k">class</span> <span class="nc">IsManufacturingInputRel</span><span class="p">(</span><span class="n">IsProcessInputRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a manufacturing process and its input entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="IsMeasurementInputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.IsMeasurementInputRel">[docs]</a><span class="k">class</span> <span class="nc">IsMeasurementInputRel</span><span class="p">(</span><span class="n">IsProcessInputRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a measurement process and its input entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="IsManufacturingOutputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.IsManufacturingOutputRel">[docs]</a><span class="k">class</span> <span class="nc">IsManufacturingOutputRel</span><span class="p">(</span><span class="n">IsProcessInputRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a manufacturing process and its output entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="IsMeasurementOutputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.IsMeasurementOutputRel">[docs]</a><span class="k">class</span> <span class="nc">IsMeasurementOutputRel</span><span class="p">(</span><span class="n">IsProcessInputRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a measurement process and its output entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="c1"># hasParticipant properties</span>
+
+<div class="viewcode-block" id="HasValueRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.HasValueRel">[docs]</a><span class="k">class</span> <span class="nc">HasValueRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract relationship between a property and its value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">float_value</span> <span class="o">=</span> <span class="n">FloatProperty</span><span class="p">()</span>
+    <span class="n">integer_value</span> <span class="o">=</span> <span class="n">IntegerProperty</span><span class="p">()</span>
+    <span class="n">array_value</span> <span class="o">=</span> <span class="n">ArrayProperty</span><span class="p">()</span>
+    <span class="n">float_error</span> <span class="o">=</span> <span class="n">FloatProperty</span><span class="p">()</span>
+    <span class="n">integer_error</span> <span class="o">=</span> <span class="n">IntegerProperty</span><span class="p">()</span>
+    <span class="n">array_error</span> <span class="o">=</span> <span class="n">ArrayProperty</span><span class="p">()</span>
+    <span class="n">float_accuracy</span> <span class="o">=</span> <span class="n">FloatProperty</span><span class="p">()</span>
+    <span class="n">integer_accuracy</span> <span class="o">=</span> <span class="n">IntegerProperty</span><span class="p">()</span>
+    <span class="n">array_accuracy</span> <span class="o">=</span> <span class="n">ArrayProperty</span><span class="p">()</span>
+    <span class="n">float_std</span> <span class="o">=</span> <span class="n">FloatProperty</span><span class="p">()</span>
+    <span class="n">integer_std</span> <span class="o">=</span> <span class="n">IntegerProperty</span><span class="p">()</span>
+    <span class="n">array_std</span> <span class="o">=</span> <span class="n">ArrayProperty</span><span class="p">()</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="HasParameterRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.HasParameterRel">[docs]</a><span class="k">class</span> <span class="nc">HasParameterRel</span><span class="p">(</span><span class="n">HasValueRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a process and its parameter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="HasPropertyRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.HasPropertyRel">[docs]</a><span class="k">class</span> <span class="nc">HasPropertyRel</span><span class="p">(</span><span class="n">HasValueRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between an entity and its property.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="c1"># hasProcessOutput properties</span>
+
+<div class="viewcode-block" id="HasProcessOutputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.HasProcessOutputRel">[docs]</a><span class="k">class</span> <span class="nc">HasProcessOutputRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a process and its output entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="HasManufacturingOutputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.HasManufacturingOutputRel">[docs]</a><span class="k">class</span> <span class="nc">HasManufacturingOutputRel</span><span class="p">(</span><span class="n">HasProcessOutputRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a manufacturing process and its output entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="HasMeasurementOutputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.HasMeasurementOutputRel">[docs]</a><span class="k">class</span> <span class="nc">HasMeasurementOutputRel</span><span class="p">(</span><span class="n">HasProcessOutputRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a measurement process and its output entity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="HasFileOutputRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.HasFileOutputRel">[docs]</a><span class="k">class</span> <span class="nc">HasFileOutputRel</span><span class="p">(</span><span class="n">HasProcessOutputRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between a process and its output file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+<span class="c1"># Other relationships</span>
+
+<div class="viewcode-block" id="FollowedByRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.FollowedByRel">[docs]</a><span class="k">class</span> <span class="nc">FollowedByRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between two entities in a sequence.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="ByRel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.ByRel">[docs]</a><span class="k">class</span> <span class="nc">ByRel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between data and its metadata.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="EmmoIsARel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.EmmoIsARel">[docs]</a><span class="k">class</span> <span class="nc">EmmoIsARel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between two entities where one is a subtype of the other in the EMMO ontology.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="IsARel"><a class="viewcode-back" href="../../../modules/models.html#Mat2DevAPI.models.relationships.IsARel">[docs]</a><span class="k">class</span> <span class="nc">IsARel</span><span class="p">(</span><span class="n">StructuredRel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Relationship between two entities where one is a subtype of the other.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">Mat2DevPlatform</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/models.html">Mat2DevAPI.models package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Max Dreger.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

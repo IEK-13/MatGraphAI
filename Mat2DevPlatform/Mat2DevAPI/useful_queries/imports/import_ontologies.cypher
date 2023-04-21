@@ -7,7 +7,7 @@ Match (n) delete n;
 CREATE CONSTRAINT n10s_unique_uri FOR (r:Resource) REQUIRE r.uri IS UNIQUE;
 
 call n10s.graphconfig.init({
-baseSchemaPrefix:"EMMO",
+baseSchemaPrefix:"EMMO",1
 subClassOfRel:"IS_A"}
 );
 

@@ -1,3 +1,15 @@
+"""
+This module defines custom form widgets, fields, and admin classes for handling Neo4j models in the Django admin site.
+It includes the following classes:
+- ChoiceWidgetBase: A base class for implementing custom choice widgets.
+- RelationMultipleChoiceWidget: A custom multiple choice widget for handling Neo4j relationships.
+- RelationSingleChoiceWidget: A custom single choice widget for handling Neo4j relationships.
+- RelationChoiceFieldBase: A base class for implementing custom choice fields.
+- NeoModelForm: A custom ModelForm for handling Neo4j models.
+- LocaleOrderingQueryBuilder: A custom QueryBuilder for handling string ordering in Neo4j queries.
+- NeoAdminChangelist: A custom ChangeList for handling Neo4j models in the Django admin site.
+- NodeModelAdmin: A custom ModelAdmin for handling Neo4j models in the Django admin site.
+"""
 
 from graphutils.forms import RelationMultipleChoiceField, RelationSingleChoiceField
 
@@ -12,7 +24,15 @@ from django.contrib.admin import ModelAdmin
 
 
 class ChoiceWidgetBase:
+    """
+    A base class for implementing custom choice widgets for Neo4j relationships.
 
+    Data members:
+    :primary_key: The primary key property of the related nodes (default: 'uid').
+    :node_label: The label of the related nodes.
+    :label_field: The field used for displaying the related nodes in the widget.
+    :cached_choices: A cache for storing the choices fetched from the database.
+    """
     def __init__(self, *args, **kwargs):
         self.primary_key = kwargs.pop('primary_key', 'uid')
         self.node_label = kwargs.pop('node_label')
@@ -38,10 +58,21 @@ class ChoiceWidgetBase:
 
 
 class RelationMultipleChoiceWidget(ChoiceWidgetBase, FilteredSelectMultiple):
+    """
+    A custom multiple choice widget for handling Neo4j relationships.
+    Inherits from ChoiceWidgetBase and FilteredSelectMultiple.
+    """
     pass
 
 
 class RelationSingleChoiceWidget(ChoiceWidgetBase, Select):
+    """
+    A custom single choice widget for handling Neo4j relationships.
+    Inherits from ChoiceWidgetBase and Select.
+
+    Data members:
+    - include_none_option: Whether to include a 'None' option in the choices (default: True).
+    """
 
     def __init__(self, *args, **kwargs):
         self.include_none_option = kwargs.pop('include_none_option', True)
@@ -60,6 +91,13 @@ class RelationSingleChoiceWidget(ChoiceWidgetBase, Select):
 
 
 class RelationChoiceFieldBase:
+    """
+    A base class for implementing custom choice fields for handling Neo4j relationships.
+
+    Data members:
+    - widget: The widget to use for rendering the field.
+    - primary_key: The primary key property of the related nodes (default: 'uid').
+    """
 
     def __init__(self, widget, primary_key='uid', **kwargs):
         super().__init__(
@@ -112,6 +150,12 @@ class RelationChoiceFieldBase:
 
 
 class NeoModelForm(forms.ModelForm):
+    """
+    A custom ModelForm for handling Neo4j models.
+
+    Data members:
+    - labels: A dictionary mapping field names to their labels.
+    """
     labels = {}
 
     def __init__(self, *args, **kwargs):
@@ -155,7 +199,9 @@ class NeoModelForm(forms.ModelForm):
 
 
 class LocaleOrderingQueryBuilder(QueryBuilder):
-
+    """
+    A custom QueryBuilder for handling string ordering in Neo4j queries.
+    """
     def build_order_by(self, ident, source):
 
         # cypher uses reversed ordering
@@ -175,13 +221,24 @@ class LocaleOrderingQueryBuilder(QueryBuilder):
 
 # fixes ordering
 class NeoAdminChangelist(ChangeList):
-
+    """
+    A custom ChangeList for handling Neo4j models in the Django admin site.
+    """
     # only support ordering by one column to keep things simple by now
     def get_ordering(self, request, queryset):
         return super().get_ordering(request, queryset)[0:1]
 
 
 class NodeModelAdmin(ModelAdmin):
+    """
+    A custom ModelAdmin for handling Neo4j models in the Django admin site.
+
+    Data members:
+    - node_primary_key: The primary key property of the nodes (default: 'uid').
+    - node_changelist_formset: A custom formset class for handling the change list.
+    - node_changelist_form: A custom form class for handling the change list.
+    - ordering: A tuple specifying the default ordering of the queryset.
+    """
     node_primary_key = 'uid'
     node_changelist_formset = None
     node_changelist_form = None

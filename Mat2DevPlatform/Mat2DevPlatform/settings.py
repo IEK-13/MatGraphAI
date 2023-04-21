@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-#3zy6e+h5%+*0=5j6mp5%)9g#0ss1^dgocst79g9dg*c6c&@-+
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#Openai API Key
 
+from dotenv import load_dotenv
+load_dotenv()
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Application definition
 
 INSTALLED_APPS = [
@@ -34,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.staticfiles',
+    'Mat2DevPlatform',
+    'DatabaseCommunication',
     'Mat2DevAPI',
+    'graphutils',
     'django_neomodel',
     'django_cleanup.apps.CleanupConfig',
     'django_admin_multiple_choice_list_filter',
@@ -48,7 +56,6 @@ INSTALLED_APPS = [
     'admin_interface',
     'dal',
     'dal_select2'
-
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -78,6 +85,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Mat2DevPlatform.urls'
 
+# OpenAI API Key
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
