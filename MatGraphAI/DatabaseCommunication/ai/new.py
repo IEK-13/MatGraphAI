@@ -33,7 +33,7 @@ def create_new_class(create_class, s_class, target_onto):
     with target_onto:
             class alternative_labels(AnnotationProperty):
                 pass
-            class name(AnnotationProperty):
+            class onto_name(AnnotationProperty):
                 pass
 
             new_class = types.new_class(y, s_class)
@@ -54,14 +54,14 @@ def copy_class_recursive(source_class, target_ontology, source_ontology, api_key
             custom_function_output = json.loads(custom_function(ONTOLOGY_ASSISTANT_MESSAGES, source_class.name, api_key))
             target_class.comment = custom_function_output["description"]
             target_class.alternative_labels = str(custom_function_output["alternative_labels"])
-            target_class.name = source_class.name
+            target_class.onto_name = source_class.name
         except:
             print("Fehler")
     # Copy and create subclasses recursively
     for subclass in source_class.subclasses():
-        # target_subclass = copy_class_recursive(subclass, target_ontology, source_ontology, api_key, custom_function)
-        # target_subclass.is_a.append(target_class)
-        pass
+        target_subclass = copy_class_recursive(subclass, target_ontology, source_ontology, api_key, custom_function)
+        target_subclass.is_a.append(target_class)
+
     return target_class
 
 
@@ -78,9 +78,9 @@ def main():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
     api_key = settings.OPENAI_API_KEY
     onto_path.append("/home/mdreger/Documents/MatGraphAI/Ontology/")
-    onto = get_ontology("manufacturing1.owl").load()
+    onto = get_ontology("manufactured_old.owl").load()
 
-    starting_class = onto["Process"]
+    starting_class = onto["Manufactured"]
     print(list(onto.classes()))
     new_onto = get_ontology("http://www.example.com/new_ontology.owl")
     root_class = copy_class_recursive(starting_class, new_onto, onto, api_key, custom_function=chat_with_gpt3_5)
