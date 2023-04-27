@@ -9,7 +9,7 @@ from neomodel import (
 
 from Mat2DevAPI.choices.ChoiceFields import INSTITUTION_TYPE_CHOICEFIELD
 from Mat2DevAPI.models.abstractclasses import CausalObject, UniqueNode
-from Mat2DevAPI.models.relationships import ByRel, InLocationRel
+from Mat2DevAPI.models.relationships import ByRel, InLocationRel, HasPIDRel, ResearcherOwnsRel
 
 
 class PIDA(CausalObject):
@@ -21,8 +21,8 @@ class PIDA(CausalObject):
 
     pida = StringProperty(unique_index=True, required=True)
     date_added = StringProperty()
-    by = RelationshipTo("Researcher", "BY", model=ByRel)
-    has = RelationshipTo("CausalObject", "HAS", model=ByRel)
+    by = RelationshipTo("Researcher", "OWNS", model=ResearcherOwnsRel)
+    has = RelationshipTo("CausalObject", "HAS", model=HasPIDRel)
     tag = StringProperty()
 
 

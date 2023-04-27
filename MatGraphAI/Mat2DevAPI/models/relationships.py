@@ -37,7 +37,11 @@ class HasPartRel(StructuredRel):
     """
     pass
 
-
+class HasPIDRel(StructuredRel):
+    """
+    Relationship between a whole and its part.
+    """
+    pass
 # DirectPart properties
 
 class DerivedFromRel(StructuredRel):
@@ -159,6 +163,11 @@ class ByRel(StructuredRel):
     """
     pass
 
+class ResearcherOwnsRel(StructuredRel):
+    """
+    Relationship between data and its metadata.
+    """
+    pass
 
 class EmmoIsARel(StructuredRel):
     """
