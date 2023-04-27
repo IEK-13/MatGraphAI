@@ -20,7 +20,7 @@ def chat_with_gpt3_5(setup_message=[], prompt='', api_key=''):
         max_tokens=150,
         n=1,
         stop=None,
-        temperature=0.1,
+        temperature=0,
     )
     print(response["choices"][0]["message"]["content"])
     return response["choices"][0]["message"]["content"]
@@ -38,7 +38,7 @@ def create_new_class(create_class, s_class, target_onto):
     return new_class
 
 
-def copy_class_recursive(source_class, target_ontology, source_ontology, custom_function):
+def copy_class_recursive(source_class, target_ontology, source_ontology, api_key, custom_function):
     target_class = target_ontology[source_class.name]
 
     if target_class is None:
@@ -46,14 +46,14 @@ def copy_class_recursive(source_class, target_ontology, source_ontology, custom_
         target_class = create_new_class(source_class.name, 'Thing', target_ontology)
         # Call the custom function and store the output as an attribute of the class
         try:
-            custom_function_output = json.loads(custom_function(ONTOLOGY_ASSISTANT_MESSAGES, source_class.name))
+            custom_function_output = json.loads(custom_function(ONTOLOGY_ASSISTANT_MESSAGES, source_class.name, api_key))
             target_class.comment = custom_function_output["description"]
             target_class.label = custom_function_output["alternative_labels"]
         except:
             print("Fehler")
     # Copy and create subclasses recursively
     for subclass in source_class.subclasses():
-        target_subclass = copy_class_recursive(subclass, target_ontology, source_ontology, custom_function)
+        target_subclass = copy_class_recursive(subclass, target_ontology, source_ontology, api_key, custom_function)
         target_subclass.is_a.append(target_class)
 
     return target_class
@@ -75,9 +75,9 @@ def main():
     onto = get_ontology("manufacturing.owl").load()
 
     starting_class = onto["Process"]
-
+    print(list(onto.classes()))
     new_onto = get_ontology("http://www.example.com/new_ontology.owl")
-    root_class = copy_class_recursive(starting_class, new_onto, onto, custom_function=chat_with_gpt3_5(api_key=api_key))
+    root_class = copy_class_recursive(starting_class, new_onto, onto, api_key, custom_function=chat_with_gpt3_5)
 
     # Save the modified ontology to your file system
     new_onto.save("./new_ontology.owl", format="rdfxml")
