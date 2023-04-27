@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Data tagged with "{{ tag_name }}"</h1>
+<ul>
+    {% for data in filtered_data %}
+    <li>{{ data }}</li>
+    {% empty %}
+    <li>No data found with the tag "{{ tag_name }}".</li>
+    {% endfor %}
+</ul>
+{% endblock %}

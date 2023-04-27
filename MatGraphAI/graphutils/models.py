@@ -17,8 +17,9 @@ import uuid
 from django.apps import apps
 
 from django_neomodel import DjangoNode, classproperty
-from neomodel import UniqueIdProperty, StringProperty, ArrayProperty, AliasProperty, JSONProperty
-from neomodel.properties import validator
+from neomodel import UniqueIdProperty, StringProperty, ArrayProperty, AliasProperty, JSONProperty, RelationshipFrom, \
+    ZeroOrOne
+from neomodel.properties import validator, BooleanProperty
 
 
 class UIDDjangoNode(DjangoNode):
@@ -133,3 +134,13 @@ class FileUploadProperty(ArrayProperty):
     @validator
     def inflate(self, value):
         return UploadedFilesList(super().inflate(value))
+
+
+class AlternativeLabel(DjangoNode):
+
+    element = RelationshipFrom('graphutils.models.AlternativeLabel', 'HAS_LABEL', ZeroOrOne)
+
+    label = StringProperty(required=True)
+    primary = BooleanProperty(default=False)
+    type = StringProperty(required=False)
+    language = StringProperty(required=False)

@@ -12,6 +12,20 @@ from Mat2DevAPI.models.abstractclasses import CausalObject, UniqueNode
 from Mat2DevAPI.models.relationships import ByRel, InLocationRel
 
 
+class PIDA(CausalObject):
+    """
+    Represents a PIDA.
+    """
+    class Meta:
+        app_label = 'Mat2DevAPI'
+
+    pida = StringProperty(unique_index=True, required=True)
+    date_added = StringProperty()
+    by = RelationshipTo("Researcher", "BY", model=ByRel)
+    has = RelationshipTo("CausalObject", "HAS", model=ByRel)
+    tag = StringProperty()
+
+
 class Country(CausalObject):
     """
     Represents a country.

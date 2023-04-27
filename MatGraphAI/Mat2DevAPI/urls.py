@@ -22,6 +22,7 @@ urlpatterns = [
     ),
     path('upload/', upload_csv, name='upload_csv'),
     path('results/<str:url>/', upload_csv, name='results'),
+    path('tagged_data/<str:tag_name>/', views.tagged_data, name='tagged_data'),
     ]
 
 

@@ -4,19 +4,19 @@
 Match (n)-[m]-(r) delete n,m,r;
 Match (n) delete n;
 
-CREATE CONSTRAINT n10s_unique_uri FOR (r:Resource) REQUIRE r.uri IS UNIQUE;
+//CREATE CONSTRAINT n10s_unique_uri FOR (r:Resource) REQUIRE r.uri IS UNIQUE;
 
 call n10s.graphconfig.init({
-baseSchemaPrefix:"EMMO",1
+baseSchemaPrefix:"EMMO",
 subClassOfRel:"IS_A"}
 );
 
 // first pass, load the onto. Note that there are irregular uris, but we accept them with verifyUriSyntax: false
-call n10s.rdf.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/materials.owl","Turtle", { verifyUriSyntax: false }) ;
-call n10s.rdf.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false }) ;
-call n10s.rdf.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufactured.owl","Turtle", { verifyUriSyntax: false }) ;
-call n10s.rdf.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufacturing.owl","Turtle", { verifyUriSyntax: false }) ;
-call n10s.rdf.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/units.owl","Turtle", { verifyUriSyntax: false}) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/materials.owl","Turtle", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufactured.owl","Turtle", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/manufacturing.owl","Turtle", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Ontology/units.owl","Turtle", { verifyUriSyntax: false}) ;
 
 
 // we want named instances to link to the classes imported from the onto, so we change the handleRDFTypes mode.

@@ -1,4 +1,5 @@
-from neomodel import RelationshipTo, RelationshipFrom
+from django_neomodel import DjangoNode
+from neomodel import RelationshipTo, RelationshipFrom, ArrayProperty, FloatProperty, One
 
 from Mat2DevAPI.models.abstractclasses import OntologyNode
 from Mat2DevAPI.models.relationships import IsARel
@@ -37,3 +38,15 @@ class EMMO_Process(OntologyNode):
     is_a = RelationshipFrom('Mat2DevAPI.models.processes.Process', "IS_A", model=IsARel)
 
     pass
+
+
+class ModelEmbedding(DjangoNode):
+
+    class Meta:
+        app_label = "Mat2DevAPI"
+
+    element = RelationshipFrom('graphutils.models.AlternativeLabel', 'HAS_LABEL', One)
+    vector = ArrayProperty(
+        base_property=FloatProperty(),
+        required=True
+    )

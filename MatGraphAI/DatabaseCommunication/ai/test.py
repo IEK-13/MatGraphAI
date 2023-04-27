@@ -41,7 +41,7 @@ def get_text_embeddings(texts):
     )
 
     return response["data"]
-from ontopy import get_ontology
+
 
 # Loading from web
 # battinfo = get_ontology('../Ontology/BattINFO/battinfo.ttl').load()
@@ -82,7 +82,7 @@ def find_most_similar_description(main_description, candidate_descriptions):
     return most_similar_index, most_similar_score, cosine_similarities
 
 # Example usage
-main_description = "Lithium Battery."
+main_description = "Li Battery."
 # noinspection PyPackageRequirements
 candidate_descriptions = [
     "battery containing a non-aqueous electrolyte and a negative electrode of lithium or containing lithium.",

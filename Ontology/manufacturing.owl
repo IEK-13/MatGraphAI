@@ -1,168 +1,240 @@
-@prefix : <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing> .
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing">
+    <Prefix name="" IRI="http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#AdditiveManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BETMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CCLManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CCMManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CatalystInkManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CatalystLayerDynamicVaporSorptionMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComponentManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeviceManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DynamicLightScattering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DynamicVaporSorptionMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectronMicroscopy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FuelCellAssembly"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FuelCellManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gravimetry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Imaging"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MEAManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Manufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialsManufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MethodOfStandardPorosimetry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Microscopy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PowderDynamicVaporSorptionMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SEMImaging"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SamplePreparation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Scattering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TEMImaging"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ViscosityMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#5LayerMEAManufacturing"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AdditiveManufacturing"/>
+        <Class IRI="#Manufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BETMethod"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CCLManufacturing"/>
+        <Class IRI="#ComponentManufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CCMManufacturing"/>
+        <Class IRI="#MEAManufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CatalystInkManufacturing"/>
+        <Class IRI="#MaterialsManufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CatalystLayerDynamicVaporSorptionMeasurement"/>
+        <Class IRI="#DynamicVaporSorptionMeasurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComponentManufacturing"/>
+        <Class IRI="#Manufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeviceManufacturing"/>
+        <Class IRI="#Manufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DynamicLightScattering"/>
+        <Class IRI="#Scattering"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DynamicVaporSorptionMeasurement"/>
+        <Class IRI="#Gravimetry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectronMicroscopy"/>
+        <Class IRI="#Microscopy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FuelCellAssembly"/>
+        <Class IRI="#ComponentManufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FuelCellManufacturing"/>
+        <Class IRI="#DeviceManufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gravimetry"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Imaging"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MEAManufacturing"/>
+        <Class IRI="#ComponentManufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manufacturing"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialsManufacturing"/>
+        <Class IRI="#Manufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MethodOfStandardPorosimetry"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Microscopy"/>
+        <Class IRI="#Imaging"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PowderDynamicVaporSorptionMeasurement"/>
+        <Class IRI="#DynamicVaporSorptionMeasurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SEMImaging"/>
+        <Class IRI="#ElectronMicroscopy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SamplePreparation"/>
+        <Class IRI="#Manufacturing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scattering"/>
+        <Class IRI="#Imaging"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TEMImaging"/>
+        <Class IRI="#ElectronMicroscopy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ViscosityMeasurement"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#5LayerMEAManufacturing"/>
+        <Class IRI="#MEAManufacturing"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#CCMManufacturing"/>
+        <Class IRI="#5LayerMEAManufacturing"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CatalystLayerDynamicVaporSorptionMeasurement"/>
+        <Class IRI="#PowderDynamicVaporSorptionMeasurement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ComponentManufacturing"/>
+        <Class IRI="#DeviceManufacturing"/>
+        <Class IRI="#MaterialsManufacturing"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Gravimetry"/>
+        <Class IRI="#Imaging"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SEMImaging"/>
+        <Class IRI="#TEMImaging"/>
+    </DisjointClasses>
+</Ontology>
 
-<http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing> rdf:type owl:Ontology .
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#BETMethod
-:BETMethod rdf:type owl:Class ;
-           rdfs:subClassOf :Measurement .
 
 
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystLayerDynamicVaporSorptionMeasurement
-:CatalystLayerDynamicVaporSorptionMeasurement rdf:type owl:Class ;
-                                              rdfs:subClassOf :DynamicVaporSorptionMeasurement ;
-                                              owl:disjointWith :PowderDynamicVaporSorptionMeasurement .
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicLightScattering
-:DynamicLightScattering rdf:type owl:Class ;
-                        rdfs:subClassOf :Scattering .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DynamicVaporSorptionMeasurement
-:DynamicVaporSorptionMeasurement rdf:type owl:Class ;
-                                 rdfs:subClassOf :Gravimetry .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ElectronMicroscopy
-:ElectronMicroscopy rdf:type owl:Class ;
-                    rdfs:subClassOf :Microscopy .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Gravimetry
-:Gravimetry rdf:type owl:Class ;
-            rdfs:subClassOf :Measurement ;
-            owl:disjointWith :Imaging .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Imaging
-:Imaging rdf:type owl:Class ;
-         rdfs:subClassOf :Measurement .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Measurement
-:Measurement rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MethodOfStandardPorosimetry
-:MethodOfStandardPorosimetry rdf:type owl:Class ;
-                             rdfs:subClassOf :Measurement .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Microscopy
-:Microscopy rdf:type owl:Class ;
-            rdfs:subClassOf :Imaging .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#PowderDynamicVaporSorptionMeasurement
-:PowderDynamicVaporSorptionMeasurement rdf:type owl:Class ;
-                                       rdfs:subClassOf :DynamicVaporSorptionMeasurement .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SEMImaging
-:SEMImaging rdf:type owl:Class ;
-            rdfs:subClassOf :ElectronMicroscopy ;
-            owl:disjointWith :TEMImaging .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Scattering
-:Scattering rdf:type owl:Class ;
-            rdfs:subClassOf :Imaging .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#TEMImaging
-:TEMImaging rdf:type owl:Class ;
-            rdfs:subClassOf :ElectronMicroscopy .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ViscosityMeasurement
-:ViscosityMeasurement rdf:type owl:Class ;
-                      rdfs:subClassOf :Measurement .
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#AdditiveManufacturing
-:AdditiveManufacturing rdf:type owl:Class ;
-                       rdfs:subClassOf :Manufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CCLManufacturing
-:CCLManufacturing rdf:type owl:Class ;
-                  rdfs:subClassOf :ComponentManufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CCMManufacturing
-:CCMManufacturing rdf:type owl:Class ;
-                  rdfs:subClassOf :MEAManufacturing ;
-                  owl:disjointWith <http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing> .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#CatalystInkManufacturing
-:CatalystInkManufacturing rdf:type owl:Class ;
-                          rdfs:subClassOf :MaterialsManufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#ComponentManufacturing
-:ComponentManufacturing rdf:type owl:Class ;
-                        rdfs:subClassOf :Manufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#DeviceManufacturing
-:DeviceManufacturing rdf:type owl:Class ;
-                     rdfs:subClassOf :Manufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellAssembly
-:FuelCellAssembly rdf:type owl:Class ;
-                  rdfs:subClassOf :ComponentManufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#FuelCellManufacturing
-:FuelCellManufacturing rdf:type owl:Class ;
-                       rdfs:subClassOf :DeviceManufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MEAManufacturing
-:MEAManufacturing rdf:type owl:Class ;
-                  rdfs:subClassOf :ComponentManufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#Manufacturing
-:Manufacturing rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#MaterialsManufacturing
-:MaterialsManufacturing rdf:type owl:Class ;
-                        rdfs:subClassOf :Manufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#SamplePreparation
-:SamplePreparation rdf:type owl:Class ;
-                   rdfs:subClassOf :Manufacturing .
-
-
-###  http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing
-<http://www.semanticweb.org/mdreger/ontologies/2022/11/manufacturing#5LayerMEAManufacturing> rdf:type owl:Class ;
-                                                                                             rdfs:subClassOf :MEAManufacturing .
-
-
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ComponentManufacturing
-                :DeviceManufacturing
-                :MaterialsManufacturing
-              )
-] .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

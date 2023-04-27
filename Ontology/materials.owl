@@ -1,2182 +1,2891 @@
-@prefix : <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials> .
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials">
+    <Prefix name="" IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#AcetyleneBlack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Acid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AcidicElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actinium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActiveMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aerosol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Air"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alcohol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlicyclicHeterocylclicOrganicMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlicyclicHomocylclicOrganicMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlkalineElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alkanes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alkenes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alkynes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aluminium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Americium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AmphiphilSolvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Anion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AnisotropicMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Anolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Antimony"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AqueousElectrloyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AqueousElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AqueousMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AqueousSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aquivion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AquivionD72-25BS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AquivionD79-25BS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AquivionD98-25BS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AquivionSO3H-Form"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Argon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AromaticAlicyclicOrganicMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AromaticHeterocyclicOrganicAminesMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AromaticHeterocyclicOrganicMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Arsenic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Astatine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Atom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Barium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Base"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Berkelium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Beryllium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BinaryCarbonSupportedPlatinumCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BinaryCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BinaryMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bismuth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bohrium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Boron"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bromine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cadmium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calcium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Californium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Carbon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CarbonBlack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CarbonSupportedPlatinumCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Catalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CatalystInk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Catholyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ceramic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cerium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cesium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChannelBlack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChemicalCompound"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChemicalEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChemicalReactionProduct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChemicalReationReactant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChemicalSubstance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chlorine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chromium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CoatingSubstrate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cobalt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Colloid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompositeMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConductingPolymerSupportedPlatinumCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Continuum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Copernicium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Copolymer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Copper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crystal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Curium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CyclicOrganicMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Darmstadtium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecalSusbtrate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diazole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dispersion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DissolvedMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dubnium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dust"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dysprosium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EA30E"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EA30E-HT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ETFE"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Einsteinium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectrlyteSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectroCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectroChemicalIntercalationMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectrochemicalChargeCarrierIon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectrochemicalConversionMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectrochemicalIntercalationMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectrochemicalMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Electrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectrolyteSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElementalSubstance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Emulsion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Erbium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ethanol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Europium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#F30E"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#F30E-HT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#F50E"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#F50E-HT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FCarbonSupportedPlatinumCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fermium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Flerovium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fluid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fluorine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Foam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Francium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FunctionalMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FurnaceBlack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gadolinium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gallium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GasLiquidSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GasMixture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GasSolidSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GasSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GaseMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Germanium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gold"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GraphiteMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hafnium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hassium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Helium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeteroCyclicOrganicMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeteroNuclearMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeterogenousMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Holmium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HomoGenousMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HomoNuclearMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HomocyclicOrganicMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hydrogen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Imidazole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Indium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InorganicCompound"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntercalationMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Iodine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IonicLiquidElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ionomer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Iridium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IridiumOxideCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Iron"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IsotropicMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Krypton"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LampBlack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lanthanum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lawrencium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lead"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeclancheElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Liquid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidAerosol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidFoam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidGasSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidLiquidSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidSol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidSolidSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquidSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lithium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Livermorium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lutetium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MacroMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Magnesium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Manganese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManufacturedMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Matter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Meitnerium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mendelevium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mercury"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Metal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Methanol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mixture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MolecularEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Molecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Molybdenum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Moscovium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nafion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nafion_D2020CS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nafion_D2021CS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nafion_D520CS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nafion_D521CS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NanoMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturalMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NearNeutralElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Neodymium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Neon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Neptunium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nickel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nihonium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Niobium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nitrogen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nobelium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonAqeousMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonAqueousElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonPolarSolvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oganesson"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpenChainOrganicMolecules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrganicCompound"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrganicMolceule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Osmium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oxidant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oxygen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PTFE"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PTFESubstrate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Palladium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhaseHeterogeneousMixture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhaseHomogeneousMixture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhaseOfMatter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Phosphorus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Plasma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Platinum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlatinumCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Plutonium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PolarSolvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Polonium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PolyAtomicEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Polyepoxide"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Potassium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Praseodymium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrimaryAlcohol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Promethium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Protactinium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Radium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Radon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReactiveMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reductant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rhenium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rhodium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Roentgenium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rubidium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ruthenium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rutherfordium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SaltMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Samarium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SaturatedSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Scandium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Seaborgium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecundaryCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Selenium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Silicon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Silver"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SingleMetalCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Smoke"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sodium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Solid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidAerosol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidFoam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidGasSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidLiquidSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidLiquidsSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidMixture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidSol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidSolidSuspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolidSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Solute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoluteMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Solution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Solvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SolventMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Spray"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateOfAggregation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateOfMatter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StrongAcid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StrongBase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Strontium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sulfur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SupportingElectrolyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Suspension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tantalum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Technetium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tellurium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tennessine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Terbium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TernaryCatalyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TernaryMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thallium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ThermalBlack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thorium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thulium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Titanium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tungsten"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ununennium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Uranium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vanadium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vapor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Water"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WeakAcid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WeakBase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Xenon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ytterbium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Yttrium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zinc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zirconium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#0DNanoMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#1DNanoMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#1-Butanol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#1-Propanol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#2DNanoMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3DNanoMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3M"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#800EWIonomer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AcetyleneBlack"/>
+        <Class IRI="#CarbonBlack"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acid"/>
+        <Class IRI="#ChemicalSubstance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AcidicElectrolyte"/>
+        <Class IRI="#AqueousElectrloyte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actinium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActiveMaterial"/>
+        <Class IRI="#ElectrochemicalMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aerosol"/>
+        <Class IRI="#Colloid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aerosol"/>
+        <Class IRI="#GasMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Air"/>
+        <Class IRI="#SolidSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alcohol"/>
+        <Class IRI="#AmphiphilSolvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlicyclicHeterocylclicOrganicMolecules"/>
+        <Class IRI="#HeteroCyclicOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlicyclicHomocylclicOrganicMolecules"/>
+        <Class IRI="#HomocyclicOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlkalineElectrolyte"/>
+        <Class IRI="#AqueousElectrloyte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alkanes"/>
+        <Class IRI="#OpenChainOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alkenes"/>
+        <Class IRI="#OpenChainOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alkynes"/>
+        <Class IRI="#OpenChainOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aluminium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Americium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmphiphilSolvent"/>
+        <Class IRI="#Solvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Anion"/>
+        <Class IRI="#Ion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnisotropicMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Anolyte"/>
+        <Class IRI="#ElectrlyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Anolyte"/>
+        <Class IRI="#ElectrolyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Antimony"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AqueousElectrloyte"/>
+        <Class IRI="#ElectrlyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AqueousElectrolyte"/>
+        <Class IRI="#AqueousSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AqueousElectrolyte"/>
+        <Class IRI="#ElectrolyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AqueousMolecule"/>
+        <Class IRI="#DissolvedMolecule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AqueousSolution"/>
+        <Class IRI="#LiquidSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aquivion"/>
+        <Class IRI="#Ionomer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AquivionD72-25BS"/>
+        <Class IRI="#Aquivion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AquivionD79-25BS"/>
+        <Class IRI="#Aquivion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AquivionD98-25BS"/>
+        <Class IRI="#Aquivion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AquivionSO3H-Form"/>
+        <Class IRI="#Aquivion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Argon"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AromaticAlicyclicOrganicMolecules"/>
+        <Class IRI="#HomocyclicOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AromaticHeterocyclicOrganicAminesMolecules"/>
+        <Class IRI="#AromaticHeterocyclicOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AromaticHeterocyclicOrganicMolecules"/>
+        <Class IRI="#HeteroCyclicOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arsenic"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Astatine"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atom"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Barium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Base"/>
+        <Class IRI="#ChemicalSubstance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Berkelium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Beryllium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BinaryCarbonSupportedPlatinumCatalyst"/>
+        <Class IRI="#PlatinumCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BinaryCatalyst"/>
+        <Class IRI="#ElectroCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BinaryMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bismuth"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bohrium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Boron"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bromine"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cadmium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Calcium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Californium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Carbon"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CarbonBlack"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CarbonSupportedPlatinumCatalyst"/>
+        <Class IRI="#PlatinumCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Catalyst"/>
+        <Class IRI="#FunctionalMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CatalystInk"/>
+        <Class IRI="#LiquidSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Catholyte"/>
+        <Class IRI="#ElectrlyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Catholyte"/>
+        <Class IRI="#ElectrolyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cation"/>
+        <Class IRI="#Ion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ceramic"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cerium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cesium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChannelBlack"/>
+        <Class IRI="#CarbonBlack"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChemicalCompound"/>
+        <Class IRI="#ChemicalSubstance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChemicalEntity"/>
+        <Class IRI="#Matter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChemicalReactionProduct"/>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChemicalReationReactant"/>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChemicalSubstance"/>
+        <Class IRI="#ChemicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chlorine"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chromium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CoatingSubstrate"/>
+        <Class IRI="#FunctionalMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cobalt"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Colloid"/>
+        <Class IRI="#Dispersion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Colloid"/>
+        <Class IRI="#PhaseHeterogeneousMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConductingPolymerSupportedPlatinumCatalyst"/>
+        <Class IRI="#PlatinumCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Continuum"/>
+        <Class IRI="#Matter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Copernicium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Copolymer"/>
+        <Class IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Copper"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crystal"/>
+        <Class IRI="#Solid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Curium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CyclicOrganicMolecules"/>
+        <Class IRI="#OrganicMolceule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Darmstadtium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DecalSusbtrate"/>
+        <Class IRI="#CoatingSubstrate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diazole"/>
+        <Class IRI="#AromaticHeterocyclicOrganicAminesMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dispersion"/>
+        <Class IRI="#Mixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DissolvedMolecule"/>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dubnium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dust"/>
+        <Class IRI="#GasSolidSuspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dysprosium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EA30E"/>
+        <Class IRI="#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EA30E-HT"/>
+        <Class IRI="#EA30E"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ETFE"/>
+        <Class IRI="#Copolymer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Einsteinium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrlyteSolution"/>
+        <Class IRI="#LiquidElectrolyte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectroCatalyst"/>
+        <Class IRI="#Catalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectroChemicalIntercalationMaterial"/>
+        <Class IRI="#ElectrochemicalMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrochemicalChargeCarrierIon"/>
+        <Class IRI="#Ion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrochemicalConversionMaterial"/>
+        <Class IRI="#ActiveMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrochemicalIntercalationMaterial"/>
+        <Class IRI="#ActiveMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrochemicalMaterial"/>
+        <Class IRI="#FunctionalMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Electrolyte"/>
+        <Class IRI="#ElectrochemicalMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrolyteSolution"/>
+        <Class IRI="#LiquidSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectrolyteSolution"/>
+        <Class IRI="#Solution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElementalSubstance"/>
+        <Class IRI="#ChemicalSubstance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Emulsion"/>
+        <Class IRI="#Dispersion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Emulsion"/>
+        <Class IRI="#Liquid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Erbium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ethanol"/>
+        <Class IRI="#PrimaryAlcohol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Europium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#F30E"/>
+        <Class IRI="#FCarbonSupportedPlatinumCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#F30E-HT"/>
+        <Class IRI="#F30E"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#F50E"/>
+        <Class IRI="#FCarbonSupportedPlatinumCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#F50E-HT"/>
+        <Class IRI="#F50E"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FCarbonSupportedPlatinumCatalyst"/>
+        <Class IRI="#CarbonSupportedPlatinumCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fermium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Flerovium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fluid"/>
+        <Class IRI="#StateOfAggregation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fluid"/>
+        <Class IRI="#StateOfMatter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fluorine"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Foam"/>
+        <Class IRI="#Dispersion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Francium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FunctionalMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FurnaceBlack"/>
+        <Class IRI="#CarbonBlack"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gadolinium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gallium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gas"/>
+        <Class IRI="#Fluid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GasLiquidSuspension"/>
+        <Class IRI="#GasMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GasLiquidSuspension"/>
+        <Class IRI="#Suspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GasMixture"/>
+        <Class IRI="#Gas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GasMixture"/>
+        <Class IRI="#Mixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GasSolidSuspension"/>
+        <Class IRI="#GasMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GasSolidSuspension"/>
+        <Class IRI="#Suspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GasSolution"/>
+        <Class IRI="#ElectrolyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GasSolution"/>
+        <Class IRI="#GasMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GaseMolecule"/>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gel"/>
+        <Class IRI="#Dispersion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gel"/>
+        <Class IRI="#SolidMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Germanium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gold"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gore"/>
+        <Class IRI="#Ionomer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GraphiteMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst"/>
+        <Class IRI="#CarbonSupportedPlatinumCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hafnium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hassium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Helium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeteroCyclicOrganicMolecules"/>
+        <Class IRI="#CyclicOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeteroNuclearMolecule"/>
+        <Class IRI="#Molecule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeterogenousMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Holmium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HomoGenousMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HomoNuclearMolecule"/>
+        <Class IRI="#Molecule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HomocyclicOrganicMolecules"/>
+        <Class IRI="#CyclicOrganicMolecules"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hydrogen"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Imidazole"/>
+        <Class IRI="#Diazole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Indium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ink"/>
+        <Class IRI="#Gel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ink"/>
+        <Class IRI="#LiquidSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ink"/>
+        <Class IRI="#Sol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InorganicCompound"/>
+        <Class IRI="#ChemicalCompound"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntercalationMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Iodine"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ion"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IonicLiquidElectrolyte"/>
+        <Class IRI="#LiquidElectrolyte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ionomer"/>
+        <Class IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Iridium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IridiumOxideCatalyst"/>
+        <Class IRI="#SingleMetalCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Iron"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IsotropicMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Krypton"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LampBlack"/>
+        <Class IRI="#CarbonBlack"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lanthanum"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lawrencium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lead"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeclancheElectrolyte"/>
+        <Class IRI="#NearNeutralElectrolyte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Liquid"/>
+        <Class IRI="#Fluid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidAerosol"/>
+        <Class IRI="#Aerosol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidElectrolyte"/>
+        <Class IRI="#Electrolyte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidFoam"/>
+        <Class IRI="#Foam"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidFoam"/>
+        <Class IRI="#Liquid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidGasSuspension"/>
+        <Class IRI="#Liquid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidGasSuspension"/>
+        <Class IRI="#Suspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidLiquidSuspension"/>
+        <Class IRI="#Liquid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidLiquidSuspension"/>
+        <Class IRI="#Suspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidMolecule"/>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidSol"/>
+        <Class IRI="#Liquid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidSol"/>
+        <Class IRI="#Sol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidSolidSuspension"/>
+        <Class IRI="#Liquid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidSolidSuspension"/>
+        <Class IRI="#Suspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidSolution"/>
+        <Class IRI="#Liquid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquidSolution"/>
+        <Class IRI="#Solution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lithium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Livermorium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lutetium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MacroMolecule"/>
+        <Class IRI="#PolyAtomicEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Magnesium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manganese"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManufacturedMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Material"/>
+        <Class IRI="#Matter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meitnerium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mendelevium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mercury"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Metal"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Methanol"/>
+        <Class IRI="#PrimaryAlcohol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mixture"/>
+        <Class IRI="#Continuum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MolecularEntity"/>
+        <Class IRI="#ChemicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Molecule"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Molybdenum"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Moscovium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nafion"/>
+        <Class IRI="#Ionomer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nafion_D2020CS"/>
+        <Class IRI="#Nafion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nafion_D2021CS"/>
+        <Class IRI="#Nafion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nafion_D520CS"/>
+        <Class IRI="#Nafion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nafion_D521CS"/>
+        <Class IRI="#Nafion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NanoMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NaturalMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NearNeutralElectrolyte"/>
+        <Class IRI="#AqueousElectrloyte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Neodymium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Neon"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Neptunium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nickel"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nihonium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Niobium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nitrogen"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nobelium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonAqeousMolecule"/>
+        <Class IRI="#DissolvedMolecule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonAqueousElectrolyte"/>
+        <Class IRI="#ElectrlyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonAqueousElectrolyte"/>
+        <Class IRI="#ElectrolyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonPolarSolvent"/>
+        <Class IRI="#Solvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oganesson"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenChainOrganicMolecules"/>
+        <Class IRI="#OrganicMolceule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrganicCompound"/>
+        <Class IRI="#ChemicalCompound"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrganicMolceule"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrganicMolceule"/>
+        <Class IRI="#OrganicCompound"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Osmium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oxidant"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oxygen"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PTFE"/>
+        <Class IRI="#Copolymer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PTFESubstrate"/>
+        <Class IRI="#CoatingSubstrate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Palladium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhaseHeterogeneousMixture"/>
+        <Class IRI="#Mixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhaseHomogeneousMixture"/>
+        <Class IRI="#Mixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhaseOfMatter"/>
+        <Class IRI="#Continuum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Phosphorus"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Plasma"/>
+        <Class IRI="#Fluid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Platinum"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlatinumCatalyst"/>
+        <Class IRI="#SingleMetalCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Plutonium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PolarSolvent"/>
+        <Class IRI="#Solvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Polonium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PolyAtomicEntity"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Polyepoxide"/>
+        <Class IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Potassium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Praseodymium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrimaryAlcohol"/>
+        <Class IRI="#Alcohol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Promethium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Protactinium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Radium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Radon"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReactiveMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reductant"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rhenium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rhodium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Roentgenium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rubidium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ruthenium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rutherfordium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SaltMolecule"/>
+        <Class IRI="#Molecule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Samarium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SaturatedSolution"/>
+        <Class IRI="#Solution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scandium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Seaborgium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecundaryCatalyst"/>
+        <Class IRI="#ElectroCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Selenium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Silicon"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Silver"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SingleMetalCatalyst"/>
+        <Class IRI="#ElectroCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smoke"/>
+        <Class IRI="#SolidAerosol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sodium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sol"/>
+        <Class IRI="#Dispersion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solid"/>
+        <Class IRI="#StateOfAggregation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solid"/>
+        <Class IRI="#StateOfMatter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidAerosol"/>
+        <Class IRI="#Aerosol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidElectrolyte"/>
+        <Class IRI="#Electrolyte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidFoam"/>
+        <Class IRI="#Foam"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidFoam"/>
+        <Class IRI="#SolidMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidGasSuspension"/>
+        <Class IRI="#SolidMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidGasSuspension"/>
+        <Class IRI="#Suspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidLiquidSuspension"/>
+        <Class IRI="#SolidMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidLiquidsSuspension"/>
+        <Class IRI="#Suspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidMixture"/>
+        <Class IRI="#Mixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidMixture"/>
+        <Class IRI="#Solid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidSol"/>
+        <Class IRI="#Sol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidSol"/>
+        <Class IRI="#SolidMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidSolidSuspension"/>
+        <Class IRI="#SolidMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidSolidSuspension"/>
+        <Class IRI="#Suspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidSolution"/>
+        <Class IRI="#SolidMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolidSolution"/>
+        <Class IRI="#Solution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solute"/>
+        <Class IRI="#ChemicalSubstance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoluteMolecule"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solution"/>
+        <Class IRI="#Mixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solution"/>
+        <Class IRI="#PhaseHomogeneousMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solution"/>
+        <Class IRI="#StateOfAggregation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solvent"/>
+        <Class IRI="#ChemicalSubstance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SolventMolecule"/>
+        <Class IRI="#MolecularEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spray"/>
+        <Class IRI="#GasLiquidSuspension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StateOfAggregation"/>
+        <Class IRI="#Continuum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StateOfMatter"/>
+        <Class IRI="#Continuum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StrongAcid"/>
+        <Class IRI="#Acid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StrongBase"/>
+        <Class IRI="#Base"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Strontium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sulfur"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SupportingElectrolyte"/>
+        <Class IRI="#ElectrlyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SupportingElectrolyte"/>
+        <Class IRI="#ElectrolyteSolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Suspension"/>
+        <Class IRI="#Mixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Suspension"/>
+        <Class IRI="#PhaseHeterogeneousMixture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Suspension"/>
+        <Class IRI="#StateOfMatter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tantalum"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Technetium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tellurium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tennessine"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Terbium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TernaryCatalyst"/>
+        <Class IRI="#ElectroCatalyst"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TernaryMaterial"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thallium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ThermalBlack"/>
+        <Class IRI="#CarbonBlack"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thorium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thulium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tin"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Titanium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tungsten"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ununennium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Uranium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vanadium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vapor"/>
+        <Class IRI="#LiquidAerosol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Water"/>
+        <Class IRI="#PolarSolvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WeakAcid"/>
+        <Class IRI="#Acid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WeakBase"/>
+        <Class IRI="#Base"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Xenon"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ytterbium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Yttrium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zinc"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zirconium"/>
+        <Class IRI="#Atom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#0DNanoMaterial"/>
+        <Class IRI="#NanoMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1DNanoMaterial"/>
+        <Class IRI="#NanoMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1-Butanol"/>
+        <Class IRI="#PrimaryAlcohol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1-Propanol"/>
+        <Class IRI="#PrimaryAlcohol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#2DNanoMaterial"/>
+        <Class IRI="#NanoMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3DNanoMaterial"/>
+        <Class IRI="#NanoMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3M"/>
+        <Class IRI="#Ionomer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#800EWIonomer"/>
+        <Class IRI="#3M"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AcetyleneBlack"/>
+        <Class IRI="#ChannelBlack"/>
+        <Class IRI="#FurnaceBlack"/>
+        <Class IRI="#LampBlack"/>
+        <Class IRI="#ThermalBlack"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Acid"/>
+        <Class IRI="#Base"/>
+        <Class IRI="#ChemicalCompound"/>
+        <Class IRI="#ElementalSubstance"/>
+        <Class IRI="#Solute"/>
+        <Class IRI="#Solvent"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AcidicElectrolyte"/>
+        <Class IRI="#AlkalineElectrolyte"/>
+        <Class IRI="#NearNeutralElectrolyte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Actinium"/>
+        <Class IRI="#Aluminium"/>
+        <Class IRI="#Americium"/>
+        <Class IRI="#Antimony"/>
+        <Class IRI="#Argon"/>
+        <Class IRI="#Arsenic"/>
+        <Class IRI="#Astatine"/>
+        <Class IRI="#Barium"/>
+        <Class IRI="#Berkelium"/>
+        <Class IRI="#Beryllium"/>
+        <Class IRI="#Bismuth"/>
+        <Class IRI="#Bohrium"/>
+        <Class IRI="#Boron"/>
+        <Class IRI="#Bromine"/>
+        <Class IRI="#Cadmium"/>
+        <Class IRI="#Calcium"/>
+        <Class IRI="#Californium"/>
+        <Class IRI="#Carbon"/>
+        <Class IRI="#Cerium"/>
+        <Class IRI="#Cesium"/>
+        <Class IRI="#Chlorine"/>
+        <Class IRI="#Chromium"/>
+        <Class IRI="#Cobalt"/>
+        <Class IRI="#Copernicium"/>
+        <Class IRI="#Copper"/>
+        <Class IRI="#Curium"/>
+        <Class IRI="#Darmstadtium"/>
+        <Class IRI="#Dubnium"/>
+        <Class IRI="#Dysprosium"/>
+        <Class IRI="#Einsteinium"/>
+        <Class IRI="#Erbium"/>
+        <Class IRI="#Europium"/>
+        <Class IRI="#Fermium"/>
+        <Class IRI="#Flerovium"/>
+        <Class IRI="#Fluorine"/>
+        <Class IRI="#Francium"/>
+        <Class IRI="#Gadolinium"/>
+        <Class IRI="#Gallium"/>
+        <Class IRI="#Germanium"/>
+        <Class IRI="#Gold"/>
+        <Class IRI="#Hafnium"/>
+        <Class IRI="#Hassium"/>
+        <Class IRI="#Helium"/>
+        <Class IRI="#Holmium"/>
+        <Class IRI="#Hydrogen"/>
+        <Class IRI="#Indium"/>
+        <Class IRI="#Iodine"/>
+        <Class IRI="#Iridium"/>
+        <Class IRI="#Iron"/>
+        <Class IRI="#Krypton"/>
+        <Class IRI="#Lanthanum"/>
+        <Class IRI="#Lawrencium"/>
+        <Class IRI="#Lead"/>
+        <Class IRI="#Lithium"/>
+        <Class IRI="#Livermorium"/>
+        <Class IRI="#Lutetium"/>
+        <Class IRI="#Magnesium"/>
+        <Class IRI="#Manganese"/>
+        <Class IRI="#Meitnerium"/>
+        <Class IRI="#Mendelevium"/>
+        <Class IRI="#Mercury"/>
+        <Class IRI="#Molybdenum"/>
+        <Class IRI="#Moscovium"/>
+        <Class IRI="#Neodymium"/>
+        <Class IRI="#Neon"/>
+        <Class IRI="#Neptunium"/>
+        <Class IRI="#Nickel"/>
+        <Class IRI="#Nihonium"/>
+        <Class IRI="#Niobium"/>
+        <Class IRI="#Nitrogen"/>
+        <Class IRI="#Nobelium"/>
+        <Class IRI="#Oganesson"/>
+        <Class IRI="#Osmium"/>
+        <Class IRI="#Oxygen"/>
+        <Class IRI="#Palladium"/>
+        <Class IRI="#Phosphorus"/>
+        <Class IRI="#Platinum"/>
+        <Class IRI="#Plutonium"/>
+        <Class IRI="#Polonium"/>
+        <Class IRI="#Potassium"/>
+        <Class IRI="#Praseodymium"/>
+        <Class IRI="#Promethium"/>
+        <Class IRI="#Protactinium"/>
+        <Class IRI="#Radium"/>
+        <Class IRI="#Radon"/>
+        <Class IRI="#Rhenium"/>
+        <Class IRI="#Rhodium"/>
+        <Class IRI="#Roentgenium"/>
+        <Class IRI="#Rubidium"/>
+        <Class IRI="#Ruthenium"/>
+        <Class IRI="#Rutherfordium"/>
+        <Class IRI="#Samarium"/>
+        <Class IRI="#Scandium"/>
+        <Class IRI="#Seaborgium"/>
+        <Class IRI="#Selenium"/>
+        <Class IRI="#Silicon"/>
+        <Class IRI="#Silver"/>
+        <Class IRI="#Sodium"/>
+        <Class IRI="#Strontium"/>
+        <Class IRI="#Sulfur"/>
+        <Class IRI="#Tantalum"/>
+        <Class IRI="#Technetium"/>
+        <Class IRI="#Tellurium"/>
+        <Class IRI="#Tennessine"/>
+        <Class IRI="#Terbium"/>
+        <Class IRI="#Thallium"/>
+        <Class IRI="#Thorium"/>
+        <Class IRI="#Thulium"/>
+        <Class IRI="#Tin"/>
+        <Class IRI="#Titanium"/>
+        <Class IRI="#Tungsten"/>
+        <Class IRI="#Ununennium"/>
+        <Class IRI="#Uranium"/>
+        <Class IRI="#Vanadium"/>
+        <Class IRI="#Xenon"/>
+        <Class IRI="#Ytterbium"/>
+        <Class IRI="#Yttrium"/>
+        <Class IRI="#Zinc"/>
+        <Class IRI="#Zirconium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ActiveMaterial"/>
+        <Class IRI="#ElectroChemicalIntercalationMaterial"/>
+        <Class IRI="#Electrolyte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Aerosol"/>
+        <Class IRI="#GasLiquidSuspension"/>
+        <Class IRI="#GasSolidSuspension"/>
+        <Class IRI="#GasSolution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AlicyclicHeterocylclicOrganicMolecules"/>
+        <Class IRI="#AromaticHeterocyclicOrganicMolecules"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AlicyclicHomocylclicOrganicMolecules"/>
+        <Class IRI="#AromaticAlicyclicOrganicMolecules"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Alkanes"/>
+        <Class IRI="#Alkenes"/>
+        <Class IRI="#Alkynes"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Anion"/>
+        <Class IRI="#Cation"/>
+        <Class IRI="#ElectrochemicalChargeCarrierIon"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AnisotropicMaterial"/>
+        <Class IRI="#BinaryMaterial"/>
+        <Class IRI="#CarbonBlack"/>
+        <Class IRI="#Ceramic"/>
+        <Class IRI="#CompositeMaterial"/>
+        <Class IRI="#EnergyMaterial"/>
+        <Class IRI="#FunctionalMaterial"/>
+        <Class IRI="#GraphiteMaterial"/>
+        <Class IRI="#HeterogenousMaterial"/>
+        <Class IRI="#HomoGenousMaterial"/>
+        <Class IRI="#IntercalationMaterial"/>
+        <Class IRI="#IsotropicMaterial"/>
+        <Class IRI="#ManufacturedMaterial"/>
+        <Class IRI="#Metal"/>
+        <Class IRI="#NanoMaterial"/>
+        <Class IRI="#NaturalMaterial"/>
+        <Class IRI="#ReactiveMaterial"/>
+        <Class IRI="#TernaryMaterial"/>
+        <Class IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Anolyte"/>
+        <Class IRI="#AqueousElectrloyte"/>
+        <Class IRI="#Catholyte"/>
+        <Class IRI="#NonAqueousElectrolyte"/>
+        <Class IRI="#SupportingElectrolyte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Anolyte"/>
+        <Class IRI="#AqueousElectrolyte"/>
+        <Class IRI="#Catholyte"/>
+        <Class IRI="#GasSolution"/>
+        <Class IRI="#NonAqueousElectrolyte"/>
+        <Class IRI="#SupportingElectrolyte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AqueousMolecule"/>
+        <Class IRI="#NonAqeousMolecule"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AqueousSolution"/>
+        <Class IRI="#CatalystInk"/>
+        <Class IRI="#ElectrolyteSolution"/>
+        <Class IRI="#Ink"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Aquivion"/>
+        <Class IRI="#Gore"/>
+        <Class IRI="#Nafion"/>
+        <Class IRI="#3M"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AquivionD72-25BS"/>
+        <Class IRI="#AquivionD79-25BS"/>
+        <Class IRI="#AquivionD98-25BS"/>
+        <Class IRI="#AquivionSO3H-Form"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Atom"/>
+        <Class IRI="#Ion"/>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+        <Class IRI="#Molecule"/>
+        <Class IRI="#OrganicMolceule"/>
+        <Class IRI="#Oxidant"/>
+        <Class IRI="#PolyAtomicEntity"/>
+        <Class IRI="#Reductant"/>
+        <Class IRI="#SoluteMolecule"/>
+        <Class IRI="#SolventMolecule"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BinaryCarbonSupportedPlatinumCatalyst"/>
+        <Class IRI="#CarbonSupportedPlatinumCatalyst"/>
+        <Class IRI="#ConductingPolymerSupportedPlatinumCatalyst"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BinaryCatalyst"/>
+        <Class IRI="#SecundaryCatalyst"/>
+        <Class IRI="#TernaryCatalyst"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Catalyst"/>
+        <Class IRI="#CoatingSubstrate"/>
+        <Class IRI="#ElectrochemicalMaterial"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Ceramic"/>
+        <Class IRI="#EnergyMaterial"/>
+        <Class IRI="#ManufacturedMaterial"/>
+        <Class IRI="#Metal"/>
+        <Class IRI="#NanoMaterial"/>
+        <Class IRI="#NaturalMaterial"/>
+        <Class IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChemicalEntity"/>
+        <Class IRI="#Material"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChemicalReactionProduct"/>
+        <Class IRI="#ChemicalReationReactant"/>
+        <Class IRI="#DissolvedMolecule"/>
+        <Class IRI="#GaseMolecule"/>
+        <Class IRI="#LiquidMolecule"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChemicalSubstance"/>
+        <Class IRI="#MolecularEntity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Colloid"/>
+        <Class IRI="#Emulsion"/>
+        <Class IRI="#Foam"/>
+        <Class IRI="#Gel"/>
+        <Class IRI="#Sol"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Colloid"/>
+        <Class IRI="#Suspension"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Copolymer"/>
+        <Class IRI="#Ionomer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Crystal"/>
+        <Class IRI="#SolidMixture"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CyclicOrganicMolecules"/>
+        <Class IRI="#OpenChainOrganicMolecules"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DecalSusbtrate"/>
+        <Class IRI="#PTFESubstrate"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dispersion"/>
+        <Class IRI="#GasMixture"/>
+        <Class IRI="#PhaseHeterogeneousMixture"/>
+        <Class IRI="#PhaseHomogeneousMixture"/>
+        <Class IRI="#SolidMixture"/>
+        <Class IRI="#Solution"/>
+        <Class IRI="#Suspension"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ETFE"/>
+        <Class IRI="#PTFE"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ElectrlyteSolution"/>
+        <Class IRI="#IonicLiquidElectrolyte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ElectroCatalyst"/>
+        <Class IRI="#ElectrochemicalMaterial"/>
+        <Class IRI="#GraphiteMaterial"/>
+        <Class IRI="#IntercalationMaterial"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ElectrochemicalConversionMaterial"/>
+        <Class IRI="#ElectrochemicalIntercalationMaterial"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ElectrolyteSolution"/>
+        <Class IRI="#LiquidSolution"/>
+        <Class IRI="#SaturatedSolution"/>
+        <Class IRI="#SolidSolution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Emulsion"/>
+        <Class IRI="#LiquidFoam"/>
+        <Class IRI="#LiquidGasSuspension"/>
+        <Class IRI="#LiquidLiquidSuspension"/>
+        <Class IRI="#LiquidSol"/>
+        <Class IRI="#LiquidSolidSuspension"/>
+        <Class IRI="#LiquidSolution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Ethanol"/>
+        <Class IRI="#Methanol"/>
+        <Class IRI="#1-Butanol"/>
+        <Class IRI="#1-Propanol"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#F30E"/>
+        <Class IRI="#F50E"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FCarbonSupportedPlatinumCatalyst"/>
+        <Class IRI="#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Fluid"/>
+        <Class IRI="#Solid"/>
+        <Class IRI="#Solution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Fluid"/>
+        <Class IRI="#Solid"/>
+        <Class IRI="#Suspension"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Gas"/>
+        <Class IRI="#Liquid"/>
+        <Class IRI="#Plasma"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#GasLiquidSuspension"/>
+        <Class IRI="#GasSolidSuspension"/>
+        <Class IRI="#LiquidGasSuspension"/>
+        <Class IRI="#LiquidLiquidSuspension"/>
+        <Class IRI="#LiquidSolidSuspension"/>
+        <Class IRI="#SolidGasSuspension"/>
+        <Class IRI="#SolidLiquidsSuspension"/>
+        <Class IRI="#SolidSolidSuspension"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Gel"/>
+        <Class IRI="#SolidFoam"/>
+        <Class IRI="#SolidGasSuspension"/>
+        <Class IRI="#SolidLiquidSuspension"/>
+        <Class IRI="#SolidSol"/>
+        <Class IRI="#SolidSolidSuspension"/>
+        <Class IRI="#SolidSolution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HeteroCyclicOrganicMolecules"/>
+        <Class IRI="#HomocyclicOrganicMolecules"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HeteroNuclearMolecule"/>
+        <Class IRI="#HomoNuclearMolecule"/>
+        <Class IRI="#SaltMolecule"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Ink"/>
+        <Class IRI="#LiquidSol"/>
+        <Class IRI="#SolidSol"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#InorganicCompound"/>
+        <Class IRI="#OrganicCompound"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Ion"/>
+        <Class IRI="#MolecularEntityInStateOfAggregation"/>
+        <Class IRI="#Molecule"/>
+        <Class IRI="#Oxidant"/>
+        <Class IRI="#PolyAtomicEntity"/>
+        <Class IRI="#Reductant"/>
+        <Class IRI="#SoluteMolecule"/>
+        <Class IRI="#SolventMolecule"/>
+        <Class IRI="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LiquidAerosol"/>
+        <Class IRI="#SolidAerosol"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LiquidElectrolyte"/>
+        <Class IRI="#SolidElectrolyte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LiquidFoam"/>
+        <Class IRI="#SolidFoam"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Mixture"/>
+        <Class IRI="#PhaseOfMatter"/>
+        <Class IRI="#StateOfAggregation"/>
+        <Class IRI="#StateOfMatter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Nafion_D2020CS"/>
+        <Class IRI="#Nafion_D2021CS"/>
+        <Class IRI="#Nafion_D520CS"/>
+        <Class IRI="#Nafion_D521CS"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NonPolarSolvent"/>
+        <Class IRI="#PolarSolvent"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#StrongAcid"/>
+        <Class IRI="#WeakAcid"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#StrongBase"/>
+        <Class IRI="#WeakBase"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#0DNanoMaterial"/>
+        <Class IRI="#1DNanoMaterial"/>
+        <Class IRI="#2DNanoMaterial"/>
+        <Class IRI="#3DNanoMaterial"/>
+    </DisjointClasses>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials> rdf:type owl:Ontology .
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcetyleneBlack
-:AcetyleneBlack rdf:type owl:Class ;
-                rdfs:subClassOf :CarbonBlack .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Acid
-:Acid rdf:type owl:Class ;
-      rdfs:subClassOf :ChemicalSubstance .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcidicElectrolyte
-:AcidicElectrolyte rdf:type owl:Class ;
-                   rdfs:subClassOf :AqueousElectrloyte .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Actinium
-:Actinium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ActiveMaterial
-:ActiveMaterial rdf:type owl:Class ;
-                rdfs:subClassOf :ElectrochemicalMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aerosol
-:Aerosol rdf:type owl:Class ;
-         rdfs:subClassOf :Colloid ,
-                         :GasMixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Air
-:Air rdf:type owl:Class ;
-     rdfs:subClassOf :SolidSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alcohol
-:Alcohol rdf:type owl:Class ;
-         rdfs:subClassOf :AmphiphilSolvent .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHeterocylclicOrganicMolecules
-:AlicyclicHeterocylclicOrganicMolecules rdf:type owl:Class ;
-                                        rdfs:subClassOf :HeteroCyclicOrganicMolecules ;
-                                        owl:disjointWith :AromaticHeterocyclicOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHomocylclicOrganicMolecules
-:AlicyclicHomocylclicOrganicMolecules rdf:type owl:Class ;
-                                      rdfs:subClassOf :HomocyclicOrganicMolecules ;
-                                      owl:disjointWith :AromaticAlicyclicOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlkalineElectrolyte
-:AlkalineElectrolyte rdf:type owl:Class ;
-                     rdfs:subClassOf :AqueousElectrloyte .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkanes
-:Alkanes rdf:type owl:Class ;
-         rdfs:subClassOf :OpenChainOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkenes
-:Alkenes rdf:type owl:Class ;
-         rdfs:subClassOf :OpenChainOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkynes
-:Alkynes rdf:type owl:Class ;
-         rdfs:subClassOf :OpenChainOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aluminium
-:Aluminium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Americium
-:Americium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AmphiphilSolvent
-:AmphiphilSolvent rdf:type owl:Class ;
-                  rdfs:subClassOf :Solvent .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anion
-:Anion rdf:type owl:Class ;
-       rdfs:subClassOf :Ion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AnisotropicMaterial
-:AnisotropicMaterial rdf:type owl:Class ;
-                     rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anolyte
-:Anolyte rdf:type owl:Class ;
-         rdfs:subClassOf :ElectrlyteSolution ,
-                         :ElectrolyteSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Antimony
-:Antimony rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrloyte
-:AqueousElectrloyte rdf:type owl:Class ;
-                    rdfs:subClassOf :ElectrlyteSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrolyte
-:AqueousElectrolyte rdf:type owl:Class ;
-                    rdfs:subClassOf :AqueousSolution ,
-                                    :ElectrolyteSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousMolecule
-:AqueousMolecule rdf:type owl:Class ;
-                 rdfs:subClassOf :DissolvedMolecule ;
-                 owl:disjointWith :NonAqeousMolecule .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousSolution
-:AqueousSolution rdf:type owl:Class ;
-                 rdfs:subClassOf :LiquidSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion
-:Aquivion rdf:type owl:Class ;
-          rdfs:subClassOf :Ionomer .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD72-25BS
-:AquivionD72-25BS rdf:type owl:Class ;
-                  rdfs:subClassOf :Aquivion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD79-25BS
-:AquivionD79-25BS rdf:type owl:Class ;
-                  rdfs:subClassOf :Aquivion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD98-25BS
-:AquivionD98-25BS rdf:type owl:Class ;
-                  rdfs:subClassOf :Aquivion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionSO3H-Form
-:AquivionSO3H-Form rdf:type owl:Class ;
-                   rdfs:subClassOf :Aquivion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Argon
-:Argon rdf:type owl:Class ;
-       rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyclicOrganicMolecules
-:AromaticAlicyclicOrganicMolecules rdf:type owl:Class ;
-                                   rdfs:subClassOf :HomocyclicOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicAminesMolecules
-:AromaticHeterocyclicOrganicAminesMolecules rdf:type owl:Class ;
-                                            rdfs:subClassOf :AromaticHeterocyclicOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicMolecules
-:AromaticHeterocyclicOrganicMolecules rdf:type owl:Class ;
-                                      rdfs:subClassOf :HeteroCyclicOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Arsenic
-:Arsenic rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Astatine
-:Astatine rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom
-:Atom rdf:type owl:Class ;
-      rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Barium
-:Barium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base
-:Base rdf:type owl:Class ;
-      rdfs:subClassOf :ChemicalSubstance .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Berkelium
-:Berkelium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Beryllium
-:Beryllium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCarbonSupportedPlatinumCatalyst
-:BinaryCarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
-                                       rdfs:subClassOf :PlatinumCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCatalyst
-:BinaryCatalyst rdf:type owl:Class ;
-                rdfs:subClassOf :ElectroCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryMaterial
-:BinaryMaterial rdf:type owl:Class ;
-                rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bismuth
-:Bismuth rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bohrium
-:Bohrium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Boron
-:Boron rdf:type owl:Class ;
-       rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bromine
-:Bromine rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cadmium
-:Cadmium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Calcium
-:Calcium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Californium
-:Californium rdf:type owl:Class ;
-             rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Carbon
-:Carbon rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack
-:CarbonBlack rdf:type owl:Class ;
-             rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonSupportedPlatinumCatalyst
-:CarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
-                                 rdfs:subClassOf :PlatinumCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catalyst
-:Catalyst rdf:type owl:Class ;
-          rdfs:subClassOf :FunctionalMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CatalystInk
-:CatalystInk rdf:type owl:Class ;
-             rdfs:subClassOf :LiquidSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catholyte
-:Catholyte rdf:type owl:Class ;
-           rdfs:subClassOf :ElectrlyteSolution ,
-                           :ElectrolyteSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cation
-:Cation rdf:type owl:Class ;
-        rdfs:subClassOf :Ion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ceramic
-:Ceramic rdf:type owl:Class ;
-         rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cerium
-:Cerium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cesium
-:Cesium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChannelBlack
-:ChannelBlack rdf:type owl:Class ;
-              rdfs:subClassOf :CarbonBlack .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalCompound
-:ChemicalCompound rdf:type owl:Class ;
-                  rdfs:subClassOf :ChemicalSubstance .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalEntity
-:ChemicalEntity rdf:type owl:Class ;
-                rdfs:subClassOf :Matter ;
-                owl:disjointWith :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalReactionProduct
-:ChemicalReactionProduct rdf:type owl:Class ;
-                         rdfs:subClassOf :MolecularEntityInStateOfAggregation .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalReationReactant
-:ChemicalReationReactant rdf:type owl:Class ;
-                         rdfs:subClassOf :MolecularEntityInStateOfAggregation .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance
-:ChemicalSubstance rdf:type owl:Class ;
-                   rdfs:subClassOf :ChemicalEntity ;
-                   owl:disjointWith :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chlorine
-:Chlorine rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chromium
-:Chromium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CoatingSubstrate
-:CoatingSubstrate rdf:type owl:Class ;
-                  rdfs:subClassOf :FunctionalMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cobalt
-:Cobalt rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Colloid
-:Colloid rdf:type owl:Class ;
-         rdfs:subClassOf :Dispersion ,
-                         :PhaseHeterogeneousMixture ;
-         owl:disjointWith :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CompositeMaterial
-:CompositeMaterial rdf:type owl:Class ;
-                   rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ConductingPolymerSupportedPlatinumCatalyst
-:ConductingPolymerSupportedPlatinumCatalyst rdf:type owl:Class ;
-                                            rdfs:subClassOf :PlatinumCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Continuum
-:Continuum rdf:type owl:Class ;
-           rdfs:subClassOf :Matter .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copernicium
-:Copernicium rdf:type owl:Class ;
-             rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copolymer
-:Copolymer rdf:type owl:Class ;
-           rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> ;
-           owl:disjointWith :Ionomer .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copper
-:Copper rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Crystal
-:Crystal rdf:type owl:Class ;
-         rdfs:subClassOf :Solid ;
-         owl:disjointWith :SolidMixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Curium
-:Curium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CyclicOrganicMolecules
-:CyclicOrganicMolecules rdf:type owl:Class ;
-                        rdfs:subClassOf :OrganicMolceule ;
-                        owl:disjointWith :OpenChainOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Darmstadtium
-:Darmstadtium rdf:type owl:Class ;
-              rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DecalSusbtrate
-:DecalSusbtrate rdf:type owl:Class ;
-                rdfs:subClassOf :CoatingSubstrate ;
-                owl:disjointWith :PTFESubstrate .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Diazole
-:Diazole rdf:type owl:Class ;
-         rdfs:subClassOf :AromaticHeterocyclicOrganicAminesMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion
-:Dispersion rdf:type owl:Class ;
-            rdfs:subClassOf :Mixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DissolvedMolecule
-:DissolvedMolecule rdf:type owl:Class ;
-                   rdfs:subClassOf :MolecularEntityInStateOfAggregation .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dubnium
-:Dubnium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dust
-:Dust rdf:type owl:Class ;
-      rdfs:subClassOf :GasSolidSuspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dysprosium
-:Dysprosium rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E
-:EA30E rdf:type owl:Class ;
-       rdfs:subClassOf :GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E-HT
-:EA30E-HT rdf:type owl:Class ;
-          rdfs:subClassOf :EA30E .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ETFE
-:ETFE rdf:type owl:Class ;
-      rdfs:subClassOf :Copolymer ;
-      owl:disjointWith :PTFE .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Einsteinium
-:Einsteinium rdf:type owl:Class ;
-             rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution
-:ElectrlyteSolution rdf:type owl:Class ;
-                    rdfs:subClassOf :LiquidElectrolyte ;
-                    owl:disjointWith :IonicLiquidElectrolyte .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroCatalyst
-:ElectroCatalyst rdf:type owl:Class ;
-                 rdfs:subClassOf :Catalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroChemicalIntercalationMaterial
-:ElectroChemicalIntercalationMaterial rdf:type owl:Class ;
-                                      rdfs:subClassOf :ElectrochemicalMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalChargeCarrierIon
-:ElectrochemicalChargeCarrierIon rdf:type owl:Class ;
-                                 rdfs:subClassOf :Ion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalConversionMaterial
-:ElectrochemicalConversionMaterial rdf:type owl:Class ;
-                                   rdfs:subClassOf :ActiveMaterial ;
-                                   owl:disjointWith :ElectrochemicalIntercalationMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalIntercalationMaterial
-:ElectrochemicalIntercalationMaterial rdf:type owl:Class ;
-                                      rdfs:subClassOf :ActiveMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalMaterial
-:ElectrochemicalMaterial rdf:type owl:Class ;
-                         rdfs:subClassOf :FunctionalMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Electrolyte
-:Electrolyte rdf:type owl:Class ;
-             rdfs:subClassOf :ElectrochemicalMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution
-:ElectrolyteSolution rdf:type owl:Class ;
-                     rdfs:subClassOf :LiquidSolution ,
-                                     :Solution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElementalSubstance
-:ElementalSubstance rdf:type owl:Class ;
-                    rdfs:subClassOf :ChemicalSubstance .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Emulsion
-:Emulsion rdf:type owl:Class ;
-          rdfs:subClassOf :Dispersion ,
-                          :Liquid .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EnergyMaterial
-:EnergyMaterial rdf:type owl:Class ;
-                rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Erbium
-:Erbium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ethanol
-:Ethanol rdf:type owl:Class ;
-         rdfs:subClassOf :PrimaryAlcohol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Europium
-:Europium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E
-:F30E rdf:type owl:Class ;
-      rdfs:subClassOf :FCarbonSupportedPlatinumCatalyst ;
-      owl:disjointWith :F50E .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E-HT
-:F30E-HT rdf:type owl:Class ;
-         rdfs:subClassOf :F30E .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E
-:F50E rdf:type owl:Class ;
-      rdfs:subClassOf :FCarbonSupportedPlatinumCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E-HT
-:F50E-HT rdf:type owl:Class ;
-         rdfs:subClassOf :F50E .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FCarbonSupportedPlatinumCatalyst
-:FCarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
-                                  rdfs:subClassOf :CarbonSupportedPlatinumCatalyst ;
-                                  owl:disjointWith :GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fermium
-:Fermium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Flerovium
-:Flerovium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid
-:Fluid rdf:type owl:Class ;
-       rdfs:subClassOf :StateOfAggregation ,
-                       :StateOfMatter .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluorine
-:Fluorine rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Foam
-:Foam rdf:type owl:Class ;
-      rdfs:subClassOf :Dispersion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Francium
-:Francium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial
-:FunctionalMaterial rdf:type owl:Class ;
-                    rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FurnaceBlack
-:FurnaceBlack rdf:type owl:Class ;
-              rdfs:subClassOf :CarbonBlack .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gadolinium
-:Gadolinium rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gallium
-:Gallium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gas
-:Gas rdf:type owl:Class ;
-     rdfs:subClassOf :Fluid .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasLiquidSuspension
-:GasLiquidSuspension rdf:type owl:Class ;
-                     rdfs:subClassOf :GasMixture ,
-                                     :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasMixture
-:GasMixture rdf:type owl:Class ;
-            rdfs:subClassOf :Gas ,
-                            :Mixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolidSuspension
-:GasSolidSuspension rdf:type owl:Class ;
-                    rdfs:subClassOf :GasMixture ,
-                                    :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolution
-:GasSolution rdf:type owl:Class ;
-             rdfs:subClassOf :ElectrolyteSolution ,
-                             :GasMixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GaseMolecule
-:GaseMolecule rdf:type owl:Class ;
-              rdfs:subClassOf :MolecularEntityInStateOfAggregation .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gel
-:Gel rdf:type owl:Class ;
-     rdfs:subClassOf :Dispersion ,
-                     :SolidMixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Germanium
-:Germanium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gold
-:Gold rdf:type owl:Class ;
-      rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gore
-:Gore rdf:type owl:Class ;
-      rdfs:subClassOf :Ionomer .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphiteMaterial
-:GraphiteMaterial rdf:type owl:Class ;
-                  rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst
-:GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst rdf:type owl:Class ;
-                                                        rdfs:subClassOf :CarbonSupportedPlatinumCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hafnium
-:Hafnium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hassium
-:Hassium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Helium
-:Helium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroCyclicOrganicMolecules
-:HeteroCyclicOrganicMolecules rdf:type owl:Class ;
-                              rdfs:subClassOf :CyclicOrganicMolecules ;
-                              owl:disjointWith :HomocyclicOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroNuclearMolecule
-:HeteroNuclearMolecule rdf:type owl:Class ;
-                       rdfs:subClassOf :Molecule .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeterogenousMaterial
-:HeterogenousMaterial rdf:type owl:Class ;
-                      rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Holmium
-:Holmium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoGenousMaterial
-:HomoGenousMaterial rdf:type owl:Class ;
-                    rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoNuclearMolecule
-:HomoNuclearMolecule rdf:type owl:Class ;
-                     rdfs:subClassOf :Molecule .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomocyclicOrganicMolecules
-:HomocyclicOrganicMolecules rdf:type owl:Class ;
-                            rdfs:subClassOf :CyclicOrganicMolecules .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hydrogen
-:Hydrogen rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Imidazole
-:Imidazole rdf:type owl:Class ;
-           rdfs:subClassOf :Diazole .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Indium
-:Indium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ink
-:Ink rdf:type owl:Class ;
-     rdfs:subClassOf :Gel ,
-                     :LiquidSolution ,
-                     :Sol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#InorganicCompound
-:InorganicCompound rdf:type owl:Class ;
-                   rdfs:subClassOf :ChemicalCompound ;
-                   owl:disjointWith :OrganicCompound .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IntercalationMaterial
-:IntercalationMaterial rdf:type owl:Class ;
-                       rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iodine
-:Iodine rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion
-:Ion rdf:type owl:Class ;
-     rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IonicLiquidElectrolyte
-:IonicLiquidElectrolyte rdf:type owl:Class ;
-                        rdfs:subClassOf :LiquidElectrolyte .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ionomer
-:Ionomer rdf:type owl:Class ;
-         rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iridium
-:Iridium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IridiumOxideCatalyst
-:IridiumOxideCatalyst rdf:type owl:Class ;
-                      rdfs:subClassOf :SingleMetalCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iron
-:Iron rdf:type owl:Class ;
-      rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IsotropicMaterial
-:IsotropicMaterial rdf:type owl:Class ;
-                   rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Krypton
-:Krypton rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LampBlack
-:LampBlack rdf:type owl:Class ;
-           rdfs:subClassOf :CarbonBlack .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lanthanum
-:Lanthanum rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lawrencium
-:Lawrencium rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lead
-:Lead rdf:type owl:Class ;
-      rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LeclancheElectrolyte
-:LeclancheElectrolyte rdf:type owl:Class ;
-                      rdfs:subClassOf :NearNeutralElectrolyte .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid
-:Liquid rdf:type owl:Class ;
-        rdfs:subClassOf :Fluid .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidAerosol
-:LiquidAerosol rdf:type owl:Class ;
-               rdfs:subClassOf :Aerosol ;
-               owl:disjointWith :SolidAerosol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidElectrolyte
-:LiquidElectrolyte rdf:type owl:Class ;
-                   rdfs:subClassOf :Electrolyte ;
-                   owl:disjointWith :SolidElectrolyte .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidFoam
-:LiquidFoam rdf:type owl:Class ;
-            rdfs:subClassOf :Foam ,
-                            :Liquid ;
-            owl:disjointWith :SolidFoam .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidGasSuspension
-:LiquidGasSuspension rdf:type owl:Class ;
-                     rdfs:subClassOf :Liquid ,
-                                     :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidLiquidSuspension
-:LiquidLiquidSuspension rdf:type owl:Class ;
-                        rdfs:subClassOf :Liquid ,
-                                        :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidMolecule
-:LiquidMolecule rdf:type owl:Class ;
-                rdfs:subClassOf :MolecularEntityInStateOfAggregation .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSol
-:LiquidSol rdf:type owl:Class ;
-           rdfs:subClassOf :Liquid ,
-                           :Sol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolidSuspension
-:LiquidSolidSuspension rdf:type owl:Class ;
-                       rdfs:subClassOf :Liquid ,
-                                       :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution
-:LiquidSolution rdf:type owl:Class ;
-                rdfs:subClassOf :Liquid ,
-                                :Solution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lithium
-:Lithium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Livermorium
-:Livermorium rdf:type owl:Class ;
-             rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lutetium
-:Lutetium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MacroMolecule
-:MacroMolecule rdf:type owl:Class ;
-               rdfs:subClassOf :PolyAtomicEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Magnesium
-:Magnesium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Manganese
-:Manganese rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ManufacturedMaterial
-:ManufacturedMaterial rdf:type owl:Class ;
-                      rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material
-:Material rdf:type owl:Class ;
-          rdfs:subClassOf :Matter .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Matter
-:Matter rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Meitnerium
-:Meitnerium rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mendelevium
-:Mendelevium rdf:type owl:Class ;
-             rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mercury
-:Mercury rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Metal
-:Metal rdf:type owl:Class ;
-       rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Methanol
-:Methanol rdf:type owl:Class ;
-          rdfs:subClassOf :PrimaryAlcohol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture
-:Mixture rdf:type owl:Class ;
-         rdfs:subClassOf :Continuum .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity
-:MolecularEntity rdf:type owl:Class ;
-                 rdfs:subClassOf :ChemicalEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation
-:MolecularEntityInStateOfAggregation rdf:type owl:Class ;
-                                     rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule
-:Molecule rdf:type owl:Class ;
-          rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molybdenum
-:Molybdenum rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Moscovium
-:Moscovium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion
-:Nafion rdf:type owl:Class ;
-        rdfs:subClassOf :Ionomer .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2020CS
-:Nafion_D2020CS rdf:type owl:Class ;
-                rdfs:subClassOf :Nafion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2021CS
-:Nafion_D2021CS rdf:type owl:Class ;
-                rdfs:subClassOf :Nafion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D520CS
-:Nafion_D520CS rdf:type owl:Class ;
-               rdfs:subClassOf :Nafion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D521CS
-:Nafion_D521CS rdf:type owl:Class ;
-               rdfs:subClassOf :Nafion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial
-:NanoMaterial rdf:type owl:Class ;
-              rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NaturalMaterial
-:NaturalMaterial rdf:type owl:Class ;
-                 rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NearNeutralElectrolyte
-:NearNeutralElectrolyte rdf:type owl:Class ;
-                        rdfs:subClassOf :AqueousElectrloyte .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neodymium
-:Neodymium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neon
-:Neon rdf:type owl:Class ;
-      rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neptunium
-:Neptunium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nickel
-:Nickel rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nihonium
-:Nihonium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Niobium
-:Niobium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nitrogen
-:Nitrogen rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nobelium
-:Nobelium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqeousMolecule
-:NonAqeousMolecule rdf:type owl:Class ;
-                   rdfs:subClassOf :DissolvedMolecule .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqueousElectrolyte
-:NonAqueousElectrolyte rdf:type owl:Class ;
-                       rdfs:subClassOf :ElectrlyteSolution ,
-                                       :ElectrolyteSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonPolarSolvent
-:NonPolarSolvent rdf:type owl:Class ;
-                 rdfs:subClassOf :Solvent ;
-                 owl:disjointWith :PolarSolvent .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oganesson
-:Oganesson rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules
-:OpenChainOrganicMolecules rdf:type owl:Class ;
-                           rdfs:subClassOf :OrganicMolceule .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicCompound
-:OrganicCompound rdf:type owl:Class ;
-                 rdfs:subClassOf :ChemicalCompound .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicMolceule
-:OrganicMolceule rdf:type owl:Class ;
-                 rdfs:subClassOf :MolecularEntity ,
-                                 :OrganicCompound .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Osmium
-:Osmium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxidant
-:Oxidant rdf:type owl:Class ;
-         rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxygen
-:Oxygen rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFE
-:PTFE rdf:type owl:Class ;
-      rdfs:subClassOf :Copolymer .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFESubstrate
-:PTFESubstrate rdf:type owl:Class ;
-               rdfs:subClassOf :CoatingSubstrate .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Palladium
-:Palladium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHeterogeneousMixture
-:PhaseHeterogeneousMixture rdf:type owl:Class ;
-                           rdfs:subClassOf :Mixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHomogeneousMixture
-:PhaseHomogeneousMixture rdf:type owl:Class ;
-                         rdfs:subClassOf :Mixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseOfMatter
-:PhaseOfMatter rdf:type owl:Class ;
-               rdfs:subClassOf :Continuum .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Phosphorus
-:Phosphorus rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plasma
-:Plasma rdf:type owl:Class ;
-        rdfs:subClassOf :Fluid .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Platinum
-:Platinum rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PlatinumCatalyst
-:PlatinumCatalyst rdf:type owl:Class ;
-                  rdfs:subClassOf :SingleMetalCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plutonium
-:Plutonium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolarSolvent
-:PolarSolvent rdf:type owl:Class ;
-              rdfs:subClassOf :Solvent .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polonium
-:Polonium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolyAtomicEntity
-:PolyAtomicEntity rdf:type owl:Class ;
-                  rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polyepoxide
-:Polyepoxide rdf:type owl:Class ;
-             rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Potassium
-:Potassium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Praseodymium
-:Praseodymium rdf:type owl:Class ;
-              rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol
-:PrimaryAlcohol rdf:type owl:Class ;
-                rdfs:subClassOf :Alcohol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Promethium
-:Promethium rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Protactinium
-:Protactinium rdf:type owl:Class ;
-              rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radium
-:Radium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radon
-:Radon rdf:type owl:Class ;
-       rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ReactiveMaterial
-:ReactiveMaterial rdf:type owl:Class ;
-                  rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Reductant
-:Reductant rdf:type owl:Class ;
-           rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhenium
-:Rhenium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhodium
-:Rhodium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Roentgenium
-:Roentgenium rdf:type owl:Class ;
-             rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rubidium
-:Rubidium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ruthenium
-:Ruthenium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rutherfordium
-:Rutherfordium rdf:type owl:Class ;
-               rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaltMolecule
-:SaltMolecule rdf:type owl:Class ;
-              rdfs:subClassOf :Molecule .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Samarium
-:Samarium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaturatedSolution
-:SaturatedSolution rdf:type owl:Class ;
-                   rdfs:subClassOf :Solution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Scandium
-:Scandium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Seaborgium
-:Seaborgium rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SecundaryCatalyst
-:SecundaryCatalyst rdf:type owl:Class ;
-                   rdfs:subClassOf :ElectroCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Selenium
-:Selenium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silicon
-:Silicon rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silver
-:Silver rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SingleMetalCatalyst
-:SingleMetalCatalyst rdf:type owl:Class ;
-                     rdfs:subClassOf :ElectroCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Smoke
-:Smoke rdf:type owl:Class ;
-       rdfs:subClassOf :SolidAerosol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sodium
-:Sodium rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sol
-:Sol rdf:type owl:Class ;
-     rdfs:subClassOf :Dispersion .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solid
-:Solid rdf:type owl:Class ;
-       rdfs:subClassOf :StateOfAggregation ,
-                       :StateOfMatter .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidAerosol
-:SolidAerosol rdf:type owl:Class ;
-              rdfs:subClassOf :Aerosol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidElectrolyte
-:SolidElectrolyte rdf:type owl:Class ;
-                  rdfs:subClassOf :Electrolyte .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidFoam
-:SolidFoam rdf:type owl:Class ;
-           rdfs:subClassOf :Foam ,
-                           :SolidMixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidGasSuspension
-:SolidGasSuspension rdf:type owl:Class ;
-                    rdfs:subClassOf :SolidMixture ,
-                                    :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidLiquidSuspension
-:SolidLiquidSuspension rdf:type owl:Class ;
-                       rdfs:subClassOf :SolidMixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidLiquidsSuspension
-:SolidLiquidsSuspension rdf:type owl:Class ;
-                        rdfs:subClassOf :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture
-:SolidMixture rdf:type owl:Class ;
-              rdfs:subClassOf :Mixture ,
-                              :Solid .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSol
-:SolidSol rdf:type owl:Class ;
-          rdfs:subClassOf :Sol ,
-                          :SolidMixture .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolidSuspension
-:SolidSolidSuspension rdf:type owl:Class ;
-                      rdfs:subClassOf :SolidMixture ,
-                                      :Suspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolution
-:SolidSolution rdf:type owl:Class ;
-               rdfs:subClassOf :SolidMixture ,
-                               :Solution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solute
-:Solute rdf:type owl:Class ;
-        rdfs:subClassOf :ChemicalSubstance .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SoluteMolecule
-:SoluteMolecule rdf:type owl:Class ;
-                rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution
-:Solution rdf:type owl:Class ;
-          rdfs:subClassOf :Mixture ,
-                          :PhaseHomogeneousMixture ,
-                          :StateOfAggregation .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solvent
-:Solvent rdf:type owl:Class ;
-         rdfs:subClassOf :ChemicalSubstance .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolventMolecule
-:SolventMolecule rdf:type owl:Class ;
-                 rdfs:subClassOf :MolecularEntity .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Spray
-:Spray rdf:type owl:Class ;
-       rdfs:subClassOf :GasLiquidSuspension .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfAggregation
-:StateOfAggregation rdf:type owl:Class ;
-                    rdfs:subClassOf :Continuum .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfMatter
-:StateOfMatter rdf:type owl:Class ;
-               rdfs:subClassOf :Continuum .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StrongAcid
-:StrongAcid rdf:type owl:Class ;
-            rdfs:subClassOf :Acid ;
-            owl:disjointWith :WeakAcid .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StrongBase
-:StrongBase rdf:type owl:Class ;
-            rdfs:subClassOf :Base ;
-            owl:disjointWith :WeakBase .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Strontium
-:Strontium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sulfur
-:Sulfur rdf:type owl:Class ;
-        rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SupportingElectrolyte
-:SupportingElectrolyte rdf:type owl:Class ;
-                       rdfs:subClassOf :ElectrlyteSolution ,
-                                       :ElectrolyteSolution .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension
-:Suspension rdf:type owl:Class ;
-            rdfs:subClassOf :Mixture ,
-                            :PhaseHeterogeneousMixture ,
-                            :StateOfMatter .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tantalum
-:Tantalum rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Technetium
-:Technetium rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tellurium
-:Tellurium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tennessine
-:Tennessine rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Terbium
-:Terbium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryCatalyst
-:TernaryCatalyst rdf:type owl:Class ;
-                 rdfs:subClassOf :ElectroCatalyst .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryMaterial
-:TernaryMaterial rdf:type owl:Class ;
-                 rdfs:subClassOf :Material .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thallium
-:Thallium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ThermalBlack
-:ThermalBlack rdf:type owl:Class ;
-              rdfs:subClassOf :CarbonBlack .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thorium
-:Thorium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thulium
-:Thulium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tin
-:Tin rdf:type owl:Class ;
-     rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Titanium
-:Titanium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tungsten
-:Tungsten rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ununennium
-:Ununennium rdf:type owl:Class ;
-            rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Uranium
-:Uranium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vanadium
-:Vanadium rdf:type owl:Class ;
-          rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vapor
-:Vapor rdf:type owl:Class ;
-       rdfs:subClassOf :LiquidAerosol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Water
-:Water rdf:type owl:Class ;
-       rdfs:subClassOf :PolarSolvent .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakAcid
-:WeakAcid rdf:type owl:Class ;
-          rdfs:subClassOf :Acid .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakBase
-:WeakBase rdf:type owl:Class ;
-          rdfs:subClassOf :Base .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Xenon
-:Xenon rdf:type owl:Class ;
-       rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ytterbium
-:Ytterbium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Yttrium
-:Yttrium rdf:type owl:Class ;
-         rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zinc
-:Zinc rdf:type owl:Class ;
-      rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zirconium
-:Zirconium rdf:type owl:Class ;
-           rdfs:subClassOf :Atom .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial> rdf:type owl:Class ;
-                                                                                   rdfs:subClassOf :NanoMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial> rdf:type owl:Class ;
-                                                                                   rdfs:subClassOf :NanoMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol> rdf:type owl:Class ;
-                                                                              rdfs:subClassOf :PrimaryAlcohol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol> rdf:type owl:Class ;
-                                                                               rdfs:subClassOf :PrimaryAlcohol .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial> rdf:type owl:Class ;
-                                                                                   rdfs:subClassOf :NanoMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial> rdf:type owl:Class ;
-                                                                                   rdfs:subClassOf :NanoMaterial .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M> rdf:type owl:Class ;
-                                                                       rdfs:subClassOf :Ionomer .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#800EWIonomer
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#800EWIonomer> rdf:type owl:Class ;
-                                                                                 rdfs:subClassOf <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M> .
-
-
-###  http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer
-<http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer> rdf:type owl:Class ;
-                                                                           rdfs:subClassOf :Material .
-
-
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AcetyleneBlack
-                :ChannelBlack
-                :FurnaceBlack
-                :LampBlack
-                :ThermalBlack
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Acid
-                :Base
-                :ChemicalCompound
-                :ElementalSubstance
-                :Solute
-                :Solvent
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AcidicElectrolyte
-                :AlkalineElectrolyte
-                :NearNeutralElectrolyte
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Actinium
-                :Aluminium
-                :Americium
-                :Antimony
-                :Argon
-                :Arsenic
-                :Astatine
-                :Barium
-                :Berkelium
-                :Beryllium
-                :Bismuth
-                :Bohrium
-                :Boron
-                :Bromine
-                :Cadmium
-                :Calcium
-                :Californium
-                :Carbon
-                :Cerium
-                :Cesium
-                :Chlorine
-                :Chromium
-                :Cobalt
-                :Copernicium
-                :Copper
-                :Curium
-                :Darmstadtium
-                :Dubnium
-                :Dysprosium
-                :Einsteinium
-                :Erbium
-                :Europium
-                :Fermium
-                :Flerovium
-                :Fluorine
-                :Francium
-                :Gadolinium
-                :Gallium
-                :Germanium
-                :Gold
-                :Hafnium
-                :Hassium
-                :Helium
-                :Holmium
-                :Hydrogen
-                :Indium
-                :Iodine
-                :Iridium
-                :Iron
-                :Krypton
-                :Lanthanum
-                :Lawrencium
-                :Lead
-                :Lithium
-                :Livermorium
-                :Lutetium
-                :Magnesium
-                :Manganese
-                :Meitnerium
-                :Mendelevium
-                :Mercury
-                :Molybdenum
-                :Moscovium
-                :Neodymium
-                :Neon
-                :Neptunium
-                :Nickel
-                :Nihonium
-                :Niobium
-                :Nitrogen
-                :Nobelium
-                :Oganesson
-                :Osmium
-                :Oxygen
-                :Palladium
-                :Phosphorus
-                :Platinum
-                :Plutonium
-                :Polonium
-                :Potassium
-                :Praseodymium
-                :Promethium
-                :Protactinium
-                :Radium
-                :Radon
-                :Rhenium
-                :Rhodium
-                :Roentgenium
-                :Rubidium
-                :Ruthenium
-                :Rutherfordium
-                :Samarium
-                :Scandium
-                :Seaborgium
-                :Selenium
-                :Silicon
-                :Silver
-                :Sodium
-                :Strontium
-                :Sulfur
-                :Tantalum
-                :Technetium
-                :Tellurium
-                :Tennessine
-                :Terbium
-                :Thallium
-                :Thorium
-                :Thulium
-                :Tin
-                :Titanium
-                :Tungsten
-                :Ununennium
-                :Uranium
-                :Vanadium
-                :Xenon
-                :Ytterbium
-                :Yttrium
-                :Zinc
-                :Zirconium
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ActiveMaterial
-                :ElectroChemicalIntercalationMaterial
-                :Electrolyte
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Aerosol
-                :GasLiquidSuspension
-                :GasSolidSuspension
-                :GasSolution
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Alkanes
-                :Alkenes
-                :Alkynes
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Anion
-                :Cation
-                :ElectrochemicalChargeCarrierIon
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AnisotropicMaterial
-                :BinaryMaterial
-                :CarbonBlack
-                :Ceramic
-                :CompositeMaterial
-                :EnergyMaterial
-                :FunctionalMaterial
-                :GraphiteMaterial
-                :HeterogenousMaterial
-                :HomoGenousMaterial
-                :IntercalationMaterial
-                :IsotropicMaterial
-                :ManufacturedMaterial
-                :Metal
-                :NanoMaterial
-                :NaturalMaterial
-                :ReactiveMaterial
-                :TernaryMaterial
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Anolyte
-                :AqueousElectrloyte
-                :Catholyte
-                :NonAqueousElectrolyte
-                :SupportingElectrolyte
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Anolyte
-                :AqueousElectrolyte
-                :Catholyte
-                :GasSolution
-                :NonAqueousElectrolyte
-                :SupportingElectrolyte
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AqueousSolution
-                :CatalystInk
-                :ElectrolyteSolution
-                :Ink
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Aquivion
-                :Gore
-                :Nafion
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AquivionD72-25BS
-                :AquivionD79-25BS
-                :AquivionD98-25BS
-                :AquivionSO3H-Form
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Atom
-                :Ion
-                :MolecularEntityInStateOfAggregation
-                :Molecule
-                :OrganicMolceule
-                :Oxidant
-                :PolyAtomicEntity
-                :Reductant
-                :SoluteMolecule
-                :SolventMolecule
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BinaryCarbonSupportedPlatinumCatalyst
-                :CarbonSupportedPlatinumCatalyst
-                :ConductingPolymerSupportedPlatinumCatalyst
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BinaryCatalyst
-                :SecundaryCatalyst
-                :TernaryCatalyst
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Catalyst
-                :CoatingSubstrate
-                :ElectrochemicalMaterial
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Ceramic
-                :EnergyMaterial
-                :ManufacturedMaterial
-                :Metal
-                :NanoMaterial
-                :NaturalMaterial
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ChemicalReactionProduct
-                :ChemicalReationReactant
-                :DissolvedMolecule
-                :GaseMolecule
-                :LiquidMolecule
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Colloid
-                :Emulsion
-                :Foam
-                :Gel
-                :Sol
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Dispersion
-                :GasMixture
-                :PhaseHeterogeneousMixture
-                :PhaseHomogeneousMixture
-                :SolidMixture
-                :Solution
-                :Suspension
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ElectroCatalyst
-                :ElectrochemicalMaterial
-                :GraphiteMaterial
-                :IntercalationMaterial
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ElectrolyteSolution
-                :LiquidSolution
-                :SaturatedSolution
-                :SolidSolution
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Emulsion
-                :LiquidFoam
-                :LiquidGasSuspension
-                :LiquidLiquidSuspension
-                :LiquidSol
-                :LiquidSolidSuspension
-                :LiquidSolution
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Ethanol
-                :Methanol
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol>
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Fluid
-                :Solid
-                :Solution
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Fluid
-                :Solid
-                :Suspension
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Gas
-                :Liquid
-                :Plasma
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :GasLiquidSuspension
-                :GasSolidSuspension
-                :LiquidGasSuspension
-                :LiquidLiquidSuspension
-                :LiquidSolidSuspension
-                :SolidGasSuspension
-                :SolidLiquidsSuspension
-                :SolidSolidSuspension
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Gel
-                :SolidFoam
-                :SolidGasSuspension
-                :SolidLiquidSuspension
-                :SolidSol
-                :SolidSolidSuspension
-                :SolidSolution
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :HeteroNuclearMolecule
-                :HomoNuclearMolecule
-                :SaltMolecule
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Ink
-                :LiquidSol
-                :SolidSol
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Ion
-                :MolecularEntityInStateOfAggregation
-                :Molecule
-                :Oxidant
-                :PolyAtomicEntity
-                :Reductant
-                :SoluteMolecule
-                :SolventMolecule
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Mixture
-                :PhaseOfMatter
-                :StateOfAggregation
-                :StateOfMatter
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Nafion_D2020CS
-                :Nafion_D2021CS
-                :Nafion_D520CS
-                :Nafion_D521CS
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial>
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial>
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial>
-                <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial>
-              )
-] .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
