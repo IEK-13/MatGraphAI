@@ -3,7 +3,7 @@ from django.urls import re_path as url
 
 from Mat2DevAPI.views.matterView import ElementAutocompleteView, MaterialInputAutocompleteView, MaterialChoiceField
 from Mat2DevAPI.views.uploadCsvViews import upload_csv
-from Mat2DevAPI.views.retrievePIDA import tagged_data
+from Mat2DevAPI.views.retrievePIDA import download_data, download_data_form
 
 urlpatterns = [
     url(
@@ -23,8 +23,9 @@ urlpatterns = [
     ),
     path('upload/', upload_csv, name='upload_csv'),
     path('results/<str:url>/', upload_csv, name='results'),
-    path('tagged_data/<str:tag_name>/', tagged_data, name='tagged_data'),
-    ]
+    path('PIDA_ddl/<str:PID>/', download_data, name='download_data'),
+    path('PIDA/<str:PID>/', download_data_form, name='download_data_form'),
+]
 
 
 

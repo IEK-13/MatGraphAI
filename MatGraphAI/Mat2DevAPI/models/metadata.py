@@ -22,7 +22,7 @@ class PIDA(CausalObject):
     pida = StringProperty(unique_index=True, required=True)
     date_added = StringProperty()
     by = RelationshipTo("Researcher", "OWNS", model=ResearcherOwnsRel)
-    has = RelationshipTo("CausalObject", "HAS", model=HasPIDRel)
+    has = RelationshipTo("CausalObject", "CONTAINS", model=HasPIDRel)
     tag = StringProperty()
 
 

@@ -2,10 +2,11 @@ from dotenv import load_dotenv
 import os
 import sys
 from preprocess_text import preprocess
-
+from owlready2 import *
 # Get the project root directory
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+from new import chat_with_gpt3_5, add_description_to_class
+from setupMessages import ONTOLOGY_ASSISTANT_MESSAGES
 # Change the current working directory to the project root directory
 os.chdir(project_root)
 
@@ -82,22 +83,43 @@ def find_most_similar_description(main_description, candidate_descriptions):
     return most_similar_index, most_similar_score, cosine_similarities
 
 # Example usage
-main_description = "Li Battery."
-# noinspection PyPackageRequirements
-candidate_descriptions = [
-    "battery containing a non-aqueous electrolyte and a negative electrode of lithium or containing lithium.",
-    "metal air electrochemical cell with an alkaline electrolyte and a negative electrode of zinc.",
-    "battery which supplies electric energy to an electric circuit when the normal power supply of this electric circuit is interrupted.",
-    "An electrochemical cell which is not designed to be electrically recharged.",
-    "cell having, at a specified temperature, an invariant and specific open-circuit voltage, used as a reference voltage.",
-    "basic functional unit, consisting of an assembly of electrodes, electrolyte, container, terminals and usually separators, that is a source of electric energy obtained by direct conversion of chemical energy.",
-    "One or more cells fitted with devices necessary for use, for example case, terminals, marking and protective devices.",
-    "Atom subclass for lithium.",
-    "Insertion electrode made out of Lithium"
-]
 
-most_similar_index, most_similar_score, vector = find_most_similar_description(main_description, candidate_descriptions)
-print(f"The most similar description for the following description: \n {main_description} \n Matching Description: \n         {candidate_descriptions[most_similar_index]} \n Similarity score: {most_similar_score}")
-print("The other Descritptions with the similarity score:")
-for sim, des in zip(vector, candidate_descriptions):
-    print("\t",sim,des)
+
+def main():
+    # main_description = "Li Battery."
+    # # noinspection PyPackageRequirements
+    # candidate_descriptions = [
+    #     "battery containing a non-aqueous electrolyte and a negative electrode of lithium or containing lithium.",
+    #     "metal air electrochemical cell with an alkaline electrolyte and a negative electrode of zinc.",
+    #     "battery which supplies electric energy to an electric circuit when the normal power supply of this electric circuit is interrupted.",
+    #     "An electrochemical cell which is not designed to be electrically recharged.",
+    #     "cell having, at a specified temperature, an invariant and specific open-circuit voltage, used as a reference voltage.",
+    #     "basic functional unit, consisting of an assembly of electrodes, electrolyte, container, terminals and usually separators, that is a source of electric energy obtained by direct conversion of chemical energy.",
+    #     "One or more cells fitted with devices necessary for use, for example case, terminals, marking and protective devices.",
+    #     "Atom subclass for lithium.",
+    #     "Insertion electrode made out of Lithium"
+    # ]
+    #
+    # most_similar_index, most_similar_score, vector = find_most_similar_description(main_description, candidate_descriptions)
+    # print(f"The most similar description for the following description: \n {main_description} \n Matching Description: \n         {candidate_descriptions[most_similar_index]} \n Similarity score: {most_similar_score}")
+    # print("The other Descritptions with the similarity score:")
+    # for sim, des in zip(vector, candidate_descriptions):
+    #     print("\t",sim,des)
+
+
+    # Load the ontology from a local file or a URL
+    ontology_file = "manufactured.owl"
+    onto = get_ontology(ontology_file).load()
+
+    # Get the classes in the ontology
+    classes = list(onto.classes())
+    class onto_name(AnnotationProperty):
+        namespace = onto
+    # Print the classes
+    for cls in classes:
+        if not cls.onto_name:
+            print(cls)
+            add_description_to_class(cls.name, onto)
+
+if __name__ == "__main__":
+    main()

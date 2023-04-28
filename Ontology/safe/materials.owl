@@ -1,0 +1,3171 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials"
+     xml:base="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcetyleneBlack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcetyleneBlack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Acid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Acid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcidicElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcidicElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrloyte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Actinium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Actinium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ActiveMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ActiveMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aerosol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aerosol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Colloid"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasMixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Air -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Air">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alcohol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alcohol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AmphiphilSolvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHeterocylclicOrganicMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHeterocylclicOrganicMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroCyclicOrganicMolecules"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHomocylclicOrganicMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlicyclicHomocylclicOrganicMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomocyclicOrganicMolecules"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyclicOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlkalineElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlkalineElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrloyte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkanes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkanes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkenes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkenes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkynes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkynes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aluminium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aluminium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Americium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Americium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AmphiphilSolvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AmphiphilSolvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AnisotropicMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AnisotropicMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Antimony -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Antimony">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrloyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrloyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousSolution"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DissolvedMolecule"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqeousMolecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousSolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousSolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ionomer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD72-25BS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD72-25BS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD79-25BS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD79-25BS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD98-25BS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD98-25BS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionSO3H-Form -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionSO3H-Form">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Argon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Argon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyclicOrganicMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticAlicyclicOrganicMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomocyclicOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicAminesMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicAminesMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroCyclicOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Arsenic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Arsenic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Astatine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Astatine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Barium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Barium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Berkelium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Berkelium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Beryllium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Beryllium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCarbonSupportedPlatinumCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCarbonSupportedPlatinumCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PlatinumCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bismuth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bismuth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bohrium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bohrium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Boron -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Boron">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bromine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bromine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cadmium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cadmium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Calcium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Calcium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Californium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Californium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Carbon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Carbon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonSupportedPlatinumCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonSupportedPlatinumCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PlatinumCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CatalystInk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CatalystInk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catholyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catholyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ceramic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ceramic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cerium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cerium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cesium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cesium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChannelBlack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChannelBlack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalCompound -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalCompound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Matter"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalReactionProduct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalReactionProduct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalReationReactant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalReationReactant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalEntity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chlorine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chlorine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chromium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chromium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CoatingSubstrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CoatingSubstrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cobalt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cobalt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Colloid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Colloid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHeterogeneousMixture"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CompositeMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CompositeMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ConductingPolymerSupportedPlatinumCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ConductingPolymerSupportedPlatinumCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PlatinumCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Continuum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Continuum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Matter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copernicium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copernicium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copolymer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copolymer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ionomer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Crystal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Crystal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solid"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Curium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Curium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CyclicOrganicMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CyclicOrganicMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicMolceule"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Darmstadtium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Darmstadtium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DecalSusbtrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DecalSusbtrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CoatingSubstrate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFESubstrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Diazole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Diazole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AromaticHeterocyclicOrganicAminesMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DissolvedMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DissolvedMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dubnium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dubnium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dust -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dust">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolidSuspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dysprosium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dysprosium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E-HT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E-HT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EA30E"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ETFE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ETFE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copolymer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Einsteinium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Einsteinium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidElectrolyte"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IonicLiquidElectrolyte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroChemicalIntercalationMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroChemicalIntercalationMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalChargeCarrierIon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalChargeCarrierIon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalConversionMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalConversionMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ActiveMaterial"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalIntercalationMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalIntercalationMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalIntercalationMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ActiveMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Electrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Electrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElementalSubstance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElementalSubstance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Emulsion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Emulsion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EnergyMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EnergyMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Erbium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Erbium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ethanol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ethanol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Europium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Europium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FCarbonSupportedPlatinumCatalyst"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E-HT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E-HT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F30E"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FCarbonSupportedPlatinumCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E-HT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E-HT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#F50E"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FCarbonSupportedPlatinumCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FCarbonSupportedPlatinumCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonSupportedPlatinumCatalyst"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fermium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fermium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Flerovium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Flerovium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfAggregation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfMatter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluorine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluorine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Foam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Foam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Francium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Francium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FurnaceBlack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FurnaceBlack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gadolinium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gadolinium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gallium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gallium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasLiquidSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasLiquidSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasMixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasMixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasMixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gas"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolidSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolidSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasMixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasMixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GaseMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GaseMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Germanium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Germanium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gold -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gold">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ionomer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphiteMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphiteMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphitizedFurnaceBlackCarbonSupportedPlatinumCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonSupportedPlatinumCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hafnium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hafnium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hassium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hassium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Helium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Helium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroCyclicOrganicMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroCyclicOrganicMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CyclicOrganicMolecules"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomocyclicOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroNuclearMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroNuclearMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeterogenousMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeterogenousMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Holmium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Holmium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoGenousMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoGenousMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoNuclearMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoNuclearMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomocyclicOrganicMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomocyclicOrganicMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CyclicOrganicMolecules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hydrogen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hydrogen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Imidazole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Imidazole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Diazole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Indium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Indium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gel"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#InorganicCompound -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#InorganicCompound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalCompound"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicCompound"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IntercalationMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IntercalationMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iodine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iodine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IonicLiquidElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IonicLiquidElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidElectrolyte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ionomer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ionomer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iridium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iridium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IridiumOxideCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IridiumOxideCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SingleMetalCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iron -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iron">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IsotropicMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IsotropicMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Krypton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Krypton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LampBlack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LampBlack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lanthanum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lanthanum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lawrencium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lawrencium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lead -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lead">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LeclancheElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LeclancheElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NearNeutralElectrolyte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidAerosol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidAerosol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aerosol"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidAerosol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Electrolyte"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidElectrolyte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidFoam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidFoam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Foam"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidFoam"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidGasSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidGasSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidLiquidSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidLiquidSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolidSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolidSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lithium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lithium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Livermorium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Livermorium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lutetium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lutetium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MacroMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MacroMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolyAtomicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Magnesium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Magnesium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Manganese -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Manganese">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ManufacturedMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ManufacturedMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Matter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Matter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Matter"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Meitnerium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Meitnerium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mendelevium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mendelevium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mercury -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mercury">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Metal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Metal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Methanol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Methanol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Continuum"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molybdenum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molybdenum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Moscovium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Moscovium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ionomer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2020CS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2020CS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2021CS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2021CS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D520CS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D520CS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D521CS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D521CS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NaturalMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NaturalMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NearNeutralElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NearNeutralElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrloyte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neodymium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neodymium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neptunium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neptunium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nickel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nickel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nihonium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nihonium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Niobium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Niobium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nitrogen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nitrogen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nobelium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nobelium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqeousMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqeousMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DissolvedMolecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqueousElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqueousElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonPolarSolvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonPolarSolvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solvent"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolarSolvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oganesson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oganesson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OpenChainOrganicMolecules">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicMolceule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicCompound -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicCompound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalCompound"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicMolceule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicMolceule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicCompound"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Osmium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Osmium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxidant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxidant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxygen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxygen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copolymer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFESubstrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PTFESubstrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CoatingSubstrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Palladium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Palladium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHeterogeneousMixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHeterogeneousMixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHomogeneousMixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHomogeneousMixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseOfMatter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseOfMatter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Continuum"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Phosphorus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Phosphorus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plasma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plasma">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Platinum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Platinum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PlatinumCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PlatinumCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SingleMetalCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plutonium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plutonium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolarSolvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolarSolvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polonium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polonium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolyAtomicEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolyAtomicEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polyepoxide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polyepoxide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Potassium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Potassium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Praseodymium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Praseodymium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alcohol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Promethium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Promethium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Protactinium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Protactinium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ReactiveMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ReactiveMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Reductant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Reductant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhenium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhenium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhodium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhodium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Roentgenium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Roentgenium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rubidium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rubidium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ruthenium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ruthenium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rutherfordium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rutherfordium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaltMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaltMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Samarium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Samarium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaturatedSolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaturatedSolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Scandium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Scandium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Seaborgium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Seaborgium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SecundaryCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SecundaryCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Selenium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Selenium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silicon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silicon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SingleMetalCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SingleMetalCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Smoke -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Smoke">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidAerosol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sodium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sodium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfAggregation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfMatter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidAerosol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidAerosol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aerosol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Electrolyte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidFoam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidFoam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Foam"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidGasSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidGasSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidLiquidSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidLiquidSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidLiquidsSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidLiquidsSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sol"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolidSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolidSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solute -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solute">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SoluteMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SoluteMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHomogeneousMixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfAggregation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolventMolecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolventMolecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Spray -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Spray">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasLiquidSuspension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfAggregation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfAggregation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Continuum"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfMatter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfMatter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Continuum"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StrongAcid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StrongAcid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Acid"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakAcid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StrongBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StrongBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Strontium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Strontium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sulfur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sulfur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SupportingElectrolyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SupportingElectrolyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrlyteSolution"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHeterogeneousMixture"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfMatter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tantalum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tantalum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Technetium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Technetium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tellurium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tellurium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tennessine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tennessine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Terbium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Terbium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryCatalyst -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryCatalyst">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroCatalyst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thallium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thallium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ThermalBlack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ThermalBlack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thorium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thorium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thulium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thulium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Titanium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Titanium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tungsten -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tungsten">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ununennium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ununennium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Uranium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Uranium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vanadium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vanadium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vapor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vapor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidAerosol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolarSolvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakAcid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakAcid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Acid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#WeakBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Xenon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Xenon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ytterbium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ytterbium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Yttrium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Yttrium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zinc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zinc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zirconium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zirconium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PrimaryAlcohol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ionomer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#800EWIonomer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#800EWIonomer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcetyleneBlack"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChannelBlack"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FurnaceBlack"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LampBlack"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ThermalBlack"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Acid"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Base"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalCompound"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElementalSubstance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solute"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solvent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcidicElectrolyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AlkalineElectrolyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NearNeutralElectrolyte"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Actinium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aluminium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Americium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Antimony"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Argon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Arsenic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Astatine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Barium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Berkelium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Beryllium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bismuth"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bohrium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Boron"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Bromine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cadmium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Calcium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Californium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Carbon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cerium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cesium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chlorine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Chromium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cobalt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copernicium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Copper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Curium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Darmstadtium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dubnium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dysprosium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Einsteinium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Erbium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Europium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fermium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Flerovium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluorine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Francium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gadolinium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gallium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Germanium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gold"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hafnium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hassium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Helium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Holmium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Hydrogen"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Indium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iodine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iridium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Iron"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Krypton"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lanthanum"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lawrencium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lead"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lithium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Livermorium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Lutetium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Magnesium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Manganese"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Meitnerium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mendelevium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mercury"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molybdenum"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Moscovium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neodymium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Neptunium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nickel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nihonium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Niobium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nitrogen"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nobelium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oganesson"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Osmium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxygen"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Palladium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Phosphorus"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Platinum"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plutonium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Polonium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Potassium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Praseodymium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Promethium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Protactinium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Radon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhenium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rhodium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Roentgenium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rubidium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ruthenium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Rutherfordium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Samarium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Scandium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Seaborgium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Selenium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silicon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Silver"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sodium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Strontium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sulfur"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tantalum"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Technetium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tellurium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tennessine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Terbium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thallium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thorium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Thulium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Titanium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Tungsten"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ununennium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Uranium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Vanadium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Xenon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ytterbium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Yttrium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zinc"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Zirconium"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ActiveMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroChemicalIntercalationMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Electrolyte"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aerosol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasLiquidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolution"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkanes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkenes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Alkynes"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Cation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalChargeCarrierIon"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AnisotropicMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ceramic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CompositeMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EnergyMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#FunctionalMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphiteMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeterogenousMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoGenousMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IntercalationMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IsotropicMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ManufacturedMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Metal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NaturalMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ReactiveMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anolyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrloyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catholyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqueousElectrolyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SupportingElectrolyte"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Anolyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousElectrolyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catholyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NonAqueousElectrolyte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SupportingElectrolyte"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AqueousSolution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CatalystInk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ink"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Aquivion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gore"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3M"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD72-25BS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD79-25BS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionD98-25BS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AquivionSO3H-Form"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Atom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#OrganicMolceule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxidant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolyAtomicEntity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Reductant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SoluteMolecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolventMolecule"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCarbonSupportedPlatinumCatalyst"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonSupportedPlatinumCatalyst"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ConductingPolymerSupportedPlatinumCatalyst"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#BinaryCatalyst"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SecundaryCatalyst"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#TernaryCatalyst"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Catalyst"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CoatingSubstrate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalMaterial"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ceramic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#EnergyMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ManufacturedMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Metal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NanoMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#NaturalMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalReactionProduct"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ChemicalReationReactant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#DissolvedMolecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GaseMolecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidMolecule"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Colloid"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Emulsion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Foam"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Sol"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Dispersion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasMixture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHeterogeneousMixture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseHomogeneousMixture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidMixture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectroCatalyst"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrochemicalMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GraphiteMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#IntercalationMaterial"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#ElectrolyteSolution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaturatedSolution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolution"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Emulsion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidFoam"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidGasSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidLiquidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolution"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ethanol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Methanol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Butanol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1-Propanol"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solid"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solution"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Fluid"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Solid"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Suspension"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Liquid"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Plasma"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasLiquidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#GasSolidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidGasSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidLiquidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSolidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidGasSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidLiquidsSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolidSuspension"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Gel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidFoam"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidGasSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidLiquidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolidSuspension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSolution"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HeteroNuclearMolecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#HomoNuclearMolecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SaltMolecule"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ink"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#LiquidSol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolidSol"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Ion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#MolecularEntityInStateOfAggregation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Molecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Oxidant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PolyAtomicEntity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Reductant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SoluteMolecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#SolventMolecule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Mixture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#PhaseOfMatter"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfAggregation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#StateOfMatter"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2020CS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D2021CS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D520CS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#Nafion_D521CS"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#0DNanoMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#1DNanoMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#2DNanoMaterial"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#3DNanoMaterial"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

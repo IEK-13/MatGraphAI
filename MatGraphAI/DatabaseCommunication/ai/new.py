@@ -17,7 +17,7 @@ def chat_with_gpt3_5(setup_message=[], prompt='', api_key=''):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=conversation_history,
-        max_tokens=150,
+        max_tokens=250,
         n=1,
         stop=None,
         temperature=0,
@@ -37,6 +37,8 @@ def create_new_class(create_class, s_class, target_onto):
                 pass
 
             new_class = types.new_class(y, s_class)
+    print(target_onto.name+".owl")
+    target_onto.save(target_onto.name+".owl", format="rdfxml")
 
     return new_class
 
@@ -64,6 +66,19 @@ def copy_class_recursive(source_class, target_ontology, source_ontology, api_key
 
     return target_class
 
+def add_description_to_class(cls, target_ontology, api_key, file):
+
+    try:
+        output = json.loads(chat_with_gpt3_5(ONTOLOGY_ASSISTANT_MESSAGES, cls.name, api_key))
+        cls.comment = output["description"]
+        cls.alternative_labels = str(output["alternative_labels"])
+        cls.onto_name = cls.name
+    except:
+        print("Fehler")
+    target_ontology.save(file, format="rdfxml")
+
+
+
 
 def main():
     # print(chat_with_gpt3_5(SETUP_MESSAGES, "LAB6")[0])
@@ -78,15 +93,31 @@ def main():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
     api_key = settings.OPENAI_API_KEY
     onto_path.append("/home/mdreger/Documents/MatGraphAI/Ontology/")
-    onto = get_ontology("manufactured_old.owl").load()
+    file = onto_path[0]+"quantities.owl"
+    print(file)
+    onto = get_ontology("quantities.owl").load()
+    with onto:
+        class alternative_labels(AnnotationProperty):
+            pass
+        class onto_name(AnnotationProperty):
+            pass
+    for cls in onto.classes():
+        if not cls.onto_name:
+            add_description_to_class(cls, onto, api_key, file)
+        # add_description_to_class(cls, onto, api_key, file)
+    # onto = []
+    # onto.append(get_ontology("materials.owl").load())
+    # onto.append(get_ontology("quantities.owl").load())
+    # onto.append(get_ontology("units.owl").load())
+    # base_class =[onto[0]["Matter"],onto[1]["Quantity"],onto[2]["Unit"]]
+    # new_ontos = [get_ontology("http://www.example.com/new_mat.owl"),
+    #              get_ontology("http://www.example.com/new_quant.owl"),
+    #              get_ontology("http://www.example.com/new_unit.owl")]
+    #
+    # for ont, cls, new in zip(onto, base_class, new_ontos):
+    #     copy_class_recursive(cls, new, ont, api_key, chat_with_gpt3_5)
 
-    starting_class = onto["Manufactured"]
-    print(list(onto.classes()))
-    new_onto = get_ontology("http://www.example.com/new_ontology.owl")
-    root_class = copy_class_recursive(starting_class, new_onto, onto, api_key, custom_function=chat_with_gpt3_5)
 
-    # Save the modified ontology to your file system
-    new_onto.save("./new_ontology.owl", format="rdfxml")
 
 
 if __name__ == '__main__':

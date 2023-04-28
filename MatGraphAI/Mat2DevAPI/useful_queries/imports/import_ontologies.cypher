@@ -12,40 +12,40 @@ subClassOfRel:"IS_A"}
 );
 
 // first pass, load the onto. Note that there are irregular uris, but we accept them with verifyUriSyntax: false
-call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML", { verifyUriSyntax: false }) ;
-//call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false }) ;
-//call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML", { verifyUriSyntax: false }) ;
-//call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false }) ;
-//call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","Turtle", { verifyUriSyntax: false}) ;
+call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false }) ;
+call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML", { verifyUriSyntax: false }) ;
+call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","Turtle", { verifyUriSyntax: false}) ;
 
 
 // we want named instances to link to the classes imported from the onto, so we change the handleRDFTypes mode.
 //call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
 
 // second pass to load the owl:Matter
-//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML",{ verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-//MATCH (n:Resource{uri:subject})
-//SET n:EMMO_Matter;
-//
-//// second pass to load the owl:Matter
-//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-//MATCH (n:Resource{uri:subject})
-//SET n:EMMO_Process;
-
-call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML",{ verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 MATCH (n:Resource{uri:subject})
 SET n:EMMO_Matter;
 
-//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+// second pass to load the owl:Matter
+call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+MATCH (n:Resource{uri:subject})
+SET n:EMMO_Process;
+
+//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 //MATCH (n:Resource{uri:subject})
-//SET n:EMMO_Quantity;
-//
-//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-//MATCH (n:Resource{uri:subject})
-//WITH n.EMMO__label as label, n.EMMO__name as name, n
-//SET n.EMMO__label = name
-//SET n.EMMO__name = label
-//SET n:EMMO_Unit;
+//SET n:EMMO_Matter;
+
+call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+MATCH (n:Resource{uri:subject})
+SET n:EMMO_Quantity;
+
+call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","Turtle", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+MATCH (n:Resource{uri:subject})
+WITH n.EMMO__label as label, n.EMMO__name as name, n
+SET n.EMMO__label = name
+SET n.EMMO__name = label
+SET n:EMMO_Unit;
 
 MATCH(n:EMMO__Relationship)
 DELETE n;
