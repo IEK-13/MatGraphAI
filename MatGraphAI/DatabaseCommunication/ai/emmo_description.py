@@ -41,7 +41,7 @@ def convert_alternative_labels(onto):
                 new_alt_label_class.alternative_label.append(label)
 
                 # Connect the original class with the new alternative_label class using is_alternative_label property
-                cls.is_alternative_label.append(new_alt_label_class)
+                cls.is_alternative_label.new_alt_label_class
 
     ontology.save(onto_path)
 
