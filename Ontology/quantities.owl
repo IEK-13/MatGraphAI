@@ -40,6 +40,12 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhysicalQuantity</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Quantity">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity is a fundamental concept in physics and materials science, representing a measurable property of a physical system. It can be expressed as a numerical value and a unit of measurement. Quantities can be classified as either extensive or intensive, depending on whether they depend on the size or amount of the system.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Physical Quantity', 'Measured Property', 'Quantitative Property']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AbsoluteActivity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Activity"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Absolute activity is a thermodynamic quantity that measures the thermodynamic activity of a solute in a solution, relative to a hypothetical standard state. It is expressed as the ratio of the activity of the solute to its activity in the standard state, with the standard state being a hypothetical state in which the solute is present in a pure, ideal form at a reference pressure and temperature.</rdfs:comment>
@@ -89,12 +95,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ISQ Base Quantity is a fundamental physical quantity defined by the International System of Quantities (ISQ). There are seven base quantities in the ISQ: length, mass, time, electric current, thermodynamic temperature, amount of substance, and luminous intensity. All other physical quantities can be derived from these base quantities.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['International System of Quantities Base Quantity', 'ISQ Fundamental Quantity', 'ISQ Base Unit', 'ISQ Base Physical Quantity']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISQBaseQuantity</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Quantity">
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity is a fundamental concept in physics and materials science, representing a measurable property of a physical system. It can be expressed as a numerical value and a unit of measurement. Quantities can be classified as either extensive or intensive, depending on whether they depend on the size or amount of the system.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Physical Quantity', 'Measured Property', 'Quantitative Property']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Acceleration">

@@ -16,7 +16,7 @@ call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false }) ;
 call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML", { verifyUriSyntax: false }) ;
 call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false }) ;
-call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","Turtle", { verifyUriSyntax: false}) ;
+//call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","Turtle", { verifyUriSyntax: false}) ;
 
 
 // we want named instances to link to the classes imported from the onto, so we change the handleRDFTypes mode.
@@ -40,12 +40,12 @@ call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/
 MATCH (n:Resource{uri:subject})
 SET n:EMMO_Quantity;
 
-call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-MATCH (n:Resource{uri:subject})
-WITH n.EMMO__label as label, n.EMMO__name as name, n
-SET n.EMMO__label = name
-SET n.EMMO__name = label
-SET n:EMMO_Unit;
+//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+//MATCH (n:Resource{uri:subject})
+//WITH n.EMMO__label as label, n.EMMO__name as name, n
+//SET n.EMMO__label = name
+//SET n.EMMO__name = label
+//SET n:EMMO_Unit;
 
 MATCH(n:EMMO__Relationship)
 DELETE n;
