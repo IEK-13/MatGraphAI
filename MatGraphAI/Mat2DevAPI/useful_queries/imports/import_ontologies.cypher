@@ -24,21 +24,26 @@ call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
 
 // second pass to load the owl:Matter
 call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML",{ verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-MATCH (n:Resource{uri:subject})
-SET n:EMMO_Matter;
+//MATCH (n:Resource{uri:subject})
+//SET n:EMMO_Matter;
+//MATCH (cls:EMMO__Class)
+//WHERE EXISTS(cls.alternative_label)
+//UNWIND cls.alternative_label AS alt_label
+//MERGE (al:Alternative_Label {name: alt_label})
+//CREATE (cls)-[:HAS_ALTERNATIVE_LABEL]->(al);
 
 // second pass to load the owl:Matter
-call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-MATCH (n:Resource{uri:subject})
-SET n:EMMO_Process;
-
-call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-MATCH (n:Resource{uri:subject})
-SET n:EMMO_Matter;
-
-call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-MATCH (n:Resource{uri:subject})
-SET n:EMMO_Quantity;
+//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+//MATCH (n:Resource{uri:subject})
+//SET n:EMMO_Process;
+//
+//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+//MATCH (n:Resource{uri:subject})
+//SET n:EMMO_Matter;
+//
+//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+//MATCH (n:Resource{uri:subject})
+//SET n:EMMO_Quantity;
 
 //call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 //MATCH (n:Resource{uri:subject})
@@ -56,6 +61,6 @@ SET n:EMMO_Quantity;
 //REMOVE n:Resource, n:EMMO__Class, n:owl__Class, n:owl__Ontology;
 
 
-MATCH (n)
-WHERE (n:EMMO_Matter OR n:EMMO_Process OR n:EMMO_Quantity OR n:EMMO_Unit) AND (n.uid) IS NOT NULL
-SET n.uid = randomUUID()
+//MATCH (n)
+//WHERE (n:EMMO_Matter OR n:EMMO_Process OR n:EMMO_Quantity OR n:EMMO_Unit) AND (n.uid) IS NOT NULL
+//SET n.uid = randomUUID()
