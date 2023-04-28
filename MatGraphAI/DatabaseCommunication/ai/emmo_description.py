@@ -15,11 +15,9 @@ def convert_alternative_labels(onto):
     # Define the new alternative_label property
     with ontology:
         class alternative_label(DataProperty, FunctionalProperty):
-            domain = [Thing]
             range = [str]
 
         class is_alternative_label(ObjectProperty):
-            domain = [Thing]
             range = [Thing]
 
     # Iterate over all classes in the ontology

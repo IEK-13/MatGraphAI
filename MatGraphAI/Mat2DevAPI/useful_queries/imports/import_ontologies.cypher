@@ -47,13 +47,13 @@ SET n:EMMO_Quantity;
 //SET n.EMMO__name = label
 //SET n:EMMO_Unit;
 
-MATCH(n)
-WHERE n:EMMO__Relationship OR n:owl__AnnotationProperty OR n:owl__AllDisjointClasses
-DETACH DELETE n;
-
-MATCH (n)
-WHERE n:Resource OR n:EMMO__Class OR n:owl__Class OR n:owl__Ontology
-REMOVE n:Resource, n:EMMO__Class, n:owl__Class, n:owl__Ontology;
+//MATCH(n)
+//WHERE n:EMMO__Relationship OR n:owl__AnnotationProperty OR n:owl__AllDisjointClasses
+//DETACH DELETE n;
+//
+//MATCH (n)
+//WHERE n:Resource OR n:EMMO__Class OR n:owl__Class OR n:owl__Ontology
+//REMOVE n:Resource, n:EMMO__Class, n:owl__Class, n:owl__Ontology;
 
 
 MATCH (n)
