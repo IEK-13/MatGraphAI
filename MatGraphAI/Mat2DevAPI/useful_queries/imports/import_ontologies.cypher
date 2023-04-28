@@ -13,7 +13,7 @@ subClassOfRel:"IS_A"}
 
 // first pass, load the onto. Note that there are irregular uris, but we accept them with verifyUriSyntax: false
 call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML", { verifyUriSyntax: false }) ;
-call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","Turtle", { verifyUriSyntax: false }) ;
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","RDF/XML", { verifyUriSyntax: false }) ;
 call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML", { verifyUriSyntax: false }) ;
 call n10s.rdf.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false }) ;
 //call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","Turtle", { verifyUriSyntax: false}) ;
@@ -47,11 +47,15 @@ SET n:EMMO_Quantity;
 //SET n.EMMO__name = label
 //SET n:EMMO_Unit;
 
-MATCH(n:EMMO__Relationship)
-DELETE n;
+MATCH(n)
+WHERE n:EMMO__Relationship OR n:owl__AnnotationProperty OR n:owl__AllDisjointClasses
+DETACH DELETE n;
 
-MATCH (n:EMMO__Class)
-REMOVE n:EMMO__Class:Resource;
+MATCH (n)
+WHERE n:Resource OR n:EMMO__Class OR n:owl__Class OR n:owl__Ontology
+REMOVE n:Resource, n:EMMO__Class, n:owl__Class, n:owl__Ontology;
+
+
 MATCH (n)
 WHERE (n:EMMO_Matter OR n:EMMO_Process OR n:EMMO_Quantity OR n:EMMO_Unit) AND (n.uid) IS NOT NULL
 SET n.uid = randomUUID()

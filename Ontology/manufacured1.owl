@@ -35,6 +35,7 @@
 
 <owl:Class rdf:about="#Component">
   <rdfs:subClassOf rdf:resource="#Manufactured"/>
+  <owl:disjointWith rdf:resource="#Device"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In hydrogen technologies, a component refers to any individual part or element that is used to construct a larger system or device. Components can include materials, parts, subsystems, and assemblies, and are essential for the proper functioning of hydrogen technologies.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Hydrogen Technology Component', 'System Component', 'Device Element', 'Functional Element', 'Building Block']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Component</onto_name>
@@ -119,6 +120,7 @@
 
 <owl:Class rdf:about="#AluminiumBasedCarbonBasedCoatedBipolarPlate">
   <rdfs:subClassOf rdf:resource="#AluminiumBasedCoatedMetallicBipolarPlate"/>
+  <owl:disjointWith rdf:resource="#AluminiumBasedMetalBasedCoatedBipolarPlate"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Aluminium-Based Carbon-Based Coated Bipolar Plate is an electrochemical cell component, consisting of an aluminium substrate coated with a carbon layer. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Al-Carbon Coated Bipolar Plate', 'Aluminium-Carbon Coated Bipolar Plate', 'Al-Carbon BPP', 'Carbon-coated Al Bipolar Plate']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AluminiumBasedCarbonBasedCoatedBipolarPlate</onto_name>
@@ -126,6 +128,7 @@
 
 <owl:Class rdf:about="#AluminiumBasedCoatedMetallicBipolarPlate">
   <rdfs:subClassOf rdf:resource="#CoatedMetallicBipolarPlate"/>
+  <owl:disjointWith rdf:resource="#NickelBasedBipolarPlate"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Aluminium-Based Coated Metallic Bipolar Plate is an electrochemical cell component, consisting of an aluminium substrate coated with a metallic layer. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Aluminum-Based Coated Metallic Bipolar Plate', 'Al-Metallic Coated Bipolar Plate', 'Al-Metal BPP', 'Al-Metallic Coated Plate', 'Al-Metallic Coated Current Collector']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AluminiumBasedCoatedMetallicBipolarPlate</onto_name>
@@ -238,6 +241,7 @@
 
 <owl:Class rdf:about="#Electrode">
   <rdfs:subClassOf rdf:resource="#ElectrochemicalComponent"/>
+  <owl:disjointWith rdf:resource="#FuelCellComponent"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An electrode is a conductive material that facilitates the transfer of electrons into or out of an electrochemical cell. It can be made of various materials, including metals, metal oxides, and conductive polymers, and is used to catalyze the electrochemical reactions that occur in the cell.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Electrochemical Cell Electrode', 'Anode or Cathode', 'Conductive Material', 'Electron Transfer Facilitator']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electrode</onto_name>
@@ -280,6 +284,7 @@
 
 <owl:Class rdf:about="#BatteryCellContainer">
   <rdfs:subClassOf rdf:resource="#StructuralSubcomponent"/>
+  <owl:disjointWith rdf:resource="#Binder"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Battery Cell Container is a casing that houses a battery cell and protects it from external damage. It is typically made of a durable material such as plastic or metal and is designed to prevent leakage of the electrolyte and to provide electrical insulation.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Battery Casing', 'Cell Enclosure', 'Battery Housing', 'Cell Container']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BatteryCellContainer</onto_name>
@@ -336,6 +341,7 @@
 
 <owl:Class rdf:about="#CCM">
   <rdfs:subClassOf rdf:resource="#MembraneElectrodeAssembly"/>
+  <owl:disjointWith rdf:resource="#5LayerMEA"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CCM (Catalyst Coated Membrane) is a key component of a fuel cell, consisting of a proton exchange membrane coated on both sides with a catalyst layer. CCMs facilitate the electrochemical reactions that convert chemical energy into electrical energy in fuel cells.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Catalyst-Coated Membrane', 'Proton Exchange Membrane with Catalyst Layer', 'Fuel Cell CCM', 'Electrolyte Membrane with Catalyst Layer']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CCM</onto_name>
@@ -357,6 +363,7 @@
 
 <owl:Class rdf:about="#CarbonBasedCompositeBipolarPlate">
   <rdfs:subClassOf rdf:resource="#CompositeBipolarPlate"/>
+  <owl:disjointWith rdf:resource="#MetalBasedCompositeBipolarPlate"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Carbon-Based Composite Bipolar Plate is an electrochemical cell component made of a carbon-based composite material. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties compared to traditional metal bipolar plates.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Carbon Composite Bipolar Plate', 'Carbon-Based BPP', 'Composite Carbon Bipolar Plate', 'Carbon Fiber Reinforced Polymer Bipolar Plate', 'CCBPP']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CarbonBasedCompositeBipolarPlate</onto_name>
@@ -364,6 +371,7 @@
 
 <owl:Class rdf:about="#CompositeBipolarPlate">
   <rdfs:subClassOf rdf:resource="#BipolarPlate"/>
+  <owl:disjointWith rdf:resource="#NonPorousGraphiteBipolarPlate"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Composite Bipolar Plate is an electrochemical cell component made of a composite material, typically consisting of a polymer matrix reinforced with carbon fibers or other conductive fillers. It is used in fuel cells and batteries, offering improved mechanical strength, corrosion resistance, and electrical conductivity compared to traditional metal bipolar plates.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Polymer Composite Bipolar Plate', 'Carbon Fiber Reinforced Bipolar Plate', 'Composite Material Bipolar Plate', 'Non-Metallic Bipolar Plate']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompositeBipolarPlate</onto_name>
@@ -413,6 +421,7 @@
 
 <owl:Class rdf:about="#Cathode">
   <rdfs:subClassOf rdf:resource="#Electrode"/>
+  <owl:disjointWith rdf:resource="#CompositeElectrode"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cathode is an electrode in an electrochemical cell that is the site of reduction reactions. In fuel cells, the cathode is the positive electrode where oxygen reduction occurs, producing water and releasing electrons that flow through an external circuit to generate electricity.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Fuel Cell Cathode', 'Positive Electrode', 'Oxygen Reduction Cathode', 'Reduction Electrode']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cathode</onto_name>
@@ -562,6 +571,7 @@
 <owl:Class rdf:about="#FuelCell">
   <rdfs:subClassOf rdf:resource="#ElectrochemicalDevice"/>
   <rdfs:subClassOf rdf:resource="#GalvanicElectrochemicalCell"/>
+  <owl:disjointWith rdf:resource="#PrimaryElectrochemicalCell"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A fuel cell is an electrochemical device that converts the chemical energy of a fuel (usually hydrogen) and an oxidant (usually oxygen) into electrical energy. It consists of an anode, a cathode, and an electrolyte, and operates at high efficiency with low emissions.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Hydrogen Fuel Cell', 'Electrochemical Fuel Cell', 'Proton Exchange Membrane Fuel Cell', 'PEM Fuel Cell', 'Solid Oxide Fuel Cell']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FuelCell</onto_name>
@@ -661,6 +671,7 @@
 <owl:Class rdf:about="#LeclancheElectrochemicalCell">
   <rdfs:subClassOf rdf:resource="#ElectrochemicalCell"/>
   <rdfs:subClassOf rdf:resource="#PrimaryElectrochemicalCell"/>
+  <owl:disjointWith rdf:resource="#LithiumCarbonMonofluorideElectrochemicalCell"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Leclanché cell is a type of primary electrochemical cell that uses a zinc anode, a manganese dioxide cathode, and an ammonium chloride electrolyte. It is commonly used in low-drain applications such as flashlights and toys.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Zinc-Manganese Dioxide Cell', 'Dry Cell', 'Ammonium Chloride Cell', 'Leclanché Battery', 'Zinc-Carbon Battery']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LeclancheElectrochemicalCell</onto_name>
@@ -675,6 +686,7 @@
 
 <owl:Class rdf:about="#LihtiumElectrochemicalCell">
   <rdfs:subClassOf rdf:resource="#NonAqueousElectrochemicalCell"/>
+  <owl:disjointWith rdf:resource="#MoltenSaltElectrochemicalCell"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Lithium Electrochemical Cell is a type of battery that uses lithium as the primary component of its electrodes. It is commonly used in portable electronic devices due to its high energy density and long cycle life.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Lithium Battery', 'Li-ion Battery', 'Li-Polymer Battery', 'Li-S Battery', 'Lithium Ion Battery']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LihtiumElectrochemicalCell</onto_name>
@@ -739,6 +751,7 @@
 
 <owl:Class rdf:about="#NRE212">
   <rdfs:subClassOf rdf:resource="#NafionMembrane"/>
+  <owl:disjointWith rdf:resource="#NafionMembrane"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NRE212 is a high-performance cathode material used in lithium-ion batteries, with a chemical formula of LiNi0.6Mn0.2Co0.2O2. It offers improved energy density, thermal stability, and cycle life compared to other cathode materials.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['LiNi0.6Mn0.2Co0.2O2', 'Nickel-Rich Layered Oxide Cathode', 'NRE-212', 'Ni-Rich Cathode Material', 'High-Nickel Cathode Material']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NRE212</onto_name>
@@ -767,6 +780,7 @@
 
 <owl:Class rdf:about="#NickelBasedCarbonBasedCoatedBipolarPlate">
   <rdfs:subClassOf rdf:resource="#NickelBasedBipolarPlate"/>
+  <owl:disjointWith rdf:resource="#NickelBasedMetalBasedCoatedBipolarPlate"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Nickel-Based Carbon-Based Coated Bipolar Plate is an electrochemical cell component, consisting of a nickel substrate coated with a carbon layer. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Ni-Carbon Coated Bipolar Plate', 'Nickel-Carbon Coated Bipolar Plate', 'Ni-Carbon BPP', 'Carbon-coated Ni Bipolar Plate']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NickelBasedCarbonBasedCoatedBipolarPlate</onto_name>
@@ -1012,6 +1026,7 @@
 
 <owl:Class rdf:about="#StainlessSteelBasedBiploarPlate">
   <rdfs:subClassOf rdf:resource="#CoatedMetallicBipolarPlate"/>
+  <owl:disjointWith rdf:resource="#TitaniumBasedBipolarPlate"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Stainless Steel-Based Bipolar Plate is an electrochemical cell component, consisting of a stainless steel substrate. It is used in fuel cells and batteries, offering improved mechanical properties and corrosion resistance compared to other materials.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['SS-Based Bipolar Plate', 'Stainless Steel BPP', 'Stainless Steel Plate', 'Corrosion-Resistant Bipolar Plate', 'Metallic Bipolar Plate']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StainlessSteelBasedBiploarPlate</onto_name>
@@ -1026,6 +1041,7 @@
 
 <owl:Class rdf:about="#StainlessSteelBasedCarbonBasedCoatedBipolarPlate">
   <rdfs:subClassOf rdf:resource="#StainlessSteelBasedBiploarPlate"/>
+  <owl:disjointWith rdf:resource="#StainlessSteelBasedMetalBasedCoatedBipolarPlate"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Stainless Steel-Based Carbon-Based Coated Bipolar Plate is an electrochemical cell component, consisting of a stainless steel substrate coated with a carbon layer. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['SS-Carbon Coated Bipolar Plate', 'Stainless Steel-Carbon Coated Bipolar Plate', 'SS-Carbon BPP', 'Carbon-coated SS Bipolar Plate']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StainlessSteelBasedCarbonBasedCoatedBipolarPlate</onto_name>
@@ -1131,6 +1147,7 @@
 
 <owl:Class rdf:about="#TitaniumBasedCarbonBasedCoatedBipolarPlate">
   <rdfs:subClassOf rdf:resource="#TitaniumBasedBipolarPlate"/>
+  <owl:disjointWith rdf:resource="#TitaniumBasedMetalBasedCoatedBipolarPlate"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Titanium-Based Carbon-Based Coated Bipolar Plate is an electrochemical cell component, consisting of a titanium substrate coated with a carbon layer. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Ti-Carbon Coated Bipolar Plate', 'Titanium-Carbon Coated Bipolar Plate', 'Ti-Carbon BPP', 'Carbon-coated Ti Bipolar Plate']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TitaniumBasedCarbonBasedCoatedBipolarPlate</onto_name>
