@@ -11,6 +11,7 @@ from DatabaseCommunication.ai.setupMessages import ONTOLOGY_ASSISTANT_MESSAGES
 from owlready2 import get_ontology, DataProperty, FunctionalProperty, ObjectProperty, Thing
 import os
 
+
 def convert_alternative_labels(onto):
     onto_path = os.path.join("../../Ontology/", onto)
     ontology = get_ontology(onto_path).load()
@@ -20,8 +21,8 @@ def convert_alternative_labels(onto):
         class alternative_label(DataProperty, FunctionalProperty):
             range = [str]
 
-        class is_alternative_label(ObjectProperty):
-            range = [Thing]
+    # Define the is_alternative_label property
+    is_alternative_label = ObjectProperty()
 
     # Iterate over all classes in the ontology
     for cls in ontology.classes():
@@ -32,7 +33,7 @@ def convert_alternative_labels(onto):
             cls.alternative_labels = None
 
             # Parse the alternative_labels string into a list
-            alt_labels_list = eval(alt_labels_str)
+            alt_labels_list = list(alt_labels_str)
 
             # Set the new alternative_label property for each label in the list
             for label in alt_labels_list:
@@ -47,6 +48,7 @@ def convert_alternative_labels(onto):
                 cls.is_alternative_label.append(new_alt_label_class)
 
     ontology.save(onto_path)
+
 
 
 
