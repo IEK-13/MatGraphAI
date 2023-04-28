@@ -358,6 +358,9 @@
 <owl:Class rdf:about="#NRE211">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NafionMembrane"/>
   <rdfs:subClassOf rdf:resource="#NafionMembrane"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NRE211 is a specific, high-performance nickel-rich layered oxide cathode material used in lithium-ion batteries. It has a chemical formula of LiNi0.8Mn0.1Co0.1O2 and offers improved energy density, thermal stability, and cycle life compared to other cathode materials.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['LiNi0.8Mn0.1Co0.1O2', 'Nickel-Rich Layered Oxide Cathode', 'NRE-211', 'Ni-Rich Cathode Material', 'High-Nickel Cathode Material']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NRE211</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#NRE212">
@@ -379,16 +382,25 @@
 <owl:Class rdf:about="#MembraneElectrodeAssembly">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#Component"/>
   <rdfs:subClassOf rdf:resource="#Component"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Membrane Electrode Assembly (MEA) is a key component of a fuel cell, consisting of an ion-conducting membrane sandwiched between two catalyst-coated electrodes (anode and cathode). MEAs facilitate the electrochemical reactions that convert chemical energy into electrical energy in fuel cells. NRE211 is a specific, high-performance nickel-rich layered oxide cathode material used in lithium-ion batteries. It has a chemical formula of LiNi0.8Mn0.1Co0.1O2 and offers improved energy density, thermal stability, and cycle life compared to other cathode materials.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['NRE211 MEA', 'LiNi0.8Mn0.1Co0.1O2 MEA', 'Nickel-Rich Layered Oxide Cathode MEA', 'High-Nickel Cathode Material MEA']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MembraneElectrodeAssembly</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#CCM">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MembraneElectrodeAssembly"/>
   <rdfs:subClassOf rdf:resource="#MembraneElectrodeAssembly"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Catalyst Coated Membrane (CCM) is a key component of a fuel cell, consisting of an ion-conducting membrane coated on both sides with a thin layer of catalyst. CCMs facilitate the electrochemical reactions that convert chemical energy into electrical energy in fuel cells.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Membrane Electrode Assembly with Catalyst Layer', 'Catalyst Coated Proton Exchange Membrane', 'Catalyst Coated Membrane Electrode Assembly', 'Catalyst Coated PEM', 'Catalyst Coated Gas Diffusion Electrode']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CCM</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#5LayerMEA">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#MembraneElectrodeAssembly"/>
   <rdfs:subClassOf rdf:resource="#MembraneElectrodeAssembly"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 5-Layer Membrane Electrode Assembly (MEA) is a type of fuel cell component consisting of a proton exchange membrane sandwiched between two anode and two cathode catalyst-coated gas diffusion layers. It is used in proton exchange membrane fuel cells (PEMFCs) and offers improved performance and durability compared to traditional 3-layer MEAs.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Five-Layer Membrane Electrode Assembly', 'PEMFC 5-Layer MEA', 'High-Performance 5-Layer MEA', 'Multi-Layer MEA']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5LayerMEA</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#Device">
@@ -585,6 +597,22 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AlkalineZincManganeseDioxideElectrochemicalCell</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="#PrimaryElectrochemicalCell">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GalvanicElectrochemicalCell"/>
+  <rdfs:subClassOf rdf:resource="#GalvanicElectrochemicalCell"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary electrochemical cell is a type of battery that is designed to be used once and then discarded. It generates electrical energy through an irreversible chemical reaction, and cannot be recharged. Primary cells are commonly used in small electronic devices, such as remote controls and watches.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Non-rechargeable battery', 'Disposable battery', 'Single-use battery', 'Primary battery', 'Throwaway battery']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrimaryElectrochemicalCell</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="#GalvanicElectrochemicalCell">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
+  <rdfs:subClassOf rdf:resource="#ElectrochemicalCell"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Galvanic Electrochemical Cell is a type of electrochemical cell that converts chemical energy into electrical energy through a spontaneous redox reaction. It consists of two electrodes (anode and cathode) and an electrolyte solution that allows the flow of ions between the electrodes. Galvanic cells are commonly used in batteries and fuel cells.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Voltaic Cell', 'Daniell Cell', 'Zinc-Copper Cell', 'Redox Cell', 'Spontaneous Cell']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GalvanicElectrochemicalCell</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="#AqueousElectrochemicalCell">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
   <rdfs:subClassOf rdf:resource="#ElectrochemicalCell"/>
@@ -649,14 +677,6 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhotoelectrolyticElectrochemicalCell</onto_name>
 </owl:Class>
 
-<owl:Class rdf:about="#GalvanicElectrochemicalCell">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-  <rdfs:subClassOf rdf:resource="#ElectrochemicalCell"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Galvanic Electrochemical Cell is a type of electrochemical cell that converts chemical energy into electrical energy through a spontaneous redox reaction. It consists of two electrodes (anode and cathode) and an electrolyte solution that allows the flow of ions between the electrodes. Galvanic cells are commonly used in batteries and fuel cells.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Voltaic Cell', 'Daniell Cell', 'Zinc-Copper Cell', 'Redox Cell', 'Spontaneous Cell']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GalvanicElectrochemicalCell</onto_name>
-</owl:Class>
-
 <owl:Class rdf:about="#FuelCell">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GalvanicElectrochemicalCell"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalDevice"/>
@@ -681,14 +701,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Single Fuel Cell is an electrochemical device that converts the chemical energy of a fuel (usually hydrogen) and an oxidant (usually oxygen) directly into electrical energy. It consists of an anode, a cathode, and an electrolyte, and operates at relatively low temperatures. Single fuel cells are used in portable electronic devices, backup power systems, and small vehicles.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Individual Fuel Cell', 'Portable Fuel Cell', 'Micro Fuel Cell', 'Direct Methanol Fuel Cell', 'DMFC']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SingleFuelCell</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="#PrimaryElectrochemicalCell">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#GalvanicElectrochemicalCell"/>
-  <rdfs:subClassOf rdf:resource="#GalvanicElectrochemicalCell"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary electrochemical cell is a type of battery that is designed to be used once and then discarded. It generates electrical energy through an irreversible chemical reaction, and cannot be recharged. Primary cells are commonly used in small electronic devices, such as remote controls and watches.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Non-rechargeable battery', 'Disposable battery', 'Single-use battery', 'Primary battery', 'Throwaway battery']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrimaryElectrochemicalCell</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#LeclancheElectrochemicalCell">
@@ -735,6 +747,14 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LithiumElectrochemicalCell</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="#SecondaryElectrochemicalCell">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
+  <rdfs:subClassOf rdf:resource="#ElectrochemicalCell"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A secondary electrochemical cell is a type of battery that can be recharged by passing a current through it in the opposite direction of its discharge. It is also known as a rechargeable battery and is commonly used in portable electronic devices, electric vehicles, and renewable energy systems.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Rechargeable Battery', 'Storage Battery', 'Secondary Battery', 'Accumulator']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SecondaryElectrochemicalCell</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="#MetalAirElectrodeElectrochemicalCell">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
   <rdfs:subClassOf rdf:resource="#ElectrochemicalCell"/>
@@ -754,6 +774,9 @@
 <owl:Class rdf:about="#LihtiumElectrochemicalCell">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NonAqueousElectrochemicalCell"/>
   <rdfs:subClassOf rdf:resource="#NonAqueousElectrochemicalCell"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Lithium Electrochemical Cell is a type of battery that uses lithium as the primary active material for both the anode and cathode. It is commonly used in portable electronic devices and electric vehicles due to its high energy density and long cycle life.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Lithium Battery', 'Li-ion Battery', 'Li-Polymer Battery', 'Lithium Ion Cell', 'Lithium Polymer Cell']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LihtiumElectrochemicalCell</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#MoltenSaltElectrochemicalCell">
@@ -762,14 +785,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Molten Salt Electrochemical Cell is an electrochemical cell that uses a molten salt as the electrolyte. It operates at high temperatures and is used in high-temperature applications such as nuclear reactors and metal production. Molten salt electrolytes offer high ionic conductivity and can be used with a variety of electrode materials.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['High-Temperature Molten Salt Cell', 'Molten Salt Battery', 'Molten Salt Electrolyte Cell', 'High-Temperature Electrochemical Cell']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MoltenSaltElectrochemicalCell</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="#SecondaryElectrochemicalCell">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalCell"/>
-  <rdfs:subClassOf rdf:resource="#ElectrochemicalCell"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A secondary electrochemical cell is a type of battery that can be recharged by passing a current through it in the opposite direction of its discharge. It is also known as a rechargeable battery and is commonly used in portable electronic devices, electric vehicles, and renewable energy systems.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Rechargeable Battery', 'Storage Battery', 'Secondary Battery', 'Accumulator']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SecondaryElectrochemicalCell</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#SolidElectrolyteElectrochemicalCell">
@@ -830,6 +845,14 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectricCurrentCollector</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="#FuelCellSubcomponent">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
+  <rdfs:subClassOf rdf:resource="#ElectrochemicalSubcomponent"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Fuel Cell Subcomponent is a part of a fuel cell that performs a specific function in the electrochemical reaction. Examples include the anode, cathode, and membrane electrode assembly (MEA).</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Fuel Cell Component', 'Fuel Cell Part', 'Fuel Cell Element', 'Fuel Cell Layer', 'Fuel Cell Unit']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FuelCellSubcomponent</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="#ElectronicSubcomponent">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
   <rdfs:subClassOf rdf:resource="#ElectrochemicalSubcomponent"/>
@@ -844,14 +867,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A current collector is an electrochemical subcomponent that collects and conducts electrical current from an electrode or cell. It is typically made of a conductive material, such as metal, and is used in batteries, fuel cells, and other electrochemical devices.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Electrical Current Collector', 'Conductive Collector', 'Current Collector Subcomponent', 'Electrode Current Collector']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CurrentCollector</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="#FuelCellSubcomponent">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#ElectrochemicalSubcomponent"/>
-  <rdfs:subClassOf rdf:resource="#ElectrochemicalSubcomponent"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Fuel Cell Subcomponent is a part of a fuel cell that performs a specific function in the electrochemical reaction. Examples include the anode, cathode, and membrane electrode assembly (MEA).</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Fuel Cell Component', 'Fuel Cell Part', 'Fuel Cell Element', 'Fuel Cell Layer', 'Fuel Cell Unit']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FuelCellSubcomponent</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#BipolarPlate">
@@ -961,6 +976,9 @@
 <owl:Class rdf:about="#NickelBasedCarbonBasedCoatedBipolarPlate">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedBipolarPlate"/>
   <rdfs:subClassOf rdf:resource="#NickelBasedBipolarPlate"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Nickel-Based Carbon-Based Coated Bipolar Plate is an electrochemical cell component, consisting of a nickel substrate coated with a carbon layer. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Ni-C Coated Bipolar Plate', 'Nickel-Carbon Coated Bipolar Plate', 'Ni-Carbon BPP', 'Carbon-coated Ni Bipolar Plate']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NickelBasedCarbonBasedCoatedBipolarPlate</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#NickelBasedConductivePolymerCoatedBipolarPlate">
@@ -990,6 +1008,9 @@
 <owl:Class rdf:about="#NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#NickelBasedCarbonBasedCoatedBipolarPlate"/>
   <rdfs:subClassOf rdf:resource="#NickelBasedCarbonBasedCoatedBipolarPlate"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Nickel-Based Organic Self-Assemble Mono-Polymer Coated Bipolar Plate is an electrochemical cell component, consisting of a nickel substrate coated with a self-assembled monolayer (SAM) of organic polymers. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Ni-OSAM Coated Bipolar Plate', 'Nickel-Organic SAM Coated Bipolar Plate', 'Ni-Self-Assemble Mono-Polymer BPP', 'SAM-coated Ni Bipolar Plate']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NickelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#NickelBasedMetalBasedCoatedBipolarPlate">
@@ -1067,6 +1088,9 @@
 <owl:Class rdf:about="#StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/manufactured#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
   <rdfs:subClassOf rdf:resource="#StainlessSteelBasedCarbonBasedCoatedBipolarPlate"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Stainless Steel-Based Organic Self-Assemble Mono-Polymer Coated Bipolar Plate is an electrochemical cell component, consisting of a stainless steel substrate coated with a self-assembled monolayer of organic polymers. It is used in fuel cells and batteries, offering improved electrical conductivity, corrosion resistance, and mechanical properties.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['SS-Based OSM Coated Bipolar Plate', 'Stainless Steel-Based Self-Assembled Monolayer Coated Bipolar Plate', 'SS-OSM BPP', 'Organic Monolayer Coated SS Bipolar Plate']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StainlessSteelBasedOrganicSelfAssembleMonoPolymerCoatedBipolarPlate</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="#StainlessSteelBasedMetalBasedCoatedBipolarPlate">

@@ -21,6 +21,23 @@
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thermodynamic quantity is a measurable property of a thermodynamic system that determines its state and describes how it behaves under various conditions. Examples of thermodynamic quantities include temperature, pressure, internal energy, entropy, enthalpy, and Gibbs free energy.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thermodynamic Parameter', 'Thermodynamic Property', 'Thermodynamic Variable', 'Thermodynamic State Function']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermodynamicalQuantity</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Standardized Physical Quantity is a physical quantity that has been defined and standardized by an authoritative body, such as the International System of Units (SI). Standardization ensures that measurements of the same physical quantity can be compared and reproduced across different experiments and locations.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Standardized Quantity', 'Standardized Unit', 'SI Quantity', 'SI Unit', 'Standardized Physical Parameter']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StandardizedPhysicalQuantity</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Quantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Physical Quantity is a property of a physical system that can be quantified by measurement. It can be classified as either a base quantity or a derived quantity. Examples of physical quantities include length, mass, time, temperature, and electric charge.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Physical Property', 'Physical Parameter', 'Physical Measurement', 'Physical Magnitude', 'Physical Value']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhysicalQuantity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AbsoluteActivity">
@@ -35,6 +52,13 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity is a thermodynamic concept that measures the effective concentration of a chemical species in a mixture, taking into account its interactions with other species. It is defined as the ratio of the activity of a species to its standard state activity, which is typically taken as 1. Activity is an important parameter in many chemical and physical processes, including reactions, phase equilibria, and transport phenomena.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Chemical Activity', 'Effective Concentration', 'Activity Coefficient', 'Thermodynamic Activity', 'Activity of a Species']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physiochemical Quantity is a term used to describe a physical or chemical property of a material or system that can be measured or calculated. It includes properties such as density, viscosity, surface tension, and refractive index, among others.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Physical and Chemical Quantity', 'Material Property', 'Chemical Property', 'Physical Property', 'Material Characteristic']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhysioChemicalQuantity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AbsorbedDose">
@@ -58,6 +82,19 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Derived Quantity is a physical quantity that is derived from one or more base quantities using mathematical equations. Examples of derived quantities include velocity, acceleration, force, energy, and power.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Derived Physical Quantity', 'Derived Unit', 'Derived Measurement', 'Derived Property']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DerivedQuantity</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ISQ Base Quantity is a fundamental physical quantity defined by the International System of Quantities (ISQ). There are seven base quantities in the ISQ: length, mass, time, electric current, thermodynamic temperature, amount of substance, and luminous intensity. All other physical quantities can be derived from these base quantities.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['International System of Quantities Base Quantity', 'ISQ Fundamental Quantity', 'ISQ Base Unit', 'ISQ Base Physical Quantity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISQBaseQuantity</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Quantity">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity is a fundamental concept in physics and materials science, representing a measurable property of a physical system. It can be expressed as a numerical value and a unit of measurement. Quantities can be classified as either extensive or intensive, depending on whether they depend on the size or amount of the system.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Physical Quantity', 'Measured Property', 'Quantitative Property']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Acceleration">
@@ -95,18 +132,18 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Duration</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Time">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time is a physical quantity that is used to measure the duration or separation of events. It is a fundamental quantity in physics and is measured in seconds. Time is a scalar quantity and can be used to describe the motion of objects, the rate of chemical reactions, and the behavior of electromagnetic waves.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Duration', 'Elapsed Time', 'Chronometry', 'Time Interval', 'Time Duration']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AcousticQuantity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Acoustic Quantity is a physical quantity that describes sound waves and their properties, such as frequency, amplitude, and wavelength. It is used in the field of acoustics to study the behavior of sound waves in different media and their interaction with matter.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Sound Quantity', 'Acoustic Parameter', 'Sound Wave Property', 'Acoustic Property']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AcousticQuantity</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Standardized Physical Quantity is a physical quantity that has been defined and standardized by an authoritative body, such as the International System of Units (SI). Standardization ensures that measurements of the same physical quantity can be compared and reproduced across different experiments and locations.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Standardized Quantity', 'Standardized Unit', 'SI Quantity', 'SI Unit', 'Standardized Physical Parameter']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StandardizedPhysicalQuantity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Action">
@@ -138,6 +175,20 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Energy</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtensiveQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CategorizedPhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An extensive quantity is a physical quantity that depends on the size or extent of a system. Examples include mass, volume, and energy. Extensive quantities are additive, meaning that the total value of the quantity for a system is the sum of the values for its individual parts.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Extensive Property', 'Extensive Parameter', 'Extensive Variable', 'Additive Quantity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExtensiveQuantity</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CategorizedPhysicalQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Categorized Physical Quantity is a physical quantity that has been classified into a specific category based on its nature and characteristics. Examples of categories include mechanical, electromagnetic, thermodynamic, and electrochemical quantities.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Classified Physical Quantity', 'Categorized Quantity', 'Categorized Physical Parameter', 'Categorized Physical Property']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CategorizedPhysicalQuantity</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActiveMaterialLoading">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AreaDensity"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
@@ -161,6 +212,13 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectrochemicalQuantity</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IntensiveQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CategorizedPhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Intensive Quantity is a physical quantity that does not depend on the size or amount of the system being measured. Examples include temperature, pressure, and concentration.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Intensive Property', 'Intensive Parameter', 'Intensive Variable', 'Specific Quantity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IntensiveQuantity</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActiveOverpotential">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Overpotential"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active overpotential is the additional potential required to drive a reaction at a desired rate in an electrochemical system. It is the difference between the actual potential applied to the system and the thermodynamic potential required for the reaction to proceed at the desired rate. Active overpotential is an important parameter in the design and optimization of electrochemical systems.</rdfs:comment>
@@ -176,11 +234,12 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Overpotential</onto_name>
 </owl:Class>
 
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physiochemical Quantity is a term used to describe a physical or chemical property of a material or system that can be measured or calculated. It includes properties such as density, viscosity, surface tension, and refractive index, among others.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Physical and Chemical Quantity', 'Material Property', 'Chemical Property', 'Physical Property', 'Material Characteristic']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhysioChemicalQuantity</onto_name>
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricPotential">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtensiveQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electric potential is the amount of work needed to move a unit of electric charge from a reference point to a specific point in an electric field. It is a scalar quantity that is measured in volts (V) and is used to describe the potential energy per unit of charge in an electric field.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Voltage', 'Electric Field Potential', 'Electrostatic Potential', 'Electric Potential Energy', 'Electric Tension']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectricPotential</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ActivityCoefficient">
@@ -228,6 +287,13 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectricCurrent</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectromagneticQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capacitance is a measure of the ability of a system of conductors and insulators to store electrical charge when a voltage difference exists between the conductors. It is defined as the ratio of the electric charge stored on each conductor to the voltage difference between the conductors.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Electrical Capacitance', 'Capacitive Reactance', 'Capacitive Coupling', 'Capacitive Load', 'Capacitive Sensor']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectromagneticQuantity</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AffinityOfAChemicalReaction">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Affinity of a Chemical Reaction is a thermodynamic quantity that measures the tendency of a chemical reaction to occur. It is the change in Gibbs free energy of a reaction per mole of reactant at a constant temperature and pressure. A reaction with a negative affinity is spontaneous, while a reaction with a positive affinity is non-spontaneous.</rdfs:comment>
@@ -272,6 +338,13 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RatioQuantity</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DimensionlessQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Dimensionless Quantity is a physical quantity that does not have any physical dimensions or units. It is a pure number that represents a ratio or a fraction of two quantities with the same dimensions. Examples include angles, fractions, and ratios.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Dimensionless Number', 'Dimensionless Parameter', 'Dimensionless Ratio', 'Dimensionless Value', 'Unitless Quantity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DimensionlessQuantity</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AmountOfSubstance">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtensiveQuantity"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity"/>
@@ -279,20 +352,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amount of substance is a physical quantity that measures the number of particles (atoms, molecules, ions, electrons, etc.) in a sample. It is measured in moles and is used in chemical reactions and stoichiometry calculations.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Molar Amount', 'Chemical Amount', 'Substance Quantity', 'Mole Quantity', 'Particle Count']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtensiveQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CategorizedPhysicalQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An extensive quantity is a physical quantity that depends on the size or extent of a system. Examples include mass, volume, and energy. Extensive quantities are additive, meaning that the total value of the quantity for a system is the sum of the values for its individual parts.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Extensive Property', 'Extensive Parameter', 'Extensive Variable', 'Additive Quantity']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExtensiveQuantity</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ISQ Base Quantity is a fundamental physical quantity defined by the International System of Quantities (ISQ). There are seven base quantities in the ISQ: length, mass, time, electric current, thermodynamic temperature, amount of substance, and luminous intensity. All other physical quantities can be derived from these base quantities.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['International System of Quantities Base Quantity', 'ISQ Fundamental Quantity', 'ISQ Base Unit', 'ISQ Base Physical Quantity']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISQBaseQuantity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Angle">
@@ -367,13 +426,6 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Area</onto_name>
 </owl:Class>
 
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IntensiveQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CategorizedPhysicalQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Intensive Quantity is a physical quantity that does not depend on the size or amount of the system being measured. Examples include temperature, pressure, and concentration.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Intensive Property', 'Intensive Parameter', 'Intensive Variable', 'Specific Quantity']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IntensiveQuantity</onto_name>
-</owl:Class>
-
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AreicCapacity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Areic capacity is the amount of electrical charge that can be stored per unit area of an electrode surface. It is a measure of the capacitance of an electrode and is commonly used in electrochemical applications.</rdfs:comment>
@@ -431,6 +483,21 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hydrodynamic diameter is a measure of the size of a particle in a fluid, which takes into account the particle's shape and the viscosity of the fluid. It is defined as the diameter of a hypothetical sphere that diffuses at the same rate as the particle in the fluid.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Hydrodynamic Size', 'Effective Diameter', 'Diffusion Diameter']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HydrodynamicDiameter</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Diameter">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Length"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diameter is a physical quantity that represents the distance between two points on the circumference of a circle or a sphere, passing through the center. It is commonly used to describe the size of circular or spherical objects.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Circle Diameter', 'Sphere Diameter', 'Circular Size', 'Spherical Size']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diameter</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Length">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtensiveQuantity"/>
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depth is the distance between the surface of an object and its farthest point. It is a measure of the extent or amount of something from one end to the other.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Distance from surface', 'Thickness', 'Extent']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Length</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AverageMass">
@@ -533,13 +600,6 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capacitance</onto_name>
 </owl:Class>
 
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectromagneticQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capacitance is a measure of the ability of a system of conductors and insulators to store electrical charge when a voltage difference exists between the conductors. It is defined as the ratio of the electric charge stored on each conductor to the voltage difference between the conductors.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Electrical Capacitance', 'Capacitive Reactance', 'Capacitive Coupling', 'Capacitive Load', 'Capacitive Sensor']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectromagneticQuantity</onto_name>
-</owl:Class>
-
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Capacity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricCharge"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
@@ -616,20 +676,6 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FarradaicCurrent</onto_name>
 </owl:Class>
 
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CategorizedPhysicalQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Categorized Physical Quantity is a physical quantity that has been classified into a specific category based on its nature and characteristics. Examples of categories include mechanical, electromagnetic, thermodynamic, and electrochemical quantities.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Classified Physical Quantity', 'Categorized Quantity', 'Categorized Physical Parameter', 'Categorized Physical Property']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CategorizedPhysicalQuantity</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysicalQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Quantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Physical Quantity is a property of a physical system that can be quantified by measurement. It can be classified as either a base quantity or a derived quantity. Examples of physical quantities include length, mass, time, temperature, and electric charge.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Physical Property', 'Physical Parameter', 'Physical Measurement', 'Physical Magnitude', 'Physical Value']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhysicalQuantity</onto_name>
-</owl:Class>
-
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CathodicOverpotential">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Overpotential"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cathodic overpotential is the difference between the potential of a cathode and its equilibrium potential. It is a measure of the driving force required to reduce a species at the cathode and is an important parameter in electrochemical reactions.</rdfs:comment>
@@ -656,14 +702,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Charge cutoff potential is the voltage limit applied to a battery during charging to prevent overcharging and damage to the battery. It is the maximum potential difference that can be applied to a battery without causing unwanted side reactions or damage to the electrodes.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Charge Limiting Potential', 'Charge Termination Potential', 'Charge Cutoff Voltage', 'Charge Limiting Voltage', 'Charge Termination Voltage']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChargeCutoffPotential</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricPotential">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtensiveQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electric potential is the amount of work needed to move a unit of electric charge from a reference point to a specific point in an electric field. It is a scalar quantity that is measured in volts (V) and is used to describe the potential energy per unit of charge in an electric field.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Voltage', 'Electric Field Potential', 'Electrostatic Potential', 'Electric Potential Energy', 'Electric Tension']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectricPotential</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ChargeNumber">
@@ -701,24 +739,11 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChemicalQuantity</onto_name>
 </owl:Class>
 
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Quantity">
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity is a fundamental concept in physics and materials science, representing a measurable property of a physical system. It can be expressed as a numerical value and a unit of measurement. Quantities can be classified as either extensive or intensive, depending on whether they depend on the size or amount of the system.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Physical Quantity', 'Measured Property', 'Quantitative Property']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity</onto_name>
-</owl:Class>
-
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ClockTime">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Time"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clock time is a measure of the duration of time in hours, minutes, and seconds, as measured by a clock or other timekeeping device. It is a fundamental physical quantity used in many fields of science and engineering.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Time of Day', 'Wall Clock Time', 'Chronometry', 'Time Duration', 'Time Interval']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ClockTime</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Time">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time is a physical quantity that is used to measure the duration or separation of events. It is a fundamental quantity in physics and is measured in seconds. Time is a scalar quantity and can be used to describe the motion of objects, the rate of chemical reactions, and the behavior of electromagnetic waves.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Duration', 'Elapsed Time', 'Chronometry', 'Time Interval', 'Time Duration']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CoefficientOfHeatTransfer">
@@ -898,26 +923,11 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depth</onto_name>
 </owl:Class>
 
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Length">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ExtensiveQuantity"/>
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depth is the distance between the surface of an object and its farthest point. It is a measure of the extent or amount of something from one end to the other.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Distance from surface', 'Thickness', 'Extent']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Length</onto_name>
-</owl:Class>
-
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DewPointTemperature">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dew point temperature is the temperature at which the water vapor in a gas condenses into liquid water. It is a measure of the humidity of the gas and is often used in industrial and environmental applications to control moisture levels.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Dew Temperature', 'Dew Point', 'Condensation Temperature', 'Dew Formation Temperature', 'Dew Condensation Temperature']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DewPointTemperature</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Diameter">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Length"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diameter is a physical quantity that represents the distance between two points on the circumference of a circle or a sphere, passing through the center. It is commonly used to describe the size of circular or spherical objects.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Circle Diameter', 'Sphere Diameter', 'Circular Size', 'Spherical Size']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diameter</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DiffuseLayerPotential">
@@ -954,13 +964,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diffusion-limited current is the maximum current that can be achieved in an electrochemical system due to the rate of diffusion of the reactants to the electrode surface. It is a key parameter in determining the performance of electrochemical devices such as batteries and fuel cells.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Limiting Diffusion Current', 'Diffusion-controlled Current', 'Diffusion-limited Charge Transfer', 'Mass Transport-limited Current']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DiffusionLimitedCurrent</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DimensionlessQuantity">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Dimensionless Quantity is a physical quantity that does not have any physical dimensions or units. It is a pure number that represents a ratio or a fraction of two quantities with the same dimensions. Examples include angles, fractions, and ratios.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Dimensionless Number', 'Dimensionless Parameter', 'Dimensionless Ratio', 'Dimensionless Value', 'Unitless Quantity']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DimensionlessQuantity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DirectCurrent">
@@ -1083,6 +1086,14 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drying temperature is the temperature at which a material is dried to remove moisture or other volatile components. It is an important parameter in various industrial processes such as food processing, pharmaceuticals, and ceramics.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Dry temperature', 'Drying temp', 'Moisture removal temperature']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OperatingTemperature</onto_name>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Temperature">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IntensiveQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Melting point is the temperature at which a solid substance changes its state to become a liquid. It is a physical property of a material and is dependent on factors such as pressure and purity.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Fusion point', 'Melting temperature', 'Solidus temperature']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DynamicVaporDesorption">
@@ -1453,6 +1464,13 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FilledVolume</onto_name>
 </owl:Class>
 
+<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SolidVolume">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Volume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solid volume is the amount of space occupied by a solid material. It is a physical quantity that is commonly used in materials science to describe the amount of space that a solid occupies.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Volume of Solid', 'Solid Material Volume', 'Solid Volume Occupancy']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SolidVolume</onto_name>
+</owl:Class>
+
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#EquilibriumElectrodePotential">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OpenCircuitVoltage"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equilibrium Electrode Potential is the electric potential difference between an electrode and its surrounding electrolyte when no current is flowing. It is a measure of the tendency of the electrode to lose or gain electrons and is an important parameter in electrochemical reactions.</rdfs:comment>
@@ -1544,13 +1562,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fermi temperature is the temperature at which the thermal energy of the electrons in a solid is equal to the Fermi energy. It is a measure of the energy of the highest occupied electronic state in a solid at absolute zero temperature.</rdfs:comment>
   <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Fermi Energy Temperature', 'Fermi Level Temperature', 'Fermi-Dirac Temperature']</alternative_labels>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FermiTemperature</onto_name>
-</owl:Class>
-
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SolidVolume">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Volume"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solid volume is the amount of space occupied by a solid material. It is a physical quantity that is commonly used in materials science to describe the amount of space that a solid occupies.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Volume of Solid', 'Solid Material Volume', 'Solid Volume Occupancy']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SolidVolume</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Force">
@@ -2204,14 +2215,6 @@
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MeltingPoint</onto_name>
 </owl:Class>
 
-<owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Temperature">
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
-  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IntensiveQuantity"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Melting point is the temperature at which a solid substance changes its state to become a liquid. It is a physical property of a material and is dependent on factors such as pressure and purity.</rdfs:comment>
-  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Fusion point', 'Melting temperature', 'Solidus temperature']</alternative_labels>
-  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature</onto_name>
-</owl:Class>
-
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MembraneVoltage">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricPotential"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Membrane voltage is the electrical potential difference across a membrane, which separates two compartments with different ionic concentrations. It is a key parameter in electrochemical systems, such as fuel cells and batteries, and affects the transport of ions and electrons across the membrane.</rdfs:comment>
@@ -2758,446 +2761,773 @@
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativeLinearStrain">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relative linear strain is a measure of the deformation of a material in response to an applied stress, expressed as the change in length of the material relative to its original length. It is a dimensionless quantity that is commonly used to characterize the mechanical properties of materials.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Linear Strain Ratio', 'Axial Strain', 'Longitudinal Strain', 'Tensile Strain', 'Compressive Strain']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RelativeLinearStrain</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativeMassConcentrationOfVapour">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relative Mass Concentration of Vapor is the ratio of the mass of a vapor to the mass of the mixture of vapor and air in a given volume. It is a thermodynamic quantity used to describe the concentration of a vapor in a gas mixture.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Vapor Concentration Ratio', 'Relative Vapor Mass Concentration', 'Vapor Mass Fraction', 'Vapor Concentration']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RelativeMassConcentrationOfVapour</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativeMassFractionOfVapour">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relative mass fraction of vapor is the ratio of the mass of vapor to the total mass of a mixture of vapor and non-vapor components in a given volume. It is a dimensionless quantity used to describe the composition of a gas mixture and is commonly used in the field of hydrogen technologies to describe the concentration of hydrogen gas in a mixture.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Vapor Mass Fraction', 'Vapor Concentration', 'Relative Vapor Concentration', 'Vapor Mass Ratio', 'Vapor Mass Percentage']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RelativeMassFractionOfVapour</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativePermeability">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectromagneticQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relative permeability is the ratio of the effective permeability of a porous medium (such as a rock or soil) to the permeability of a reference fluid (usually air or water). It is a dimensionless quantity that describes the ability of a fluid to flow through a porous material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Porous Media Permeability Ratio', 'Effective Permeability Ratio', 'Relative Permittivity', 'Permeability Index']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RelativePermeability</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativePermittivity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectromagneticQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relative permittivity, also known as dielectric constant, is a measure of a material's ability to store electrical energy in an electric field. It is the ratio of the permittivity of a substance to the permittivity of free space. It is an important parameter in the design of capacitors, insulators, and other electrical components.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Dielectric Constant', 'Relative Electric Permittivity', 'Relative Electrical Constant', 'Permittivity Ratio', 'Dielectric Permittivity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RelativePermittivity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelativePressureCoefficient">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relative Pressure Coefficient is a dimensionless quantity that describes the change in electrical resistance of a material due to applied pressure. It is used in pressure sensors and transducers to convert mechanical pressure into an electrical signal.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Pressure Sensitivity Coefficient', 'Piezoresistive Coefficient', 'Pressure Coefficient of Resistance', 'Pressure Coefficient of Conductivity', 'Pressure Coefficient of Resistivity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RelativePressureCoefficient</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RelaxationTime">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relaxation time is a characteristic time constant that describes the rate at which a system returns to its equilibrium state after being perturbed. In materials science, relaxation time is often used to describe the behavior of materials under stress or when subjected to an external field, such as an electric or magnetic field.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Characteristic Time Constant', 'Material Relaxation Time', 'Stress Relaxation Time', 'Deformation Relaxation Time', 'Equilibration Time']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RelaxationTime</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ResidualActiveMass">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Residual Active Mass refers to the amount of active material remaining in an electrode after a battery has been discharged. It is an important parameter for evaluating the performance and durability of battery electrodes, as it affects the capacity and cycle life of the battery.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['RAM', 'Active Material Utilization', 'Active Material Retention', 'Active Material Recovery']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResidualActiveMass</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ResidualCapacity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Capacity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Residual capacity is the amount of charge that remains in a battery or capacitor after it has been discharged to a certain level. It is a measure of the battery's or capacitor's ability to hold a charge over time and is an important factor in determining the overall performance and lifespan of the device.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Remaining Capacity', 'End-of-Discharge Capacity', 'Discharge Reserve', 'Capacity Fade']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResidualCapacity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ResidualCurrent">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricCurrent"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Residual current is the small amount of electric current that flows through a circuit even when the circuit is turned off. It can be caused by leakage in the insulation or other faults in the circuit, and can be a safety hazard if it exceeds a certain threshold.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Leakage Current', 'Ground Fault Current', 'Earth Leakage Current', 'Residual Leakage Current']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResidualCurrent</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ResidualResistivity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Residual resistivity is the electrical resistivity of a material at absolute zero temperature. It is a measure of the impurity content and defects in the material, and can affect its electrical conductivity and other properties.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Residual Electrical Resistivity', 'Residual Conductivity', 'Residual Resistance', 'Zero-Temperature Resistivity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResidualResistivity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RestingTime">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Time"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resting time refers to the time interval between two consecutive measurements or operations in an experiment or process. It is a crucial parameter in electrochemical measurements, where it is used to allow the system to reach a steady-state before taking measurements.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Waiting Time', 'Equilibration Time', 'Stabilization Time', 'Settling Time', 'Relaxation Time']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RestingTime</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RichardsonConstant">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Richardson constant is a fundamental physical constant that relates the thermionic emission current density to the temperature and work function of a material. It is named after Owen Willans Richardson, who first proposed the concept in 1901. The constant is used to describe the emission of electrons from a heated metal surface and is an important parameter in the design of vacuum tubes and thermionic energy converters.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">["Richardson's Law Constant", 'Richardson-Dushman Constant', 'Thermionic Emission Constant', "Richardson's Constant", "Richardson's Equation Constant"]</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RichardsonConstant</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RollingResistance">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rolling resistance is the force that opposes the motion of a rolling object on a surface. It is caused by the deformation of the object and the surface it is rolling on. Rolling resistance is an important factor in the design of vehicles and tires, as it affects their energy efficiency and fuel consumption.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Rolling Friction', 'Tire Rolling Resistance', 'Rolling Drag', 'Rolling Energy Loss', 'Rolling Resistance Coefficient']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RollingResistance</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RollingResistanceFactor">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rolling resistance factor is the ratio of the rolling resistance force to the normal force acting on a rolling object. It is a dimensionless quantity that characterizes the energy loss due to deformation of the object and the surface it is rolling on. It is commonly used in the design and optimization of tires and other rolling objects.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Rolling Friction Coefficient', 'Rolling Resistance Coefficient', 'Rolling Resistance Ratio', 'Rolling Drag Coefficient']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RollingResistanceFactor</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RotationalFrequency">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Frequency"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rotational frequency is the number of complete rotations made by an object in one second. It is a measure of the speed of rotation of an object around an axis.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Angular Velocity', 'Rotational Speed', 'Rotational Rate', 'Angular Frequency']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RotationalFrequency</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SecondAxialMomentumOfArea">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Second Axial Momentum of Area is a geometrical property of a cross-sectional area of a beam or a pipe. It is a measure of the resistance of the cross-section to bending and torsion. The second axial momentum of area is used in the calculation of the bending and torsional stiffness of the beam or pipe.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Second Polar Moment of Area', 'Second Moment of Area about the Polar Axis', 'Second Moment of Area about the Z-Axis', 'Torsion Constant', 'J-Value']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SecondAxialMomentumOfArea</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SecondPolarMomentumOfArea">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Second Polar Momentum of Area is a geometrical property of a cross-sectional area of a beam or a shaft. It is defined as the integral of the product of the distance from a reference point to the cross-sectional area and the square of the radius vector with respect to the polar angle. It is used to calculate the torsional stiffness and strength of a beam or a shaft.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Polar Moment of Inertia', 'Polar Moment of Area', 'Second Moment of Area about the Polar Axis', 'Torsional Constant']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SecondPolarMomentumOfArea</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SectionModulus">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Section modulus is a geometric property of a cross-sectional shape of a structural member, defined as the ratio of the moment of inertia to the distance of the farthest point from the neutral axis. It is used to determine the bending stress in a beam or other structural member subjected to bending moments.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Sectional Modulus', 'Sectional Modulus of Elasticity', 'Section Modulus Factor', 'Bending Modulus', 'Sectional Bending Modulus']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SectionModulus</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SeebeckCoefficient">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seebeck coefficient, also known as thermopower, is a measure of the magnitude of an induced thermoelectric voltage in response to a temperature difference across a material. It is a material property that characterizes the ability of a material to convert a temperature difference into an electrical voltage.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thermopower', 'Thermoelectric Power', 'Thermoelectric Sensitivity', 'Seebeck Effect Coefficient', 'Seebeck Constant']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeebeckCoefficient</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ServiceLife">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BatteryQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Service life refers to the length of time a material or device can operate effectively and efficiently under specific conditions before it needs to be replaced or repaired. In hydrogen technologies, service life is an important factor to consider for components such as fuel cells, electrolysers, and hydrogen storage systems.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Lifetime', 'Operational Lifetime', 'Useful Life', 'Durability', 'Longevity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ServiceLife</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ServiceMass">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BatteryQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Service mass is the mass of a material that is used in a device or system over its lifetime. It is an important parameter in the design and optimization of materials for long-term use in various applications.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Lifetime Mass', 'Operating Mass', 'Device Mass', 'System Mass']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ServiceMass</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShearRate">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shear rate is the rate at which adjacent layers of a fluid move in relation to each other, typically expressed in reciprocal seconds (s^-1). It is an important parameter in the study of fluid mechanics and rheology, and is used to describe the deformation and flow behavior of materials under stress.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Rate of Shear', 'Shear Velocity Gradient', 'Shear Deformation Rate', 'Shear Strain Rate', 'Shear Gradient']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ShearRate</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShearStrain">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shear strain is a measure of the deformation of a material when subjected to a shear stress. It is defined as the ratio of the displacement of a plane to its original distance from a fixed plane, perpendicular to the direction of the applied force.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Shear Deformation', 'Shear Stress Strain', 'Shear Strain Rate', 'Shear Strain Ratio']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ShearStrain</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShearStress">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shear stress is the force per unit area that is applied parallel to a surface, resulting in a deformation of the material. It is a measure of the resistance of a material to shear deformation and is commonly used in the study of fluid mechanics and materials science.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Tangential Stress', 'Shearing Stress', 'Frictional Stress']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ShearStress</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShelfLife">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shelf life is the period of time during which a material or product can be stored under specified conditions and still remain suitable for its intended use. In hydrogen technologies, shelf life is an important consideration for materials such as hydrogen storage tanks, fuel cells, and batteries, which may degrade over time if not stored properly.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Storage Life', 'Product Life', 'Expiration Date', 'Use-By Date', 'Best-Before Date']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ShelfLife</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ShortRangeOrderParameter">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Short Range Order Parameter is a measure of the degree of ordering of atoms in a material over short distances. It is used to describe the local structure of amorphous and disordered materials, such as glasses and liquids. The parameter is calculated by analyzing the distribution of interatomic distances in the material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['SRO Parameter', 'Short-Range Order Index', 'Short-Range Order Metric', 'Local Structure Order Parameter']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ShortRangeOrderParameter</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SingleComponentMaximalDiffusity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Single Component Maximal Diffusivity is the maximum diffusion coefficient of a single component in a mixture. It is an important parameter in the design and optimization of separation processes such as distillation, gas absorption, and liquid-liquid extraction.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Maximal Diffusivity of a Single Component', 'Single Component Diffusion Coefficient', 'Single Component Mass Diffusivity', 'Single Component Molecular Diffusivity', 'Single Component Self-Diffusivity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SingleComponentMaximalDiffusity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SingleComponentMaximalDiffusivity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Single Component Maximal Diffusivity is the maximum diffusion coefficient of a single component in a mixture. It is a measure of the rate at which a component can diffuse through a material and is important in the design of hydrogen storage materials and membranes.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Maximal Diffusion Coefficient of a Single Component', 'Single Component Diffusivity Limit', 'Maximal Self-Diffusivity', 'Single Component Transport Coefficient', 'Maximal Single Component Mobility']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SingleComponentMaximalDiffusivity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SolidAngle">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RatioQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solid angle is a measure of the amount of a three-dimensional angle that is subtended by a given two-dimensional shape at a point in space. It is measured in steradians (sr) and is used in various fields, including optics, astronomy, and solid-state physics.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Steradian', 'Spatial Angle', 'Three-Dimensional Angle', 'Solid Angle Measurement']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SolidAngle</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Solubility">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solubility is the maximum amount of a substance (solute) that can dissolve in a given amount of solvent at a specific temperature and pressure. It is an important property in materials science, as it determines the ability of a solute to dissolve in a solvent and form a homogeneous mixture.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Maximum Solubility', 'Solubility Limit', 'Solute Solubility', 'Solvent Capacity', 'Solubility Threshold']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solubility</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpaceAndTimeQuantity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardizedPhysicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Space and Time Quantity is a physical quantity that has both spatial and temporal dimensions. Examples include velocity, acceleration, force, and energy density.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Spacetime Quantity', 'Space-Time Quantity', 'Spatial-Temporal Quantity', 'Space-Time Variable', 'Spatial-Temporal Variable']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpaceAndTimeQuantity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpcificEnergy">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific energy is the amount of energy per unit mass of a material. It is a measure of the energy density of a material and is commonly used in the field of hydrogen technologies to describe the energy content of hydrogen fuel.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Energy Density', 'Fuel Energy Content', 'Hydrogen Energy Density', 'Specific Fuel Energy']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpcificEnergy</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificCapacity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific capacity is a measure of the amount of charge that can be stored in a battery per unit mass or volume of the active material. It is typically expressed in units of Ah/kg or Ah/L. Higher specific capacity indicates that a battery can store more energy per unit mass or volume, which is desirable for many applications.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Capacity Density', 'Gravimetric Capacity', 'Volumetric Capacity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificCapacity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEnergy">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific energy is the amount of energy stored per unit mass of a material. It is a measure of the energy density of a material and is commonly used in the context of batteries and fuel cells.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Energy Density', 'Mass-Specific Energy', 'Energy per Unit Mass', 'Specific Energy Density', 'Energy per Unit Weight']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificEnergy</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEnthalpy">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEnergy"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific enthalpy is the amount of energy per unit mass of a substance, typically measured in joules per kilogram. It is a thermodynamic property that describes the amount of heat absorbed or released by a substance during a process at constant pressure.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Enthalpy per unit mass', 'Heat content per unit mass', 'Specific heat content', 'Heat capacity per unit mass']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificEnthalpy</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEntropy">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific entropy is a thermodynamic quantity that describes the amount of heat energy in a system per unit of mass. It is a measure of the disorder or randomness of a system and is often used to calculate the efficiency of energy conversion processes.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Entropy per unit mass', 'Specific heat entropy', 'Entropy density', 'Specific disorder', 'Specific randomness']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificEntropy</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEpoxyFilledVolume">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificFilledVolume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific Epoxy Filled Volume is the volume fraction of epoxy resin in a composite material. It is a measure of the amount of epoxy resin used to fill the voids between the reinforcing fibers in a composite material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Epoxy Resin Filled Volume Fraction', 'Epoxy Content', 'Epoxy Volume Fraction', 'Epoxy Filled Volume', 'Epoxy Resin Content']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificEpoxyFilledVolume</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificFilledVolume">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific filled volume is the volume fraction of a filler material in a composite material. It is a measure of the amount of filler material in a unit volume of the composite material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Volume Fraction of Filler Material', 'Composite Material Filler Volume Fraction', 'Filled Volume Fraction', 'Volume Fraction of Reinforcement Material']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificFilledVolume</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific volume is the volume of a substance per unit mass. It is the reciprocal of density and is commonly used in thermodynamics to describe the properties of gases and liquids.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Volume Specific', 'Volumetric Specific', 'Specific Volumetric Quantity', 'Specific Volume Property']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificVolume</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificGasConstant">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The specific gas constant is the gas constant per unit mass of a gas mixture. It is a fundamental physical constant that relates the energy of a gas to its temperature and pressure. It is commonly used in thermodynamics and fluid mechanics to calculate the properties of gases.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Gas Constant per Unit Mass', 'Gas Constant per Mass', 'Specific Gas Constant of a Gas Mixture', 'Gas Constant per Unit Weight', 'Gas Constant per Weight']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificGasConstant</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificGibbsEnergy">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEnergy"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific Gibbs Energy is the Gibbs energy per unit mass of a substance. It is a thermodynamic quantity that describes the maximum amount of reversible work that can be done by a system at constant temperature and pressure. It is commonly used in the study of chemical reactions and phase transitions.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Gibbs Free Energy per unit mass', 'Specific Gibbs Free Energy', 'Gibbs Energy Density', 'Gibbs Energy per unit weight', 'Gibbs Energy per unit volume']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificGibbsEnergy</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificHeatCapacityAtSaturatedVaporPressure">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificHeatCapacity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific heat capacity at saturated vapor pressure is the amount of heat required to raise the temperature of a unit mass of a substance by one degree Celsius at its saturated vapor pressure. It is an important thermodynamic property used in the design and analysis of vapor compression systems.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Specific Heat Capacity at Saturation', 'Specific Heat Capacity at Saturation Pressure', 'Specific Heat Capacity at Saturation State', 'Specific Heat Capacity at Saturation Conditions', 'Specific Heat Capacity at Saturation Point']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificHeatCapacityAtSaturatedVaporPressure</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificHelmholtzEnergy">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEnergy"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific Helmholtz Energy is the energy of a thermodynamic system per unit mass that is available for doing useful work at constant temperature and volume. It is a state function and is used to describe the thermodynamic properties of a system.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Helmholtz Free Energy per unit mass', 'Specific Helmholtz Free Energy', 'Helmholtz Energy Density', 'Specific A', 'Helmholtz Energy per unit mass']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificHelmholtzEnergy</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificInternalEnergy">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificEnergy"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific internal energy is the internal energy per unit mass of a substance. It is the sum of the kinetic and potential energies of the molecules in a substance.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Internal Energy per unit mass', 'Specific Internal Energy per unit mass', 'Specific Energy Content', 'Specific Energy Density']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificInternalEnergy</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeCSupport">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific Volume C Support is the volume of the carbon support in a fuel cell per unit mass of the support material. It is an important parameter in the design and optimization of fuel cells, as it affects the overall performance and efficiency of the system.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Carbon Support Specific Volume', 'Specific Volume of Carbon Support Material', 'Catalyst Support Specific Volume', 'Carbon Black Specific Volume', 'Carbon Material Specific Volume']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificVolumeCSupport</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeCatalayst">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific volume of a catalyst refers to the volume occupied by a unit mass of the catalyst material. It is an important parameter in catalysis, as it affects the reaction kinetics and mass transport properties of the catalyst. The specific volume of a catalyst can be measured experimentally or calculated theoretically.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Catalyst Specific Volume', 'Volume Specific Catalyst', 'Catalyst Volume per Unit Mass', 'Catalyst Density', 'Catalyst Porosity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificVolumeCatalayst</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeCatalystLayer">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific volume of the catalyst layer refers to the volume of the catalyst layer per unit mass of the catalyst. It is an important parameter in fuel cell design and performance, as it affects the transport of reactants and products within the cell. A higher specific volume of the catalyst layer can lead to improved mass transport and higher performance.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Catalyst Layer Specific Volume', 'Catalyst Layer Volume Fraction', 'Catalyst Layer Porosity', 'Catalyst Layer Void Fraction']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificVolumeCatalystLayer</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeIonomer">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific volume of an ionomer refers to the volume occupied by a unit mass of the ionomer material. It is an important parameter in the design and optimization of polymer electrolyte membrane fuel cells (PEMFCs) as it affects the transport properties of the ionomer and the overall performance of the fuel cell.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Ionomer Specific Volume', 'Volume per unit mass of Ionomer', 'Ionomer Volumetric Property', 'Ionomer Molar Volume']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificVolumeIonomer</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumePt">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeCatalayst"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific volume Pt is the volume occupied by a unit mass of platinum. It is an important parameter in the design and optimization of platinum-based catalysts used in fuel cells and other electrochemical devices.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Pt-specific volume', 'Platinum-specific volume', 'Pt volume per unit mass', 'Platinum volume per unit mass']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificVolumePt</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeSolid">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific volume of a solid is the volume occupied by a unit mass of the solid material. It is a material property that is dependent on the density and crystal structure of the solid.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Solid Material Specific Volume', 'Solid Material Molar Volume', 'Solid Material Volumetric Mass Density', 'Solid Material Density-Volume Ratio']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificVolumeSolid</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolumeVoid">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificVolume"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific volume void is the volume of the empty space in a material per unit mass. It is the reciprocal of the material's density and is used to calculate the porosity of a material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Void Volume', 'Porosity', 'Void Fraction', 'Empty Space Volume']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificVolumeVoid</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Speed">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed is the rate at which an object moves, usually measured in meters per second (m/s) or kilometers per hour (km/h). In hydrogen technologies, speed is an important parameter for the performance of fuel cell vehicles and hydrogen refueling stations.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Velocity', 'Rate of Motion', 'Speed of Movement', 'Travel Speed', 'Vehicle Speed']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SquareWaveCurrent">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricCurrent"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Square wave current is a type of alternating current waveform that alternates between two fixed voltage levels. It is commonly used in electrochemical experiments to study the kinetics of electrode reactions and to measure the electrochemical properties of materials.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Square Waveform Current', 'Pulse Wave Current', 'Alternating Square Wave Current', 'Square Wave Voltammetry', 'SWV']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SquareWaveCurrent</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardAbsoluteActivity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Activity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard Absolute Activity is a thermodynamic quantity that measures the activity of a substance in a solution or mixture, relative to its pure state at standard conditions (usually 1 atm and 25°C). It is used to calculate the equilibrium constant of a reaction and to determine the thermodynamic properties of solutions.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Standard Activity Coefficient', 'Standard State Activity', 'Standard Activity', 'Absolute Activity', 'Standard Chemical Potential']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StandardAbsoluteActivity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardAbsoluteActivityOfSolvent">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardAbsoluteActivity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard Absolute Activity of Solvent is the thermodynamic measure of the concentration of a pure solvent in a solution, expressed in terms of the activity of the solvent in the solution. It is defined as the ratio of the activity of the solvent in the solution to its activity in the pure state, both at the same temperature and pressure, and with the concentration of the solute being zero.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Solvent Activity Coefficient', 'Solvent Activity', 'Solvent Fugacity Coefficient', 'Solvent Fugacity', 'Solvent Chemical Potential Coefficient']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StandardAbsoluteActivityOfSolvent</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardChemicalPotential">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard Chemical Potential is the change in Gibbs free energy of a chemical substance under standard conditions per mole of substance. It is a measure of the driving force of a chemical reaction and is used to determine the equilibrium constant of a reaction.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Standard Molar Gibbs Energy', 'Standard Gibbs Free Energy Change', 'Standard Chemical Potential Energy', 'Standard Molar Free Energy', 'Standard Gibbs Energy Change']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StandardChemicalPotential</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardElectrodePotential">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#OpenCircuitVoltage"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard electrode potential is the potential difference between a half-cell under standard conditions and a standard hydrogen electrode (SHE) under the same conditions. It is a measure of the tendency of a chemical species to acquire electrons and undergo reduction. The standard electrode potential is used to calculate the electromotive force (EMF) of a cell.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Standard Reduction Potential', 'Standard Oxidation Potential', 'Standard Half-Cell Potential', 'Standard Redox Potential', 'Standard Electrode Potential vs SHE']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StandardElectrodePotential</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StandardEquilibriumConstant">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard Equilibrium Constant is a thermodynamic quantity that describes the ratio of concentrations of reactants and products at equilibrium for a chemical reaction. It is a measure of the extent to which a reaction proceeds towards completion under standard conditions.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Equilibrium Constant', 'Reaction Quotient', 'Equilibrium Constant K', 'Standard Gibbs Free Energy Change', 'Standard Free Energy Change', 'Standard Gibbs Energy Change']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StandardEquilibriumConstant</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StaticFrictionCoefficient">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Static friction coefficient is the ratio of the force required to initiate motion between two surfaces in contact to the normal force pressing the surfaces together. It is a dimensionless quantity that describes the frictional force between two stationary objects.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Coefficient of Static Friction', 'Static Friction Factor', 'Static Friction Ratio', 'Coefficient of Restitution', 'Coefficient of Friction at Rest']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StaticFrictionCoefficient</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StaticFrictionForce">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Static Friction Force is the force that opposes the initiation of motion between two surfaces that are in contact and at rest. It is a function of the normal force acting between the surfaces and the coefficient of static friction, which is a material property.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Static Frictional Force', 'Frictional Force at Rest', 'Force of Static Friction', 'Force Required to Initiate Motion', 'Force Required to Overcome Static Friction']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StaticFrictionForce</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StatisticalWeightOfSubsystem">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Statistical weight of subsystem is the number of ways that a subsystem can be arranged while keeping the total energy of the system constant. It is a measure of the number of microstates that correspond to a given macrostate of the subsystem.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Subsystem Statistical Weight', 'Microstate Count of Subsystem', 'Subsystem Microstate Count']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StatisticalWeightOfSubsystem</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StoichiometricNumberOfSubstance">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stoichiometric number of substance is the number of moles of a substance involved in a chemical reaction, as determined by the coefficients in the balanced chemical equation. It is used to determine the amount of reactants and products in a chemical reaction.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Stoichiometric Coefficient', 'Stoichiometric Number', 'Stoichiometric Ratio', 'Stoichiometric Factor']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StoichiometricNumberOfSubstance</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StorageLife">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#BatteryQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Storage life is the length of time that a material or device can be stored under specified conditions and still remain functional or effective. In hydrogen technologies, it refers to the length of time that a hydrogen storage material can be stored without significant degradation in its hydrogen storage capacity.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Shelf life', 'Storage stability', 'Storage time', 'Storage period', 'Storage duration']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StorageLife</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Strain">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RatioQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strain is a measure of the deformation of a material due to an applied stress. It is defined as the ratio of the change in length or shape of a material to its original length or shape. Strain is an important parameter in the study of mechanical properties of materials.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Deformation', 'Elongation', 'Tensile Strain', 'Compressive Strain', 'Shear Strain']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strain</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Stress">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stress is a measure of the internal forces acting within a material that resist deformation. It is defined as the force per unit area and is typically measured in units of Pascals (Pa) or pounds per square inch (psi). Stress can be caused by external forces, such as applied loads, or internal forces, such as thermal expansion or chemical reactions.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Mechanical Stress', 'Tensile Stress', 'Compressive Stress', 'Shear Stress', 'Thermal Stress']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stress</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#StructureFactor">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structure factor is a measure of the arrangement of atoms or molecules in a crystal lattice. It is a mathematical function that describes the scattering of X-rays or neutrons by the crystal lattice and provides information about the positions and types of atoms in the lattice.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Atomic Scattering Factor', 'Molecular Scattering Factor', 'Crystal Scattering Factor', 'X-ray Scattering Factor', 'Neutron Scattering Factor']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StructureFactor</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SuperConductionTransitionTemperature">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Superconducting transition temperature (Tc) is the temperature below which a material exhibits zero electrical resistance and expulsion of magnetic fields. The transition temperature is material-specific and depends on the chemical composition, crystal structure, and other factors. It is an important parameter for the design and optimization of superconducting materials and devices.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Critical Temperature', 'Superconducting Critical Temperature', 'Tc', 'Superconducting Transition Temperature']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SuperConductionTransitionTemperature</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SuperConductorEnergyGap">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Superconductor Energy Gap is the energy difference between the highest energy level of the Cooper pair and the Fermi level in a superconductor. It is a key parameter that determines the critical temperature and critical magnetic field of a superconductor.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Energy Gap of Superconductors', 'Cooper Pair Energy Gap', 'Superconducting Energy Gap', 'Energy Gap in Superconductivity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SuperConductorEnergyGap</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SurfaceCoefficientOfHeatTransfer">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Surface Coefficient of Heat Transfer is the amount of heat transferred per unit area per unit time per unit temperature difference between the surface and the surrounding fluid. It is a measure of the ability of a fluid to transfer heat to a surface by convection.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Heat Transfer Coefficient', 'Convective Heat Transfer Coefficient', 'Surface Heat Transfer Coefficient', 'Film Coefficient', 'Convection Coefficient']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SurfaceCoefficientOfHeatTransfer</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SurfaceMassDensity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Surface mass density is the amount of mass per unit area of a surface. It is commonly used in materials science to describe the mass of a coating or thin film on a substrate.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Surface Density', 'Surface Mass per Area', 'Surface Weight Density', 'Surface Mass Concentration']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SurfaceMassDensity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SurfaceOverpotential">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Overpotential"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Surface overpotential is the difference between the electrode potential and the thermodynamic potential of the electrochemical reaction at the electrode surface. It is a measure of the driving force for the electrochemical reaction to occur and is influenced by factors such as the electrode material, the electrolyte composition, and the reaction kinetics.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Electrode Overpotential', 'Activation Overpotential', 'Polarization Overpotential', 'Overvoltage', 'Surface Polarization']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SurfaceOverpotential</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SurfaceTension">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Surface tension is the force that causes the surface of a liquid to contract and form a shape that minimizes its surface area. It is a property of the liquid and is caused by the cohesive forces between the liquid molecules.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Liquid Surface Tension', 'Interfacial Tension', 'Surface Free Energy', 'Surface Stress']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SurfaceTension</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TeamperatureCoefficientOfTheCapacity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature Coefficient of the Capacity (TCC) is a measure of the change in the capacity of a battery with temperature. It is defined as the percentage change in capacity per degree Celsius change in temperature. A negative TCC indicates a decrease in capacity with increasing temperature, while a positive TCC indicates an increase in capacity with increasing temperature.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Battery Capacity Temperature Coefficient', 'Temperature Sensitivity of Battery Capacity', 'Capacity-Temperature Slope', 'TCC', 'Battery Capacity-Temperature Coefficient']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TeamperatureCoefficientOfTheCapacity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TemperatureCoefficientOfTheOpenCircuitVolatage">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature Coefficient of the Open Circuit Voltage (TCOCV) is the rate of change of the open circuit voltage of a battery with respect to temperature. It is a measure of the sensitivity of the battery voltage to temperature changes. A negative TCOCV indicates that the battery voltage decreases with increasing temperature, while a positive TCOCV indicates that the battery voltage increases with increasing temperature.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Temperature Coefficient of Battery Voltage', 'TCBV', 'Temperature Sensitivity of Battery Voltage', 'Temperature Dependence of Battery Voltage']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TemperatureCoefficientOfTheOpenCircuitVolatage</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TheoreticalCapacity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Capacity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Theoretical Capacity is the maximum amount of charge that can be stored in a battery or electrode material based on its chemical composition. It is calculated by multiplying the number of electrons involved in the redox reaction by the Faraday constant and the stoichiometric coefficient of the active material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Maximum Charge Capacity', 'Theoretical Charge Storage Capacity', 'Theoretical Energy Capacity', 'Theoretical Specific Capacity', 'Maximum Charge Density']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheoreticalCapacity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TheoreticalSpecificCapacity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#SpecificCapacity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theoretical Specific Capacity is the maximum amount of charge that can be stored in a battery per unit mass of active material in the electrode. It is calculated based on the theoretical number of electrons that can be transferred during the redox reaction of the active material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Theoretical Specific Charge', 'Theoretical Capacity per unit mass', 'Theoretical Electrode Capacity', 'Theoretical Lithium-ion Capacity', 'Theoretical Specific Energy']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheoreticalSpecificCapacity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalConductance">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermal Conductance is the measure of the rate at which heat flows through a material under steady-state conditions. It is the ratio of the heat flux (amount of heat transferred per unit time) to the temperature gradient (change in temperature per unit length) across the material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thermal Conductivity', 'Heat Conductance', 'Thermal Resistance', 'Thermal Transmission', 'Thermal Diffusivity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermalConductance</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalConductivity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermal conductivity is the property of a material that describes its ability to conduct heat. It is the amount of heat that flows through a unit area of a material per unit time, per unit temperature difference. It is an important property for materials used in hydrogen technologies, as it affects the efficiency of heat transfer in fuel cells and other devices.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thermal Conductance', 'Thermal Conductivity Coefficient', 'Thermal Diffusivity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermalConductivity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalDiffusionFactor">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermal diffusion factor is a measure of the rate at which heat is transferred through a gas mixture due to the difference in the diffusion rates of its components. It is a dimensionless quantity that depends on the thermal conductivity, viscosity, and molecular weight of the gas mixture.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thermal Diffusivity Factor', 'Thermal Diffusion Coefficient', 'Thermal Conductivity Ratio', 'Lewis Number']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermalDiffusionFactor</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalDiffusionRatio">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermal diffusion ratio is the ratio of the thermal diffusivity of a mixture to that of its individual components. It is a dimensionless quantity that describes the relative rates of heat transfer by conduction and diffusion in a mixture.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thermal Diffusivity Ratio', 'Thermal Conductivity Ratio', 'Diffusion Ratio']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermalDiffusionRatio</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalDifusity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermal diffusivity is a measure of the ability of a material to conduct heat relative to its ability to store heat. It is defined as the ratio of thermal conductivity to volumetric heat capacity and has units of m²/s. It is an important parameter in the design of materials for thermal management applications.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thermal Diffusivity', 'Thermal Conductivity Ratio', 'Thermal Conductivity to Heat Capacity Ratio']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermalDifusity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalInsulance">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermal insulance is the measure of a material's ability to resist heat flow. It is the reciprocal of thermal conductivity and is expressed in units of m²K/W. Materials with high thermal insulance are good insulators and are used in applications where heat transfer needs to be minimized.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thermal Resistance', 'Thermal Insulation', 'Heat Insulation', 'Thermal Barrier', 'Thermal Impedance']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermalInsulance</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermalResistance">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermal resistance is the measure of a material's ability to resist the flow of heat. It is the ratio of the temperature difference across a material to the heat flux through the material. It is an important property in designing thermal management systems for hydrogen technologies.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Heat Resistance', 'Thermal Impedance', 'Thermal Barrier', 'Thermal Insulation']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermalResistance</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermoElectricVoltage">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermoelectric voltage is the voltage generated by a temperature difference between two different conductive materials. It is a measure of the thermoelectric effect, which is the conversion of temperature differences into electric voltage or current. Thermoelectric voltage is used in thermoelectric generators and thermocouples.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Seebeck Voltage', 'Thermoelectric EMF', 'Thermoelectric Potential Difference', 'Seebeck Coefficient']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermoElectricVoltage</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicCriticalMagneticFluxDensity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermodynamic Critical Magnetic Flux Density is the maximum magnetic flux density that a superconductor can withstand before losing its superconductivity. It is a key parameter for the design and operation of superconducting devices, such as magnets and power transmission lines.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Critical Magnetic Field', 'Critical Magnetic Flux Density', 'Upper Critical Field', 'Thermodynamic Critical Field', 'Critical Magnetic Induction']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermodynamicCriticalMagneticFluxDensity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicEffiency">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermodynamic Efficiency is the ratio of the work output of a system to the heat input. It is a measure of how effectively a system converts heat energy into useful work, and is often expressed as a percentage.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Efficiency', 'Thermal Efficiency', 'Energy Conversion Efficiency', 'Heat-to-Work Conversion Efficiency']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermodynamicEffiency</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicGruenEisenParameter">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The thermodynamic Gruen-Eisen parameter is a measure of the hydrogen embrittlement susceptibility of metals. It is defined as the difference between the hydrogen-free and hydrogen-containing Gibbs free energy of a metal, divided by the hydrogen concentration. A higher Gruen-Eisen parameter indicates a higher susceptibility to hydrogen embrittlement.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Gruen-Eisen Parameter', 'Hydrogen Embrittlement Susceptibility Parameter', 'Hydrogen-Induced Cracking Parameter', 'Hydrogen-Induced Embrittlement Parameter']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermodynamicGruenEisenParameter</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicTemperature">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ISQBaseQuantity"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#IntensiveQuantity"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermodynamic temperature is an absolute measure of temperature and is one of the seven base SI units. It is defined as the measure of the average kinetic energy of the particles in a system, and is measured in Kelvin (K).</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Absolute Temperature', 'Kelvin Temperature', 'Thermodynamic Scale', 'Thermodynamic Absolute Temperature', 'Thermodynamic Temperature Scale']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThermodynamicTemperature</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Thickness">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Length"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thickness is a physical quantity that measures the distance between two parallel surfaces of an object. It is an important parameter in materials science, as it can affect the mechanical, electrical, and optical properties of a material.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Depth', 'Width', 'Cross-sectional dimension', 'Thickness dimension', 'Thickness measurement']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thickness</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThomsonCoefficient">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thomson coefficient is a measure of the change in temperature of a material when a current is passed through it. It is the ratio of the change in temperature to the change in electrical potential across the material. It is used to characterize the thermoelectric properties of materials.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Thomson Effect Coefficient', 'Thomson Coefficient of Heat', 'Thomson Heat Coefficient', 'Thomson Coefficient of Thermoelectricity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThomsonCoefficient</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Torque">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Torque is a measure of the twisting force that causes rotation. It is a vector quantity that is defined as the cross product of the force vector and the distance vector from the axis of rotation to the point of application of the force. In materials science, torque is often used to describe the mechanical properties of materials, such as their stiffness and strength.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Twisting Force', 'Rotational Force', 'Moment of Force', 'Angular Force', 'Torque Vector']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Torque</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Tortuosity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#RatioQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tortuosity is a measure of the degree of tortuousness or winding of a pathway, such as a porous medium or a membrane. It is defined as the ratio of the actual length of the pathway to the straight-line distance between the two endpoints. In hydrogen technologies, tortuosity is an important parameter for characterizing the transport properties of porous electrodes and membranes.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Tortuosity Factor', 'Tortuosity Coefficient', 'Tortuosity Index', 'Porosity Tortuosity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tortuosity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#TransportNumber">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#PhysioChemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transport number is a dimensionless quantity that describes the fraction of the total current carried by a particular ion in an electrolyte solution. It is used to characterize the ionic conductivity of electrolytes and is an important parameter in electrochemical systems such as batteries and fuel cells.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Ionic Transport Number', 'Ionic Conductivity Fraction', 'Transport Fraction', 'Ionic Mobility Ratio', 'Charge Fraction']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TransportNumber</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#UpperCriticalMagneticFluxDensity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Upper critical magnetic flux density is the maximum magnetic flux density that a superconductor can withstand before it loses its superconductivity. It is a critical parameter for the design and operation of superconducting devices.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Upper Critical Field', 'Upper Critical Magnetic Field', 'Upper Critical Induction', 'Upper Critical Flux Density']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UpperCriticalMagneticFluxDensity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VacuumElectricPermitivity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Permittivity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vacuum electric permitivity is a physical constant that represents the ability of a vacuum to permit electric fields. It is also known as the electric constant and is denoted by the symbol ε0. It has a value of approximately 8.85 x 10^-12 F/m and is used in the calculation of Coulomb's law and other electrostatic phenomena.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Electric Constant', 'Permittivity of Free Space', 'Vacuum Permittivity', 'ε0']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VacuumElectricPermitivity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VacuumMagneticPermeability">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Permeability"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vacuum Magnetic Permeability is a physical constant that describes the ability of a vacuum to support the formation of a magnetic field. It is represented by the symbol μ0 and has a value of approximately 4π x 10^-7 H/m.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Magnetic Constant', 'Permeability of Free Space', 'Magnetic Permeability of Vacuum', 'μ0']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VacuumMagneticPermeability</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Velocity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velocity is a physical quantity that describes the rate of change of an object's position with respect to time. It is a vector quantity, meaning it has both magnitude and direction. In hydrogen technologies, velocity is important in the context of fluid flow, such as in fuel cell reactant gases or hydrogen storage systems.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Speed', 'Flow Velocity', 'Fluid Velocity', 'Gas Velocity']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velocity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Vergence">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vergence is a measure of the angle between two rays of light entering the eye. It is used in optics to describe the focusing power of lenses and mirrors, and is important in the design of optical systems.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Optical Vergence', 'Angle of Convergence', 'Angle of Divergence', 'Optical Power', 'Focusing Power']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vergence</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VoidVolumeFraction">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VolumeFraction"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Void Volume Fraction is the ratio of the volume of voids (empty spaces) to the total volume of a material. It is a measure of the porosity of a material and is commonly used in the study of fuel cells and batteries to characterize the amount of empty space within the electrode or electrolyte.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Porosity', 'Void Fraction', 'Void Ratio', 'Porosity Fraction', 'Porosity Volume Fraction']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VoidVolumeFraction</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Voltage">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectricPotential"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Voltage is the electric potential difference between two points in an electric circuit, measured in volts (V). It is a measure of the electric potential energy per unit charge that is available to move electrons from one point to another.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Electric Potential Difference', 'Electrical Voltage', 'Potential Drop', 'Electromotive Force', 'Electric Tension']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Voltage</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VolumeFlowRate">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#DerivedQuantity"/>
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#MechanicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Volume flow rate is the amount of fluid that passes through a given cross-sectional area per unit time. It is commonly used in fluid dynamics and is measured in units of volume per unit time, such as cubic meters per second (m³/s) or liters per minute (L/min).</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Volumetric Flow Rate', 'Flow Rate', 'Volume Velocity', 'Volume Rate of Flow']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VolumeFlowRate</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#VolumetricCapacity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Volumetric capacity is the amount of charge that can be stored per unit volume of a battery or electrode material. It is a measure of the energy density of the material and is typically expressed in units of Ah/cm3 or mAh/cm3.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Capacity Density', 'Volumetric Energy Density', 'Specific Capacity', 'Ah/cm3', 'mAh/cm3']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VolumetricCapacity</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Wavelength">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Length"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wavelength is the distance between two consecutive peaks or troughs of a wave. It is commonly used to describe electromagnetic radiation, such as light, and is measured in units of length, such as meters or nanometers.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Wave Length', 'Electromagnetic Wavelength', 'Light Wavelength', 'Radiation Wavelength']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wavelength</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Weight">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Force"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weight is the force exerted on an object due to gravity. It is a measure of the mass of an object and is commonly measured in units of kilograms or pounds.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Gravitational Force', 'Mass', 'Weight Force']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weight</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Width">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Length"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Width is the measurement of the distance from one side of an object to the other side perpendicular to the length. It is an important parameter in materials science, especially in the characterization of thin films and nanomaterials.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Breadth', 'Thickness', 'Diameter', 'Cross-sectional dimension']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Width</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Work">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#Energy"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Work is the energy transferred when a force is applied over a distance. It is a scalar quantity and is measured in joules. In hydrogen technologies, work is often used to describe the energy required to compress or expand hydrogen gas, or the energy produced by a fuel cell or battery.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Energy Work', 'Mechanical Work', 'Hydrogen Compression Work', 'Fuel Cell Work', 'Battery Work']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Work</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#WorkFunction">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#CondensedMatterPhysicsQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Work function is the minimum energy required to remove an electron from a solid surface to a point immediately outside the surface. It is an important parameter in determining the electronic properties of materials, such as their conductivity and photoemission behavior.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Surface Work Function', 'Electron Work Function', 'Ionization Potential', 'Contact Potential', 'Fermi Level']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkFunction</onto_name>
 </owl:Class>
 
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#WorkingPotentialRange">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ElectrochemicalQuantity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Working Potential Range is the range of potentials at which an electrochemical system can operate without causing any irreversible reactions. It is an important parameter for the design and optimization of electrochemical devices such as batteries, fuel cells, and electrochemical sensors.</rdfs:comment>
+  <alternative_labels rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Operating Potential Window', 'Safe Potential Range', 'Potential Stability Window', 'Electrochemical Stability Window']</alternative_labels>
+  <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkingPotentialRange</onto_name>
 </owl:Class>
 
 <owl:AllDisjointClasses>
