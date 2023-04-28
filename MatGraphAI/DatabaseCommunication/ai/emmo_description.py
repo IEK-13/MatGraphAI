@@ -9,18 +9,23 @@ from owlready2 import *
 from DatabaseCommunication.ai.setupMessages import ONTOLOGY_ASSISTANT_MESSAGES
 
 def convert_alternative_labels(onto):
-    onto = os.path.join("../../Ontology/", onto)
-    ontology = get_ontology(onto).load()
+    onto_path = os.path.join("../../Ontology/", onto)
+    ontology = get_ontology(onto_path).load()
+
     # Define the new alternative_label property
     with ontology:
         class alternative_label(DataProperty, FunctionalProperty):
             domain = [Thing]
             range = [str]
 
+        class is_alternative_label(ObjectProperty):
+            domain = [Thing]
+            range = [Thing]
+
     # Iterate over all classes in the ontology
     for cls in ontology.classes():
         # If the class has the 'alternative_labels' property
-        if cls.alternative_labels:
+        if hasattr(cls, 'alternative_labels') and cls.alternative_labels:
             # Retrieve the alternative_labels value, parse it, and remove the property
             alt_labels_str = cls.alternative_labels
             cls.alternative_labels = None
@@ -30,10 +35,17 @@ def convert_alternative_labels(onto):
 
             # Set the new alternative_label property for each label in the list
             for label in alt_labels_list:
-                new_alt_label = alternative_label(label)
-                cls.alternative_label.append(new_alt_label)
+                # Create a new class for each alternative label
+                new_alt_label_class_name = label.replace(' ', '_')
+                new_alt_label_class = ontology.create_class(iri=ontology.base_iri + new_alt_label_class_name)
 
-    ontology.save(onto)
+                # Set the new alternative_label property for the new class
+                new_alt_label_class.alternative_label.append(label)
+
+                # Connect the original class with the new alternative_label class using is_alternative_label property
+                cls.is_alternative_label.append(new_alt_label_class)
+
+    ontology.save(onto_path)
 
 
 
