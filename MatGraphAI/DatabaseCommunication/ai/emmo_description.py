@@ -13,48 +13,39 @@ import os
 
 
 def convert_alternative_labels(onto):
-    onto_path = os.path.join("../../Ontology/", onto)
-    ontology = get_ontology(onto_path).load()
+    onto_path = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/", onto)
+    onto_path_alt = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/alt_list", onto)
+    ontology = get_ontology(onto_path_alt).load()
 
     # Define the new alternative_label property
+    # Define the new alternative_label property
     with ontology:
-        class alternative_label(DataProperty, FunctionalProperty):
+        class alternative_label(AnnotationProperty):
+            domain = [Thing]
             range = [str]
 
-    # Define the is_alternative_label property
-    is_alternative_label = ObjectProperty()
+        # Iterate over all classes in the ontology
+        for cls in ontology.classes():
+            # If the class has the 'alternative_labels' property
+            if hasattr(cls, 'alternative_labels') and cls.alternative_labels:
+                # Retrieve the alternative_labels value, parse it, and remove the property
+                alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
+                cls.alternative_labels = []
+                for label in alt_labels:
+                    cls.alternative_label.append(label.strip())  # Make sure to use the newly defined property
+                    print(label)
+                print(cls.alternative_label)  # Use the new property name
 
-    # Iterate over all classes in the ontology
-    for cls in ontology.classes():
-        # If the class has the 'alternative_labels' property
-        if hasattr(cls, 'alternative_labels') and cls.alternative_labels:
-            # Retrieve the alternative_labels value, parse it, and remove the property
-            alt_labels_str = cls.alternative_labels
-            cls.alternative_labels = None
+        print(onto_path)
+        ontology.save(onto_path)
 
-            # Parse the alternative_labels string into a list
-            alt_labels_list = list(alt_labels_str)
-
-            # Set the new alternative_label property for each label in the list
-            for label in alt_labels_list:
-                # Create a new class for each alternative label
-                new_alt_label_class_name = label.replace(' ', '_')
-                new_alt_label_class = ontology.create_class(iri=ontology.base_iri + new_alt_label_class_name)
-
-                # Set the new alternative_label property for the new class
-                new_alt_label_class.alternative_label.append(label)
-
-                # Connect the original class with the new alternative_label class using is_alternative_label property
-                cls.is_alternative_label.append(new_alt_label_class)
-
-    ontology.save(onto_path)
 
 
 
 
 
 class OntologyManager:
-    def __init__(self, api_key, ontology_folder = "../../Ontology/safe"):
+    def __init__(self, api_key, ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/"):
         self.api_key = api_key
         self.ontology_folder = ontology_folder
 
@@ -102,7 +93,7 @@ class OntologyManager:
         ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]
 
         for ontology_file in ontologies:
-            # self.update_ontology(ontology_file)
+            self.update_ontology(ontology_file)
             convert_alternative_labels(ontology_file)
 
 
