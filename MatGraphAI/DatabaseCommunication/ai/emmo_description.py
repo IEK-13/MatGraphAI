@@ -8,6 +8,34 @@ from dotenv import load_dotenv
 from owlready2 import *
 from DatabaseCommunication.ai.setupMessages import ONTOLOGY_ASSISTANT_MESSAGES
 
+def convert_alternative_labels(onto):
+    onto = os.path.join("../../Ontology/", onto)
+    ontology = get_ontology(onto).load()
+    # Define the new alternative_label property
+    with ontology:
+        class alternative_label(DataProperty, FunctionalProperty):
+            domain = [Thing]
+            range = [str]
+
+    # Iterate over all classes in the ontology
+    for cls in ontology.classes():
+        # If the class has the 'alternative_labels' property
+        if cls.alternative_labels:
+            # Retrieve the alternative_labels value, parse it, and remove the property
+            alt_labels_str = cls.alternative_labels
+            cls.alternative_labels = None
+
+            # Parse the alternative_labels string into a list
+            alt_labels_list = list(alt_labels_str)
+
+            # Set the new alternative_label property for each label in the list
+            for label in alt_labels_list:
+                new_alt_label = alternative_label(label)
+                cls.alternative_label.append(new_alt_label)
+
+    ontology.save(onto)
+
+
 
 class OntologyManager:
     def __init__(self, api_key, ontology_folder = "../../Ontology/safe"):
@@ -58,7 +86,9 @@ class OntologyManager:
         ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]
 
         for ontology_file in ontologies:
-            self.update_ontology(ontology_file)
+            # self.update_ontology(ontology_file)
+            convert_alternative_labels(ontology_file)
+
 
 
 def main():
