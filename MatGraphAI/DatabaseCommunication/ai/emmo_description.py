@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 from owlready2 import *
 from DatabaseCommunication.ai.setupMessages import ONTOLOGY_ASSISTANT_MESSAGES
 
+from owlready2 import get_ontology, DataProperty, FunctionalProperty, ObjectProperty, Thing
+import os
+
 def convert_alternative_labels(onto):
     onto_path = os.path.join("../../Ontology/", onto)
     ontology = get_ontology(onto_path).load()
@@ -29,7 +32,7 @@ def convert_alternative_labels(onto):
             cls.alternative_labels = None
 
             # Parse the alternative_labels string into a list
-            alt_labels_list = list(alt_labels_str)
+            alt_labels_list = eval(alt_labels_str)
 
             # Set the new alternative_label property for each label in the list
             for label in alt_labels_list:
@@ -41,9 +44,10 @@ def convert_alternative_labels(onto):
                 new_alt_label_class.alternative_label.append(label)
 
                 # Connect the original class with the new alternative_label class using is_alternative_label property
-                cls.is_alternative_label.new_alt_label_class
+                cls.is_alternative_label.append(new_alt_label_class)
 
     ontology.save(onto_path)
+
 
 
 

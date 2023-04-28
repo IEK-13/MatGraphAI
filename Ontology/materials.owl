@@ -33,6 +33,12 @@
   <rdfs:comment>Carbon black is a form of amorphous carbon, consisting of fine particles produced by the incomplete combustion of hydrocarbons. It is used as a conductive additive in lithium-ion batteries, fuel cells, and supercapacitors, due to its high surface area, electrical conductivity, and electrochemical stability.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#Material">
+  <rdfs:subClassOf rdf:resource="#Matter"/>
+  <onto_name>Material</onto_name>
+  <rdfs:comment>A material is any substance that has a defined chemical composition and physical properties. In the context of hydrogen technologies, materials are used in various applications such as fuel cells, electrolyzers, and hydrogen storage. Examples of materials used in these applications include metals, ceramics, polymers, and composites.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#Acid">
   <rdfs:subClassOf rdf:resource="#ChemicalSubstance"/>
   <onto_name>Acid</onto_name>
@@ -46,6 +52,19 @@
   <rdfs:comment>A Chemical Substance is any material with a definite chemical composition. It can be a pure substance or a mixture of substances. In hydrogen technologies, chemical substances are used as reactants, catalysts, and electrolytes in various electrochemical processes, such as fuel cells, electrolyzers, and batteries.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#ChemicalEntity">
+  <rdfs:subClassOf rdf:resource="#Matter"/>
+  <owl:disjointWith rdf:resource="#Material"/>
+  <onto_name>ChemicalEntity</onto_name>
+  <rdfs:comment>A chemical entity is any substance or compound that has a distinct molecular composition and is capable of undergoing a chemical reaction. It can be a pure substance or a mixture of substances, and can be either organic or inorganic.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#MolecularEntity">
+  <rdfs:subClassOf rdf:resource="#ChemicalEntity"/>
+  <onto_name>MolecularEntity</onto_name>
+  <rdfs:comment>A Molecular Entity is an electrically neutral group of two or more atoms held together by chemical bonds. It can be a molecule, an ion, or a radical. Molecular entities are the building blocks of all chemical substances and play a crucial role in materials science and hydrogen technologies.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#AcidicElectrolyte">
   <rdfs:subClassOf rdf:resource="#AqueousElectrloyte"/>
   <onto_name>AcidicElectrolyte</onto_name>
@@ -56,6 +75,13 @@
   <rdfs:subClassOf rdf:resource="#ElectrlyteSolution"/>
   <onto_name>AqueousElectrloyte</onto_name>
   <rdfs:comment>An Aqueous Electrolyte is an electrolyte solution composed of water and dissolved salts or acids. It is commonly used in electrochemical devices such as batteries, fuel cells, and supercapacitors, due to its high ionic conductivity and low cost.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ElectrlyteSolution">
+  <rdfs:subClassOf rdf:resource="#LiquidElectrolyte"/>
+  <owl:disjointWith rdf:resource="#IonicLiquidElectrolyte"/>
+  <onto_name>ElectrlyteSolution</onto_name>
+  <rdfs:comment>An electrolyte solution is a liquid or gel that contains ions and can conduct electricity. It is used in batteries, fuel cells, and other electrochemical devices to facilitate the movement of ions between the electrodes and maintain charge balance.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Actinium">
@@ -82,6 +108,12 @@
   <rdfs:comment>An electrochemical material is a substance that can undergo electrochemical reactions, such as oxidation and reduction, in an electrochemical cell. These materials are used in batteries, fuel cells, and other electrochemical devices to store and convert energy.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#FunctionalMaterial">
+  <rdfs:subClassOf rdf:resource="#Material"/>
+  <onto_name>FunctionalMaterial</onto_name>
+  <rdfs:comment>A functional material is a material that has specific properties or functions that make it useful for a particular application. These materials are designed to have specific physical, chemical, or biological properties that can be tailored to meet the needs of a particular application. Examples of functional materials include catalysts, semiconductors, superconductors, and biomaterials.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#Aerosol">
   <rdfs:subClassOf rdf:resource="#Colloid"/>
   <rdfs:subClassOf rdf:resource="#GasMixture"/>
@@ -104,6 +136,38 @@
   <rdfs:comment>A gas mixture is a combination of two or more gases in a container, where the gases are not chemically combined. Gas mixtures are commonly used in hydrogen technologies, such as fuel cells, for various applications, including fuel storage, gas purification, and gas separation.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#Dispersion">
+  <rdfs:subClassOf rdf:resource="#Mixture"/>
+  <onto_name>Dispersion</onto_name>
+  <rdfs:comment>A dispersion is a mixture of two or more substances that do not dissolve in each other. The dispersed phase is made up of small particles that are suspended in the continuous phase. In materials science, dispersions are used to create composite materials with unique properties.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#PhaseHeterogeneousMixture">
+  <rdfs:subClassOf rdf:resource="#Mixture"/>
+  <onto_name>PhaseHeterogeneousMixture</onto_name>
+  <rdfs:comment>A Phase Heterogeneous Mixture is a mixture of two or more substances that are not uniformly distributed and can be distinguished by their physical properties, such as color, density, or refractive index. Examples include suspensions, emulsions, and foams.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Suspension">
+  <rdfs:subClassOf rdf:resource="#Mixture"/>
+  <rdfs:subClassOf rdf:resource="#PhaseHeterogeneousMixture"/>
+  <rdfs:subClassOf rdf:resource="#StateOfMatter"/>
+  <onto_name>Suspension</onto_name>
+  <rdfs:comment>A suspension is a type of heterogeneous mixture in which solid particles are dispersed in a liquid medium. The solid particles are usually insoluble in the liquid and will settle over time if left undisturbed. Suspensions are commonly used in various industrial applications, such as in the production of paints, pigments, and pharmaceuticals.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Gas">
+  <rdfs:subClassOf rdf:resource="#Fluid"/>
+  <onto_name>Gas</onto_name>
+  <rdfs:comment>A gas is a state of matter that has no fixed shape or volume and expands to fill any available space. Gases are composed of molecules or atoms that are in constant random motion and have weak intermolecular forces.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Mixture">
+  <rdfs:subClassOf rdf:resource="#Continuum"/>
+  <onto_name>Mixture</onto_name>
+  <rdfs:comment>A mixture is a combination of two or more substances that are not chemically bonded and can be separated by physical means. Mixtures can be homogeneous or heterogeneous and can exist in any state of matter.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#Air">
   <rdfs:subClassOf rdf:resource="#SolidSolution"/>
   <onto_name>Air</onto_name>
@@ -117,6 +181,21 @@
   <rdfs:comment>A solid solution is a solid-state mixture of two or more substances that combine to form a single crystalline phase. In solid solutions, the atoms of the different components are randomly distributed throughout the crystal lattice, resulting in a homogeneous material with unique properties.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#SolidMixture">
+  <rdfs:subClassOf rdf:resource="#Mixture"/>
+  <rdfs:subClassOf rdf:resource="#Solid"/>
+  <onto_name>SolidMixture</onto_name>
+  <rdfs:comment>A Solid Mixture is a combination of two or more solid materials that are physically mixed together, but not chemically bonded. Solid mixtures can be homogeneous or heterogeneous and are commonly used in materials science for tailoring properties such as strength, conductivity, and thermal stability.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Solution">
+  <rdfs:subClassOf rdf:resource="#Mixture"/>
+  <rdfs:subClassOf rdf:resource="#PhaseHomogeneousMixture"/>
+  <rdfs:subClassOf rdf:resource="#StateOfAggregation"/>
+  <onto_name>Solution</onto_name>
+  <rdfs:comment>An electrolyte is a substance that produces ions when dissolved in a solvent, typically a liquid. Electrolytes are used in electrochemical cells to facilitate the movement of ions between the anode and cathode, allowing for the flow of electrical current.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#Alcohol">
   <rdfs:subClassOf rdf:resource="#AmphiphilSolvent"/>
   <onto_name>Alcohol</onto_name>
@@ -127,6 +206,12 @@
   <rdfs:subClassOf rdf:resource="#Solvent"/>
   <onto_name>AmphiphilSolvent</onto_name>
   <rdfs:comment>An amphiphilic solvent is a solvent that contains both hydrophilic (water-loving) and hydrophobic (water-fearing) regions in its molecular structure. These solvents are commonly used in materials science and electrochemistry as they can dissolve both polar and nonpolar substances. Examples of amphiphilic solvents include water-miscible organic solvents like ethanol and methanol.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Solvent">
+  <rdfs:subClassOf rdf:resource="#ChemicalSubstance"/>
+  <onto_name>Solvent</onto_name>
+  <rdfs:comment>A solvent is a substance that dissolves a solute to form a solution. In hydrogen technologies, solvents are used in various processes such as electrolyte preparation, catalyst synthesis, and fuel cell fabrication. Common solvents include water, alcohols, and organic solvents such as dimethyl sulfoxide (DMSO) and N-methyl-2-pyrrolidone (NMP).</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#AlicyclicHeterocylclicOrganicMolecules">
@@ -149,17 +234,24 @@
   <rdfs:comment>Aromatic heterocyclic organic molecules are organic compounds that contain a ring structure made up of carbon atoms and at least one heteroatom (such as nitrogen, oxygen, or sulfur) in the ring. These molecules have unique electronic properties that make them useful in a variety of applications, including as dyes, pharmaceuticals, and organic semiconductors.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#AlicyclicHomocylclicOrganicMolecules">
-  <rdfs:subClassOf rdf:resource="#HomocyclicOrganicMolecules"/>
-  <owl:disjointWith rdf:resource="#AromaticAlicyclicOrganicMolecules"/>
-  <onto_name>AlicyclicHomocylclicOrganicMolecules</onto_name>
-  <rdfs:comment>Alicyclic homocyclic organic molecules are cyclic organic compounds that contain only carbon atoms in the ring structure. They are characterized by having a closed ring of atoms with no double or triple bonds and are commonly used as solvents, monomers, and intermediates in organic synthesis.</rdfs:comment>
+<owl:Class rdf:about="#CyclicOrganicMolecules">
+  <rdfs:subClassOf rdf:resource="#OrganicMolceule"/>
+  <owl:disjointWith rdf:resource="#OpenChainOrganicMolecules"/>
+  <onto_name>CyclicOrganicMolecules</onto_name>
+  <rdfs:comment>Cyclic organic molecules are organic compounds that contain one or more closed rings of atoms in their structure. They have a wide range of applications in materials science, including as building blocks for polymers, pharmaceuticals, and agrochemicals.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#HomocyclicOrganicMolecules">
   <rdfs:subClassOf rdf:resource="#CyclicOrganicMolecules"/>
   <onto_name>HomocyclicOrganicMolecules</onto_name>
   <rdfs:comment>Homocyclic Organic Molecules are organic compounds that contain only carbon atoms in their rings. These molecules are also known as carbocyclic compounds and are classified based on the number of carbon atoms in their rings. They have various applications in organic synthesis, pharmaceuticals, and materials science.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#AlicyclicHomocylclicOrganicMolecules">
+  <rdfs:subClassOf rdf:resource="#HomocyclicOrganicMolecules"/>
+  <owl:disjointWith rdf:resource="#AromaticAlicyclicOrganicMolecules"/>
+  <onto_name>AlicyclicHomocylclicOrganicMolecules</onto_name>
+  <rdfs:comment>Alicyclic homocyclic organic molecules are cyclic organic compounds that contain only carbon atoms in the ring structure. They are characterized by having a closed ring of atoms with no double or triple bonds and are commonly used as solvents, monomers, and intermediates in organic synthesis.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#AromaticAlicyclicOrganicMolecules">
@@ -186,6 +278,13 @@
   <rdfs:comment>Open-chain organic molecules, also known as acyclic or aliphatic molecules, are organic compounds that do not contain a cyclic structure. They are characterized by a linear or branched chain of carbon atoms, and can include functional groups such as alkanes, alkenes, and alkynes. Open-chain organic molecules have a wide range of applications in organic chemistry, materials science, and biochemistry.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#OrganicMolceule">
+  <rdfs:subClassOf rdf:resource="#MolecularEntity"/>
+  <rdfs:subClassOf rdf:resource="#OrganicCompound"/>
+  <onto_name>OrganicMolceule</onto_name>
+  <rdfs:comment>A cyclic organic molecule is a type of organic molecule that contains a closed ring of atoms in its structure. These molecules have a wide range of applications in materials science, including as building blocks for polymers, pharmaceuticals, and agrochemicals.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#Alkenes">
   <rdfs:subClassOf rdf:resource="#OpenChainOrganicMolecules"/>
   <onto_name>Alkenes</onto_name>
@@ -210,12 +309,6 @@
   <rdfs:comment>Americium is a radioactive, silvery-white metal that is part of the actinide series. It is primarily used in nuclear research and as a source of ionizing radiation for industrial gauges and smoke detectors. Americium has potential applications in nuclear batteries and spacecraft power systems.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Solvent">
-  <rdfs:subClassOf rdf:resource="#ChemicalSubstance"/>
-  <onto_name>Solvent</onto_name>
-  <rdfs:comment>A solvent is a substance that dissolves a solute to form a solution. In hydrogen technologies, solvents are used in various processes such as electrolyte preparation, catalyst synthesis, and fuel cell fabrication. Common solvents include water, alcohols, and organic solvents such as dimethyl sulfoxide (DMSO) and N-methyl-2-pyrrolidone (NMP).</rdfs:comment>
-</owl:Class>
-
 <owl:Class rdf:about="#Anion">
   <rdfs:subClassOf rdf:resource="#Ion"/>
   <onto_name>Anion</onto_name>
@@ -234,10 +327,9 @@
   <rdfs:comment>An Anisotropic Material is a material that exhibits different properties in different directions. It has physical or mechanical properties that vary with the direction of measurement. Anisotropic materials are commonly used in fuel cell and battery components, such as electrodes and membranes, to optimize their performance in specific directions.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Material">
-  <rdfs:subClassOf rdf:resource="#Matter"/>
-  <onto_name>Material</onto_name>
-  <rdfs:comment>A material is any substance that has a defined chemical composition and physical properties. In the context of hydrogen technologies, materials are used in various applications such as fuel cells, electrolyzers, and hydrogen storage. Examples of materials used in these applications include metals, ceramics, polymers, and composites.</rdfs:comment>
+<owl:Class rdf:about="#Matter">
+  <onto_name>Matter</onto_name>
+  <rdfs:comment>Matter is anything that has mass and takes up space. It can exist in three states: solid, liquid, or gas. In materials science, matter is studied to understand its properties and behavior, and to develop new materials with desired properties.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Anolyte">
@@ -247,18 +339,31 @@
   <rdfs:comment>An anolyte is an electrolyte solution that is located at the anode of an electrochemical cell. It is responsible for providing ions to the anode and facilitating the electrochemical reactions that occur at the anode during cell operation.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#ElectrlyteSolution">
-  <rdfs:subClassOf rdf:resource="#LiquidElectrolyte"/>
-  <owl:disjointWith rdf:resource="#IonicLiquidElectrolyte"/>
-  <onto_name>ElectrlyteSolution</onto_name>
-  <rdfs:comment>An electrolyte solution is a liquid or gel that contains ions and can conduct electricity. It is used in batteries, fuel cells, and other electrochemical devices to facilitate the movement of ions between the electrodes and maintain charge balance.</rdfs:comment>
-</owl:Class>
-
 <owl:Class rdf:about="#ElectrolyteSolution">
   <rdfs:subClassOf rdf:resource="#LiquidSolution"/>
   <rdfs:subClassOf rdf:resource="#Solution"/>
   <onto_name>ElectrolyteSolution</onto_name>
   <rdfs:comment>An electrolyte solution is a liquid or gel containing ions that conducts electricity and is used in batteries, fuel cells, and other electrochemical devices. It facilitates the movement of ions between the electrodes, allowing the electrochemical reactions to occur.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#LiquidElectrolyte">
+  <rdfs:subClassOf rdf:resource="#Electrolyte"/>
+  <owl:disjointWith rdf:resource="#SolidElectrolyte"/>
+  <onto_name>LiquidElectrolyte</onto_name>
+  <rdfs:comment>A Liquid Electrolyte is a conductive solution used in batteries and fuel cells to facilitate the movement of ions between the electrodes. It is typically composed of a solvent and a dissolved salt or other ionic compound, and can be either aqueous or non-aqueous.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#IonicLiquidElectrolyte">
+  <rdfs:subClassOf rdf:resource="#LiquidElectrolyte"/>
+  <onto_name>IonicLiquidElectrolyte</onto_name>
+  <rdfs:comment>An Ionic Liquid Electrolyte is a type of electrolyte composed entirely of ionic liquids, which are salts that are liquid at or near room temperature. They are used in electrochemical devices such as batteries and fuel cells, offering high ionic conductivity, low volatility, and wide electrochemical stability windows.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#LiquidSolution">
+  <rdfs:subClassOf rdf:resource="#Liquid"/>
+  <rdfs:subClassOf rdf:resource="#Solution"/>
+  <onto_name>LiquidSolution</onto_name>
+  <rdfs:comment>A liquid solution is a homogeneous mixture of two or more substances in which the molecules or atoms of the substances are evenly distributed. The solvent is the substance that dissolves the solute(s) to form the solution. Liquid solutions are commonly used in chemical reactions, separations, and as solvents for other substances.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Antimony">
@@ -299,11 +404,16 @@
   <rdfs:comment>A non-aqueous molecule is a molecule that is not soluble in water or does not contain water as a solvent. Non-aqueous solvents are commonly used in electrochemical applications, such as in lithium-ion batteries and supercapacitors, due to their high chemical stability and wide electrochemical window.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#LiquidSolution">
-  <rdfs:subClassOf rdf:resource="#Liquid"/>
-  <rdfs:subClassOf rdf:resource="#Solution"/>
-  <onto_name>LiquidSolution</onto_name>
-  <rdfs:comment>A liquid solution is a homogeneous mixture of two or more substances in which the molecules or atoms of the substances are evenly distributed. The solvent is the substance that dissolves the solute(s) to form the solution. Liquid solutions are commonly used in chemical reactions, separations, and as solvents for other substances.</rdfs:comment>
+<owl:Class rdf:about="#MolecularEntityInStateOfAggregation">
+  <rdfs:subClassOf rdf:resource="#MolecularEntity"/>
+  <onto_name>MolecularEntityInStateOfAggregation</onto_name>
+  <rdfs:comment>A Molecular Entity in State of Aggregation refers to a chemical species that is composed of two or more molecules held together by intermolecular forces. Examples include dimers, trimers, and other oligomers. These species can have unique properties and reactivity compared to their individual molecular components.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Liquid">
+  <rdfs:subClassOf rdf:resource="#Fluid"/>
+  <onto_name>Liquid</onto_name>
+  <rdfs:comment>A liquid is a state of matter that has a definite volume but no fixed shape. It can flow and take the shape of its container. Liquids are commonly used as solvents, electrolytes, and reactants in chemical reactions.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Aquivion">
@@ -316,6 +426,12 @@
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
   <onto_name>Ionomer</onto_name>
   <rdfs:comment>Ionomers are a class of materials that contain ionic groups, which can conduct ions. They are used in fuel cells and other electrochemical devices as membranes or coatings to facilitate ion transport. Aquivion is a type of ionomer that is based on perfluorosulfonic acid and is known for its high proton conductivity and chemical stability.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer">
+  <rdfs:subClassOf rdf:resource="#Material"/>
+  <onto_name>Polymer</onto_name>
+  <rdfs:comment>A polymer is a large molecule composed of repeating subunits called monomers. Polymers have a wide range of applications in hydrogen technologies, including as electrolyte membranes, ionomers, and electrode binders in fuel cells and batteries.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#AquivionD72-25BS">
@@ -366,12 +482,6 @@
   <rdfs:comment>Astatine is a rare and highly radioactive element with the symbol At and atomic number 85. It is a member of the halogen family and is the heaviest known halogen. Astatine has no stable isotopes and is typically produced by bombarding bismuth with alpha particles. It has potential applications in targeted alpha-particle therapy for cancer treatment.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#MolecularEntity">
-  <rdfs:subClassOf rdf:resource="#ChemicalEntity"/>
-  <onto_name>MolecularEntity</onto_name>
-  <rdfs:comment>A Molecular Entity is an electrically neutral group of two or more atoms held together by chemical bonds. It can be a molecule, an ion, or a radical. Molecular entities are the building blocks of all chemical substances and play a crucial role in materials science and hydrogen technologies.</rdfs:comment>
-</owl:Class>
-
 <owl:Class rdf:about="#Barium">
   <rdfs:subClassOf rdf:resource="#Atom"/>
   <onto_name>Barium</onto_name>
@@ -408,6 +518,12 @@
   <rdfs:comment>A Platinum Catalyst is a material that accelerates chemical reactions by providing an alternative pathway with lower activation energy. It is commonly used in fuel cells, electrolyzers, and other electrochemical devices to facilitate the conversion of reactants into products. Platinum is a popular catalyst material due to its high activity, stability, and resistance to corrosion.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#SingleMetalCatalyst">
+  <rdfs:subClassOf rdf:resource="#ElectroCatalyst"/>
+  <onto_name>SingleMetalCatalyst</onto_name>
+  <rdfs:comment>A Single Metal Catalyst is a type of catalyst that consists of only one type of metal, such as platinum, palladium, or iridium. It is used in various chemical reactions, including hydrogenation, oxidation, and reduction, to increase the rate of the reaction and improve its efficiency.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#BinaryCatalyst">
   <rdfs:subClassOf rdf:resource="#ElectroCatalyst"/>
   <onto_name>BinaryCatalyst</onto_name>
@@ -418,6 +534,12 @@
   <rdfs:subClassOf rdf:resource="#Catalyst"/>
   <onto_name>ElectroCatalyst</onto_name>
   <rdfs:comment>An electrocatalyst is a material that increases the rate of an electrochemical reaction by lowering the activation energy required for the reaction to occur. It is used in electrochemical devices such as fuel cells, batteries, and electrolyzers to facilitate the conversion of chemical energy into electrical energy and vice versa.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Catalyst">
+  <rdfs:subClassOf rdf:resource="#FunctionalMaterial"/>
+  <onto_name>Catalyst</onto_name>
+  <rdfs:comment>A catalyst is a substance that increases the rate of a chemical reaction without undergoing any permanent chemical change itself. In hydrogen technologies, catalysts are used to facilitate the electrochemical reactions that convert chemical energy into electrical energy in fuel cells and electrolyzers.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#BinaryMaterial">
@@ -480,18 +602,6 @@
   <rdfs:comment>A Carbon-Supported Platinum Catalyst is a type of electrocatalyst used in fuel cells, consisting of platinum nanoparticles supported on a carbon substrate. It is used to facilitate the oxygen reduction reaction (ORR) at the cathode in fuel cells, improving their efficiency and performance.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Catalyst">
-  <rdfs:subClassOf rdf:resource="#FunctionalMaterial"/>
-  <onto_name>Catalyst</onto_name>
-  <rdfs:comment>A catalyst is a substance that increases the rate of a chemical reaction without undergoing any permanent chemical change itself. In hydrogen technologies, catalysts are used to facilitate the electrochemical reactions that convert chemical energy into electrical energy in fuel cells and electrolyzers.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#FunctionalMaterial">
-  <rdfs:subClassOf rdf:resource="#Material"/>
-  <onto_name>FunctionalMaterial</onto_name>
-  <rdfs:comment>A functional material is a material that has specific properties or functions that make it useful for a particular application. These materials are designed to have specific physical, chemical, or biological properties that can be tailored to meet the needs of a particular application. Examples of functional materials include catalysts, semiconductors, superconductors, and biomaterials.</rdfs:comment>
-</owl:Class>
-
 <owl:Class rdf:about="#CatalystInk">
   <rdfs:subClassOf rdf:resource="#LiquidSolution"/>
   <onto_name>CatalystInk</onto_name>
@@ -541,28 +651,10 @@
   <rdfs:comment>A chemical compound is a substance composed of two or more elements chemically bonded together in a fixed ratio. Chemical compounds have unique physical and chemical properties that differ from their constituent elements.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#ChemicalEntity">
-  <rdfs:subClassOf rdf:resource="#Matter"/>
-  <owl:disjointWith rdf:resource="#Material"/>
-  <onto_name>ChemicalEntity</onto_name>
-  <rdfs:comment>A chemical entity is any substance or compound that has a distinct molecular composition and is capable of undergoing a chemical reaction. It can be a pure substance or a mixture of substances, and can be either organic or inorganic.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#Matter">
-  <onto_name>Matter</onto_name>
-  <rdfs:comment>Matter is anything that has mass and takes up space. It can exist in three states: solid, liquid, or gas. In materials science, matter is studied to understand its properties and behavior, and to develop new materials with desired properties.</rdfs:comment>
-</owl:Class>
-
 <owl:Class rdf:about="#ChemicalReactionProduct">
   <rdfs:subClassOf rdf:resource="#MolecularEntityInStateOfAggregation"/>
   <onto_name>ChemicalReactionProduct</onto_name>
   <rdfs:comment>A Chemical Reaction Product is a substance formed as a result of a chemical reaction. It can be a solid, liquid, or gas and can have different properties than the reactants. In hydrogen technologies, chemical reaction products can include water, oxygen, and carbon dioxide.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#MolecularEntityInStateOfAggregation">
-  <rdfs:subClassOf rdf:resource="#MolecularEntity"/>
-  <onto_name>MolecularEntityInStateOfAggregation</onto_name>
-  <rdfs:comment>A Molecular Entity in State of Aggregation refers to a chemical species that is composed of two or more molecules held together by intermolecular forces. Examples include dimers, trimers, and other oligomers. These species can have unique properties and reactivity compared to their individual molecular components.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#ChemicalReationReactant">
@@ -595,24 +687,10 @@
   <rdfs:comment>Cobalt is a transition metal with the symbol Co and atomic number 27. It is commonly used in the production of rechargeable batteries, particularly in the cathode material of lithium-ion batteries. Cobalt-based alloys are also used in the manufacture of gas turbines, jet engines, and other high-performance machinery.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Dispersion">
-  <rdfs:subClassOf rdf:resource="#Mixture"/>
-  <onto_name>Dispersion</onto_name>
-  <rdfs:comment>A dispersion is a mixture of two or more substances that do not dissolve in each other. The dispersed phase is made up of small particles that are suspended in the continuous phase. In materials science, dispersions are used to create composite materials with unique properties.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#PhaseHeterogeneousMixture">
-  <rdfs:subClassOf rdf:resource="#Mixture"/>
-  <onto_name>PhaseHeterogeneousMixture</onto_name>
-  <rdfs:comment>A Phase Heterogeneous Mixture is a mixture of two or more substances that are not uniformly distributed and can be distinguished by their physical properties, such as color, density, or refractive index. Examples include suspensions, emulsions, and foams.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#Suspension">
-  <rdfs:subClassOf rdf:resource="#Mixture"/>
-  <rdfs:subClassOf rdf:resource="#PhaseHeterogeneousMixture"/>
-  <rdfs:subClassOf rdf:resource="#StateOfMatter"/>
-  <onto_name>Suspension</onto_name>
-  <rdfs:comment>A suspension is a type of heterogeneous mixture in which solid particles are dispersed in a liquid medium. The solid particles are usually insoluble in the liquid and will settle over time if left undisturbed. Suspensions are commonly used in various industrial applications, such as in the production of paints, pigments, and pharmaceuticals.</rdfs:comment>
+<owl:Class rdf:about="#StateOfMatter">
+  <rdfs:subClassOf rdf:resource="#Continuum"/>
+  <onto_name>StateOfMatter</onto_name>
+  <rdfs:comment>State of matter refers to the physical form in which matter exists, such as solid, liquid, or gas. It is an important property of materials that can affect their properties and behavior.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#CompositeMaterial">
@@ -646,12 +724,6 @@
   <rdfs:comment>A copolymer is a polymer made up of two or more different monomers. Copolymers can have unique properties compared to homopolymers, such as improved mechanical strength, thermal stability, and chemical resistance. They are used in a variety of applications, including coatings, adhesives, and plastics.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer">
-  <rdfs:subClassOf rdf:resource="#Material"/>
-  <onto_name>Polymer</onto_name>
-  <rdfs:comment>A polymer is a large molecule composed of repeating subunits called monomers. Polymers have a wide range of applications in hydrogen technologies, including as electrolyte membranes, ionomers, and electrode binders in fuel cells and batteries.</rdfs:comment>
-</owl:Class>
-
 <owl:Class rdf:about="#Copper">
   <rdfs:subClassOf rdf:resource="#Atom"/>
   <onto_name>Copper</onto_name>
@@ -672,11 +744,10 @@
   <rdfs:comment>A crystal is a solid material whose atoms, molecules, or ions are arranged in a highly ordered, repeating pattern extending in all three spatial dimensions. Crystals exhibit unique physical and chemical properties, such as piezoelectricity, birefringence, and high thermal conductivity, making them useful in a wide range of applications, including electronics, optics, and energy storage.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#SolidMixture">
-  <rdfs:subClassOf rdf:resource="#Mixture"/>
-  <rdfs:subClassOf rdf:resource="#Solid"/>
-  <onto_name>SolidMixture</onto_name>
-  <rdfs:comment>A Solid Mixture is a combination of two or more solid materials that are physically mixed together, but not chemically bonded. Solid mixtures can be homogeneous or heterogeneous and are commonly used in materials science for tailoring properties such as strength, conductivity, and thermal stability.</rdfs:comment>
+<owl:Class rdf:about="#StateOfAggregation">
+  <rdfs:subClassOf rdf:resource="#Continuum"/>
+  <onto_name>StateOfAggregation</onto_name>
+  <rdfs:comment>State of Aggregation refers to the physical state of a material, such as solid, liquid, or gas. It is an important property that affects the behavior and properties of materials, including their reactivity, conductivity, and mechanical properties.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Curium">
@@ -685,18 +756,10 @@
   <rdfs:comment>Curium is a radioactive, synthetic element with the symbol Cm and atomic number 96. It is a member of the actinide series of elements and is named after Marie and Pierre Curie. Curium is used in the production of heavier actinides and as a source of alpha particles for nuclear physics research.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#CyclicOrganicMolecules">
-  <rdfs:subClassOf rdf:resource="#OrganicMolceule"/>
-  <owl:disjointWith rdf:resource="#OpenChainOrganicMolecules"/>
-  <onto_name>CyclicOrganicMolecules</onto_name>
-  <rdfs:comment>Cyclic organic molecules are organic compounds that contain one or more closed rings of atoms in their structure. They have a wide range of applications in materials science, including as building blocks for polymers, pharmaceuticals, and agrochemicals.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#OrganicMolceule">
-  <rdfs:subClassOf rdf:resource="#MolecularEntity"/>
-  <rdfs:subClassOf rdf:resource="#OrganicCompound"/>
-  <onto_name>OrganicMolceule</onto_name>
-  <rdfs:comment>A cyclic organic molecule is a type of organic molecule that contains a closed ring of atoms in its structure. These molecules have a wide range of applications in materials science, including as building blocks for polymers, pharmaceuticals, and agrochemicals.</rdfs:comment>
+<owl:Class rdf:about="#OrganicCompound">
+  <rdfs:subClassOf rdf:resource="#ChemicalCompound"/>
+  <onto_name>OrganicCompound</onto_name>
+  <rdfs:comment>An organic compound is a type of chemical compound that contains carbon atoms bonded to hydrogen atoms, along with other elements such as oxygen, nitrogen, sulfur, and halogens. Organic compounds are widely used in hydrogen technologies, including as solvents, electrolytes, and catalysts.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Darmstadtium">
@@ -722,12 +785,6 @@
   <rdfs:subClassOf rdf:resource="#AromaticHeterocyclicOrganicAminesMolecules"/>
   <onto_name>Diazole</onto_name>
   <rdfs:comment>Diazole is a heterocyclic organic compound containing two nitrogen atoms in a five-membered ring. It is used as a corrosion inhibitor and as a building block in the synthesis of pharmaceuticals, agrochemicals, and dyes.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#Mixture">
-  <rdfs:subClassOf rdf:resource="#Continuum"/>
-  <onto_name>Mixture</onto_name>
-  <rdfs:comment>A mixture is a combination of two or more substances that are not chemically bonded and can be separated by physical means. Mixtures can be homogeneous or heterogeneous and can exist in any state of matter.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Dubnium">
@@ -792,17 +849,16 @@
   <rdfs:comment>Einsteinium is a synthetic, radioactive element with the symbol Es and atomic number 99. It is a member of the actinide series and is named after physicist Albert Einstein. Einsteinium is primarily used for scientific research purposes.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#LiquidElectrolyte">
-  <rdfs:subClassOf rdf:resource="#Electrolyte"/>
-  <owl:disjointWith rdf:resource="#SolidElectrolyte"/>
-  <onto_name>LiquidElectrolyte</onto_name>
-  <rdfs:comment>A Liquid Electrolyte is a conductive solution used in batteries and fuel cells to facilitate the movement of ions between the electrodes. It is typically composed of a solvent and a dissolved salt or other ionic compound, and can be either aqueous or non-aqueous.</rdfs:comment>
+<owl:Class rdf:about="#Electrolyte">
+  <rdfs:subClassOf rdf:resource="#ElectrochemicalMaterial"/>
+  <onto_name>Electrolyte</onto_name>
+  <rdfs:comment>An electrolyte is a substance that conducts electricity when dissolved in a solvent, typically water. In electrochemical devices, such as batteries and fuel cells, electrolytes are used to transport ions between the electrodes, enabling the flow of electrical current.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#IonicLiquidElectrolyte">
-  <rdfs:subClassOf rdf:resource="#LiquidElectrolyte"/>
-  <onto_name>IonicLiquidElectrolyte</onto_name>
-  <rdfs:comment>An Ionic Liquid Electrolyte is a type of electrolyte composed entirely of ionic liquids, which are salts that are liquid at or near room temperature. They are used in electrochemical devices such as batteries and fuel cells, offering high ionic conductivity, low volatility, and wide electrochemical stability windows.</rdfs:comment>
+<owl:Class rdf:about="#SolidElectrolyte">
+  <rdfs:subClassOf rdf:resource="#Electrolyte"/>
+  <onto_name>SolidElectrolyte</onto_name>
+  <rdfs:comment>A solid electrolyte is a non-liquid material that can conduct ions. It is used in batteries and fuel cells as an alternative to liquid electrolytes, offering improved safety, stability, and performance. Solid electrolytes can be made from a variety of materials, including ceramics, polymers, and composites.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#ElectroChemicalIntercalationMaterial">
@@ -830,18 +886,10 @@
   <rdfs:comment>An Electrochemical Intercalation Material is a material that can reversibly intercalate ions into its structure during electrochemical reactions. These materials are commonly used as cathodes in rechargeable batteries, and can store and release large amounts of energy. Examples include lithium cobalt oxide and lithium iron phosphate.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Electrolyte">
-  <rdfs:subClassOf rdf:resource="#ElectrochemicalMaterial"/>
-  <onto_name>Electrolyte</onto_name>
-  <rdfs:comment>An electrolyte is a substance that conducts electricity when dissolved in a solvent, typically water. In electrochemical devices, such as batteries and fuel cells, electrolytes are used to transport ions between the electrodes, enabling the flow of electrical current.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#Solution">
+<owl:Class rdf:about="#PhaseHomogeneousMixture">
   <rdfs:subClassOf rdf:resource="#Mixture"/>
-  <rdfs:subClassOf rdf:resource="#PhaseHomogeneousMixture"/>
-  <rdfs:subClassOf rdf:resource="#StateOfAggregation"/>
-  <onto_name>Solution</onto_name>
-  <rdfs:comment>An electrolyte is a substance that produces ions when dissolved in a solvent, typically a liquid. Electrolytes are used in electrochemical cells to facilitate the movement of ions between the anode and cathode, allowing for the flow of electrical current.</rdfs:comment>
+  <onto_name>PhaseHomogeneousMixture</onto_name>
+  <rdfs:comment>A phase homogeneous mixture is a type of mixture where the components are uniformly distributed throughout the mixture, resulting in a single phase. The composition of the mixture is the same throughout and the properties of the mixture are uniform. Examples of phase homogeneous mixtures include solutions and alloys.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#ElementalSubstance">
@@ -857,10 +905,11 @@
   <rdfs:comment>An emulsion is a type of colloid in which two immiscible liquids are mixed together to form a stable suspension. Emulsions are commonly used in various industrial applications, such as in the production of paints, cosmetics, and food products.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Liquid">
-  <rdfs:subClassOf rdf:resource="#Fluid"/>
-  <onto_name>Liquid</onto_name>
-  <rdfs:comment>A liquid is a state of matter that has a definite volume but no fixed shape. It can flow and take the shape of its container. Liquids are commonly used as solvents, electrolytes, and reactants in chemical reactions.</rdfs:comment>
+<owl:Class rdf:about="#Fluid">
+  <rdfs:subClassOf rdf:resource="#StateOfAggregation"/>
+  <rdfs:subClassOf rdf:resource="#StateOfMatter"/>
+  <onto_name>Fluid</onto_name>
+  <rdfs:comment>A fluid is a substance that has no fixed shape and yields easily to external pressure. It can be a gas or a liquid and is used in various applications in hydrogen technologies, such as in fuel cells and electrolyzers.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#EnergyMaterial">
@@ -937,25 +986,6 @@
   <rdfs:comment>Flerovium is a synthetic, radioactive element with the symbol Fl and atomic number 114. It is a superheavy element that is produced by bombarding plutonium or curium with calcium ions. Flerovium has no known uses outside of basic scientific research.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Fluid">
-  <rdfs:subClassOf rdf:resource="#StateOfAggregation"/>
-  <rdfs:subClassOf rdf:resource="#StateOfMatter"/>
-  <onto_name>Fluid</onto_name>
-  <rdfs:comment>A fluid is a substance that has no fixed shape and yields easily to external pressure. It can be a gas or a liquid and is used in various applications in hydrogen technologies, such as in fuel cells and electrolyzers.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#StateOfAggregation">
-  <rdfs:subClassOf rdf:resource="#Continuum"/>
-  <onto_name>StateOfAggregation</onto_name>
-  <rdfs:comment>State of Aggregation refers to the physical state of a material, such as solid, liquid, or gas. It is an important property that affects the behavior and properties of materials, including their reactivity, conductivity, and mechanical properties.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#StateOfMatter">
-  <rdfs:subClassOf rdf:resource="#Continuum"/>
-  <onto_name>StateOfMatter</onto_name>
-  <rdfs:comment>State of matter refers to the physical form in which matter exists, such as solid, liquid, or gas. It is an important property of materials that can affect their properties and behavior.</rdfs:comment>
-</owl:Class>
-
 <owl:Class rdf:about="#Fluorine">
   <rdfs:subClassOf rdf:resource="#Atom"/>
   <onto_name>Fluorine</onto_name>
@@ -990,12 +1020,6 @@
   <rdfs:subClassOf rdf:resource="#Atom"/>
   <onto_name>Gallium</onto_name>
   <rdfs:comment>Gallium is a chemical element with the symbol Ga and atomic number 31. It is a soft, silvery-white metal that is used in various applications such as semiconductors, LEDs, and solar cells. Gallium is also used in the production of alloys and as a liquid metal coolant in nuclear reactors.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#Gas">
-  <rdfs:subClassOf rdf:resource="#Fluid"/>
-  <onto_name>Gas</onto_name>
-  <rdfs:comment>A gas is a state of matter that has no fixed shape or volume and expands to fill any available space. Gases are composed of molecules or atoms that are in constant random motion and have weak intermolecular forces.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#GasLiquidSuspension">
@@ -1142,12 +1166,6 @@
   <rdfs:comment>An inorganic compound is a chemical compound that does not contain carbon-hydrogen bonds. They are typically derived from non-living sources, such as minerals, and can have a wide range of applications in materials science, including as catalysts, semiconductors, and pigments.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#OrganicCompound">
-  <rdfs:subClassOf rdf:resource="#ChemicalCompound"/>
-  <onto_name>OrganicCompound</onto_name>
-  <rdfs:comment>An organic compound is a type of chemical compound that contains carbon atoms bonded to hydrogen atoms, along with other elements such as oxygen, nitrogen, sulfur, and halogens. Organic compounds are widely used in hydrogen technologies, including as solvents, electrolytes, and catalysts.</rdfs:comment>
-</owl:Class>
-
 <owl:Class rdf:about="#IntercalationMaterial">
   <rdfs:subClassOf rdf:resource="#Material"/>
   <onto_name>IntercalationMaterial</onto_name>
@@ -1170,12 +1188,6 @@
   <rdfs:subClassOf rdf:resource="#SingleMetalCatalyst"/>
   <onto_name>IridiumOxideCatalyst</onto_name>
   <rdfs:comment>Iridium oxide catalyst is a type of heterogeneous catalyst that is used in various electrochemical applications, such as fuel cells, water electrolysis, and sensors. It is known for its high catalytic activity, stability, and resistance to corrosion.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#SingleMetalCatalyst">
-  <rdfs:subClassOf rdf:resource="#ElectroCatalyst"/>
-  <onto_name>SingleMetalCatalyst</onto_name>
-  <rdfs:comment>A Single Metal Catalyst is a type of catalyst that consists of only one type of metal, such as platinum, palladium, or iridium. It is used in various chemical reactions, including hydrogenation, oxidation, and reduction, to increase the rate of the reaction and improve its efficiency.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Iron">
@@ -1243,12 +1255,6 @@
   <rdfs:subClassOf rdf:resource="#Aerosol"/>
   <onto_name>SolidAerosol</onto_name>
   <rdfs:comment>A solid aerosol is a suspension of solid particles in a gas, typically air. These particles can be of various sizes and shapes, and can be composed of different materials. Solid aerosols can be generated naturally or artificially, and can have various effects on human health and the environment.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#SolidElectrolyte">
-  <rdfs:subClassOf rdf:resource="#Electrolyte"/>
-  <onto_name>SolidElectrolyte</onto_name>
-  <rdfs:comment>A solid electrolyte is a non-liquid material that can conduct ions. It is used in batteries and fuel cells as an alternative to liquid electrolytes, offering improved safety, stability, and performance. Solid electrolytes can be made from a variety of materials, including ceramics, polymers, and composites.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#LiquidFoam">
@@ -1528,12 +1534,6 @@
   <rdfs:subClassOf rdf:resource="#Atom"/>
   <onto_name>Palladium</onto_name>
   <rdfs:comment>Palladium is a chemical element with the symbol Pd and atomic number 46. It is a rare and lustrous silvery-white metal that is used in various applications, including catalysis, electronics, and jewelry. Palladium is also used as a catalyst in fuel cells, where it helps to facilitate the electrochemical reactions that convert chemical energy into electrical energy.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#PhaseHomogeneousMixture">
-  <rdfs:subClassOf rdf:resource="#Mixture"/>
-  <onto_name>PhaseHomogeneousMixture</onto_name>
-  <rdfs:comment>A phase homogeneous mixture is a type of mixture where the components are uniformly distributed throughout the mixture, resulting in a single phase. The composition of the mixture is the same throughout and the properties of the mixture are uniform. Examples of phase homogeneous mixtures include solutions and alloys.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#PhaseOfMatter">
@@ -2024,30 +2024,334 @@
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AcetyleneBlack"/>
-    <rdf:Description rdf:about="#ChannelBlack"/>
-    <rdf:Description rdf:about="#FurnaceBlack"/>
-    <rdf:Description rdf:about="#LampBlack"/>
-    <rdf:Description rdf:about="#ThermalBlack"/>
+    <rdf:Description rdf:about="#0DNanoMaterial"/>
+    <rdf:Description rdf:about="#1DNanoMaterial"/>
+    <rdf:Description rdf:about="#2DNanoMaterial"/>
+    <rdf:Description rdf:about="#3DNanoMaterial"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Acid"/>
-    <rdf:Description rdf:about="#Base"/>
-    <rdf:Description rdf:about="#ChemicalCompound"/>
-    <rdf:Description rdf:about="#ElementalSubstance"/>
-    <rdf:Description rdf:about="#Solute"/>
-    <rdf:Description rdf:about="#Solvent"/>
+    <rdf:Description rdf:about="#Nafion_D2020CS"/>
+    <rdf:Description rdf:about="#Nafion_D2021CS"/>
+    <rdf:Description rdf:about="#Nafion_D520CS"/>
+    <rdf:Description rdf:about="#Nafion_D521CS"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AcidicElectrolyte"/>
-    <rdf:Description rdf:about="#AlkalineElectrolyte"/>
-    <rdf:Description rdf:about="#NearNeutralElectrolyte"/>
+    <rdf:Description rdf:about="#Mixture"/>
+    <rdf:Description rdf:about="#PhaseOfMatter"/>
+    <rdf:Description rdf:about="#StateOfAggregation"/>
+    <rdf:Description rdf:about="#StateOfMatter"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Ion"/>
+    <rdf:Description rdf:about="#MolecularEntityInStateOfAggregation"/>
+    <rdf:Description rdf:about="#Molecule"/>
+    <rdf:Description rdf:about="#Oxidant"/>
+    <rdf:Description rdf:about="#PolyAtomicEntity"/>
+    <rdf:Description rdf:about="#Reductant"/>
+    <rdf:Description rdf:about="#SoluteMolecule"/>
+    <rdf:Description rdf:about="#SolventMolecule"/>
+    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Ink"/>
+    <rdf:Description rdf:about="#LiquidSol"/>
+    <rdf:Description rdf:about="#SolidSol"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#HeteroNuclearMolecule"/>
+    <rdf:Description rdf:about="#HomoNuclearMolecule"/>
+    <rdf:Description rdf:about="#SaltMolecule"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Gel"/>
+    <rdf:Description rdf:about="#SolidFoam"/>
+    <rdf:Description rdf:about="#SolidGasSuspension"/>
+    <rdf:Description rdf:about="#SolidLiquidSuspension"/>
+    <rdf:Description rdf:about="#SolidSol"/>
+    <rdf:Description rdf:about="#SolidSolidSuspension"/>
+    <rdf:Description rdf:about="#SolidSolution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#GasLiquidSuspension"/>
+    <rdf:Description rdf:about="#GasSolidSuspension"/>
+    <rdf:Description rdf:about="#LiquidGasSuspension"/>
+    <rdf:Description rdf:about="#LiquidLiquidSuspension"/>
+    <rdf:Description rdf:about="#LiquidSolidSuspension"/>
+    <rdf:Description rdf:about="#SolidGasSuspension"/>
+    <rdf:Description rdf:about="#SolidLiquidsSuspension"/>
+    <rdf:Description rdf:about="#SolidSolidSuspension"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Gas"/>
+    <rdf:Description rdf:about="#Liquid"/>
+    <rdf:Description rdf:about="#Plasma"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Fluid"/>
+    <rdf:Description rdf:about="#Solid"/>
+    <rdf:Description rdf:about="#Suspension"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Fluid"/>
+    <rdf:Description rdf:about="#Solid"/>
+    <rdf:Description rdf:about="#Solution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Ethanol"/>
+    <rdf:Description rdf:about="#Methanol"/>
+    <rdf:Description rdf:about="#1-Butanol"/>
+    <rdf:Description rdf:about="#1-Propanol"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Emulsion"/>
+    <rdf:Description rdf:about="#LiquidFoam"/>
+    <rdf:Description rdf:about="#LiquidGasSuspension"/>
+    <rdf:Description rdf:about="#LiquidLiquidSuspension"/>
+    <rdf:Description rdf:about="#LiquidSol"/>
+    <rdf:Description rdf:about="#LiquidSolidSuspension"/>
+    <rdf:Description rdf:about="#LiquidSolution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#ElectrolyteSolution"/>
+    <rdf:Description rdf:about="#LiquidSolution"/>
+    <rdf:Description rdf:about="#SaturatedSolution"/>
+    <rdf:Description rdf:about="#SolidSolution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#ElectroCatalyst"/>
+    <rdf:Description rdf:about="#ElectrochemicalMaterial"/>
+    <rdf:Description rdf:about="#GraphiteMaterial"/>
+    <rdf:Description rdf:about="#IntercalationMaterial"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Dispersion"/>
+    <rdf:Description rdf:about="#GasMixture"/>
+    <rdf:Description rdf:about="#PhaseHeterogeneousMixture"/>
+    <rdf:Description rdf:about="#PhaseHomogeneousMixture"/>
+    <rdf:Description rdf:about="#SolidMixture"/>
+    <rdf:Description rdf:about="#Solution"/>
+    <rdf:Description rdf:about="#Suspension"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Colloid"/>
+    <rdf:Description rdf:about="#Emulsion"/>
+    <rdf:Description rdf:about="#Foam"/>
+    <rdf:Description rdf:about="#Gel"/>
+    <rdf:Description rdf:about="#Sol"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#ChemicalReactionProduct"/>
+    <rdf:Description rdf:about="#ChemicalReationReactant"/>
+    <rdf:Description rdf:about="#DissolvedMolecule"/>
+    <rdf:Description rdf:about="#GaseMolecule"/>
+    <rdf:Description rdf:about="#LiquidMolecule"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Ceramic"/>
+    <rdf:Description rdf:about="#EnergyMaterial"/>
+    <rdf:Description rdf:about="#ManufacturedMaterial"/>
+    <rdf:Description rdf:about="#Metal"/>
+    <rdf:Description rdf:about="#NanoMaterial"/>
+    <rdf:Description rdf:about="#NaturalMaterial"/>
+    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Catalyst"/>
+    <rdf:Description rdf:about="#CoatingSubstrate"/>
+    <rdf:Description rdf:about="#ElectrochemicalMaterial"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#BinaryCatalyst"/>
+    <rdf:Description rdf:about="#SecundaryCatalyst"/>
+    <rdf:Description rdf:about="#TernaryCatalyst"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#BinaryCarbonSupportedPlatinumCatalyst"/>
+    <rdf:Description rdf:about="#CarbonSupportedPlatinumCatalyst"/>
+    <rdf:Description rdf:about="#ConductingPolymerSupportedPlatinumCatalyst"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Atom"/>
+    <rdf:Description rdf:about="#Ion"/>
+    <rdf:Description rdf:about="#MolecularEntityInStateOfAggregation"/>
+    <rdf:Description rdf:about="#Molecule"/>
+    <rdf:Description rdf:about="#OrganicMolceule"/>
+    <rdf:Description rdf:about="#Oxidant"/>
+    <rdf:Description rdf:about="#PolyAtomicEntity"/>
+    <rdf:Description rdf:about="#Reductant"/>
+    <rdf:Description rdf:about="#SoluteMolecule"/>
+    <rdf:Description rdf:about="#SolventMolecule"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#AquivionD72-25BS"/>
+    <rdf:Description rdf:about="#AquivionD79-25BS"/>
+    <rdf:Description rdf:about="#AquivionD98-25BS"/>
+    <rdf:Description rdf:about="#AquivionSO3H-Form"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Aquivion"/>
+    <rdf:Description rdf:about="#Gore"/>
+    <rdf:Description rdf:about="#Nafion"/>
+    <rdf:Description rdf:about="#3M"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#AqueousSolution"/>
+    <rdf:Description rdf:about="#CatalystInk"/>
+    <rdf:Description rdf:about="#ElectrolyteSolution"/>
+    <rdf:Description rdf:about="#Ink"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Anolyte"/>
+    <rdf:Description rdf:about="#AqueousElectrolyte"/>
+    <rdf:Description rdf:about="#Catholyte"/>
+    <rdf:Description rdf:about="#GasSolution"/>
+    <rdf:Description rdf:about="#NonAqueousElectrolyte"/>
+    <rdf:Description rdf:about="#SupportingElectrolyte"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Anolyte"/>
+    <rdf:Description rdf:about="#AqueousElectrloyte"/>
+    <rdf:Description rdf:about="#Catholyte"/>
+    <rdf:Description rdf:about="#NonAqueousElectrolyte"/>
+    <rdf:Description rdf:about="#SupportingElectrolyte"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#AnisotropicMaterial"/>
+    <rdf:Description rdf:about="#BinaryMaterial"/>
+    <rdf:Description rdf:about="#CarbonBlack"/>
+    <rdf:Description rdf:about="#Ceramic"/>
+    <rdf:Description rdf:about="#CompositeMaterial"/>
+    <rdf:Description rdf:about="#EnergyMaterial"/>
+    <rdf:Description rdf:about="#FunctionalMaterial"/>
+    <rdf:Description rdf:about="#GraphiteMaterial"/>
+    <rdf:Description rdf:about="#HeterogenousMaterial"/>
+    <rdf:Description rdf:about="#HomoGenousMaterial"/>
+    <rdf:Description rdf:about="#IntercalationMaterial"/>
+    <rdf:Description rdf:about="#IsotropicMaterial"/>
+    <rdf:Description rdf:about="#ManufacturedMaterial"/>
+    <rdf:Description rdf:about="#Metal"/>
+    <rdf:Description rdf:about="#NanoMaterial"/>
+    <rdf:Description rdf:about="#NaturalMaterial"/>
+    <rdf:Description rdf:about="#ReactiveMaterial"/>
+    <rdf:Description rdf:about="#TernaryMaterial"/>
+    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Anion"/>
+    <rdf:Description rdf:about="#Cation"/>
+    <rdf:Description rdf:about="#ElectrochemicalChargeCarrierIon"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Alkanes"/>
+    <rdf:Description rdf:about="#Alkenes"/>
+    <rdf:Description rdf:about="#Alkynes"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Aerosol"/>
+    <rdf:Description rdf:about="#GasLiquidSuspension"/>
+    <rdf:Description rdf:about="#GasSolidSuspension"/>
+    <rdf:Description rdf:about="#GasSolution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#ActiveMaterial"/>
+    <rdf:Description rdf:about="#ElectroChemicalIntercalationMaterial"/>
+    <rdf:Description rdf:about="#Electrolyte"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
@@ -2177,334 +2481,30 @@
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#ActiveMaterial"/>
-    <rdf:Description rdf:about="#ElectroChemicalIntercalationMaterial"/>
-    <rdf:Description rdf:about="#Electrolyte"/>
+    <rdf:Description rdf:about="#AcidicElectrolyte"/>
+    <rdf:Description rdf:about="#AlkalineElectrolyte"/>
+    <rdf:Description rdf:about="#NearNeutralElectrolyte"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Aerosol"/>
-    <rdf:Description rdf:about="#GasLiquidSuspension"/>
-    <rdf:Description rdf:about="#GasSolidSuspension"/>
-    <rdf:Description rdf:about="#GasSolution"/>
+    <rdf:Description rdf:about="#Acid"/>
+    <rdf:Description rdf:about="#Base"/>
+    <rdf:Description rdf:about="#ChemicalCompound"/>
+    <rdf:Description rdf:about="#ElementalSubstance"/>
+    <rdf:Description rdf:about="#Solute"/>
+    <rdf:Description rdf:about="#Solvent"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Alkanes"/>
-    <rdf:Description rdf:about="#Alkenes"/>
-    <rdf:Description rdf:about="#Alkynes"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Anion"/>
-    <rdf:Description rdf:about="#Cation"/>
-    <rdf:Description rdf:about="#ElectrochemicalChargeCarrierIon"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AnisotropicMaterial"/>
-    <rdf:Description rdf:about="#BinaryMaterial"/>
-    <rdf:Description rdf:about="#CarbonBlack"/>
-    <rdf:Description rdf:about="#Ceramic"/>
-    <rdf:Description rdf:about="#CompositeMaterial"/>
-    <rdf:Description rdf:about="#EnergyMaterial"/>
-    <rdf:Description rdf:about="#FunctionalMaterial"/>
-    <rdf:Description rdf:about="#GraphiteMaterial"/>
-    <rdf:Description rdf:about="#HeterogenousMaterial"/>
-    <rdf:Description rdf:about="#HomoGenousMaterial"/>
-    <rdf:Description rdf:about="#IntercalationMaterial"/>
-    <rdf:Description rdf:about="#IsotropicMaterial"/>
-    <rdf:Description rdf:about="#ManufacturedMaterial"/>
-    <rdf:Description rdf:about="#Metal"/>
-    <rdf:Description rdf:about="#NanoMaterial"/>
-    <rdf:Description rdf:about="#NaturalMaterial"/>
-    <rdf:Description rdf:about="#ReactiveMaterial"/>
-    <rdf:Description rdf:about="#TernaryMaterial"/>
-    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Anolyte"/>
-    <rdf:Description rdf:about="#AqueousElectrloyte"/>
-    <rdf:Description rdf:about="#Catholyte"/>
-    <rdf:Description rdf:about="#NonAqueousElectrolyte"/>
-    <rdf:Description rdf:about="#SupportingElectrolyte"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Anolyte"/>
-    <rdf:Description rdf:about="#AqueousElectrolyte"/>
-    <rdf:Description rdf:about="#Catholyte"/>
-    <rdf:Description rdf:about="#GasSolution"/>
-    <rdf:Description rdf:about="#NonAqueousElectrolyte"/>
-    <rdf:Description rdf:about="#SupportingElectrolyte"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AqueousSolution"/>
-    <rdf:Description rdf:about="#CatalystInk"/>
-    <rdf:Description rdf:about="#ElectrolyteSolution"/>
-    <rdf:Description rdf:about="#Ink"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Aquivion"/>
-    <rdf:Description rdf:about="#Gore"/>
-    <rdf:Description rdf:about="#Nafion"/>
-    <rdf:Description rdf:about="#3M"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AquivionD72-25BS"/>
-    <rdf:Description rdf:about="#AquivionD79-25BS"/>
-    <rdf:Description rdf:about="#AquivionD98-25BS"/>
-    <rdf:Description rdf:about="#AquivionSO3H-Form"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Atom"/>
-    <rdf:Description rdf:about="#Ion"/>
-    <rdf:Description rdf:about="#MolecularEntityInStateOfAggregation"/>
-    <rdf:Description rdf:about="#Molecule"/>
-    <rdf:Description rdf:about="#OrganicMolceule"/>
-    <rdf:Description rdf:about="#Oxidant"/>
-    <rdf:Description rdf:about="#PolyAtomicEntity"/>
-    <rdf:Description rdf:about="#Reductant"/>
-    <rdf:Description rdf:about="#SoluteMolecule"/>
-    <rdf:Description rdf:about="#SolventMolecule"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#BinaryCarbonSupportedPlatinumCatalyst"/>
-    <rdf:Description rdf:about="#CarbonSupportedPlatinumCatalyst"/>
-    <rdf:Description rdf:about="#ConductingPolymerSupportedPlatinumCatalyst"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#BinaryCatalyst"/>
-    <rdf:Description rdf:about="#SecundaryCatalyst"/>
-    <rdf:Description rdf:about="#TernaryCatalyst"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Catalyst"/>
-    <rdf:Description rdf:about="#CoatingSubstrate"/>
-    <rdf:Description rdf:about="#ElectrochemicalMaterial"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Ceramic"/>
-    <rdf:Description rdf:about="#EnergyMaterial"/>
-    <rdf:Description rdf:about="#ManufacturedMaterial"/>
-    <rdf:Description rdf:about="#Metal"/>
-    <rdf:Description rdf:about="#NanoMaterial"/>
-    <rdf:Description rdf:about="#NaturalMaterial"/>
-    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#ChemicalReactionProduct"/>
-    <rdf:Description rdf:about="#ChemicalReationReactant"/>
-    <rdf:Description rdf:about="#DissolvedMolecule"/>
-    <rdf:Description rdf:about="#GaseMolecule"/>
-    <rdf:Description rdf:about="#LiquidMolecule"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Colloid"/>
-    <rdf:Description rdf:about="#Emulsion"/>
-    <rdf:Description rdf:about="#Foam"/>
-    <rdf:Description rdf:about="#Gel"/>
-    <rdf:Description rdf:about="#Sol"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Dispersion"/>
-    <rdf:Description rdf:about="#GasMixture"/>
-    <rdf:Description rdf:about="#PhaseHeterogeneousMixture"/>
-    <rdf:Description rdf:about="#PhaseHomogeneousMixture"/>
-    <rdf:Description rdf:about="#SolidMixture"/>
-    <rdf:Description rdf:about="#Solution"/>
-    <rdf:Description rdf:about="#Suspension"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#ElectroCatalyst"/>
-    <rdf:Description rdf:about="#ElectrochemicalMaterial"/>
-    <rdf:Description rdf:about="#GraphiteMaterial"/>
-    <rdf:Description rdf:about="#IntercalationMaterial"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#ElectrolyteSolution"/>
-    <rdf:Description rdf:about="#LiquidSolution"/>
-    <rdf:Description rdf:about="#SaturatedSolution"/>
-    <rdf:Description rdf:about="#SolidSolution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Emulsion"/>
-    <rdf:Description rdf:about="#LiquidFoam"/>
-    <rdf:Description rdf:about="#LiquidGasSuspension"/>
-    <rdf:Description rdf:about="#LiquidLiquidSuspension"/>
-    <rdf:Description rdf:about="#LiquidSol"/>
-    <rdf:Description rdf:about="#LiquidSolidSuspension"/>
-    <rdf:Description rdf:about="#LiquidSolution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Ethanol"/>
-    <rdf:Description rdf:about="#Methanol"/>
-    <rdf:Description rdf:about="#1-Butanol"/>
-    <rdf:Description rdf:about="#1-Propanol"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Fluid"/>
-    <rdf:Description rdf:about="#Solid"/>
-    <rdf:Description rdf:about="#Solution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Fluid"/>
-    <rdf:Description rdf:about="#Solid"/>
-    <rdf:Description rdf:about="#Suspension"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Gas"/>
-    <rdf:Description rdf:about="#Liquid"/>
-    <rdf:Description rdf:about="#Plasma"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#GasLiquidSuspension"/>
-    <rdf:Description rdf:about="#GasSolidSuspension"/>
-    <rdf:Description rdf:about="#LiquidGasSuspension"/>
-    <rdf:Description rdf:about="#LiquidLiquidSuspension"/>
-    <rdf:Description rdf:about="#LiquidSolidSuspension"/>
-    <rdf:Description rdf:about="#SolidGasSuspension"/>
-    <rdf:Description rdf:about="#SolidLiquidsSuspension"/>
-    <rdf:Description rdf:about="#SolidSolidSuspension"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Gel"/>
-    <rdf:Description rdf:about="#SolidFoam"/>
-    <rdf:Description rdf:about="#SolidGasSuspension"/>
-    <rdf:Description rdf:about="#SolidLiquidSuspension"/>
-    <rdf:Description rdf:about="#SolidSol"/>
-    <rdf:Description rdf:about="#SolidSolidSuspension"/>
-    <rdf:Description rdf:about="#SolidSolution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#HeteroNuclearMolecule"/>
-    <rdf:Description rdf:about="#HomoNuclearMolecule"/>
-    <rdf:Description rdf:about="#SaltMolecule"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Ink"/>
-    <rdf:Description rdf:about="#LiquidSol"/>
-    <rdf:Description rdf:about="#SolidSol"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Ion"/>
-    <rdf:Description rdf:about="#MolecularEntityInStateOfAggregation"/>
-    <rdf:Description rdf:about="#Molecule"/>
-    <rdf:Description rdf:about="#Oxidant"/>
-    <rdf:Description rdf:about="#PolyAtomicEntity"/>
-    <rdf:Description rdf:about="#Reductant"/>
-    <rdf:Description rdf:about="#SoluteMolecule"/>
-    <rdf:Description rdf:about="#SolventMolecule"/>
-    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Mixture"/>
-    <rdf:Description rdf:about="#PhaseOfMatter"/>
-    <rdf:Description rdf:about="#StateOfAggregation"/>
-    <rdf:Description rdf:about="#StateOfMatter"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Nafion_D2020CS"/>
-    <rdf:Description rdf:about="#Nafion_D2021CS"/>
-    <rdf:Description rdf:about="#Nafion_D520CS"/>
-    <rdf:Description rdf:about="#Nafion_D521CS"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#0DNanoMaterial"/>
-    <rdf:Description rdf:about="#1DNanoMaterial"/>
-    <rdf:Description rdf:about="#2DNanoMaterial"/>
-    <rdf:Description rdf:about="#3DNanoMaterial"/>
+    <rdf:Description rdf:about="#AcetyleneBlack"/>
+    <rdf:Description rdf:about="#ChannelBlack"/>
+    <rdf:Description rdf:about="#FurnaceBlack"/>
+    <rdf:Description rdf:about="#LampBlack"/>
+    <rdf:Description rdf:about="#ThermalBlack"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
