@@ -104,19 +104,36 @@ class OntologyManager:
 
 def main():
     # Get the project root directory
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    #
+    # # Change the current working directory to the project root directory
+    # os.chdir(project_root)
+    #
+    # load_dotenv()
+    #
+    # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
+    # api_key = settings.OPENAI_API_KEY
+    # ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/"
+    #
+    # ontology_manager = OntologyManager(api_key, ontology_folder)
+    # ontology_manager.update_all_ontologies()
+    import requests
+    from rdflib import Graph
 
-    # Change the current working directory to the project root directory
-    os.chdir(project_root)
+    ontology_url = "https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/safe/materials.xml"
 
-    load_dotenv()
+    response = requests.get(ontology_url)
+    data = response.text
 
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
-    api_key = settings.OPENAI_API_KEY
-    ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/"
+    g = Graph()
+    g.parse(data=data, format="xml")
+    subjects = set()
+    for s, p, o in g:
+        subjects.add(s)
 
-    ontology_manager = OntologyManager(api_key, ontology_folder)
-    ontology_manager.update_all_ontologies()
+    for subject in sorted(subjects):
+        print(subject)
+
 
 
 if __name__ == "__main__":
