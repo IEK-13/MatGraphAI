@@ -1213,8 +1213,7 @@
   <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CoatingCoatingMatrixMatrix</alternative_label>
 </owl:Class>
 test
-<owl:Class rdf:about="#Cobalt">
-  <rdfs:subClassOf rdf:resource="#Atom"/>
+<owl:Cla
   <onto_name>Cobalt</onto_name>
   <rdfs:comment>Cobalt is a transition metal with the symbol Co and atomic number 27. It is commonly used in the production of rechargeable batteries, particularly in the cathode material of lithium-ion batteries. Cobalt-based alloys are also used in the manufacture of gas turbines, jet engines, and other high-performance machinery.</rdfs:comment>
   <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Co</alternative_label>
