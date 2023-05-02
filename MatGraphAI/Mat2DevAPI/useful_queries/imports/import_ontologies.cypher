@@ -49,18 +49,18 @@ MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
 call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
 
 // second pass to load the owl:Matter
-call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML",{ verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML",{ verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
 //MATCH (n:Resource{uri:subject})
 //SET n:EMMO_Matter;
-MATCH (cls:EMMO__Class)
-WHERE EXISTS(cls.alternative_label)
-UNWIND cls.alternative_label AS alt_label
-MERGE (al:Alternative_Label {name: alt_label})
-CREATE (cls)-[:HAS_ALTERNATIVE_LABEL]->(al);
-//second pass to load the owl:Matter
-call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
-MATCH (n:Resource{uri:subject})
-SET n:EMMO_Process;
+//MATCH (cls:EMMO__Class)
+//WHERE EXISTS(cls.alternative_label)
+//UNWIND cls.alternative_label AS alt_label
+//MERGE (al:Alternative_Label {name: alt_label})
+//CREATE (cls)-[:HAS_ALTERNATIVE_LABEL]->(al);
+////second pass to load the owl:Matter
+//call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
+//MATCH (n:Resource{uri:subject})
+//SET n:EMMO_Process;
 
 
 

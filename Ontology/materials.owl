@@ -3383,334 +3383,30 @@
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#0DNanoMaterial"/>
-    <rdf:Description rdf:about="#1DNanoMaterial"/>
-    <rdf:Description rdf:about="#2DNanoMaterial"/>
-    <rdf:Description rdf:about="#3DNanoMaterial"/>
+    <rdf:Description rdf:about="#AcetyleneBlack"/>
+    <rdf:Description rdf:about="#ChannelBlack"/>
+    <rdf:Description rdf:about="#FurnaceBlack"/>
+    <rdf:Description rdf:about="#LampBlack"/>
+    <rdf:Description rdf:about="#ThermalBlack"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Nafion_D2020CS"/>
-    <rdf:Description rdf:about="#Nafion_D2021CS"/>
-    <rdf:Description rdf:about="#Nafion_D520CS"/>
-    <rdf:Description rdf:about="#Nafion_D521CS"/>
+    <rdf:Description rdf:about="#Acid"/>
+    <rdf:Description rdf:about="#Base"/>
+    <rdf:Description rdf:about="#ChemicalCompound"/>
+    <rdf:Description rdf:about="#ElementalSubstance"/>
+    <rdf:Description rdf:about="#Solute"/>
+    <rdf:Description rdf:about="#Solvent"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Mixture"/>
-    <rdf:Description rdf:about="#PhaseOfMatter"/>
-    <rdf:Description rdf:about="#StateOfAggregation"/>
-    <rdf:Description rdf:about="#StateOfMatter"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Ion"/>
-    <rdf:Description rdf:about="#MolecularEntityInStateOfAggregation"/>
-    <rdf:Description rdf:about="#Molecule"/>
-    <rdf:Description rdf:about="#Oxidant"/>
-    <rdf:Description rdf:about="#PolyAtomicEntity"/>
-    <rdf:Description rdf:about="#Reductant"/>
-    <rdf:Description rdf:about="#SoluteMolecule"/>
-    <rdf:Description rdf:about="#SolventMolecule"/>
-    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Ink"/>
-    <rdf:Description rdf:about="#LiquidSol"/>
-    <rdf:Description rdf:about="#SolidSol"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#HeteroNuclearMolecule"/>
-    <rdf:Description rdf:about="#HomoNuclearMolecule"/>
-    <rdf:Description rdf:about="#SaltMolecule"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Gel"/>
-    <rdf:Description rdf:about="#SolidFoam"/>
-    <rdf:Description rdf:about="#SolidGasSuspension"/>
-    <rdf:Description rdf:about="#SolidLiquidSuspension"/>
-    <rdf:Description rdf:about="#SolidSol"/>
-    <rdf:Description rdf:about="#SolidSolidSuspension"/>
-    <rdf:Description rdf:about="#SolidSolution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#GasLiquidSuspension"/>
-    <rdf:Description rdf:about="#GasSolidSuspension"/>
-    <rdf:Description rdf:about="#LiquidGasSuspension"/>
-    <rdf:Description rdf:about="#LiquidLiquidSuspension"/>
-    <rdf:Description rdf:about="#LiquidSolidSuspension"/>
-    <rdf:Description rdf:about="#SolidGasSuspension"/>
-    <rdf:Description rdf:about="#SolidLiquidsSuspension"/>
-    <rdf:Description rdf:about="#SolidSolidSuspension"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Gas"/>
-    <rdf:Description rdf:about="#Liquid"/>
-    <rdf:Description rdf:about="#Plasma"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Fluid"/>
-    <rdf:Description rdf:about="#Solid"/>
-    <rdf:Description rdf:about="#Suspension"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Fluid"/>
-    <rdf:Description rdf:about="#Solid"/>
-    <rdf:Description rdf:about="#Solution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Ethanol"/>
-    <rdf:Description rdf:about="#Methanol"/>
-    <rdf:Description rdf:about="#1-Butanol"/>
-    <rdf:Description rdf:about="#1-Propanol"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Emulsion"/>
-    <rdf:Description rdf:about="#LiquidFoam"/>
-    <rdf:Description rdf:about="#LiquidGasSuspension"/>
-    <rdf:Description rdf:about="#LiquidLiquidSuspension"/>
-    <rdf:Description rdf:about="#LiquidSol"/>
-    <rdf:Description rdf:about="#LiquidSolidSuspension"/>
-    <rdf:Description rdf:about="#LiquidSolution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#ElectrolyteSolution"/>
-    <rdf:Description rdf:about="#LiquidSolution"/>
-    <rdf:Description rdf:about="#SaturatedSolution"/>
-    <rdf:Description rdf:about="#SolidSolution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#ElectroCatalyst"/>
-    <rdf:Description rdf:about="#ElectrochemicalMaterial"/>
-    <rdf:Description rdf:about="#GraphiteMaterial"/>
-    <rdf:Description rdf:about="#IntercalationMaterial"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Dispersion"/>
-    <rdf:Description rdf:about="#GasMixture"/>
-    <rdf:Description rdf:about="#PhaseHeterogeneousMixture"/>
-    <rdf:Description rdf:about="#PhaseHomogeneousMixture"/>
-    <rdf:Description rdf:about="#SolidMixture"/>
-    <rdf:Description rdf:about="#Solution"/>
-    <rdf:Description rdf:about="#Suspension"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Colloid"/>
-    <rdf:Description rdf:about="#Emulsion"/>
-    <rdf:Description rdf:about="#Foam"/>
-    <rdf:Description rdf:about="#Gel"/>
-    <rdf:Description rdf:about="#Sol"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#ChemicalReactionProduct"/>
-    <rdf:Description rdf:about="#ChemicalReationReactant"/>
-    <rdf:Description rdf:about="#DissolvedMolecule"/>
-    <rdf:Description rdf:about="#GaseMolecule"/>
-    <rdf:Description rdf:about="#LiquidMolecule"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Ceramic"/>
-    <rdf:Description rdf:about="#EnergyMaterial"/>
-    <rdf:Description rdf:about="#ManufacturedMaterial"/>
-    <rdf:Description rdf:about="#Metal"/>
-    <rdf:Description rdf:about="#NanoMaterial"/>
-    <rdf:Description rdf:about="#NaturalMaterial"/>
-    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Catalyst"/>
-    <rdf:Description rdf:about="#CoatingSubstrate"/>
-    <rdf:Description rdf:about="#ElectrochemicalMaterial"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#BinaryCatalyst"/>
-    <rdf:Description rdf:about="#SecundaryCatalyst"/>
-    <rdf:Description rdf:about="#TernaryCatalyst"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#BinaryCarbonSupportedPlatinumCatalyst"/>
-    <rdf:Description rdf:about="#CarbonSupportedPlatinumCatalyst"/>
-    <rdf:Description rdf:about="#ConductingPolymerSupportedPlatinumCatalyst"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Atom"/>
-    <rdf:Description rdf:about="#Ion"/>
-    <rdf:Description rdf:about="#MolecularEntityInStateOfAggregation"/>
-    <rdf:Description rdf:about="#Molecule"/>
-    <rdf:Description rdf:about="#OrganicMolceule"/>
-    <rdf:Description rdf:about="#Oxidant"/>
-    <rdf:Description rdf:about="#PolyAtomicEntity"/>
-    <rdf:Description rdf:about="#Reductant"/>
-    <rdf:Description rdf:about="#SoluteMolecule"/>
-    <rdf:Description rdf:about="#SolventMolecule"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AquivionD72-25BS"/>
-    <rdf:Description rdf:about="#AquivionD79-25BS"/>
-    <rdf:Description rdf:about="#AquivionD98-25BS"/>
-    <rdf:Description rdf:about="#AquivionSO3H-Form"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Aquivion"/>
-    <rdf:Description rdf:about="#Gore"/>
-    <rdf:Description rdf:about="#Nafion"/>
-    <rdf:Description rdf:about="#3M"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AqueousSolution"/>
-    <rdf:Description rdf:about="#CatalystInk"/>
-    <rdf:Description rdf:about="#ElectrolyteSolution"/>
-    <rdf:Description rdf:about="#Ink"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Anolyte"/>
-    <rdf:Description rdf:about="#AqueousElectrolyte"/>
-    <rdf:Description rdf:about="#Catholyte"/>
-    <rdf:Description rdf:about="#GasSolution"/>
-    <rdf:Description rdf:about="#NonAqueousElectrolyte"/>
-    <rdf:Description rdf:about="#SupportingElectrolyte"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Anolyte"/>
-    <rdf:Description rdf:about="#AqueousElectrloyte"/>
-    <rdf:Description rdf:about="#Catholyte"/>
-    <rdf:Description rdf:about="#NonAqueousElectrolyte"/>
-    <rdf:Description rdf:about="#SupportingElectrolyte"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AnisotropicMaterial"/>
-    <rdf:Description rdf:about="#BinaryMaterial"/>
-    <rdf:Description rdf:about="#CarbonBlack"/>
-    <rdf:Description rdf:about="#Ceramic"/>
-    <rdf:Description rdf:about="#CompositeMaterial"/>
-    <rdf:Description rdf:about="#EnergyMaterial"/>
-    <rdf:Description rdf:about="#FunctionalMaterial"/>
-    <rdf:Description rdf:about="#GraphiteMaterial"/>
-    <rdf:Description rdf:about="#HeterogenousMaterial"/>
-    <rdf:Description rdf:about="#HomoGenousMaterial"/>
-    <rdf:Description rdf:about="#IntercalationMaterial"/>
-    <rdf:Description rdf:about="#IsotropicMaterial"/>
-    <rdf:Description rdf:about="#ManufacturedMaterial"/>
-    <rdf:Description rdf:about="#Metal"/>
-    <rdf:Description rdf:about="#NanoMaterial"/>
-    <rdf:Description rdf:about="#NaturalMaterial"/>
-    <rdf:Description rdf:about="#ReactiveMaterial"/>
-    <rdf:Description rdf:about="#TernaryMaterial"/>
-    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Anion"/>
-    <rdf:Description rdf:about="#Cation"/>
-    <rdf:Description rdf:about="#ElectrochemicalChargeCarrierIon"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Alkanes"/>
-    <rdf:Description rdf:about="#Alkenes"/>
-    <rdf:Description rdf:about="#Alkynes"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Aerosol"/>
-    <rdf:Description rdf:about="#GasLiquidSuspension"/>
-    <rdf:Description rdf:about="#GasSolidSuspension"/>
-    <rdf:Description rdf:about="#GasSolution"/>
-  </owl:members>
-</owl:AllDisjointClasses>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#ActiveMaterial"/>
-    <rdf:Description rdf:about="#ElectroChemicalIntercalationMaterial"/>
-    <rdf:Description rdf:about="#Electrolyte"/>
+    <rdf:Description rdf:about="#AcidicElectrolyte"/>
+    <rdf:Description rdf:about="#AlkalineElectrolyte"/>
+    <rdf:Description rdf:about="#NearNeutralElectrolyte"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
@@ -3840,30 +3536,334 @@
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AcidicElectrolyte"/>
-    <rdf:Description rdf:about="#AlkalineElectrolyte"/>
-    <rdf:Description rdf:about="#NearNeutralElectrolyte"/>
+    <rdf:Description rdf:about="#ActiveMaterial"/>
+    <rdf:Description rdf:about="#ElectroChemicalIntercalationMaterial"/>
+    <rdf:Description rdf:about="#Electrolyte"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Acid"/>
-    <rdf:Description rdf:about="#Base"/>
-    <rdf:Description rdf:about="#ChemicalCompound"/>
-    <rdf:Description rdf:about="#ElementalSubstance"/>
-    <rdf:Description rdf:about="#Solute"/>
-    <rdf:Description rdf:about="#Solvent"/>
+    <rdf:Description rdf:about="#Aerosol"/>
+    <rdf:Description rdf:about="#GasLiquidSuspension"/>
+    <rdf:Description rdf:about="#GasSolidSuspension"/>
+    <rdf:Description rdf:about="#GasSolution"/>
   </owl:members>
 </owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#AcetyleneBlack"/>
-    <rdf:Description rdf:about="#ChannelBlack"/>
-    <rdf:Description rdf:about="#FurnaceBlack"/>
-    <rdf:Description rdf:about="#LampBlack"/>
-    <rdf:Description rdf:about="#ThermalBlack"/>
+    <rdf:Description rdf:about="#Alkanes"/>
+    <rdf:Description rdf:about="#Alkenes"/>
+    <rdf:Description rdf:about="#Alkynes"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Anion"/>
+    <rdf:Description rdf:about="#Cation"/>
+    <rdf:Description rdf:about="#ElectrochemicalChargeCarrierIon"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#AnisotropicMaterial"/>
+    <rdf:Description rdf:about="#BinaryMaterial"/>
+    <rdf:Description rdf:about="#CarbonBlack"/>
+    <rdf:Description rdf:about="#Ceramic"/>
+    <rdf:Description rdf:about="#CompositeMaterial"/>
+    <rdf:Description rdf:about="#EnergyMaterial"/>
+    <rdf:Description rdf:about="#FunctionalMaterial"/>
+    <rdf:Description rdf:about="#GraphiteMaterial"/>
+    <rdf:Description rdf:about="#HeterogenousMaterial"/>
+    <rdf:Description rdf:about="#HomoGenousMaterial"/>
+    <rdf:Description rdf:about="#IntercalationMaterial"/>
+    <rdf:Description rdf:about="#IsotropicMaterial"/>
+    <rdf:Description rdf:about="#ManufacturedMaterial"/>
+    <rdf:Description rdf:about="#Metal"/>
+    <rdf:Description rdf:about="#NanoMaterial"/>
+    <rdf:Description rdf:about="#NaturalMaterial"/>
+    <rdf:Description rdf:about="#ReactiveMaterial"/>
+    <rdf:Description rdf:about="#TernaryMaterial"/>
+    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Anolyte"/>
+    <rdf:Description rdf:about="#AqueousElectrloyte"/>
+    <rdf:Description rdf:about="#Catholyte"/>
+    <rdf:Description rdf:about="#NonAqueousElectrolyte"/>
+    <rdf:Description rdf:about="#SupportingElectrolyte"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Anolyte"/>
+    <rdf:Description rdf:about="#AqueousElectrolyte"/>
+    <rdf:Description rdf:about="#Catholyte"/>
+    <rdf:Description rdf:about="#GasSolution"/>
+    <rdf:Description rdf:about="#NonAqueousElectrolyte"/>
+    <rdf:Description rdf:about="#SupportingElectrolyte"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#AqueousSolution"/>
+    <rdf:Description rdf:about="#CatalystInk"/>
+    <rdf:Description rdf:about="#ElectrolyteSolution"/>
+    <rdf:Description rdf:about="#Ink"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Aquivion"/>
+    <rdf:Description rdf:about="#Gore"/>
+    <rdf:Description rdf:about="#Nafion"/>
+    <rdf:Description rdf:about="#3M"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#AquivionD72-25BS"/>
+    <rdf:Description rdf:about="#AquivionD79-25BS"/>
+    <rdf:Description rdf:about="#AquivionD98-25BS"/>
+    <rdf:Description rdf:about="#AquivionSO3H-Form"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Atom"/>
+    <rdf:Description rdf:about="#Ion"/>
+    <rdf:Description rdf:about="#MolecularEntityInStateOfAggregation"/>
+    <rdf:Description rdf:about="#Molecule"/>
+    <rdf:Description rdf:about="#OrganicMolceule"/>
+    <rdf:Description rdf:about="#Oxidant"/>
+    <rdf:Description rdf:about="#PolyAtomicEntity"/>
+    <rdf:Description rdf:about="#Reductant"/>
+    <rdf:Description rdf:about="#SoluteMolecule"/>
+    <rdf:Description rdf:about="#SolventMolecule"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#BinaryCarbonSupportedPlatinumCatalyst"/>
+    <rdf:Description rdf:about="#CarbonSupportedPlatinumCatalyst"/>
+    <rdf:Description rdf:about="#ConductingPolymerSupportedPlatinumCatalyst"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#BinaryCatalyst"/>
+    <rdf:Description rdf:about="#SecundaryCatalyst"/>
+    <rdf:Description rdf:about="#TernaryCatalyst"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Catalyst"/>
+    <rdf:Description rdf:about="#CoatingSubstrate"/>
+    <rdf:Description rdf:about="#ElectrochemicalMaterial"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Ceramic"/>
+    <rdf:Description rdf:about="#EnergyMaterial"/>
+    <rdf:Description rdf:about="#ManufacturedMaterial"/>
+    <rdf:Description rdf:about="#Metal"/>
+    <rdf:Description rdf:about="#NanoMaterial"/>
+    <rdf:Description rdf:about="#NaturalMaterial"/>
+    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#ChemicalReactionProduct"/>
+    <rdf:Description rdf:about="#ChemicalReationReactant"/>
+    <rdf:Description rdf:about="#DissolvedMolecule"/>
+    <rdf:Description rdf:about="#GaseMolecule"/>
+    <rdf:Description rdf:about="#LiquidMolecule"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Colloid"/>
+    <rdf:Description rdf:about="#Emulsion"/>
+    <rdf:Description rdf:about="#Foam"/>
+    <rdf:Description rdf:about="#Gel"/>
+    <rdf:Description rdf:about="#Sol"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Dispersion"/>
+    <rdf:Description rdf:about="#GasMixture"/>
+    <rdf:Description rdf:about="#PhaseHeterogeneousMixture"/>
+    <rdf:Description rdf:about="#PhaseHomogeneousMixture"/>
+    <rdf:Description rdf:about="#SolidMixture"/>
+    <rdf:Description rdf:about="#Solution"/>
+    <rdf:Description rdf:about="#Suspension"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#ElectroCatalyst"/>
+    <rdf:Description rdf:about="#ElectrochemicalMaterial"/>
+    <rdf:Description rdf:about="#GraphiteMaterial"/>
+    <rdf:Description rdf:about="#IntercalationMaterial"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#ElectrolyteSolution"/>
+    <rdf:Description rdf:about="#LiquidSolution"/>
+    <rdf:Description rdf:about="#SaturatedSolution"/>
+    <rdf:Description rdf:about="#SolidSolution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Emulsion"/>
+    <rdf:Description rdf:about="#LiquidFoam"/>
+    <rdf:Description rdf:about="#LiquidGasSuspension"/>
+    <rdf:Description rdf:about="#LiquidLiquidSuspension"/>
+    <rdf:Description rdf:about="#LiquidSol"/>
+    <rdf:Description rdf:about="#LiquidSolidSuspension"/>
+    <rdf:Description rdf:about="#LiquidSolution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Ethanol"/>
+    <rdf:Description rdf:about="#Methanol"/>
+    <rdf:Description rdf:about="#1-Butanol"/>
+    <rdf:Description rdf:about="#1-Propanol"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Fluid"/>
+    <rdf:Description rdf:about="#Solid"/>
+    <rdf:Description rdf:about="#Solution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Fluid"/>
+    <rdf:Description rdf:about="#Solid"/>
+    <rdf:Description rdf:about="#Suspension"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Gas"/>
+    <rdf:Description rdf:about="#Liquid"/>
+    <rdf:Description rdf:about="#Plasma"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#GasLiquidSuspension"/>
+    <rdf:Description rdf:about="#GasSolidSuspension"/>
+    <rdf:Description rdf:about="#LiquidGasSuspension"/>
+    <rdf:Description rdf:about="#LiquidLiquidSuspension"/>
+    <rdf:Description rdf:about="#LiquidSolidSuspension"/>
+    <rdf:Description rdf:about="#SolidGasSuspension"/>
+    <rdf:Description rdf:about="#SolidLiquidsSuspension"/>
+    <rdf:Description rdf:about="#SolidSolidSuspension"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Gel"/>
+    <rdf:Description rdf:about="#SolidFoam"/>
+    <rdf:Description rdf:about="#SolidGasSuspension"/>
+    <rdf:Description rdf:about="#SolidLiquidSuspension"/>
+    <rdf:Description rdf:about="#SolidSol"/>
+    <rdf:Description rdf:about="#SolidSolidSuspension"/>
+    <rdf:Description rdf:about="#SolidSolution"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#HeteroNuclearMolecule"/>
+    <rdf:Description rdf:about="#HomoNuclearMolecule"/>
+    <rdf:Description rdf:about="#SaltMolecule"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Ink"/>
+    <rdf:Description rdf:about="#LiquidSol"/>
+    <rdf:Description rdf:about="#SolidSol"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Ion"/>
+    <rdf:Description rdf:about="#MolecularEntityInStateOfAggregation"/>
+    <rdf:Description rdf:about="#Molecule"/>
+    <rdf:Description rdf:about="#Oxidant"/>
+    <rdf:Description rdf:about="#PolyAtomicEntity"/>
+    <rdf:Description rdf:about="#Reductant"/>
+    <rdf:Description rdf:about="#SoluteMolecule"/>
+    <rdf:Description rdf:about="#SolventMolecule"/>
+    <rdf:Description rdf:about="http://www.semanticweb.org/maxdreger/ontologies/2022/6/FCFabChar#Polymer"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Mixture"/>
+    <rdf:Description rdf:about="#PhaseOfMatter"/>
+    <rdf:Description rdf:about="#StateOfAggregation"/>
+    <rdf:Description rdf:about="#StateOfMatter"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Nafion_D2020CS"/>
+    <rdf:Description rdf:about="#Nafion_D2021CS"/>
+    <rdf:Description rdf:about="#Nafion_D520CS"/>
+    <rdf:Description rdf:about="#Nafion_D521CS"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#0DNanoMaterial"/>
+    <rdf:Description rdf:about="#1DNanoMaterial"/>
+    <rdf:Description rdf:about="#2DNanoMaterial"/>
+    <rdf:Description rdf:about="#3DNanoMaterial"/>
   </owl:members>
 </owl:AllDisjointClasses>
 

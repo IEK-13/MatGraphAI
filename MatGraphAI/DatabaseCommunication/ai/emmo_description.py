@@ -41,7 +41,7 @@ def convert_alternative_labels(onto):
     # Use the new property name
 
         print(onto_path)
-        ontology.save(onto_path)
+        ontology.save(onto_path, format="rdfxml")
 
 
 
