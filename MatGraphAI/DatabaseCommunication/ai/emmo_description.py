@@ -14,7 +14,7 @@ import os
 
 def convert_alternative_labels(onto):
     onto_path = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/", onto)
-    onto_path_alt = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/", onto)
+    onto_path_alt = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/alt_list", onto)
     ontology = get_ontology(onto_path_alt).load()
 
     # Define the new alternative_label property
@@ -26,8 +26,7 @@ def convert_alternative_labels(onto):
         # Iterate over all classes in the ontology
         for cls in ontology.classes():
             # If the class has the 'alternative_labels' property
-            if cls.alternative_label != None:
-                pass
+            if cls.alternative_labels:
                 # Retrieve the alternative_labels value, parse it, and remove the property
                 alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
                 cls.alternative_labels = []
