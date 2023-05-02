@@ -10,7 +10,7 @@ from DatabaseCommunication.ai.setupMessages import ONTOLOGY_ASSISTANT_MESSAGES
 
 from owlready2 import get_ontology, DataProperty, FunctionalProperty, ObjectProperty, Thing
 import os
-
+import re
 
 def convert_alternative_labels(onto):
     onto_path = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/", onto)
@@ -31,8 +31,11 @@ def convert_alternative_labels(onto):
                 # Retrieve the alternative_labels value, parse it, and remove the property
                 alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
                 cls.alternative_labels = []
-                for label in alt_labels:
-                    cls.alternative_label.append(label.strip())  # Make sure to use the newly defined property
+                for l in alt_labels:
+                    label = l.strip()
+                    label = label.join(label.split())
+                    label = re.sub(r'\W+', '', label)
+                    cls.alternative_label.append(label)  # Make sure to use the newly defined property
                     print(label)
             else:
                 print(cls, cls.alternative_label)
