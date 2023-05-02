@@ -1212,7 +1212,7 @@
   <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CoatingCoatingSurfaceSurface</alternative_label>
   <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CoatingCoatingMatrixMatrix</alternative_label>
 </owl:Class>
-
+test
 <owl:Class rdf:about="#Cobalt">
   <rdfs:subClassOf rdf:resource="#Atom"/>
   <onto_name>Cobalt</onto_name>
