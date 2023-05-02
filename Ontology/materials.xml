@@ -791,16 +791,7 @@
   <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PFSAIonomer</alternative_label>
 </owl:Class>
 
-<owl:Class rdf:about="#Argon">
-  <rdfs:subClassOf rdf:resource="#Atom"/>
-  <alternative_labels>['Ar', 'Noble Gas Argon', 'Protective Gas Argon', 'Inert Gas Argon']</alternative_labels>
-  <onto_name>Argon</onto_name>
-  <rdfs:comment>Argon is a chemical element with the symbol Ar and atomic number 18. It is a noble gas and is the third-most abundant gas in the Earth's atmosphere. Argon is used in various applications, including welding, lighting, and as a protective gas in the production of titanium and other reactive elements.</rdfs:comment>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ar</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NobleGasArgon</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProtectiveGasArgon</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InertGasArgon</alternative_label>
-</owl:Class>
+
 
 <owl:Class rdf:about="#AromaticHeterocyclicOrganicAminesMolecules">
   <rdfs:subClassOf rdf:resource="#AromaticHeterocyclicOrganicMolecules"/>
@@ -1354,6 +1345,16 @@
   <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TransactinideDarmstadtium</alternative_label>
 </owl:Class>
 
+<owl:Class rdf:about="#Argon">
+  <rdfs:subClassOf rdf:resource="#Atom"/>
+  <alternative_labels>['Ar', 'Noble Gas Argon', 'Protective Gas Argon', 'Inert Gas Argon']</alternative_labels>
+  <onto_name>Argon</onto_name>
+  <rdfs:comment>Argon is a chemical element with the symbol Ar and atomic number 18. It is a noble gas and is the third-most abundant gas in the Earth's atmosphere. Argon is used in various applications, including welding, lighting, and as a protective gas in the production of titanium and other reactive elements.</rdfs:comment>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ar</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NobleGasArgon</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProtectiveGasArgon</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InertGasArgon</alternative_label>
+</owl:Class>
 
 <owl:Class rdf:about="#DecalSusbtrate">
   <rdfs:subClassOf rdf:resource="#CoatingSubstrate"/>
