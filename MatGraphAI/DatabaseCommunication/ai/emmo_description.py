@@ -33,7 +33,6 @@ def convert_alternative_labels(onto):
                 cls.alternative_labels = []
                 for l in alt_labels:
                     label = l.strip()
-                    label = label.join(label.split())
                     label = re.sub(r'\W+', '', label)
                     cls.alternative_label.append(label)  # Make sure to use the newly defined property
                     print(label)
