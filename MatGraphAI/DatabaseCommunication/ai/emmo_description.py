@@ -21,7 +21,6 @@ def convert_alternative_labels(onto):
     # Define the new alternative_label property
     with ontology:
         class alternative_label(AnnotationProperty):
-            domain = [Thing]
             range = [str]
 
         # Iterate over all classes in the ontology
@@ -30,11 +29,11 @@ def convert_alternative_labels(onto):
             if cls.alternative_label != None:
                 pass
                 # Retrieve the alternative_labels value, parse it, and remove the property
-                # alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
-                # cls.alternative_labels = []
-                # for label in alt_labels:
-                    # cls.alternative_label.append(label.strip())  # Make sure to use the newly defined property
-                    # print(label)
+                alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
+                cls.alternative_labels = []
+                for label in alt_labels:
+                    cls.alternative_label.append(label.strip())  # Make sure to use the newly defined property
+                    print(label)
             else:
                 print(cls, cls.alternative_label)
             print(cls, cls.alternative_label)  # Use the new property name
