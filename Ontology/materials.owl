@@ -12,6 +12,11 @@
 
 <owl:AnnotationProperty rdf:about="#onto_name"/>
 
+<owl:AnnotationProperty rdf:about="#alternative_label">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:AnnotationProperty>
+
 <owl:Class rdf:about="#AcetyleneBlack">
   <rdfs:subClassOf rdf:resource="#CarbonBlack"/>
   <onto_name>AcetyleneBlack</onto_name>

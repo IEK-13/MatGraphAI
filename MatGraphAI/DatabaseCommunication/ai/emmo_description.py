@@ -14,7 +14,7 @@ import os
 
 def convert_alternative_labels(onto):
     onto_path = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/", onto)
-    onto_path_alt = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/alt_list", onto)
+    onto_path_alt = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/", onto)
     ontology = get_ontology(onto_path_alt).load()
 
     # Define the new alternative_label property
@@ -27,14 +27,18 @@ def convert_alternative_labels(onto):
         # Iterate over all classes in the ontology
         for cls in ontology.classes():
             # If the class has the 'alternative_labels' property
-            if hasattr(cls, 'alternative_labels') and cls.alternative_labels:
+            if cls.alternative_label != None:
+                pass
                 # Retrieve the alternative_labels value, parse it, and remove the property
-                alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
-                cls.alternative_labels = []
-                for label in alt_labels:
-                    cls.alternative_label.append(label.strip())  # Make sure to use the newly defined property
-                    print(label)
-                print(cls.alternative_label)  # Use the new property name
+                # alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
+                # cls.alternative_labels = []
+                # for label in alt_labels:
+                    # cls.alternative_label.append(label.strip())  # Make sure to use the newly defined property
+                    # print(label)
+            else:
+                print(cls, cls.alternative_label)
+            print(cls, cls.alternative_label)  # Use the new property name
+    # Use the new property name
 
         print(onto_path)
         ontology.save(onto_path)

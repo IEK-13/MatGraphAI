@@ -12,6 +12,15 @@
 
 <owl:AnnotationProperty rdf:about="##onto_name"/>
 
+<owl:AnnotationProperty rdf:about="#alternative_label">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="#onto_name"/>
+
+<owl:AnnotationProperty rdf:about="#alternative_labels"/>
+
 <owl:Class rdf:about="##Manufactured">
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manufactured refers to the process of making a product on a large scale using machinery and standardized processes. In the context of hydrogen technologies, it typically involves the production of materials, components, or systems used in fuel cells, electrolyzers, and other hydrogen-related applications.</rdfs:comment>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manufactured</onto_name>

@@ -12,6 +12,11 @@
 
 <owl:AnnotationProperty rdf:about="#onto_name"/>
 
+<owl:AnnotationProperty rdf:about="#alternative_label">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:AnnotationProperty>
+
 <owl:Class rdf:about="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#AboluteHumidity">
   <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mdreger/ontologies/2022/10/properties#ThermodynamicalQuantity"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Absolute humidity is the measure of the amount of water vapor present in a given volume of air, regardless of temperature. It is expressed in units of grams of water vapor per cubic meter of air and is an important parameter in the design and operation of hydrogen fuel cells, as high humidity levels can negatively impact their performance.</rdfs:comment>

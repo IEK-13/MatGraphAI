@@ -12,6 +12,11 @@
 
 <owl:AnnotationProperty rdf:about="#onto_name"/>
 
+<owl:AnnotationProperty rdf:about="#alternative_label">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:AnnotationProperty>
+
 <owl:Class rdf:about="#Process">
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the context of hydrogen technologies, a process refers to a series of steps or operations that are carried out to produce, store, or utilize hydrogen. These steps may include hydrogen production, purification, compression, storage, transportation, and utilization. Processes can be optimized to improve efficiency, reduce costs, and minimize environmental impact.</rdfs:comment>
   <onto_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Process</onto_name>
