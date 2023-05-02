@@ -1095,16 +1095,7 @@
   <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radioactive Californium</alternative_label>
 </owl:Class>
 
-<owl:Class rdf:about="#Carbon">
-  <rdfs:subClassOf rdf:resource="#Atom"/>
-  <onto_name>Carbon</onto_name>
-  <rdfs:comment>Carbon is a chemical element with the symbol C and atomic number 6. It is a non-metallic element and the fourth most abundant element in the universe. Carbon has several allotropes, including diamond, graphite, and fullerenes, and is a key element in organic chemistry and materials science.</rdfs:comment>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Element 6</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-metallic element</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allotropes of carbon</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organic chemistry element</alternative_label>
-</owl:Class>
+
 
 <owl:Class rdf:about="#CarbonSupportedPlatinumCatalyst">
   <rdfs:subClassOf rdf:resource="#PlatinumCatalyst"/>
@@ -1649,15 +1640,7 @@
   <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proton Exchange Membrane Fuel Cell Catalyst</alternative_label>
 </owl:Class>
 
-<owl:Class rdf:about="#Fermium">
-  <rdfs:subClassOf rdf:resource="#Atom"/>
-  <onto_name>Fermium</onto_name>
-  <rdfs:comment>Fermium is a synthetic, radioactive element with the symbol Fm and atomic number 100. It is a member of the actinide series and is named after physicist Enrico Fermi. Fermium has no known uses outside of basic scientific research.</rdfs:comment>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fm</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Element 100</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synthetic Actinide</alternative_label>
-  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radioactive Fermium</alternative_label>
-</owl:Class>
+
 
 <owl:Class rdf:about="#Flerovium">
   <rdfs:subClassOf rdf:resource="#Atom"/>
@@ -3867,5 +3850,26 @@
   </owl:members>
 </owl:AllDisjointClasses>
 
+
+<owl:Class rdf:about="#Fermium">
+  <rdfs:subClassOf rdf:resource="#Thing"/>
+  <onto_name>Fermium</onto_name>
+  <rdfs:comment>Fermium is a synthetic, radioactive element with the symbol Fm and atomic number 100. It is a member of the actinide series and is named after physicist Enrico Fermi. Fermium has no known uses outside of basic scientific research.</rdfs:comment>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fm</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Element 100</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synthetic Actinide</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radioactive Fermium</alternative_label>
+</owl:Class>
+
+<owl:Class rdf:about="#Carbon">
+  <rdfs:subClassOf rdf:resource="#Thing"/>
+  <onto_name>Carbon</onto_name>
+  <rdfs:comment>Carbon is a chemical element with the symbol C and atomic number 6. It is a non-metallic element and the fourth most abundant element in the universe. Carbon has several allotropes, including diamond, graphite, and fullerenes, and is a key element in organic chemistry and materials science.</rdfs:comment>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Element 6</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-metallic element</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allotropes of carbon</alternative_label>
+  <alternative_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organic chemistry element</alternative_label>
+</owl:Class>
 
 </rdf:RDF>

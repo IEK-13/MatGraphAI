@@ -11,6 +11,7 @@ call n10s.graphconfig.init({
 baseSchemaPrefix:"EMMO",
 subClassOfRel:"IS_A"}
 );
+call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
 
 // first pass, load the onto. Note that there are irregular uris, but we accept them with verifyUriSyntax: false
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML", { verifyUriSyntax: false }) ;
@@ -46,7 +47,6 @@ MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
 
 
 // we want named instances to link to the classes imported from the onto, so we change the handleRDFTypes mode.
-call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
 
 // second pass to load the owl:Matter
 //call n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML",{ verifyUriSyntax: false , limit :100000}) yield subject, predicate, object
