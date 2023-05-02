@@ -39,7 +39,7 @@ def convert_alternative_labels(onto):
 
 
         # print(onto_path)
-        ontology.save(onto_path, format="rdfxml")
+        ontology.save(onto_path, format="ntriples")
 
 
 
@@ -90,7 +90,7 @@ class OntologyManager:
                 except JSONDecodeError:
                     print(f"Invalid JSON response for class: {cls.name}")
 
-        onto.save(ontology_path1, format="rdfxml")
+        onto.save(ontology_path1, format="ntriples")
 
     def update_all_ontologies(self):
         ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]
