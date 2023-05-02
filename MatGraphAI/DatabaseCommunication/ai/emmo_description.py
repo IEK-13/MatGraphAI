@@ -16,6 +16,7 @@ def convert_alternative_labels(onto):
     onto_path = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/", onto)
     onto_path_alt = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/alt_list", onto)
     ontology = get_ontology(onto_path_alt).load()
+    print("ALT", onto_path_alt)
 
     # Define the new alternative_label property
     # Define the new alternative_label property
@@ -38,8 +39,8 @@ def convert_alternative_labels(onto):
                 #     print(label)
 
 
-        # print(onto_path)
-        ontology.save(onto_path, format="ntriples")
+        print("save", onto_path)
+        ontology.save(onto_path, format="rdfxml")
 
 
 
@@ -77,9 +78,9 @@ class OntologyManager:
                 pass
             class onto_name(AnnotationProperty):
                 pass
-        print(ontology_path)
+        # print(ontology_path)
         for cls in onto.classes():
-            print(cls.onto_name)
+            # print(cls.onto_name)
             if not cls.onto_name:
                 try:
                     output = self.chat_with_gpt3_5(ONTOLOGY_ASSISTANT_MESSAGES, cls.name)
@@ -90,11 +91,11 @@ class OntologyManager:
                 except JSONDecodeError:
                     print(f"Invalid JSON response for class: {cls.name}")
 
-        onto.save(ontology_path1, format="ntriples")
+        onto.save(ontology_path1, format="rdfxml")
 
     def update_all_ontologies(self):
-        ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]
-
+        ontologies = [f for f in os.listdir(self.ontology_folder+"alt_list/") if f.endswith(".owl")]
+        print(self.ontology_folder, ontologies)
         for ontology_file in ontologies:
             self.update_ontology(ontology_file)
             convert_alternative_labels(ontology_file)

@@ -14,8 +14,8 @@ subClassOfRel:"IS_A"}
 //call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
 
 // first pass, load the onto. Note that there are irregular uris, but we accept them with verifyUriSyntax: false
-call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","N-Triples") ;
-CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl", "N-Triples") YIELD subject, predicate, object
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML") ;
+CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl", "RDF/XML") YIELD subject, predicate, object
 WHERE predicate CONTAINS "alternative_label"
 MATCH (cls:Resource {uri: subject })
 MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
