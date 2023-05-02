@@ -30,18 +30,15 @@ def convert_alternative_labels(onto):
             if cls.alternative_labels:
                 # Retrieve the alternative_labels value, parse it, and remove the property
                 alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
-                cls.alternative_labels = []
+                # cls.alternative_labels = []
                 for l in alt_labels:
                     label = l.strip()
                     label = re.sub(r'\W+', '', label)
                     cls.alternative_label.append(label)  # Make sure to use the newly defined property
-                    print(label)
-            else:
-                print(cls, cls.alternative_label)
-            print(cls, cls.alternative_label)  # Use the new property name
-    # Use the new property name
+                #     print(label)
 
-        print(onto_path)
+
+        # print(onto_path)
         ontology.save(onto_path, format="rdfxml")
 
 
@@ -50,7 +47,7 @@ def convert_alternative_labels(onto):
 
 
 class OntologyManager:
-    def __init__(self, api_key, ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/"):
+    def __init__(self, api_key, ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/alt_list"):
         self.api_key = api_key
         self.ontology_folder = ontology_folder
 
@@ -70,7 +67,9 @@ class OntologyManager:
         )
         return response["choices"][0]["message"]["content"]
     def update_ontology(self, ontology_file):
-        ontology_path = os.path.join(self.ontology_folder, ontology_file)
+        ontology_path1 = os.path.join(self.ontology_folder, ontology_file)
+        ontology_path = os.path.join(self.ontology_folder, "alt_list", ontology_file)
+
         onto = get_ontology(ontology_path).load()
 
         with onto:
@@ -78,13 +77,12 @@ class OntologyManager:
                 pass
             class onto_name(AnnotationProperty):
                 pass
-
+        print(ontology_path)
         for cls in onto.classes():
+            print(cls.onto_name)
             if not cls.onto_name:
-                print(cls.name)
                 try:
                     output = self.chat_with_gpt3_5(ONTOLOGY_ASSISTANT_MESSAGES, cls.name)
-                    print(output)
                     output = json.loads(output)
                     cls.comment = output["description"]
                     cls.alternative_labels = str(output["alternative_labels"])
@@ -92,7 +90,7 @@ class OntologyManager:
                 except JSONDecodeError:
                     print(f"Invalid JSON response for class: {cls.name}")
 
-        onto.save(ontology_path, format="rdfxml")
+        onto.save(ontology_path1, format="rdfxml")
 
     def update_all_ontologies(self):
         ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]

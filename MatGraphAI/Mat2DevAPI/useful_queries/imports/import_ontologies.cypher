@@ -3,7 +3,7 @@
 
 Match (n)-[m]-(r) delete n,m,r;
 Match (n) delete n;
-CREATE CONSTRAINT UniqueAlternativeLabel IF NOT EXISTS ON (al:alternative_Label) ASSERT al.name IS UNIQUE;
+CREATE CONSTRAINT UniqueAlternativeLabel IF NOT EXISTS ON (al:Alternative_Label) ASSERT al.name IS UNIQUE;
 
 //CREATE CONSTRAINT n10s_unique_uri FOR (r:Resource) REQUIRE r.uri IS UNIQUE;
 
@@ -12,37 +12,32 @@ baseSchemaPrefix:"EMMO",
 subClassOfRel:"IS_A"}
 );
 call n10s.graphconfig.set({handleRDFTypes: "NODES",force:true}) ;
-//CALL n10s.graphconfig.init({ handleVocabUris: "MAP", handleMultival: "ARRAY" });
-//CALL n10s.mapping.add("onto", "https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/");
-//CALL n10s.mapping.add("owl", "http://www.w3.org/2002/07/owl#");
-//CALL n10s.mapping.add("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-//CALL n10s.mapping.add("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
-//CALL n10s.mapping.add("xsd", "http://www.w3.org/2001/XMLSchema#");
+
 // first pass, load the onto. Note that there are irregular uris, but we accept them with verifyUriSyntax: false
 call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl","RDF/XML", { verifyUriSyntax: false }) ;
 CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/materials.owl", "RDF/XML", { verifyUriSyntax: false }) YIELD subject, predicate, object
 WHERE predicate CONTAINS "alternative_label"
-MATCH (cls:EMMO__Class { uri: subject })
+MATCH (cls:Resource {uri: subject })
 MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
 
 
-//CALL n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","RDF/XML", { verifyUriSyntax: false }) ;
-//CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl", "RDF/XML") YIELD subject, predicate, object
-//WHERE predicate CONTAINS "alternative_label"
-//MATCH (cls:EMMO__Class { uri: subject })
-//MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
-//
-//call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML", { verifyUriSyntax: false }) ;
-//CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl", "RDF/XML") YIELD subject, predicate, object
-//WHERE predicate CONTAINS "alternative_label"
-//MATCH (cls:EMMO__Class { uri: subject })
-//MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
-//
-//call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false }) ;
-//CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl", "RDF/XML") YIELD subject, predicate, object
-//WHERE predicate CONTAINS "alternative_label"
-//MATCH (cls:EMMO__Class { uri: subject })
-//MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
+CALL n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl","RDF/XML", { verifyUriSyntax: false }) ;
+CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/quantities.owl", "RDF/XML") YIELD subject, predicate, object
+WHERE predicate CONTAINS "alternative_label"
+MATCH (cls:Resource { uri: subject })
+MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
+
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl","RDF/XML", { verifyUriSyntax: false }) ;
+CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufactured.owl", "RDF/XML") YIELD subject, predicate, object
+WHERE predicate CONTAINS "alternative_label"
+MATCH (cls:Resource { uri: subject })
+MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
+
+call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl","RDF/XML", { verifyUriSyntax: false }) ;
+CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/manufacturing.owl", "RDF/XML") YIELD subject, predicate, object
+WHERE predicate CONTAINS "alternative_label"
+MATCH (cls:Resource { uri: subject })
+MERGE (cls)<-[:IS_ALTERNATIVE_LABEL]-(al:Alternative_Label {name: object});
 
 //call n10s.onto.import.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl","RDF/XML", { verifyUriSyntax: false}) ;
 //CALL n10s.rdf.stream.fetch("https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/units.owl", "RDF/XML") YIELD subject, predicate, object
