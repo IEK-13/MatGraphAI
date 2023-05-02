@@ -13,7 +13,6 @@
 <owl:AnnotationProperty rdf:about="#onto_name"/>
 
 <owl:AnnotationProperty rdf:about="#alternative_label">
-  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:AnnotationProperty>
 
