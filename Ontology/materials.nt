@@ -1,7 +1,8 @@
 <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#alternative_label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#alternative_label> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
-<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#alternative_label> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#onto_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#alternative_label> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#onto_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcetyleneBlack> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#AcetyleneBlack> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack> .
 <http://www.semanticweb.org/maxdreger/ontologies/2022/10/materials#CarbonBlack> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
