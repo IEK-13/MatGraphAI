@@ -1,9 +1,3 @@
-from django.contrib import admin as dj_admin
-
-from Mat2DevAPI.admins.adminBase import (NodeModelAdmin)
-from Mat2DevAPI.forms.formsProcess import ManufacturingAdminForm, MeasurementAdminForm
-from Mat2DevAPI.models.processes import Measurement, Manufacturing
-
 """
 All admin classes that are required for "matter" models. classes by certain properties and the model admins.
 AdminClasses register the models on the admin site and allow reading writing and deleting of their instances via the
@@ -13,6 +7,13 @@ Contains:
     MeasurementAdmin(ProcessAdmin)
     ManufacturingAdmin(NodeModelAdmin)
 """
+from django.contrib import admin as dj_admin
+
+from Mat2DevAPI.admins.adminBase import (NodeModelAdmin)
+from Mat2DevAPI.forms.formsProcess import ManufacturingAdminForm, MeasurementAdminForm
+from Mat2DevAPI.models.processes import Measurement, Manufacturing
+
+
 
 
 class ProcessAdmin(NodeModelAdmin):

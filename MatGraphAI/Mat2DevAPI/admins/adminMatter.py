@@ -1,3 +1,14 @@
+"""
+All admin classes that are required for Matter models. Contains Typefilters, to allow filtering of Matter
+classes by certain properties and the model admins. AdminClasses register the models on the admin site and allow
+reading writing and deleting of their instances via the admin interface.
+Contains the classes
+    ElementAdmin
+    MoleculeAdmin
+    ManufacturedAdmin
+    ComponentAdmin
+    DeviceAdmin
+"""
 from django.contrib import admin as dj_admin
 from neomodel import Q
 
@@ -8,17 +19,7 @@ from Mat2DevAPI.models.matter import (Molecule,
                                       Component,
                                       Device, Material, Element)
 
-"""
-All admin classes that are required for Matter models. Contains Typefilters, to allow filtering of Matter
-classes by certain properties and the model admins. AdminClasses register the models on the admin site and allow
-reading writing and deleting of their instances via the admin interface. 
-Contains the classes
-    ElementAdmin
-    MoleculeAdmin
-    ManufacturedAdmin
-    ComponentAdmin
-    DeviceAdmin
-"""
+
 
 
 @dj_admin.register(Element)

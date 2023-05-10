@@ -64,10 +64,9 @@ MEDIA_URL = '/media/'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
 # you are free to add this configurations
 NEOMODEL_NEO4J_BOLT_URL = os.environ.get(
-    'NEO4J_BOLT_URL', 'bolt://neo4j:phdproject@localhost:11012/test2')
+    'NEO4J_BOLT_URL', os.getenv('NEOMODEL_NEO4J_BOLT_URL'))
 NEOMODEL_SIGNALS = True
 NEOMODEL_FORCE_TIMEZONE = False
 NEOMODEL_ENCRYPTED_CONNECTION = True
@@ -118,6 +117,11 @@ DATABASES = {
         'PASSWORD': '',
         'PORT': '',
     },
+    'neo4j': {
+        'ENGINE': '',
+        'NAME': 'neo4j',
+        'NEOMODEL_NEO4J_BOLT_URL': NEOMODEL_NEO4J_BOLT_URL,
+    }
 }
 
 # Password validation

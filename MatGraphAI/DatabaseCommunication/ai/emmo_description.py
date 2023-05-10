@@ -39,7 +39,6 @@ def convert_alternative_labels(onto):
                     label = l.strip()
                     label = re.sub(r'\W+', '', label)
                     cls.alternative_label.append(label)  # Make sure to use the newly defined property
-                #     print(label)
 
         ontology.save(onto_path, format="rdfxml")
 
@@ -74,14 +73,17 @@ class OntologyManager:
         ontology_path = os.path.join(self.ontology_folder, ontology_file)
 
         onto = get_ontology(ontology_path).load()
-
         with onto:
-
-            pass
-        # print(ontology_path)
+            class alternative_label(AnnotationProperty):
+                domain = [Thing]
+                range = [str]
+            class onto_name(AnnotationProperty):
+                domain = [Thing]
+                range = [str]
+        print(ontology_path)
         for cls in onto.classes():
-            # print(cls.onto_name)
             if not cls.onto_name:
+                print(f"Need to update class: {cls.name}")
                 try:
                     output = self.chat_with_gpt3_5(ONTOLOGY_ASSISTANT_MESSAGES, cls.name)
                     output = json.loads(output)
@@ -156,8 +158,12 @@ class OntologyManager:
         ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]
         print(self.ontology_folder, ontologies)
         for ontology_file in ontologies:
-            # self.update_ontology(ontology_file)
-            # convert_alternative_labels(ontology_file)
+            self.update_ontology(ontology_file)
+
+    def import_all_ontologies(self):
+        ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]
+        print(self.ontology_folder, ontologies)
+        for ontology_file in ontologies:
             self.import_to_neo4j(ontology_file)
 
 
@@ -171,7 +177,8 @@ def main():
     load_dotenv()
     from neomodel import config
 
-    config.DATABASE_URL = 'bolt://neo4j:phdproject@localhost:11012/test2'
+    config.DATABASE_URL = os.getenv('NEOMODEL_NEO4J_BOLT_URL')
+    print(config.DATABASE_URL)
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
     api_key = settings.OPENAI_API_KEY

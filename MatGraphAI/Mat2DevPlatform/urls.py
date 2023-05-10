@@ -20,6 +20,6 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('Mat2DevAPI/', include('Mat2DevAPI.urls')),
+    path('', include('Mat2DevAPI.urls')),
     path('admin/', admin.site.urls),
 ]

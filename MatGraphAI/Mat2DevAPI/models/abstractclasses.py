@@ -1,9 +1,41 @@
+"""
+This module contains Django-Neo4j node model classes for a knowledge graph application.
+
+UIDDjangoNode is an abstract base class that provides a unique identifier (uid) as the primary key for
+DjangoNode instances. It also includes an alias property to handle the Django primary key (pk) field,
+which is commonly used in Django applications.
+
+UniqueNode is another abstract base class for unique nodes in a Django-Neo4j graph, which also includes
+a uid as a unique identifier.
+
+CausalObject is an abstract base class representing causal objects in the knowledge graph. It inherits
+from UIDDjangoNode and contains properties for the name and the date the object was added to the knowledge graph.
+
+OntologyNode is an abstract base class representing ontology nodes in the knowledge graph. It inherits
+from UIDDjangoNode and contains properties for the name, URI, description, and alternative_label relationship
+of the ontology node according to the EMMO (European Materials & Modelling Ontology).
+"""
 from django_neomodel import DjangoNode, classproperty
 from neomodel import AliasProperty, StringProperty, UniqueIdProperty, ArrayProperty, RelationshipTo, ZeroOrMore
 from django.apps import apps
 
 
 class UIDDjangoNode(DjangoNode):
+    """
+    UIDDjangoNode is an abstract base class for Django-Neo4j nodes that provides a unique identifier (uid)
+    as the primary key for DjangoNode instances. It inherits from DjangoNode, which is a base class for
+    Neo4j nodes that are compatible with Django.
+
+    The class defines a UniqueIdProperty, 'uid', which serves as the primary key for instances of the class.
+    The 'abstract_node' attribute is set to True to ensure that UIDDjangoNode is only used as a base class.
+
+    The _meta method is a class property that sets the app_label and alias property for the primary key (pk) used
+    in Django applications. The primary key (pk) is aliased to the 'uid' property using AliasProperty. This ensures
+    that Django admin and other parts of the Django framework that use .pk can work seamlessly with this class.
+
+    The Meta class is defined as a nested class inside UIDDjangoNode but left empty. It can be used by subclasses
+    to set additional metadata options.
+    """
     uid = UniqueIdProperty(
         primary_key=True
     )

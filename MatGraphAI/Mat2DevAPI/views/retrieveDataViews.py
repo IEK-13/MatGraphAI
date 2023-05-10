@@ -1,27 +1,19 @@
-from collections import defaultdict
-
+from django.http import FileResponse
 from django.shortcuts import render
-from Mat2DevAPI.models.metadata import PIDA
-
-from django.http import JsonResponse, HttpResponse
-import csv
-import json
-from neomodel import config, db
-
+from neomodel import db
+from rest_framework import views
+import requests
+from wsgiref.util import FileWrapper
+import re
 
 def download_data_form(request, PID):
     return render(request, 'PIDA.html', {'PID': PID})
-import csv
-from collections import defaultdict
-from django.http import HttpResponse, JsonResponse
+
 
 import csv
 from collections import defaultdict
 from django.http import HttpResponse, JsonResponse
 
-import csv
-from collections import defaultdict
-from django.http import HttpResponse, JsonResponse
 
 def download_data(request, PID):
     # Connect to Neo4j database
@@ -113,3 +105,38 @@ def download_data(request, PID):
     else:
         # Return an error response for invalid formats
         return HttpResponse("Invalid format. Supported formats: 'csv' and 'json'.", status=400)
+
+
+class FileRetrieveView(views.APIView):
+    """
+    A Django view that retrieves a file from a remote server and serves it
+    as a download to the user.
+    """
+
+    def get(self, request, uid, *args, **kwargs):
+        # Construct the remote URL using the given uid
+        url = f"http://134.94.199.40/{uid}"
+        # Define payload and headers for the request
+        payload = 'user=TLxtWQZbhc&password=50PVZNIO5Q'
+        headers = {
+            'Accept': '*/*',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        # Make the GET request to the remote server with stream=True to download the file
+        response = requests.get(url, headers=headers, data=payload, stream=True)
+
+        # Extract the filename from the Content-Disposition header
+        content_disposition = response.headers.get('Content-Disposition')
+        match = re.search(r'filename="(.+)"', content_disposition)
+        filename = match.group(1) if match else 'download.bin'
+
+        # Create an HttpResponse object with the content and content type from the external response
+        django_response = FileResponse(
+            FileWrapper(response.raw),
+            content_type=response.headers.get('Content-Type')
+        )
+
+        # Set the Content-Disposition header to trigger a download with the extracted filename
+        django_response['Content-Disposition'] = f'attachment; filename="{filename}"'
+
+        return django_response
