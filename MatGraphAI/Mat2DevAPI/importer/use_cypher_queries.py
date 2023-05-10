@@ -7,5 +7,4 @@ def upload_query(query):
 
 
 if __name__ == "__main__":
-    print("upload queries")
     upload_query()

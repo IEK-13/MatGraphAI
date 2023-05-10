@@ -2,8 +2,8 @@
 
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/solvents1.csv' AS row
 
-MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
-      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+MATCH (avgmass:EMMOQuantity {name: "Mass"}),
+      (monoisomass:EMMOQuantity {name: "MonoIsotopicMass"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
@@ -15,7 +15,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (i:Element {symbol: "I"}),
       (s:Element {symbol: "S"}),
       (v:Element {symbol: "V"}),
-      (m:EMMO_Matter {EMMO__name: "Solvent"})
+      (m:EMMOMatter {name: "Solvent"})
 
 
 CREATE(solvent:Molecule{name: row.PREFERREDNAME,
@@ -78,8 +78,8 @@ FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
 
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/solvents2.csv' AS row
 
-MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
-      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+MATCH (avgmass:EMMOQuantity {name: "Mass"}),
+      (monoisomass:EMMOQuantity {name: "MonoIsotopicMass"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
@@ -91,7 +91,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (i:Element {symbol: "I"}),
       (s:Element {symbol: "S"}),
       (v:Element {symbol: "V"}),
-      (m:EMMO_Matter {EMMO__name: "Solvent"})
+      (m:EMMOMatter {name: "Solvent"})
 
 
 CREATE(solvent:Molecule{name: row.PREFERREDNAME,
@@ -153,8 +153,8 @@ FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
 
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/solvents3.csv' AS row
 
-MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
-      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+MATCH (avgmass:EMMOQuantity {name: "Mass"}),
+      (monoisomass:EMMOQuantity {name: "MonoIsotopicMass"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
@@ -166,7 +166,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (i:Element {symbol: "I"}),
       (s:Element {symbol: "S"}),
       (v:Element {symbol: "V"}),
-      (m:EMMO_Matter {EMMO__name: "Solvent"})
+      (m:EMMOMatter {name: "Solvent"})
 
 
 CREATE(solvent:Molecule{name: row.PREFERREDNAME,
@@ -228,8 +228,8 @@ FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
 
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/solvents4.csv' AS row
 
-MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
-      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+MATCH (avgmass:EMMOQuantity {name: "Mass"}),
+      (monoisomass:EMMOQuantity {name: "MonoIsotopicMass"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
@@ -241,7 +241,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (i:Element {symbol: "I"}),
       (s:Element {symbol: "S"}),
       (v:Element {symbol: "V"}),
-      (m:EMMO_Matter {EMMO__name: "Solvent"})
+      (m:EMMOMatter {name: "Solvent"})
 
 
 CREATE(solvent:Molecule{name: row.PREFERREDNAME,
@@ -302,8 +302,8 @@ FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
 
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/solvents5.csv' AS row
 
-MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
-      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+MATCH (avgmass:EMMOQuantity {name: "Mass"}),
+      (monoisomass:EMMOQuantity {name: "MonoIsotopicMass"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
@@ -315,7 +315,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (i:Element {symbol: "I"}),
       (s:Element {symbol: "S"}),
       (v:Element {symbol: "V"}),
-      (m:EMMO_Matter {EMMO__name: "Solvent"})
+      (m:EMMOMatter {name: "Solvent"})
 
 
 CREATE(solvent:Molecule{name: row.PREFERREDNAME,
@@ -376,8 +376,8 @@ FOREACH(x IN CASE WHEN toFloat(row.MONOISOTOPICMASS) IS NOT NULL THEN [1] END |
 
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/solvents6.csv' AS row
 
-MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
-      (monoisomass:EMMO_Quantity {EMMO__name: "MonoIsotopicMass"}),
+MATCH (avgmass:EMMOQuantity {name: "Mass"}),
+      (monoisomass:EMMOQuantity {name: "MonoIsotopicMass"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
@@ -389,7 +389,7 @@ MATCH (avgmass:EMMO_Quantity {EMMO__name: "Mass"}),
       (i:Element {symbol: "I"}),
       (s:Element {symbol: "S"}),
       (v:Element {symbol: "V"}),
-      (m:EMMO_Matter {EMMO__name: "Solvent"})
+      (m:EMMOMatter {name: "Solvent"})
 
 
 CREATE(solvent:Molecule{name: row.PREFERREDNAME,

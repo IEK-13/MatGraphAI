@@ -1,15 +1,15 @@
 PROFILE
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/lukas/fabrication/fabrication.csv' AS row
 MATCH(met:Element {name:row.catalyst2})
-MATCH(emmo_ink:EMMO_Matter {EMMO__name: "CatalystInk"})
-MATCH(emmo_ionomer:EMMO_Matter {EMMO__name: "Nafion_D2021CS"})
-MATCH(emmo_ic:EMMO_Quantity {EMMO__name: "CatalystIonomerRatio"})
-MATCH(emmo_cc:EMMO_Quantity {EMMO__name: "CatalystCarbonRatio"})
-MATCH(emmo_h20:EMMO_Matter {EMMO__name: "Water"})
-MATCH(emmo_propanol:EMMO_Matter {EMMO__name: "1-Propanol"})
-MATCH(emmo_cs:EMMO_Matter {EMMO__name: row.catalyst1})
-MATCH(emmo_met:EMMO_Matter {EMMO__name: row.catalyst2})
-MATCH(emmo_cat:EMMO_Matter {EMMO__name: row.cat_emmo})
+MATCH(emmo_ink:EMMOMatter {name: "CatalystInk"})
+MATCH(emmo_ionomer:EMMOMatter {name: "Nafion_D2021CS"})
+MATCH(emmo_ic:EMMOQuantity {name: "CatalystIonomerRatio"})
+MATCH(emmo_cc:EMMOQuantity {name: "CatalystCarbonRatio"})
+MATCH(emmo_h20:EMMOMatter {name: "Water"})
+MATCH(emmo_propanol:EMMOMatter {name: "1-Propanol"})
+MATCH(emmo_cs:EMMOMatter {name: row.catalyst1})
+MATCH(emmo_met:EMMOMatter {name: row.catalyst2})
+MATCH(emmo_cat:EMMOMatter {name: row.cat_emmo})
 MATCH(researcher:Researcher {first_name: "Lukas"})
 MERGE(ink:Material {name: row.name,
                            date_added: date(),
@@ -75,7 +75,7 @@ MERGE(cat)-[:IS_A]->(emmo_cat)
 MERGE(catfab)-[:IS_MANUFACTURING_OUTPUT]->(cat)
 
 WITH row, cat,cs ,ink, met, emmo_met, emmo_cs, inkfab, solfab, researcher
-OPTIONAL MATCH(emmo_ox:EMMO_Matter {EMMO__name: row.catalyst3})
+OPTIONAL MATCH(emmo_ox:EMMOMatter {name: row.catalyst3})
 FOREACH(ignoreMe IN CASE WHEN row.catalyst3 is not null THEN [1] ELSE [] END|
   MERGE(ox:Element {name:row.catalyst3})
   MERGE(ox)-[:IS_A]->(emmo_ox)

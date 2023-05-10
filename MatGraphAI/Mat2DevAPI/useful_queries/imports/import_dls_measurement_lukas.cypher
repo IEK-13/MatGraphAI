@@ -3,13 +3,13 @@ LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGra
 MATCH(researcher:Researcher {first_name: row.Researcher})
 MATCH(material:Material {name:row.Material})
 MATCH(solvent:Molecule {name:row.Solvent})
-MATCH(emmo_measurement:EMMO_Process {EMMO__name: row.Ontology})
-MATCH(emmo_hydrodynamicdiameter:EMMO_Quantity {EMMO__name: "HydrodynamicDiameter"})
-MATCH(emmo_averagehydrodynamicdiameter:EMMO_Quantity {EMMO__name: "AverageHydrodynamicDiameter"})
-MATCH(emmo_hydrodynamicvolume:EMMO_Quantity {EMMO__name: "HydrodynamicVolume"})
-MATCH(emmo_volume:EMMO_Quantity {EMMO__name: "Volume"})
-MATCH(emmo_intensity:EMMO_Quantity {EMMO__name: "Intensity"})
-MATCH(emmo_pdi:EMMO_Quantity {EMMO__name: "PolydispersityIndex"})
+MATCH(emmo_measurement:EMMOProcess {name: row.Ontology})
+MATCH(emmo_hydrodynamicdiameter:EMMOQuantity {name: "HydrodynamicDiameter"})
+MATCH(emmo_averagehydrodynamicdiameter:EMMOQuantity {name: "AverageHydrodynamicDiameter"})
+MATCH(emmo_hydrodynamicvolume:EMMOQuantity {name: "HydrodynamicVolume"})
+MATCH(emmo_volume:EMMOQuantity {name: "Volume"})
+MATCH(emmo_intensity:EMMOQuantity {name: "Intensity"})
+MATCH(emmo_pdi:EMMOQuantity {name: "PolydispersityIndex"})
 
 MERGE(measurement:Measurement {PIDA: row.PIDA,
                                flag: "findich_dls",

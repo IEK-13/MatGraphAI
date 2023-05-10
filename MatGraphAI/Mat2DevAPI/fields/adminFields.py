@@ -47,10 +47,10 @@ class ElementsMultipleChoiceField(RelationMultipleChoiceField):
 #             )
 #         return value
 
-# class EMMO_MatterMultipleChoiceField(RelationMultipleChoiceField):
+# class EMMOMatterMultipleChoiceField(RelationMultipleChoiceField):
 #
 #     def __init__(self, autocomplete_url='material-input-autocomplete', **kwargs):
-#         super().__init__('EMMO_Matter', 'EMMO_Matters', primary_key='uri', label_field='EMMO__name', **kwargs)
+#         super().__init__('EMMOMatter', 'EMMOMatters', primary_key='uri', label_field='name', **kwargs)
 #         self.widget = autocomplete.Select2Multiple(url=autocomplete_url, attrs={'style': 'width: 100%;'})
 #
 #     def prepare_value(self, value):
@@ -65,7 +65,7 @@ class ElementsMultipleChoiceField(RelationMultipleChoiceField):
 # class EMMOProcessMultipleChoiceField(RelationMultipleChoiceField):
 #
 #     def __init__(self, autocomplete_url='emmo-process-autocomplete', **kwargs):
-#         super().__init__('EMMO_Process', 'EMMO_Processes', primary_key='uri', label_field='EMMO__name', **kwargs)
+#         super().__init__('EMMOProcess', 'EMMOProcesses', primary_key='uri', label_field='name', **kwargs)
 #         self.widget = autocomplete.Select2Multiple(url=autocomplete_url, attrs={'style': 'width: 100%;'})
 #
 #     def prepare_value(self, value):

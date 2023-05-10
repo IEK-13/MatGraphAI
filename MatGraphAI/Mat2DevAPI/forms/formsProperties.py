@@ -97,15 +97,15 @@ class PropertyFormsetCls(BasePropertyFormset):
             MATCH (material)-[rel:HAS_PROPERTY]->(property:Property)<-[:HAS_MEASUREMENT_OUTPUT]-(measurement:Measurement)
             WHERE ID(material)=$self
             WITH material, measurement, property, rel
-            MATCH(measurement)-[:IS_A]->(measurement_label:EMMO_Process) 
-            MATCH(property)-[:IS_A]->(property_label:EMMO_Quantity) 
+            MATCH(measurement)-[:IS_A]->(measurement_label:EMMOProcess) 
+            MATCH(property)-[:IS_A]->(property_label:EMMOQuantity) 
 
             
             RETURN
                 ID(rel) as rel,
                 measurement.uid as measurement,
                 rel.float_value as value, rel.float_accuracy as accuracy,
-                measurement_label.EMMO__name as label, rel.unit as unit, property.uid as property, property_label.EMMO__name as property_label
+                measurement_label.name as label, rel.unit as unit, property.uid as property, property_label.name as property_label
         ''')
 
         return [

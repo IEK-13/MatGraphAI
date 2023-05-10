@@ -13,14 +13,14 @@ SET cb.uid = randomUUID()
 
 WITH cb, vb
 MATCH(c:Element {symbol: "C"})
-MATCH(emmo_cb:EMMO_Matter {EMMO__name: "CarbonBlack"})
+MATCH(emmo_cb:EMMOMatter {name: "CarbonBlack"})
 MERGE(vb)-[:IS_A]->(emmo_cb)
 MERGE(cb)-[:IS_A]->(emmo_cb)
 MERGE(vb)-[:HAS_PART]->(c)
 MERGE(cb)-[:HAS_PART]->(c);
 
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/Catalysts.csv' AS row
-MATCH (ontology:EMMO_Matter {EMMO__name:row.Ontology})
+MATCH (ontology:EMMOMatter {name:row.Ontology})
 MERGE(cat:Material{name: row.Name,
                    chemical_formula: row.ChemicalFormula
 })
@@ -52,7 +52,7 @@ MERGE(test)-[:HAS_PART]->(part3);
 
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/MaxDreger92/MatGraphAI/master/Mat2DevPlatform/Mat2DevAPI/data/materials/Catalysts.csv' AS row
 MATCH(cat:Material{name: row.Name, chemical_formula: row.ChemicalFormula})
-MATCH(emmo_purity:EMMO_Quantity{EMMO__name: "MetalPurity"})
+MATCH(emmo_purity:EMMOQuantity{name: "MetalPurity"})
 FOREACH(x IN CASE WHEN row.Purity IS NOT NULL THEN [1] END |
 MERGE (purity:Property {name:row.Name+ "_purity"})
 MERGE(purity)-[:IS_A]->(emmo_purity)
@@ -62,7 +62,7 @@ MERGE(cat)-[:HAS_PROPERTY {float_value: toFloat(row.Purity)}]->(purity)
 )
 
 WITH row, cat
-MATCH (emmo_ratio:EMMO_Quantity {EMMO__name: "CatalystIonomerRatio"})
+MATCH (emmo_ratio:EMMOQuantity {name: "CatalystIonomerRatio"})
 MERGE (ratio:Property {name:row.Name+ "_ratio"})
 MERGE(ratio)-[:IS_A]->(emmo_ratio)
 MERGE(cat)-[:HAS_PROPERTY {float_value: toFloat(row.CatalystIonomerRatio)}]->(ratio)

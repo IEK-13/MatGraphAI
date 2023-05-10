@@ -1,7 +1,7 @@
-from Mat2DevAPI.models.ontology import EMMO_Matter
+from Mat2DevAPI.models.ontology import EMMOMatter
 from graphutils.forms import AutocompleteSingleChoiceField
 
 
 class OntologyChoiceField(AutocompleteSingleChoiceField):
-    model = EMMO_Matter
+    model = EMMOMatter
     autocomplete_url = 'emmomatter-autocomplete'

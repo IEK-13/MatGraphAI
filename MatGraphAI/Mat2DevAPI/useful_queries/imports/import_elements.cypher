@@ -1,14 +1,14 @@
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/elements.csv' AS line
 
-MATCH(atomicnumber:EMMO_Quantity {EMMO__name: "AtomicNumber"}),
-     (atomicmass:EMMO_Quantity {EMMO__name: "AtomicMass"}),
-     (molarheat:EMMO_Quantity {EMMO__name: "MolarHeat"}),
-     (elementalsubstance:EMMO_Matter {EMMO__name: "ElementalSubstance"}),
-     (density:EMMO_Quantity {EMMO__name: "Density"}),
-     (melt:EMMO_Quantity {EMMO__name: "MeltingPoint"}),
-     (electronegativity:EMMO_Quantity {EMMO__name: "ElectronegativityPauling"}),
-     (electronaffinity:EMMO_Quantity {EMMO__name: "ElectronAffinity"}),
-     (ionizationenergy:EMMO_Quantity {EMMO__name: "IonizationEnergy"})
+MATCH(atomicnumber:EMMOQuantity {name: "AtomicNumber"}),
+     (atomicmass:EMMOQuantity {name: "AtomicMass"}),
+     (molarheat:EMMOQuantity {name: "MolarHeat"}),
+     (elementalsubstance:EMMOMatter {name: "ElementalSubstance"}),
+     (density:EMMOQuantity {name: "Density"}),
+     (melt:EMMOQuantity {name: "MeltingPoint"}),
+     (electronegativity:EMMOQuantity {name: "ElectronegativityPauling"}),
+     (electronaffinity:EMMOQuantity {name: "ElectronAffinity"}),
+     (ionizationenergy:EMMOQuantity {name: "IonizationEnergy"})
 
 
 

@@ -4,6 +4,7 @@ from django.urls import re_path as url
 from Mat2DevAPI.views.matterView import ElementAutocompleteView, MaterialInputAutocompleteView, MaterialChoiceField
 from Mat2DevAPI.views.uploadCsvViews import upload_csv
 from Mat2DevAPI.views.retrievePIDA import download_data, download_data_form
+from Mat2DevAPI.views.imageFilesViews import FileUploadView, FileRetrieveView, file_upload_form, upload_success
 
 urlpatterns = [
     url(
@@ -25,6 +26,10 @@ urlpatterns = [
     path('results/<str:url>/', upload_csv, name='results'),
     path('PIDA_ddl/<str:PID>/', download_data, name='download_data'),
     path('PIDA/<str:PID>/', download_data_form, name='download_data_form'),
+    path('fileupload/', FileUploadView.as_view(), name='file_upload'),
+    path('fileupload/form/', file_upload_form, name='file_upload_view'),
+    path('fileretrieval/<str:uid>/', FileRetrieveView.as_view(), name='file_retrieve'),
+    path('upload_success/', upload_success, name='upload_success'),
 ]
 
 

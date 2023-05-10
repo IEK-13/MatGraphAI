@@ -1,12 +1,12 @@
 from django.contrib import admin as dj_admin
 
 from Mat2DevAPI.admins.adminBase import (NodeModelAdmin)
-from Mat2DevAPI.models.ontology import EMMO_Process, EMMO_Matter
+from Mat2DevAPI.models.ontology import EMMOProcess, EMMOMatter
 
 
-@dj_admin.register(EMMO_Process)
+@dj_admin.register(EMMOProcess)
 class EMMOProcessAdmin(NodeModelAdmin):
-    list_display = ("EMMO__name", "uid")
+    list_display = ("name", "description")
 
     def save(self, commit=True):
         instance = super().save(commit)
@@ -15,9 +15,9 @@ class EMMOProcessAdmin(NodeModelAdmin):
         return instance
     actions = ['delete_model']
 
-@dj_admin.register(EMMO_Matter)
-class EMMO_MatterAdmin(NodeModelAdmin):
-    list_display = ("EMMO__name", "uid")
+@dj_admin.register(EMMOMatter)
+class EMMOMatterAdmin(NodeModelAdmin):
+    list_display = ("name", "description")
 
     def save(self, commit=True):
         instance = super().save(commit)

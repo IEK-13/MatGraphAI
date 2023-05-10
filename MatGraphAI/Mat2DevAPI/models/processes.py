@@ -19,7 +19,7 @@ class Process(CausalObject):
     public_access = BooleanProperty()
 
     # Relationships
-    is_a = RelationshipTo('Mat2DevAPI.models.ontology.EMMO_Process', "IS_A",
+    is_a = RelationshipTo('Mat2DevAPI.models.ontology.EMMOProcess', "IS_A",
                           model=IsARel, cardinality=ZeroOrMore)
     parameter = RelationshipTo('Mat2DevAPI.models.properties.Parameter', "HAS_PARAMETER",
                                model=HasParameterRel, cardinality=ZeroOrMore)

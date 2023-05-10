@@ -12,7 +12,7 @@ class ProcessAdminForm(NeoModelForm):
     publication = RelationMultipleChoiceField("Publication", "Publications", primary_key='uid', label_field='name')
     instrument = RelationMultipleChoiceField("Instrument", "Instrument", primary_key='uid', label_field='name')
 
-    is_a = RelationMultipleChoiceField("EMMO_Process", "EMMO Processes", primary_key='uid', label_field='EMMO__name')
+    is_a = RelationMultipleChoiceField("EMMOProcess", "EMMO Processes", primary_key='uid', label_field='name')
     material_input = RelationMultipleChoiceField("Material", "Materials", primary_key="uid", label_field='name')
     molecule_input = RelationMultipleChoiceField("Molecule", "Molecules", primary_key="uid", label_field='name')
     component_input = RelationMultipleChoiceField("Component", "Components", primary_key="uid", label_field='name')

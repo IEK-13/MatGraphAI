@@ -1,16 +1,18 @@
 import json
-import os
 from json import JSONDecodeError
 
 import openai
 from django.conf import settings
 from dotenv import load_dotenv
+from neomodel import UniqueIdProperty
 from owlready2 import *
-from DatabaseCommunication.ai.setupMessages import ONTOLOGY_ASSISTANT_MESSAGES
+from owlready2 import get_ontology, Thing
 
-from owlready2 import get_ontology, DataProperty, FunctionalProperty, ObjectProperty, Thing
-import os
-import re
+from DatabaseCommunication.ai.setupMessages import ONTOLOGY_ASSISTANT_MESSAGES
+from Mat2DevAPI.models.abstractclasses import UIDDjangoNode
+from Mat2DevAPI.models.ontology import EMMOMatter, EMMOQuantity, EMMOProcess
+from graphutils.models import AlternativeLabel
+
 
 def convert_alternative_labels(onto):
     onto_path = os.path.join("/home/mdreger/Documents/MatGraphAI/Ontology/", onto)
@@ -30,7 +32,8 @@ def convert_alternative_labels(onto):
             # If the class has the 'alternative_labels' property
             if cls.alternative_labels:
                 # Retrieve the alternative_labels value, parse it, and remove the property
-                alt_labels = list(cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
+                alt_labels = list(
+                    cls.alternative_labels[0].replace("[", "").replace("]", "").replace("'", "").split(","))
                 # cls.alternative_labels = []
                 for l in alt_labels:
                     label = l.strip()
@@ -38,19 +41,17 @@ def convert_alternative_labels(onto):
                     cls.alternative_label.append(label)  # Make sure to use the newly defined property
                 #     print(label)
 
-
-        print("save", onto_path)
         ontology.save(onto_path, format="rdfxml")
 
 
-
-
-
-
 class OntologyManager:
-    def __init__(self, api_key, ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/alt_list"):
+    def __init__(self, api_key, ontology_folder="/home/mdreger/Documents/MatGraphAI/Ontology/"):
         self.api_key = api_key
         self.ontology_folder = ontology_folder
+        self.file_to_model = {
+            "matter.owl": EMMOMatter,
+            "quantities.owl": EMMOQuantity,
+            "manufacturing.owl": EMMOProcess}
 
     def chat_with_gpt3_5(self, setup_message=[], prompt=''):
         openai.api_key = self.api_key
@@ -67,17 +68,16 @@ class OntologyManager:
             temperature=0,
         )
         return response["choices"][0]["message"]["content"]
+
     def update_ontology(self, ontology_file):
         ontology_path1 = os.path.join(self.ontology_folder, ontology_file)
-        ontology_path = os.path.join(self.ontology_folder, "alt_list", ontology_file)
+        ontology_path = os.path.join(self.ontology_folder, ontology_file)
 
         onto = get_ontology(ontology_path).load()
 
         with onto:
-            class alternative_labels(AnnotationProperty):
-                pass
-            class onto_name(AnnotationProperty):
-                pass
+
+            pass
         # print(ontology_path)
         for cls in onto.classes():
             # print(cls.onto_name)
@@ -93,47 +93,92 @@ class OntologyManager:
 
         onto.save(ontology_path1, format="rdfxml")
 
+    def import_to_neo4j(self, ontology_file):
+
+        ontology_path = os.path.join(self.ontology_folder, ontology_file)
+        onto = get_ontology(ontology_path).load()
+
+        with onto:
+            pass
+
+        for cls in onto.classes():
+
+            class_name = str(cls.name)
+            class_uri = str(cls.iri)
+            class_comment = str(cls.comment[0]) if cls.comment else None
+            try:
+                cls_instance = self.file_to_model[ontology_file].nodes.get(uri=class_uri)
+                cls_instance.name = class_name
+                cls_instance.description = class_comment
+                cls_instance.save()
+            except:
+                cls_instance = self.file_to_model[ontology_file](uri=class_uri, name=class_name,
+                                                                 description=class_comment)
+                cls_instance.save()
+
+            if cls.alternative_label:
+                [str(label) for label in
+                 cls.alternative_label] if cls.alternative_label else None
+
+                for label in cls.alternative_label:
+                    alt_label = str(label)
+                    try:
+                        alternative_label_node = AlternativeLabel.nodes.get(label=alt_label)
+                        if not cls_instance.alternative_label.is_connected(alternative_label_node):
+                            secondary_label_node = AlternativeLabel(label=alt_label)
+                            secondary_label_node.save()
+                            cls_instance.alternative_label.connect(secondary_label_node)
+                    except:
+                        alternative_label_node = AlternativeLabel(label=alt_label)
+                        alternative_label_node.save()
+                        cls_instance.alternative_label.connect(alternative_label_node)
+
+            # Add subclass relationships
+            for subclass in cls.subclasses():
+                subclass_name = str(subclass.name)
+                subclass_uri = str(subclass.iri)
+                subclass_comment = str(subclass.comment[0]) if subclass.comment else None
+                # print(f"Creating subclass_instance with kwargs: {subclass_name=}, {subclass_comment=}, {subclass_uri=}")
+                try:
+                    subclass_instance = self.file_to_model[ontology_file].nodes.get(uri=subclass_uri)
+                    subclass_instance.name = subclass_name
+                    subclass_instance.description = subclass_comment
+                    subclass_instance.save()
+                    cls_instance.emmo_subclass.connect(subclass_instance)
+
+                except:
+                    subclass_instance = self.file_to_model[ontology_file](uri=subclass_uri, name=subclass_name,
+                                                                          description=subclass_comment)
+                    subclass_instance.save()
+                    cls_instance.emmo_subclass.connect(subclass_instance)
+
     def update_all_ontologies(self):
-        ontologies = [f for f in os.listdir(self.ontology_folder+"alt_list/") if f.endswith(".owl")]
+        ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]
         print(self.ontology_folder, ontologies)
         for ontology_file in ontologies:
-            self.update_ontology(ontology_file)
-            convert_alternative_labels(ontology_file)
-
+            # self.update_ontology(ontology_file)
+            # convert_alternative_labels(ontology_file)
+            self.import_to_neo4j(ontology_file)
 
 
 def main():
     # Get the project root directory
-    # project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    #
-    # # Change the current working directory to the project root directory
-    # os.chdir(project_root)
-    #
-    # load_dotenv()
-    #
-    # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
-    # api_key = settings.OPENAI_API_KEY
-    # ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/"
-    #
-    # ontology_manager = OntologyManager(api_key, ontology_folder)
-    # ontology_manager.update_all_ontologies()
-    import requests
-    from rdflib import Graph
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    ontology_url = "https://raw.githubusercontent.com/IEK-13/MatGraphAI/AddCSVAPI/Ontology/safe/materials.xml"
+    # Change the current working directory to the project root directory
+    os.chdir(project_root)
 
-    response = requests.get(ontology_url)
-    data = response.text
+    load_dotenv()
+    from neomodel import config
 
-    g = Graph()
-    g.parse(data=data, format="xml")
-    subjects = set()
-    for s, p, o in g:
-        subjects.add(s)
+    config.DATABASE_URL = 'bolt://neo4j:phdproject@localhost:11012/test2'
 
-    for subject in sorted(subjects):
-        print(subject)
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
+    api_key = settings.OPENAI_API_KEY
+    ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/"
 
+    ontology_manager = OntologyManager(api_key, ontology_folder)
+    ontology_manager.update_all_ontologies()
 
 
 if __name__ == "__main__":

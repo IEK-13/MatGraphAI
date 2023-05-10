@@ -20,7 +20,7 @@ class Matter(CausalObject):
     """
     properties = RelationshipTo('Mat2DevAPI.models.properties.Property', 'HAS_PROPERTY', model=HasPropertyRel,
                                 cardinality=ZeroOrMore)
-    is_a = RelationshipTo('Mat2DevAPI.models.ontology.EMMO_Matter', 'IS_A', cardinality=ZeroOrMore, model=IsARel)
+    is_a = RelationshipTo('Mat2DevAPI.models.ontology.EMMOMatter', 'IS_A', cardinality=ZeroOrMore, model=IsARel)
     manufacturing_input = RelationshipTo('Mat2DevAPI.models.processes.Manufacturing', 'IS_MANUFACTURING_INPUT',
                                          model=IsManufacturingInputRel)
     manufacturing_output = RelationshipFrom('Mat2DevAPI.models.processes.Manufacturing', 'IS_MANUFACTURING_OUTPUT',

@@ -164,3 +164,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # Media Files
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+}

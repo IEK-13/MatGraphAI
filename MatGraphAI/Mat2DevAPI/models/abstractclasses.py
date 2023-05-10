@@ -1,41 +1,29 @@
 from django_neomodel import DjangoNode, classproperty
-from neomodel import AliasProperty, StringProperty, UniqueIdProperty, ArrayProperty
+from neomodel import AliasProperty, StringProperty, UniqueIdProperty, ArrayProperty, RelationshipTo, ZeroOrMore
 from django.apps import apps
 
 
 class UIDDjangoNode(DjangoNode):
-    """
-    Abstract base class for nodes with unique IDs in a Django-Neo4j graph.
+    uid = UniqueIdProperty(
+        primary_key=True
+    )
 
-    python
-
-    uid: A unique identifier property, serving as the primary key.
-    """
-
-    uid = UniqueIdProperty(primary_key=True)
     __abstract_node__ = True
 
+    # django (esp. admin) uses .pk in a few places and expects a UUID.
+    # add an AliasProperty to handle this
     @classproperty
-    def _meta(cls):
-        """
-        A class property that retrieves metadata for the model, including
-        app_label, concrete_model, and an AliasProperty for the primary key.
-
-        app_label: The Django app label associated with this model.
-        concrete_model: The concrete model associated with the metadata.
-        pk: An AliasProperty for the primary key (uid).
-        """
-        cls.Meta.app_label = apps.get_containing_app_config(cls.__module__).label
+    def _meta(self):
+        self.Meta.app_label = apps.get_containing_app_config(self.__module__).label
         opts = super()._meta
-        opts.concrete_model = opts.model
-        cls.pk = AliasProperty(to='uid')
+        self.pk = AliasProperty(to='uid')
         return opts
 
     class Meta:
-        """
-        A class for defining metadata options for the UIDDjangoNode model.
-        """
         pass
+
+
+
 
     def __hash__(self):
         """
@@ -82,25 +70,16 @@ class OntologyNode(UIDDjangoNode):
     """
     Abstract base class representing ontology nodes in the knowledge graph.
 
-    EMMO__name: The name of the ontology node according to the EMMO.
-    EMMO__uri: The unique URI of the ontology node according to the EMMO.
+    name: The name of the ontology node according to the EMMO.
+    uri: The unique URI of the ontology node according to the EMMO.
     """
-    EMMO__name = StringProperty(required=True, unique_index=True)
-    EMMO__uri = StringProperty(required=True, unique_index=True)
+    name = StringProperty()
+    uri = StringProperty()
+    description = StringProperty()
+    alternative_label =RelationshipTo('graphutils.models.AlternativeLabel', 'HAS_LABEL', cardinality=ZeroOrMore)
     __abstract_node__ = True
 
     def __str__(self):
-        return self.EMMO__name
+        return self.name
 
 
-class AlternativeLabelMixin:
-    """
-    Mixin class for nodes with alternative labels.
-
-    alternative_labels: An array of alternative labels for the node.
-    """
-    alternative_labels = ArrayProperty(
-        StringProperty(),
-        required=False,
-        index=True
-    )

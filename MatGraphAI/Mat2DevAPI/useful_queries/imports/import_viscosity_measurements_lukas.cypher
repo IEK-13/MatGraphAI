@@ -17,13 +17,13 @@ collect(TOFLOAT(row1.`Accuracy`)) AS accuracylist
 
 MATCH(researcher:Researcher {last_name:row.Researcher})
 MATCH(material:Material {name:row.Material})
-MATCH(emmo_measurement:EMMO_Process {EMMO__name:row.Ontology})
-MATCH(emmo_viscosity:EMMO_Quantity {EMMO__name:"Viscosity"})
-MATCH(emmo_torque:EMMO_Quantity {EMMO__name:"Torque"})
-MATCH(emmo_speed:EMMO_Quantity {EMMO__name:"Speed"})
-MATCH(emmo_shearstress:EMMO_Quantity {EMMO__name:"ShearStress"})
-MATCH(emmo_shearrate:EMMO_Quantity {EMMO__name:"ShearRate"})
-MATCH(emmo_time:EMMO_Quantity {EMMO__name:"Time"})
+MATCH(emmo_measurement:EMMOProcess {name:row.Ontology})
+MATCH(emmo_viscosity:EMMOQuantity {name:"Viscosity"})
+MATCH(emmo_torque:EMMOQuantity {name:"Torque"})
+MATCH(emmo_speed:EMMOQuantity {name:"Speed"})
+MATCH(emmo_shearstress:EMMOQuantity {name:"ShearStress"})
+MATCH(emmo_shearrate:EMMOQuantity {name:"ShearRate"})
+MATCH(emmo_time:EMMOQuantity {name:"Time"})
 
 
 

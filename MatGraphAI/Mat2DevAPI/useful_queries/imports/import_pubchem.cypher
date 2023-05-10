@@ -2,15 +2,15 @@
 
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/materials/PubChemMolecules_sum.csv' AS row
 
-MATCH (mw:EMMO_Quantity {EMMO__name: "MolecularWeight"}),
+MATCH (mw:EMMOQuantity {name: "MolecularWeight"}),
       (c:Element {symbol: "C"}),
       (h:Element {symbol: "H"}),
       (o:Element {symbol: "O"}),
       (n:Element {symbol: "N"}),
       (f:Element {symbol: "F"}),
       (s:Element {symbol: "S"}),
-      (label1:EMMO_Matter {EMMO__name: row.ontologylabel1}),
-      (label2:EMMO_Matter {EMMO__name: row.ontologylabel1})
+      (label1:EMMOMatter {name: row.ontologylabel1}),
+      (label2:EMMOMatter {name: row.ontologylabel1})
 
 
 
@@ -43,11 +43,11 @@ FOREACH(x IN CASE WHEN row.F IS NOT NULL THEN [1] END |
 FOREACH(x IN CASE WHEN row.S IS NOT NULL THEN [1] END |
   MERGE (solvent)-[:HAS_PART {integer_value: toInteger(row.S)}]->(s))
 
-FOREACH(x IN CASE WHEN row.ontologylabel1 = label1.EMMO__name THEN [1] END |
+FOREACH(x IN CASE WHEN row.ontologylabel1 = label1.name THEN [1] END |
   MERGE (solvent)-[:IS_A ]->(label1))
 
 //FOREACH(x IN CASE WHEN row.ontologylabel1 IS NOT NULL THEN [1] END |
-//  MERGE (solvent)-[:IS_A ]->(:Resource:EMMO_Matter:EMMO__Class {EMMO__name: row.ontologylabel1}))
+//  MERGE (solvent)-[:IS_A ]->(:Resource:EMMOMatter:EMMO__Class {name: row.ontologylabel1}))
 
 FOREACH(x IN CASE WHEN toFloat(row.mw) IS NOT NULL THEN [1] END |
   MERGE(pmw:Property{uid: randomUUID(),

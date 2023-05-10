@@ -1,27 +1,37 @@
+MERGE (pida:PIDA {pida: RandomUUID(),
+                  date_added : date()
+})
+  ON CREATE
+  SET pida.uid = randomUUID()
+WITH pida
 LOAD CSV WITH HEADERS FROM 'file:///home/mdreger/Documents/data/neo4j_data/jasna/FuelCellFabrication.csv' AS row
 
-MATCH (EMMO_fcas:EMMO_Process {EMMO__name: "FuelCellAssembly"}),
-      (EMMO_fcfab:EMMO_Process {EMMO__name: "FuelCellManufacturing"}),
-      (EMMO_meaas:EMMO_Process {EMMO__name: "CCMManufacturing"}),
-      (EMMO_membrane:EMMO_Matter{EMMO__name: "Membrane"}),
-      (EMMO_mea:EMMO_Matter{EMMO__name: "CCM"}),
-      (EMMO_fc:EMMO_Matter{EMMO__name: "FuelCell"}),
-      (EMMO_bp:EMMO_Matter{EMMO__name: "BipolarPlate"}),
-      (EMMO_carbonsupport:EMMO_Matter{EMMO__name: "AcetyleneBlack"}),
-      (EMMO_ionomer:EMMO_Matter{EMMO__name: "AquivionD79-25BS"}),
-      (EMMO_anode:EMMO_Matter{EMMO__name: "Anode"}),
-      (EMMO_catalyst:EMMO_Matter{EMMO__name: "F50E-HT"}),
-      (EMMO_bp:EMMO_Matter{EMMO__name: "BipolarPlate"}),
-      (EMMO_PTFE:EMMO_Matter{EMMO__name: "PTFE"}),
-      (EMMO_ink:EMMO_Matter{EMMO__name: "CatalystInk"}),
-      (EMMO_gdl:EMMO_Matter{EMMO__name: "GasDiffusionLayer"}),
-      (EMMO_station:EMMO_Matter{EMMO__name: "Station"}),
-      (EMMO_inkfab:EMMO_Process{EMMO__name: "CatalystInkManufacturing"}),
-      (EMMO_loading:EMMO_Quantity{EMMO__name: "CatalystLoading"}),
-      (EMMO_ew:EMMO_Quantity{EMMO__name: "EquivalentWeight"}),
-      (EMMO_ic:EMMO_Quantity{EMMO__name: "CatalystIonomerRatio"}),
-      (EMMO_mill:EMMO_Quantity{EMMO__name: "DryMillingTime"}),
-      (EMMO_dt:EMMO_Quantity{EMMO__name: "DryingTemperature"})
+
+
+
+MATCH (EMMO_fcas:EMMOProcess {name: "FuelCellAssembly"}),
+      (EMMO_fcfab:EMMOProcess {name: "FuelCellManufacturing"}),
+      (EMMO_meaas:EMMOProcess {name: "CCMManufacturing"}),
+      (EMMO_membrane:EMMOMatter{name: "Membrane"}),
+      (EMMO_mea:EMMOMatter{name: "CCM"}),
+      (EMMO_fc:EMMOMatter{name: "FuelCell"}),
+      (EMMO_bp:EMMOMatter{name: "BipolarPlate"}),
+      (EMMO_carbonsupport:EMMOMatter{name: "AcetyleneBlack"}),
+      (EMMO_ionomer:EMMOMatter{name: "AquivionD79-25BS"}),
+      (EMMO_anode:EMMOMatter{name: "Anode"}),
+      (EMMO_catalyst:EMMOMatter{name: "F50E-HT"}),
+      (EMMO_bp:EMMOMatter{name: "BipolarPlate"}),
+      (EMMO_PTFE:EMMOMatter{name: "PTFE"}),
+      (EMMO_ink:EMMOMatter{name: "CatalystInk"}),
+      (EMMO_gdl:EMMOMatter{name: "GasDiffusionLayer"}),
+      (EMMO_station:EMMOMatter{name: "Station"}),
+      (EMMO_inkfab:EMMOProcess{name: "CatalystInkManufacturing"}),
+      (EMMO_loading:EMMOQuantity{name: "CatalystLoading"}),
+      (EMMO_ew:EMMOQuantity{name: "EquivalentWeight"}),
+      (EMMO_ic:EMMOQuantity{name: "CatalystIonomerRatio"}),
+      (EMMO_mill:EMMOQuantity{name: "DryMillingTime"}),
+      (EMMO_dt:EMMOQuantity{name: "DryingTemperature"})
+
 
 // MEA and FC
 MERGE(fc:Device {name: row.`Run #`+"FuelCell",
@@ -29,13 +39,14 @@ MERGE(fc:Device {name: row.`Run #`+"FuelCell",
 })
   ON CREATE
   SET fc.uid = randomUUID()
-
+MERGE(pida)-[:CONTAINS]->(fc)
 MERGE(catink:Material {name: row.`Run #`+"_ink",
                       date_added : date(),
                       flag: "jasna"
 })
   ON CREATE
   SET catink.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(catink)
 
 
 MERGE(mea:Component {name: row.`Run #`,
@@ -44,6 +55,7 @@ MERGE(mea:Component {name: row.`Run #`,
 })
   ON CREATE
   SET mea.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(mea)
 
 // Other Components
 MERGE(membrane:Material {name: row.Membrane,
@@ -52,6 +64,7 @@ MERGE(membrane:Material {name: row.Membrane,
 })
   ON CREATE
   SET membrane.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(membrane)
 
 MERGE(bp:Component {name: row.plates,
       date_added : date(),
@@ -59,6 +72,7 @@ MERGE(bp:Component {name: row.plates,
       })
   ON CREATE
   SET bp.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(bp)
 
 MERGE(gdl:Component {name: row.GDL,
       date_added : date(),
@@ -66,6 +80,7 @@ MERGE(gdl:Component {name: row.GDL,
       })
   ON CREATE
   SET gdl.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(gdl)
 
 MERGE(station:Component {name: row.Station,
       date_added : date(),
@@ -73,6 +88,7 @@ MERGE(station:Component {name: row.Station,
       })
   ON CREATE
   SET station.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(station)
 
 MERGE(anode:Material {name: row.Anode,
       date_added : date(),
@@ -80,6 +96,7 @@ MERGE(anode:Material {name: row.Anode,
       })
   ON CREATE
   SET anode.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(anode)
 
 MERGE(ionomer:Material {name: row.Ionomer,
       date_added : date(),
@@ -87,6 +104,7 @@ MERGE(ionomer:Material {name: row.Ionomer,
       })
   ON CREATE
   SET ionomer.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(ionomer)
 
 MERGE(catalyst:Material {name: row.Catalyst,
       date_added : date(),
@@ -94,6 +112,7 @@ MERGE(catalyst:Material {name: row.Catalyst,
       })
   ON CREATE
   SET catalyst.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(catalyst)
 
 MERGE(carbonsupport:Material {name: row.`Catalyst`+"support",
       date_added : date(),
@@ -101,6 +120,7 @@ MERGE(carbonsupport:Material {name: row.`Catalyst`+"support",
       })
   ON CREATE
   SET carbonsupport.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(carbonsupport)
 
 MERGE(carbonsupport)<-[:HAS_PART]-(catalyst)
 MERGE(carbonsupport)-[:IS_A]->(EMMO_carbonsupport)
@@ -112,6 +132,7 @@ MERGE(coatingsubstrate:Material {name: row.`Coating substrate`,
       })
   ON CREATE
   SET coatingsubstrate.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(coatingsubstrate)
 
 
 
@@ -122,6 +143,7 @@ MERGE(fcfab:Manufacturing {uid: randomUUID(),
       date_added : date(),
       flag: "jasna"
       })
+MERGE(pida)-[:CONTAINS]->(fcfab)
 
 MERGE(fcass:Manufacturing {uid: randomUUID(),
       run_title: row.`Run #`+"_FuelCellAssembly",
@@ -130,6 +152,7 @@ MERGE(fcass:Manufacturing {uid: randomUUID(),
       flag: "jasna"
       })
 
+MERGE(pida)-[:CONTAINS]->(fcass)
 
 MERGE(meafab:Manufacturing {uid: randomUUID(),
       run_title: row.`Run #`+"_MEAManufacturing",
@@ -137,6 +160,7 @@ MERGE(meafab:Manufacturing {uid: randomUUID(),
       date_added : date(),
       flag: "jasna"
       })
+MERGE(pida)-[:CONTAINS]->(meafab)
 
 MERGE(inkfab:Manufacturing {run_title: row.`Run #`+ "_InkFabrication",
       date_added : date(),
@@ -144,6 +168,7 @@ MERGE(inkfab:Manufacturing {run_title: row.`Run #`+ "_InkFabrication",
       })
   ON CREATE
   SET inkfab.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(inkfab)
 
 
 // Labelling
@@ -218,10 +243,14 @@ MERGE(loading:Measurement{uid: randomUUID(),
                           DOI: row.DOI,
                           date_added : date()
 })
+MERGE(pida)-[:CONTAINS]->(loading)
+
 MERGE(ploading:Property{uid: randomUUID(),
                           DOI: row.DOI,
                           date_added : date()
 })
+MERGE(pida)-[:CONTAINS]->(ploading)
+
 MERGE(mea)-[:IS_MEASUREMENT_INPUT]->(loading)-[:HAS_MEASUREMENT_OUTPUT]->(ploading)-[:IS_A]->(EMMO_loading)
 MERGE(mea)-[:HAS_PROPERTY{
   float_value: TOFLOAT(row.`Pt loading (mg/cm2geo)`)}]->(ploading)
@@ -230,12 +259,16 @@ MERGE(ic:Measurement{uid: row.`Run #`,
                      DOI: row.`Run #`,
                      date_added : date()
 })
+MERGE(pida)-[:CONTAINS]->(ic)
+
 SET ic.uid = randomUUID()
 SET ic.DOI = row.DOI
 MERGE(pic:Property{uid: row.`Run #`,
                         DOI: row.`Run #`,
                         date_added : date()
 })
+MERGE(pida)-[:CONTAINS]->(pic)
+
 SET pic.uid = randomUUID()
 SET pic.DOI = row.DOI
 
@@ -247,6 +280,7 @@ MERGE(catink)-[:HAS_PROPERTY{
 MERGE(ew:Measurement{uid: row.EW,
                      date_added : date()
 })
+MERGE(pida)-[:CONTAINS]->(ew)
 
 SET ew.uid = randomUUID()
 MERGE(pew:Property{uid: row.EW,
@@ -257,12 +291,20 @@ SET pew.uid = randomUUID()
 MERGE(ionomer)-[:IS_MEASUREMENT_INPUT]->(ew)-[:HAS_MEASUREMENT_OUTPUT]->(pew)-[:IS_A]->(EMMO_ew)
 MERGE(ionomer)-[:HAS_PROPERTY{
   float_value: TOFLOAT(row.`EW`)}]->(pew)
+MERGE(pida)-[:CONTAINS]->(pew)
 
 // Paraneters
+MERGE(mill:Parameter{date_added : date()})
+ON CREATE SET mill.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(mill)
 
-MERGE(inkfab)-[:HAS_PARAMETER{float_value: TOFLOAT(row.`Drymill time (hrs)`)}]->(:Parameter)-[:IS_A]->(EMMO_mill)
-
-MERGE(meafab)-[:HAS_PARAMETER{float_value: TOFLOAT(row.`Drying temp (deg C)`)}]->(:Parameter)-[:IS_A]->(EMMO_dt)
+MERGE(inkfab)-[:HAS_PARAMETER{float_value: TOFLOAT(row.`Drymill time (hrs)`)}]->(mill)
+MERGE (mill)-[:IS_A]->(EMMO_mill)
+MERGE(dt:Parameter{date_added : date()})
+ON CREATE SET dt.uid = randomUUID()
+MERGE(pida)-[:CONTAINS]->(dt)
+MERGE(meafab)-[:HAS_PARAMETER{float_value: TOFLOAT(row.`Drying temp (deg C)`)}]->(dt)
+MERGE (dt)-[:IS_A]->(EMMO_dt)
 
 
 

@@ -16,7 +16,7 @@ class MatterAdminForm(NeoModelForm):
     """
     Parent class for all MatterAdminForms. Contains ontology and elements relation as well as clean function.
     """
-    is_a = RelationMultipleChoiceField("EMMO_Matter", "EMMO Matter", primary_key='uid', label_field='EMMO__name')
+    is_a = RelationMultipleChoiceField("EMMOMatter", "EMMO Matter", primary_key='uri', label_field='name')
     elements = RelationMultipleChoiceField("Element", "Elements", primary_key='uid', label_field='name')
 
 
