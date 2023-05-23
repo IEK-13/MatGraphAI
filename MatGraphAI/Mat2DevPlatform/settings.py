@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-#3zy6e+h5%+*0=5j6mp5%)9g#0ss1^dgocst79g9dg*c6c&@-+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["134.94.199.247"]
 #Openai API Key
 
 from dotenv import load_dotenv
