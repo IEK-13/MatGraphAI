@@ -1,7 +1,12 @@
 from dal import autocomplete
 from django.shortcuts import render, redirect
-
-
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+class MyProtectedView(LoginRequiredMixin, TemplateView):
+    template_name = 'my_protected_view.html'
 class AutocompleteView(autocomplete.Select2QuerySetView):
     model = None
 
@@ -21,19 +26,23 @@ class AutocompleteView(autocomplete.Select2QuerySetView):
 
 
 
+@login_required
 def home(request):
     return render(request, 'home.html')
 
+@login_required
 def upload(request):
     return render(request, 'upload.html')
 
+@login_required
 def download(request):
     return render(request, 'download.html')
 
+@login_required
 def analyze(request):
     return render(request, 'analyze.html')
 
-
+@login_required
 def select_data(request):
     data_type = request.GET.get('data_type', None)
     if data_type == 'measurement':
@@ -50,3 +59,5 @@ def select_data(request):
     else:
         # Redirect to an error page or show a message if the selection is not valid
         pass
+
+

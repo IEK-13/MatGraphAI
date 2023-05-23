@@ -34,6 +34,8 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Application definition
 
 INSTALLED_APPS = [
+    'UserManagement',
+    'Mat2DevAPI',
     'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Mat2DevPlatform',
     'DatabaseCommunication',
-    'Mat2DevAPI',
     'graphutils',
     'django_neomodel',
     'django_cleanup.apps.CleanupConfig',
@@ -58,8 +59,11 @@ INSTALLED_APPS = [
     'dal_select2'
 ]
 
+AUTH_USER_MODEL = 'UserManagement.CustomUser'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = 'home'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -83,7 +87,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Mat2DevPlatform.urls'
-
 # OpenAI API Key
 TEMPLATES = [
     {

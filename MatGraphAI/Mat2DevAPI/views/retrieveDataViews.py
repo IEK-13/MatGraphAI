@@ -5,16 +5,20 @@ from rest_framework import views
 import requests
 from wsgiref.util import FileWrapper
 import re
-
-def download_data_form(request, PID):
-    return render(request, 'PIDA.html', {'PID': PID})
-
-
 import csv
 from collections import defaultdict
 from django.http import HttpResponse, JsonResponse
 
 
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def download_data_form(request, PID):
+    return render(request, 'PIDA.html', {'PID': PID})
+
+
+
+@login_required
 def download_data(request, PID):
     # Connect to Neo4j database
 
@@ -113,6 +117,7 @@ class FileRetrieveView(views.APIView):
     as a download to the user.
     """
 
+    @login_required
     def get(self, request, uid, *args, **kwargs):
         # Construct the remote URL using the given uid
         url = f"http://134.94.199.40/{uid}"

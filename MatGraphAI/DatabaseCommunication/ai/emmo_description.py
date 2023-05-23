@@ -146,13 +146,13 @@ class OntologyManager:
                     subclass_instance.name = subclass_name
                     subclass_instance.description = subclass_comment
                     subclass_instance.save()
-                    cls_instance.emmo_subclass.connect(subclass_instance)
+                    subclass_instance.emmo_subclass.connect(cls_instance)
 
                 except:
                     subclass_instance = self.file_to_model[ontology_file](uri=subclass_uri, name=subclass_name,
                                                                           description=subclass_comment)
                     subclass_instance.save()
-                    cls_instance.emmo_subclass.connect(subclass_instance)
+                    subclass_instance.emmo_subclass.connect(cls_instance)
 
     def update_all_ontologies(self):
         ontologies = [f for f in os.listdir(self.ontology_folder) if f.endswith(".owl")]
@@ -169,23 +169,47 @@ class OntologyManager:
 
 def main():
     # Get the project root directory
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    #
+    # # Change the current working directory to the project root directory
+    # os.chdir(project_root)
+    #
+    # load_dotenv()
+    # from neomodel import config
+    #
+    # config.DATABASE_URL = os.getenv('NEOMODEL_NEO4J_BOLT_URL')
+    # print(config.DATABASE_URL)
+    #
+    # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
+    # api_key = settings.OPENAI_API_KEY
+    # ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/"
+    #
+    # ontology_manager = OntologyManager(api_key, ontology_folder)
+    # ontology_manager.import_all_ontologies()
 
-    # Change the current working directory to the project root directory
-    os.chdir(project_root)
 
-    load_dotenv()
-    from neomodel import config
 
-    config.DATABASE_URL = os.getenv('NEOMODEL_NEO4J_BOLT_URL')
-    print(config.DATABASE_URL)
 
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mat2DevPlatform.settings")
-    api_key = settings.OPENAI_API_KEY
-    ontology_folder = "/home/mdreger/Documents/MatGraphAI/Ontology/"
 
-    ontology_manager = OntologyManager(api_key, ontology_folder)
-    ontology_manager.update_all_ontologies()
+
+    # from emmopy import get_emmo
+
+
+
+
+    onto_path.append("")
+
+
+
+    onto_quantity=get_ontology("/home/mdreger/Documents/MatGraphAI/Ontology/quantities.owl").load()
+    for cls in onto_quantity.classes():
+
+        class_name = str(cls.name)
+        class_uri = str(cls.iri)
+        class_comment = str(cls.comment[0]) if cls.comment else None
+        print(class_name, class_uri, class_comment)
+
+
 
 
 if __name__ == "__main__":

@@ -9,14 +9,16 @@ from neomodel import db
 from rest_framework import views, status, parsers
 from rest_framework.response import Response
 
-from Mat2DevAPI.models.metadata import File
 from Mat2DevAPI.serializers import UploadedFileSerializer
+from django.contrib.auth.decorators import login_required
+
 
 
 def upload_success(request):
     return render(request, 'upload_success.html')
 
 
+@login_required
 def create_file_node(uid, file_name, file_path):
     """
     Create a new node in the database representing a file.
@@ -29,6 +31,7 @@ def create_file_node(uid, file_name, file_path):
                     {"uid": uid, "file_name": file_name, "file_path": file_path})
 
 
+@login_required
 def file_upload_form(request):
     """
     A Django view for rendering the file upload form and handling file uploads.
@@ -50,6 +53,7 @@ def file_upload_form(request):
     return render(request, 'file_upload_form.html')
 
 
+@login_required
 class FileUploadView(views.APIView):
     """
     A Django view that receives a file uploaded by the user, saves it locally,
@@ -161,6 +165,7 @@ DATA_TYPE_MAPPING = {
     'metadata': map_metadata
 }
 
+@login_required
 def map_csv_data_to_graph(csv_data, data_type, header):
     """Analyze and map the CSV data to the graph database schema.
 
@@ -180,6 +185,7 @@ def map_csv_data_to_graph(csv_data, data_type, header):
 
 
 
+@login_required
 def upload_csv(request):
 
     if request.method == 'POST':

@@ -4,7 +4,7 @@ from neomodel import (
     DateTimeProperty,
     IntegerProperty,
     RelationshipTo,
-    RelationshipFrom,
+    RelationshipFrom, One,
 )
 
 from Mat2DevAPI.choices.ChoiceFields import INSTITUTION_TYPE_CHOICEFIELD
@@ -42,6 +42,7 @@ class Institution(CausalObject):
     acronym = StringProperty()
     wikipedia_url = StringProperty()
     type = StringProperty(choices=INSTITUTION_TYPE_CHOICEFIELD)
+    country = RelationshipTo(Country, "IN", model=InLocationRel,  cardinality=One)
 
 
 class Instrument(CausalObject):
