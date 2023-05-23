@@ -60,7 +60,7 @@ class Manufacturing(Process):
     component_output = RelationshipTo(Component, 'IS_MANUFACTURING_OUTPUT', model=IsManufacturingOutputRel)
     device_output = RelationshipTo(Device, 'IS_MANUFACTURING_OUTPUT', model=IsManufacturingOutputRel)
 
-    material_input = RelationshipFrom('Mat2DevAPI.models.matter.Matter', 'IS_MANUFACTURING_INPUT',
+    material_input = RelationshipFrom('Mat2DevAPI.models.matter.Material', 'IS_MANUFACTURING_INPUT',
                                       model=IsManufacturingInputRel, cardinality=ZeroOrMore)
     molecule_input = RelationshipFrom('Mat2DevAPI.models.matter.Molecule', "IS_MANUFACTURING_INPUT",
                                       model=IsManufacturingInputRel, cardinality=ZeroOrMore)
@@ -81,7 +81,12 @@ class Measurement(Process):
     file_output = RelationshipTo('Mat2DevAPI.models.metadata.File', "HAS_FILE_OUTPUT",
                                  model=HasFileOutputRel, cardinality=ZeroOrMore)
 
-    matter_input = RelationshipFrom('Mat2DevAPI.models.matter.Matter', 'IS_MEASUREMENT_INPUT',
+    material_input = RelationshipFrom('Mat2DevAPI.models.matter.Material', 'IS_MEASUREMENT_INPUT',
                                       model=IsMeasurementInputRel, cardinality=ZeroOrMore)
-
+    molecule_input = RelationshipFrom('Mat2DevAPI.models.matter.Molecule', "IS_MEASUREMENT_INPUT",
+                                      model=IsMeasurementInputRel, cardinality=ZeroOrMore)
+    component_input = RelationshipFrom('Mat2DevAPI.models.matter.Component', "IS_MEASUREMENT_INPUT",
+                                       model=IsMeasurementInputRel, cardinality=ZeroOrMore)
+    device_input = RelationshipFrom('Mat2DevAPI.models.matter.Device', "IS_MEASUREMENT_INPUT",
+                                    model=IsMeasurementInputRel, cardinality=ZeroOrMore)
 
