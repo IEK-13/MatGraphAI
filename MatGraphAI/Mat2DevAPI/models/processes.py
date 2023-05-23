@@ -6,7 +6,7 @@ from Mat2DevAPI.models.matter import Material, Molecule, Component, Device
 from Mat2DevAPI.models.relationships import (ByResearcherRel, ByRel,
                                              HasFileOutputRel, IsManufacturingInputRel,
                                              HasMeasurementOutputRel, HasPartRel,
-                                             IsManufacturingOutputRel, IsARel, HasParameterRel)
+                                             IsManufacturingOutputRel, IsARel, HasParameterRel, IsMeasurementInputRel)
 
 
 class Process(CausalObject):
@@ -82,11 +82,11 @@ class Measurement(Process):
                                  model=HasFileOutputRel, cardinality=ZeroOrMore)
 
     material_input = RelationshipFrom('Mat2DevAPI.models.matter.Material', 'IS_MEASUREMENT_INPUT',
-                                      model=IsManufacturingInputRel, cardinality=ZeroOrMore)
+                                      model=IsMeasurementInputRel, cardinality=ZeroOrMore)
     molecule_input = RelationshipFrom('Mat2DevAPI.models.matter.Molecule', "IS_MEASUREMENT_INPUT",
-                                      model=IsManufacturingInputRel, cardinality=ZeroOrMore)
+                                      model=IsMeasurementInputRel, cardinality=ZeroOrMore)
     component_input = RelationshipFrom('Mat2DevAPI.models.matter.Component', "IS_MEASUREMENT_INPUT",
-                                       model=IsManufacturingInputRel, cardinality=ZeroOrMore)
+                                       model=IsMeasurementInputRel, cardinality=ZeroOrMore)
     device_input = RelationshipFrom('Mat2DevAPI.models.matter.Device', "IS_MEASUREMENT_INPUT",
-                                    model=IsManufacturingInputRel, cardinality=ZeroOrMore)
+                                    model=IsMeasurementInputRel, cardinality=ZeroOrMore)
 
