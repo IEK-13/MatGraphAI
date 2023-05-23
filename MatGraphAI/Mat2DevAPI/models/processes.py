@@ -60,7 +60,7 @@ class Manufacturing(Process):
     component_output = RelationshipTo(Component, 'IS_MANUFACTURING_OUTPUT', model=IsManufacturingOutputRel)
     device_output = RelationshipTo(Device, 'IS_MANUFACTURING_OUTPUT', model=IsManufacturingOutputRel)
 
-    material_input = RelationshipFrom('Mat2DevAPI.models.matter.Material', 'IS_MANUFACTURING_INPUT',
+    material_input = RelationshipFrom('Mat2DevAPI.models.matter.Matter', 'IS_MANUFACTURING_INPUT',
                                       model=IsManufacturingInputRel, cardinality=ZeroOrMore)
     molecule_input = RelationshipFrom('Mat2DevAPI.models.matter.Molecule', "IS_MANUFACTURING_INPUT",
                                       model=IsManufacturingInputRel, cardinality=ZeroOrMore)
