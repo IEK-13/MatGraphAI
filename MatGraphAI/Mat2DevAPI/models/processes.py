@@ -81,7 +81,7 @@ class Measurement(Process):
     file_output = RelationshipTo('Mat2DevAPI.models.metadata.File', "HAS_FILE_OUTPUT",
                                  model=HasFileOutputRel, cardinality=ZeroOrMore)
 
-    material_input = RelationshipFrom('Mat2DevAPI.models.matter.Matter', 'IS_MEASUREMENT_INPUT',
+    matter_input = RelationshipFrom('Mat2DevAPI.models.matter.Matter', 'IS_MEASUREMENT_INPUT',
                                       model=IsMeasurementInputRel, cardinality=ZeroOrMore)
 
 

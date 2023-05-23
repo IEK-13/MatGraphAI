@@ -25,8 +25,7 @@ class Matter(CausalObject):
                                          model=IsManufacturingInputRel)
     manufacturing_output = RelationshipFrom('Mat2DevAPI.models.processes.Manufacturing', 'IS_MANUFACTURING_OUTPUT',
                                             model=IsManufacturingOutputRel)
-    measurement_input = RelationshipTo('Mat2DevAPI.models.processes.Measurement', 'IS_MEASUREMENT_INPUT',
-                                       model=HasMeasurementOutputRel)
+
     __abstract_node__ = True
 
 
